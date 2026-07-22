@@ -285,6 +285,37 @@ This runner is fixed to the `gpt-5.6-sol` model and rejects another
 
 ## Kimi run
 
+### Install native Kimi Code
+
+The native Kimi Code terminal worker published with the Hugging Face
+reproduction artifact is distinct from the historical API compatibility
+wrapper in this checkout. Install the native `kimi` command on Linux or macOS
+with the official installer:
+
+```bash
+curl -fsSL https://code.kimi.com/kimi-code/install.sh | bash
+kimi --version
+kimi login
+```
+
+Kimi Code stores its configuration, credentials, and sessions under
+`${KIMI_CODE_HOME:-$HOME/.kimi-code}`. Do not commit that directory. The native
+worker shell requires the resolved binary path and a readable configured home:
+
+```bash
+export BASE_KIMI_HOME="${KIMI_CODE_HOME:-$HOME/.kimi-code}"
+export KIMI_BIN="$(readlink -f "$(command -v kimi)")"
+test -s "$BASE_KIMI_HOME/config.toml"
+```
+
+See the [official Kimi Code installation
+guide](https://moonshotai.github.io/kimi-code/en/guides/getting-started.html)
+for Windows, npm, upgrade, and login instructions. The commands below describe
+the historical root wrapper; the native Kimi Code experiment shell is packaged
+under
+[`experiment-shells/kimi-worker/`](https://huggingface.co/datasets/humanfia-lab/IMO2026/tree/main/experiment-shells/kimi-worker)
+in the Hugging Face artifact.
+
 The Kimi wrapper starts a local compatibility proxy and then launches the same
 worker/reviewer workflow:
 
@@ -315,6 +346,51 @@ Useful options include:
 - `--run-id ID` and `--out-root PATH` — control result locations.
 
 Even `--dry-run` performs the harness prerequisite checks.
+
+## Recover an interrupted experiment
+
+Recovery must reuse the original `RUN_ID`, `OUT_ROOT`, `LOCAL_RUNS_ROOT`,
+`LOCAL_RUNTIME_TEMPLATE`, and credential locations. Preserve both
+`$OUT_ROOT/$RUN_ID`, which contains job state and provenance, and
+`$LOCAL_RUNS_ROOT/$RUN_ID`, which contains the real workspaces and per-job model
+homes. The `workspaces` and `agent-homes` entries in the output directory are
+symlinks into that local run tree; keeping only the output directory is not
+enough to resume.
+
+Restore the original environment and inspect each job's state before choosing
+a recovery mode:
+
+```bash
+export RUN_ID=the-original-run-id
+export OUT_ROOT=/path/to/original/output-root
+export LOCAL_RUNS_ROOT=/path/to/original/local-runs-root
+export LOCAL_RUNTIME_TEMPLATE=/path/to/imo2026-humanize-runtime-v431
+
+find "$OUT_ROOT/$RUN_ID/jobs" -name status.txt -print -exec cat {} \;
+```
+
+Use `--resume-prepared` only for jobs in `prepared` or `pending` state:
+
+```bash
+bash scripts/run-imo2026.sh --run-id "$RUN_ID" --resume-prepared
+```
+
+Worker-only and reviewer-only recovery each require exactly one selected
+problem. They preserve the prepared workspace and continue the recorded round:
+
+```bash
+bash scripts/run-imo2026.sh --run-id "$RUN_ID" \
+  --problem imo2026_q1 --resume-worker-only
+
+bash scripts/run-imo2026.sh --run-id "$RUN_ID" \
+  --problem imo2026_q1 --resume-review-only
+```
+
+For a historical Kimi-wrapper run, use the same environment and replace
+`run-imo2026.sh` with `run-imo2026-kimi.sh`. Export `RUN_ID` before launching
+the Kimi wrapper so its proxy logs are written back into the original run.
+Do not start a new run, delete either preserved run tree, or copy a candidate
+into a fresh workspace as a substitute for recovery.
 
 ## Experiment outputs
 
