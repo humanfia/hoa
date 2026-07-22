@@ -1,25 +1,13 @@
-# IMO 2026 Lean Formalizations
+# Humanfia at IMO 2026 
 
-Lean 4 formalizations of the six IMO 2026 problems, together with two sets of
-machine-generated proof solutions and the scripts used to validate and
-reproduce the experiments.
+With the power of [Humanize](https://github.com/PolyArch/humanize), **we—the HumanFIA team—have aced all 6/6 IMO 2026 problems** using a fully agentic, YOLO-style approach. Every solution has been formally verified by Lean 4.
+
+We build with open source, and build for open source. We release everything including: 
+* the [formal Lean 4 statements from AxiomMath](https://github.com/AxiomMath/IMO2026); 
+* the final lean solutions ([gpt](./gpt-5.6-solution) and [kimi](./kimi-solution)); 
+* [the scripts](./scripts) to reproduce the solving process.
 
 The project is pinned to **Lean 4.31.0** and **Mathlib v4.31.0**.
-
-## Repository layout
-
-| Path | Description |
-| --- | --- |
-| `base/IMO2026/Q1` … `Q6` | Public Lean problem skeletons. Their proof bodies contain `sorry` intentionally. |
-| `gpt-5.6-solution/` | Complete solution files produced by GPT-5.6. |
-| `kimi-solution/` | Complete solution files produced by Kimi. |
-| `base/formalization.yaml` | Formalization metadata, theorem inventory, and fidelity notes. |
-| `scripts/validate-imo2026-output.py` | Local structural validator for candidate solutions. |
-| `scripts/verify-imo2026-axle.py` | Remote proof verification through the AXLE API. |
-| `scripts/run-imo2026.sh` | GPT-5.6 worker/reviewer experiment harness. |
-| `scripts/run-imo2026-kimi.sh` | Kimi compatibility wrapper and experiment entry point. |
-| `comparator-smoke/` | Minimal project for testing a Comparator installation. |
-| `tools/lean4export/` | Bundled Lean declaration exporter source. |
 
 ## Quick start
 
@@ -287,3 +275,18 @@ Runs are written under `runs/<RUN_ID>/`. Important artifacts include:
 Workers have network access blocked. Reviewers receive network access only for
 the prompted AXLE verification step. Existing solution directories are not
 mounted into either model namespace.
+
+## Repository layout
+
+| Path | Description |
+| --- | --- |
+| `base/IMO2026/Q1` … `Q6` | Public Lean problem skeletons. Their proof bodies contain `sorry` intentionally. |
+| `gpt-5.6-solution/` | Complete solution files produced by GPT-5.6. |
+| `kimi-solution/` | Complete solution files produced by Kimi. |
+| `base/formalization.yaml` | Formalization metadata, theorem inventory, and fidelity notes. |
+| `scripts/validate-imo2026-output.py` | Local structural validator for candidate solutions. |
+| `scripts/verify-imo2026-axle.py` | Remote proof verification through the AXLE API. |
+| `scripts/run-imo2026.sh` | GPT-5.6 worker/reviewer experiment harness. |
+| `scripts/run-imo2026-kimi.sh` | Kimi compatibility wrapper and experiment entry point. |
+| `comparator-smoke/` | Minimal project for testing a Comparator installation. |
+| `tools/lean4export/` | Bundled Lean declaration exporter source. |
