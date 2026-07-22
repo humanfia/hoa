@@ -9,24 +9,58 @@ We build with open source, and build for open source. We release everything incl
 
 The project is pinned to **Lean 4.31.0** and **Mathlib v4.31.0**.
 
-## Quick start
+## Results
 
-### Prerequisites
+Both the Humanfia(GPT-5.6) and Humanfia(Kimi-K3) workers solved all six problems. Their elapsed wall-clock
+times are compared with the times reported by
+[AxiomProver](https://github.com/AxiomMath/IMO2026) below. The fastest reported
+time for each problem is bolded.
 
-- Git
+| Problem | Humanfia (GPT-5.6) | Humanfia (Kimi-k3) | AxiomProver |
+| --- | ---: | ---: | ---: |
+| Q1 | ✅ 33.6 min | ✅ 77.7 min | ✅ **24 min** |
+| Q2 | ✅ **96.2 min** | ✅ 220.2 min | ✅ 360 min |
+| Q3 | ✅ **179.4 min** | ✅ 338.4 min | ✅ 869 min |
+| Q4 | ✅ 53.3 min | ✅ 65.6 min | ✅ **39 min** |
+| Q5 | ✅ **42.4 min** | ✅ 86.7 min | ✅ 65 min |
+| Q6 | ✅ **62.7 min** | ✅ 209.0 min | ✅ 139 min |
+| Total | **467.6 min** | 997.6 min | 1,496 min |
+
+
+## Verification
+
+The formal Lean 4 problem statements under `base/IMO2026` are sourced from
+[AxiomMath/IMO2026](https://github.com/AxiomMath/IMO2026). The AXLE verifier
+sends an original statement and candidate proof to the configured verification
+endpoint and writes a JSON report.
+
+```bash
+python3 scripts/verify-imo2026-axle.py \
+  --problem imo2026_q1 \
+  --original base/IMO2026/Q1/problem.lean \
+  --candidate gpt-5.6-solution/IMO2026Q1.lean \
+  --output reports/gpt-5.6-q1.json
+```
+
+This step requires outbound HTTPS access. The defaults are a 900-second request
+timeout and four retries. Exit status `0` means AXLE returned `okay: true`, `1`
+means the proof was rejected, and `2` means verification or input handling
+failed.
+
+
+# Quick start
+
+## Prerequisites
+
+- [Humanize](https://github.com/PolyArch/humanize)
 - [Elan](https://github.com/leanprover/elan), which provides Lean and Lake
+- Git
 - Python 3 for the validation and AXLE scripts
 - A C/C++ build toolchain required by Lean dependencies
 - Internet access during the first Mathlib setup
 
-### Clone the repository
 
-```bash
-git clone https://github.com/humanfia/imo-2026-lean-solutions.git
-cd imo-2026-lean-solutions
-```
-
-### Install the Lean dependencies
+## Install the Lean dependencies
 
 From the repository root:
 
@@ -42,7 +76,7 @@ From the repository root:
 The `lean-toolchain` file makes Elan select Lean 4.31.0 automatically. The
 Mathlib cache step avoids compiling all of Mathlib from source.
 
-### Check one solution
+## Check one solution
 
 Run Lean from the `base` project so it uses the pinned Mathlib environment:
 
@@ -59,7 +93,7 @@ To check the corresponding Kimi solution:
 Lean normally prints nothing when a file succeeds. A compilation error causes
 a non-zero exit status.
 
-### Check every included solution
+## Check every included solution
 
 ```bash
 cd base
@@ -86,7 +120,7 @@ The local validator checks that a candidate:
 
 It is a structural check, not a replacement for Lean type-checking.
 
-### Validate one file
+## Validate one file
 
 Run this command from the repository root:
 
@@ -97,7 +131,7 @@ python3 scripts/validate-imo2026-output.py \
   --candidate gpt-5.6-solution/IMO2026Q1.lean
 ```
 
-### Validate all included files
+## Validate all included files
 
 ```bash
 for solution_dir in gpt-5.6-solution kimi-solution; do
@@ -132,24 +166,6 @@ python3 scripts/validate-imo2026-output.py \
 ```
 
 Change `q1`, `Q1`, and `IMO2026Q1.lean` consistently for another problem.
-
-## Verify with AXLE
-
-The AXLE verifier sends the original statement and candidate proof to the
-configured AXLE verification endpoint and writes a JSON report.
-
-```bash
-python3 scripts/verify-imo2026-axle.py \
-  --problem imo2026_q1 \
-  --original base/IMO2026/Q1/problem.lean \
-  --candidate gpt-5.6-solution/IMO2026Q1.lean \
-  --output reports/gpt-5.6-q1.json
-```
-
-This step requires outbound HTTPS access. The defaults are a 900-second request
-timeout and four retries. Exit status `0` means AXLE returned `okay: true`, `1`
-means the proof was rejected, and `2` means verification or input handling
-failed.
 
 ## Comparator tooling
 
@@ -210,7 +226,7 @@ requires its Comparator wrapper to be executable. Prepare them once with:
 chmod +x scripts/*.sh scripts/*.py comparator-smoke/tools/*.sh
 ```
 
-### GPT-5.6 run
+## GPT-5.6 run
 
 After provisioning the environment, run one problem first:
 
@@ -228,7 +244,7 @@ bash scripts/run-imo2026.sh \
 This runner is fixed to the `gpt-5.6-sol` model and rejects another
 `CODEX_MODEL` value.
 
-### Kimi run
+## Kimi run
 
 The Kimi wrapper starts a local compatibility proxy and then launches the same
 worker/reviewer workflow:
