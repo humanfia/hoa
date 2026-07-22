@@ -1,6 +1,6 @@
 # Humanfia at IMO 2026 
 
-With the power of [Humanize](https://github.com/PolyArch/humanize), we, the **Humanfia team**, have aced all 6/6 IMO 2026 problems using a fully agentic, YOLO-style approach. Every solution has been formally verified by Lean 4.
+With the power of [Humanize](https://github.com/PolyArch/humanize), we, the **Humanfia team, have aced all 6/6 IMO 2026 problems** using a *fully agentic, YOLO-style approach*. Every solution has been formally verified by Lean 4.
 
 We build with open source, and build for open source. We release everything including: 
 * the [formal Lean 4 statements from AxiomMath](https://github.com/AxiomMath/IMO2026); 
