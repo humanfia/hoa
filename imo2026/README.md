@@ -59,8 +59,47 @@ failed.
 - A C/C++ build toolchain required by Lean dependencies
 - Internet access during the first Mathlib setup
 
+## Install Lean 4.31.0
 
-## Install the Lean dependencies
+Lean is installed through Elan, the Lean toolchain manager. On Ubuntu or
+Debian, first install the system packages needed by Elan and Lean:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y curl git build-essential
+```
+
+On macOS, install the Xcode command-line tools instead:
+
+```bash
+xcode-select --install
+```
+
+Then install Elan on either platform:
+
+```bash
+curl https://elan.lean-lang.org/elan-init.sh -sSf | sh
+source "$HOME/.elan/env"
+```
+
+Verify the installation from this repository. Entering `base` makes Elan
+download and select the project's pinned Lean 4.31.0 toolchain automatically:
+
+```bash
+(
+  cd base
+  lean --version
+  lake --version
+)
+```
+
+The Lean version should be `4.31.0`. If `elan`, `lean`, or `lake` is not found,
+open a new shell or run `source "$HOME/.elan/env"` again. A global
+`elan default` is unnecessary because `base/lean-toolchain` pins the version
+for this project. See the [official Lean installation
+guide](https://lean-lang.org/install/manual/) for other platforms.
+
+## Install the Mathlib dependencies
 
 From the repository root:
 
