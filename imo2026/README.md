@@ -24,7 +24,7 @@ time for each problem is bolded.
 | Q4 | ✅ 53.3 min | ✅ 65.6 min | ✅ **39 min** |
 | Q5 | ✅ **42.4 min** | ✅ 86.7 min | ✅ 65 min |
 | Q6 | ✅ **62.7 min** | ✅ 209.0 min | ✅ 139 min |
-| Total | **467.6 min** | 997.6 min | 1,496 min |
+| Total | **467.6 min (3.2x)** | 997.6 min | 1,496 min |
 
 
 ## Verification
