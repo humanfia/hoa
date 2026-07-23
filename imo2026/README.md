@@ -324,6 +324,17 @@ requires its Comparator wrapper to be executable. Prepare them once with:
 chmod +x scripts/*.sh scripts/*.py
 ```
 
+### Worker network isolation
+
+The files `scripts/nonet-preload.c` and `scripts/nonet-shell.c` are intentionally
+kept as runtime dependencies. At the start of a run, each engine compiles
+`nonet-preload.c` into an `LD_PRELOAD` library that rejects socket creation and
+connection/bind operations with `EACCES`. It compiles `nonet-shell.c` into the
+worker shell that installs that preload library before executing the real
+shell. This supplements the runner-generated seccomp socket-denial wrapper and
+keeps worker shell commands offline; reviewers retain only the network access
+required for AXLE verification.
+
 ## GPT-5.6 run
 
 After provisioning the environment, run one problem first:
@@ -483,4 +494,5 @@ mounted into either model namespace.
 | `scripts/run-imo2026-gpt-5-6.sh` | Compact one-question GPT-5.6 entry point. |
 | `scripts/run-imo2026-kimi.sh` | Native Kimi-K3 worker/Codex reviewer experiment harness. |
 | `scripts/run-imo2026-kimi-k3.sh` | Compact one-question Kimi-worker/Codex-reviewer entry point. |
+| `scripts/nonet-preload.c` and `scripts/nonet-shell.c` | Sources compiled at runtime to block worker shell network access. |
 | `tools/lean4export/` | Bundled Lean declaration exporter source. |
