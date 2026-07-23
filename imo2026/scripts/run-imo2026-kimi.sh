@@ -46,7 +46,7 @@ PROBLEMS=()
 usage() {
   cat <<'EOF'
 Usage:
-  bash scripts/run-imo2026.sh [options]
+  bash scripts/run-imo2026-kimi.sh [options]
 
 Runs blind Kimi Code IMO 2026 proof workers and isolated Codex AXLE-backed
 reviewers for Q1-Q6.
@@ -62,7 +62,7 @@ Options:
   --fallback-jobs N            Concurrency after 429/529. Default: 6.
   --probe-count N              One-turn jobs before ramp-up. Default: 4.
   --max-turns N                Worker/reviewer turns per problem. Default: 50.
-  --worker-timeout-seconds N   Timeout per worker Kimi Code call. Default: 7200.
+  --worker-timeout-seconds N   Timeout per worker Kimi Code call. Default: 14400.
   --review-timeout-seconds N   Timeout per reviewer Codex call. Default: 7200.
   --run-id ID                  Override timestamped run ID.
   --failure-file PATH          Optional Markdown problem list. Default: Q1-Q6.
@@ -70,7 +70,7 @@ Options:
   --question-file PATH         Exact Lean statement for one selected problem.
   --source-root PATH           Root containing Q1/problem.lean through Q6/problem.lean.
   --base-kimi-home PATH        Kimi Code auth/config source. Default: /root/.kimi-code.
-  --base-codex-home PATH       Codex auth/config source. Default: workspace .codex.
+  --base-codex-home PATH       Codex auth/config source. Default: /root/.codex.
   --out-root PATH              Output parent directory.
   --prepare-only               Build and audit sanitized workspaces; run no models.
   --resume-prepared            Reuse an existing run and launch only jobs whose

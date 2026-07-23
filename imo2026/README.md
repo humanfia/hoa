@@ -5,7 +5,8 @@ With the power of [Humanize](https://github.com/PolyArch/humanize), we, the **Hu
 We build with open source, and build for open source. We release everything including: 
 * the [formal Lean 4 statements from AxiomMath](https://github.com/AxiomMath/IMO2026); 
 * the final lean solutions ([gpt](./gpt-5.6-solution) and [kimi](./kimi-solution)); 
-* [the scripts](./scripts) to reproduce the solving process.
+* the exact GPT and Kimi plans, shared Codex review template, and
+  [scripts](./scripts) used to reproduce the solving process.
 
 The project is pinned to **Lean 4.31.0** and **Mathlib v4.31.0**.
 
@@ -211,14 +212,22 @@ Change `q1`, `Q1`, and `IMO2026Q1.lean` consistently for another problem.
 ## Comparator tooling
 
 `Comparator` and `Landrun` binaries are not included in this repository. If you
-already have them, first build the bundled `lean4export` binary:
+already have them, build the bundled `lean4export` source:
 
 ```bash
 (cd tools/lean4export && lake build)
 ```
 
-The experiment runners create a problem-specific Comparator challenge and
-configuration inside each isolated workspace, then invoke the wrapper at
+The runners require the resulting executable together with Comparator and
+Landrun in the runtime template:
+
+```bash
+install -m 0755 tools/lean4export/.lake/build/bin/lean4export \
+  /tmp/imo2026-humanize-runtime-v431/checker-tools/lean4export
+```
+
+Each experiment creates its own problem-specific Comparator challenge and
+configuration inside the isolated workspace, then invokes
 `scripts/check-with-comparator.sh`.
 
 ## Reproduce the model experiments
@@ -229,8 +238,8 @@ runner for macOS or a fresh Linux installation.
 
 ### Compact GPT-5.6 entrypoint
 
-Run one question with a user-supplied plan through the GPT-5.6
-worker/reviewer pipeline:
+Run one question through the GPT-5.6 worker/reviewer pipeline with the exact
+checked-in experiment plan:
 
 ```bash
 bash scripts/run-imo2026-gpt-5-6.sh \
@@ -241,8 +250,10 @@ bash scripts/run-imo2026-gpt-5-6.sh \
 The question name selects Q1 through Q6. If the named path does not exist, the
 entrypoint uses the corresponding canonical statement under `base/IMO2026`.
 An existing question file is used directly and snapshotted into the isolated
-workspace. The supplied plan is appended to the mandatory proof, isolation,
-Comparator, and AXLE instructions.
+workspace. `gpt_plan.md` is the parameterized form of the active plan embedded
+in the successful experiment shell. The runner renders its problem, module,
+model, and turn-limit placeholders before starting the loop. The shared Codex
+review prompt is `regular-review.md`.
 
 Validate the interface and prerequisites without creating a run:
 
@@ -259,8 +270,8 @@ Additional options such as `--run-id`, `--out-root`, `--max-turns`,
 
 ### Compact Kimi-K3 entrypoint
 
-Run one question with a user-supplied plan using Kimi K3 as the worker and
-Codex as the reviewer:
+Run one question using Kimi K3 as the worker, Codex as the reviewer, and the
+exact checked-in Kimi experiment plan:
 
 ```bash
 bash scripts/run-imo2026-kimi-k3.sh \
@@ -269,14 +280,23 @@ bash scripts/run-imo2026-kimi-k3.sh \
 ```
 
 The compact entrypoint has the same question-path behavior as the GPT-5.6
-entrypoint. Additional runner options are forwarded to the historical
-Kimi-worker/Codex-reviewer engine in `scripts/run-imo2026-kimi.sh`.
+entrypoint. `kimi_plan.md` is rendered with the selected problem, module, model,
+reviewer, and turn-limit values. Additional runner options are forwarded to
+the native Kimi-worker/Codex-reviewer engine in
+`scripts/run-imo2026-kimi.sh`.
+
+The repository does not require an `inputs/` directory. The compact entrypoints
+select one problem from `--question`; the full engines default internally to
+Q1–Q6. `--problem` can select one or more explicit IDs, and `--failure-file`
+remains available as an optional override.
 
 The harness expects:
 
 - Linux utilities including `proot`, `setpriv`, `getent`, `flock`, `jq`, `rg`,
   a C compiler, and GNU `timeout`;
 - a working Codex binary and Codex configuration/authentication directory;
+- for Kimi runs, native Kimi Code with a configured K3 alias and thinking
+  enabled;
 - a populated `base/.lake/packages` Mathlib checkout;
 - an external Comparator binary and Landrun binary;
 - a runtime template containing Lean, Mathlib, Comparator, Landrun, and
@@ -326,10 +346,8 @@ This runner is fixed to the `gpt-5.6-sol` model and rejects another
 
 ### Install native Kimi Code
 
-The native Kimi Code terminal worker published with the Hugging Face
-reproduction artifact is distinct from the historical API compatibility
-wrapper in this checkout. Install the native `kimi` command on Linux or macOS
-with the official installer:
+Install the native `kimi` command on Linux or macOS with the official
+installer:
 
 ```bash
 curl -fsSL https://code.kimi.com/kimi-code/install.sh | bash
@@ -349,19 +367,16 @@ test -s "$BASE_KIMI_HOME/config.toml"
 
 See the [official Kimi Code installation
 guide](https://moonshotai.github.io/kimi-code/en/guides/getting-started.html)
-for Windows, npm, upgrade, and login instructions. The commands below describe
-the historical root wrapper; the native Kimi Code experiment shell is packaged
-under
-[`experiment-shells/kimi-worker/`](https://huggingface.co/datasets/humanfia-lab/IMO2026/tree/main/experiment-shells/kimi-worker)
-in the Hugging Face artifact.
+for Windows, npm, upgrade, and login instructions. The Kimi configuration must
+define the `kimi-for-coding/k3` alias with model ID `k3` and thinking enabled.
 
-The Kimi wrapper starts a local compatibility proxy and then launches the same
-worker/reviewer workflow:
+Run one problem first. Native Kimi performs the proof work and Codex performs
+the isolated AXLE-backed review:
 
 ```bash
-KIMI_CODEX_HOME=/path/to/kimi-codex-home \
-KIMI_KEY_FILE=/path/to/kimi-api-key \
-KIMI_CODEX_BIN=/path/to/compatible/codex \
+BASE_KIMI_HOME=/path/to/kimi-code-home \
+BASE_CODEX_HOME=/path/to/codex-home \
+KIMI_BIN=/absolute/path/to/kimi \
 LOCAL_RUNTIME_TEMPLATE=/tmp/imo2026-humanize-runtime-v431 \
 bash scripts/run-imo2026-kimi.sh \
   --problem imo2026_q1 \
@@ -370,9 +385,12 @@ bash scripts/run-imo2026-kimi.sh \
   --probe-count 1
 ```
 
-Use `bash scripts/run-imo2026.sh --help` for the GPT runner options. To inspect
-the shared Kimi options without first configuring Kimi credentials, run
-`bash scripts/run-imo2026-kimi-core.sh --help`.
+The Kimi worker model is fixed to `kimi-for-coding/k3`. The reviewer defaults
+to Codex model `gpt-5.5` with `xhigh` reasoning effort.
+
+Use `bash scripts/run-imo2026.sh --help` for the GPT options and
+`bash scripts/run-imo2026-kimi.sh --help` for the Kimi-worker/Codex-reviewer
+options.
 
 Useful options include:
 
@@ -425,9 +443,9 @@ bash scripts/run-imo2026.sh --run-id "$RUN_ID" \
   --problem imo2026_q1 --resume-review-only
 ```
 
-For a historical Kimi-wrapper run, use the same environment and replace
-`run-imo2026.sh` with `run-imo2026-kimi.sh`. Export `RUN_ID` before launching
-the Kimi wrapper so its proxy logs are written back into the original run.
+For a Kimi-worker/Codex-reviewer run, use the same environment and replace
+`run-imo2026.sh` with `run-imo2026-kimi.sh`. Also restore the original
+`BASE_KIMI_HOME`, `BASE_CODEX_HOME`, and `KIMI_BIN`.
 Do not start a new run, delete either preserved run tree, or copy a candidate
 into a fresh workspace as a substitute for recovery.
 
@@ -438,7 +456,9 @@ Runs are written under `runs/<RUN_ID>/`. Important artifacts include:
 - `RUN.md` — run configuration and provenance;
 - `jobs/` — per-problem status, hashes, and local-check logs;
 - `metrics.tsv` — final per-job status and timing;
-- `codex-sessions.tsv` — worker/reviewer session records;
+- `codex-sessions.tsv` — GPT worker/reviewer sessions or Kimi-run Codex
+  reviewer sessions;
+- `kimi-sessions.tsv` — Kimi worker sessions for hybrid runs;
 - `workspaces` and `agent-homes` — links to the isolated runtime directories;
 - rate-limit and transport-failure logs when those conditions occur.
 
@@ -460,6 +480,7 @@ mounted into either model namespace.
 | `scripts/validate-imo2026-output.py` | Local structural validator for candidate solutions. |
 | `scripts/verify-imo2026-axle.py` | Remote proof verification through the AXLE API. |
 | `scripts/run-imo2026.sh` | GPT-5.6 worker/reviewer experiment harness. |
-| `scripts/run-imo2026-kimi.sh` | Kimi compatibility wrapper and experiment entry point. |
+| `scripts/run-imo2026-gpt-5-6.sh` | Compact one-question GPT-5.6 entry point. |
+| `scripts/run-imo2026-kimi.sh` | Native Kimi-K3 worker/Codex reviewer experiment harness. |
 | `scripts/run-imo2026-kimi-k3.sh` | Compact one-question Kimi-worker/Codex-reviewer entry point. |
 | `tools/lean4export/` | Bundled Lean declaration exporter source. |

@@ -15,11 +15,11 @@ Usage:
 
 Examples:
   bash scripts/run-imo2026-gpt-5-6.sh \
-    --prompt xxx_plan.md \
+    --prompt gpt_plan.md \
     --question problem/2026-q1.lean
 
   bash scripts/run-imo2026-gpt-5-6.sh \
-    --prompt xxx_plan.md \
+    --prompt gpt_plan.md \
     --question base/IMO2026/Q1/problem.lean \
     --dry-run
 
