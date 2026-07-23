@@ -1270,7 +1270,9 @@ main() {
   for command in awk bash cc chown chmod date find flock getent git jq lake proot python3 rg setpriv sha256sum timeout; do
     need_cmd "$command"
   done
-  [[ -f "$FAILURE_FILE" ]] || die "failure file not found: $FAILURE_FILE"
+  if [[ "${#PROBLEMS[@]}" -eq 0 ]]; then
+    [[ -f "$FAILURE_FILE" ]] || die "failure file not found: $FAILURE_FILE"
+  fi
   [[ -d "$IMO2026_SOURCE_ROOT" ]] || die "IMO2026 source root not found: $IMO2026_SOURCE_ROOT"
   [[ -f "$BASE_CODEX_HOME/auth.json" ]] || die "Codex auth missing: $BASE_CODEX_HOME/auth.json"
   [[ -f "$BASE_CODEX_HOME/config.toml" ]] || die "Codex config missing: $BASE_CODEX_HOME/config.toml"
