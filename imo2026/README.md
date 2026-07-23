@@ -453,6 +453,7 @@ mounted into either model namespace.
 | `base/IMO2026/Q1` … `Q6` | Public Lean problem skeletons. Their proof bodies contain `sorry` intentionally. |
 | `gpt_plan.md` | Reusable plan for the GPT-5.6 worker/reviewer runner. |
 | `kimi_plan.md` | Reusable plan for the Kimi-K3 worker/Codex reviewer runner. |
+| `regular-review.md` | Shared Codex reviewer prompt template. |
 | `gpt-5.6-solution/` | Complete solution files produced by GPT-5.6. |
 | `kimi-solution/` | Complete solution files produced by Kimi. |
 | `base/formalization.yaml` | Formalization metadata, theorem inventory, and fidelity notes. |

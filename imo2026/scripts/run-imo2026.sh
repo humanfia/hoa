@@ -735,7 +735,7 @@ render_review_prompt() {
   local problem="$2"
   local module="$3"
   local turn="$4"
-  local template="$HUMANIZE_ROOT/humanize/prompt-template/codex/regular-review.md"
+  local template="$HUMANIZE_ROOT/regular-review.md"
   local loop_dir="$workspace/.humanize/rlcr/$LOOP_STAMP"
   local output="$loop_dir/round-${turn}-review-prompt.md"
   TEMPLATE="$template" WORKSPACE="$workspace" PROOT_ROOT="$PROOT_ROOT" PROBLEM="$problem" MODULE="$module" \
@@ -1366,7 +1366,7 @@ main() {
   fi
   [[ -f "$BASE_CODEX_HOME/auth.json" ]] || die "Codex auth missing: $BASE_CODEX_HOME/auth.json"
   [[ -f "$BASE_CODEX_HOME/config.toml" ]] || die "Codex config missing: $BASE_CODEX_HOME/config.toml"
-  [[ -f "$HUMANIZE_ROOT/humanize/prompt-template/codex/regular-review.md" ]] || die "new review template missing"
+  [[ -f "$HUMANIZE_ROOT/regular-review.md" ]] || die "review template missing"
   [[ -x "$COMPARATOR_BIN" ]] || die "Comparator binary missing or not executable: $COMPARATOR_BIN"
   [[ -x "$LEAN4EXPORT_BIN" ]] || die "lean4export binary missing or not executable: $LEAN4EXPORT_BIN"
   [[ -x "$LANDRUN_BIN" ]] || die "Landrun binary missing or not executable: $LANDRUN_BIN"
