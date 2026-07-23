@@ -6,7 +6,7 @@ HUMANIZE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 WORKSPACE_ROOT="${WORKSPACE_ROOT:-$HUMANIZE_ROOT}"
 MATH_FLOW_BENCH_ROOT="${MATH_FLOW_BENCH_ROOT:-$WORKSPACE_ROOT/base}"
 IMO2026_SOURCE_ROOT="${IMO2026_SOURCE_ROOT:-$WORKSPACE_ROOT/base/IMO2026}"
-FAILURE_FILE="${FAILURE_FILE:-$WORKSPACE_ROOT/inputs/problems.md}"
+FAILURE_FILE="${FAILURE_FILE:-}"
 PROMPT_FILE="${PROMPT_FILE:-}"
 QUESTION_FILE="${QUESTION_FILE:-}"
 BASE_KIMI_HOME="${BASE_KIMI_HOME:-/root/.kimi-code}"
@@ -65,7 +65,7 @@ Options:
   --worker-timeout-seconds N   Timeout per worker Kimi Code call. Default: 7200.
   --review-timeout-seconds N   Timeout per reviewer Codex call. Default: 7200.
   --run-id ID                  Override timestamped run ID.
-  --failure-file PATH          Markdown problem list.
+  --failure-file PATH          Optional Markdown problem list. Default: Q1-Q6.
   --prompt PATH                User plan appended to the mandatory proof instructions.
   --question-file PATH         Exact Lean statement for one selected problem.
   --source-root PATH           Root containing Q1/problem.lean through Q6/problem.lean.
@@ -194,8 +194,10 @@ safe_name() {
 parse_failed_problems() {
   if [[ "${#PROBLEMS[@]}" -gt 0 ]]; then
     printf '%s\n' "${PROBLEMS[@]}"
-  else
+  elif [[ -n "$FAILURE_FILE" ]]; then
     rg -o 'imo2026_q[1-6]' "$FAILURE_FILE" | sort -u
+  else
+    printf 'imo2026_q%s\n' 1 2 3 4 5 6
   fi | awk -v max="$MAX_PROBLEMS" 'NF && !seen[$0]++ { print; n++; if (max > 0 && n >= max) exit }'
 }
 
@@ -1746,7 +1748,8 @@ resume_review_job() {
 }
 
 write_run_manifest() {
-  local count="$1" source_sha source_label prompt_sha prompt_label kimi_version codex_version
+  local count="$1" source_sha source_label prompt_sha prompt_label failure_label kimi_version codex_version
+  failure_label="${FAILURE_FILE:-none (default Q1-Q6 selection)}"
   if [[ -n "$QUESTION_FILE" ]]; then
     source_label="$QUESTION_FILE"
     source_sha="$(sha256sum "$QUESTION_FILE" | awk '{print $1}')"
@@ -1767,7 +1770,7 @@ write_run_manifest() {
 # IMO 2026 Humanize + Comparator + AXLE Run
 
 - Run ID: \`$RUN_ID\`
-- Failure source: \`$FAILURE_FILE\`
+- Failure source: \`$failure_label\`
 - Problems: $count
 - Problem source: \`$source_label\`
 - Combined problem-source SHA-256: \`$source_sha\`
@@ -1813,7 +1816,7 @@ main() {
       die "--question-file requires exactly one --problem"
     QUESTION_FILE="$(readlink -f "$QUESTION_FILE")"
   fi
-  if [[ "${#PROBLEMS[@]}" -eq 0 ]]; then
+  if [[ "${#PROBLEMS[@]}" -eq 0 && -n "$FAILURE_FILE" ]]; then
     [[ -f "$FAILURE_FILE" ]] || die "failure file not found: $FAILURE_FILE"
   fi
   if [[ -z "$QUESTION_FILE" ]]; then

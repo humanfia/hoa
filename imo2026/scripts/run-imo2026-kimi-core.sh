@@ -6,7 +6,7 @@ HUMANIZE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 WORKSPACE_ROOT="${WORKSPACE_ROOT:-$HUMANIZE_ROOT}"
 MATH_FLOW_BENCH_ROOT="${MATH_FLOW_BENCH_ROOT:-$WORKSPACE_ROOT/base}"
 IMO2026_SOURCE_ROOT="${IMO2026_SOURCE_ROOT:-$WORKSPACE_ROOT/base/IMO2026}"
-FAILURE_FILE="${FAILURE_FILE:-$WORKSPACE_ROOT/inputs/problems.md}"
+FAILURE_FILE="${FAILURE_FILE:-}"
 BASE_CODEX_HOME="${BASE_CODEX_HOME:-/root/storage/zhengyang-workspace/.codex}"
 OUT_ROOT="${OUT_ROOT:-$WORKSPACE_ROOT/runs}"
 COMPARATOR_TOOLS_ROOT="${COMPARATOR_TOOLS_ROOT:-$WORKSPACE_ROOT/tools}"
@@ -69,7 +69,7 @@ Options:
   --worker-timeout-seconds N   Timeout per worker Codex call. Default: 7200.
   --review-timeout-seconds N   Timeout per reviewer Codex call. Default: 7200.
   --run-id ID                  Override timestamped run ID.
-  --failure-file PATH          Markdown problem list.
+  --failure-file PATH          Optional Markdown problem list. Default: Q1-Q6.
   --source-root PATH           Root containing Q1/problem.lean through Q6/problem.lean.
   --base-codex-home PATH       Codex auth/config source. Default: workspace .codex.
   --out-root PATH              Output parent directory.
@@ -172,8 +172,10 @@ safe_name() {
 parse_failed_problems() {
   if [[ "${#PROBLEMS[@]}" -gt 0 ]]; then
     printf '%s\n' "${PROBLEMS[@]}"
-  else
+  elif [[ -n "$FAILURE_FILE" ]]; then
     rg -o 'imo2026_q[1-6]' "$FAILURE_FILE" | sort -u
+  else
+    printf 'imo2026_q%s\n' 1 2 3 4 5 6
   fi | awk -v max="$MAX_PROBLEMS" 'NF && !seen[$0]++ { print; n++; if (max > 0 && n >= max) exit }'
 }
 
@@ -1335,13 +1337,14 @@ resume_review_job() {
 }
 
 write_run_manifest() {
-  local count="$1" source_sha
+  local count="$1" source_sha failure_label
+  failure_label="${FAILURE_FILE:-none (default Q1-Q6 selection)}"
   source_sha="$(sha256sum "$IMO2026_SOURCE_ROOT"/Q[1-6]/problem.lean | sha256sum | awk '{print $1}')"
   cat > "$RUN_ROOT/RUN.md" <<EOF
 # IMO 2026 Humanize + Comparator + AXLE Run
 
 - Run ID: \`$RUN_ID\`
-- Failure source: \`$FAILURE_FILE\`
+- Failure source: \`$failure_label\`
 - Problems: $count
 - Problem source: \`$IMO2026_SOURCE_ROOT/Q1..Q6/problem.lean\`
 - Combined problem-source SHA-256: \`$source_sha\`
@@ -1370,7 +1373,9 @@ main() {
   for command in awk bash cc chown chmod date find flock getent git jq lake proot ps python3 rg setpriv sha256sum timeout; do
     need_cmd "$command"
   done
-  [[ -f "$FAILURE_FILE" ]] || die "failure file not found: $FAILURE_FILE"
+  if [[ "${#PROBLEMS[@]}" -eq 0 && -n "$FAILURE_FILE" ]]; then
+    [[ -f "$FAILURE_FILE" ]] || die "failure file not found: $FAILURE_FILE"
+  fi
   [[ -d "$IMO2026_SOURCE_ROOT" ]] || die "IMO2026 source root not found: $IMO2026_SOURCE_ROOT"
   [[ -f "$BASE_CODEX_HOME/config.toml" ]] || die "Codex config missing: $BASE_CODEX_HOME/config.toml"
   if [[ -n "$CODEX_ENV_KEY" ]]; then
