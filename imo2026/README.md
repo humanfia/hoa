@@ -27,19 +27,6 @@ each problem is bolded.
 | Q6 | ✅ **66.9 min** | ✅ 212.4 min | ✅ 139 min |
 | Total | **497.7 min (3.0x)** | 1,034.9 min | 1,496 min |
 
-### Token usage
-
-Output tokens:
-
-| Problem | Humanfia (GPT-5.6) | Humanfia (Kimi-k3) |
-| --- | ---: | ---: |
-| Q1 | 48,255 | 129,544 |
-| Q2 | 121,984 | 389,433 |
-| Q3 | 237,334 | 550,890 |
-| Q4 | 79,701 | 120,261 |
-| Q5 | 57,463 | 155,114 |
-| Q6 | 92,560 | 410,270 |
-| Total | 637k | 1,755k |
 
 
 ## Verification
