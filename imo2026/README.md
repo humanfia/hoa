@@ -217,17 +217,9 @@ already have them, first build the bundled `lean4export` binary:
 (cd tools/lean4export && lake build)
 ```
 
-Then test the three tools with the smoke project:
-
-```bash
-COMPARATOR_BIN=/path/to/comparator \
-LEAN4EXPORT_BIN="$PWD/tools/lean4export/.lake/build/bin/lean4export" \
-LANDRUN_BIN=/path/to/landrun \
-bash comparator-smoke/tools/check-with-comparator.sh
-```
-
-The smoke test uses `comparator-smoke/comparator.json` and should accept the
-proof in `comparator-smoke/Solution.lean` against the challenge declaration.
+The experiment runners create a problem-specific Comparator challenge and
+configuration inside each isolated workspace, then invoke the wrapper at
+`scripts/check-with-comparator.sh`.
 
 ## Reproduce the model experiments
 
@@ -309,7 +301,7 @@ The checked-in scripts do not have executable file modes, while the harness
 requires its Comparator wrapper to be executable. Prepare them once with:
 
 ```bash
-chmod +x scripts/*.sh scripts/*.py comparator-smoke/tools/*.sh
+chmod +x scripts/*.sh scripts/*.py
 ```
 
 ## GPT-5.6 run
@@ -469,5 +461,4 @@ mounted into either model namespace.
 | `scripts/run-imo2026.sh` | GPT-5.6 worker/reviewer experiment harness. |
 | `scripts/run-imo2026-kimi.sh` | Kimi compatibility wrapper and experiment entry point. |
 | `scripts/run-imo2026-kimi-k3.sh` | Compact one-question Kimi-worker/Codex-reviewer entry point. |
-| `comparator-smoke/` | Minimal project for testing a Comparator installation. |
 | `tools/lean4export/` | Bundled Lean declaration exporter source. |
