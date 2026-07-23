@@ -11,20 +11,35 @@ The project is pinned to **Lean 4.31.0** and **Mathlib v4.31.0**.
 
 ## Results
 
-Both the Humanfia(GPT-5.6) and Humanfia(Kimi-K3) workers solved all six problems. Their elapsed wall-clock
-times are compared with the times reported by
-[AxiomProver](https://github.com/AxiomMath/IMO2026) below. The fastest reported
-time for each problem is bolded.
+Both the Humanfia(GPT-5.6) and Humanfia(Kimi-K3) workers solved all six problems. The Kimi-k3 run is a
+hybrid: a Kimi worker paired with a Codex reviewer, and its numbers below are the combined worker +
+reviewer cost. Times are **API time consumption** (time actually spent in model API calls), compared with
+the times reported by [AxiomProver](https://github.com/AxiomMath/IMO2026). The fastest reported time for
+each problem is bolded.
 
 | Problem | Humanfia (GPT-5.6) | Humanfia (Kimi-k3) | AxiomProver |
 | --- | ---: | ---: | ---: |
-| Q1 | ✅ 33.6 min | ✅ 77.7 min | ✅ **24 min** |
-| Q2 | ✅ **96.2 min** | ✅ 220.2 min | ✅ 360 min |
-| Q3 | ✅ **179.4 min** | ✅ 338.4 min | ✅ 869 min |
-| Q4 | ✅ 53.3 min | ✅ 65.6 min | ✅ **39 min** |
-| Q5 | ✅ **42.4 min** | ✅ 86.7 min | ✅ 65 min |
-| Q6 | ✅ **62.7 min** | ✅ 209.0 min | ✅ 139 min |
-| Total | **467.6 min (3.2x)** | 997.6 min | 1,496 min |
+| Q1 | ✅ 38.1 min | ✅ 87.1 min | ✅ **24 min** |
+| Q2 | ✅ **100.4 min** | ✅ 224.3 min | ✅ 360 min |
+| Q3 | ✅ **187.1 min** | ✅ 343.7 min | ✅ 869 min |
+| Q4 | ✅ 58.7 min | ✅ 75.6 min | ✅ **39 min** |
+| Q5 | ✅ **46.5 min** | ✅ 91.9 min | ✅ 65 min |
+| Q6 | ✅ **66.9 min** | ✅ 212.4 min | ✅ 139 min |
+| Total | **497.7 min (3.0x)** | 1,034.9 min | 1,496 min |
+
+### Token usage
+
+Output tokens:
+
+| Problem | Humanfia (GPT-5.6) | Humanfia (Kimi-k3) |
+| --- | ---: | ---: |
+| Q1 | 48,255 | 129,544 |
+| Q2 | 121,984 | 389,433 |
+| Q3 | 237,334 | 550,890 |
+| Q4 | 79,701 | 120,261 |
+| Q5 | 57,463 | 155,114 |
+| Q6 | 92,560 | 410,270 |
+| Total | 637k | 1,755k |
 
 
 ## Verification
