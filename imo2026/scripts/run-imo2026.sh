@@ -367,6 +367,32 @@ extract_problem_statement() {
   cp "$(problem_source_file "$problem")" "$output"
 }
 
+render_plan_template() {
+  local input="$1"
+  local output="$2"
+  local problem="$3"
+  local module="$4"
+  PLAN_PROBLEM="$problem" PLAN_MODULE="$module" \
+    PLAN_CODEX_MODEL="$CODEX_MODEL" PLAN_MAX_TURNS="$MAX_TURNS" \
+    python3 - "$input" "$output" <<'PY'
+import os
+import sys
+from pathlib import Path
+
+source, destination = map(Path, sys.argv[1:])
+text = source.read_text(encoding="utf-8")
+values = {
+    "PROBLEM": os.environ["PLAN_PROBLEM"],
+    "MODULE": os.environ["PLAN_MODULE"],
+    "CODEX_MODEL": os.environ["PLAN_CODEX_MODEL"],
+    "MAX_TURNS": os.environ["PLAN_MAX_TURNS"],
+}
+for key, value in values.items():
+    text = text.replace("{{" + key + "}}", value)
+destination.write_text(text, encoding="utf-8")
+PY
+}
+
 write_plan_files() {
   local workspace="$1"
   local problem="$2"
@@ -399,12 +425,16 @@ Solve every theorem hole in the exact IMO 2026 statement snapshot in
 - Stop after at most $MAX_TURNS worker/reviewer turns.
 EOF
   if [[ -n "$PROMPT_FILE" ]]; then
-    cp "$PROMPT_FILE" "$workspace/docs/humanize/user-plan.md"
-    {
-      printf '\n## User-Supplied Plan\n\n'
-      cat "$workspace/docs/humanize/user-plan.md"
-      printf '\n'
-    } >> "$workspace/docs/humanize/active-imo2026-plan.md"
+    render_plan_template "$PROMPT_FILE" \
+      "$workspace/docs/humanize/user-plan.md" "$problem" "$module"
+    if ! cmp -s "$workspace/docs/humanize/user-plan.md" \
+        "$workspace/docs/humanize/active-imo2026-plan.md"; then
+      {
+        printf '\n## User-Supplied Plan\n\n'
+        cat "$workspace/docs/humanize/user-plan.md"
+        printf '\n'
+      } >> "$workspace/docs/humanize/active-imo2026-plan.md"
+    fi
   fi
   cat > "$loop_dir/goal-tracker.md" <<EOF
 # Goal Tracker
@@ -1312,7 +1342,7 @@ EOF
 
 main() {
   local command selected problem index missing active limit total probe_n user source_file
-  for command in awk bash cc chown chmod date find flock getent git jq lake proot python3 readlink rg setpriv sha256sum timeout; do
+  for command in awk bash cc chown chmod cmp date find flock getent git jq lake proot python3 readlink rg setpriv sha256sum timeout; do
     need_cmd "$command"
   done
   if [[ -n "$PROMPT_FILE" ]]; then

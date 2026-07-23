@@ -242,7 +242,7 @@ worker/reviewer pipeline:
 
 ```bash
 bash scripts/run-imo2026-gpt-5-6.sh \
-  --prompt xxx_plan.md \
+  --prompt gpt_plan.md \
   --question problem/2026-q1.lean
 ```
 
@@ -256,7 +256,7 @@ Validate the interface and prerequisites without creating a run:
 
 ```bash
 bash scripts/run-imo2026-gpt-5-6.sh \
-  --prompt xxx_plan.md \
+  --prompt gpt_plan.md \
   --question base/IMO2026/Q1/problem.lean \
   --dry-run
 ```
@@ -264,6 +264,21 @@ bash scripts/run-imo2026-gpt-5-6.sh \
 Additional options such as `--run-id`, `--out-root`, `--max-turns`,
 `--prepare-only`, and the recovery modes are forwarded to the internal
 `scripts/run-imo2026.sh` engine.
+
+### Compact Kimi-K3 entrypoint
+
+Run one question with a user-supplied plan using Kimi K3 as the worker and
+Codex as the reviewer:
+
+```bash
+bash scripts/run-imo2026-kimi-k3.sh \
+  --prompt kimi_plan.md \
+  --question problem/2026-q1.lean
+```
+
+The compact entrypoint has the same question-path behavior as the GPT-5.6
+entrypoint. Additional runner options are forwarded to the historical
+Kimi-worker/Codex-reviewer engine in `scripts/run-imo2026-kimi.sh`.
 
 The harness expects:
 
@@ -444,6 +459,8 @@ mounted into either model namespace.
 | Path | Description |
 | --- | --- |
 | `base/IMO2026/Q1` … `Q6` | Public Lean problem skeletons. Their proof bodies contain `sorry` intentionally. |
+| `gpt_plan.md` | Reusable plan for the GPT-5.6 worker/reviewer runner. |
+| `kimi_plan.md` | Reusable plan for the Kimi-K3 worker/Codex reviewer runner. |
 | `gpt-5.6-solution/` | Complete solution files produced by GPT-5.6. |
 | `kimi-solution/` | Complete solution files produced by Kimi. |
 | `base/formalization.yaml` | Formalization metadata, theorem inventory, and fidelity notes. |
@@ -451,5 +468,6 @@ mounted into either model namespace.
 | `scripts/verify-imo2026-axle.py` | Remote proof verification through the AXLE API. |
 | `scripts/run-imo2026.sh` | GPT-5.6 worker/reviewer experiment harness. |
 | `scripts/run-imo2026-kimi.sh` | Kimi compatibility wrapper and experiment entry point. |
+| `scripts/run-imo2026-kimi-k3.sh` | Compact one-question Kimi-worker/Codex-reviewer entry point. |
 | `comparator-smoke/` | Minimal project for testing a Comparator installation. |
 | `tools/lean4export/` | Bundled Lean declaration exporter source. |
