@@ -235,6 +235,36 @@ The experiment harness is separate from ordinary proof checking. It was built
 for a pre-provisioned Linux environment and is **not** a portable one-command
 runner for macOS or a fresh Linux installation.
 
+### Compact GPT-5.6 entrypoint
+
+Run one question with a user-supplied plan through the GPT-5.6
+worker/reviewer pipeline:
+
+```bash
+bash scripts/run-imo2026-gpt-5-6.sh \
+  --prompt xxx_plan.md \
+  --question problem/2026-q1.lean
+```
+
+The question name selects Q1 through Q6. If the named path does not exist, the
+entrypoint uses the corresponding canonical statement under `base/IMO2026`.
+An existing question file is used directly and snapshotted into the isolated
+workspace. The supplied plan is appended to the mandatory proof, isolation,
+Comparator, and AXLE instructions.
+
+Validate the interface and prerequisites without creating a run:
+
+```bash
+bash scripts/run-imo2026-gpt-5-6.sh \
+  --prompt xxx_plan.md \
+  --question base/IMO2026/Q1/problem.lean \
+  --dry-run
+```
+
+Additional options such as `--run-id`, `--out-root`, `--max-turns`,
+`--prepare-only`, and the recovery modes are forwarded to the internal
+`scripts/run-imo2026.sh` engine.
+
 The harness expects:
 
 - Linux utilities including `proot`, `setpriv`, `getent`, `flock`, `jq`, `rg`,

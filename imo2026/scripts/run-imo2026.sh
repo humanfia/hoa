@@ -7,6 +7,8 @@ WORKSPACE_ROOT="${WORKSPACE_ROOT:-$HUMANIZE_ROOT}"
 MATH_FLOW_BENCH_ROOT="${MATH_FLOW_BENCH_ROOT:-$WORKSPACE_ROOT/base}"
 IMO2026_SOURCE_ROOT="${IMO2026_SOURCE_ROOT:-$WORKSPACE_ROOT/base/IMO2026}"
 FAILURE_FILE="${FAILURE_FILE:-$WORKSPACE_ROOT/inputs/problems.md}"
+PROMPT_FILE="${PROMPT_FILE:-}"
+QUESTION_FILE="${QUESTION_FILE:-}"
 BASE_CODEX_HOME="${BASE_CODEX_HOME:-/root/storage/zhengyang-workspace/.codex}"
 OUT_ROOT="${OUT_ROOT:-$WORKSPACE_ROOT/runs}"
 COMPARATOR_TOOLS_ROOT="${COMPARATOR_TOOLS_ROOT:-$WORKSPACE_ROOT/tools}"
@@ -59,6 +61,8 @@ Options:
   --review-timeout-seconds N   Timeout per reviewer Codex call. Default: 7200.
   --run-id ID                  Override timestamped run ID.
   --failure-file PATH          Markdown problem list.
+  --prompt PATH                User plan appended to the mandatory proof instructions.
+  --question-file PATH         Exact Lean statement for one selected problem.
   --source-root PATH           Root containing Q1/problem.lean through Q6/problem.lean.
   --base-codex-home PATH       Codex auth/config source. Default: workspace .codex.
   --out-root PATH              Output parent directory.
@@ -102,6 +106,8 @@ while [[ $# -gt 0 ]]; do
     --review-timeout-seconds) REVIEW_TIMEOUT_SECONDS="$2"; shift 2 ;;
     --run-id) RUN_ID="$2"; shift 2 ;;
     --failure-file) FAILURE_FILE="$2"; shift 2 ;;
+    --prompt) PROMPT_FILE="$2"; shift 2 ;;
+    --question-file) QUESTION_FILE="$2"; shift 2 ;;
     --source-root) IMO2026_SOURCE_ROOT="$2"; shift 2 ;;
     --base-codex-home) BASE_CODEX_HOME="$2"; shift 2 ;;
     --out-root) OUT_ROOT="$2"; shift 2 ;;
@@ -149,6 +155,17 @@ need_cmd() {
 
 module_name() {
   printf 'IMO2026%s\n' "$(printf '%s' "${1#imo2026_}" | tr '[:lower:]' '[:upper:]')"
+}
+
+problem_source_file() {
+  local problem="$1"
+  local question
+  if [[ -n "$QUESTION_FILE" ]]; then
+    printf '%s\n' "$QUESTION_FILE"
+    return
+  fi
+  question="$(printf '%s' "${problem#imo2026_}" | tr '[:lower:]' '[:upper:]')"
+  printf '%s/%s/problem.lean\n' "$IMO2026_SOURCE_ROOT" "$question"
 }
 
 safe_name() {
@@ -347,9 +364,7 @@ clone_runtime_template() {
 extract_problem_statement() {
   local problem="$1"
   local output="$2"
-  local question
-  question="$(printf '%s' "${problem#imo2026_}" | tr '[:lower:]' '[:upper:]')"
-  cp "$IMO2026_SOURCE_ROOT/$question/problem.lean" "$output"
+  cp "$(problem_source_file "$problem")" "$output"
 }
 
 write_plan_files() {
@@ -383,6 +398,14 @@ Solve every theorem hole in the exact IMO 2026 statement snapshot in
 - Both worker and reviewer use \`$CODEX_MODEL\` with \`max\` reasoning effort.
 - Stop after at most $MAX_TURNS worker/reviewer turns.
 EOF
+  if [[ -n "$PROMPT_FILE" ]]; then
+    cp "$PROMPT_FILE" "$workspace/docs/humanize/user-plan.md"
+    {
+      printf '\n## User-Supplied Plan\n\n'
+      cat "$workspace/docs/humanize/user-plan.md"
+      printf '\n'
+    } >> "$workspace/docs/humanize/active-imo2026-plan.md"
+  fi
   cat > "$loop_dir/goal-tracker.md" <<EOF
 # Goal Tracker
 
@@ -572,6 +595,13 @@ Comparator gate (mandatory before handing the proof to the reviewer):
 Do not run a full \`lake build\`; compile only the target file. Leave the best
 useful candidate in place even if this round is incomplete.
 EOF
+  if [[ -s "$workspace/docs/humanize/user-plan.md" ]]; then
+    {
+      printf '\n## User-Supplied Plan\n\n'
+      cat "$workspace/docs/humanize/user-plan.md"
+      printf '\n'
+    } >> "$prompt"
+  fi
   if [[ -n "$feedback" && -s "$feedback" ]]; then
     cat >> "$prompt" <<EOF
 
@@ -1237,16 +1267,31 @@ resume_review_job() {
 }
 
 write_run_manifest() {
-  local count="$1" source_sha
-  source_sha="$(sha256sum "$IMO2026_SOURCE_ROOT"/Q[1-6]/problem.lean | sha256sum | awk '{print $1}')"
+  local count="$1" source_sha source_label prompt_sha prompt_label
+  if [[ -n "$QUESTION_FILE" ]]; then
+    source_label="$QUESTION_FILE"
+    source_sha="$(sha256sum "$QUESTION_FILE" | awk '{print $1}')"
+  else
+    source_label="$IMO2026_SOURCE_ROOT/Q1..Q6/problem.lean"
+    source_sha="$(sha256sum "$IMO2026_SOURCE_ROOT"/Q[1-6]/problem.lean | sha256sum | awk '{print $1}')"
+  fi
+  if [[ -n "$PROMPT_FILE" ]]; then
+    prompt_label="$PROMPT_FILE"
+    prompt_sha="$(sha256sum "$PROMPT_FILE" | awk '{print $1}')"
+  else
+    prompt_label="built-in mandatory proof plan"
+    prompt_sha="n/a"
+  fi
   cat > "$RUN_ROOT/RUN.md" <<EOF
 # IMO 2026 Humanize + Comparator + AXLE Run
 
 - Run ID: \`$RUN_ID\`
 - Failure source: \`$FAILURE_FILE\`
 - Problems: $count
-- Problem source: \`$IMO2026_SOURCE_ROOT/Q1..Q6/problem.lean\`
+- Problem source: \`$source_label\`
 - Combined problem-source SHA-256: \`$source_sha\`
+- User prompt: \`$prompt_label\`
+- User-prompt SHA-256: \`$prompt_sha\`
 - Upstream repository commit: \`c5a6a089d06d3619afe7ff45c5ccab9e2a30d5d2\`
 - Worker/reviewer model: \`$CODEX_MODEL\`
 - Reasoning effort: \`max\`
@@ -1266,32 +1311,39 @@ EOF
 }
 
 main() {
-  local command selected problem index missing active limit total probe_n user question
-  for command in awk bash cc chown chmod date find flock getent git jq lake proot python3 rg setpriv sha256sum timeout; do
+  local command selected problem index missing active limit total probe_n user source_file
+  for command in awk bash cc chown chmod date find flock getent git jq lake proot python3 readlink rg setpriv sha256sum timeout; do
     need_cmd "$command"
   done
+  if [[ -n "$PROMPT_FILE" ]]; then
+    [[ -s "$PROMPT_FILE" ]] || die "prompt file missing or empty: $PROMPT_FILE"
+    PROMPT_FILE="$(readlink -f "$PROMPT_FILE")"
+  fi
+  if [[ -n "$QUESTION_FILE" ]]; then
+    [[ -s "$QUESTION_FILE" ]] || die "question file missing or empty: $QUESTION_FILE"
+    [[ "${#PROBLEMS[@]}" -eq 1 ]] || \
+      die "--question-file requires exactly one --problem"
+    QUESTION_FILE="$(readlink -f "$QUESTION_FILE")"
+  fi
   if [[ "${#PROBLEMS[@]}" -eq 0 ]]; then
     [[ -f "$FAILURE_FILE" ]] || die "failure file not found: $FAILURE_FILE"
   fi
-  [[ -d "$IMO2026_SOURCE_ROOT" ]] || die "IMO2026 source root not found: $IMO2026_SOURCE_ROOT"
+  if [[ -z "$QUESTION_FILE" ]]; then
+    [[ -d "$IMO2026_SOURCE_ROOT" ]] || die "IMO2026 source root not found: $IMO2026_SOURCE_ROOT"
+  fi
   [[ -f "$BASE_CODEX_HOME/auth.json" ]] || die "Codex auth missing: $BASE_CODEX_HOME/auth.json"
   [[ -f "$BASE_CODEX_HOME/config.toml" ]] || die "Codex config missing: $BASE_CODEX_HOME/config.toml"
-  [[ -d "$MATH_FLOW_BENCH_ROOT/.lake/packages" ]] || die "Mathlib packages missing"
   [[ -f "$HUMANIZE_ROOT/humanize/prompt-template/codex/regular-review.md" ]] || die "new review template missing"
   [[ -x "$COMPARATOR_BIN" ]] || die "Comparator binary missing or not executable: $COMPARATOR_BIN"
   [[ -x "$LEAN4EXPORT_BIN" ]] || die "lean4export binary missing or not executable: $LEAN4EXPORT_BIN"
   [[ -x "$LANDRUN_BIN" ]] || die "Landrun binary missing or not executable: $LANDRUN_BIN"
-  [[ -x "$HUMANIZE_ROOT/scripts/check-with-comparator.sh" ]] || \
-    die "Comparator wrapper missing or not executable"
+  [[ -f "$HUMANIZE_ROOT/scripts/check-with-comparator.sh" ]] || \
+    die "Comparator wrapper missing"
   [[ -f "$HUMANIZE_ROOT/scripts/validate-imo2026-output.py" ]] || die "statement validator missing"
   [[ -f "$HUMANIZE_ROOT/scripts/verify-imo2026-axle.py" ]] || die "AXLE verifier missing"
   [[ -x "$CODEX_BIN" ]] || die "Codex binary missing or not executable: $CODEX_BIN"
   [[ -d "$LOCAL_RUNTIME_TEMPLATE" ]] || die "local runtime template missing: $LOCAL_RUNTIME_TEMPLATE"
   [[ -d /mathlib-packages ]] || die "/mathlib-packages is not linked to the pinned package cache"
-  for question in q1 q2 q3 q4 q5 q6; do
-    user="${HUMANIZE_USER_PREFIX}-${question}"
-    getent passwd "$user" >/dev/null || die "missing isolated worker account: $user"
-  done
   [[ "$CODEX_MODEL" == "gpt-5.6-sol" ]] || die "this run requires CODEX_MODEL=gpt-5.6-sol"
   mapfile -t selected < <(parse_failed_problems)
   [[ "${#selected[@]}" -gt 0 ]] || die "no failed problems parsed"
@@ -1300,10 +1352,15 @@ main() {
     if ! [[ "$problem" =~ ^imo2026_q[1-6]$ ]]; then
       printf 'invalid problem id: %s\n' "$problem" >&2
       missing=$((missing + 1))
-    elif [[ ! -s "$IMO2026_SOURCE_ROOT/$(printf '%s' "${problem#imo2026_}" | tr '[:lower:]' '[:upper:]')/problem.lean" ]]; then
+      continue
+    fi
+    source_file="$(problem_source_file "$problem")"
+    if [[ ! -s "$source_file" ]]; then
       printf 'missing nonempty upstream problem source: %s\n' "$problem" >&2
       missing=$((missing + 1))
     fi
+    user="${HUMANIZE_USER_PREFIX}-${problem#imo2026_}"
+    getent passwd "$user" >/dev/null || die "missing isolated worker account: $user"
   done
   [[ "$missing" -eq 0 ]] || die "$missing selected IMO2026 problems are unavailable"
 
