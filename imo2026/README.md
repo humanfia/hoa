@@ -5,8 +5,7 @@ With the power of [Humanize](https://github.com/PolyArch/humanize), we, the **Hu
 We build with open source, and build for open source. We release everything including: 
 * the [formal Lean 4 statements from AxiomMath](https://github.com/AxiomMath/IMO2026); 
 * the final lean solutions [Kimi-K3](./kimi-solution)) and ([GPT-5.6](./gpt-5.6-solution); 
-* the exact GPT and Kimi plans, shared Codex review template, and
-  [scripts](./scripts) used to reproduce the solving process.
+* the [scripts](./scripts) used to reproduce the solving process.
 
 The project is pinned to **Lean 4.31.0** and **Mathlib v4.31.0**.
 
