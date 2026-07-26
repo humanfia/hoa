@@ -4,7 +4,7 @@ With the power of [Humanize](https://github.com/PolyArch/humanize), we, the **Hu
 
 We build with open source, and build for open source. We release everything including: 
 * the [formal Lean 4 statements from AxiomMath](https://github.com/AxiomMath/IMO2026); 
-* the final lean solutions ([gpt](./gpt-5.6-solution) and [kimi](./kimi-solution)); 
+* the final lean solutions [Kimi-K3](./kimi-solution)) and ([GPT-5.6](./gpt-5.6-solution); 
 * the exact GPT and Kimi plans, shared Codex review template, and
   [scripts](./scripts) used to reproduce the solving process.
 
@@ -28,6 +28,13 @@ each problem is bolded.
 | Q6 | ✅ **66.9 min** | ✅ 212.4 min | ✅ 139 min |
 | Total | **497.7 min (3.0x)** | 1,034.9 min | 1,496 min |
 
+### Costs
+
+Kimi-K3：**$57.70 (54.7% saving!)**
+* [5.7269, 17.7578, 15.5529, 3.6879, 5.1769, 9.7953]
+
+GPT-5.6: $127.41
+* [8.1133, 34.0113, 60.4410, 8.1766, 5.7806, 10.8831]
 
 
 ## Verification
