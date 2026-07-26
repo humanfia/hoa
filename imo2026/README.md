@@ -17,23 +17,23 @@ reviewer cost. Times are **API time consumption** (time actually spent in model 
 the times reported by [AxiomProver](https://github.com/AxiomMath/IMO2026). The fastest reported time for
 each problem is bolded.
 
+Cost of Kimi-K3：**$57.70 (54.7% saving!)**
+* [5.7269, 17.7578, 15.5529, 3.6879, 5.1769, 9.7953]
+
+Cost of GPT-5.6: $127.41
+* [8.1133, 34.0113, 60.4410, 8.1766, 5.7806, 10.8831]
+
 | Problem | Humanfia (GPT-5.6) | Humanfia (Kimi-k3) | AxiomProver |
 | --- | ---: | ---: | ---: |
+| Total | **497.7 min (3.0x)** | 1,034.9 min | 1,496 min |
 | Q1 | ✅ 38.1 min | ✅ 87.1 min | ✅ **24 min** |
 | Q2 | ✅ **100.4 min** | ✅ 224.3 min | ✅ 360 min |
 | Q3 | ✅ **187.1 min** | ✅ 343.7 min | ✅ 869 min |
 | Q4 | ✅ 58.7 min | ✅ 75.6 min | ✅ **39 min** |
 | Q5 | ✅ **46.5 min** | ✅ 91.9 min | ✅ 65 min |
 | Q6 | ✅ **66.9 min** | ✅ 212.4 min | ✅ 139 min |
-| Total | **497.7 min (3.0x)** | 1,034.9 min | 1,496 min |
 
-### Costs
 
-Kimi-K3：**$57.70 (54.7% saving!)**
-* [5.7269, 17.7578, 15.5529, 3.6879, 5.1769, 9.7953]
-
-GPT-5.6: $127.41
-* [8.1133, 34.0113, 60.4410, 8.1766, 5.7806, 10.8831]
 
 
 ## Verification
