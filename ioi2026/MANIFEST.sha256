@@ -1,5 +1,5 @@
 247681cefffa8448d973f21147c92b38b63f492a98a50aca3b3c490bc97499e1  ./.gitignore
-d29c5814fb0c77c93d0094654ba9d81df30fface2afff7b2c1f99b510b5e721f  ./README.md
+f1e4f91ca0096778dffa356b908838c470f99a431993d796168c02acd91165ed  ./README.md
 f1ff12d72dfd89d701dc9116e42add26d081ce2b86f8b18a685621ea79b12ccb  ./interfaces/classroom.h
 b280e058e48fa7feebb11b90edea813c675dedbd9831d400a9d1ea4a0117c344  ./orchestration/README.md
 1f6241d348d0b12bf1bee49bbede12587b916a1a5e44631ada404c80ad205def  ./orchestration/collect-results.sh
