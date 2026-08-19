@@ -302,6 +302,14 @@ def hide_readme_license_in_reference(root: Path) -> None:
     )
 
 
+def convert_readme_lf_to_crlf(root: Path) -> None:
+    path = root / "README.md"
+    raw = path.read_bytes()
+    if b"\n" not in raw or b"\r" in raw:
+        raise AssertionError("canonical README must contain LF and no CR bytes")
+    path.write_bytes(raw.replace(b"\n", b"\r\n"))
+
+
 CASES = (
     ("duplicate worker", duplicate_worker, "worker aliases not unique"),
     ("duplicate output", duplicate_output, "output paths not unique"),
@@ -390,6 +398,11 @@ CASES = (
     (
         "hidden README license reference",
         hide_readme_license_in_reference,
+        "README.md: document is not canonical",
+    ),
+    (
+        "CRLF README byte identity",
+        convert_readme_lf_to_crlf,
         "README.md: document is not canonical",
     ),
 )

@@ -466,9 +466,10 @@ def validate_readme(root: Path, errors: list[str]) -> None:
     if not path.is_file():
         errors.append("missing: README.md")
         return
-    text = path.read_text(encoding="utf-8")
-    if hashlib.sha256(text.encode("utf-8")).hexdigest() != CANONICAL_README_SHA256:
+    raw = path.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != CANONICAL_README_SHA256:
         errors.append("README.md: document is not canonical")
+    text = raw.decode("utf-8")
     if "<!--" in text or "-->" in text:
         errors.append("README.md: HTML comments are not allowed")
     if readme_has_html_like_opener(text):
