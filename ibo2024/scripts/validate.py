@@ -232,15 +232,21 @@ def validate_solutions(
     topics: dict[tuple[str, int], str],
     errors: list[str],
 ) -> None:
+    solutions_root = root / "solutions"
+    expected_paths = set(canonical_paths())
+    actual_paths = (
+        {rel(path, root) for path in solutions_root.rglob("*.md")}
+        if solutions_root.is_dir()
+        else set()
+    )
+    for missing in sorted(expected_paths - actual_paths):
+        errors.append(f"missing: {missing}")
+    for unexpected in sorted(actual_paths - expected_paths):
+        errors.append(f"unexpected solution Markdown file: {unexpected}")
+
     bodies: dict[str, str] = {}
     for part in ("A", "B"):
         directory = root / "solutions" / f"part-{part.lower()}"
-        wanted_names = {f"q{task:02}.md" for task in range(1, 51)}
-        actual_names = {path.name for path in directory.glob("*.md")} if directory.is_dir() else set()
-        for missing in sorted(wanted_names - actual_names):
-            errors.append(f"missing: solutions/part-{part.lower()}/{missing}")
-        for extra in sorted(actual_names - wanted_names):
-            errors.append(f"unexpected solution Markdown file: solutions/part-{part.lower()}/{extra}")
         for task in range(1, 51):
             coordinate = (part, task)
             path = directory / f"q{task:02}.md"
@@ -393,9 +399,10 @@ def validate_readme(root: Path, errors: list[str]) -> None:
         ("scripts/validate.py", "scripts/validate.py"),
         ("scripts/test_validate.py", "scripts/test_validate.py"),
     )
+    parsed_links = re.findall(r"\[([^]]+)\]\(([^)]+)\)", text)
     for label, target in required_links:
-        markdown_link = f"[{label}]({target})"
-        if text.count(markdown_link) != 1:
+        targets = [link_target for link_label, link_target in parsed_links if link_label == label]
+        if targets != [target]:
             errors.append(
                 f"README.md: canonical link for {label!r} must occur exactly once"
             )

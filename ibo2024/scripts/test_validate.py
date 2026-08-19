@@ -130,6 +130,12 @@ def add_unexpected_solution_file(root: Path) -> None:
     )
 
 
+def add_nested_solution_copy(root: Path) -> None:
+    destination = root / "solutions" / "part-a" / "archive" / "q01.md"
+    destination.parent.mkdir()
+    shutil.copy2(root / "solutions" / "part-a" / "q01.md", destination)
+
+
 def stale_answer_summary(root: Path) -> None:
     path = root / "answers.md"
     path.write_text(path.read_text(encoding="utf-8") + "\nStale manual edit.\n", encoding="utf-8")
@@ -199,6 +205,15 @@ def redirect_readme_summary(root: Path) -> None:
     )
 
 
+def duplicate_readme_summary_label(root: Path) -> None:
+    path = root / "README.md"
+    path.write_text(
+        path.read_text(encoding="utf-8")
+        + "\n[Official answer summary](theory-a-solutions.md)\n",
+        encoding="utf-8",
+    )
+
+
 CASES = (
     ("duplicate worker", duplicate_worker, "worker aliases not unique"),
     ("duplicate output", duplicate_output, "output paths not unique"),
@@ -211,6 +226,11 @@ CASES = (
     ("no-leading-pipe worker row", add_no_leading_pipe_worker_row, "worker ledger: malformed data row"),
     ("leading-whitespace worker row", add_leading_whitespace_worker_row, "worker ledger: malformed data row"),
     ("unexpected solution Markdown", add_unexpected_solution_file, "unexpected solution Markdown file"),
+    (
+        "nested duplicate solution Markdown",
+        add_nested_solution_copy,
+        "unexpected solution Markdown file: solutions/part-a/archive/q01.md",
+    ),
     ("stale answer summary", stale_answer_summary, "stale generated file: answers.md"),
     ("wrong answer-summary pattern", wrong_answer_summary_pattern, "answers.md: A1 values disagree with official key"),
     ("missing consolidated task", remove_consolidated_task, "anchors are not exactly 1-50 once in order"),
@@ -222,6 +242,11 @@ CASES = (
     (
         "wrong existing README target",
         redirect_readme_summary,
+        "README.md: canonical link for 'Official answer summary' must occur exactly once",
+    ),
+    (
+        "additive duplicate README label",
+        duplicate_readme_summary_label,
         "README.md: canonical link for 'Official answer summary' must occur exactly once",
     ),
 )
