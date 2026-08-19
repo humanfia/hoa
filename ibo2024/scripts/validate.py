@@ -80,6 +80,11 @@ def markdown_section_lines(text: str, heading: str) -> list[str] | None:
     return [line for line in lines[start:end] if line.strip()]
 
 
+def readme_has_raw_html_block_start(text: str) -> bool:
+    """Return whether README text contains any possible CommonMark HTML block start."""
+    return re.search(r"(?m)^ {0,3}<", text) is not None
+
+
 def read_tsv(
     path: Path,
     root: Path,
@@ -271,10 +276,13 @@ def validate_workers(root: Path, errors: list[str]) -> None:
     if len(outputs) != len(set(outputs)):
         duplicates = sorted(value for value, count in Counter(outputs).items() if count > 1)
         errors.append(f"worker ledger: output paths not unique: {', '.join(duplicates)}")
-    for (part, task), _worker, status, output in rows:
+    for (part, task), worker, status, output in rows:
         canonical = f"solutions/part-{part.lower()}/q{task:02}.md"
+        canonical_worker = f"ibo_{part.lower()}{task:02}"
         if (part, task) not in EXPECTED_SET:
             errors.append(f"worker ledger: out-of-domain coordinate {part}{task}")
+        if worker != canonical_worker:
+            errors.append(f"worker ledger: {part}{task} worker alias is not canonical")
         if status != "completed":
             errors.append(f"worker ledger: {part}{task} status is not completed")
         if output != canonical:
@@ -458,7 +466,7 @@ def validate_readme(root: Path, errors: list[str]) -> None:
     text = path.read_text(encoding="utf-8")
     if "<!--" in text or "-->" in text:
         errors.append("README.md: HTML comments are not allowed")
-    if re.search(r"(?m)^[ \t]{0,3}</?[A-Za-z][A-Za-z0-9-]*(?:[ \t][^>]*)?>", text):
+    if readme_has_raw_html_block_start(text):
         errors.append("README.md: raw HTML blocks are not allowed")
 
     collection_items = [

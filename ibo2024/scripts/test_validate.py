@@ -9,7 +9,7 @@ import subprocess
 import sys
 import tempfile
 
-from validate import markdown_links
+from validate import markdown_links, readme_has_raw_html_block_start
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -66,6 +66,10 @@ def duplicate_worker(root: Path) -> None:
 
 def duplicate_output(root: Path) -> None:
     replace_once(root / "WORKERS.md", "`solutions/part-a/q02.md`", "`solutions/part-a/q01.md`")
+
+
+def add_rendering_equivalent_worker(root: Path) -> None:
+    replace_once(root / "WORKERS.md", "`ibo_a02`", "` ibo_a01 `")
 
 
 def add_preheader_worker_table(root: Path) -> None:
@@ -262,9 +266,19 @@ def wrap_readme_summary_in_comment(root: Path) -> None:
     )
 
 
+def prepend_unclosed_readme_script(root: Path) -> None:
+    path = root / "README.md"
+    path.write_text("<script\n" + path.read_text(encoding="utf-8"), encoding="utf-8")
+
+
 CASES = (
     ("duplicate worker", duplicate_worker, "worker aliases not unique"),
     ("duplicate output", duplicate_output, "output paths not unique"),
+    (
+        "rendering-equivalent duplicate worker",
+        add_rendering_equivalent_worker,
+        "worker ledger: A2 worker alias is not canonical",
+    ),
     (
         "pre-header worker assignment table",
         add_preheader_worker_table,
@@ -327,6 +341,11 @@ CASES = (
         wrap_readme_summary_in_comment,
         "README.md: Read the collection navigation list is not canonical",
     ),
+    (
+        "unclosed README script block",
+        prepend_unclosed_readme_script,
+        "README.md: raw HTML blocks are not allowed",
+    ),
 )
 
 
@@ -340,12 +359,32 @@ LINK_EXTRACTOR_CASES = (
 )
 
 
+RAW_HTML_BLOCK_CASES = (
+    ("unclosed script", "<script", True),
+    ("processing instruction", "<?", True),
+    ("declaration", "<!DOCTYPE html>", True),
+    ("CDATA", "<![CDATA[", True),
+    ("block tag", "<div>", True),
+    ("standalone tag", "<custom-element>", True),
+    ("three-space indent", "   <script", True),
+    ("four-space code indent", "    <script", False),
+    ("less-than inside prose", "Text before <script", False),
+)
+
+
 def main() -> int:
     for name, source, expected in LINK_EXTRACTOR_CASES:
         actual = markdown_links(source)
         if actual != expected:
             print(
                 f"LINK EXTRACTOR TEST FAILED: {name}: expected {expected!r}, got {actual!r}"
+            )
+            return 1
+    for name, source, expected in RAW_HTML_BLOCK_CASES:
+        actual = readme_has_raw_html_block_start(source)
+        if actual != expected:
+            print(
+                f"RAW HTML TEST FAILED: {name}: expected {expected!r}, got {actual!r}"
             )
             return 1
     baseline = run_validator(ROOT)
