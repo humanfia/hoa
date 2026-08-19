@@ -9,7 +9,7 @@ import subprocess
 import sys
 import tempfile
 
-from validate import markdown_links, readme_has_raw_html_block_start
+from validate import markdown_links, readme_has_html_like_opener
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -271,6 +271,37 @@ def prepend_unclosed_readme_script(root: Path) -> None:
     path.write_text("<script\n" + path.read_text(encoding="utf-8"), encoding="utf-8")
 
 
+def prepend_blockquoted_readme_script(root: Path) -> None:
+    path = root / "README.md"
+    path.write_text("> <script\n" + path.read_text(encoding="utf-8"), encoding="utf-8")
+
+
+def prepend_prose_readme_script(root: Path) -> None:
+    path = root / "README.md"
+    path.write_text("Prelude <script\n" + path.read_text(encoding="utf-8"), encoding="utf-8")
+
+
+def hide_readme_license_in_reference(root: Path) -> None:
+    path = root / "README.md"
+    visible_license = (
+        "The source examination material and this derived solution set are shared "
+        "under **CC BY-NC-SA 4.0**. Reuse must provide attribution, must be "
+        "noncommercial, and must distribute adaptations under the same share-alike "
+        "license."
+    )
+    replace_once(
+        path,
+        visible_license,
+        "No reuse license or terms are stated in this section.",
+    )
+    path.write_text(
+        path.read_text(encoding="utf-8")
+        + '\n[unused-license-evidence]: nowhere "CC BY-NC-SA 4.0 attribution '
+        'noncommercial share-alike"\n',
+        encoding="utf-8",
+    )
+
+
 CASES = (
     ("duplicate worker", duplicate_worker, "worker aliases not unique"),
     ("duplicate output", duplicate_output, "output paths not unique"),
@@ -346,6 +377,21 @@ CASES = (
         prepend_unclosed_readme_script,
         "README.md: raw HTML blocks are not allowed",
     ),
+    (
+        "blockquoted README script block",
+        prepend_blockquoted_readme_script,
+        "README.md: raw HTML blocks are not allowed",
+    ),
+    (
+        "prose-prefixed README script block",
+        prepend_prose_readme_script,
+        "README.md: raw HTML blocks are not allowed",
+    ),
+    (
+        "hidden README license reference",
+        hide_readme_license_in_reference,
+        "README.md: document is not canonical",
+    ),
 )
 
 
@@ -359,7 +405,7 @@ LINK_EXTRACTOR_CASES = (
 )
 
 
-RAW_HTML_BLOCK_CASES = (
+HTML_LIKE_OPENER_CASES = (
     ("unclosed script", "<script", True),
     ("processing instruction", "<?", True),
     ("declaration", "<!DOCTYPE html>", True),
@@ -367,8 +413,12 @@ RAW_HTML_BLOCK_CASES = (
     ("block tag", "<div>", True),
     ("standalone tag", "<custom-element>", True),
     ("three-space indent", "   <script", True),
-    ("four-space code indent", "    <script", False),
-    ("less-than inside prose", "Text before <script", False),
+    ("four-space code indent", "    <script", True),
+    ("blockquoted script", "> <script", True),
+    ("list-contained script", "- <script", True),
+    ("script inside prose", "Prelude <script", True),
+    ("closing tag", "</script>", True),
+    ("ordinary comparison", "1 < 2", False),
 )
 
 
@@ -380,8 +430,8 @@ def main() -> int:
                 f"LINK EXTRACTOR TEST FAILED: {name}: expected {expected!r}, got {actual!r}"
             )
             return 1
-    for name, source, expected in RAW_HTML_BLOCK_CASES:
-        actual = readme_has_raw_html_block_start(source)
+    for name, source, expected in HTML_LIKE_OPENER_CASES:
+        actual = readme_has_html_like_opener(source)
         if actual != expected:
             print(
                 f"RAW HTML TEST FAILED: {name}: expected {expected!r}, got {actual!r}"

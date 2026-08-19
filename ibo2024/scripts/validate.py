@@ -18,6 +18,9 @@ from build import check_outputs, load_solutions, render_outputs, truth_words
 
 EXPECTED_COORDS = [(part, task) for part in ("A", "B") for task in range(1, 51)]
 EXPECTED_SET = set(EXPECTED_COORDS)
+CANONICAL_README_SHA256 = (
+    "ae681c73dea4a7ee3c241622a6d599657e8e6fef6077ba57d0e3c515a687503d"
+)
 ANSWER_BLOCK = re.compile(r"(?m)^\s*Task\s+#(\d+)\.?\s*$")
 SOURCE_VERDICT = re.compile(
     r"(?m)^\s*(?:(?:[A-D][.)]?)|[.•])?\s*(TRUE|FALSE)\b"
@@ -80,9 +83,9 @@ def markdown_section_lines(text: str, heading: str) -> list[str] | None:
     return [line for line in lines[start:end] if line.strip()]
 
 
-def readme_has_raw_html_block_start(text: str) -> bool:
-    """Return whether README text contains any possible CommonMark HTML block start."""
-    return re.search(r"(?m)^ {0,3}<", text) is not None
+def readme_has_html_like_opener(text: str) -> bool:
+    """Return whether README text contains an HTML-like opener in any context."""
+    return re.search(r"<(?=[A-Za-z/!?])", text) is not None
 
 
 def read_tsv(
@@ -464,9 +467,11 @@ def validate_readme(root: Path, errors: list[str]) -> None:
         errors.append("missing: README.md")
         return
     text = path.read_text(encoding="utf-8")
+    if hashlib.sha256(text.encode("utf-8")).hexdigest() != CANONICAL_README_SHA256:
+        errors.append("README.md: document is not canonical")
     if "<!--" in text or "-->" in text:
         errors.append("README.md: HTML comments are not allowed")
-    if readme_has_raw_html_block_start(text):
+    if readme_has_html_like_opener(text):
         errors.append("README.md: raw HTML blocks are not allowed")
 
     collection_items = [
