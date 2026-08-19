@@ -6,8 +6,10 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import hashlib
+import os
 from pathlib import Path
 import re
+import stat
 import subprocess
 import sys
 
@@ -34,6 +36,7 @@ def rel(path: Path, root: Path) -> str:
 
 def markdown_links(text: str) -> list[tuple[str, str]]:
     """Return inline Markdown links, excluding images and code regions."""
+    text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
     visible_lines: list[str] = []
     fence_character: str | None = None
     fence_length = 0
@@ -62,6 +65,19 @@ def markdown_links(text: str) -> list[tuple[str, str]]:
     visible_text = "\n".join(visible_lines)
     visible_text = re.sub(r"(`+).*?\1", "", visible_text, flags=re.DOTALL)
     return re.findall(r"(?<!!)\[([^]\n]+)\]\(([^)\n]+)\)", visible_text)
+
+
+def markdown_section_lines(text: str, heading: str) -> list[str] | None:
+    """Return the nonblank lines in one unique level-two Markdown section."""
+    lines = text.splitlines()
+    if lines.count(heading) != 1:
+        return None
+    start = lines.index(heading) + 1
+    end = next(
+        (index for index in range(start, len(lines)) if lines[index].startswith("## ")),
+        len(lines),
+    )
+    return [line for line in lines[start:end] if line.strip()]
 
 
 def read_tsv(
@@ -202,12 +218,31 @@ def validate_workers(root: Path, errors: list[str]) -> None:
         errors.append("missing: WORKERS.md")
         return
     lines = path.read_text(encoding="utf-8").splitlines()
+    table_header = "| Part | Task | Worker | Status | Output |"
+    table_separator = "|---|---:|---|---|---|"
+    canonical_prefix = [
+        "# Worker Ledger",
+        "",
+        "Each row is a distinct one-problem assignment. Workers must remain offline and use the embedded official answer in the corresponding local PDF.",
+        "",
+        table_header,
+        table_separator,
+    ]
+    if (
+        lines[: len(canonical_prefix)] != canonical_prefix
+        or len(lines) != len(canonical_prefix) + 100
+        or lines.count(table_header) != 1
+        or lines.count(table_separator) != 1
+    ):
+        errors.append(
+            "worker ledger: document is not exactly canonical preamble and 100-row table"
+        )
     try:
-        header = lines.index("| Part | Task | Worker | Status | Output |")
+        header = lines.index(table_header)
     except ValueError:
         errors.append("worker ledger: missing canonical table header")
         return
-    if header + 1 >= len(lines) or lines[header + 1] != "|---|---:|---|---|---|":
+    if header + 1 >= len(lines) or lines[header + 1] != table_separator:
         errors.append("worker ledger: missing canonical table separator")
         return
     row_pattern = re.compile(
@@ -265,14 +300,26 @@ def validate_solutions(
     errors: list[str],
 ) -> None:
     solutions_root = root / "solutions"
+    if solutions_root.is_symlink():
+        errors.append("solution root must be a real directory, not a symlink")
+        return
+    if not solutions_root.is_dir():
+        errors.append("missing: solutions")
+        return
+
     expected_paths = set(canonical_paths())
-    inventory_entries = (
-        list(solutions_root.rglob("*")) if solutions_root.is_dir() else []
-    )
+    inventory_entries: list[Path] = []
+    for directory, subdirectories, filenames in os.walk(solutions_root, followlinks=False):
+        current = Path(directory)
+        inventory_entries.extend(
+            current / name
+            for name in subdirectories
+            if (current / name).is_symlink()
+        )
+        inventory_entries.extend(current / name for name in filenames)
     actual_paths = {
         rel(path, root)
         for path in inventory_entries
-        if path.is_symlink() or not path.is_dir()
     }
     for missing in sorted(expected_paths - actual_paths):
         errors.append(f"missing: {missing}")
@@ -282,7 +329,7 @@ def validate_solutions(
         if solution_path.is_symlink():
             errors.append(f"solution path is a symlink: {rel(solution_path, root)}")
     for expected in sorted(expected_paths & actual_paths):
-        if not (root / expected).is_file():
+        if not stat.S_ISREG((root / expected).lstat().st_mode):
             errors.append(f"solution path is not a regular file: {expected}")
 
     bodies: dict[str, str] = {}
@@ -409,6 +456,36 @@ def validate_readme(root: Path, errors: list[str]) -> None:
         errors.append("missing: README.md")
         return
     text = path.read_text(encoding="utf-8")
+    if "<!--" in text or "-->" in text:
+        errors.append("README.md: HTML comments are not allowed")
+    if re.search(r"(?m)^[ \t]{0,3}</?[A-Za-z][A-Za-z0-9-]*(?:[ \t][^>]*)?>", text):
+        errors.append("README.md: raw HTML blocks are not allowed")
+
+    collection_items = [
+        "- [Official answer summary](answers.md)",
+        "- [Theory Part A consolidated solutions](theory-a-solutions.md)",
+        "- [Theory Part B consolidated solutions](theory-b-solutions.md)",
+        "- [Part A individual solutions](solutions/part-a/)",
+        "- [Part B individual solutions](solutions/part-b/)",
+        "- [One-worker assignment ledger](WORKERS.md)",
+    ]
+    if markdown_section_lines(text, "## Read the collection") != collection_items:
+        errors.append("README.md: Read the collection navigation list is not canonical")
+
+    structure_items = [
+        "- `solutions/part-a/` and `solutions/part-b/`: the 100 independently authored source solutions.",
+        "- `official-answers.tsv`: official A-D patterns derived from the embedded answer sections.",
+        "- `task-map.tsv`: canonical source-grounded topic identity for every coordinate.",
+        "- `reviewed-solutions.sha256`: integrity manifest for the source-reviewed solution corpus.",
+        "- `answers.md`: generated 100-row answer and navigation index.",
+        "- `theory-a-solutions.md` and `theory-b-solutions.md`: generated ordered volumes.",
+        "- [scripts/build.py](scripts/build.py): deterministic collection builder and freshness check.",
+        "- [scripts/validate.py](scripts/validate.py): end-to-end offline source, ownership, content, document, and navigation validator.",
+        "- [scripts/test_validate.py](scripts/test_validate.py): isolated negative fixtures for the validation contract.",
+    ]
+    if markdown_section_lines(text, "## Repository structure") != structure_items:
+        errors.append("README.md: Repository structure list is not canonical")
+
     requirements = {
         "IBO source attribution": "International Biology Olympiad",
         "license": "CC BY-NC-SA 4.0",

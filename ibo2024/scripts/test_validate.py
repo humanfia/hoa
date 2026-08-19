@@ -9,6 +9,8 @@ import subprocess
 import sys
 import tempfile
 
+from validate import markdown_links
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = ROOT / "source"
@@ -64,6 +66,16 @@ def duplicate_worker(root: Path) -> None:
 
 def duplicate_output(root: Path) -> None:
     replace_once(root / "WORKERS.md", "`solutions/part-a/q02.md`", "`solutions/part-a/q01.md`")
+
+
+def add_preheader_worker_table(root: Path) -> None:
+    path = root / "WORKERS.md"
+    extra_table = (
+        "Part | Task | Worker | Status | Output\n"
+        "--- | ---: | --- | --- | ---\n"
+        "A | 1 | second_a1_owner | completed | solutions/part-a/q01.md\n\n"
+    )
+    path.write_text(extra_table + path.read_text(encoding="utf-8"), encoding="utf-8")
 
 
 def transplant_b19_reasoning_behind_b4_metadata(root: Path) -> None:
@@ -140,6 +152,12 @@ def add_case_variant_solution_copy(root: Path) -> None:
     destination = root / "solutions" / "part-a" / "archive" / "q01.MD"
     destination.parent.mkdir()
     shutil.copy2(root / "solutions" / "part-a" / "q01.md", destination)
+
+
+def replace_solution_root_with_symlink(root: Path) -> None:
+    relocated = root / "solution-files"
+    shutil.move(str(root / "solutions"), relocated)
+    (root / "solutions").symlink_to("solution-files", target_is_directory=True)
 
 
 def stale_answer_summary(root: Path) -> None:
@@ -236,9 +254,22 @@ def replace_readme_summary_with_code(root: Path) -> None:
     )
 
 
+def wrap_readme_summary_in_comment(root: Path) -> None:
+    replace_once(
+        root / "README.md",
+        "- [Official answer summary](answers.md)",
+        "<!--\n- [Official answer summary](answers.md)\n-->",
+    )
+
+
 CASES = (
     ("duplicate worker", duplicate_worker, "worker aliases not unique"),
     ("duplicate output", duplicate_output, "output paths not unique"),
+    (
+        "pre-header worker assignment table",
+        add_preheader_worker_table,
+        "worker ledger: document is not exactly canonical preamble and 100-row table",
+    ),
     ("hidden B19 reasoning behind B4 metadata", transplant_b19_reasoning_behind_b4_metadata, "reviewed manifest: hash mismatch"),
     ("duplicate task-map coordinate", duplicate_task_map_coordinate, "duplicate coordinate A1"),
     ("missing task-map coordinate", omit_task_map_coordinate, "task map: coordinates differ"),
@@ -257,6 +288,11 @@ CASES = (
         "case-variant duplicate solution Markdown",
         add_case_variant_solution_copy,
         "unexpected solution Markdown file: solutions/part-a/archive/q01.MD",
+    ),
+    (
+        "symlinked solution root",
+        replace_solution_root_with_symlink,
+        "solution root must be a real directory, not a symlink",
     ),
     ("stale answer summary", stale_answer_summary, "stale generated file: answers.md"),
     ("wrong answer-summary pattern", wrong_answer_summary_pattern, "answers.md: A1 values disagree with official key"),
@@ -286,10 +322,32 @@ CASES = (
         replace_readme_summary_with_code,
         "README.md: canonical link for 'Official answer summary' must occur exactly once",
     ),
+    (
+        "README comment is not navigation",
+        wrap_readme_summary_in_comment,
+        "README.md: Read the collection navigation list is not canonical",
+    ),
+)
+
+
+LINK_EXTRACTOR_CASES = (
+    ("ordinary link", "[Label](target.md)", [("Label", "target.md")]),
+    ("image", "![Label](target.md)", []),
+    ("inline code", "`[Label](target.md)`", []),
+    ("fenced code", "```markdown\n[Label](target.md)\n```", []),
+    ("indented code", "    [Label](target.md)", []),
+    ("HTML comment", "<!--\n[Label](target.md)\n-->", []),
 )
 
 
 def main() -> int:
+    for name, source, expected in LINK_EXTRACTOR_CASES:
+        actual = markdown_links(source)
+        if actual != expected:
+            print(
+                f"LINK EXTRACTOR TEST FAILED: {name}: expected {expected!r}, got {actual!r}"
+            )
+            return 1
     baseline = run_validator(ROOT)
     if baseline.returncode != 0:
         print("BASELINE VALIDATION FAILED")
