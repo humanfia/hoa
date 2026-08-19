@@ -32,6 +32,38 @@ def rel(path: Path, root: Path) -> str:
         return str(path)
 
 
+def markdown_links(text: str) -> list[tuple[str, str]]:
+    """Return inline Markdown links, excluding images and code regions."""
+    visible_lines: list[str] = []
+    fence_character: str | None = None
+    fence_length = 0
+    for line in text.splitlines():
+        stripped = line.lstrip()
+        indent = len(line) - len(stripped)
+        fence = re.match(r"(`{3,}|~{3,})", stripped) if indent <= 3 else None
+        if fence_character is not None:
+            closing = re.fullmatch(
+                rf"{re.escape(fence_character)}{{{fence_length},}}[ \t]*",
+                stripped,
+            )
+            if closing:
+                fence_character = None
+                fence_length = 0
+            continue
+        if fence:
+            marker = fence.group(1)
+            fence_character = marker[0]
+            fence_length = len(marker)
+            continue
+        if line.startswith(("    ", "\t")):
+            continue
+        visible_lines.append(line)
+
+    visible_text = "\n".join(visible_lines)
+    visible_text = re.sub(r"(`+).*?\1", "", visible_text, flags=re.DOTALL)
+    return re.findall(r"(?<!!)\[([^]\n]+)\]\(([^)\n]+)\)", visible_text)
+
+
 def read_tsv(
     path: Path,
     root: Path,
@@ -234,15 +266,24 @@ def validate_solutions(
 ) -> None:
     solutions_root = root / "solutions"
     expected_paths = set(canonical_paths())
-    actual_paths = (
-        {rel(path, root) for path in solutions_root.rglob("*.md")}
-        if solutions_root.is_dir()
-        else set()
+    inventory_entries = (
+        list(solutions_root.rglob("*")) if solutions_root.is_dir() else []
     )
+    actual_paths = {
+        rel(path, root)
+        for path in inventory_entries
+        if path.is_symlink() or not path.is_dir()
+    }
     for missing in sorted(expected_paths - actual_paths):
         errors.append(f"missing: {missing}")
     for unexpected in sorted(actual_paths - expected_paths):
         errors.append(f"unexpected solution Markdown file: {unexpected}")
+    for solution_path in inventory_entries:
+        if solution_path.is_symlink():
+            errors.append(f"solution path is a symlink: {rel(solution_path, root)}")
+    for expected in sorted(expected_paths & actual_paths):
+        if not (root / expected).is_file():
+            errors.append(f"solution path is not a regular file: {expected}")
 
     bodies: dict[str, str] = {}
     for part in ("A", "B"):
@@ -399,10 +440,16 @@ def validate_readme(root: Path, errors: list[str]) -> None:
         ("scripts/validate.py", "scripts/validate.py"),
         ("scripts/test_validate.py", "scripts/test_validate.py"),
     )
-    parsed_links = re.findall(r"\[([^]]+)\]\(([^)]+)\)", text)
+    parsed_links = markdown_links(text)
+    readme_lines = text.splitlines()
     for label, target in required_links:
         targets = [link_target for link_label, link_target in parsed_links if link_label == label]
-        if targets != [target]:
+        canonical_line = f"- [{label}]({target})"
+        canonical_lines = sum(
+            line == canonical_line or line.startswith(canonical_line + ":")
+            for line in readme_lines
+        )
+        if targets != [target] or canonical_lines != 1:
             errors.append(
                 f"README.md: canonical link for {label!r} must occur exactly once"
             )
@@ -415,7 +462,7 @@ def validate_links(root: Path, errors: list[str]) -> None:
             continue
         text = path.read_text(encoding="utf-8")
         local_anchors = set(re.findall(r'<a id="([^"]+)"></a>', text))
-        for target in re.findall(r"\[[^]]+\]\(([^)]+)\)", text):
+        for _label, target in markdown_links(text):
             if target.startswith(("http://", "https://")):
                 continue
             if target.startswith("#"):

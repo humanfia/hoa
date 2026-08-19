@@ -136,6 +136,12 @@ def add_nested_solution_copy(root: Path) -> None:
     shutil.copy2(root / "solutions" / "part-a" / "q01.md", destination)
 
 
+def add_case_variant_solution_copy(root: Path) -> None:
+    destination = root / "solutions" / "part-a" / "archive" / "q01.MD"
+    destination.parent.mkdir()
+    shutil.copy2(root / "solutions" / "part-a" / "q01.md", destination)
+
+
 def stale_answer_summary(root: Path) -> None:
     path = root / "answers.md"
     path.write_text(path.read_text(encoding="utf-8") + "\nStale manual edit.\n", encoding="utf-8")
@@ -214,6 +220,22 @@ def duplicate_readme_summary_label(root: Path) -> None:
     )
 
 
+def replace_readme_summary_with_image(root: Path) -> None:
+    replace_once(
+        root / "README.md",
+        "[Official answer summary](answers.md)",
+        "![Official answer summary](answers.md)",
+    )
+
+
+def replace_readme_summary_with_code(root: Path) -> None:
+    replace_once(
+        root / "README.md",
+        "[Official answer summary](answers.md)",
+        "`[Official answer summary](answers.md)`",
+    )
+
+
 CASES = (
     ("duplicate worker", duplicate_worker, "worker aliases not unique"),
     ("duplicate output", duplicate_output, "output paths not unique"),
@@ -231,6 +253,11 @@ CASES = (
         add_nested_solution_copy,
         "unexpected solution Markdown file: solutions/part-a/archive/q01.md",
     ),
+    (
+        "case-variant duplicate solution Markdown",
+        add_case_variant_solution_copy,
+        "unexpected solution Markdown file: solutions/part-a/archive/q01.MD",
+    ),
     ("stale answer summary", stale_answer_summary, "stale generated file: answers.md"),
     ("wrong answer-summary pattern", wrong_answer_summary_pattern, "answers.md: A1 values disagree with official key"),
     ("missing consolidated task", remove_consolidated_task, "anchors are not exactly 1-50 once in order"),
@@ -247,6 +274,16 @@ CASES = (
     (
         "additive duplicate README label",
         duplicate_readme_summary_label,
+        "README.md: canonical link for 'Official answer summary' must occur exactly once",
+    ),
+    (
+        "README image is not navigation",
+        replace_readme_summary_with_image,
+        "README.md: canonical link for 'Official answer summary' must occur exactly once",
+    ),
+    (
+        "README code span is not navigation",
+        replace_readme_summary_with_code,
         "README.md: canonical link for 'Official answer summary' must occur exactly once",
     ),
 )
