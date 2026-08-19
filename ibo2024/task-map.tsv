@@ -1,0 +1,102 @@
+# Canonical source-grounded topic for each official theory task.
+# Format: part<TAB>task<TAB>topic
+A	1	Tulip morphology and maximum-parsimony phylogeny
+A	2	Owl phylogeny, classification, and biogeography
+A	3	Maximum-parsimony gene trees and phylogenetic congruence
+A	4	Tumor metabolism, oxygen consumption, and extracellular acidity
+A	5	Binding-site mutagenesis and cardiac glycoside recognition
+A	6	Ramachandran angles and peptide-backbone conformations
+A	7	Flux and carbon rearrangement in the pentose phosphate pathway
+A	8	Epigenetic control and CTCF–cohesin looping at the IGF2–H19 locus
+A	9	Cryo-EM interpretation and ATAD1 membrane-protein extraction
+A	10	Magnetotactic bacteria navigating an oxic–anoxic transition zone
+A	11	Growth-coupled directed evolution of an NADH-dependent enzyme in engineered E. coli
+A	12	DMSO oxidation products, membrane penetration, and routes of elimination
+A	13	Nutrient enrichment and legume performance in nitrogen-limited steppe grassland
+A	14	Latitudinal diversity gradients: carrying capacity, diversification rate, and diversification time
+A	15	Walker circulation, ENSO, and ecological responses
+A	16	Fractal geometry, resource scaling, and an organism's spatial perspective
+A	17	Renewable freshwater, water scarcity, and virtual water
+A	18	Wildlife responses to traffic and the road-barrier effect
+A	19	Cumulative cultural evolution and route learning in rock pigeons
+A	20	Allele frequencies in alternating haploid and diploid generations
+A	21	Out-of-Africa expansion, heterozygosity, and effective population size
+A	22	Agriculture, ethanol metabolism, and selection on ADH1B
+A	23	Drosophila allele-frequency dynamics and heterozygote advantage
+A	24	Codon usage bias and translational efficiency
+A	25	Mitochondrial RNase P mutations, targeting, and inheritance
+A	26	Carbon-cycle perturbations, extinction thresholds, and the biological pump
+A	27	Epistasis and accessible evolutionary trajectories in beta-lactamase
+A	28	Distribution of fitness effects, effective neutrality, and mutation accumulation
+A	29	Endogenous retroviruses, solo-LTRs, and evolutionary change
+A	30	Long-distance and intracellular transport of gibberellin in roots
+A	31	Photorespiration, glycine decarboxylase, and C4 photosynthesis
+A	32	Electrical and osmotic coordination of grass stomata
+A	33	Xanthophyll-cycle photoprotection and light acclimation
+A	34	Diurnal carbohydrate allocation in maize leaves and developing kernels
+A	35	Hydraulic strategies and tree height in California redwoods
+A	36	Dissolved inorganic-carbon uptake by aquatic plants
+A	37	Water uptake, aerenchyma formation, and osmosis in a eudicot root
+A	38	ECG leads, cardiac action potentials, and atrioventricular block
+A	39	Oxygen affinity and allosteric regulation of snow-leopard hemoglobin
+A	40	Feeding time, circadian alignment, activity, and body temperature in mice
+A	41	Circadian and homeostatic control of active sleep bouts in Octopus laqueus
+A	42	Mechanical detection and active electrolocation in electric-eel hunting
+A	43	Saiga nasal anatomy, airflow, and movement on snow
+A	44	TLR7/8 activation and swim-up separation of X- and Y-bearing sperm
+A	45	Endothelial cells, FGF-2, and perfusion of engineered cardiac tissue
+A	46	Optogenetic control of hippocampal neurons with channelrhodopsin-2
+A	47	Cost of transport and the energetics of animal locomotion
+A	48	Helium-dilution measurement of residual lung volume
+A	49	Esophageal Doppler monitoring, blood-flow velocity, and cardiac output
+A	50	Renal countercurrent multiplication and vasa recta exchange
+B	1	Dichotomous keys: path length, identification capacity, and phylogeny
+B	2	Red-deer phylogeny and the interpretation of bootstrap support
+B	3	Cell-cycle control of DNA double-strand-break repair by BRCA1 and 53BP1
+B	4	Calcium-channel control of mitochondrial calcium in pancreatic beta cells
+B	5	Ketogenic-diet seizure protection, GABA production, and catecholamines
+B	6	ProQC toehold-switch control of full-length mRNA translation
+B	7	DNA fiber assays: replication-fork progression, termination, and origin firing
+B	8	Inferring nuclease polarity and DNA-polymerase activity from denaturing PAGE
+B	9	Checkpoint-kinase-dependent changes in DNA content and polyploidy
+B	10	Transcriptional and phosphorylation control of stem-cell differentiation
+B	11	Cycloheximide-chase analysis of proteasomal and lysosomal protein degradation
+B	12	Förster resonance energy transfer in protease and inhibitor assays
+B	13	Telomere protection, chromosome-end fusion, and chromosomal bridges
+B	14	Aral Sea restoration, salinity tolerance, and species interactions
+B	15	Lotka–Volterra competition isoclines and population outcomes
+B	16	Niche dimensions, turf competition, grazing, and drought in Stipa capillata grassland
+B	17	Wolbachia-based incompatible insect technique and mosquito dispersal
+B	18	Ant–acacia mutualism, megaherbivory, and lion prey selection
+B	19	Heat-ball and sting defenses of honeybees against hornets
+B	20	Female body mass, mating success, and male combat in Gryllus bimaculatus
+B	21	Size asymmetry and cannibalism in Japanese mitten crabs
+B	22	Genomic imprinting of the IGF2–H19 cluster and fetal growth
+B	23	ACE2, CTS1, and multicellular clusters in baker's yeast
+B	24	Robertsonian translocations, meiotic segregation, and human karyotypes
+B	25	X-linked recessive inheritance and population allele frequencies
+B	26	Intratumor heterogeneity, clonal evolution, and copy-number alterations
+B	27	Using PCR to identify translocations, inversions, and duplications
+B	28	Epistatic control of hair pigmentation and pedigree probabilities
+B	29	CRISPR–Cas9 target sites, donor design, and coding consequences
+B	30	Three-point linkage, an enzyme-regulation pathway, and redundant developmental genes
+B	31	Founder haplotypes, linkage disequilibrium, and recombination mapping
+B	32	Temperature, chemical inhibition, and respiratory costs of Venus flytrap closure
+B	33	Regulation of vascular cambium proliferation and secondary vascular development
+B	34	GAPLESS proteins and the root endodermal apoplastic barrier
+B	35	Phytochrome B photoconversion, thermosensing, hypocotyl growth, and nuclear bodies
+B	36	Photoperiod, CONSTANS, flowering time, and seed development
+B	37	Polar auxin transport, grafting, and tissue-specific AXR1 rescue in apical dominance
+B	38	Chemical A, wheat germination, gibberellin signalling, and α-amylase zymography
+B	39	Peripheral arterial disease, intermittent claudication, and cardiovascular drugs
+B	40	Pharmacokinetics: first-pass activation, distribution, protein binding, and enterohepatic cycling
+B	41	Post-feeding cardiac growth in the Burmese python
+B	42	Starling forces, capillary filtration, and liver sinusoids
+B	43	Hepatic lobule zonation, portal toxins, and bile flow
+B	44	Body-size-dependent thermoregulation and flight metabolism in bees
+B	45	Lung hyperinflation and operating lung volumes in COPD
+B	46	Osmotic stress, mitochondrial uncoupling, and activity in a marine tardigrade
+B	47	Cancer immunotherapy, immune checkpoints, and mismatch-repair deficiency
+B	48	mRNA nucleoside modifications, immune recognition, and antigen translation
+B	49	Diet-dependent gut–brain signalling and sleep arousability in fruit flies
+B	50	Maternal-effect patterning of the Drosophila body axes
