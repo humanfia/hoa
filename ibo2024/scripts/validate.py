@@ -183,7 +183,7 @@ def validate_workers(root: Path, errors: list[str]) -> None:
     )
     rows: list[tuple[tuple[str, int], str, str, str]] = []
     for line_number, raw in enumerate(lines[header + 2 :], header + 3):
-        if not raw.startswith("|"):
+        if not raw.strip():
             continue
         match = row_pattern.fullmatch(raw)
         if not match:
@@ -382,6 +382,23 @@ def validate_readme(root: Path, errors: list[str]) -> None:
     for label, phrase in requirements.items():
         if phrase not in text:
             errors.append(f"README.md: missing required {label}")
+    required_links = (
+        ("Official answer summary", "answers.md"),
+        ("Theory Part A consolidated solutions", "theory-a-solutions.md"),
+        ("Theory Part B consolidated solutions", "theory-b-solutions.md"),
+        ("Part A individual solutions", "solutions/part-a/"),
+        ("Part B individual solutions", "solutions/part-b/"),
+        ("One-worker assignment ledger", "WORKERS.md"),
+        ("scripts/build.py", "scripts/build.py"),
+        ("scripts/validate.py", "scripts/validate.py"),
+        ("scripts/test_validate.py", "scripts/test_validate.py"),
+    )
+    for label, target in required_links:
+        markdown_link = f"[{label}]({target})"
+        if text.count(markdown_link) != 1:
+            errors.append(
+                f"README.md: canonical link for {label!r} must occur exactly once"
+            )
 
 
 def validate_links(root: Path, errors: list[str]) -> None:

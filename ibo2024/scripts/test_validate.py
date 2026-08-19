@@ -11,7 +11,6 @@ import tempfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VALIDATOR = ROOT / "scripts" / "validate.py"
 SOURCE_DIR = ROOT / "source"
 TOP_FILES = (
     "official-answers.tsv",
@@ -29,13 +28,18 @@ def make_fixture(destination: Path) -> None:
     for filename in TOP_FILES:
         shutil.copy2(ROOT / filename, destination / filename)
     shutil.copytree(ROOT / "solutions", destination / "solutions")
+    shutil.copytree(
+        ROOT / "scripts",
+        destination / "scripts",
+        ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+    )
 
 
 def run_validator(root: Path) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         [
             sys.executable,
-            str(VALIDATOR),
+            str(root / "scripts" / "validate.py"),
             "--root",
             str(root),
             "--source-dir",
@@ -97,6 +101,24 @@ def add_malformed_worker_row(root: Path) -> None:
     path.write_text(
         path.read_text(encoding="utf-8")
         + "| C | 1 | `outside_domain` | completed | `solutions/part-c/q01.md` |\n",
+        encoding="utf-8",
+    )
+
+
+def add_no_leading_pipe_worker_row(root: Path) -> None:
+    path = root / "WORKERS.md"
+    path.write_text(
+        path.read_text(encoding="utf-8")
+        + "A | 1 | `second_a1_owner` | completed | `solutions/part-a/q01.md` |\n",
+        encoding="utf-8",
+    )
+
+
+def add_leading_whitespace_worker_row(root: Path) -> None:
+    path = root / "WORKERS.md"
+    path.write_text(
+        path.read_text(encoding="utf-8")
+        + " | A | 1 | `second_a1_owner` | completed | `solutions/part-a/q01.md` |\n",
         encoding="utf-8",
     )
 
@@ -169,6 +191,14 @@ def remove_readme_license(root: Path) -> None:
     path.write_text(path.read_text(encoding="utf-8").replace("CC BY-NC-SA 4.0", "the project license"), encoding="utf-8")
 
 
+def redirect_readme_summary(root: Path) -> None:
+    replace_once(
+        root / "README.md",
+        "[Official answer summary](answers.md)",
+        "[Official answer summary](theory-a-solutions.md)",
+    )
+
+
 CASES = (
     ("duplicate worker", duplicate_worker, "worker aliases not unique"),
     ("duplicate output", duplicate_output, "output paths not unique"),
@@ -178,6 +208,8 @@ CASES = (
     ("coordinated key drift from PDF", drift_key_and_answer_from_pdf, "official key B4 differs from embedded PDF"),
     ("contradictory reasoning verdict", contradict_reasoning_verdict, "reasoning verdicts FFFF do not match official line TFFF"),
     ("malformed extra worker row", add_malformed_worker_row, "worker ledger: malformed data row"),
+    ("no-leading-pipe worker row", add_no_leading_pipe_worker_row, "worker ledger: malformed data row"),
+    ("leading-whitespace worker row", add_leading_whitespace_worker_row, "worker ledger: malformed data row"),
     ("unexpected solution Markdown", add_unexpected_solution_file, "unexpected solution Markdown file"),
     ("stale answer summary", stale_answer_summary, "stale generated file: answers.md"),
     ("wrong answer-summary pattern", wrong_answer_summary_pattern, "answers.md: A1 values disagree with official key"),
@@ -187,6 +219,11 @@ CASES = (
     ("broken answer link", break_answer_link, "answers.md: A1 consolidated link is not canonical"),
     ("missing README attribution", remove_readme_attribution, "README.md: missing required IBO source attribution"),
     ("missing README license", remove_readme_license, "README.md: missing required license"),
+    (
+        "wrong existing README target",
+        redirect_readme_summary,
+        "README.md: canonical link for 'Official answer summary' must occur exactly once",
+    ),
 )
 
 
@@ -197,6 +234,15 @@ def main() -> int:
         print(baseline.stdout, end="")
         print(baseline.stderr, end="", file=sys.stderr)
         return 1
+    with tempfile.TemporaryDirectory(prefix="ibo-validator-pristine-") as temporary:
+        pristine_fixture = Path(temporary)
+        make_fixture(pristine_fixture)
+        pristine = run_validator(pristine_fixture)
+        if pristine.returncode != 0:
+            print("PRISTINE FIXTURE VALIDATION FAILED")
+            print(pristine.stdout, end="")
+            print(pristine.stderr, end="", file=sys.stderr)
+            return 1
     failures: list[str] = []
     for name, mutate, expected_message in CASES:
         with tempfile.TemporaryDirectory(prefix="ibo-validator-") as temporary:
