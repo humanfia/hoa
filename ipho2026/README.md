@@ -14,6 +14,8 @@ consulted only after proof completion, for the separate evaluation recorded in
 - `Ipho2026Gpt56solBlind/Shared/` — shared typed physics and mathematics APIs.
 - `Ipho2026Gpt56solBlind/Solutions.lean` — aggregate import of all solutions.
 - `GRADING_REPORT.md` — post-completion comparison with the official results.
+- `Kimi/` — a separate Kimi K3 Max answer set and its official-answer grading
+  report.
 
 The submission intentionally excludes blank originals, answer/reference
 archives, source PDFs, blind assets, agent state, contracts, and workflow
