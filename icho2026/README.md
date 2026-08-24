@@ -34,6 +34,10 @@ Each run contains:
 - `GRADING.md` — official-key grading and detailed deductions; and
 - `EXPERIMENT.md` — Humanize configuration, review process, and provenance.
 
+The Kimi directory also contains [`FIRST_TURN_ABLATION.md`](kimi-k3-max/FIRST_TURN_ABLATION.md),
+which grades the nine unreviewed round-0 outputs and compares them with the
+final Humanize result under the same grading convention.
+
 ## Scope
 
 The preserved runs cover the nine **theoretical** problems. The separate
