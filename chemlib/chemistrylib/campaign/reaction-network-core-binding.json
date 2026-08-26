@@ -1,0 +1,74 @@
+{
+  "binding_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+  "campaign_id": "chemistrylib.reaction_network_core.v0_1",
+  "capabilities": [
+    "crn.finite_network",
+    "crn.reaction_graph",
+    "crn.incidence",
+    "crn.stoichiometry",
+    "crn.mass_action"
+  ],
+  "capability_contracts": [
+    {
+      "capability_id": "crn.finite_network",
+      "owner_module": "ChemistryLib/ReactionNetwork/Basic.lean",
+      "spec_hash": "835d8996ca50012205958753f1803e0686adc25d6b4a6014f0577d60017d98c3"
+    },
+    {
+      "capability_id": "crn.reaction_graph",
+      "owner_module": "ChemistryLib/ReactionNetwork/Graph.lean",
+      "spec_hash": "ccd79dd0a2875f83f128ccae68ff822a4b19b59d0001cfcd96e7813c2618cb94"
+    },
+    {
+      "capability_id": "crn.incidence",
+      "owner_module": "ChemistryLib/ReactionNetwork/Incidence.lean",
+      "spec_hash": "45009218adc590430061d3182480ec0b02399bd22018923d9bdd04bf0f5cf071"
+    },
+    {
+      "capability_id": "crn.stoichiometry",
+      "owner_module": "ChemistryLib/ReactionNetwork/Stoichiometry.lean",
+      "spec_hash": "7fe57e0f131fdd883f2508c55ee64a17172e72ce2a5fc2c0fe0072f2b7fc91fd"
+    },
+    {
+      "capability_id": "crn.mass_action",
+      "owner_module": "ChemistryLib/ReactionNetwork/MassAction.lean",
+      "spec_hash": "ee5c5a5ce0e287832833aceac39c61db998668e5f084c235e9327f8b0a57190e"
+    }
+  ],
+  "clean_room_audit_hash": "7330102b0b15254a039c7b59aadfa18a8cc7189b918da28cf64bfa3a27cbdf53",
+  "family_id": "reaction_network.core",
+  "goal_id": "chemistrylib.frontier_mathematical_chemistry.v1",
+  "goal_spec_hash": "48c914b30e264aa24898f12e4e8329dfc8d2af0b564758e1111d6c0557aa92da",
+  "modules": [
+    {
+      "api_hash": "ddf09cfe8dc6cc37b75ac2bb406cdad6ec6c965299f55bfaeb29f89651e7ef62",
+      "module_path": "ChemistryLib/ReactionNetwork/Basic.lean",
+      "verified_sha256": "62804d568a6c92ea337f8437dfeedd7f80c1cd9fcf975d455536dc1015c770c1"
+    },
+    {
+      "api_hash": "68480ba43e137b7b874cc3f1bccfd9dd6a5d79937434b5bfb997e5a26212754b",
+      "module_path": "ChemistryLib/ReactionNetwork/Graph.lean",
+      "verified_sha256": "131048064cb91b49c1e25badc640e816d667091c4c3833574b9e457cfabb15b6"
+    },
+    {
+      "api_hash": "f4cd1852fbae55bf3d46e0c0647d60dad93fb5875fe7817793b7631aa9e1e43c",
+      "module_path": "ChemistryLib/ReactionNetwork/Incidence.lean",
+      "verified_sha256": "7d43a7899dbe5d480e106614b18f43efd3ff186adc02623f1ef42013aa03b610"
+    },
+    {
+      "api_hash": "b4d19af46de4b6a4bf0660f8299cc1755401970e22637e66a39c852f208eff65",
+      "module_path": "ChemistryLib/ReactionNetwork/Stoichiometry.lean",
+      "verified_sha256": "142af965e45ee5a74caa0cd84b44d2a3e176e5b2da7f7f32ccf3517049e4bf08"
+    },
+    {
+      "api_hash": "fdd3fe5789507bdc2841932bd28f597a18f7019e66244e07d6b1359605e52e35",
+      "module_path": "ChemistryLib/ReactionNetwork/MassAction.lean",
+      "verified_sha256": "f2b95a97841a86c44a2348ed9eaf20daced034d177e84cec54ec804484066a85"
+    }
+  ],
+  "plan_hash": "96549e4f1d1dc653933f84914acafeb69693d42f268005188d563273ca7cbbb9",
+  "release_certificate_hash": "f4be8e846eb7a8edfafa56e7d5e0b26d9f0f163c535d2fd7d00de1fd8662d5d8",
+  "symbol_dag_hash": "ea6c9b0f09acd3f085cfa45716752a0ba2fed2f8fe5c74779ad64e4fa60df57a",
+  "verified_at": "2026-08-11T04:36:23.894288+00:00",
+  "version": 1
+}

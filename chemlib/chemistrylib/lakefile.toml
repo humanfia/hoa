@@ -1,0 +1,26 @@
+name = "chemistrylib_v1"
+version = "0.1.0"
+keywords = ["chemistry", "reaction-networks", "formal-verification"]
+defaultTargets = ["ChemistryLib", "AFPS2017"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.31.0"
+
+[[lean_lib]]
+name = "ChemistryLib"
+
+[[lean_lib]]
+name = "AFPS2017"
+
+[[require]]
+name = "Physlib"
+git = "https://github.com/leanprover-community/physlib.git"
+rev = "1706ae68b63996f1d97717e672e50c9e3933d933"

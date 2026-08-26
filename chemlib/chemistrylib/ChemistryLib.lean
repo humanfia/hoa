@@ -1,0 +1,84 @@
+import ChemistryLib.Foundations.Stoichiometry
+import ChemistryLib.Units.ChemicalDimension
+import ChemistryLib.Units.Quantity
+import ChemistryLib.Foundations.Amount
+import ChemistryLib.Foundations.Concentration
+import ChemistryLib.Foundations.ReactionProgress
+import ChemistryLib.ReactionNetwork.Basic
+import ChemistryLib.ReactionNetwork.Graph
+import ChemistryLib.ReactionNetwork.Incidence
+import ChemistryLib.ReactionNetwork.Stoichiometry
+import ChemistryLib.ReactionNetwork.MassAction
+import ChemistryLib.ReactionNetwork.Laplacian
+import ChemistryLib.ReactionNetwork.Balance
+import ChemistryLib.ReactionNetwork.LinkageClass
+import ChemistryLib.ReactionNetwork.DeficiencyRank
+import ChemistryLib.ReactionNetwork.Deficiency
+import ChemistryLib.ReactionNetwork.IncidenceRank
+import ChemistryLib.ReactionNetwork.UnconditionalDeficiency
+import ChemistryLib.ReactionNetwork.DeficiencyKernel
+import ChemistryLib.ReactionNetwork.IntegerHyperflow
+import ChemistryLib.ReactionNetwork.TerminalComponent
+import ChemistryLib.ReactionNetwork.TerminalKernelGenerator
+import ChemistryLib.ReactionNetwork.TerminalKernelBasis
+import ChemistryLib.ReactionNetwork.TerminalKernelDimension
+import ChemistryLib.ReactionNetwork.PseudoHelmholtz
+import ChemistryLib.ReactionNetwork.ComplexBalanceDissipation
+import ChemistryLib.ReactionNetwork.DeficiencyZeroBridge
+import ChemistryLib.ReactionNetwork.PositiveCompatibilityGeometry
+import ChemistryLib.ReactionNetwork.CompatibilityClass
+import ChemistryLib.ReactionNetwork.DeficiencyZeroComplexBalance
+import ChemistryLib.Autocatalysis.Criteria
+import ChemistryLib.Autocatalysis.DualCertificate
+import ChemistryLib.Autocatalysis.MiloNghe
+import ChemistryLib.Autocatalysis.SealedFrontier
+import ChemistryLib.Autocatalysis.StoichiometricAdapters
+import ChemistryLib.Dynamics.OscillationCertificate
+import ChemistryLib.Thermodynamics.TemperatureAdapters
+import ChemistryLib.Thermodynamics.EquilibriumAdapters
+import ChemistryLib.Thermodynamics.OpenNetworks.Partition
+import ChemistryLib.Thermodynamics.OpenNetworks.RateEquation
+import ChemistryLib.Thermodynamics.OpenNetworks.Affinity
+import ChemistryLib.Thermodynamics.OpenNetworks.Conservation
+import ChemistryLib.Thermodynamics.OpenNetworks.EmergentCycleRank
+import ChemistryLib.Thermodynamics.OpenNetworks.EntropyProduction
+import ChemistryLib.Thermodynamics.OpenNetworks.Balances
+import ChemistryLib.Thermodynamics.OpenNetworks.RelativeEntropy
+import ChemistryLib.Thermodynamics.OpenNetworks.NonequilibriumGibbs
+import ChemistryLib.Thermodynamics.OpenNetworks.WorkInequality
+import ChemistryLib.Thermochemistry.ReactionEnthalpy
+import ChemistryLib.Thermochemistry.TemperatureCorrection
+import ChemistryLib.Kinetics.RateLaw
+import ChemistryLib.Kinetics.ClosedForm
+import ChemistryLib.Kinetics.SteadyState
+import ChemistryLib.Calculations.Adsorption
+import ChemistryLib.Calculations.CombustionEnergy
+import ChemistryLib.Process.ProductionYield
+import ChemistryLib.Process.Recycle
+import ChemistryLib.Models.SBML.Records
+import ChemistryLib.Models.SBML.Compile
+import ChemistryLib.Models.Oregonator.Data
+import ChemistryLib.Models.Oregonator.ODE
+import ChemistryLib.Models.Oregonator.Certificates
+import ChemistryLib.Models.Oregonator.Jacobian
+import ChemistryLib.Stochastic.CountState
+import ChemistryLib.Stochastic.ClosedClassProduct
+import ChemistryLib.Stochastic.ComplexBalanceProductForm
+import ChemistryLib.Stochastic.DeficiencyZeroProductForm
+import ChemistryLib.Stochastic.FiniteGenerator
+import ChemistryLib.Stochastic.OrderCoupling
+import ChemistryLib.Stochastic.PoissonProduct
+import ChemistryLib.Stochastic.Propensity
+import ChemistryLib.Stochastic.ReactionGenerator
+import ChemistryLib.Stochastic.Stationary
+import ChemistryLib.Photochemistry.AbsorbedPhoton
+import ChemistryLib.Photochemistry.QuantumAdapters
+import ChemistryLib.Photochemistry.QuantumYield
+
+/-!
+# ChemistryLib
+
+A source-grounded Lean library for finite chemical reaction systems.  This
+barrel exposes the cumulative API-locked dependency cone; later chemistry
+capabilities are added through explicit Archon campaign revisions.
+-/

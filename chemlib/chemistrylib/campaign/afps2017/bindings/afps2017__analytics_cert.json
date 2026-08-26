@@ -1,0 +1,125 @@
+{
+  "binding_hash": "1c514b7b4e84ecad9df82ce0cd977cce15947b45a29d254fe07fe6c431d7259b",
+  "campaign_id": "pentelute.afps2017.formal_benchmark.v1.afps2017.analytics_cert.r1615625c19f7",
+  "capabilities": [
+    "afps2017.analytics.provenance",
+    "afps2017.analytics.mass_observation",
+    "afps2017.analytics.signal_observation",
+    "afps2017.analytics.mass_agreement",
+    "afps2017.analytics.conotoxin_table"
+  ],
+  "capability_contracts": [
+    {
+      "capability_id": "afps2017.analytics.provenance",
+      "owner_module": "AFPS2017/Analytics/Provenance.lean",
+      "spec_hash": "b099634489824fab492f9cb57f1b0e1a2fa6ea651970cff17ad549155778b1e0"
+    },
+    {
+      "capability_id": "afps2017.analytics.mass_observation",
+      "owner_module": "AFPS2017/Analytics/MassObservation.lean",
+      "spec_hash": "cb7878c8bd1800d3eab35ec77665e252acd8cf90fbfe2c3fd9aa8096d4a74cb0"
+    },
+    {
+      "capability_id": "afps2017.analytics.signal_observation",
+      "owner_module": "AFPS2017/Analytics/SignalObservation.lean",
+      "spec_hash": "b6f6666bbb025ed1c97986cb72ffbe0f16d892947f09d98cb413dd1506c707e5"
+    },
+    {
+      "capability_id": "afps2017.analytics.mass_agreement",
+      "owner_module": "AFPS2017/Analytics/MassAgreement.lean",
+      "spec_hash": "8a2d9e5cbcfabfbcf94447a17293a05b93cdf48ed613199b469da191d4255f7c"
+    },
+    {
+      "capability_id": "afps2017.analytics.conotoxin_table",
+      "owner_module": "AFPS2017/Analytics/ConotoxinTable.lean",
+      "spec_hash": "99c94bad4c079b2b5f596286f19297c6785a381cf46c61d1b2359e6d78b49580"
+    }
+  ],
+  "clean_room_audit_hash": "1688da372edc78d63c365c7e75391750a6b51386e98a1b9768463da113dc709f",
+  "entrypoint": {
+    "direct_imports": [
+      "AFPS2017.Analytics.ConotoxinTable",
+      "AFPS2017.Analytics.MassAgreement",
+      "AFPS2017.Analytics.MassObservation",
+      "AFPS2017.Analytics.Provenance",
+      "AFPS2017.Analytics.SignalObservation",
+      "AFPS2017.Flow.ChemistryAdapters",
+      "AFPS2017.Flow.ContinuityAdapter",
+      "AFPS2017.Flow.Protocol",
+      "AFPS2017.Flow.Quantity",
+      "AFPS2017.Flow.SourceLint",
+      "AFPS2017.Sequence.Assembly",
+      "AFPS2017.Sequence.Coupling",
+      "AFPS2017.Sequence.Cycle",
+      "AFPS2017.Sequence.Deprotection",
+      "AFPS2017.Sequence.Residue",
+      "AFPS2017.Sequence.State",
+      "AFPS2017.Sequence.StoichiometryAdapter",
+      "AFPS2017.Sequence.Target",
+      "AFPS2017.Sequence.Wash",
+      "AFPS2017.Yield.StepYield",
+      "AFPS2017.Yield.Throughput"
+    ],
+    "module_paths": [
+      "AFPS2017/Analytics/ConotoxinTable.lean",
+      "AFPS2017/Analytics/MassAgreement.lean",
+      "AFPS2017/Analytics/MassObservation.lean",
+      "AFPS2017/Analytics/Provenance.lean",
+      "AFPS2017/Analytics/SignalObservation.lean",
+      "AFPS2017/Flow/ChemistryAdapters.lean",
+      "AFPS2017/Flow/ContinuityAdapter.lean",
+      "AFPS2017/Flow/Protocol.lean",
+      "AFPS2017/Flow/Quantity.lean",
+      "AFPS2017/Flow/SourceLint.lean",
+      "AFPS2017/Sequence/Assembly.lean",
+      "AFPS2017/Sequence/Coupling.lean",
+      "AFPS2017/Sequence/Cycle.lean",
+      "AFPS2017/Sequence/Deprotection.lean",
+      "AFPS2017/Sequence/Residue.lean",
+      "AFPS2017/Sequence/State.lean",
+      "AFPS2017/Sequence/StoichiometryAdapter.lean",
+      "AFPS2017/Sequence/Target.lean",
+      "AFPS2017/Sequence/Wash.lean",
+      "AFPS2017/Yield/StepYield.lean",
+      "AFPS2017/Yield/Throughput.lean"
+    ],
+    "path": "AFPS2017.lean",
+    "schema_version": 1,
+    "source_sha256": "acb2255ad51b6c69c0e45052754eab977de4260fc6cfd39b0e22f2ba0fe0e4e6"
+  },
+  "family_id": "afps2017.analytics_cert",
+  "goal_id": "pentelute.afps2017.formal_benchmark.v1",
+  "goal_spec_hash": "40c3dda4897f4f1b6ec596819497ec94862756dfb0c797c70dd0a697be478225",
+  "modules": [
+    {
+      "api_hash": "64f1677aa1bd6d887f7bd9a1751cf33d3ca14544a92a468a4a25d649a698f717",
+      "module_path": "AFPS2017/Analytics/Provenance.lean",
+      "verified_sha256": "df86979c3d8d6b1eaef3335d37c895b5b9bfc63b742b3f816711a36051474f85"
+    },
+    {
+      "api_hash": "8d363d49ac41fad8eba636795eb996dbb0ad5c68e39e26b146cddf6bd1aabb44",
+      "module_path": "AFPS2017/Analytics/MassObservation.lean",
+      "verified_sha256": "4ee1bf0e7eca675afd28d010a16d288a6ac1b07ff24191a809e94a11262f4dc7"
+    },
+    {
+      "api_hash": "5b00e8780ad5d6426d7ce70148b8f7b7929b0c2b80695796f6e06e277abd052e",
+      "module_path": "AFPS2017/Analytics/SignalObservation.lean",
+      "verified_sha256": "6110888d5ed3b62c5f578ae525dc84975794896e168373552f387e0451678a3e"
+    },
+    {
+      "api_hash": "3b8b8a4f7762ebedf804fe4f2eae0102d7b5e9cf52f6e841a09bbb2b2260ac71",
+      "module_path": "AFPS2017/Analytics/MassAgreement.lean",
+      "verified_sha256": "693e870232036f7d1fb5b2f85fadf2c270b6c2f967dc9fe2f9b17c7fb9ef3583"
+    },
+    {
+      "api_hash": "68f2e516c582a435d639c36984ce059d7a2b6870cac3aa2cd15b8c698d998031",
+      "module_path": "AFPS2017/Analytics/ConotoxinTable.lean",
+      "verified_sha256": "c2ee7d8712d784fb0a84539aa89d624dfb76f89848c30048feb9c57d25b2403b"
+    }
+  ],
+  "plan_hash": "1615625c19f7f4a28f9849451a188cd16a4139d0d3d7b87c9afac2cfec73d0f5",
+  "release_certificate_hash": "257a51c91e876db50c913228ab2b06af44fd377995076c8cfd22c76f7c081bcf",
+  "symbol_dag_hash": "4a968df2fbbacf651b5f6c7283ef7a303236359c64f1dcd1064556175173f817",
+  "verified_at": "2026-08-14T21:50:18.482257+00:00",
+  "version": 1
+}

@@ -1,0 +1,432 @@
+{
+  "capability_families": [
+    {
+      "depends_on": [],
+      "description": "Define finite chemical species, amount of substance, concentration, signed stoichiometric quantities, positivity domains, and an amount-aware unit layer. Reuse Mathlib and only admitted Physlib modules, without inheriting Physlib's amount-of-substance gap into the public API.",
+      "family_id": "chemistry.foundations",
+      "source_refs": [
+        "corpus.research_contracts",
+        "corpus.source_registry"
+      ],
+      "status": "verified",
+      "title": "Chemical quantities and amount-aware dimensions",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.chemistry.foundations.r73eea1695b7a",
+        "capabilities": [
+          "chemistry.foundations.amount",
+          "chemistry.foundations.amount_dimension",
+          "chemistry.foundations.concentration",
+          "chemistry.foundations.quantity",
+          "chemistry.foundations.reaction_progress",
+          "chemistry.foundations.stoichiometric_number"
+        ],
+        "plan_hash": "73eea1695b7a7bee57d8dcbd0e5686b3586524ad84bcf4b799ce872bc28c50ae",
+        "release_certificate_hash": "f3d0b2e513caee716de71aa358c0eaccbe3701a40e6f9f5fc82a9bfbca106486"
+      }
+    },
+    {
+      "depends_on": [],
+      "description": "Provide finite indexed complexes and reactions, reaction graphs and linkage, incidence and stoichiometric matrices, conservation covectors, mass-action fluxes, vector fields, and exact steady states. The released v0.1 five-module cone is the first evidence candidate for this family.",
+      "family_id": "reaction_network.core",
+      "source_refs": [
+        "corpus.master",
+        "corpus.research_contracts"
+      ],
+      "status": "verified",
+      "title": "Finite deterministic reaction-network core",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.reaction_network_core.v0_1",
+        "capabilities": [
+          "crn.finite_network",
+          "crn.incidence",
+          "crn.mass_action",
+          "crn.reaction_graph",
+          "crn.stoichiometry"
+        ],
+        "plan_hash": "96549e4f1d1dc653933f84914acafeb69693d42f268005188d563273ca7cbbb9",
+        "release_certificate_hash": "f4be8e846eb7a8edfafa56e7d5e0b26d9f0f163c535d2fd7d00de1fd8662d5d8"
+      }
+    },
+    {
+      "depends_on": [
+        "chemistry.foundations",
+        "reaction_network.core"
+      ],
+      "description": "Formalize extent and normalized rates, exact versus approximate steady state, positivity-aware rate laws, finite closed-form kinetics, thresholds, adsorption, recycle, and thermochemical consumer calculations.",
+      "family_id": "kinetics.closed_form",
+      "source_refs": [
+        "corpus.master",
+        "corpus.scope"
+      ],
+      "status": "verified",
+      "title": "Source-grounded kinetics and closed-form consumers",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.kinetics.closed_form.rece2a9981d4a",
+        "capabilities": [
+          "adsorption.equilibrium_capacity",
+          "kinetics.algebraic_steady_state_closed_form",
+          "kinetics.approximate_steady_state",
+          "kinetics.first_order_threshold",
+          "kinetics.positive_rate_switch",
+          "process.fresh_feed_recycle",
+          "process.stoichiometric_yield",
+          "thermochemistry.constant_heat_capacity_correction",
+          "thermochemistry.ideal_gas_energy_throughput",
+          "thermochemistry.reaction_enthalpy"
+        ],
+        "plan_hash": "ece2a9981d4a42862d8d8c9fa0753637888d1137a5fd0b612c904f5af79f023c",
+        "release_certificate_hash": "bb60bea29fbb1e0fb01dd7a36c324f3113f4c9a83501c5e1bace1c393aec1003"
+      }
+    },
+    {
+      "depends_on": [
+        "chemistry.foundations"
+      ],
+      "description": "Define absorbed-photon and quantum-yield interfaces with explicit domains, then provide thin, axiom-audited adapters to admitted Physlib quantum systems, constants, hydrogen, and tight-binding modules; do not present these adapters as a full ab-initio electronic-structure library.",
+      "family_id": "photochemistry.quantum_adapters",
+      "source_refs": [
+        "corpus.master",
+        "corpus.source_registry"
+      ],
+      "status": "verified",
+      "title": "Photochemistry and quantum-physics adapters",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.photochemistry.quantum_adapters.rf7efd5b04ec7",
+        "capabilities": [
+          "photochemistry.absorbed_photons",
+          "photochemistry.quantum_adapters.hydrogen",
+          "photochemistry.quantum_adapters.planck_constant",
+          "photochemistry.quantum_adapters.tight_binding",
+          "photochemistry.quantum_yield.differential",
+          "photochemistry.quantum_yield.integral"
+        ],
+        "plan_hash": "f7efd5b04ec7ec3504f2624c39624698ec24e11d4ee2264bf63c96588b88178a",
+        "release_certificate_hash": "06e2be3a8dc0169096935d57a48b78775a9665870c7b5c7e4c43a8e4ed89b88f"
+      }
+    },
+    {
+      "depends_on": [
+        "reaction_network.core"
+      ],
+      "description": "Formalize ReactionNetwork-native weighted complex-graph Laplacians and mass-action factorization, detailed balance, complex balance, and the source-grounded implications from positive balanced fluxes to weak reversibility.",
+      "family_id": "reaction_network.balance",
+      "source_refs": [
+        "corpus.research_contracts",
+        "corpus.source_registry"
+      ],
+      "status": "verified",
+      "title": "Graph Laplacian and balance theory",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.reaction_network.balance.r315b81ae3754",
+        "capabilities": [
+          "crn.balance",
+          "crn.weighted_laplacian"
+        ],
+        "plan_hash": "315b81ae37544543a7f9a627d78a0e5443e7de1622c31042b6a405680e5e4af7",
+        "release_certificate_hash": "26449627b9a62975ea4e9638b29c0a7c1d6b1baad15b0325490e75ab69b5bb45"
+      }
+    },
+    {
+      "depends_on": [
+        "reaction_network.core"
+      ],
+      "description": "Define ReactionNetwork-native linkage classes and their count, incidence and stoichiometric ranks, and a natural-valued deficiency. Prove exact reconstruction identities only under an explicit network incidence-rank certificate; this family does not claim that every finite ReactionNetwork has such a certificate or that the restricted-kernel dimension formula already holds.",
+      "family_id": "reaction_network.deficiency",
+      "source_refs": [
+        "corpus.research_contracts"
+      ],
+      "status": "verified",
+      "title": "Basic deficiency and conditional rank certificates",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.reaction_network.deficiency.r9bd1466939b7",
+        "capabilities": [
+          "reaction_network.deficiency.linkage_classes",
+          "reaction_network.deficiency.network_ranks",
+          "reaction_network.deficiency.value_certificate"
+        ],
+        "plan_hash": "9bd1466939b70a940d90517e8a4599d1f0b4db090aa4f3b2df21f01f141e06ae",
+        "release_certificate_hash": "baeb1fa2a1312353415d49060e480001d06540d4ac9e11c6332f3f22b1f81a1f"
+      }
+    },
+    {
+      "depends_on": [
+        "kinetics.closed_form",
+        "reaction_network.core"
+      ],
+      "description": "Compile licensed finite reaction models such as the Oregonator from species/reaction records to incidence, stoichiometry, flux, and ODE coordinates, preserving boundary species and proving symbolic compilation identities rather than treating simulation as proof.",
+      "family_id": "models.sbml_ode",
+      "source_refs": [
+        "corpus.master",
+        "corpus.source_registry"
+      ],
+      "status": "verified",
+      "title": "Curated model compilation and ODE algebra",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.models.sbml_ode.r9669b697fd29",
+        "capabilities": [
+          "models.sbml_ode.finite_model_records",
+          "models.sbml_ode.oregonator_curated_data",
+          "models.sbml_ode.oregonator_ode_algebra",
+          "models.sbml_ode.symbolic_compilation"
+        ],
+        "plan_hash": "9669b697fd298e6a6d37374ec43a0c140b71589d3c4060d1bc85903fc3d7dcc2",
+        "release_certificate_hash": "c15de616f4be88d7def3c13b9a8f2b03dfc6a0cc6eda750c83f2e053e2474a5f"
+      }
+    },
+    {
+      "depends_on": [
+        "reaction_network.deficiency"
+      ],
+      "description": "For every finite ReactionNetwork, identify the image of its reaction-quiver incidence map with the componentwise zero-sum subspace and prove that incidence rank equals the number of complexes minus the number of linkage classes. Combine this theorem with the released stoichiometric factorization and finite-dimensional rank-nullity to derive the unconditional stoichiometric-rank bound, deficiency nonnegativity, and the formula expressing deficiency as the dimension of the kernel of the complex-composition map restricted to the incidence image.",
+      "family_id": "reaction_network.incidence_rank",
+      "source_refs": [
+        "corpus.research_contracts",
+        "corpus.scope"
+      ],
+      "status": "verified",
+      "title": "Incidence rank and unconditional deficiency theorems",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.reaction_network.incidence_rank.re821a01afb5b",
+        "capabilities": [
+          "reaction_network.incidence_rank.graph_linear_algebra",
+          "reaction_network.incidence_rank.restricted_kernel",
+          "reaction_network.incidence_rank.unconditional_deficiency"
+        ],
+        "plan_hash": "e821a01afb5bed3e824c9c1cf527846f392af6db1220af3be47d8ef8b00ee84d",
+        "release_certificate_hash": "46729588ce478b1a8ebda6a78442e47e355f5f8b47ea7d739b49d51c3af17d25"
+      }
+    },
+    {
+      "depends_on": [
+        "reaction_network.balance"
+      ],
+      "description": "Construct terminal-strong-component-supported nonnegative kernel generators for finite positive-rate reaction graphs, prove that they form and span a basis of the weighted-Laplacian kernel, and derive the exact kernel and image dimensions. A proof-carrying certificate interface may precede, but cannot replace, the universal existence and completeness theorems.",
+      "family_id": "reaction_network.terminal_kernel",
+      "source_refs": [
+        "corpus.research_contracts",
+        "corpus.source_registry"
+      ],
+      "status": "verified",
+      "title": "Terminal-component Laplacian kernel structure",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.reaction_network.terminal_kernel.rba776cef3958",
+        "capabilities": [
+          "reaction_network.terminal_kernel.basis",
+          "reaction_network.terminal_kernel.components",
+          "reaction_network.terminal_kernel.dimensions",
+          "reaction_network.terminal_kernel.positive_generators"
+        ],
+        "plan_hash": "ba776cef39580ea0c0711277db63437ef82ca627f978843ce946c0f821bac40e",
+        "release_certificate_hash": "b025a0005525eb1a61f1157a27436a9ddab80d03a0aefc5cde94fb85ff14c3ab"
+      }
+    },
+    {
+      "depends_on": [
+        "chemistry.foundations",
+        "reaction_network.balance",
+        "reaction_network.incidence_rank",
+        "reaction_network.terminal_kernel"
+      ],
+      "description": "Build composable Horn-Jackson and deficiency-zero interfaces, compatibility-class uniqueness, pseudo-Helmholtz nonnegativity, and dissipation identities while explicitly excluding an unsupported global-attractor claim.",
+      "family_id": "reaction_network.deficiency_zero_stability",
+      "source_refs": [
+        "corpus.research_contracts",
+        "corpus.scope"
+      ],
+      "status": "verified",
+      "title": "Deficiency-zero and algebraic stability",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.reaction_network.deficiency_zero_stability.r083a23f46af6",
+        "capabilities": [
+          "reaction_network.deficiency_zero_stability.compatibility_unique",
+          "reaction_network.deficiency_zero_stability.complex_balance",
+          "reaction_network.deficiency_zero_stability.deficiency_zero_bridge",
+          "reaction_network.deficiency_zero_stability.dissipation",
+          "reaction_network.deficiency_zero_stability.positive_compatibility_geometry",
+          "reaction_network.deficiency_zero_stability.pseudo_helmholtz"
+        ],
+        "plan_hash": "083a23f46af6195da2ce12abfe1977dc7b7656c41640547def881ca5a0d364ae",
+        "release_certificate_hash": "f74202a972fe329040dc9d8d18f1105239095df0f1c3fc96e7c44527fc131c86"
+      }
+    },
+    {
+      "depends_on": [
+        "reaction_network.core",
+        "reaction_network.deficiency_zero_stability"
+      ],
+      "description": "Define finite-state propensities, continuous-time Markov generators, stationary measures, coupling/order certificates, and source-grounded product-form results, with path-space fluctuation theory deferred until its prerequisites are explicitly added.",
+      "family_id": "stochastic.reaction_networks",
+      "source_refs": [
+        "corpus.research_contracts",
+        "corpus.source_registry"
+      ],
+      "status": "verified",
+      "title": "Stochastic CRNs and stationary distributions",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.stochastic.reaction_networks.r190bb835c2d0",
+        "capabilities": [
+          "stochastic.finite_generator",
+          "stochastic.order_coupling_certificate",
+          "stochastic.stationary_measure",
+          "stochastic_crn.closed_class_product_form",
+          "stochastic_crn.complex_balance_product_form",
+          "stochastic_crn.count_state_jump",
+          "stochastic_crn.deficiency_zero_product_form",
+          "stochastic_crn.mass_action_propensity",
+          "stochastic_crn.poisson_product_weight",
+          "stochastic_crn.reaction_generator"
+        ],
+        "plan_hash": "190bb835c2d02954e6e46bdd7d402f2f07e499bcf6a9e0035173839344ad05f3",
+        "release_certificate_hash": "d102f95da625e16d2b9faf9f1c4d1025260e946d0f1f8d53f9c6c59edd746bff"
+      }
+    },
+    {
+      "depends_on": [
+        "chemistry.foundations",
+        "reaction_network.balance",
+        "reaction_network.core",
+        "reaction_network.deficiency_zero_stability"
+      ],
+      "description": "Represent chemostats and broken conservation laws, reaction affinities, entropy production, energy/free-energy balances, and chemical-work inequalities, using admitted Physlib thermodynamic/statistical-mechanics grounding where its assumptions match chemistry.",
+      "family_id": "thermodynamics.open_networks",
+      "source_refs": [
+        "corpus.research_contracts",
+        "corpus.source_registry"
+      ],
+      "status": "verified",
+      "title": "Open-network nonequilibrium thermodynamics",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.thermodynamics.open_networks.r67ea5b0b74b2",
+        "capabilities": [
+          "thermodynamics.open_networks.canonical_equilibrium_adapter",
+          "thermodynamics.open_networks.chemical_work",
+          "thermodynamics.open_networks.chemostat_partition",
+          "thermodynamics.open_networks.conservation_classification",
+          "thermodynamics.open_networks.dissipation_work_inequality",
+          "thermodynamics.open_networks.emergent_cycle_rank",
+          "thermodynamics.open_networks.enthalpy_balance",
+          "thermodynamics.open_networks.entropy_flow_balance",
+          "thermodynamics.open_networks.entropy_production",
+          "thermodynamics.open_networks.generalized_relative_entropy",
+          "thermodynamics.open_networks.ideal_gas_equilibrium_adapter",
+          "thermodynamics.open_networks.nonequilibrium_gibbs",
+          "thermodynamics.open_networks.rate_equation",
+          "thermodynamics.open_networks.reaction_affinity",
+          "thermodynamics.open_networks.temperature_grounding"
+        ],
+        "plan_hash": "67ea5b0b74b2e5399f5f14855077854335e0719527f3c7d38e1e6a8d5b75b98a",
+        "release_certificate_hash": "9bee84ffd23f35931728ef5ac09c59cb22adadcd8ced98c8b77906b01f51295a"
+      }
+    },
+    {
+      "depends_on": [
+        "models.sbml_ode",
+        "reaction_network.incidence_rank",
+        "stochastic.reaction_networks"
+      ],
+      "description": "Formalize integer hyperflows, stoichiometric autocatalysis criteria and dual certificates, concrete Jacobian/Hopf or invariant-curve witnesses, and transfer to a physically isolated sealed frontier corpus without claiming oscillation from numerical trajectories alone.",
+      "family_id": "autocatalysis.oscillation",
+      "source_refs": [
+        "corpus.manifest",
+        "corpus.research_contracts",
+        "corpus.scope"
+      ],
+      "status": "verified",
+      "title": "Autocatalysis and oscillation certificates",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.frontier_mathematical_chemistry.v1.autocatalysis.oscillation.r535a9b71a022",
+        "capabilities": [
+          "autocatalysis.dual_infeasibility",
+          "autocatalysis.formal_exclusive",
+          "autocatalysis.integer_hyperflow",
+          "autocatalysis.milo_nghe",
+          "autocatalysis.stoichiometric_adapters",
+          "models.oregonator.certificate_transfer",
+          "models.oregonator.equilibrium_jacobian",
+          "oscillation.imaginary_eigenpair_crossing_certificate",
+          "oscillation.periodic_orbit_certificate",
+          "oscillation.sealed_frontier_transfer"
+        ],
+        "plan_hash": "535a9b71a0223d3a44681cdcd1c9be08199addc3a7d136f3c3d30050de37a8dc",
+        "release_certificate_hash": "f2915d28c25522ddc7d9ec8fe7e54e28c9a28f5317a5b346b1e31b3cb9ea0c68"
+      }
+    },
+    {
+      "depends_on": [
+        "autocatalysis.oscillation",
+        "chemistry.foundations",
+        "kinetics.closed_form",
+        "models.sbml_ode",
+        "photochemistry.quantum_adapters",
+        "reaction_network.balance",
+        "reaction_network.core",
+        "reaction_network.deficiency",
+        "reaction_network.deficiency_zero_stability",
+        "reaction_network.incidence_rank",
+        "reaction_network.terminal_kernel",
+        "stochastic.reaction_networks",
+        "thermodynamics.open_networks"
+      ],
+      "description": "Release a clean-room, source-grounded, standalone Lean ChemistryLib for the declared frontier mathematical-chemistry scope. Completion means every family has content-addressed campaign evidence, real Lean symbol dependencies agree with every locked Module DAG, the full build and axiom gates pass, legacy dependencies are zero, sealed transfer evaluation passes, and Archon extraction produces a self-contained library. This root does not claim all of chemistry and must be revised when the source-grounded scope expands.",
+      "family_id": "chemistrylib.complete",
+      "source_refs": [],
+      "status": "verified",
+      "title": "Standalone verified frontier ChemistryLib",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.global.release",
+        "capabilities": [
+          "chemistrylib.complete"
+        ],
+        "plan_hash": "42aace9b0f60ef87304fa5ff68a3a0852171d6fba1a6fd220dc390ecd5fc47be",
+        "release_certificate_hash": "8f90fb79cb3c729eb77e99ad2842483860369032995fb92f1c3aaf8d691884fc"
+      }
+    }
+  ],
+  "completion_gates": {
+    "legacy_dependency_count": 0,
+    "module_gates": "all",
+    "sealed_holdout": "pass",
+    "sorry_count": 0,
+    "source_coverage": 1.0,
+    "standalone_extract": "pass"
+  },
+  "forbidden_legacy": [
+    "CRNT",
+    "Chemistry",
+    "IChO2026Chem"
+  ],
+  "goal_id": "chemistrylib.frontier_mathematical_chemistry.v1",
+  "grounding_packages": [
+    "Mathlib",
+    "Physlib"
+  ],
+  "root": "chemistrylib.complete",
+  "schema_version": 1,
+  "source_corpus": [
+    {
+      "reference": "chemistrylib_v1_source/corpus_manifest.json",
+      "sha256": "85f936a8f26aaaf4437ed17ba04aef20109f1660afb0d681de1a1c0e968c86dc",
+      "source_id": "corpus.manifest"
+    },
+    {
+      "reference": "chemistrylib_v1_source/corpus.jsonl",
+      "sha256": "8933881eaa83a9e6a9f2373f0c9244463256c93a00a6e9197cacd07e64391b94",
+      "source_id": "corpus.master"
+    },
+    {
+      "reference": "chemistrylib_v1_source/research_contracts.jsonl",
+      "sha256": "d893f8e12ad36bca539cbaebb5911057d9b25f3f5fd86f401d3083d500d3b425",
+      "source_id": "corpus.research_contracts"
+    },
+    {
+      "reference": "chemistrylib_v1_source/scope.json",
+      "sha256": "28cb45f5fbe3ec595c0d14d124df97d8da99c54e766b20dcacadd9de283f2992",
+      "source_id": "corpus.scope"
+    },
+    {
+      "reference": "chemistrylib_v1_source/source_registry.jsonl",
+      "sha256": "71dee1b8870531d1493f60ec4c7fffdd82119174c85d8fbed98e956572d26e96",
+      "source_id": "corpus.source_registry"
+    }
+  ]
+}

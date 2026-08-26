@@ -1,0 +1,71 @@
+{
+  "certificate_hash": "bb9a4c1c19505391c950da63b18e7f9d5f67062116b39e4c90939a8f21ea6a91",
+  "clean_room_audit_hash": "4be8785c3e6a86d37af82a3adaf8785b34ff4f7971c20b232994add95fa03afc",
+  "completed_modules": [
+    "AFPS2017/Sequence/Assembly.lean",
+    "AFPS2017/Sequence/Coupling.lean",
+    "AFPS2017/Sequence/Cycle.lean",
+    "AFPS2017/Sequence/Deprotection.lean",
+    "AFPS2017/Sequence/Residue.lean",
+    "AFPS2017/Sequence/State.lean",
+    "AFPS2017/Sequence/StoichiometryAdapter.lean",
+    "AFPS2017/Sequence/Target.lean",
+    "AFPS2017/Sequence/Wash.lean"
+  ],
+  "domain": "chemistry",
+  "entrypoint": {
+    "direct_imports": [
+      "AFPS2017.Sequence.Assembly",
+      "AFPS2017.Sequence.Coupling",
+      "AFPS2017.Sequence.Cycle",
+      "AFPS2017.Sequence.Deprotection",
+      "AFPS2017.Sequence.Residue",
+      "AFPS2017.Sequence.State",
+      "AFPS2017.Sequence.StoichiometryAdapter",
+      "AFPS2017.Sequence.Target",
+      "AFPS2017.Sequence.Wash"
+    ],
+    "module_paths": [
+      "AFPS2017/Sequence/Assembly.lean",
+      "AFPS2017/Sequence/Coupling.lean",
+      "AFPS2017/Sequence/Cycle.lean",
+      "AFPS2017/Sequence/Deprotection.lean",
+      "AFPS2017/Sequence/Residue.lean",
+      "AFPS2017/Sequence/State.lean",
+      "AFPS2017/Sequence/StoichiometryAdapter.lean",
+      "AFPS2017/Sequence/Target.lean",
+      "AFPS2017/Sequence/Wash.lean"
+    ],
+    "path": "AFPS2017.lean",
+    "schema_version": 1,
+    "source_sha256": "07beea8bdda940ddb6973b66011a3839505c2508fff96e4e81c4f4cf8fe6a579"
+  },
+  "issued_at": "2026-08-14T15:14:58.086483+00:00",
+  "lake_build": true,
+  "module_source_hashes": {
+    "AFPS2017/Sequence/Assembly.lean": "a2972b805481c7bb9e7a967c4fa12db3438cf2640ad1b5e81db1e658394daabe",
+    "AFPS2017/Sequence/Coupling.lean": "d4755de62e7a391ecf1df81e935a40f3b1677b97adb8f9a9a19c0c41f07cce23",
+    "AFPS2017/Sequence/Cycle.lean": "17d3a5054244f16cedb04168fd5dfb6a7fdb0174d485b2cf8f74a1da6b56ffc0",
+    "AFPS2017/Sequence/Deprotection.lean": "9ad6ceca9840d0d54b07311a62ea648ebe848987ad692132f67699ec565a5985",
+    "AFPS2017/Sequence/Residue.lean": "f5c99b8e80d5e743640048f6e56c6b78541f5b0204bb73cdb8f8b9b0f6dbbb8a",
+    "AFPS2017/Sequence/State.lean": "b99b07b2346f1bedaa770d4bd5e66af3af1deac1282531a03bd87313d2d5a074",
+    "AFPS2017/Sequence/StoichiometryAdapter.lean": "9a880e2604ca8a97d11914d67e541f7201d13186f3f881894851bda9f5ce4fea",
+    "AFPS2017/Sequence/Target.lean": "fb60e472f4315edc06f75168b085bca30c249faa13d934f41979c3193fdd2978",
+    "AFPS2017/Sequence/Wash.lean": "8826fd814315581e015c01fe2e5866300231bb8990a500ef506af2d8350dce87"
+  },
+  "plan_hash": "be67aa408f356e084c73d5ffd93f1b5f8d88b276e61a38730c2aa745dda50c48",
+  "project_index_hash": "4845ebc208c1a321aa1d2433c28b19e9e03c23f644fb4f82e50f6f8deab97930",
+  "project_index_source_hashes": {
+    "AFPS2017/Sequence/Assembly.lean": "a2972b805481c7bb9e7a967c4fa12db3438cf2640ad1b5e81db1e658394daabe",
+    "AFPS2017/Sequence/Coupling.lean": "d4755de62e7a391ecf1df81e935a40f3b1677b97adb8f9a9a19c0c41f07cce23",
+    "AFPS2017/Sequence/Cycle.lean": "17d3a5054244f16cedb04168fd5dfb6a7fdb0174d485b2cf8f74a1da6b56ffc0",
+    "AFPS2017/Sequence/Deprotection.lean": "9ad6ceca9840d0d54b07311a62ea648ebe848987ad692132f67699ec565a5985",
+    "AFPS2017/Sequence/Residue.lean": "f5c99b8e80d5e743640048f6e56c6b78541f5b0204bb73cdb8f8b9b0f6dbbb8a",
+    "AFPS2017/Sequence/State.lean": "b99b07b2346f1bedaa770d4bd5e66af3af1deac1282531a03bd87313d2d5a074",
+    "AFPS2017/Sequence/StoichiometryAdapter.lean": "9a880e2604ca8a97d11914d67e541f7201d13186f3f881894851bda9f5ce4fea",
+    "AFPS2017/Sequence/Target.lean": "fb60e472f4315edc06f75168b085bca30c249faa13d934f41979c3193fdd2978",
+    "AFPS2017/Sequence/Wash.lean": "8826fd814315581e015c01fe2e5866300231bb8990a500ef506af2d8350dce87"
+  },
+  "symbol_dag_hash": "aeb92ac497a7f767a64defffab79ee176cd3390ad137d15df546e5c5920565dd",
+  "version": 1
+}

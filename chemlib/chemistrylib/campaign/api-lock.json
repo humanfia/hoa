@@ -1,0 +1,777 @@
+{
+  "capabilities": {
+    "autocatalysis.dual_infeasibility": {
+      "spec_hash": "cf3096a52f2bc46cddcea3902ee6d8860d172a79ff7b719587491d0f4e34063c"
+    },
+    "autocatalysis.formal_exclusive": {
+      "spec_hash": "d33d02d60dece8a80db65800b7222d9e2423db5d4e587c7e67ce4e6775c23c54"
+    },
+    "autocatalysis.integer_hyperflow": {
+      "spec_hash": "80b1bb3a2250150499a0431637e0250641456f4d9763332f62d197f993e60311"
+    },
+    "autocatalysis.milo_nghe": {
+      "spec_hash": "956bd054fa92388297d07d94b1f74aa27bd712dd00727ed7923cb21f07fae958"
+    },
+    "autocatalysis.stoichiometric_adapters": {
+      "spec_hash": "b0779614df285aeb122fc48424e07f35c04ec38ce007f58b088fef02bf1a9d77"
+    },
+    "models.oregonator.certificate_transfer": {
+      "spec_hash": "ea81bd7fd193df0e5c1ea7ba0d3d25e65b8712b2f8a55b971e6d378e3799d85a"
+    },
+    "models.oregonator.equilibrium_jacobian": {
+      "spec_hash": "0404bcaabcd795b4b038c0c84fcc8f9634b0f9fef244599093754832500bbb3f"
+    },
+    "oscillation.imaginary_eigenpair_crossing_certificate": {
+      "spec_hash": "a6a009400ef55a2ca2b65852d54fe5cc7b9d06912b3963850a09295485ab25e7"
+    },
+    "oscillation.periodic_orbit_certificate": {
+      "spec_hash": "aab5d64cc2d9250ecd6a8bb244830578fb31cebf047f6500949c5ea24cd11cdd"
+    },
+    "oscillation.sealed_frontier_transfer": {
+      "spec_hash": "43d033e6d64c153c0de49f4cb782620c2c5f2e590c472b72396421db9e8b63e3"
+    }
+  },
+  "modules": {
+    "ChemistryLib/Autocatalysis/Criteria.lean": {
+      "api_hash": "23d50d947573cfdde9284fc859bbb63380c7fdc70250dce3e7de0fcb0b428675"
+    },
+    "ChemistryLib/Autocatalysis/DualCertificate.lean": {
+      "api_hash": "9da7f3b66025fccc7c7e760797bdd0d3ae6faf51f8194e124c56981556298abe"
+    },
+    "ChemistryLib/Autocatalysis/MiloNghe.lean": {
+      "api_hash": "3fbb3135ed78dd6e3a6327ea194ff3bce6d2ee6c286e31179800f0c47668db48"
+    },
+    "ChemistryLib/Autocatalysis/SealedFrontier.lean": {
+      "api_hash": "063f6aa065c2ead0143a72f1dd9cad2adf28e67b702378b60e8522a53f5fa687"
+    },
+    "ChemistryLib/Autocatalysis/StoichiometricAdapters.lean": {
+      "api_hash": "6cb879d676770877bac961fecfa2b11311d0c9e9d80ca90d72caca9d8afe0844"
+    },
+    "ChemistryLib/Dynamics/OscillationCertificate.lean": {
+      "api_hash": "a798afd3bd91f50a8c16040c5ecec11bba1ba0f4782f6798e44c59c3c7f9c5f8"
+    },
+    "ChemistryLib/Models/Oregonator/Certificates.lean": {
+      "api_hash": "fc2cb3dc4dbb4860267fedba088f40ecb38d19e8258b321bf36045f36c2f5826"
+    },
+    "ChemistryLib/Models/Oregonator/Jacobian.lean": {
+      "api_hash": "0f2d0c8ee427d56df7b095aefaaefa8b1d1aaf1f6e807048c094dcb9b5910b25"
+    },
+    "ChemistryLib/ReactionNetwork/IntegerHyperflow.lean": {
+      "api_hash": "9166f44afb66e939879d34eb93ddaae08151f16f2d850a784a23668176b2412e"
+    }
+  },
+  "plan_hash": "535a9b71a0223d3a44681cdcd1c9be08199addc3a7d136f3c3d30050de37a8dc",
+  "prerequisites": {
+    "capabilities": {
+      "adsorption.equilibrium_capacity": {
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "owner_module": "ChemistryLib/Calculations/Adsorption.lean",
+        "spec_hash": "54674da0c0b541881dcb92396ca3a26b3be0f744f9b9db1e6d6f6e063ae0e670"
+      },
+      "chemistry.foundations.amount": {
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "owner_module": "ChemistryLib/Foundations/Amount.lean",
+        "spec_hash": "2c3cd83aadd0049640a2f9988cc18f911ac28c6f287d98d4823f4c3e2412ae4d"
+      },
+      "chemistry.foundations.amount_dimension": {
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "owner_module": "ChemistryLib/Units/ChemicalDimension.lean",
+        "spec_hash": "5c0d401080f7418c2952743c99f8963c0c841342bbb6182f4ded62a7ad01a3c2"
+      },
+      "chemistry.foundations.concentration": {
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "owner_module": "ChemistryLib/Foundations/Concentration.lean",
+        "spec_hash": "98495110f1ad664196dc1b7dfef211a953d2dfa5a776694f01fbb474ab257268"
+      },
+      "chemistry.foundations.quantity": {
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "owner_module": "ChemistryLib/Units/Quantity.lean",
+        "spec_hash": "18d84919ac763efed2df2f224dbe68f45eb11044bc616a44f952d2daa1eb64cd"
+      },
+      "chemistry.foundations.reaction_progress": {
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "owner_module": "ChemistryLib/Foundations/ReactionProgress.lean",
+        "spec_hash": "9fb4c789e8f48071120643c9bb595dc918e94e1b16e2e200262cf9419c809d36"
+      },
+      "chemistry.foundations.stoichiometric_number": {
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "owner_module": "ChemistryLib/Foundations/Stoichiometry.lean",
+        "spec_hash": "c79e47e75be131260bc12a5c8c0626f581d1287e3a85aa9550cd813e7124e3c5"
+      },
+      "crn.balance": {
+        "evidence_hash": "caca79544fbf0f7604a2b9471521d481f3dae50e74b3d16496b9308e9ddd4cc4",
+        "owner_module": "ChemistryLib/ReactionNetwork/Balance.lean",
+        "spec_hash": "063789168e0b83d4f27eea30a7ab1b603cab20203e8b3b0181ea3a0f9050e260"
+      },
+      "crn.finite_network": {
+        "evidence_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+        "owner_module": "ChemistryLib/ReactionNetwork/Basic.lean",
+        "spec_hash": "835d8996ca50012205958753f1803e0686adc25d6b4a6014f0577d60017d98c3"
+      },
+      "crn.incidence": {
+        "evidence_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+        "owner_module": "ChemistryLib/ReactionNetwork/Incidence.lean",
+        "spec_hash": "45009218adc590430061d3182480ec0b02399bd22018923d9bdd04bf0f5cf071"
+      },
+      "crn.mass_action": {
+        "evidence_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+        "owner_module": "ChemistryLib/ReactionNetwork/MassAction.lean",
+        "spec_hash": "ee5c5a5ce0e287832833aceac39c61db998668e5f084c235e9327f8b0a57190e"
+      },
+      "crn.reaction_graph": {
+        "evidence_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+        "owner_module": "ChemistryLib/ReactionNetwork/Graph.lean",
+        "spec_hash": "ccd79dd0a2875f83f128ccae68ff822a4b19b59d0001cfcd96e7813c2618cb94"
+      },
+      "crn.stoichiometry": {
+        "evidence_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+        "owner_module": "ChemistryLib/ReactionNetwork/Stoichiometry.lean",
+        "spec_hash": "7fe57e0f131fdd883f2508c55ee64a17172e72ce2a5fc2c0fe0072f2b7fc91fd"
+      },
+      "crn.weighted_laplacian": {
+        "evidence_hash": "caca79544fbf0f7604a2b9471521d481f3dae50e74b3d16496b9308e9ddd4cc4",
+        "owner_module": "ChemistryLib/ReactionNetwork/Laplacian.lean",
+        "spec_hash": "573c0e69abb7028c1f9951b19d1ec66ea3d219cf753c89f147256df0d745544c"
+      },
+      "kinetics.algebraic_steady_state_closed_form": {
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "owner_module": "ChemistryLib/Kinetics/ClosedForm.lean",
+        "spec_hash": "9e34baabfb1b48792bfe64b7db595742984aa1525eee255337465a24afc006bd"
+      },
+      "kinetics.approximate_steady_state": {
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "owner_module": "ChemistryLib/Kinetics/SteadyState.lean",
+        "spec_hash": "6204177592bd78a8b5da7fdd8bd1e72dd54b05356489662470bde34595fb9978"
+      },
+      "kinetics.first_order_threshold": {
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "owner_module": "ChemistryLib/Kinetics/ClosedForm.lean",
+        "spec_hash": "8a9ad89f41c3793539776cccae2fcb94cdaa16944947bbb83d604652bbc795c4"
+      },
+      "kinetics.positive_rate_switch": {
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "owner_module": "ChemistryLib/Kinetics/RateLaw.lean",
+        "spec_hash": "aba17680cd586a91976532571980441797f79ba5bbc92f2f49d81baeb157d68d"
+      },
+      "models.sbml_ode.finite_model_records": {
+        "evidence_hash": "18354804199d8c3197a9dcc26f1d61bd61f22661ceef80977a7665c65fa9a480",
+        "owner_module": "ChemistryLib/Models/SBML/Records.lean",
+        "spec_hash": "5224271f80df0abcb66fe65c0527613b099d6f4f2872251509ca3942fb2aef8b"
+      },
+      "models.sbml_ode.oregonator_curated_data": {
+        "evidence_hash": "18354804199d8c3197a9dcc26f1d61bd61f22661ceef80977a7665c65fa9a480",
+        "owner_module": "ChemistryLib/Models/Oregonator/Data.lean",
+        "spec_hash": "73c67b33f27f92fc54cf606180b38e1aca68735304548aaba55903fdca44291c"
+      },
+      "models.sbml_ode.oregonator_ode_algebra": {
+        "evidence_hash": "18354804199d8c3197a9dcc26f1d61bd61f22661ceef80977a7665c65fa9a480",
+        "owner_module": "ChemistryLib/Models/Oregonator/ODE.lean",
+        "spec_hash": "7835af25ba7e1546886d290a716517d25698e127242aa005fa00bedbf5c6b420"
+      },
+      "models.sbml_ode.symbolic_compilation": {
+        "evidence_hash": "18354804199d8c3197a9dcc26f1d61bd61f22661ceef80977a7665c65fa9a480",
+        "owner_module": "ChemistryLib/Models/SBML/Compile.lean",
+        "spec_hash": "3b9c17bcaa3a476c1f19c9de5104a3fa798c6a842f79ebabe44c1a7c1b4bb901"
+      },
+      "photochemistry.absorbed_photons": {
+        "evidence_hash": "d7b2b68835752736d302e3ca86b346d1c307cf2d602edfd31789493ff6f46a92",
+        "owner_module": "ChemistryLib/Photochemistry/AbsorbedPhoton.lean",
+        "spec_hash": "8ea6476cd654a265d310b4bfbaab32516af678d1fb90f3d8667fb584c053a83c"
+      },
+      "photochemistry.quantum_adapters.hydrogen": {
+        "evidence_hash": "d7b2b68835752736d302e3ca86b346d1c307cf2d602edfd31789493ff6f46a92",
+        "owner_module": "ChemistryLib/Photochemistry/QuantumAdapters.lean",
+        "spec_hash": "2595f41952b44e94ad054e991579e373bb71a4e7125c9c429fbb194251118b78"
+      },
+      "photochemistry.quantum_adapters.planck_constant": {
+        "evidence_hash": "d7b2b68835752736d302e3ca86b346d1c307cf2d602edfd31789493ff6f46a92",
+        "owner_module": "ChemistryLib/Photochemistry/QuantumAdapters.lean",
+        "spec_hash": "5c291ceb84b8fce9b4bfeeb693f1526106f0cee3f33f313bc18d8e58e5d51b9e"
+      },
+      "photochemistry.quantum_adapters.tight_binding": {
+        "evidence_hash": "d7b2b68835752736d302e3ca86b346d1c307cf2d602edfd31789493ff6f46a92",
+        "owner_module": "ChemistryLib/Photochemistry/QuantumAdapters.lean",
+        "spec_hash": "e1c8f8eba5399a807e31a3293a1563cf2d1c8db2bb54b5f829965d9a95dedb58"
+      },
+      "photochemistry.quantum_yield.differential": {
+        "evidence_hash": "d7b2b68835752736d302e3ca86b346d1c307cf2d602edfd31789493ff6f46a92",
+        "owner_module": "ChemistryLib/Photochemistry/QuantumYield.lean",
+        "spec_hash": "5236898f43c5c3c14059111f7819c324a770543322e344e36820af5abb9d6d95"
+      },
+      "photochemistry.quantum_yield.integral": {
+        "evidence_hash": "d7b2b68835752736d302e3ca86b346d1c307cf2d602edfd31789493ff6f46a92",
+        "owner_module": "ChemistryLib/Photochemistry/QuantumYield.lean",
+        "spec_hash": "af018bdaf6b5da4fb04d3ba181128d97517ea3be14d347cf972570cfce95c2c0"
+      },
+      "process.fresh_feed_recycle": {
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "owner_module": "ChemistryLib/Process/Recycle.lean",
+        "spec_hash": "6163386e05e96f68ad55603842a0d1903bb15f06ea2e7a71229fda53b715d436"
+      },
+      "process.stoichiometric_yield": {
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "owner_module": "ChemistryLib/Process/ProductionYield.lean",
+        "spec_hash": "b56ee069701963f9b908fc1d03c20b8ed39115855c90f23d01917338b1a6241a"
+      },
+      "reaction_network.deficiency.linkage_classes": {
+        "evidence_hash": "0235d4bf49c155644a6701fc47a9a550b555e2da11318d92939f782559cd73e6",
+        "owner_module": "ChemistryLib/ReactionNetwork/LinkageClass.lean",
+        "spec_hash": "1428d4d354f7988db4bedd410ebe8e51ce0e748cb0ff460b48cbe84f496c2ee5"
+      },
+      "reaction_network.deficiency.network_ranks": {
+        "evidence_hash": "0235d4bf49c155644a6701fc47a9a550b555e2da11318d92939f782559cd73e6",
+        "owner_module": "ChemistryLib/ReactionNetwork/DeficiencyRank.lean",
+        "spec_hash": "56a4e2ef6115c48fe71f55f848d14a582453713582315c50136678dbd9b1d9b2"
+      },
+      "reaction_network.deficiency.value_certificate": {
+        "evidence_hash": "0235d4bf49c155644a6701fc47a9a550b555e2da11318d92939f782559cd73e6",
+        "owner_module": "ChemistryLib/ReactionNetwork/Deficiency.lean",
+        "spec_hash": "6f0548c79ecb0116c911a7eca4784d8d8318fbe9494334c971b698ac6c62ccbf"
+      },
+      "reaction_network.deficiency_zero_stability.compatibility_unique": {
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "owner_module": "ChemistryLib/ReactionNetwork/CompatibilityClass.lean",
+        "spec_hash": "f28818e29d4b56b9a8adf200f756bf4d8f36542bcb321d9380a0ac8ab41091aa"
+      },
+      "reaction_network.deficiency_zero_stability.complex_balance": {
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "owner_module": "ChemistryLib/ReactionNetwork/DeficiencyZeroComplexBalance.lean",
+        "spec_hash": "a5815828d8e4ce1a5d536ff9fe7b73d81e6d4e8944e2f675966db01bbb26b02f"
+      },
+      "reaction_network.deficiency_zero_stability.deficiency_zero_bridge": {
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "owner_module": "ChemistryLib/ReactionNetwork/DeficiencyZeroBridge.lean",
+        "spec_hash": "3ebe7ca2f55223789d18e32a2068dc757b53982419a87d1bbc4f35cf018e1199"
+      },
+      "reaction_network.deficiency_zero_stability.dissipation": {
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "owner_module": "ChemistryLib/ReactionNetwork/ComplexBalanceDissipation.lean",
+        "spec_hash": "e3cefaca8a60da609d8b2ac26c6446ca1d42209be67844967b01ee26903c4c68"
+      },
+      "reaction_network.deficiency_zero_stability.positive_compatibility_geometry": {
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "owner_module": "ChemistryLib/ReactionNetwork/PositiveCompatibilityGeometry.lean",
+        "spec_hash": "ad610c36b3d5c6e71fb07da3cddf98c62505c92b61c65bb26b6fee57af91a28e"
+      },
+      "reaction_network.deficiency_zero_stability.pseudo_helmholtz": {
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "owner_module": "ChemistryLib/ReactionNetwork/PseudoHelmholtz.lean",
+        "spec_hash": "c5783073bcad101da51021a0b8e5e261795ce550ef0f66eaf52887f7ff4a859f"
+      },
+      "reaction_network.incidence_rank.graph_linear_algebra": {
+        "evidence_hash": "3530670099b2a6f5d0bcff4a38fcde84d826d9e7ebc9026f89553fe4e2292a46",
+        "owner_module": "ChemistryLib/ReactionNetwork/IncidenceRank.lean",
+        "spec_hash": "a9e25303fc13da0493cb014445dc946bbc7fc0b7220a103f92f5618eac090816"
+      },
+      "reaction_network.incidence_rank.restricted_kernel": {
+        "evidence_hash": "3530670099b2a6f5d0bcff4a38fcde84d826d9e7ebc9026f89553fe4e2292a46",
+        "owner_module": "ChemistryLib/ReactionNetwork/DeficiencyKernel.lean",
+        "spec_hash": "9e06a3df49c90b8bbc16704221e57a157bd9249a1cbab4c593ce3c7f9c674510"
+      },
+      "reaction_network.incidence_rank.unconditional_deficiency": {
+        "evidence_hash": "3530670099b2a6f5d0bcff4a38fcde84d826d9e7ebc9026f89553fe4e2292a46",
+        "owner_module": "ChemistryLib/ReactionNetwork/UnconditionalDeficiency.lean",
+        "spec_hash": "4904ef769bd981173e5059292295d253827c4156eb41bfc0ddfe3a9d9e9a56d1"
+      },
+      "reaction_network.terminal_kernel.basis": {
+        "evidence_hash": "0cf3738dc9ede3571a09d03b286869a26b27ed9e6cca2114c0817104acb097d6",
+        "owner_module": "ChemistryLib/ReactionNetwork/TerminalKernelBasis.lean",
+        "spec_hash": "f466bef52f9a8231e12a5dc8921fbb869f110de488b4838fe8df5d13253fe968"
+      },
+      "reaction_network.terminal_kernel.components": {
+        "evidence_hash": "0cf3738dc9ede3571a09d03b286869a26b27ed9e6cca2114c0817104acb097d6",
+        "owner_module": "ChemistryLib/ReactionNetwork/TerminalComponent.lean",
+        "spec_hash": "4f39835201b0d636ce1f97a88b81e68865ad987158a981f51c7795f2ae621aa4"
+      },
+      "reaction_network.terminal_kernel.dimensions": {
+        "evidence_hash": "0cf3738dc9ede3571a09d03b286869a26b27ed9e6cca2114c0817104acb097d6",
+        "owner_module": "ChemistryLib/ReactionNetwork/TerminalKernelDimension.lean",
+        "spec_hash": "baf0f240047ad6825b796ee0f3219aed558e0bce7a68847dfe5bb2fd520a72af"
+      },
+      "reaction_network.terminal_kernel.positive_generators": {
+        "evidence_hash": "0cf3738dc9ede3571a09d03b286869a26b27ed9e6cca2114c0817104acb097d6",
+        "owner_module": "ChemistryLib/ReactionNetwork/TerminalKernelGenerator.lean",
+        "spec_hash": "dd1f45bb79e161e0530d17cb174c1ccd5984e0b15d269c83cd2c2aab0b7bee7c"
+      },
+      "stochastic.finite_generator": {
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "owner_module": "ChemistryLib/Stochastic/FiniteGenerator.lean",
+        "spec_hash": "f837bdde872ec80c93e8c3ddb25bf697e279daf69fe3400dd6d4651c7fd645fa"
+      },
+      "stochastic.order_coupling_certificate": {
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "owner_module": "ChemistryLib/Stochastic/OrderCoupling.lean",
+        "spec_hash": "d72058568d85db0f287618136f00a3a66d857dc624088bacd648bbf79d6722da"
+      },
+      "stochastic.stationary_measure": {
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "owner_module": "ChemistryLib/Stochastic/Stationary.lean",
+        "spec_hash": "dd19f018a245eda8cb2e005b7d8962dc512b0d72ec497e5e986e364ea729ab59"
+      },
+      "stochastic_crn.closed_class_product_form": {
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "owner_module": "ChemistryLib/Stochastic/ClosedClassProduct.lean",
+        "spec_hash": "2d82110d725ad9f01dc107e20faffdf1ae20f810215d88a7a85cbe69d4e4745c"
+      },
+      "stochastic_crn.complex_balance_product_form": {
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "owner_module": "ChemistryLib/Stochastic/ComplexBalanceProductForm.lean",
+        "spec_hash": "6928b3b751d3651127829524136eb006608762122bf8a19434b8600a9607108c"
+      },
+      "stochastic_crn.count_state_jump": {
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "owner_module": "ChemistryLib/Stochastic/CountState.lean",
+        "spec_hash": "c82f3edd18e2a5f3320676dd80c224814a7618e8f67ba02eec9ebca977ffedca"
+      },
+      "stochastic_crn.deficiency_zero_product_form": {
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "owner_module": "ChemistryLib/Stochastic/DeficiencyZeroProductForm.lean",
+        "spec_hash": "3a5a29d8f027c54ebd2d42c2b2d9cb4fc7e2b7b2f94efb860da06c312e385964"
+      },
+      "stochastic_crn.mass_action_propensity": {
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "owner_module": "ChemistryLib/Stochastic/Propensity.lean",
+        "spec_hash": "8e916a1d14aeb833689975db975b6a9c58dbffaa80b4c80d0be541810c97c022"
+      },
+      "stochastic_crn.poisson_product_weight": {
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "owner_module": "ChemistryLib/Stochastic/PoissonProduct.lean",
+        "spec_hash": "b35374aca3901be628098d70054db8046dc6db56f154758808386a5d1623887d"
+      },
+      "stochastic_crn.reaction_generator": {
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "owner_module": "ChemistryLib/Stochastic/ReactionGenerator.lean",
+        "spec_hash": "d6d971d041b9b1c67f97e0a6d6d05dfdb4d3d505c90b3aed705dd39481eccdac"
+      },
+      "thermochemistry.constant_heat_capacity_correction": {
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "owner_module": "ChemistryLib/Thermochemistry/TemperatureCorrection.lean",
+        "spec_hash": "5fa598938b9dc894093028a56857a8993a1eb9728899d73bc6d2b10c024f9e0c"
+      },
+      "thermochemistry.ideal_gas_energy_throughput": {
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "owner_module": "ChemistryLib/Calculations/CombustionEnergy.lean",
+        "spec_hash": "247b55c09b34b223c0006d90941319cb2cf26966472650b5fc39522161c7b6ab"
+      },
+      "thermochemistry.reaction_enthalpy": {
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "owner_module": "ChemistryLib/Thermochemistry/ReactionEnthalpy.lean",
+        "spec_hash": "82e8cfc935862f750cd567fbae51d2f8b18b4ee7fda694d7162c7f811efb0689"
+      },
+      "thermodynamics.open_networks.canonical_equilibrium_adapter": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/EquilibriumAdapters.lean",
+        "spec_hash": "a4324158c593a5f8de39496a142e070a902db5e38fa0e3ae4a4e86c426fcedf7"
+      },
+      "thermodynamics.open_networks.chemical_work": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/Balances.lean",
+        "spec_hash": "d582601eabdd71151a3c959487b2311f5e5d7146f64a8f1fca1cbab12f15fe8f"
+      },
+      "thermodynamics.open_networks.chemostat_partition": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/Partition.lean",
+        "spec_hash": "b466018a4206d239cc4b0d4cfa75bedf86cc0e3667600b297e78155295bf576e"
+      },
+      "thermodynamics.open_networks.conservation_classification": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/Conservation.lean",
+        "spec_hash": "49d4dcad9c64712be6ecb2308741c92957b81ef127e275f21113fdfa95037da8"
+      },
+      "thermodynamics.open_networks.dissipation_work_inequality": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/WorkInequality.lean",
+        "spec_hash": "e4a2b38e036719d8d96b62210be544a14e2eeee2c90bec5ddeaecbc9a36ef5ed"
+      },
+      "thermodynamics.open_networks.emergent_cycle_rank": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/EmergentCycleRank.lean",
+        "spec_hash": "7847d49558f8742b0b049c44b07749bd10d27162dc2726a8c66e31e55c3340f9"
+      },
+      "thermodynamics.open_networks.enthalpy_balance": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/Balances.lean",
+        "spec_hash": "283450804078a233ebfd10b8ed3037a9cdb4ebbda5622ddbd0a6e59551942945"
+      },
+      "thermodynamics.open_networks.entropy_flow_balance": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/Balances.lean",
+        "spec_hash": "699f9bc505e514d87059a2f08a90b8655198d1c824e8461eac99693ae217d914"
+      },
+      "thermodynamics.open_networks.entropy_production": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/EntropyProduction.lean",
+        "spec_hash": "694e8da2be433384c5b9ef7b443c867cdca7f5a73eae1d6aa57f89a5f7f7f5fe"
+      },
+      "thermodynamics.open_networks.generalized_relative_entropy": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/RelativeEntropy.lean",
+        "spec_hash": "b6e92762a83322d5c159ddce0853790647154665a34f13fa7dd2df8ba2bbec01"
+      },
+      "thermodynamics.open_networks.ideal_gas_equilibrium_adapter": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/EquilibriumAdapters.lean",
+        "spec_hash": "ccdfcb75bc74ea0f9eaf63c4c3671f197ca18668f9632caa7c536d166c2d4cce"
+      },
+      "thermodynamics.open_networks.nonequilibrium_gibbs": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/NonequilibriumGibbs.lean",
+        "spec_hash": "025f0e7c676024810a532a91a4e4f1ec7a99240e97ee78d4d62f923c7c980388"
+      },
+      "thermodynamics.open_networks.rate_equation": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/RateEquation.lean",
+        "spec_hash": "bee3de2304030986420c79243a075cfc18996e28f9d9a2527b30c3a8597dfbe5"
+      },
+      "thermodynamics.open_networks.reaction_affinity": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/OpenNetworks/Affinity.lean",
+        "spec_hash": "9c304f547b1dd4281e8c6cd8d0b1fa71b86251c87c886fdaabf5c52764728815"
+      },
+      "thermodynamics.open_networks.temperature_grounding": {
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "owner_module": "ChemistryLib/Thermodynamics/TemperatureAdapters.lean",
+        "spec_hash": "a655cd684da36264a652fa40178b888669adf7e2a1fc32fd91732577618c55b9"
+      }
+    },
+    "evidence_hash": "3d9f4c209364257b0d36ba19c6d4a0865d86dc8adfdd8dcf3485e187b8f1c89e",
+    "modules": {
+      "ChemistryLib/Calculations/Adsorption.lean": {
+        "api_hash": "1233197a086d21f64b3ff24e4b0b3908d589a6b41ad03fb844b656a248b99866",
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "verified_sha256": "93e1e2950bafeae2bfc715c166afb26ad46a06ad472822dadac87dd70f7ac6c5"
+      },
+      "ChemistryLib/Calculations/CombustionEnergy.lean": {
+        "api_hash": "e1957994f593f8c18464a09512b58ae599340b025cfcf98e1ba307a4d3336efa",
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "verified_sha256": "6c08771770bf06d45a1e61fa019d8bde333daacb6eaa08782f043cbafc9f2d4b"
+      },
+      "ChemistryLib/Foundations/Amount.lean": {
+        "api_hash": "f00d3a549547677117d625e715171b156ca360c662c215c82523eee47117ed42",
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "verified_sha256": "b79be5e2ca9919ae695e7171253edd2a8a36bf8700efdee0795fd101d037e92d"
+      },
+      "ChemistryLib/Foundations/Concentration.lean": {
+        "api_hash": "c87de693bbcc113980203d52e4d8dd87ab432dce8b26e7e4365e1d19bb9f62cc",
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "verified_sha256": "869f5665bffb32b80710c5daa0c0be31980d1ae51cb000495c628998eff8c037"
+      },
+      "ChemistryLib/Foundations/ReactionProgress.lean": {
+        "api_hash": "f188db2b94e5e28314a782be6175f6b747339c3d9d6b8187f7f7d3abbe9e0ac7",
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "verified_sha256": "9a9f83f338c7eb0261df75204ddfa20ef6af7c8d4065c7171eac4ba78abf44e8"
+      },
+      "ChemistryLib/Foundations/Stoichiometry.lean": {
+        "api_hash": "09f8bd1fa23434ed44aa83d6ae8375203bf136f38d0be7e02c213deedb1aff8d",
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "verified_sha256": "62db09cca9249101b75fead4504f627510cb93a23984f00062837e3c2212a57f"
+      },
+      "ChemistryLib/Kinetics/ClosedForm.lean": {
+        "api_hash": "e1b75d62c1504ed274650d018e49b90a1e35240d270e2fce817b1107110192dd",
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "verified_sha256": "b2d03d35d8d762d665bc022364991b98bc396a91076c683da9c59be31ca90379"
+      },
+      "ChemistryLib/Kinetics/RateLaw.lean": {
+        "api_hash": "5f1f55abd623a85fffc77f8381a58ac7892a5c97c6373264331d8a9304ab3e66",
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "verified_sha256": "e4ca401e4a667e329db4c841d713c69b61903f6c646471e9522cfec56a4555de"
+      },
+      "ChemistryLib/Kinetics/SteadyState.lean": {
+        "api_hash": "2811c9c027a38822d1f0371446bcb95a9882db06ef4de9ce8788b9e53b8510cc",
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "verified_sha256": "5232231e8edfcd495993b66e97475528cadfebc503d66a94aa5f380fd3bd0ee6"
+      },
+      "ChemistryLib/Models/Oregonator/Data.lean": {
+        "api_hash": "6c70b012fb1799341689a17b5ad9e42793cbc1411cf71ab44dbebd0d9e0dc9a0",
+        "evidence_hash": "18354804199d8c3197a9dcc26f1d61bd61f22661ceef80977a7665c65fa9a480",
+        "verified_sha256": "6c2c92c0c7599a7a067f53952d5f39394c7480bca2773d7f242f160afa53409c"
+      },
+      "ChemistryLib/Models/Oregonator/ODE.lean": {
+        "api_hash": "c8874f24b06d82054924398efd8c29e928e3e52c62b2eddfab16c1057d32e062",
+        "evidence_hash": "18354804199d8c3197a9dcc26f1d61bd61f22661ceef80977a7665c65fa9a480",
+        "verified_sha256": "72a2cc6d940cf55aa08b24e45f6942ebdd6f7f12344c47dd5c605ef2cb9071d5"
+      },
+      "ChemistryLib/Models/SBML/Compile.lean": {
+        "api_hash": "7eae302ee7d66438e48090300f9a442d36e525e6b200015f63ec633e3a72dc82",
+        "evidence_hash": "18354804199d8c3197a9dcc26f1d61bd61f22661ceef80977a7665c65fa9a480",
+        "verified_sha256": "7e967f5a5b15ca7801d349b12500cd717bb9e67817eb510330be199d34e41430"
+      },
+      "ChemistryLib/Models/SBML/Records.lean": {
+        "api_hash": "763d394682104c27c979fbd5a5f586071bc9aa919b6b4721be7cdb30822f3594",
+        "evidence_hash": "18354804199d8c3197a9dcc26f1d61bd61f22661ceef80977a7665c65fa9a480",
+        "verified_sha256": "00206059039967c33907d048ab813b0f00b8840357ca1b2819023d5b269106ca"
+      },
+      "ChemistryLib/Photochemistry/AbsorbedPhoton.lean": {
+        "api_hash": "244f1d177df28ad090d03521e3ed1ea788e4ee9afe16c3fd4276e21082dcc62a",
+        "evidence_hash": "d7b2b68835752736d302e3ca86b346d1c307cf2d602edfd31789493ff6f46a92",
+        "verified_sha256": "c2ca8bbfec61e42470bc6d28b7299e119c6e4eed5a07a3712736e82f08d500fb"
+      },
+      "ChemistryLib/Photochemistry/QuantumAdapters.lean": {
+        "api_hash": "ed73b8eb8c2407e5612a5ededb11e716c8f8704e98f0dc6c0cff9974a220cdd1",
+        "evidence_hash": "d7b2b68835752736d302e3ca86b346d1c307cf2d602edfd31789493ff6f46a92",
+        "verified_sha256": "6a67d40f959a06f0973ab9826b3f98c1afd9443c10934827cffce878e25e421e"
+      },
+      "ChemistryLib/Photochemistry/QuantumYield.lean": {
+        "api_hash": "cdcceff99330ab8e1f9b679f081c81d811196e0ff7d57060c5c3cbea8013c3cb",
+        "evidence_hash": "d7b2b68835752736d302e3ca86b346d1c307cf2d602edfd31789493ff6f46a92",
+        "verified_sha256": "19fad9076e69f19c11340e3a933068686dff2191085f69c5ad269e24a64c09be"
+      },
+      "ChemistryLib/Process/ProductionYield.lean": {
+        "api_hash": "8de438b5b814ccef60f259115936bf77aa80be2c444725ed5d4665cee55b18ea",
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "verified_sha256": "0ae6276393a5bb6bd8d81691d8517502778fa7fffdcc276375b097118e52d0f9"
+      },
+      "ChemistryLib/Process/Recycle.lean": {
+        "api_hash": "9e68481a806997d856c36309d143773a08988b14e0ff78ca343c83ca103fea6f",
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "verified_sha256": "8a7a1eee4fdd38a4c4489ec26a407372fba4d8770af470907c8f3293e9e12e56"
+      },
+      "ChemistryLib/ReactionNetwork/Balance.lean": {
+        "api_hash": "4b6dc1f776815d81a679598a40531f27ec79a69e2e4e3f5550baa80fd127dcb5",
+        "evidence_hash": "caca79544fbf0f7604a2b9471521d481f3dae50e74b3d16496b9308e9ddd4cc4",
+        "verified_sha256": "209a0aff870a5388f1e95222f21a45f18892253986329aec98b4d32d617b8c80"
+      },
+      "ChemistryLib/ReactionNetwork/Basic.lean": {
+        "api_hash": "ddf09cfe8dc6cc37b75ac2bb406cdad6ec6c965299f55bfaeb29f89651e7ef62",
+        "evidence_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+        "verified_sha256": "62804d568a6c92ea337f8437dfeedd7f80c1cd9fcf975d455536dc1015c770c1"
+      },
+      "ChemistryLib/ReactionNetwork/CompatibilityClass.lean": {
+        "api_hash": "d49726f25099d7d47c42e503b292a3ab008361aba9c931a1307b4dc1112b075e",
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "verified_sha256": "605e205949fc88ffe4a1ee2fb3d6a6383e01891c4e54734205673c3c682f7742"
+      },
+      "ChemistryLib/ReactionNetwork/ComplexBalanceDissipation.lean": {
+        "api_hash": "fb949fb5209594ba1228a9b9e3ab176992b3ed69eb1efc7b27bb469f163184ba",
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "verified_sha256": "b70059db0dd3e88bc28ec4a5b4d1b2833ae78077c310251121b7ab45636b5ad3"
+      },
+      "ChemistryLib/ReactionNetwork/Deficiency.lean": {
+        "api_hash": "319d6f04af5aace3f42e343ef83a1bf3c056e235cbd1d26f57c7ce010d011e2c",
+        "evidence_hash": "0235d4bf49c155644a6701fc47a9a550b555e2da11318d92939f782559cd73e6",
+        "verified_sha256": "07adbbfd91ae0baaf2a353ed7f0af20517d9ed77bdbab240a1ed8ad45ee217e8"
+      },
+      "ChemistryLib/ReactionNetwork/DeficiencyKernel.lean": {
+        "api_hash": "283b41c1f30ba5a6d4852d5cfecf43f65e3bef5d7b0b341183e0bc349b88e868",
+        "evidence_hash": "3530670099b2a6f5d0bcff4a38fcde84d826d9e7ebc9026f89553fe4e2292a46",
+        "verified_sha256": "232082786c9480ed827e64a9e934d0f7c185c24de7f847abec54fb4e5a1233f6"
+      },
+      "ChemistryLib/ReactionNetwork/DeficiencyRank.lean": {
+        "api_hash": "98a7b0e2195328bbc0d37a5b5bb9772484a8b882cfdb646e83d6c1ee43deecd5",
+        "evidence_hash": "0235d4bf49c155644a6701fc47a9a550b555e2da11318d92939f782559cd73e6",
+        "verified_sha256": "c791b896ea8a27b8c265d421c332b57a1e37d9918637926eb34db9d0cb6e516c"
+      },
+      "ChemistryLib/ReactionNetwork/DeficiencyZeroBridge.lean": {
+        "api_hash": "1efac48820026baab29bee06730e7a0f4663aceb6f5f461b34705dc5831d001d",
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "verified_sha256": "1ed7fe3a90f7a8bfb55730d572995821bb94836f0f007438a79f7664cc1fccfc"
+      },
+      "ChemistryLib/ReactionNetwork/DeficiencyZeroComplexBalance.lean": {
+        "api_hash": "90a555be5bc9b6caa292b3f65b3a506054019930fb0c6e98875333ade6f2b2cd",
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "verified_sha256": "625f093b683bfa29aac41ad8e83b9fcfab9313aba0ed6727d7ad93f2fb242233"
+      },
+      "ChemistryLib/ReactionNetwork/Graph.lean": {
+        "api_hash": "68480ba43e137b7b874cc3f1bccfd9dd6a5d79937434b5bfb997e5a26212754b",
+        "evidence_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+        "verified_sha256": "131048064cb91b49c1e25badc640e816d667091c4c3833574b9e457cfabb15b6"
+      },
+      "ChemistryLib/ReactionNetwork/Incidence.lean": {
+        "api_hash": "f4cd1852fbae55bf3d46e0c0647d60dad93fb5875fe7817793b7631aa9e1e43c",
+        "evidence_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+        "verified_sha256": "7d43a7899dbe5d480e106614b18f43efd3ff186adc02623f1ef42013aa03b610"
+      },
+      "ChemistryLib/ReactionNetwork/IncidenceRank.lean": {
+        "api_hash": "ab9d0cda3b6323fd6fc34b1412b21d2c27657969bbfb33edacbf75750f61bb03",
+        "evidence_hash": "3530670099b2a6f5d0bcff4a38fcde84d826d9e7ebc9026f89553fe4e2292a46",
+        "verified_sha256": "c2d63482c7806264ee314c5f875018ca06636329dac048e2cf5774e228296424"
+      },
+      "ChemistryLib/ReactionNetwork/Laplacian.lean": {
+        "api_hash": "fd4016cb34b446340d7f04d064dfad3b89448cf91f1b765ff6fccc5a6d1c05b6",
+        "evidence_hash": "caca79544fbf0f7604a2b9471521d481f3dae50e74b3d16496b9308e9ddd4cc4",
+        "verified_sha256": "4fce51096ea8e4d1371774f5c0e1cae5c68c5aa42d1a1c65612984cfd02a2f9e"
+      },
+      "ChemistryLib/ReactionNetwork/LinkageClass.lean": {
+        "api_hash": "027d24fc660300802ea8855be9ddbe40a6573700dcdb77dd2962465c557a7123",
+        "evidence_hash": "0235d4bf49c155644a6701fc47a9a550b555e2da11318d92939f782559cd73e6",
+        "verified_sha256": "fa3a0c5161b89769ca99ba70cf5ec30a2e498760d073f25407e60f789d59f2c2"
+      },
+      "ChemistryLib/ReactionNetwork/MassAction.lean": {
+        "api_hash": "fdd3fe5789507bdc2841932bd28f597a18f7019e66244e07d6b1359605e52e35",
+        "evidence_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+        "verified_sha256": "f2b95a97841a86c44a2348ed9eaf20daced034d177e84cec54ec804484066a85"
+      },
+      "ChemistryLib/ReactionNetwork/PositiveCompatibilityGeometry.lean": {
+        "api_hash": "accdf91f42e68afb9f2ccfb5a45e202e9905ee78dec2fce656be164432f0e8b9",
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "verified_sha256": "0a53bf7dab5e471988b542a787d44f1391fcdc9163043db01726cde72ff337de"
+      },
+      "ChemistryLib/ReactionNetwork/PseudoHelmholtz.lean": {
+        "api_hash": "b68ff3152320b5812c402efcc1f21c0f298d869dd46081f998258594f3014b34",
+        "evidence_hash": "1d2e256ac4411a726bd9e086f384f976d955cb1a7c73c38d1c717241f9ddf2c2",
+        "verified_sha256": "c985243af924c0c1d741d625267231303c314056643a93891c18903f6beca1ca"
+      },
+      "ChemistryLib/ReactionNetwork/Stoichiometry.lean": {
+        "api_hash": "b4d19af46de4b6a4bf0660f8299cc1755401970e22637e66a39c852f208eff65",
+        "evidence_hash": "439fb05a2660e5f91f6b9653b9ecadd3ff5196cb2d5694f1f6f251cf64588159",
+        "verified_sha256": "142af965e45ee5a74caa0cd84b44d2a3e176e5b2da7f7f32ccf3517049e4bf08"
+      },
+      "ChemistryLib/ReactionNetwork/TerminalComponent.lean": {
+        "api_hash": "9920340276c6763debcc199f145bbbedbfd7c04c357d49d6b872dbd09e9601af",
+        "evidence_hash": "0cf3738dc9ede3571a09d03b286869a26b27ed9e6cca2114c0817104acb097d6",
+        "verified_sha256": "d2c5f4614401f5b0afaaeafe85773728a0b6df7f72a5cded59fe8e48de2ac512"
+      },
+      "ChemistryLib/ReactionNetwork/TerminalKernelBasis.lean": {
+        "api_hash": "87c3685546177fab2dd43859967b0a3a6ef885ea478661c1c74ce62d3ac5fd44",
+        "evidence_hash": "0cf3738dc9ede3571a09d03b286869a26b27ed9e6cca2114c0817104acb097d6",
+        "verified_sha256": "4fa33b54c7e06ed8a4c5eebe6b352ea427b411830e987f78d5f2d984540ad2db"
+      },
+      "ChemistryLib/ReactionNetwork/TerminalKernelDimension.lean": {
+        "api_hash": "ced25c339962590018ebed75fc4c0fbee0cb8132c71006011cd8b45cd7b5f96f",
+        "evidence_hash": "0cf3738dc9ede3571a09d03b286869a26b27ed9e6cca2114c0817104acb097d6",
+        "verified_sha256": "897f9a8854e3fae227dd73f5c4b169b764af9f481ec929c4a016f9c5b381d433"
+      },
+      "ChemistryLib/ReactionNetwork/TerminalKernelGenerator.lean": {
+        "api_hash": "c12562989cb3bc426f13497963c93bab978cc8fd09ce07b4d3703602e929afac",
+        "evidence_hash": "0cf3738dc9ede3571a09d03b286869a26b27ed9e6cca2114c0817104acb097d6",
+        "verified_sha256": "ffd7917090d34abf174a65807deff0a4712b49dee76b4d670588396cce6ab764"
+      },
+      "ChemistryLib/ReactionNetwork/UnconditionalDeficiency.lean": {
+        "api_hash": "0e57f09c94e07042ac98cae02eabd85d150120a42fb3b871965ea688eacdbe07",
+        "evidence_hash": "3530670099b2a6f5d0bcff4a38fcde84d826d9e7ebc9026f89553fe4e2292a46",
+        "verified_sha256": "8bbc55774411c54b765bd4a7698b966ed77c92aaf28550042f16c3c90117eef8"
+      },
+      "ChemistryLib/Stochastic/ClosedClassProduct.lean": {
+        "api_hash": "12eacbf808dc425034b96b7a201897bb8ab36386df0126145f58f3574296c37d",
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "verified_sha256": "a7d6613811f1b3976980754bedb2da0377eed9d947cb99473a42cf99e3306a03"
+      },
+      "ChemistryLib/Stochastic/ComplexBalanceProductForm.lean": {
+        "api_hash": "533a200ef1b990e5d852302f94416d542e105f25f97a9a5aacd9c4a6249459cb",
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "verified_sha256": "3fbe708f9cdf0ce4ebe463344611535c6f512be5c73401393377a1873e0608cf"
+      },
+      "ChemistryLib/Stochastic/CountState.lean": {
+        "api_hash": "310f8417a5403b426d3f2e0dac9edbc391e7330da7021205a35b11a541b9ec0f",
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "verified_sha256": "b33d7c4f9e669e65aa4ef06e01e5dbe333f35e389d5c746eca82a8924453269e"
+      },
+      "ChemistryLib/Stochastic/DeficiencyZeroProductForm.lean": {
+        "api_hash": "20114e35571b3232a90a8d8db1dff67675a545409334eebaee74796fadd5129f",
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "verified_sha256": "c476a713963fea832881f54ecf0e8641451dad5e1d23170b6a14aa2a05cebe73"
+      },
+      "ChemistryLib/Stochastic/FiniteGenerator.lean": {
+        "api_hash": "0c8b9014acad7ab64afdd5235364759c93757c237a9aa8852fc26df25793a765",
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "verified_sha256": "ca474197e5b9923fc7e12e352d6ca5c58d0dbc004ee5a9049d68515a053d2bee"
+      },
+      "ChemistryLib/Stochastic/OrderCoupling.lean": {
+        "api_hash": "0eac9ce2db5c2305afa5ced8779507689474a4d1b300b1219c93da6c6b35e788",
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "verified_sha256": "3945108fed44303ca208f9c523e677be753a45251fb2977cbb70f6150196ec14"
+      },
+      "ChemistryLib/Stochastic/PoissonProduct.lean": {
+        "api_hash": "ef819d6371c89c888bf96a97cb58246ae57546efb34dda0a115ef976d1c63161",
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "verified_sha256": "7e64eead3a47689ff213bdc9b587082f19b3c1ec72777058650b870027c2c0ad"
+      },
+      "ChemistryLib/Stochastic/Propensity.lean": {
+        "api_hash": "68b922e07ef0656a86106ee5eb3fccd982d2c56197b4e956ff7faa8cb9a56c51",
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "verified_sha256": "a2882c993db15fc53cd281de896212bed0ee0232068948cc59c5325a801952e5"
+      },
+      "ChemistryLib/Stochastic/ReactionGenerator.lean": {
+        "api_hash": "35cdbb76c4ac2f975f137cd69a848f95b583590452944c41db5cd2c3a368b2e1",
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "verified_sha256": "d5f5b751e8ccf742c2120cdff3dadc5a74e8bfccc933a7b543394511d2ed5f1f"
+      },
+      "ChemistryLib/Stochastic/Stationary.lean": {
+        "api_hash": "be7a3d83759f847e4ee5a8563e682e79fb68ea8cf864c568ecc53cf9f098a68f",
+        "evidence_hash": "750f025d5694b749ce38e4d72f7ead7cec0ab92ce4907f8baaeeb76033d10b57",
+        "verified_sha256": "9da541c18cc764bb1ec5541e1b8fe21bb822518dc2a85f96d98ce4dae3a0457f"
+      },
+      "ChemistryLib/Thermochemistry/ReactionEnthalpy.lean": {
+        "api_hash": "6c4d55467ca0a9cfe8abf4223a3996eedbd0c61585a600bf5f9737336908d5a1",
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "verified_sha256": "ed56482d07920ed8bad79f14ca494e14146bac63693f8e6cec785c51e9de10a6"
+      },
+      "ChemistryLib/Thermochemistry/TemperatureCorrection.lean": {
+        "api_hash": "5a858784a9edee309e49daefa9d22d6889597a1093be4501d87c825f5f5e2b46",
+        "evidence_hash": "e2f09291b6db076eb9d1df1ad8253a2b3b641a56582e31be08b0279a00e2d133",
+        "verified_sha256": "6b85b52b62020ef0127e4c57e89aeb64f082b2ec01ed22183f55c0870c0905c1"
+      },
+      "ChemistryLib/Thermodynamics/EquilibriumAdapters.lean": {
+        "api_hash": "4053568c4e14351cf8f4cd392ab4959a8f68b53968aa9f766bf2f413b86eab30",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "78a8ce879449079810b911e889569a0eaeccadad6a5c6f8aee93db1e04342b9b"
+      },
+      "ChemistryLib/Thermodynamics/OpenNetworks/Affinity.lean": {
+        "api_hash": "df263b91ba873fa891fa7746ec33a85b9bdd8d8fe306b36c45a049beda64e511",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "f726c2f604a1deea60cfcf23f02c9bc2623b42a97f6e6242223984f89b6149dc"
+      },
+      "ChemistryLib/Thermodynamics/OpenNetworks/Balances.lean": {
+        "api_hash": "05f09f79a85e8d1af33b2ad4f10882c9f1a1ed119c5e57c2e76dadae4923a555",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "c2c94de1a3d4996afb8caf7bebd8ec822aac8052a6e31da6bf53fd1d5fe376ae"
+      },
+      "ChemistryLib/Thermodynamics/OpenNetworks/Conservation.lean": {
+        "api_hash": "851fd043521d2319d6fc855f2ea137a67eb0647e7d2eab9605dcad7d387b73ce",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "e381dc458fb8c7fea717600a65551aac808eda1595ff38bbff28c13e62ac5093"
+      },
+      "ChemistryLib/Thermodynamics/OpenNetworks/EmergentCycleRank.lean": {
+        "api_hash": "fbfbe67b5fd0c1c4e2cdee814b8177259ecd0bc4c5d9cbd5db31712b26a13034",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "ea46091a4cd3a25c3205ec77503980675d2ece9aa980531953015f071954654a"
+      },
+      "ChemistryLib/Thermodynamics/OpenNetworks/EntropyProduction.lean": {
+        "api_hash": "d84c3cb6a7fb1f4fe3901ae1682a6197d42f989155442f0eec50771b786a52c3",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "0079c313d7e8a773b88f460b3418d57411c96b9d1e27c09099af765e878dec2a"
+      },
+      "ChemistryLib/Thermodynamics/OpenNetworks/NonequilibriumGibbs.lean": {
+        "api_hash": "d41e7ea4db709c1718a2e5f4814ca7ddb0b70db210660977c7f9ace61c82b149",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "5310581ef558e5a13f4b3044c849af560b9961de25c7b48567291cc0c0195d60"
+      },
+      "ChemistryLib/Thermodynamics/OpenNetworks/Partition.lean": {
+        "api_hash": "ad1edb29e1ae573d14675653afc4fcb5af2e141ebaf7b6208bc18541d099e6dc",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "5c80a45627ac01c1db3e46901b4f2660a06691ee66dbebc7d636b11839e1bdbb"
+      },
+      "ChemistryLib/Thermodynamics/OpenNetworks/RateEquation.lean": {
+        "api_hash": "7c9e8e87bd6ad6dd2547640c59d3173abdd0b47d66b7e576d1d1cd3d7f457089",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "8240efafbe89c629bb0c2f11012b79fcbd4d1316fb5a6a48c522e1e12cf8113b"
+      },
+      "ChemistryLib/Thermodynamics/OpenNetworks/RelativeEntropy.lean": {
+        "api_hash": "78b6b1ae5aae5102f553ecccce02870adc0f7af2798cf1d28a93e491f0973158",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "507460efab9192e145368122f8d540e21968d74c190acfe2bba48e5f89bed294"
+      },
+      "ChemistryLib/Thermodynamics/OpenNetworks/WorkInequality.lean": {
+        "api_hash": "1386d0fe37c8ad7009af4979743532ebd3cac59f38c9931f87a49d2ee5f5389b",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "bce803a488271911a96a804d0d51558f494c7a5cbe996b16997bcc59972e0a45"
+      },
+      "ChemistryLib/Thermodynamics/TemperatureAdapters.lean": {
+        "api_hash": "92b6f2379ecec57db4396755eb24e38e93cd1671589f896c07e2840d237d5446",
+        "evidence_hash": "ed08588855d4df1ac5bc7005e90082a8731dd690ae83a9fba79eac43cd67ceb4",
+        "verified_sha256": "9576a5a73e8ad5490c3e6cddb3063dece4676ba634ef66186347301abb410319"
+      },
+      "ChemistryLib/Units/ChemicalDimension.lean": {
+        "api_hash": "7f51d8457de8900016e06171e5ba4f1979cb9f089d5c20745f1a8b2aee3a0fc5",
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "verified_sha256": "05d50fa70fde0d0306d373bf6f12bbfbb974b2639271e1fadd3362fc706a5288"
+      },
+      "ChemistryLib/Units/Quantity.lean": {
+        "api_hash": "1bdf94cc764067a0d1826a4b09f6d1b6a2da419fde3b99667a11ab81ccefc901",
+        "evidence_hash": "108c4d5c5928135b7e99d5d668ea1c60a5e3d40a4c184c7659cd6dafaecf4ccb",
+        "verified_sha256": "627183edced51f80cc9ca7137cf6e7449c1fa48a99a4534f4186b32ebd2e65b6"
+      }
+    }
+  },
+  "version": 2
+}

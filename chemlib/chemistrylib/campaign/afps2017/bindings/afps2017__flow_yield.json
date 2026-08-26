@@ -1,0 +1,137 @@
+{
+  "binding_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+  "campaign_id": "pentelute.afps2017.formal_benchmark.v1.afps2017.flow_yield.r720e71ab5e7a",
+  "capabilities": [
+    "afps2017.flow.chemistry_adapters",
+    "afps2017.flow.continuity_adapter",
+    "afps2017.flow.quantity_accounting",
+    "afps2017.yield.step_product",
+    "afps2017.flow.protocol_timing",
+    "afps2017.flow.source_lint",
+    "afps2017.yield.throughput_model"
+  ],
+  "capability_contracts": [
+    {
+      "capability_id": "afps2017.flow.chemistry_adapters",
+      "owner_module": "AFPS2017/Flow/ChemistryAdapters.lean",
+      "spec_hash": "298edb7d1f63ababb4efc6f46fc079838b269f9d403a47a1903966dfe6ce1d5d"
+    },
+    {
+      "capability_id": "afps2017.flow.continuity_adapter",
+      "owner_module": "AFPS2017/Flow/ContinuityAdapter.lean",
+      "spec_hash": "bddd43861efc16e680329968f2eb15a0311c588cf05bed49f6744221621254e2"
+    },
+    {
+      "capability_id": "afps2017.flow.quantity_accounting",
+      "owner_module": "AFPS2017/Flow/Quantity.lean",
+      "spec_hash": "5c6a65d2fc0e65d54c09cee54aa12d3f5b8ced736d5f9132f320f8a4e89ac53e"
+    },
+    {
+      "capability_id": "afps2017.yield.step_product",
+      "owner_module": "AFPS2017/Yield/StepYield.lean",
+      "spec_hash": "5db9ff5ab28b452fed821c0beb8bd74776938cf21ce64fe50c609531467bd071"
+    },
+    {
+      "capability_id": "afps2017.flow.protocol_timing",
+      "owner_module": "AFPS2017/Flow/Protocol.lean",
+      "spec_hash": "a40328485a3aa4d96374b95c736660f3a8bc915a656a80ec03c11b0a4a8e1994"
+    },
+    {
+      "capability_id": "afps2017.flow.source_lint",
+      "owner_module": "AFPS2017/Flow/SourceLint.lean",
+      "spec_hash": "d251d2303c304cfb13fad8c73901fa3fc3fb42580386282cb79968f0eaeeb9f0"
+    },
+    {
+      "capability_id": "afps2017.yield.throughput_model",
+      "owner_module": "AFPS2017/Yield/Throughput.lean",
+      "spec_hash": "7c651ba9355f48f38d48a9f53e98b2ca95007fdb7231806a86857a22c7a3e312"
+    }
+  ],
+  "clean_room_audit_hash": "6e50993b626543bc4df22011f30d5030a58d44a3ec526870b83c6bb79147939d",
+  "entrypoint": {
+    "direct_imports": [
+      "AFPS2017.Flow.ChemistryAdapters",
+      "AFPS2017.Flow.ContinuityAdapter",
+      "AFPS2017.Flow.Protocol",
+      "AFPS2017.Flow.Quantity",
+      "AFPS2017.Flow.SourceLint",
+      "AFPS2017.Sequence.Assembly",
+      "AFPS2017.Sequence.Coupling",
+      "AFPS2017.Sequence.Cycle",
+      "AFPS2017.Sequence.Deprotection",
+      "AFPS2017.Sequence.Residue",
+      "AFPS2017.Sequence.State",
+      "AFPS2017.Sequence.StoichiometryAdapter",
+      "AFPS2017.Sequence.Target",
+      "AFPS2017.Sequence.Wash",
+      "AFPS2017.Yield.StepYield",
+      "AFPS2017.Yield.Throughput"
+    ],
+    "module_paths": [
+      "AFPS2017/Flow/ChemistryAdapters.lean",
+      "AFPS2017/Flow/ContinuityAdapter.lean",
+      "AFPS2017/Flow/Protocol.lean",
+      "AFPS2017/Flow/Quantity.lean",
+      "AFPS2017/Flow/SourceLint.lean",
+      "AFPS2017/Sequence/Assembly.lean",
+      "AFPS2017/Sequence/Coupling.lean",
+      "AFPS2017/Sequence/Cycle.lean",
+      "AFPS2017/Sequence/Deprotection.lean",
+      "AFPS2017/Sequence/Residue.lean",
+      "AFPS2017/Sequence/State.lean",
+      "AFPS2017/Sequence/StoichiometryAdapter.lean",
+      "AFPS2017/Sequence/Target.lean",
+      "AFPS2017/Sequence/Wash.lean",
+      "AFPS2017/Yield/StepYield.lean",
+      "AFPS2017/Yield/Throughput.lean"
+    ],
+    "path": "AFPS2017.lean",
+    "schema_version": 1,
+    "source_sha256": "a3486c7c280389fac014407bc604788776679792ce6c20553f7a71f32bcac664"
+  },
+  "family_id": "afps2017.flow_yield",
+  "goal_id": "pentelute.afps2017.formal_benchmark.v1",
+  "goal_spec_hash": "40c3dda4897f4f1b6ec596819497ec94862756dfb0c797c70dd0a697be478225",
+  "modules": [
+    {
+      "api_hash": "264c0a714f82ebaa931231a988f2990750ff17f4d7b31e284484641686c9428c",
+      "module_path": "AFPS2017/Flow/ChemistryAdapters.lean",
+      "verified_sha256": "01f28990ae5a41e079fe109e3ead29306d35f74f333fbb7aad460a3e763ef88e"
+    },
+    {
+      "api_hash": "4ce98350f3864f1f0bdf66d9880d4cbc071c3935efe266a00590186b961dcf07",
+      "module_path": "AFPS2017/Flow/ContinuityAdapter.lean",
+      "verified_sha256": "f850c5e22f278e87f1c4bd8bc762b61b3ec3059508c6f72c2d27bf32970d1b8e"
+    },
+    {
+      "api_hash": "4511069764e7e5fabf79cc3ef3ab0125de502fe7d061162c4fdcbf9324919091",
+      "module_path": "AFPS2017/Flow/Quantity.lean",
+      "verified_sha256": "1dcb2553b3ca5f3992371ae69179940bcd09c2c6d2e34d1efd919280f573d2de"
+    },
+    {
+      "api_hash": "cbf90b4776eb501d7237678fa1e4c6e25409a05388c751ce6dc3d287d52a7574",
+      "module_path": "AFPS2017/Yield/StepYield.lean",
+      "verified_sha256": "7ae8fb9dd7d86375f25550b493b7f2378528cfb6bec2417516c3611bb2b8aecc"
+    },
+    {
+      "api_hash": "323a834d8a4862eb3bda194d6f9f127761f898978f1be2a9a5f32569aa27cb51",
+      "module_path": "AFPS2017/Flow/Protocol.lean",
+      "verified_sha256": "4ed5c8e593ef6e5cac320b0208f70e04b298679e0285f2ccce854f4a0a0b53e5"
+    },
+    {
+      "api_hash": "f0f2a56aff046970fd0479d6c5df19a3c555d96afbd07a3d40f4940053e34ef9",
+      "module_path": "AFPS2017/Flow/SourceLint.lean",
+      "verified_sha256": "7dfc351a172a4f34db8e0a679d5f44cdff8b3ff4f32ec913ff6222bb4b79a0e3"
+    },
+    {
+      "api_hash": "84dda91f26496c2ff0464ffe72c34cf4b462da9e548737181a42f9ddb9acb2cc",
+      "module_path": "AFPS2017/Yield/Throughput.lean",
+      "verified_sha256": "521d7afb758dbc18c338ce65ee9921a71ab8da7c1b8b485f455493e30d01fb11"
+    }
+  ],
+  "plan_hash": "720e71ab5e7a12159586cc353dd7b6f9040fa24beff79d9c41bdc787a0a4a8a3",
+  "release_certificate_hash": "c17360aa9ea96ddb27923a5aea05049a47bf48056bd82f5170807094e6de62ec",
+  "symbol_dag_hash": "dcb05de99c2ce58b2f9f47730ff2097a7c6bafc27f3bdf1f07387e4c5578ccff",
+  "verified_at": "2026-08-14T18:54:58.005245+00:00",
+  "version": 1
+}

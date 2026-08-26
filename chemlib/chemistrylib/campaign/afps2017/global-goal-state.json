@@ -1,0 +1,162 @@
+{
+  "capability_families": [
+    {
+      "depends_on": [],
+      "description": "Define residue specifications, N-to-C peptide targets, resin-bound chain state, and coupling/deprotection/wash transitions. Reuse the released ChemistryLib reaction-network, stoichiometry, amount, concentration, and quantity layers. Prove only conditional state-machine invariants under explicit successful-coupling, no-deletion, and no-epimerization hypotheses; do not claim that an experimental coupling succeeded from a protocol record alone.",
+      "family_id": "afps2017.sequence_solid_phase",
+      "source_refs": [
+        "afps2017.main",
+        "afps2017.supplement"
+      ],
+      "status": "verified",
+      "title": "Peptide sequence and solid-phase synthesis semantics",
+      "verified_campaign": {
+        "campaign_id": "pentelute.afps2017.formal_benchmark.v1.afps2017.sequence_solid_phase.rbe67aa408f35",
+        "capabilities": [
+          "afps2017.sequence.repeated_successful_assembly",
+          "afps2017.sequence.residue_specification",
+          "afps2017.sequence.stoichiometry_adapter",
+          "afps2017.sequence.target_n_to_c",
+          "afps2017.solid_phase.conditional_coupling",
+          "afps2017.solid_phase.deprotection_transition",
+          "afps2017.solid_phase.full_cycle",
+          "afps2017.solid_phase.resin_state",
+          "afps2017.solid_phase.wash_transition"
+        ],
+        "plan_hash": "be67aa408f356e084c73d5ffd93f1b5f8d88b276e61a38730c2aa745dda50c48",
+        "release_certificate_hash": "bb9a4c1c19505391c950da63b18e7f9d5f67062116b39e4c90939a8f21ea6a91"
+      }
+    },
+    {
+      "depends_on": [
+        "afps2017.sequence_solid_phase"
+      ],
+      "description": "Formalize the AFPS stage schedule, delivered volumes, flow setpoints, temperature records, hydraulic-duration calculations, and multiplicative step-yield model. Reuse ChemistryLib quantities, process and open-network APIs, Mathlib finite sums/products, and admitted Physlib fluid-state/continuity declarations through thin adapters. Distinguish reported 7 s and 40 s observations from the exact 37.8 s hydraulic calculation, and expose the supplementary high-efficiency-method concentration-times-volume inconsistency instead of silently correcting it.",
+      "family_id": "afps2017.flow_yield",
+      "source_refs": [
+        "afps2017.lab_summary",
+        "afps2017.main",
+        "afps2017.supplement"
+      ],
+      "status": "verified",
+      "title": "AFPS flow protocol, dimensional accounting, and cumulative yield",
+      "verified_campaign": {
+        "campaign_id": "pentelute.afps2017.formal_benchmark.v1.afps2017.flow_yield.r720e71ab5e7a",
+        "capabilities": [
+          "afps2017.flow.chemistry_adapters",
+          "afps2017.flow.continuity_adapter",
+          "afps2017.flow.protocol_timing",
+          "afps2017.flow.quantity_accounting",
+          "afps2017.flow.source_lint",
+          "afps2017.yield.step_product",
+          "afps2017.yield.throughput_model"
+        ],
+        "plan_hash": "720e71ab5e7a12159586cc353dd7b6f9040fa24beff79d9c41bdc787a0a4a8a3",
+        "release_certificate_hash": "c17360aa9ea96ddb27923a5aea05049a47bf48056bd82f5170807094e6de62ec"
+      }
+    },
+    {
+      "depends_on": [
+        "afps2017.flow_yield"
+      ],
+      "description": "Represent reported observations with immutable provenance and add narrowly typed mass-agreement, UV-feature, relative-peak-intensity, and crude-yield certificates. Prove arithmetic consistency of reported tables without treating mass agreement as molecular identity, UV features as coupling success, relative MS intensity as molar yield, or qualitative comparability as a statistical theorem.",
+      "family_id": "afps2017.analytics_cert",
+      "source_refs": [
+        "afps2017.main",
+        "afps2017.supplement"
+      ],
+      "status": "verified",
+      "title": "Source-addressed AFPS analytical certificates",
+      "verified_campaign": {
+        "campaign_id": "pentelute.afps2017.formal_benchmark.v1.afps2017.analytics_cert.r1615625c19f7",
+        "capabilities": [
+          "afps2017.analytics.conotoxin_table",
+          "afps2017.analytics.mass_agreement",
+          "afps2017.analytics.mass_observation",
+          "afps2017.analytics.provenance",
+          "afps2017.analytics.signal_observation"
+        ],
+        "plan_hash": "1615625c19f7f4a28f9849451a188cd16a4139d0d3d7b87c9afac2cfec73d0f5",
+        "release_certificate_hash": "257a51c91e876db50c913228ab2b06af44fd377995076c8cfd22c76f7c081bcf"
+      }
+    },
+    {
+      "depends_on": [
+        "afps2017.flow_yield"
+      ],
+      "description": "Expose stable, explicitly real-valued composition theorems for the released AFPS quantity APIs. Derive the reported 5.6 mmol amino-acid value from the released factor-ten and computed-amount theorems while preserving the reported-versus-computed inconsistency, and prove that the ideal hydraulic volume identity is preserved by arbitrary scalar maps, with actual-delivery conclusions remaining conditional on an explicit ConstantFlowModel. Do not silently correct source data or infer experimental success.",
+      "family_id": "afps2017.scalar_composability",
+      "source_refs": [
+        "afps2017.supplement"
+      ],
+      "status": "verified",
+      "title": "Explicit scalar composition for AFPS quantity evidence",
+      "verified_campaign": {
+        "campaign_id": "pentelute.afps2017.formal_benchmark.v1.afps2017.scalar_composability.r1c43e040cd82",
+        "capabilities": [
+          "afps2017.flow.scalar_composability"
+        ],
+        "plan_hash": "1c43e040cd821f7f400e28e283a17d332c3bdbf16c12b4a06768dadd50a8201e",
+        "release_certificate_hash": "3f755e9c8f3adf3f143ee1bc3c8365caa5046332c69b3c0ed001ac95bc7a6a6a"
+      }
+    },
+    {
+      "depends_on": [
+        "afps2017.analytics_cert",
+        "afps2017.flow_yield",
+        "afps2017.scalar_composability",
+        "afps2017.sequence_solid_phase"
+      ],
+      "description": "Synthetic benchmark root requiring all four AFPS families, exact source grounding, maximum semantically valid reuse of ChemistryLib, Mathlib, and Physlib, zero placeholders and nonstandard axioms, real symbol-DAG validation, a full public build, and explicit separation of deductive theorems, model-conditional consequences, and empirical source certificates.",
+      "family_id": "pentelute.afps2017.complete",
+      "source_refs": [],
+      "status": "verified",
+      "title": "Verified AFPS 2017 benchmark",
+      "verified_campaign": {
+        "campaign_id": "chemistrylib.global.release",
+        "capabilities": [
+          "pentelute.afps2017.complete"
+        ],
+        "plan_hash": "c52bababe2bbb580cadfea427dad17847433e1973fca3870ad0748497dd411aa",
+        "release_certificate_hash": "650beec3d11a440c0aa89e19ae8833d584d9ddada2f65894d2a689598e14bfae"
+      }
+    }
+  ],
+  "completion_gates": {
+    "legacy_dependency_count": 0,
+    "module_gates": "all",
+    "sealed_holdout": "pass",
+    "sorry_count": 0,
+    "source_coverage": 1.0,
+    "standalone_extract": "pass"
+  },
+  "forbidden_legacy": [
+    "CRNT",
+    "Chemistry",
+    "IChO2026Chem"
+  ],
+  "goal_id": "pentelute.afps2017.formal_benchmark.v1",
+  "grounding_packages": [
+    "Mathlib",
+    "Physlib"
+  ],
+  "root": "pentelute.afps2017.complete",
+  "schema_version": 1,
+  "source_corpus": [
+    {
+      "reference": "https://pentelutelabmit.com/portfolio_page/a-fully-automated-flow-based-approach-for-accelerated-peptide-synthesis/",
+      "sha256": "6648799d156c5436d2ecc0e7338d0525d678f9d9608589446c46960a5b9e4024",
+      "source_id": "afps2017.lab_summary"
+    },
+    {
+      "reference": "https://www.nature.com/articles/nchembio.2318",
+      "sha256": "db1d07f90f91fd176c915eb286b8371d553ea0f5248cae7be582465d7780d44f",
+      "source_id": "afps2017.main"
+    },
+    {
+      "reference": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fnchembio.2318/MediaObjects/41589_2017_BFnchembio2318_MOESM199_ESM.pdf",
+      "sha256": "f7baa2cd59141ec38d95c9980e60117b596a9a78a9f4cbd4ae4e2cd4a2c8044e",
+      "source_id": "afps2017.supplement"
+    }
+  ]
+}

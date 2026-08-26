@@ -1,0 +1,7 @@
+# Lake build artifacts
+.lake/
+
+# Archon runtime state
+.archon/
+.claude/
+.mcp.json
