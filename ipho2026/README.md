@@ -1,12 +1,13 @@
-# IPhO 2026 Lean Solutions
+# IPhO 2026 answer-blind solutions
 
-This repository contains the completed Lean 4 formalizations for all 41
-subparts of the 56th International Physics Olympiad, together with the shared
-physics libraries needed to compile them.
+This repository contains completed GPT-5.6 Sol Lean 4 formalizations for all
+41 subparts of the 56th International Physics Olympiad, GPT-5.6 Sol
+natural-language solutions for the three theory problems, and a separate Kimi
+answer set.
 
-The work was produced under an answer-blind workflow. Official solutions were
-consulted only after proof completion, for the separate evaluation recorded in
-[GRADING_REPORT.md](GRADING_REPORT.md).
+The work was produced under answer-blind workflows. Official solutions and
+marking schemes were unavailable to the answer-generating workers and were
+used only for separate grading audits.
 
 ## Contents
 
@@ -14,6 +15,8 @@ consulted only after proof completion, for the separate evaluation recorded in
 - `Ipho2026Gpt56solBlind/Shared/` — shared typed physics and mathematics APIs.
 - `Ipho2026Gpt56solBlind/Solutions.lean` — aggregate import of all solutions.
 - `GRADING_REPORT.md` — post-completion comparison with the official results.
+- `NaturalLanguage/` — GPT-5.6 Sol natural-language theory solutions and
+  official-scheme grading audit.
 - `Kimi/` — a separate Kimi K3 Max answer set and its official-answer grading
   report.
 
