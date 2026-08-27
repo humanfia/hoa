@@ -2,6 +2,20 @@
 
 This repository mirrors and combines the Humanfia Lab QAlg (Quantum Algorithms) and QIT (Quantum Information Theory) proof datasets with reproducible Lean 4 build environments. It preserves the dataset tables, original TeX statements, generated Lean formalizations and proofs, review metadata, and proof reports.
 
+> [!IMPORTANT]
+> **100% final semantic-review pass rate and verified proof completion — 76/76 tasks across QAlg and QIT.**
+>
+> All 36 QAlg tasks and all 40 QIT tasks produced compilable formalizations, passed final semantic review, contain complete Lean proofs with no `sorry` or `admit`, and are included in successful full `lake build`s.
+
+## Accuracy highlights
+
+| Benchmark | Compilable formalizations | Final semantic review | Proof verification | `sorry`/`admit`-free |
+|---|---:|---:|---:|---:|
+| [QAlg](https://huggingface.co/datasets/humanfia-lab/QAlg#final-results) | 36/36 (100%) | 36/36 (100%) | 36/36 Lean-kernel accepted (100%) | 36/36 (100%) |
+| [QIT](https://huggingface.co/datasets/humanfia-lab/QIT#final-results) | 40/40 (100%) | 40/40 (100%) | 40/40 Formal Proof Review and end-to-end passed (100%) | 40/40 (100%) |
+
+These are the final post-repair results reported in the linked dataset cards. The semantic scores come from automated review rather than an independent external human blind audit; compilation, placeholder-free status, and the full `lake build` provide separate mechanical checks.
+
 ## Contents
 
 | Directory | Dataset | Tasks | Lean toolchain | Included build environment |
