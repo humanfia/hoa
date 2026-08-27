@@ -16,7 +16,7 @@ branch and enter this Lake project:
 
 ```bash
 git clone https://github.com/humanfia/chemlib.git
-cd chemlib/chemistrylib
+cd chemlib/chemlib
 lake build
 lake env lean Chemlib.lean
 lake env lean AFPS2017.lean
@@ -26,7 +26,7 @@ The checked-in toolchain and manifest pin Lean, Mathlib, and Physlib. The first
 build fetches those dependencies; subsequent builds reuse `.lake/`.
 
 To consume Chemlib from another Lake project, use the repository's
-`chemistrylib` subdirectory as the Git dependency and import `Chemlib`.
+`chemlib` subdirectory as the Git dependency and import `Chemlib`.
 The repository-root README contains the exact `lakefile.toml` declaration.
 To use the AFPS extension, import `AFPS2017`; both barrels may be imported in
 the same downstream project.

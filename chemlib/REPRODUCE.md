@@ -31,7 +31,7 @@ selected toolchain is leanprover/lean4:v4.31.0.
 
 To run the steps manually:
 
-    cd chemistrylib
+    cd chemlib
     lake exe cache get
     lake build
     lake env lean Chemlib.lean
@@ -43,7 +43,7 @@ To run the steps manually:
 - all 22 AFPS2017 modules in the sequence, flow/yield, analytics, and scalar
   composability families;
 - the public entrypoint AFPS2017.lean;
-- the checked release evidence under chemistrylib/campaign/afps2017/.
+- the checked release evidence under chemlib/campaign/afps2017/.
 
 The AFPS2017 release certificate records four of four verified families, zero
 sorry declarations, complete declared-source coverage, a successful aggregate

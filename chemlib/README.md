@@ -5,7 +5,7 @@ release also includes `AFPS2017`, a source-grounded formalization of selected
 sequence, flow, yield, and analytical claims from the automated flow peptide
 synthesis work reported by Mijalis et al. (2017).
 
-The buildable Lake project is in [`chemistrylib/`](chemistrylib/). This public
+The buildable Lake project is in [`chemlib/`](chemlib/). This public
 repository contains release sources and reviewable verification metadata; it
 does not contain generation agents, private holdout cases, or controller logs.
 
@@ -13,7 +13,7 @@ does not contain generation agents, private holdout cases, or controller logs.
 
 - Git
 - [elan](https://github.com/leanprover/elan), which installs the Lean toolchain
-  selected by `chemistrylib/lean-toolchain`
+  selected by `chemlib/lean-toolchain`
 - Network access on the first build so Lake can fetch the pinned Mathlib and
   Physlib revisions
 
@@ -28,7 +28,7 @@ cd chemlib
 Verify either public entrypoint directly:
 
 ```bash
-cd chemistrylib
+cd chemlib
 lake env lean Chemlib.lean
 lake env lean AFPS2017.lean
 ```
@@ -43,7 +43,7 @@ Add this dependency to the downstream project's `lakefile.toml`:
 ```toml
 [[require]]
 name = "chemistrylib_v1"
-git = { url = "https://github.com/humanfia/chemlib.git", subDir = "chemistrylib" }
+git = { url = "https://github.com/humanfia/chemlib.git", subDir = "chemlib" }
 rev = "main"
 ```
 
@@ -87,9 +87,9 @@ supplied by explicit hypotheses.
 ## Verification evidence
 
 The original Chemlib evidence remains under
-[`chemistrylib/campaign/`](chemistrylib/campaign/). AFPS2017 has an independent,
+[`chemistrylib/campaign/`](chemlib/campaign/). AFPS2017 has an independent,
 namespaced evidence chain under
-[`chemistrylib/campaign/afps2017/`](chemistrylib/campaign/afps2017/), including
+[`chemistrylib/campaign/afps2017/`](chemlib/campaign/afps2017/), including
 all four family locks and bindings, the goal revision, aggregate external-pass
 certificates, and the synthetic-root release certificate.
 
@@ -100,5 +100,5 @@ current Lean module name.
 
 The AFPS2017 global release-certificate hash is
 `650beec3d11a440c0aa89e19ae8833d584d9ddada2f65894d2a689598e14bfae`.
-See [`chemistrylib/README.md`](chemistrylib/README.md) for the detailed scope and
+See [`chemistrylib/README.md`](chemlib/README.md) for the detailed scope and
 verification boundary.
