@@ -94,21 +94,21 @@ noncomputable def checkedConotoxinMassData : ConotoxinMassCheck := by
           residual_le_tolerance := by
             fin_cases i <;>
               norm_num [rows, row, massResidualDaltons, ofDaltons,
-                ChemistryLib.Units.NonnegativeQuantity.ofReal,
-                ChemistryLib.Units.Quantity.ofReal] }
+                Chemlib.Units.NonnegativeQuantity.ofReal,
+                Chemlib.Units.Quantity.ofReal] }
       maximumResidualDaltons := 193 / 1000
       maximum_attained := by
         refine ⟨⟨13, by norm_num⟩, ?_⟩
         norm_num [rows, row, massResidualDaltons, ofDaltons,
-          ChemistryLib.Units.NonnegativeQuantity.ofReal,
-          ChemistryLib.Units.Quantity.ofReal]
+          Chemlib.Units.NonnegativeQuantity.ofReal,
+          Chemlib.Units.Quantity.ofReal]
       maximum_nonnegative := by norm_num
       residual_le_maximum := by
         intro i
         fin_cases i <;>
           norm_num [rows, row, massResidualDaltons, ofDaltons,
-            ChemistryLib.Units.NonnegativeQuantity.ofReal,
-            ChemistryLib.Units.Quantity.ofReal] }
+            Chemlib.Units.NonnegativeQuantity.ofReal,
+            Chemlib.Units.Quantity.ofReal] }
   exact
     { table := table
       computedMaximum_eq_reported := by

@@ -1,10 +1,10 @@
-import ChemistryLib.Foundations.Amount
+import Chemlib.Foundations.Amount
 
 /-!
 # Flow quantity accounting
 
 This module provides dimension-indexed duration, volume, and positive flow-rate
-arithmetic using the released ChemistryLib quantity types. Numerical volume is
+arithmetic using the released Chemlib quantity types. Numerical volume is
 stored in liters and duration in seconds; the named constructors convert
 milliliters and milliliters per minute to those common units.
 
@@ -22,17 +22,17 @@ Source references:
 namespace AFPS2017.Flow
 
 /-- The chemical dimension of volume per unit time. -/
-def flowRateDimension : ChemistryLib.Units.ChemicalDimension :=
-  ChemistryLib.Units.ChemicalDimension.volume /
-    ChemistryLib.Units.ChemicalDimension.time
+def flowRateDimension : Chemlib.Units.ChemicalDimension :=
+  Chemlib.Units.ChemicalDimension.volume /
+    Chemlib.Units.ChemicalDimension.time
 
 /-- A signed duration whose numerical value is measured in seconds. -/
 abbrev Duration : Type :=
-  ChemistryLib.Units.Quantity ChemistryLib.Units.ChemicalDimension.time
+  Chemlib.Units.Quantity Chemlib.Units.ChemicalDimension.time
 
 /-- A strictly positive volume flow rate. -/
 abbrev FlowRate : Type :=
-  ChemistryLib.Units.PositiveQuantity flowRateDimension
+  Chemlib.Units.PositiveQuantity flowRateDimension
 
 /-- Explicit evidence that actual flow is constant at a positive pump setpoint. -/
 structure ConstantFlowModel (pumpSetpoint : FlowRate) : Type where
@@ -43,21 +43,21 @@ structure ConstantFlowModel (pumpSetpoint : FlowRate) : Type where
 
 /-- Convert seconds to a dimension-indexed duration. -/
 def seconds (value : ℝ) : Duration :=
-  ChemistryLib.Units.Quantity.ofReal
-    ChemistryLib.Units.ChemicalDimension.time value
+  Chemlib.Units.Quantity.ofReal
+    Chemlib.Units.ChemicalDimension.time value
 
 /-- Convert a positive number of milliliters to liters. -/
 noncomputable def milliliters (value : ℝ) (positive : 0 < value) :
-    ChemistryLib.Foundations.Volume :=
-  ChemistryLib.Units.PositiveQuantity.ofReal (value / 1000) (by positivity)
+    Chemlib.Foundations.Volume :=
+  Chemlib.Units.PositiveQuantity.ofReal (value / 1000) (by positivity)
 
 /-- Convert a positive rate in milliliters per minute to liters per second. -/
 noncomputable def millilitersPerMinute (value : ℝ) (positive : 0 < value) : FlowRate :=
-  ChemistryLib.Units.PositiveQuantity.ofReal (value / 60000) (by positivity)
+  Chemlib.Units.PositiveQuantity.ofReal (value / 60000) (by positivity)
 
 /-- Multiply a positive flow rate by a duration to obtain delivered volume. -/
 def flowVolume (rate : FlowRate) (duration : Duration) :
-    ChemistryLib.Units.Quantity ChemistryLib.Units.ChemicalDimension.volume :=
+    Chemlib.Units.Quantity Chemlib.Units.ChemicalDimension.volume :=
   ⟨rate.1.value * duration.value⟩
 
 /-- The numerical value of flow volume is rate times duration. -/
@@ -66,20 +66,20 @@ theorem flowVolume_value (rate : FlowRate) (duration : Duration) :
   rfl
 
 /-- The hydraulic duration required to deliver a volume at a positive rate. -/
-noncomputable def hydraulicDurationAtRate (volume : ChemistryLib.Foundations.Volume)
+noncomputable def hydraulicDurationAtRate (volume : Chemlib.Foundations.Volume)
     (rate : FlowRate) : Duration :=
   ⟨volume.1.value / rate.1.value⟩
 
 /-- Hydraulic duration has numerical value volume divided by rate. -/
 theorem hydraulicDurationAtRate_value
-    (volume : ChemistryLib.Foundations.Volume) (rate : FlowRate) :
+    (volume : Chemlib.Foundations.Volume) (rate : FlowRate) :
     (hydraulicDurationAtRate volume rate).value =
       volume.1.value / rate.1.value :=
   rfl
 
 /-- Flowing for the constructed hydraulic duration returns the supplied volume. -/
 theorem flowVolume_hydraulicDuration_value
-    (volume : ChemistryLib.Foundations.Volume) (rate : FlowRate) :
+    (volume : Chemlib.Foundations.Volume) (rate : FlowRate) :
     (flowVolume rate (hydraulicDurationAtRate volume rate)).value =
       volume.1.value := by
   simp only [flowVolume_value, hydraulicDurationAtRate_value]
@@ -95,7 +95,7 @@ theorem flowVolume_under_constantFlow {pumpSetpoint : FlowRate}
 /-- A constant-flow model delivers the requested volume over its hydraulic duration. -/
 theorem deliveredVolume_under_constantFlow {pumpSetpoint : FlowRate}
     (model : ConstantFlowModel pumpSetpoint) (t : ℝ)
-    (volume : ChemistryLib.Foundations.Volume) :
+    (volume : Chemlib.Foundations.Volume) :
     (flowVolume (model.actualFlow t)
       (hydraulicDurationAtRate volume pumpSetpoint)).value = volume.1.value := by
   rw [model.constantAtSetpoint t]
@@ -106,8 +106,8 @@ def sumDurations (durations : List Duration) : Duration :=
   durations.foldr (fun duration total => ⟨duration.value + total.value⟩) ⟨0⟩
 
 /-- Sum positive volumes into an unrestricted volume quantity. -/
-def sumVolumes (volumes : List ChemistryLib.Foundations.Volume) :
-    ChemistryLib.Units.Quantity ChemistryLib.Units.ChemicalDimension.volume :=
+def sumVolumes (volumes : List Chemlib.Foundations.Volume) :
+    Chemlib.Units.Quantity Chemlib.Units.ChemicalDimension.volume :=
   volumes.foldr (fun volume total => ⟨volume.1.value + total.value⟩) ⟨0⟩
 
 end AFPS2017.Flow

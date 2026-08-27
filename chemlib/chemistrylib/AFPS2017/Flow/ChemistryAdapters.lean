@@ -1,13 +1,13 @@
 import AFPS2017.Sequence.StoichiometryAdapter
-import ChemistryLib.Process.ProductionYield
-import ChemistryLib.Thermodynamics.OpenNetworks.RateEquation
+import Chemlib.Process.ProductionYield
+import Chemlib.Thermodynamics.OpenNetworks.RateEquation
 
 /-!
 # Flow chemistry adapters
 
-This module specializes ChemistryLib's open-network rate equation to the
+This module specializes Chemlib's open-network rate equation to the
 verified coarse coupling network and delegates stoichiometric production
-ratios and required feed mass directly to ChemistryLib's process API.  The
+ratios and required feed mass directly to Chemlib's process API.  The
 reservoir-current contribution vanishes only for a species certified to be
 internal by the model's explicit chemostat-current witness.
 
@@ -48,13 +48,13 @@ structure OpenCouplingModel : Type where
   reservoirCurrent : AFPS2017.Sequence.CouplingSpecies → ℝ
   /-- The reservoir current vanishes away from the selected chemostats. -/
   isChemostatCurrent :
-    ChemistryLib.Thermodynamics.OpenNetworks.IsChemostatCurrent
+    Chemlib.Thermodynamics.OpenNetworks.IsChemostatCurrent
       chemostats reservoirCurrent
 
-/-- ChemistryLib's open species rate specialized to the coarse coupling network. -/
+/-- Chemlib's open species rate specialized to the coarse coupling network. -/
 def couplingOpenSpeciesRate (model : OpenCouplingModel)
     (species : AFPS2017.Sequence.CouplingSpecies) : ℝ :=
-  ChemistryLib.Thermodynamics.OpenNetworks.openSpeciesRate
+  Chemlib.Thermodynamics.OpenNetworks.openSpeciesRate
     (fun reaction species ↦
       AFPS2017.Sequence.couplingNetwork.reactionVector reaction species)
     model.reactionFlux model.reservoirCurrent species
@@ -65,40 +65,40 @@ theorem couplingOpenSpeciesRate_eq_reaction_of_internal
     (species : AFPS2017.Sequence.CouplingSpecies)
     (internal : species ∉ model.chemostats) :
     couplingOpenSpeciesRate model species =
-      ChemistryLib.Thermodynamics.OpenNetworks.reactionSpeciesRate
+      Chemlib.Thermodynamics.OpenNetworks.reactionSpeciesRate
         (fun reaction species ↦
           AFPS2017.Sequence.couplingNetwork.reactionVector reaction species)
         model.reactionFlux species := by
   exact
-    ChemistryLib.Thermodynamics.OpenNetworks.openSpeciesRate_eq_reactionSpeciesRate_of_internal
+    Chemlib.Thermodynamics.OpenNetworks.openSpeciesRate_eq_reactionSpeciesRate_of_internal
         model.chemostats
         (fun reaction species ↦
           AFPS2017.Sequence.couplingNetwork.reactionVector reaction species)
         model.reactionFlux model.reservoirCurrent species
         model.isChemostatCurrent internal
 
-/-- Product obtained per unit feed, with ChemistryLib's signed stoichiometry semantics. -/
+/-- Product obtained per unit feed, with Chemlib's signed stoichiometry semantics. -/
 def stoichiometricProductPerFeedRatio {Species : Type}
-    (nu : ChemistryLib.Foundations.StoichiometricNumber Species)
+    (nu : Chemlib.Foundations.StoichiometricNumber Species)
     (feed product : Species) : ℝ :=
-  ChemistryLib.Process.productPerFeedRatio nu feed product
+  Chemlib.Process.productPerFeedRatio nu feed product
 
-/-- Required feed mass delegated to ChemistryLib's production-yield calculation. -/
+/-- Required feed mass delegated to Chemlib's production-yield calculation. -/
 def stoichiometricRequiredFeedMass {Species : Type}
     (productMass feedMolarMass productMolarMass : ℝ)
-    (nu : ChemistryLib.Foundations.StoichiometricNumber Species)
+    (nu : Chemlib.Foundations.StoichiometricNumber Species)
     (feed product : Species) (yield : ℝ) : ℝ :=
-  ChemistryLib.Process.requiredFeedMass
+  Chemlib.Process.requiredFeedMass
     productMass feedMolarMass productMolarMass nu feed product yield
 
-/-- The feed-mass adapter is exactly ChemistryLib's required-feed-mass definition. -/
+/-- The feed-mass adapter is exactly Chemlib's required-feed-mass definition. -/
 theorem stoichiometricRequiredFeedMass_eq {Species : Type}
     (productMass feedMolarMass productMolarMass : ℝ)
-    (nu : ChemistryLib.Foundations.StoichiometricNumber Species)
+    (nu : Chemlib.Foundations.StoichiometricNumber Species)
     (feed product : Species) (yield : ℝ) :
     stoichiometricRequiredFeedMass
         productMass feedMolarMass productMolarMass nu feed product yield =
-      ChemistryLib.Process.requiredFeedMass
+      Chemlib.Process.requiredFeedMass
         productMass feedMolarMass productMolarMass nu feed product yield :=
   rfl
 

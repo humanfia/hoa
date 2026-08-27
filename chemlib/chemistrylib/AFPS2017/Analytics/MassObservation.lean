@@ -1,5 +1,5 @@
 import AFPS2017.Analytics.Provenance
-import ChemistryLib.Units.Quantity
+import Chemlib.Units.Quantity
 
 /-!
 # Mass observations for AFPS2017 analytics
@@ -7,7 +7,7 @@ import ChemistryLib.Units.Quantity
 This module implements the narrow mass-observation contract from the sanitized
 source `afps2017.analytics.contract:question`. It records expected and observed
 display precision independently and represents both mass readings with
-ChemistryLib's dimension-indexed nonnegative quantities at the Physlib mass
+Chemlib's dimension-indexed nonnegative quantities at the Physlib mass
 dimension.
 
 The residual below is only the absolute difference of the two displayed dalton
@@ -26,17 +26,17 @@ structure DisplayedPrecision : Type where
 inductive ProductForm : Type where
   | unspecified
 
-/-- The ChemistryLib chemical dimension obtained from Physlib's mass dimension. -/
-def massDimension : ChemistryLib.Units.ChemicalDimension :=
-  ChemistryLib.Units.ChemicalDimension.ofPhyslib _root_.Dimension.M𝓭
+/-- The Chemlib chemical dimension obtained from Physlib's mass dimension. -/
+def massDimension : Chemlib.Units.ChemicalDimension :=
+  Chemlib.Units.ChemicalDimension.ofPhyslib _root_.Dimension.M𝓭
 
-/-- A nonnegative ChemistryLib quantity at the Physlib mass dimension. -/
+/-- A nonnegative Chemlib quantity at the Physlib mass dimension. -/
 abbrev MassQuantity : Type :=
-  ChemistryLib.Units.NonnegativeQuantity massDimension
+  Chemlib.Units.NonnegativeQuantity massDimension
 
 /-- Construct a mass quantity whose stored numerical value is measured in daltons. -/
 def ofDaltons (value : ℝ) (nonnegative : 0 ≤ value) : MassQuantity :=
-  ChemistryLib.Units.NonnegativeQuantity.ofReal value nonnegative
+  Chemlib.Units.NonnegativeQuantity.ofReal value nonnegative
 
 /--
 Expected and observed displayed masses with deliberately narrow product-form and

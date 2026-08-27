@@ -1,11 +1,11 @@
 import AFPS2017.Sequence.Residue
-import ChemistryLib.Foundations.Amount
+import Chemlib.Foundations.Amount
 
 /-!
 # Resin-bound sequence state
 
 This module records the structural state used by the abstract solid-phase
-sequence model. Resin loading and reactive-site amount reuse ChemistryLib's
+sequence model. Resin loading and reactive-site amount reuse Chemlib's
 dimensioned quantity and amount types; no empirical values are assigned here.
 
 Source references:
@@ -24,17 +24,17 @@ inductive NTerminalProtection : Type where
   | deprotected
 
 /-- The chemical dimension of amount of substance per unit mass. -/
-def resinLoadingDimension : ChemistryLib.Units.ChemicalDimension :=
-  ChemistryLib.Units.ChemicalDimension.amountOfSubstance /
-    ChemistryLib.Units.ChemicalDimension.ofPhyslib _root_.Dimension.M𝓭
+def resinLoadingDimension : Chemlib.Units.ChemicalDimension :=
+  Chemlib.Units.ChemicalDimension.amountOfSubstance /
+    Chemlib.Units.ChemicalDimension.ofPhyslib _root_.Dimension.M𝓭
 
 /-- A nonnegative resin loading with its chemical dimension tracked by the type. -/
 abbrev ResinLoading : Type :=
-  ChemistryLib.Units.NonnegativeQuantity resinLoadingDimension
+  Chemlib.Units.NonnegativeQuantity resinLoadingDimension
 
 /-- Forget the nonnegativity witness while retaining the resin-loading dimension. -/
 def resinLoadingQuantity (loading : ResinLoading) :
-    ChemistryLib.Units.Quantity resinLoadingDimension :=
+    Chemlib.Units.Quantity resinLoadingDimension :=
   loading.1
 
 /-- Structural state of a growing resin-bound chain, stored N-to-C. -/
@@ -44,6 +44,6 @@ structure ResinBoundState
   linker : Linker
   loading : ResinLoading
   nTerminalProtection : NTerminalProtection
-  reactiveSiteAmount : ChemistryLib.Foundations.Amount
+  reactiveSiteAmount : Chemlib.Foundations.Amount
 
 end AFPS2017.Sequence

@@ -1,7 +1,7 @@
 name = "chemistrylib_v1"
 version = "0.1.0"
 keywords = ["chemistry", "reaction-networks", "formal-verification"]
-defaultTargets = ["ChemistryLib", "AFPS2017"]
+defaultTargets = ["Chemlib", "AFPS2017"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -15,7 +15,7 @@ scope = "leanprover-community"
 rev = "v4.31.0"
 
 [[lean_lib]]
-name = "ChemistryLib"
+name = "Chemlib"
 
 [[lean_lib]]
 name = "AFPS2017"

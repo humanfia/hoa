@@ -42,7 +42,7 @@ theorem deliveredVolume_under_constantFlow_scaled_value :
     {pumpSetpoint : AFPS2017.Flow.FlowRate} →
       (model : AFPS2017.Flow.ConstantFlowModel pumpSetpoint) →
       (t : ℝ) → (scale : ℝ) →
-      (volume : ChemistryLib.Foundations.Volume) →
+      (volume : Chemlib.Foundations.Volume) →
       scale * (AFPS2017.Flow.flowVolume (model.actualFlow t)
         (AFPS2017.Flow.hydraulicDurationAtRate volume pumpSetpoint)).value =
         scale * volume.1.value := by
@@ -54,7 +54,7 @@ theorem deliveredVolume_under_constantFlow_value_map :
     {pumpSetpoint : AFPS2017.Flow.FlowRate} →
       (model : AFPS2017.Flow.ConstantFlowModel pumpSetpoint) →
       (t : ℝ) → (map : ℝ → ℝ) →
-      (volume : ChemistryLib.Foundations.Volume) →
+      (volume : Chemlib.Foundations.Volume) →
       map (AFPS2017.Flow.flowVolume (model.actualFlow t)
         (AFPS2017.Flow.hydraulicDurationAtRate volume pumpSetpoint)).value =
         map volume.1.value := by
@@ -63,7 +63,7 @@ theorem deliveredVolume_under_constantFlow_value_map :
 
 /-- The ideal hydraulic volume identity expressed after milliliter scaling. -/
 theorem flowVolume_hydraulicDuration_milliliters :
-    (volume : ChemistryLib.Foundations.Volume) →
+    (volume : Chemlib.Foundations.Volume) →
       (rate : AFPS2017.Flow.FlowRate) →
       1000 * (AFPS2017.Flow.flowVolume rate
         (AFPS2017.Flow.hydraulicDurationAtRate volume rate)).value =
@@ -73,7 +73,7 @@ theorem flowVolume_hydraulicDuration_milliliters :
 
 /-- Arbitrary real scaling preserves the ideal hydraulic volume identity. -/
 theorem flowVolume_hydraulicDuration_scaled_value :
-    (scale : ℝ) → (volume : ChemistryLib.Foundations.Volume) →
+    (scale : ℝ) → (volume : Chemlib.Foundations.Volume) →
       (rate : AFPS2017.Flow.FlowRate) →
       scale * (AFPS2017.Flow.flowVolume rate
         (AFPS2017.Flow.hydraulicDurationAtRate volume rate)).value =
@@ -83,7 +83,7 @@ theorem flowVolume_hydraulicDuration_scaled_value :
 
 /-- Applying any real-valued map preserves the ideal hydraulic value identity. -/
 theorem flowVolume_hydraulicDuration_value_map :
-    (map : ℝ → ℝ) → (volume : ChemistryLib.Foundations.Volume) →
+    (map : ℝ → ℝ) → (volume : Chemlib.Foundations.Volume) →
       (rate : AFPS2017.Flow.FlowRate) →
       map (AFPS2017.Flow.flowVolume rate
         (AFPS2017.Flow.hydraulicDurationAtRate volume rate)).value =

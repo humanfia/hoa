@@ -1,6 +1,6 @@
-# ChemistryLib — verified mathematical chemistry
+# Chemlib — verified mathematical chemistry
 
-ChemistryLib is a source-grounded Lean library for reaction networks,
+Chemlib is a source-grounded Lean library for reaction networks,
 thermodynamics, kinetics, stochastic chemistry, photochemistry, and selected
 chemical models. It is generated and checked through Archon's clean-room
 library campaign without importing legacy Chemistry or CRNT implementations.
@@ -18,15 +18,15 @@ branch and enter this Lake project:
 git clone https://github.com/humanfia/chemlib.git
 cd chemlib/chemistrylib
 lake build
-lake env lean ChemistryLib.lean
+lake env lean Chemlib.lean
 lake env lean AFPS2017.lean
 ```
 
 The checked-in toolchain and manifest pin Lean, Mathlib, and Physlib. The first
 build fetches those dependencies; subsequent builds reuse `.lake/`.
 
-To consume ChemistryLib from another Lake project, use the repository's
-`chemistrylib` subdirectory as the Git dependency and import `ChemistryLib`.
+To consume Chemlib from another Lake project, use the repository's
+`chemistrylib` subdirectory as the Git dependency and import `Chemlib`.
 The repository-root README contains the exact `lakefile.toml` declaration.
 To use the AFPS extension, import `AFPS2017`; both barrels may be imported in
 the same downstream project.
@@ -79,7 +79,7 @@ only through the explicit conditional adapter recorded in its evidence bundle.
 
 ```bash
 lake build
-lake env lean ChemistryLib.lean
+lake env lean Chemlib.lean
 lake env lean AFPS2017.lean
 ```
 
@@ -91,6 +91,11 @@ The reviewed CapabilityIR, module DAG, API lock, grounding policy, global-goal
 binding, and release certificate are published under `campaign/`. The release
 passes API ownership, axiom, symbol-DAG, migration, and full-build gates with no
 `sorry`, `admit`, or project-defined axioms.
+
+Machine-generated JSON and JSONL evidence retains its exact pre-rename bytes so
+the published hash chains remain valid. Old identifiers inside those immutable
+records refer to the historical generation run; the current public module is
+`Chemlib`.
 
 The AFPS2017 evidence is namespaced under `campaign/afps2017/`. It includes the
 four locked family plans and bindings, the append-only goal revision, aggregate

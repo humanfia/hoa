@@ -7,5 +7,5 @@ cd "$script_dir/chemistrylib"
 lean --version
 lake exe cache get
 lake build
-lake env lean ChemistryLib.lean
+lake env lean Chemlib.lean
 lake env lean AFPS2017.lean

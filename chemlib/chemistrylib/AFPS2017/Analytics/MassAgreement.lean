@@ -80,8 +80,8 @@ noncomputable def alfalfaMassObservation : ReportedDatum MassObservation :=
 theorem alfalfa_massResidual_eq_zero :
     massResidualDaltons alfalfaMassObservation.value = 0 := by
   norm_num [massResidualDaltons, alfalfaMassObservation, ofDaltons,
-    ChemistryLib.Units.NonnegativeQuantity.ofReal,
-    ChemistryLib.Units.Quantity.ofReal]
+    Chemlib.Units.NonnegativeQuantity.ofReal,
+    Chemlib.Units.Quantity.ofReal]
 
 /-- The ALFALFA-CONH2 observation agrees at zero-dalton tolerance. -/
 def alfalfaMassAgreement : MassAgreementCert alfalfaMassObservation :=

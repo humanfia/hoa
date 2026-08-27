@@ -1,9 +1,14 @@
-# ChemistryLib campaign status
+# Chemlib campaign status
 
 This directory publishes the reviewed, source-grounded state of the long-running
-Archon ChemistryLib build. Runtime locks, sanitized corpus views, evidence logs,
+Archon Chemlib build. Runtime locks, sanitized corpus views, evidence logs,
 and queues remain under ignored `.archon/` directories; the files here are the
 public, reviewable snapshot.
+
+Machine-generated JSON and JSONL files are preserved byte-for-byte from the
+pre-rename generation run. Their old library identifiers are immutable
+historical provenance required to keep the published hash chains valid; the
+current Lean source and public module use `Chemlib`.
 
 ## Released capability families
 
@@ -83,7 +88,7 @@ hash `8f90fb79cb3c729eb77e99ad2842483860369032995fb92f1c3aaf8d691884fc`.
 
 ## Mathlib and Physlib grounding
 
-Mathlib remains the general mathematical foundation. ChemistryLib now also has
+Mathlib remains the general mathematical foundation. Chemlib now also has
 an exact, reproducible Physlib dependency:
 
 - repository: `https://github.com/leanprover-community/physlib`;

@@ -1,5 +1,5 @@
 import AFPS2017.Flow.Quantity
-import ChemistryLib.Thermodynamics.TemperatureAdapters
+import Chemlib.Thermodynamics.TemperatureAdapters
 
 /-!
 # AFPS flow protocol timing
@@ -43,7 +43,7 @@ inductive TimingQualifier : Type where
 structure TemperatureRecord : Type where
   unit : TemperatureUnit
   reading : ℝ
-  semantics : ChemistryLib.Thermodynamics.TemperatureReadingSemantics unit
+  semantics : Chemlib.Thermodynamics.TemperatureReadingSemantics unit
 
 /-- Interpret a recorded reading as an absolute temperature. -/
 def TemperatureRecord.absoluteTemperature (record : TemperatureRecord) : Temperature :=
@@ -52,7 +52,7 @@ def TemperatureRecord.absoluteTemperature (record : TemperatureRecord) : Tempera
 /-- One source-tabulated stage of the flow protocol. -/
 structure FlowStage : Type where
   kind : StageKind
-  deliveredVolume : ChemistryLib.Foundations.Volume
+  deliveredVolume : Chemlib.Foundations.Volume
   pumpSetpoint : FlowRate
   tabulatedDuration : Duration
   temperature : TemperatureRecord
@@ -72,7 +72,7 @@ noncomputable def afps80MillilitersPerMinute : FlowRate :=
 
 /-- Total delivered volume of all stages in a cycle. -/
 def totalVolume (recipe : CycleRecipe) :
-    ChemistryLib.Units.Quantity ChemistryLib.Units.ChemicalDimension.volume :=
+    Chemlib.Units.Quantity Chemlib.Units.ChemicalDimension.volume :=
   sumVolumes (recipe.stages.map FlowStage.deliveredVolume)
 
 /-- Pure hydraulic duration obtained by summing volume divided by setpoint. -/
@@ -87,7 +87,7 @@ def couplingSegmentDuration (recipe : CycleRecipe) : Duration :=
 
 /-- Delivered volume of the priming and coupling-delivery stages. -/
 def couplingSegmentVolume (recipe : CycleRecipe) :
-    ChemistryLib.Units.Quantity ChemistryLib.Units.ChemicalDimension.volume :=
+    Chemlib.Units.Quantity Chemlib.Units.ChemicalDimension.volume :=
   sumVolumes ((recipe.stages.filter fun stage => stage.kind.inCouplingSegment).map
     FlowStage.deliveredVolume)
 
@@ -143,7 +143,7 @@ theorem detailed_totalVolume_milliliters
     (temperature : StageKind → TemperatureRecord) :
     1000 * (totalVolume (detailedRecipe temperature)).value = (252 / 5 : ℝ) := by
   norm_num [totalVolume, detailedRecipe, sumVolumes, milliliters,
-    ChemistryLib.Units.PositiveQuantity.ofReal, ChemistryLib.Units.Quantity.ofReal]
+    Chemlib.Units.PositiveQuantity.ofReal, Chemlib.Units.Quantity.ofReal]
 
 /-- The detailed volume-over-setpoint calculation totals exactly 37.8 s. -/
 theorem detailed_hydraulicDuration_seconds
@@ -151,7 +151,7 @@ theorem detailed_hydraulicDuration_seconds
     (hydraulicDuration (detailedRecipe temperature)).value = (189 / 5 : ℝ) := by
   norm_num [hydraulicDuration, detailedRecipe, sumDurations, hydraulicDurationAtRate,
     afps80MillilitersPerMinute, millilitersPerMinute, milliliters,
-    ChemistryLib.Units.PositiveQuantity.ofReal, ChemistryLib.Units.Quantity.ofReal]
+    Chemlib.Units.PositiveQuantity.ofReal, Chemlib.Units.Quantity.ofReal]
 
 /-- Every transcribed stage's tabulated time agrees with volume over setpoint. -/
 theorem detailed_tabulatedDuration_matches_hydraulic
@@ -164,7 +164,7 @@ theorem detailed_tabulatedDuration_matches_hydraulic
   all_goals subst flowStage
   all_goals norm_num [hydraulicDurationAtRate, afps80MillilitersPerMinute,
     millilitersPerMinute, milliliters, seconds,
-    ChemistryLib.Units.PositiveQuantity.ofReal, ChemistryLib.Units.Quantity.ofReal]
+    Chemlib.Units.PositiveQuantity.ofReal, Chemlib.Units.Quantity.ofReal]
 
 /-- The grouped coupling segment delivers exactly 9.6 mL. -/
 theorem grouped_couplingVolume_milliliters
@@ -172,15 +172,15 @@ theorem grouped_couplingVolume_milliliters
     1000 * (couplingSegmentVolume (detailedRecipe temperature)).value =
       (48 / 5 : ℝ) := by
   norm_num [couplingSegmentVolume, detailedRecipe, StageKind.inCouplingSegment,
-    sumVolumes, milliliters, ChemistryLib.Units.PositiveQuantity.ofReal,
-    ChemistryLib.Units.Quantity.ofReal]
+    sumVolumes, milliliters, Chemlib.Units.PositiveQuantity.ofReal,
+    Chemlib.Units.Quantity.ofReal]
 
 /-- The grouped coupling segment lasts exactly 7.2 s. -/
 theorem grouped_couplingDuration_seconds
     (temperature : StageKind → TemperatureRecord) :
     (couplingSegmentDuration (detailedRecipe temperature)).value = (36 / 5 : ℝ) := by
   norm_num [couplingSegmentDuration, detailedRecipe, StageKind.inCouplingSegment,
-    sumDurations, seconds, ChemistryLib.Units.Quantity.ofReal]
+    sumDurations, seconds, Chemlib.Units.Quantity.ofReal]
 
 /-- The nominal 40 s record is not the exact 37.8 s hydraulic sum. -/
 theorem hydraulicDuration_ne_reportedNominal

@@ -1,6 +1,6 @@
 # Minimal reproduction
 
-This guide rebuilds the public ChemistryLib release and checks both public
+This guide rebuilds the public Chemlib release and checks both public
 entrypoints, including the AFPS2017 formalization of selected claims from
 Mijalis et al. (2017), A Fully Automated Flow-Based Approach for Accelerated
 Peptide Synthesis.
@@ -22,25 +22,24 @@ Run:
 
     git clone https://github.com/humanfia/chemlib.git
     cd chemlib
-    git checkout v0.1.0-afps2017
     ./reproduce.sh
 
 The script prints the selected Lean version, fetches the Mathlib binary cache
 when available, builds both Lake targets, and elaborates the two public barrel
-files directly. Success means every command exits with status zero. On the
-tagged release, the selected toolchain is leanprover/lean4:v4.31.0.
+files directly. Success means every command exits with status zero. The
+selected toolchain is leanprover/lean4:v4.31.0.
 
 To run the steps manually:
 
     cd chemistrylib
     lake exe cache get
     lake build
-    lake env lean ChemistryLib.lean
+    lake env lean Chemlib.lean
     lake env lean AFPS2017.lean
 
 ## What is reproduced
 
-- the complete general ChemistryLib Lean build;
+- the complete general Chemlib Lean build;
 - all 22 AFPS2017 modules in the sequence, flow/yield, analytics, and scalar
   composability families;
 - the public entrypoint AFPS2017.lean;

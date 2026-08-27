@@ -1,10 +1,10 @@
-import ChemistryLib.Foundations.Concentration
-import ChemistryLib.ReactionNetwork.Stoichiometry
+import Chemlib.Foundations.Concentration
+import Chemlib.ReactionNetwork.Stoichiometry
 
 /-!
 # Coarse coupling stoichiometry adapter
 
-This module instantiates the released ChemistryLib amount, quantity,
+This module instantiates the released Chemlib amount, quantity,
 concentration, complex, reaction-network, and stoichiometry APIs for the coarse
 bookkeeping reaction
 
@@ -58,46 +58,46 @@ private instance : Fintype CouplingSpecies where
     intro species
     cases species <;> simp
 
-/-- Species-indexed coupling amounts, using ChemistryLib's amount domain. -/
+/-- Species-indexed coupling amounts, using Chemlib's amount domain. -/
 abbrev CouplingAmounts : Type :=
-  CouplingSpecies → ChemistryLib.Foundations.Amount
+  CouplingSpecies → Chemlib.Foundations.Amount
 
-/-- Species-indexed coupling concentrations, using ChemistryLib's profile type. -/
+/-- Species-indexed coupling concentrations, using Chemlib's profile type. -/
 abbrev CouplingConcentrations : Type :=
-  ChemistryLib.Foundations.ConcentrationProfile CouplingSpecies
+  Chemlib.Foundations.ConcentrationProfile CouplingSpecies
 
 /-- Forget an amount's nonnegativity witness while retaining its dimension. -/
-def couplingAmountQuantity (amount : ChemistryLib.Foundations.Amount) :
-    ChemistryLib.Units.Quantity
-      ChemistryLib.Units.ChemicalDimension.amountOfSubstance :=
+def couplingAmountQuantity (amount : Chemlib.Foundations.Amount) :
+    Chemlib.Units.Quantity
+      Chemlib.Units.ChemicalDimension.amountOfSubstance :=
   amount.1
 
-/-- The two ChemistryLib complexes of the coarse coupling network. -/
+/-- The two Chemlib complexes of the coarse coupling network. -/
 noncomputable def couplingComplex :
-    CouplingComplexId → ChemistryLib.Complex CouplingSpecies
+    CouplingComplexId → Chemlib.Complex CouplingSpecies
   | .reactants =>
       Finsupp.single .growingChain 1 + Finsupp.single .incomingResidue 1
   | .product => Finsupp.single .extendedChain 1
 
 /-- Form the pointwise amount-concentration profile at a common volume. -/
 noncomputable def couplingConcentrations
-    (amounts : CouplingSpecies → ChemistryLib.Foundations.Amount)
-    (volume : ChemistryLib.Foundations.Volume) :
-    ChemistryLib.Foundations.ConcentrationProfile CouplingSpecies :=
-  ChemistryLib.Foundations.concentrationProfile amounts volume
+    (amounts : CouplingSpecies → Chemlib.Foundations.Amount)
+    (volume : Chemlib.Foundations.Volume) :
+    Chemlib.Foundations.ConcentrationProfile CouplingSpecies :=
+  Chemlib.Foundations.concentrationProfile amounts volume
 
-/-- Coupling concentrations use ChemistryLib's amount-over-volume operation. -/
+/-- Coupling concentrations use Chemlib's amount-over-volume operation. -/
 theorem couplingConcentrations_apply
-    (amounts : CouplingSpecies → ChemistryLib.Foundations.Amount)
-    (volume : ChemistryLib.Foundations.Volume)
+    (amounts : CouplingSpecies → Chemlib.Foundations.Amount)
+    (volume : Chemlib.Foundations.Volume)
     (species : CouplingSpecies) :
     couplingConcentrations amounts volume species =
-      ChemistryLib.Foundations.amountConcentration (amounts species) volume :=
+      Chemlib.Foundations.amountConcentration (amounts species) volume :=
   rfl
 
-/-- The coarse coupling reaction as a released ChemistryLib reaction network. -/
+/-- The coarse coupling reaction as a released Chemlib reaction network. -/
 noncomputable def couplingNetwork :
-    ChemistryLib.ReactionNetwork
+    Chemlib.ReactionNetwork
       CouplingSpecies CouplingComplexId CouplingReactionId where
   complex := couplingComplex
   source
@@ -108,22 +108,22 @@ noncomputable def couplingNetwork :
 /-- The coarse reaction produces one extended-chain bookkeeping unit. -/
 theorem coupling_reactionVector_extendedChain :
     couplingNetwork.reactionVector .amideFormation .extendedChain = (1 : ℝ) := by
-  simp [ChemistryLib.ReactionNetwork.reactionVector,
-    ChemistryLib.ReactionNetwork.product, ChemistryLib.ReactionNetwork.reactant,
+  simp [Chemlib.ReactionNetwork.reactionVector,
+    Chemlib.ReactionNetwork.product, Chemlib.ReactionNetwork.reactant,
     couplingNetwork, couplingComplex]
 
 /-- The coarse reaction consumes one growing-chain bookkeeping unit. -/
 theorem coupling_reactionVector_growingChain :
     couplingNetwork.reactionVector .amideFormation .growingChain = (-1 : ℝ) := by
-  simp [ChemistryLib.ReactionNetwork.reactionVector,
-    ChemistryLib.ReactionNetwork.product, ChemistryLib.ReactionNetwork.reactant,
+  simp [Chemlib.ReactionNetwork.reactionVector,
+    Chemlib.ReactionNetwork.product, Chemlib.ReactionNetwork.reactant,
     couplingNetwork, couplingComplex]
 
 /-- The coarse reaction consumes one incoming-residue bookkeeping unit. -/
 theorem coupling_reactionVector_incomingResidue :
     couplingNetwork.reactionVector .amideFormation .incomingResidue = (-1 : ℝ) := by
-  simp [ChemistryLib.ReactionNetwork.reactionVector,
-    ChemistryLib.ReactionNetwork.product, ChemistryLib.ReactionNetwork.reactant,
+  simp [Chemlib.ReactionNetwork.reactionVector,
+    Chemlib.ReactionNetwork.product, Chemlib.ReactionNetwork.reactant,
     couplingNetwork, couplingComplex]
 
 /-- Residue-count weights for an `n`-residue chain, one incoming residue, and
@@ -142,8 +142,8 @@ theorem coupling_residueCount_conservation (n : Nat) :
       {.growingChain, .incomingResidue, .extendedChain} by
     ext species
     cases species <;> simp]
-  simp [ChemistryLib.ReactionNetwork.reactionVector,
-    ChemistryLib.ReactionNetwork.product, ChemistryLib.ReactionNetwork.reactant,
+  simp [Chemlib.ReactionNetwork.reactionVector,
+    Chemlib.ReactionNetwork.product, Chemlib.ReactionNetwork.reactant,
     couplingNetwork, couplingComplex, residueCountWeight]
 
 /-- A stoichiometric-matrix entry is its reaction-vector coordinate. -/
