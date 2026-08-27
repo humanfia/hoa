@@ -1,0 +1,24 @@
+Let $\mathcal H_T$ be a finite-dimensional target Hilbert space and let $\mathcal H_C\cong\C^2$ be a single-qubit control Hilbert space.  Let $U$ be a unitary on $\mathcal H_T$, and suppose $\ket{\psi}\in\mathcal H_T$ is a normalized eigenvector:
+$$
+    U\ket{\psi}=e^{\ii\theta}\ket{\psi},
+    \qquad
+    \theta\in[0,2\pi).
+$$
+Define
+$$
+    CU=\ketbra{0}{0}_C\otimes I_T+\ketbra{1}{1}_C\otimes U.
+$$
+Let the control qubit be initialized as
+$$
+    \ket{\phi}_C=\alpha\ket0_C+\beta\ket1_C,
+    \qquad
+    |\alpha|^2+|\beta|^2=1.
+$$
+Prove the phase-kickback identity
+$$
+    CU(\ket{\phi}_C\otimes\ket{\psi}_T)
+    =
+    \left(\alpha\ket0_C+\beta e^{\ii\theta}\ket1_C\right)
+    \otimes\ket{\psi}_T.
+$$
+In particular, prove that the output remains separable and that the eigenvalue phase is transferred to the relative phase of the control register.

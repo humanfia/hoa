@@ -1,0 +1,12 @@
+For a fixed bitstring $s\in\{0,1\}^n$, define
+$$
+    \ket{\chi_s}=2^{-n/2}\sum_{y\in\{0,1\}^n}(-1)^{s\cdot y}\ket{y}.
+$$
+Here $s\cdot y=\sum_{j=1}^ns_jy_j\bmod2$, and
+$$
+    H=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}.
+$$
+Prove that
+$$
+    H^{\otimes n}\ket{\chi_s}=\ket{s}.
+$$

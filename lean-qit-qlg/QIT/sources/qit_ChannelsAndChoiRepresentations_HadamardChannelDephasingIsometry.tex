@@ -1,0 +1,15 @@
+Let $\cH\cong\C^d$ with computational basis $\{\ket{i}\}_{i=1}^d$. Let $\{\ket{\eta_i}\}_{i=1}^d$ be unit vectors in an auxiliary Hilbert space $\cH_E$, and define an isometry
+$$
+U:\cH\to\cH\otimes\cH_E,
+\qquad
+U\ket{i}=\ket{i}\otimes\ket{\eta_i}.
+$$
+Let
+$$
+\cN(\rho)=\Tr_E(U\rho U^\dagger).
+$$
+Prove that $\cN$ is a Hadamard channel: there exists a positive semidefinite matrix $H\in\C^{d\times d}$ with $H_{ii}=1$ such that
+$$
+\cN(\rho)=H\circ\rho,
+$$
+where $\circ$ denotes entrywise Schur multiplication in the computational basis.

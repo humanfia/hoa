@@ -1,0 +1,19 @@
+name = "QITBench"
+defaultTargets = ["QITBench", "QITFoundations", "QITFormalized"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.30.0"
+
+[[lean_lib]]
+name = "QITBench"
+moreLeanArgs = ["-DautoImplicit=false"]
+
+[[lean_lib]]
+name = "QITFoundations"
+moreLeanArgs = ["-DautoImplicit=false"]
+
+[[lean_lib]]
+name = "QITFormalized"
+moreLeanArgs = ["-DautoImplicit=false"]

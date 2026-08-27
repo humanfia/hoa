@@ -1,0 +1,34 @@
+Let $\cH_S\cong\C^2$ and $\cH_E\cong\C^2$, and define
+$$
+X=
+\begin{pmatrix}
+0&1\\
+1&0
+\end{pmatrix},
+\qquad
+Y=
+\begin{pmatrix}
+0&-i\\
+i&0
+\end{pmatrix}.
+$$
+Let
+$$
+U=
+\frac{1}{\sqrt{2}}X\otimes\Id_E
++
+\frac{1}{\sqrt{2}}Y\otimes X_E,
+$$
+which is unitary by Problem~\ref{prob:qit-channel-01}. Assume that the environment is initialized in $\ket{0}_E$. Derive the reduced system channel
+$$
+\cE(\rho_S)
+=
+\Tr_E\!\left[
+U(\rho_S\otimes\ket{0}\bra{0}_E)U^\dagger
+\right].
+$$
+Express $\cE$ in Kraus form,
+$$
+\cE(\rho_S)=\sum_k E_k\rho_S E_k^\dagger,
+$$
+identify the Kraus operators $E_k=\bra{k}_E U\ket{0}_E$, and verify $\sum_k E_k^\dagger E_k=\Id_S$.

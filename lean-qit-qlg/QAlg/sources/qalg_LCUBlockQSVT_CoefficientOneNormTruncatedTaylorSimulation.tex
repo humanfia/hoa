@@ -1,0 +1,21 @@
+Let
+$$
+    H=\sum_{j\in J}\beta_jP_j,
+    \qquad
+    \beta_j>0,
+$$
+where each $P_j$ is a Pauli unitary.  The order-$K$ Taylor approximation to $e^{-\ii Ht}$ can be written as an LCU
+$$
+    P_K=\sum_{k=0}^K\sum_{(j_1,\dots,j_k)\in J^k}
+    \alpha_{j_1\dots j_k}P'_{j_1\dots j_k},
+$$
+where
+$$
+    \alpha_{j_1\dots j_k}=\frac{t^k\beta_{j_1}\cdots\beta_{j_k}}{k!}
+$$
+and all phases are absorbed into unitaries $P'_{j_1\dots j_k}$.  Prove that
+$$
+    \sum_{k=0}^K\sum_{(j_1,\dots,j_k)\in J^k}\alpha_{j_1\dots j_k}
+    \leq e^{t\sum_{j\in J}\beta_j}.
+$$
+Also state the corresponding raw-LCU segment count $O(t\sum_j\beta_j)$.

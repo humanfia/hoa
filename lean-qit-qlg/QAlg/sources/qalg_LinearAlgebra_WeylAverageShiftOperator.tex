@@ -1,0 +1,32 @@
+Let $\mathcal H=\C^d$ with computational basis $\{\ket j\}_{j=0}^{d-1}$, where $d\geq2$, and let
+$$
+    \omega=e^{2\pi\ii/d}.
+$$
+Define the clock and shift operators
+$$
+    Z
+    =
+    \sum_{j=0}^{d-1}\omega^j\ketbra{j}{j},
+    \qquad
+    X
+    =
+    \sum_{j=0}^{d-1}
+    \ketbra{j+1\bmod d}{j}.
+$$
+For $U\in M_d(\C)$, define
+$$
+    \mathcal T(U)
+    =
+    \frac1d
+    \sum_{j,k=0}^{d-1}
+    Z^jX^kUZ^{-j}X^{-k}.
+$$
+Prove $ZX=\omega XZ$.  Compute the above average explicitly for $U=X$ and prove that
+$$
+    \mathcal T(X)=X.
+$$
+Also prove that
+$$
+    X^T=X^{-1}=X^{d-1}.
+$$
+Prove that the identity $\mathcal T(U)=U^T$ cannot hold for all $U$ when $d>2$.

@@ -1,0 +1,23 @@
+Let $H_1,\dots,H_M$ be Hermitian matrices with $\opnorm{H_j}\leq\gamma$, where $0<\gamma<1$.  Put
+$$
+    S_k=\sum_{j=1}^k H_j,
+    \qquad S_0=0.
+$$
+Fix $R>0$ and assume $M\gamma\leq R$.  Assume that for each $k=1,\dots,M$ there is a remainder $F_k$ satisfying
+$$
+    e^{S_{k-1}}e^{H_k}=e^{S_k}+F_k,
+    \qquad
+    \opnorm{F_k}\leq C\opnorm{S_{k-1}}\opnorm{H_k}
+        e^{\opnorm{S_{k-1}}+\opnorm{H_k}} .
+$$
+For the error $E_M$ defined by
+$$
+    e^{H_1}e^{H_2}\cdots e^{H_M}=e^{S_M}+E_M,
+$$
+prove the explicit bound
+$$
+    \opnorm{E_M}
+    \leq
+    \frac{C e^R}{2}M(M-1)\gamma^2 .
+$$
+In particular, when $R$ is fixed, $\opnorm{E_M}=O_R(M^2\gamma^2)$.

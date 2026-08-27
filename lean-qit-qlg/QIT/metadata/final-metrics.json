@@ -1,0 +1,35 @@
+{
+  "benchmark": "qit",
+  "conditional_proof_rate_after_semantic_acceptance": 1.0,
+  "end_to_end_pass_rate": 1.0,
+  "end_to_end_passed": 40,
+  "external_human_blind_audit": false,
+  "formalization_generated_and_compiles": 40,
+  "formalization_review_max_per_target": 5,
+  "formalization_review_round_distribution": {
+    "1": 38,
+    "2": 2
+  },
+  "formalization_semantic_review_passed": 40,
+  "formalization_semantic_review_rate": 1.0,
+  "foundation_build_attempt_distribution": {
+    "2": 1,
+    "6": 1
+  },
+  "foundation_build_max_per_target": 6,
+  "foundation_build_targets": 2,
+  "full_lake_build": "passed",
+  "proof_review_max_per_target": 5,
+  "proof_review_pass_rate": 1.0,
+  "proof_review_passed": 40,
+  "proof_review_round_distribution": {
+    "1": 35,
+    "2": 3,
+    "3": 1,
+    "5": 1
+  },
+  "semantic_review_scope": "final automated reviewer result after repair",
+  "sorry_or_admit_free": 40,
+  "sorry_or_admit_free_rate": 1.0,
+  "tasks": 40
+}

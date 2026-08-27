@@ -1,0 +1,20 @@
+Let $A$ and $B$ be Hermitian matrices and set $\nu=\max\{\opnorm A,\opnorm B\}$.  For
+$$
+    S_1(\tau)=e^{-\ii A\tau}e^{-\ii B\tau},
+$$
+assume the local expansion is quantified as follows: there are universal constants $c,C>0$ such that, whenever $\nu|\tau|\leq c$,
+$$
+    \opnorm{S_1(\tau)-e^{-\ii(A+B)\tau}+\frac{\tau^2}{2}[A,B]}\leq C\nu^3|\tau|^3.
+$$
+Assume the product telescoping estimate
+$$
+    \opnorm{U_m\cdots U_1-V_m\cdots V_1}
+    \leq
+    \sum_{j=1}^m\opnorm{U_j-V_j}
+$$
+for unitary factors $U_j,V_j$ of matching dimension.  Prove that, for total time $t>0$ and $m$ large enough that $\nu t/m\leq c$,
+$$
+    \opnorm{S_1(t/m)^m-e^{-\ii(A+B)t}}
+    =O\!\left(\frac{\nu^2t^2}{m}\right).
+$$
+State the resulting sufficient step count $m=O(\nu^2t^2/\varepsilon)$ for error at most $\varepsilon\in(0,1)$.

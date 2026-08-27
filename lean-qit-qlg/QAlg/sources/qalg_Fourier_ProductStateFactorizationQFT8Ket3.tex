@@ -1,0 +1,14 @@
+Define
+$$
+    \QFT_8\ket{x}=\frac1{\sqrt8}\sum_{y=0}^7 e^{2\pi\ii xy/8}\ket{y}.
+$$
+Work with the big-endian convention $\ket y=\ket{y_2y_1y_0}$, where $y=4y_2+2y_1+y_0$.  Prove the corrected product factorization
+$$
+    \QFT_8\ket3=
+    \frac{\ket0+e^{2\pi\ii(1/2)}\ket1}{\sqrt2}
+    \otimes
+    \frac{\ket0+e^{2\pi\ii(3/4)}\ket1}{\sqrt2}
+    \otimes
+    \frac{\ket0+e^{2\pi\ii(3/8)}\ket1}{\sqrt2},
+$$
+with tensor factors ordered as qubits $2,1,0$.

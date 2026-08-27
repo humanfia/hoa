@@ -1,0 +1,16 @@
+Let $P\in\R^{d\times d}$ be row-stochastic, and define
+$$
+    \ket{\psi_i}=\ket{i}\sum_{j=0}^{d-1}\sqrt{P_{ij}}\ket{j},
+    \qquad i=0,\dots,d-1.
+$$
+Prove that there exists a unitary $U\in\mathcal U(d^2)$ satisfying
+$$
+    U\ket{i}\ket{0}=\ket{\psi_i},
+    \qquad i=0,\dots,d-1.
+$$
+Equivalently, prove that one may prescribe the columns indexed by $(i,0)$ through
+$$
+    U_{(a,b),(i,0)}=\delta_{a,i}\sqrt{P_{ib}},
+    \qquad a,b,i\in\{0,\dots,d-1\},
+$$
+and then choose all remaining columns so that the full matrix is unitary.

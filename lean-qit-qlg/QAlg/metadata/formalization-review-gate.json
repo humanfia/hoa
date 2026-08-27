@@ -1,0 +1,2120 @@
+{
+  "version": 2,
+  "max_iterations": 3,
+  "updated_at": "2026-07-28T16:40:47Z",
+  "targets": {
+    "QAlgFormalized/problem_qalg_Circuits_BitOracleUnitaryHermitian.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "Fin (2^n) and Fin (2^m) encode the two bit registers; bitOracle_apply_ket states (x,y) maps to (x,y xor f x), and the final theorem asserts unitarity plus conjugate-transpose self-equality."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Gate.ofPerm supplies unitarity; XOR self-inversion makes the inverse permutation matrix equal its conjugate transpose and to itself."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "bitOraclePerm is a transparent Equiv.Perm and bitOracle is its concrete Gate.ofPerm lift; no opaque relation carries the result."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The source is an exact circuit statement with no error or uncertainty."
+              },
+              "branch_orientation": {
+                "status": "not_applicable",
+                "evidence": "No signed branch occurs; prodEquiv explicitly fixes input-register then target-register order."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The operator is fixed on the full computational basis by an explicit permutation, so arbitrary reinterpretation cannot falsify the target while preserving the definitions."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Convert XOR involutivity into Hermiticity of the lifted oracle.",
+                "carrier": "bitOraclePerm and bitOracle_unitary_and_hermitian",
+                "status": "covered",
+                "evidence": "An involutive permutation has an inverse permutation matrix equal to itself, while a permutation matrix adjoint is its inverse."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Circuits_ControlledPhaseFromCNOTHadamards.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "Gate.controlled Gate.Z is CZ, Gate.CNOT uses the first qubit as control, and both tensor factors place H on the second qubit."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Gate extensionality reduces the equality to the four computational-basis actions, equivalently an explicit 4-by-4 calculation."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "All operators are concrete QAlgBench gates, tensors, and products; no local Prop interface is load-bearing."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The circuit identity is exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The file fixes first-qubit control, second-qubit target, and right-to-left composition."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "Both sides are closed concrete gate expressions with no arbitrary predicate or model parameter."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Show target-Hadamard conjugation converts CNOT to controlled Z.",
+                "carrier": "Gate.H, Gate.CNOT, Gate.controlled Gate.Z, Gate.tensor, and gate extensionality",
+                "status": "covered",
+                "evidence": "Their grounded basis actions decide all four input basis states."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Circuits_ControlledRYTwoCNOTSynthesis.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The conclusion has target Ry(theta/2), CNOT, target Ry(-theta/2), CNOT in the displayed right-to-left circuit order."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Control-branch evaluation and the concrete rotY matrix identities reduce the control-one branch to Ry(theta) and the control-zero branch to identity."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "rotY, controlled, tensor, and CNOT are concrete QAlgBench constructions, not an opaque synthesis relation."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The synthesis equality is exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "Control/target order, gate composition, and positive versus negative half rotations are explicit."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The universally quantified angle occurs in fixed matrix-valued gate expressions, leaving no freely interpretable carrier."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Reduce the control-one branch of the two-CNOT circuit to Ry(theta).",
+                "carrier": "rotY algebra and the CNOT-induced Pauli-X conjugation",
+                "status": "covered",
+                "evidence": "X conjugates Ry(a) to Ry(-a), so the signed half rotations combine to the requested full rotation."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Circuits_ControlledUnitaryInvariantSubspaces.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The theorem retains U, eigenphases, an orthonormal eigenbasis, its spectral sum, the two-dimensional spans, invariance, and diag(1,exp(i x_j)) action."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Orthonormality collapses the spectral sum on psi_j to its eigenvalue equation; controlled-gate branch laws then prove invariance and the coordinate formula."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "controlledEigenSubspace is Submodule.span and Set.MapsTo is accompanied by a stronger explicit all-coordinate intertwining equality."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The spectral claim is exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "Coordinates are ordered by control states zero then one, fixing the tensor order and diagonal entries."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The subspace, coordinates, block, and actual controlled gate are explicit, so an arbitrary invariant predicate cannot satisfy the contract."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Transfer the eigenvalue equation to the controlled two-dimensional block.",
+                "carrier": "h_spectral, OrthonormalBasis orthogonality, and controlledEigenCoordinates",
+                "status": "covered",
+                "evidence": "The zero-control branch is identity and the one-control branch applies U to psi_j."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Circuits_ExactQROMFactorization.lean": {
+      "status": "passed",
+      "reviews": 3,
+      "last_review_iter": 86,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T14:34:57Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "Qubits n/Qubits m and Fin (2^n)/Fin (2^m) encode the two registers and bit strings; dataBit uses getMsb; pauliX_matrix states the displayed X matrix; orderedPauliXTensor and dataXTensor encode the written tensor; factorOperator_eq_orderedPauliXTensor exposes the literal C_k formula; factorOperator_unitary, factorGate_apply_basis, idealQROM_apply_basis, idealQROM_eq_factorProduct, factorGate_comm, and factorProduct_eq_of_perm state every requested conclusion."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "There are no semantic premises beyond arbitrary n, m, and D. The tensor/XOR identification is a theorem (dataXTensor_eq_dataXPower), not a hypothesis; factor unitarity is proved when factorGate is constructed from factorOperator; basis action determines each factor; the canonical schedule contains each address once; pairwise commutation derives schedule-permutation invariance. The supplied preflight confirms elaboration with only the allowed sorry in the tensor/XOR proof body."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "All load-bearing objects are transparent and usable: bitwiseXor/bitwiseXorPerm for data addition, dataBit/pauliXPower/orderedPauliXTensor/dataXTensor for the literal source power, factorOperator/factorGate for C_k, qromBasisUpdate/qromPerm/idealQROM for U_D, and factorProduct/canonicalSchedule for the finite product. Exact gate/operator and basis-action theorems connect these layers."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The source contains only exact finite-dimensional equalities and unitarity claims, with no approximation, probability, asymptotic, or error parameter."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "prodEquiv fixes address on the left and data on the right; getMsb and the prefix-left/final-bit-right recursion fix MSB-first tensor order; factorGate_apply_basis selects the XOR branch exactly when x = k and leaves both registers unchanged otherwise; List.foldl fixes the canonical multiplication convention and factorProduct_eq_of_perm proves it immaterial."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The contract does not characterize gates by unconstrained names or sampled states: dataXTensor_eq_dataXPower is whole-gate equality, factorGate has factorOperator as its underlying matrix, qromPerm is the explicit involutive basis permutation, the basis-action theorems quantify over all x and y, canonicalSchedule enumerates every address, and the product/commutation conclusions are equalities of Gates. Thus the declared objects cannot vary independently while satisfying the statements."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Represent the n-qubit address register, m-qubit data register, classical D, and the integer/bit-string convention.",
+                "carrier": "Qubits, Fin (2 ^ n), Fin (2 ^ m), dataBit, and QAlgBench.prodEquiv",
+                "status": "covered",
+                "evidence": "D has type Fin (2^n) → Fin (2^m); getMsb gives the source's D_j(k) ordering and prodEquiv gives the big-endian address-data tensor identification."
+              },
+              {
+                "claim": "Represent y ⊕ d as the computational-basis action of a unitary data-register operator.",
+                "carrier": "bitwiseXor, bitwiseXorPerm, dataXPower, and dataXPower_apply_basis",
+                "status": "covered",
+                "evidence": "BitVec.xor supplies bitwise XOR, bitwiseXorPerm records involutivity, and the basis theorem states exact ket transport for every y and d."
+              },
+              {
+                "claim": "Identify the source Pauli X and interpret each bit exponent as X^0 = I or X^1 = X.",
+                "carrier": "pauliXPower and pauliX_matrix",
+                "status": "covered",
+                "evidence": "pauliXPower branches on Bool and pauliX_matrix equates Gate.X with the exact displayed 2-by-2 complex matrix."
+              },
+              {
+                "claim": "Construct X^{D(k)} as the ordered tensor over the bits D_j(k), including m = 0, and connect it to the XOR implementation.",
+                "carrier": "orderedPauliXTensor, orderedPauliXTensor_zero, orderedPauliXTensor_succ, dataXTensor, and dataXTensor_eq_dataXPower",
+                "status": "covered",
+                "evidence": "The recursive tensor appends each final bit to its MSB prefix, uses identity on Qubits 0, specializes to dataBit D k, and is equated as a whole Gate to dataXPower (D k)."
+              },
+              {
+                "claim": "Encode C_k = I_A ⊗ I_D + |k><k|_A ⊗ (X^{D(k)} - I_D) using the literal source tensor.",
+                "carrier": "factorOperator, factorGate_operator, and factorOperator_eq_orderedPauliXTensor",
+                "status": "covered",
+                "evidence": "factorOperator gives the projector-controlled operator, factorGate_operator identifies the bundled gate's matrix, and the transported theorem rewrites the data term to dataXTensor D k."
+              },
+              {
+                "claim": "State that every C_k is unitary without assuming that conclusion.",
+                "carrier": "factorGate and factorOperator_unitary",
+                "status": "covered",
+                "evidence": "factorGate supplies a proof term constructing a Gate from factorOperator, and factorOperator_unitary exposes membership of that raw operator in the unitary group as a theorem."
+              },
+              {
+                "claim": "State both selected and unselected computational-basis branches of C_k.",
+                "carrier": "factorGate_apply_basis",
+                "status": "covered",
+                "evidence": "For all k, x, and y, the if x = k branch preserves the address and XORs D(k), while the other branch preserves x and y."
+              },
+              {
+                "claim": "Define the ideal QROM unitary by its complete basis update.",
+                "carrier": "qromBasisUpdate, qromPerm, idealQROM, and idealQROM_apply_basis",
+                "status": "covered",
+                "evidence": "The explicit involutive permutation maps (x,y) to (x,y⊕D(x)), and the theorem states that action on every address-data basis ket."
+              },
+              {
+                "claim": "Express the product over every address exactly once and equate it to U_D.",
+                "carrier": "factorProduct, canonicalSchedule, and idealQROM_eq_factorProduct",
+                "status": "covered",
+                "evidence": "canonicalSchedule is List.ofFn over Fin (2^n), factorProduct fixes multiplication via foldl, and the main theorem is exact Gate equality."
+              },
+              {
+                "claim": "Prove pairwise commutation and consequent independence of product ordering.",
+                "carrier": "factorGate_comm and factorProduct_eq_of_perm",
+                "status": "covered",
+                "evidence": "Commutation is quantified over all k and l, and any List.Perm of an explicit schedule yields the same factor product."
+              }
+            ]
+          }
+        ]
+      },
+      "certificate_revoked_at": "2026-07-28T14:14:37Z",
+      "reopened_by": "proof_review",
+      "last_reopened_iter": 85,
+      "last_reopen_event_id": null,
+      "redraft_kind": "missing_foundational_bridge",
+      "reopen_history": [
+        {
+          "reopened_at": "2026-07-28T14:14:37Z",
+          "proof_review_iter": 85,
+          "proof_review_reason": "The kernel proofs close the written Lean declarations, but the contract omits the source's defining bridge X^{D(k)} = ⨂_{j=1}^m X^{D_j(k)}: dataXPower is defined directly as an XOR permutation, and neither dataBit nor pauliXPower participates in any tensor-product construction or equality theorem.",
+          "redraft_kind": "missing_foundational_bridge",
+          "previous_status": "passed",
+          "previous_reviews": 2,
+          "previous_reason": "all formalization Review entries passed",
+          "previous_certificate": {
+            "schema_version": 2,
+            "milestones": [
+              {
+                "schema_version": 2,
+                "checks": {
+                  "source_faithfulness": {
+                    "status": "passed",
+                    "evidence": "Addresses/data are Fin (2^n)/Fin (2^m), XOR is bitwise, each factor changes only its selected address, and the canonical schedule contains every address."
+                  },
+                  "derivability": {
+                    "status": "passed",
+                    "evidence": "On any basis ket exactly the factor at its address performs the XOR; orthogonal address projectors make factors commute, and basis extensionality identifies the product with idealQROM."
+                  },
+                  "abstraction_sufficiency": {
+                    "status": "passed",
+                    "evidence": "factorGate, qromPerm, and factorProduct are transparent operators/permutations with explicit basis-action theorems."
+                  },
+                  "uncertainty_propagation": {
+                    "status": "not_applicable",
+                    "evidence": "Factorization and commutation are exact."
+                  },
+                  "branch_orientation": {
+                    "status": "passed",
+                    "evidence": "Address/data tensor order, selected versus unselected branches, and foldl product order are fixed."
+                  },
+                  "countermodel_resistance": {
+                    "status": "passed",
+                    "evidence": "Every operator is determined on the complete computational basis and cannot be varied independently."
+                  }
+                },
+                "bridge_obligations": [
+                  {
+                    "claim": "Show the scheduled product has the ideal lookup action and is order-independent.",
+                    "carrier": "factorGate_apply_basis, factorGate_comm, factorProduct_eq_of_perm, and idealQROM_apply_basis",
+                    "status": "covered",
+                    "evidence": "Exactly one factor acts on each address, while pairwise commutation transports the result across schedule permutations."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "QAlgFormalized/problem_qalg_Circuits_HadamardTensorHadamardMatrix.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "matrix is one-half times the source sign matrix in big-endian |00>,|01>,|10>,|11> order, and both requested properties are present."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "The tensor equality is proved entrywise; grounded Hadamard unitarity and H squared equals identity yield the remaining theorems."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "The matrix entries and tensor operator are concrete and contain no local abstract interface."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The computation is exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The ordered computational basis is stated and used by the entrywise equality."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "All declarations are explicit and all three theorems have closed proof bodies with no escape hatch."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Connect the displayed matrix to H tensor H and transfer its gate laws.",
+                "carrier": "H_tensor_H_eq_matrix, matrix_mem_unitaryGroup, and matrix_mul_self",
+                "status": "covered",
+                "evidence": "The proved entrywise equality rewrites both requested properties to standard QAlgBench Hadamard laws."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Circuits_PhaseKickbackControlledEigenunitary.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The target/control normalization, canonical theta range, exp(i theta) eigenvalue, alpha/beta normalization, separability, and transferred one-branch amplitude all appear."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Expanding controlledOperator applies identity on control zero and heigen on control one; unit modulus of exp(i theta) preserves control normalization."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "IsSeparable exposes normalized tensor-factor witnesses and an exact vector equality; the phase theorem exposes both output amplitudes."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "No approximate phase or measurement uncertainty occurs."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "Control-zero/control-one action and the positive exp(i theta) sign convention are explicit."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The controlled operator and vectors are concrete; heigen is a governing law for the input eigenstate, not the requested output."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Move the target eigenphase to the control-one amplitude while retaining separability.",
+                "carrier": "heigen, phaseKickback_identity, and phaseKickback_output_isSeparable",
+                "status": "covered",
+                "evidence": "Controlled action applies U only on the one branch and leaves the common target factor unchanged."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Circuits_VanishingPauliYExpectationRealCircuits.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "A real Gate prepares U|0^n>; pauliYAt places the actual Y operator at every valid qubit, and the general purely-imaginary skew-symmetric claim is included."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "A real gate produces a real state; Pauli Y is purely imaginary and skew-symmetric; finite-index pairing then cancels the expectation."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "The local predicates unfold to entrywise conjugation or matrix equations, and dedicated lemmas eliminate them into the actual expectation equality."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The expectation vanishes exactly."
+              },
+              "branch_orientation": {
+                "status": "not_applicable",
+                "evidence": "No directional branch occurs; the qubit position is explicitly indexed."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The predicates constrain actual state/operator entries and pauliYAt is concrete, so they cannot be interpreted arbitrarily."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Connect real circuit output and Pauli-Y matrix symmetries to zero expectation.",
+                "carrier": "circuitOutput_isReal and complexExpectation_eq_zero_of_real_of_purelyImaginary_of_skewSymmetric",
+                "status": "covered",
+                "evidence": "The lemmas apply the entrywise laws to the actual output vector and operator expectation."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Circuits_WalshHadamardBooleanCharacter.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "booleanDot is the mod-two bit inner product, amplitudes are (1/sqrt 2)^n times (-1)^(s dot y), and the target is H tensor-power n applied to chi_s equals ket s."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Finite Boolean-character orthogonality, or induction through the tensor recursion, makes every output amplitude vanish except at s."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "Bits, dot product, amplitudes, normalization, and walshHadamard recursion are transparent definitions."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The transform identity is exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The label/bit convention is documented; the same bit order is used for s and y and the transform."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "Both the input state and transform are fixed coordinate constructions rather than free witnesses."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Evaluate the tensor Hadamard transform of the Boolean character.",
+                "carrier": "booleanDot, walshHadamard, and walshHadamard_apply_booleanCharacter",
+                "status": "covered",
+                "evidence": "Character orthogonality leaves precisely the basis coefficient at s."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Fourier_EigenvectorsModularMultiplicationShor.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "Residues are Fin N; U_x maps y to x*y mod N; r is the unit order; coefficients use negative phase and the eigenvalue uses the corresponding positive phase."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Coprimality and hr make the modular powers a cyclic orbit of exact length r; applying U_x shifts the orbit and cyclic reindexing extracts the eigenphase."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "The operator and vector are entrywise/finite-sum definitions, and orderOf supplies concrete periodicity laws."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The eigenvector equation is exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The negative Fourier coefficient sign and positive eigenvalue sign are fixed consistently with the forward modular shift."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The operator is an explicit matrix and the vector is a fixed finite sum, so neither may vary independently."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Turn modular multiplication into a cyclic orbit shift and extract its Fourier eigenvalue.",
+                "carrier": "modularMultiplicationOperator_apply_ket, hr, fourierCoefficient, and shorEigenvalue",
+                "status": "covered",
+                "evidence": "The k-th orbit ket moves to k+1 with wraparound, and reindexing multiplies the vector by the requested phase."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Fourier_FiniteQFTUnitarity.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "qftRegister has basis Fin M, entries are M^(-1/2) omega_M^(xy), omega_M is exp(2pi i/M), and hM records M>0."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "The adjoint product reduces to a finite roots-of-unity geometric sum, equal to M on matching indices and zero otherwise; hM makes normalization nonzero."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "The QFT is an explicit matrix with an explicit ket-action lemma and a standard Matrix.unitaryGroup target."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "Unitarity is exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The source positive forward-QFT phase convention is retained."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "Every matrix entry is fixed by a formula, so no arbitrary transform remains."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Convert roots-of-unity orthogonality into matrix unitarity.",
+                "carrier": "qftMatrix, rootOfUnity, qftMatrix_apply_ket, and Matrix.unitaryGroup",
+                "status": "covered",
+                "evidence": "The normalized column inner products reduce to the finite geometric-sum delta."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Fourier_ProductStateFactorizationQFT8Ket3.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "qft8Ket uses positive exp(2pi i xy/8); the factors have phases 1/2, 3/4, and 3/8 and are ordered as qubits 2,1,0."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Coordinate extensionality reduces the phases to 3y/8 versus y2/2+3y1/4+3y0/8, differing by an integer; square-root identities match normalization."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "Both sides are transparent finite sums/tensor vectors with concrete exponential phases."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The factorization is exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "Big-endian qubit order and the forward-QFT phase sign are explicit."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "All phases, tensor factors, and basis amplitudes are fixed numeric formulas."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Match each product-state phase and normalization to QFT_8|3>.",
+                "carrier": "qft8Ket, qft8PhaseQubit, StateVector.tensor, and complex-exponential periodicity",
+                "status": "covered",
+                "evidence": "Coordinate comparison gives an integer phase difference and (sqrt 2)^3=sqrt 8 normalization."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_Fourier_QPESuperpositionExactEigenvectors.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The theorem retains two orthonormal eigenstates, exp(2pi i phi_j) eigenvalues, exact n-bit labels N*phi_j=k_j, normalized coefficients, the input superposition, and the correlated premeasurement state."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Linearity splits the input branches; powered eigenvalue equations provide phase characters; h_exact rewrites them to k_j, and the inverse-QFT character sum yields the two labeled basis states."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "preMeasurementState is an explicit nested finite sum using actual gate powers, inverse-QFT coefficients, kets, and tensors; no opaque QPE predicate is used."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "Both eigenphases are exactly representable, so the source has no approximation interval or phase-estimation error."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The forward eigenphase and inverse-QFT negative sign are explicit, as are counting-register then target-register tensor order and labels k1,k2."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The entire premeasurement vector is defined from U and psi, so it cannot be assigned arbitrarily; the target is not present in any hypothesis."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Convert exact eigenphases into counting-register basis labels under inverse QFT.",
+                "carrier": "h_eigen1, h_eigen2, h_exact1, h_exact2, inverseQFTCoefficient, and preMeasurementState",
+                "status": "covered",
+                "evidence": "Powered eigenvalues form Fourier characters whose finite inverse transform is the delta at each exact label."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_HSPRepresentation_FidelityBoundHiddenSubgroupCosetStates.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The theorem retains rho_H/rho_H', the fidelity-squared support bound, universal coset overlaps, subgroup product cardinality, and the requested square-root ratio."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Expanding the support-projector trace against the coset mixture and applying the overlap/cardinality identities gives the squared ratio; fidelity nonnegativity permits square-root extraction."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "SupportProjector exposes self-adjointness, idempotence, and an exact range characterization; fidelity is a concrete trace of positive square roots."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The fidelity inequality is an exact deterministic bound, not a reported measurement uncertainty."
+              },
+              "branch_orientation": {
+                "status": "not_applicable",
+                "evidence": "No signed or incoming/outgoing branch occurs."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "All abstract support data have elimination laws tied to the actual density operator, and the overlap premise quantifies every coset pair."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Reduce the support-projector fidelity estimate to subgroup intersection cardinalities.",
+                "carrier": "hFidelityUpper, hCosetInner, hProductCard, and cosetSupportProjector",
+                "status": "covered",
+                "evidence": "The trace expansion is determined by the coset mixture and the two supplied source identities."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_HSPRepresentation_RankStrongFourierSamplingConditionalState.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "Finite group/subgroup data, unitary irreducible representation, nonzero conditioning denominator, projector range, normalized conditional state, equal ranks, and both character conventions are explicit."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Group averaging is self-adjoint and idempotent with invariant range; projector trace equals rank, entrywise conjugation and nonzero scaling preserve rank, and inverse-pairing makes the character average real."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "IsOrthogonalProjectorOnto unfolds to self-adjointness, idempotence, and exact linear-map range equality."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The conditional-state and rank formulas are exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The entrywise-conjugated Fourier convention is explicit and both ordinary and conjugated character sums are recorded."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The projector predicate has concrete elimination equalities, and all matrices are finite sums of the actual representation."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Identify subgroup averaging as the invariant-subspace projector and compute its rank by character trace.",
+                "carrier": "subgroupAveragingProjector, IsOrthogonalProjectorOnto, subgroupCharacterSum, and Matrix.rank",
+                "status": "covered",
+                "evidence": "Averaging fixes exactly invariant vectors, while trace of the idempotent projector equals its rank."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_HSPRepresentation_WeakFourierSamplingTranspositionSn.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The transposition class size is n(n-1)/2, the explicit TV bound is 1/sqrt(2n(n-1)), iid powers use m samples, and constant advantage yields n=O(sampleCount n)."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Substitute the class cardinality, apply TV(P^m,Q^m)<=m TV(P,Q), combine with delta advantage, and eventually bound sqrt(2n(n-1)) below by n."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "FiniteProbabilityDistribution, totalVariation, iidPower, and IsBigO are concrete standard carriers; the model exposes both actual distributions."
+              },
+              "uncertainty_propagation": {
+                "status": "passed",
+                "evidence": "The one-sample distinguishability bound is propagated explicitly through totalVariation_iidPower_le to the m-sample lower bound and asymptotic sample count."
+              },
+              "branch_orientation": {
+                "status": "not_applicable",
+                "evidence": "No signed branch choice occurs; trivial versus transposition distributions are explicitly ordered in every TV term."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The advantage hypothesis is linked to the same iid distributions and the generic product-TV law, so sampleCount cannot be chosen arbitrarily small."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Propagate the one-sample TV bound to an Omega(n) necessary sample count.",
+                "carrier": "totalVariation_iidPower_le, necessarySampleCount_lowerBound, and necessarySampleCount_isOmega",
+                "status": "covered",
+                "evidence": "Constant iid distinguishing advantage forces m times the one-sample bound to exceed fixed delta."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_HamiltonianSimulation_AccumulationProductFormulaErrorsManySmallTerms.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "ProductFormulaData retains Hermiticity, 0<gamma<1, M*gamma<=R, term bounds, local remainders, their operator-norm estimates, and the final error decomposition."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Telescoping gives E_k=E_(k-1) exp(H_k)+F_k; submultiplicativity, ||S_k||<=k gamma, M gamma<=R, and summing k yield the displayed quadratic bound."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "ProductFormulaData fields are explicit matrix equalities and inequalities, so every local abstract datum has a usable elimination law."
+              },
+              "uncertainty_propagation": {
+                "status": "passed",
+                "evidence": "Each F_k has a concrete norm carrier and bound; error_eq and the telescoping argument propagate these local errors into ||E|| and IsBigO."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "List.ofFn product order, prefix index convention, and noncommutative multiplication direction are fixed."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "F and E are tied to the actual exponentials by remainder_eq and error_eq and cannot be freely chosen."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Accumulate the local remainder bounds into the global quadratic error.",
+                "carrier": "remainder_eq, remainder_norm_le, error_eq, partialSum, and orderedExpProduct",
+                "status": "covered",
+                "evidence": "The concrete telescoping recurrence plus norm submultiplicativity sums the local bounds over k."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_HamiltonianSimulation_FirstOrderLieTrotterGlobalErrorScaling.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "Hermitian A,B, positive t, local condition nu*t/m<=c, global operator error, O(nu^2 t^2/m), epsilon in (0,1), and sufficient integer step counts all occur."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "The local expansion controls one step; ProductTelescopingEstimate accumulates m steps; Hermiticity makes exact factors unitary; ceilings then provide the epsilon step bounds."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "LocalExpansionBound and ProductTelescopingEstimate expose the needed norm inequalities rather than opaque validity predicates."
+              },
+              "uncertainty_propagation": {
+                "status": "passed",
+                "evidence": "The deterministic local-error carrier is propagated into globalError, a pointwise K-bound, atTop IsBigO, and an explicit epsilon guarantee."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The short-time sign, product order, limit m to infinity, and epsilon to zero-plus filter are fixed by the definitions/contracts."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The approximation hypotheses constrain the actual matrix exponentials and telescope their actual products, preventing arbitrary globalError behavior."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Turn the local second-order bound into global 1/m scaling and an epsilon step count.",
+                "carrier": "LocalExpansionBound, ProductTelescopingEstimate, firstOrderLieTrotter_globalErrorScaling, and firstOrderLieTrotter_sufficientStepCount",
+                "status": "covered",
+                "evidence": "m local errors of size O((t/m)^2) telescope to O(t^2/m), after which a ceiling enforces the desired epsilon."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_HamiltonianSimulation_LeadingCommutatorTermTwoTermExponentialProduct.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "twoTermExponentialProductError is exp(H1)exp(H2)-exp(H1+H2); both operator norms are bounded by gamma<1; one universal nonnegative C controls the residual by C gamma^3."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Power-series expansion in the complete finite-matrix normed algebra isolates one-half (H1H2-H2H1), and uniform third-order tail estimates provide C."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "The error and commutator are concrete matrix expressions; no approximation predicate or local relation is introduced."
+              },
+              "uncertainty_propagation": {
+                "status": "passed",
+                "evidence": "The approximation error is explicitly carried by the operator norm of the third-order residual and bounded by C*gamma^3."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The ordered product exp(H1)exp(H2) and commutator convention H1H2-H2H1 fix the leading-term sign."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The residual is defined from actual exponentials and matrices and has no independent interpretation."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Extract the signed half-commutator and uniformly bound the remaining exponential-series terms.",
+                "carrier": "twoTermExponentialProductError, the matrix Lie bracket, and the operator norm",
+                "status": "covered",
+                "evidence": "The second-order series difference equals one-half [H1,H2], while all remaining words have total degree at least three."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LCUBlockQSVT_CoefficientOneNormTruncatedTaylorSimulation.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The coefficients are t^k product(beta_j)/k!, phases (-i)^k are placed in Gate-valued P', the finite one-norm is bounded by exp(t sum beta), and the segment count is O(t sum beta)."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Expanding powers of the finite Hamiltonian sum gives the LCU; summing tuples gives (t sum beta)^k/k!, bounded by exp; the ceiling bound yields eventual linear segment growth."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "Hamiltonian, Taylor polynomial, coefficients, unitary products, one-norm, and segment count are explicit finite definitions."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The source requests a coefficient/resource bound, not a reported uncertainty or simulation-error interval."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "Ordered Pauli products, absorbed (-i)^k phases, and the atTop time direction are explicit."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "P' is constrained by an exact operator equation for every tuple, and the Taylor LCU equality connects every coefficient to the actual polynomial."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Collapse the tuple coefficient sum to a truncated exponential series and derive segment growth.",
+                "carrier": "truncatedTaylor_has_lcu, taylorCoefficientOneNorm_le_exp, and rawLCUSegmentCount_isBigO",
+                "status": "covered",
+                "evidence": "Finite distributivity yields the scalar exponential-series terms, whose ceiling controls the raw segment count."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LCUBlockQSVT_LCUBlockEncodingPrepareSelect.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "Positive coefficients, alpha as their one-norm, sqrt(coeff/alpha) PREPARE amplitudes, SELECT blocks, ancilla/system order, W=(P dagger tensor I)SELECT(P tensor I), and A/alpha are all retained."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "hprepare gives ket amplitudes and its adjoint gives bra amplitudes; diagonal SELECT then contributes coeff_l/alpha times U_l, summing to A/alpha."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "IsPrepare eliminates to an exact vector equation, while BlockEncoding is reached through the explicit projectedBlock equality and positive scale."
+              },
+              "uncertainty_propagation": {
+                "status": "passed",
+                "evidence": "The block-encoding error parameter is explicitly zero, justified by exact projectedBlock equality rather than an omitted error carrier."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "Ancilla precedes system, PREPARE/SELECT multiplication order is explicit, and the selected all-zero ancilla block is fixed."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "P, SELECT, W, and the block projection are tied by exact vector/operator equations; IsPrepare cannot be an arbitrary witness."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Convert PREPARE amplitudes and SELECT blocks into the A/alpha projected block.",
+                "carrier": "IsPrepare, selectOperator, lcuWalk, projectedBlock_lcuWalk, and lcuWalk_isBlockEncoding",
+                "status": "covered",
+                "evidence": "Bra and ket amplitudes multiply to coeff_l/alpha for each selected unitary, and summation yields the exact block."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_CommonStabilizerFullRankStates.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "Positive trace-one spectra encode full-rank density operators, injectivity encodes simplicity, every cross-basis overlap is nonzero, and W is a bundled unitary satisfying both conjugation equations."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Stabilization of each simple-spectrum operator makes W diagonal by phases in its eigenbasis; nonzero overlaps between every basis pair force all phases equal."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "spectralOperator, commonUnitaryStabilizer, and scalarUnitaryGates are transparent operator/set definitions with exact equations."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The stabilizer characterization is exact."
+              },
+              "branch_orientation": {
+                "status": "not_applicable",
+                "evidence": "No signed or directional branch occurs."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The spectral and conjugation equations mention the actual matrices and gate, so phase labels cannot vary independently under hcross."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Force every eigenbasis phase of W to be the same scalar.",
+                "carrier": "hr_simple, hs_simple, hWρ, hWσ, and hcross",
+                "status": "covered",
+                "evidence": "Simple spectra produce one-dimensional invariant eigenspaces, and every nonzero cross overlap equates their unit phases."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_FidelityHammingWeightTruncatedPhaseState.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "Amplitudes are (-1)^(x dot y), support is hammingWeight y<=r, normalizers are sqrt(2^n) and sqrt(R_n,r), and r_n=floor(n/2+c sqrt n) appears in the liminf bound."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Matching phases cancel in the overlap and retained-coordinate counting gives R_n,r/2^n; a binomial tail/CLT choice gives c_eta independent of n."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "Hamming weight/cardinality, coordinate vectors, truncation radius, and Filter.liminf are concrete mathematical carriers."
+              },
+              "uncertainty_propagation": {
+                "status": "passed",
+                "evidence": "The tolerance eta remains in the theorem and is propagated to the retained-mass guarantee liminf >= 1-eta."
+              },
+              "branch_orientation": {
+                "status": "not_applicable",
+                "evidence": "No signed branch occurs; both states use the same explicit phase convention."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The states and counts are fixed coordinate definitions, and no convergence or desired bound is assumed."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Compute fidelity by phase cancellation and choose a sqrt(n) offset meeting tolerance eta.",
+                "carrier": "fidelity_phaseState_truncatedPhaseState, truncationRadius, and exists_positive_offset_for_hamming_ball",
+                "status": "covered",
+                "evidence": "Retained coordinates contribute uniformly, and the final theorem states the genuine binomial-tail liminf with fixed c_eta."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_HilbertSchmidtTranspositionInvariance.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "hilbertSchmidtInner B C is trace(B dagger C), the norm is sqrt of the real self-inner product, and both inner-product preservation and U-V distance isometry are stated."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Trace expansion produces the same finite double sum after swapping dummy indices; transpose distributes over subtraction, so the norm equality follows."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "Both operations unfold to Matrix.trace, conjTranspose, multiplication, real part, and Real.sqrt."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "Both invariance statements are exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "Plain transpose and conjugate transpose have distinct, explicit roles in the defining trace expression."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "No arbitrary inner product or norm is quantified; both are fixed formulas on the actual matrices."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Transfer transpose invariance of the inner product to distance isometry.",
+                "carrier": "hilbertSchmidtInner_transpose and hilbertSchmidtNorm_transpose_sub",
+                "status": "covered",
+                "evidence": "Transpose commutes with U-V and equality of self-inner-products survives real part and square root."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_LinearDependenceRvsFtwo.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The coordinates are (1,1,0), (0,1,1), (1,0,1); the fields are R and ZMod 2; f2_span is equality of the full carrier set with the four displayed vectors."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "The real column determinant is 2, while over F2 the three vectors sum to zero and v3=v1+v2, leaving precisely four coefficient combinations."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "Mathlib LinearIndependent and Submodule.span are used directly on explicit functions."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The finite algebraic statements are exact."
+              },
+              "branch_orientation": {
+                "status": "not_applicable",
+                "evidence": "No directional or sign branch is relevant."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The vectors and scalar fields are fixed concrete objects, so dependence cannot be changed by interpretation."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Explain the field-dependent rank and enumerate the F2 span.",
+                "carrier": "real_linearIndependent, f2_linearDependent, and f2_span",
+                "status": "covered",
+                "evidence": "Determinant 2 is nonzero over R but zero modulo 2, where two generators yield exactly four vectors."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_LocalMarginalUnreadProjectiveMeasurement.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The two-qubit A/B system uses sum_b (I tensor |b><b|) rho (I tensor |b><b|); the result retains only rho_00/rho_11 and preserves tr_B."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Matrix-unit multiplication removes off-diagonal B blocks, while partialTraceB sums only diagonal B entries, which the unread measurement preserves."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "IsDensityOperator unfolds to positive semidefinite plus trace one; blockA, unreadMeasurementB, and partialTraceB are explicit matrix formulas."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The non-selective measurement identities are exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "Subsystem A versus measured B, tensor order, computational outcomes, and discarded-outcome summation are fixed."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The measurement channel and partial trace are concrete maps on rho, not disconnected predicates."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Show the unread B measurement deletes off-diagonal B blocks without changing A's marginal.",
+                "carrier": "block_decomposition, unreadMeasurementB_eq_diagonal_blocks, and partialTraceB_unreadMeasurementB",
+                "status": "covered",
+                "evidence": "The projectors select b=b', and the partial trace depends only on exactly those surviving diagonal blocks."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_OrthonormalityCoherentMarkovChainRows.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "P is real d-by-d with P_ij>=0 and row sums one; coherentRowState is |i> tensor sum_j sqrt(P_ij)|j>; the target is Mathlib Orthonormal."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Nonnegativity turns sqrt(P_ij)^2 into P_ij, each row sum gives unit norm, and distinct row labels have disjoint first-coordinate support."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "The register and state are finite coordinate definitions, and Orthonormal exposes the standard inner-product equations."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "Orthonormality is exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The row index is in the first product register and the coherent column superposition in the second."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "Every amplitude is fixed by P and the product basis; no free encoding relation occurs."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Turn stochastic row data into unit norms and distinct-row orthogonality.",
+                "carrier": "h_nonnegative, h_row_sum, coherentRowState, and Orthonormal",
+                "status": "covered",
+                "evidence": "Squared amplitudes sum to one and different first-register labels give disjoint support."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_PostMeasurementStateObservedQubit.lean": {
+      "status": "passed",
+      "reviews": 2,
+      "last_review_iter": 2,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The full state is ket0 tensor alpha0 plus ket1 tensor alpha1; probQubit0 psi 1 uses API bit argument 1; the probability sum and ket1 branch divided by its square root match the source."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "The grounded Born-rule branch lemma gives the alpha1 norm square; tensor norm and positive square-root laws normalize the selected vector for PureState.ofVec."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "The theorem uses actual PureState probability and StateVector.tensor operations, and characterizes the output by an exact coercion equality."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The probability and conditional state are exact, with no reported uncertainty."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The measured first qubit and observed outcome one are fixed in the premise/conclusion, and the output explicitly selects ket1."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "hpsi fixes the actual input vector and the PureState witness must equal one exact normalized branch."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Extract and normalize the observed outcome-one branch.",
+                "carrier": "hpsi, PureState.probQubit1_ket0_tensor_add_ket1_tensor, StateVector.norm_tensor, and PureState.ofVec",
+                "status": "covered",
+                "evidence": "Orthogonality removes alpha0 from the Born weight, and division by sqrt of the positive alpha1 norm square produces a unit vector."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_SpectralProjectorsBooleanPhaseOracle.lean": {
+      "status": "passed",
+      "reviews": 1,
+      "last_review_iter": 3,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The contract uses the QAlgBench n-qubit phaseOracleOp, defines (I+O_f)/2 and (I-O_f)/2, characterizes their +1/-1 fixed spaces, and states trace(O_f)=2^n-2|f^-1(1)| via the marked-input filter."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "The diagonal entries of phaseOracleOp are ±1, so the oracle is self-adjoint and involutive; expanding (I±O_f)/2 proves projector laws and eigenspace equivalences, while partitioning the diagonal trace proves the cardinality formula."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "Both projector operators are transparent matrix expressions and OrthogonalProjector supplies self-adjointness/idempotence; the fixed-vector iff laws expose the exact ranges rather than using an opaque eigenspace predicate."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The projector and trace identities are exact and the source contains no approximation or uncertainty."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The +1 and -1 branches are separately fixed, with I+O_f assigned to the positive eigenspace and I-O_f to the negative eigenspace; marked inputs contribute the negative trace sign."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "phaseOracleOp and both proposed projectors are concrete operators on the full computational basis, so no arbitrary predicate or witness can be reinterpreted to make the source claim false."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Turn the oracle's ±1 diagonal action into orthogonal projectors with the exact two eigenspaces.",
+                "carrier": "phaseOraclePositiveProjectorOp, phaseOracleNegativeProjectorOp, OrthogonalProjector, and phaseOracle_spectralProjectors",
+                "status": "covered",
+                "evidence": "Self-adjoint involutivity of the concrete phase oracle makes (I±O_f)/2 self-adjoint idempotents, and the displayed fixed-vector iff clauses identify their ranges."
+              },
+              {
+                "claim": "Convert the marked/unmarked basis partition into the exact trace.",
+                "carrier": "phaseOracleOp and phaseOracle_trace",
+                "status": "covered",
+                "evidence": "Summing +1 on f(x)=false and -1 on f(x)=true yields 2^n minus twice the marked-cardinality filter."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_UnitaryExtensionMarkovChainIsometry.lean": {
+      "status": "passed",
+      "reviews": 1,
+      "last_review_iter": 3,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The Lean contract retains d>0, a real d-by-d nonnegative row-stochastic matrix, amplitudes delta_(a,i)sqrt(P_ib), input columns indexed by (i,0), and membership of the extending d^2-by-d^2 operator in Matrix.unitaryGroup."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Real.sq_sqrt plus each row sum proves unit norm, distinct first-register indices give disjoint supports, and an orthonormal-family extension yields a unitary whose basis-ket action is its prescribed column."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "RowStochastic unfolds to entrywise nonnegativity and row sums, coherentRowState is an explicit coordinate vector, and unitary membership is the standard Mathlib matrix-group condition."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The isometry and unitary-extension claims are exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The row label occupies the first register, the square-root superposition occupies the second, and the prescribed source column is explicitly (i,0), with a concrete zero witness supplied by d>0."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "Every prescribed amplitude is determined by P, and U must satisfy standard unitarity plus the full family of exact column equations; no free encoding relation remains."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Promote the coherent Markov-chain columns to a full unitary matrix.",
+                "carrier": "RowStochastic, coherentRowState, Matrix.unitaryGroup, and exists_unitary_extension",
+                "status": "covered",
+                "evidence": "Nonnegative square roots and row sums make the columns unit length, disjoint first-register support makes them orthogonal, and finite-dimensional orthonormal extension supplies the remaining columns."
+              },
+              {
+                "claim": "Identify the ket-action statement with the entrywise prescribed column.",
+                "carrier": "QAlgBench.HilbertOperator.applyVec_ket and the entrywise conjunct of exists_unitary_extension",
+                "status": "covered",
+                "evidence": "Applying a matrix to a computational basis ket selects exactly the corresponding (i,0) column."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_WeylAverageShiftOperator.lean": {
+      "status": "passed",
+      "reviews": 1,
+      "last_review_iter": 3,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "weylRoot is exp(2πi/d), weylClock and weylShift have the displayed basis entries, weylAverage is d^-1 sum Z^j X^k U Z^-j X^-k, and the conclusions include ZX=ωXZ, T(X)=X, X^T=X^-1=X^(d-1), and failure of universal transposition for d>2."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Modular-successor matrix arithmetic proves ZX=ωXZ; commuting Z^j through X^(k+1) gives the explicit phase, finite root-of-unity cancellation leaves dX, and X≠X^T for d>2 refutes the universal identity."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "Root, clock, shift, average, transpose, powers, and inverses are transparent Mathlib matrix operations; no abstract commutation or averaging predicate is load-bearing."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "All Weyl identities and the counterclaim are exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The contract fixes ZX rather than XZ, the conjugation order Z^j X^k U Z^-j X^-k, transpose versus conjugate transpose, and the strict d>2 branch for the counterexample."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "Z, X, and the averaging map are explicit finite matrices and sums, so choosing U=X is a concrete adversarial witness against the universal transpose claim."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Evaluate the source-ordered double average at U=X.",
+                "carrier": "weylClock_mul_weylShift, weylAverage_shift_summand, weylAverage_shift_double_sum, and weylAverage_shift",
+                "status": "covered",
+                "evidence": "The Weyl relation produces ω^(j(k+1))X and the finite root sum vanishes except at k=d-1, leaving dX before normalization."
+              },
+              {
+                "claim": "Use the cyclic-shift orientation to disprove universal transposition when d>2.",
+                "carrier": "weylShift_transpose_inverse_power and weylAverage_not_transpose_for_all",
+                "status": "covered",
+                "evidence": "The average fixes X, while the forward cyclic shift differs from its transpose/inverse in dimensions greater than two."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_PQCLieTrainability_ApproximateTwoDesignDepthHaarLossFluctuations.lean": {
+      "status": "passed",
+      "reviews": 3,
+      "last_review_iter": 87,
+      "reason": "The redraft faithfully represents the circuit ensemble, its actual second-moment twirl, a consistent exact Haar law on continuous observables, the canonical nontrivial identity/swap complement, both depth conclusions, and the exact-Haar loss conclusions. The contraction and supplied pure-state two-copy identity are the only load-bearing source assumptions; zero mean, variance, and fluctuation bounds remain conclusions rather than structure fields, so the requested results are not smuggled into assumptions.",
+      "updated_at": "2026-07-28T16:40:47Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "checks": {
+          "source_faithfulness": {
+            "status": "passed",
+            "evidence": "Blueprint lines 16-62 are represented by qubitDimension/SpecialUnitary and parametrizedCircuit (Lean 20-150), Hermitian/skew/full-Lie conditions (153-182, 330-332), actual circuit and Haar second moments plus the canonical restricted sector (191-317), fixed and asymptotic depth theorems (319-400), and density/observable/loss/Haar-moment/variance/fluctuation declarations (403-552). The same tensorSwap occurs in the supplied Haar identity, and its canonical reindexing twoCopySwapOperator defines the trivial sector."
+          },
+          "derivability": {
+            "status": "passed",
+            "evidence": "From 0<gamma<1, 0<epsilon<1, hcontraction and hdepth, monotonicity of log gives (1-gamma)^L<=epsilon, hence the identical restricted distance is <=epsilon. In the family theorem, log(1-gamma)<=-gamma<=-1/p(n) and the ceiling depth yield eventual n^{-c} accuracy and the stated Big-O bound. Positive normalized bi-invariance determines Haar averaging and yields a scalar conjugation mean, so traceless O gives mean zero. The explicit pure-state two-copy identity contracts with O tensor O to give tr(O^2)/(N(N+1)); the trace bound and N=2^n give all upper bounds."
+          },
+          "abstraction_sufficiency": {
+            "status": "passed",
+            "evidence": "HaarObservable is the continuous carrier containing every polynomial matrix-coordinate observable used, with separate continuity bridges at Lean 208-213, 443-446, and 474-481. HaarExpectation supplies real linearity, positivity, normalization, and both translations (89-111). RestrictedTwoCopyMomentDistance is a genuine metric on restrictions through separation, symmetry, triangle, and nonnegativity (283-297), while nontrivialTwoCopySubspace fixes the whole Hilbert-Schmidt complement of span{I,S} (248-277). DensityOperator and BoundedTracelessObservable retain all physical side conditions (405-421)."
+          },
+          "uncertainty_propagation": {
+            "status": "passed",
+            "evidence": "The epsilon guarantee is propagated on the exact same circuitToHaarSecondMomentDistance used by the contraction and IsApproximateUnitaryTwoDesign (300-317, 340-347); 0<epsilon<1 and 0<gamma<1 make the logarithmic manipulation valid. The inverse-polynomial conclusion uses Real.rpow n (-c), and the trace uncertainty tr(O^2)<=N propagates first to variance <=1/(N+1), then to variance <=2^{-n} and RMS <=2^{-n/2} (514-551)."
+          },
+          "branch_orientation": {
+            "status": "passed",
+            "evidence": "Every salient direction matches the source: gap lower bound is 1/p(n)<=gamma (339, 362), contraction and approximate-design claims are upper bounds (340-347), sufficient depth is threshold<=L (345), trace and variance bounds are upper bounds (421, 529-530), and the final exponential statements are upper bounds (548-551). Positivity side conditions exclude the wrong logarithm branch."
+          },
+          "countermodel_resistance": {
+            "status": "passed",
+            "evidence": "The prior all-functions invariant-mean contradiction is removed because HaarExpectation quantifies only over ContinuousMap(SU(2^n),R), on which normalized Haar integration is a consistent model. The prior accidental-line design countermodel is removed because callers cannot choose W: circuitToHaarSecondMomentDistance definitionally uses the canonical complement of the full identity/swap span, and distance zero separates equality on every vector of that sector. No Haar field assumes first moment, mean zero, variance, or a depth conclusion; hHaarSecondMoment is exactly the additional identity allowed by the source and hrhoPure links it to the target rho."
+          }
+        },
+        "bridge_obligations": [
+          {
+            "claim": "N=2^n and the ordered product exp(i theta_ell H_ell) define the source circuit.",
+            "carrier": "qubitDimension; QubitOperator; operatorExponential; parametrizedCircuit",
+            "status": "covered",
+            "evidence": "Lean 20-29 and 137-150 use Fin L, real parameters, the factorial exponential series, and increasing List.ofFn/foldl order."
+          },
+          {
+            "claim": "Hermitian generators, iH in u(N), and generated Lie algebra su(N) are retained.",
+            "carrier": "IsHermitian; IsSkewHermitian; IsRealLieSubalgebra; dynamicalLieAlgebra; HasFullSpecialUnitaryLieAlgebra",
+            "status": "covered",
+            "evidence": "Lean 153-182 defines the real Lie closure of iH and equates it to traceless skew-Hermitian matrices; theorem binders 330-332 carry all three source hypotheses."
+          },
+          {
+            "claim": "A parameter law induces the actual L-layer circuit second-moment operator.",
+            "carrier": "LayerParameterEnsemble; complexExpectation; expectedMatrix; twoCopyConjugation; circuitSecondMomentOperator",
+            "status": "covered",
+            "evidence": "Lean 56-77 and 191-223 use one positive normalized parameter expectation and average conjugation by parametrizedCircuit H ensemble.parameters tensor-squared."
+          },
+          {
+            "claim": "Exact Haar randomness and its second-moment operator use one consistent law.",
+            "carrier": "HaarObservable; HaarExpectation; haarComplexExpectation; haarExpectedMatrix; haarSecondMomentOperator",
+            "status": "covered",
+            "evidence": "Lean 34-135 and 225-231 define a positive normalized bi-invariant functional on continuous SU observables and reuse it entrywise for the Haar twirl."
+          },
+          {
+            "claim": "All concrete Haar integrands belong to the continuous-observable carrier.",
+            "carrier": "twoCopyConjugation_continuous_entry; haarLoss_continuous; conjugatedStateTensorSquare_continuous_entry",
+            "status": "covered",
+            "evidence": "Lean 204-213, 440-453, and 472-494 provide derived continuity, not user hypotheses or requested conclusions."
+          },
+          {
+            "claim": "The nontrivial two-copy sector is the canonical complement of the Haar-fixed identity/swap sector.",
+            "carrier": "tensorSwap; twoCopySwapOperator; trivialTwoCopySubspace; hilbertSchmidtOrthogonalComplement; nontrivialTwoCopySubspace",
+            "status": "covered",
+            "evidence": "Lean 233-277 spans the Base-space identity and canonically reindexed source swap, then takes their full trace-pairing orthogonal complement."
+          },
+          {
+            "claim": "Approximate 2-design means actual circuit-to-Haar restricted second-moment distance at most epsilon.",
+            "carrier": "RestrictedTwoCopyMomentDistance; circuitToHaarSecondMomentDistance; IsApproximateUnitaryTwoDesign",
+            "status": "covered",
+            "evidence": "Lean 283-317 supplies metric laws and fixes the restriction to nontrivialTwoCopySubspace; contraction and conclusion share this exact scalar."
+          },
+          {
+            "claim": "The displayed logarithmic layer threshold is sufficient.",
+            "carrier": "twoDesignDepthThreshold; approximateTwoDesign_of_depth",
+            "status": "covered",
+            "evidence": "Lean 319-348 includes polynomiality/positivity of p, 0<gamma<1, 1/p<=gamma, 0<epsilon<1, contraction, and threshold<=L."
+          },
+          {
+            "claim": "For epsilon=n^{-c}, c>0, sufficient depth is O(p(n) log n).",
+            "carrier": "SecondMomentContractionFamily; inversePolynomialDesignDepth; inversePolynomialAccuracy_depth_isBigO",
+            "status": "covered",
+            "evidence": "Lean 355-400 links every n,L circuit and law to its contraction, chooses ceil(c p(n) log n), asserts eventual n^{-c} design, and states Asymptotics.IsBigO atTop."
+          },
+          {
+            "claim": "rho is a density operator and O is traceless Hermitian with tr(O^2)<=N.",
+            "carrier": "DensityOperator; BoundedTracelessObservable",
+            "status": "covered",
+            "evidence": "Lean 405-421 records Hermiticity, quadratic-form positivity, unit trace, tracelessness, and the real trace-square bound."
+          },
+          {
+            "claim": "The source loss and exact Haar mean-zero conclusion use the same Haar law.",
+            "carrier": "conjugatedState; haarLoss; haarLossObservable; haarLoss_mean_zero",
+            "status": "covered",
+            "evidence": "Lean 428-453 defines Re tr(U rho U-dagger O), which equals the real source quantity under Hermiticity; theorem 504-508 derives zero mean for every declared rho and O."
+          },
+          {
+            "claim": "The supplied pure-state Haar tensor-square identity is connected to rho and uses the source swap and normalization.",
+            "carrier": "pureProjector; haarTwoCopyStateExpectation; tensorSwap; haarSecondMomentNormalization; hrhoPure; hHaarSecondMoment",
+            "status": "covered",
+            "evidence": "Lean 423-426 and 483-525 state rho.op=pureProjector psi and the allowed identity E[(U|psi><psi|U-dagger) tensor 2]=(I+S)/(N(N+1)) under the same HaarExpectation."
+          },
+          {
+            "claim": "The exact variance formula and 1/(N+1) bound are conclusions.",
+            "carrier": "haarVariance; haarLoss_variance",
+            "status": "covered",
+            "evidence": "Lean 455-465 and 514-531 center using the actual Haar mean and conclude both equality Re tr(O^2)/(N(N+1)) and the requested upper bound."
+          },
+          {
+            "claim": "The resulting exponential-in-n fluctuation is stated for variance and RMS.",
+            "carrier": "haarRMSFluctuation; haarLoss_exponential_fluctuation",
+            "status": "covered",
+            "evidence": "Lean 467-470 and 533-552 conclude variance<=2^{-n} and RMS<=2^{-n/2} from N=2^n."
+          }
+        ]
+      },
+      "certificate_revoked_at": "2026-07-28T16:40:47Z",
+      "reopened_by": "proof_review",
+      "last_reopened_iter": 87,
+      "last_reopen_event_id": "pipeline:87:QAlgFormalized/problem_qalg_PQCLieTrainability_ApproximateTwoDesignDepthHaarLossFluctuations.lean:proof:1",
+      "redraft_kind": "wrong_or_weakened_target",
+      "reopen_history": [
+        {
+          "reopened_at": "2026-07-28T16:40:47Z",
+          "proof_review_iter": 87,
+          "proof_review_reason": "The kernel proofs are closed, but the formal contract weakens the requested quantum claims to disconnected scalar/moment assumptions: the approximate-design predicate is only a free real inequality unrelated to the declared circuit or any parameter ensemble, and HaarExpectation.first_moment supplies the essential Haar-twirl bridge used to prove the requested zero mean.",
+          "redraft_kind": "wrong_or_weakened_target",
+          "previous_status": "passed",
+          "previous_reviews": 1,
+          "previous_reason": "all formalization Review entries passed",
+          "previous_certificate": {
+            "schema_version": 2,
+            "milestones": [
+              {
+                "schema_version": 2,
+                "checks": {
+                  "source_faithfulness": {
+                    "status": "passed",
+                    "evidence": "The file retains N=2^n, the ordered exponential circuit, Hermitian generators, generated su(N) assumption, distance contraction (1-γ)^L, γ≥1/p(n), ε and n^-c accuracies, exact Haar SU(N), density/purity, traceless Hermitian O with tr(O^2)≤N, the swap identity, exact variance, and exponential variance/RMS bounds."
+                  },
+                  "derivability": {
+                    "status": "passed",
+                    "evidence": "The depth threshold implies (1-γ)^L≤ε and hence distance≤ε; -log(1-γ)≥γ≥1/p(n) yields eventual O(p(n)log n) depth, while the Haar first moment proves zero mean and the assumed two-copy identity plus the swap trace identity proves the variance and RMS bounds."
+                  },
+                  "abstraction_sufficiency": {
+                    "status": "passed",
+                    "evidence": "IsApproximateUnitaryTwoDesign unfolds to the source's own definition distance≤ε; SecondMomentContractionFamily exposes positivity, gap, nonnegativity, and contraction elimination fields; HaarExpectation exposes normalization, bi-invariance, and a concrete first-moment matrix equality, with the second moment supplied as an explicit theorem premise."
+                  },
+                  "uncertainty_propagation": {
+                    "status": "passed",
+                    "evidence": "The approximation carrier appears explicitly as distance and ε, contraction propagates layer depth to ε, the asymptotic theorem carries n^-c into an eventual design predicate, and variance 1/(N+1) propagates to 2^-n variance and 2^(-n/2) RMS."
+                  },
+                  "branch_orientation": {
+                    "status": "passed",
+                    "evidence": "The circuit product fixes increasing layer order by a left fold; the Haar operator uses UρU†, the tensor swap fixes factor orientation, and no incoming/outgoing physical branch is otherwise present."
+                  },
+                  "countermodel_resistance": {
+                    "status": "passed",
+                    "evidence": "Within the source's explicitly scalar distance assumption, arbitrary nonnegative distances cannot falsify distance≤ε once contraction and the depth inequality hold; Haar functionals are constrained by first-moment laws and the variance theorem additionally assumes the exact two-copy matrix identity, so neither conclusion follows from naming alone."
+                  }
+                },
+                "bridge_obligations": [
+                  {
+                    "claim": "Propagate the restricted second-moment contraction through the logarithmic depth threshold.",
+                    "carrier": "twoDesignDepthThreshold, hcontraction, and approximateTwoDesign_of_depth",
+                    "status": "covered",
+                    "evidence": "Positivity of γ and ε makes the logarithms well oriented, yielding (1-γ)^L≤ε and transitivity with the actual distance bound."
+                  },
+                  {
+                    "claim": "Derive inverse-polynomial accuracy at O(p(n) log n) depth.",
+                    "carrier": "SecondMomentContractionFamily, inversePolynomialDesignDepth, and inversePolynomialAccuracy_depth_isBigO",
+                    "status": "covered",
+                    "evidence": "The exposed inverse-gap and contraction fields bound the required logarithmic threshold, while the explicit ceiling changes the asymptotic scale only by a constant."
+                  },
+                  {
+                    "claim": "Convert Haar first and second moments into zero mean, exact variance, and exponential fluctuation.",
+                    "carrier": "HaarExpectation.first_moment, hHaarSecondMoment, tensorSwap, haarLoss_variance, and haarLoss_exponential_fluctuation",
+                    "status": "covered",
+                    "evidence": "The first moment and tracelessness kill the mean; the two-copy identity and swap trick give tr(O^2)/(N(N+1)), whose observable bound and N=2^n give the stated variance and RMS rates."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "review_events": [
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_PQCLieTrainability_ApproximateTwoDesignDepthHaarLossFluctuations.lean:formalization:1",
+          "iter": 87,
+          "decision": "failed",
+          "resulting_status": "retry",
+          "attempt": 2,
+          "reason": "The redraft repairs the prior disconnected-distance and assumed-first-moment defects, but it still does not faithfully model the source's exact Haar law or its designated nontrivial two-copy sector. HaarExpectation is a positive normalized translation-invariant linear functional on all functions SU(N) → ℝ; for n ≥ 1 this carrier is inconsistent because an infinite-order V and a choice of orbit representatives give f(VU)=f(U)+1, while invariance, linearity, and normalized imply E(f)=E(f)+1. Separately, the alleged nontrivial sector is any W ≠ ⊥, so agreement on one chosen line can declare an ensemble a 2-design while its second moment differs from Haar elsewhere.",
+          "reviewed_at": "2026-07-28T16:40:47Z"
+        },
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_PQCLieTrainability_ApproximateTwoDesignDepthHaarLossFluctuations.lean:formalization:2",
+          "iter": 87,
+          "decision": "passed",
+          "resulting_status": "passed",
+          "attempt": 3,
+          "reason": "The redraft faithfully represents the circuit ensemble, its actual second-moment twirl, a consistent exact Haar law on continuous observables, the canonical nontrivial identity/swap complement, both depth conclusions, and the exact-Haar loss conclusions. The contraction and supplied pure-state two-copy identity are the only load-bearing source assumptions; zero mean, variance, and fluctuation bounds remain conclusions rather than structure fields, so the requested results are not smuggled into assumptions.",
+          "reviewed_at": "2026-07-28T16:40:47Z"
+        }
+      ]
+    },
+    "QAlgFormalized/problem_qalg_QSPParameterTrace_ParityMaximumFejerKernelQSPResponse.lean": {
+      "status": "passed",
+      "reviews": 1,
+      "last_review_iter": 3,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The signal matrix has a on the diagonal and i√(1-a^2) off diagonal, phases are indexed by Fin(k+1), the noncommutative product has the source order, and the Fejér coefficients, angle 2 arccos(a), Fourier range -k..k, normalized norm square, [0,1] bound, and P(1)=1 are exact."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Induction through the explicit ordered signal product yields a degree≤k polynomial and parity (-1)^k; expanding the geometric-sum norm square counts pairs with difference ℓ and gives the triangular Fejér coefficients, after which triangle/Cauchy bounds and a=1 prove the interval and endpoint claims."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "The response, polynomial witness, Fourier sum, geometric sum, and Complex.normSq are concrete; the interval theorem additionally witnesses that the complex sum is a real scalar rather than merely bounding its real part."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "All polynomial, parity, Fejér, bound, and endpoint claims are exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "List.prod fixes left-to-right noncommutative phase/signal order, parity fixes the sign under a↦-a, and the Fourier exponent uses the positive 2iℓ arccos(a) convention."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "Both response families are explicit finite matrix products or finite sums; the real interval witness is tied by equality to the actual complex Fourier response."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Extract degree and parity from the ordered QSP matrix product.",
+                "carrier": "qspSignalOperator, qspSequenceOperator, qspResponse_isPolynomial, and qspResponse_parity",
+                "status": "covered",
+                "evidence": "Each signal factor contributes one power of a with the source symmetry, while phase rotations are a-independent and the explicit list order preserves the recurrence."
+              },
+              {
+                "claim": "Identify the weighted Fourier sum with a normalized squared geometric sum and derive its bounds.",
+                "carrier": "maximumFejerCoefficient, maximumFejerResponse_eq_normSq, maximumFejerResponse_mem_unitInterval, and maximumFejerResponse_one",
+                "status": "covered",
+                "evidence": "Grouping geometric-sum cross terms by index difference produces coefficient k-|ℓ|+1; normSq supplies reality/nonnegativity, and the sum has modulus at most k+1 with equality at a=1."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_QSPParameterTrace_PostselectedSpectralTransformationTrigonometricQSP.lean": {
+      "status": "passed",
+      "reviews": 1,
+      "last_review_iter": 3,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The contract retains phases in [-π,π), an orthonormal eigenbasis and exact spectral sum, coefficients m∈[-L,L], |P(x)|≤1, A_ℓ=Ry(θ_ℓ)Rz(φ_ℓ), the displayed one-qubit amplitude, odd C1(U)/even C0(U†), P(U)=Σc_mU^m, and nonzero-conditioned normalization."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Restricting the controlled circuit to each eigenbasis vector reduces alternating controlled U/U† signals to the assumed one-qubit QSP amplitude; basis extensionality proves the block identity, spectral calculus proves the Laurent identity, and applying the block to ψ proves the normalized branch equality."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "All local objects are transparent gates, finite sums/products, projectedBlock, explicit adjoint powers, and vector normalization; the requested block and Laurent equalities remain theorem conclusions rather than fields or definitions."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The QSP amplitude, block transformation, Laurent identity, and postselected state are exact; the source bound |P|≤1 is retained explicitly but is not an uncertainty term."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "Positions are counted left-to-right from one, odd sites use control-one U, even sites use control-zero U†, negative Laurent powers use adjoint powers, and the selected outcome is explicitly control zero."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The circuit, spectral and Laurent operators, and projected branch are concrete; hamplitude constrains the actual one-qubit sequence but does not assume any requested system-level block or postselection conclusion."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Lift the scalar QSP amplitude identity to an operator block on the phase-labelled eigenbasis.",
+                "carrier": "hspectral, hamplitude, controlledSpectralSignal, controlledSpectralCircuit, and projectedBlock",
+                "status": "covered",
+                "evidence": "On each eigenvector the alternating controlled gates reduce to the corresponding scalar Rz phase sequence, so equality on an orthonormal basis gives the block identity."
+              },
+              {
+                "claim": "Identify spectral P(U) with the finite Laurent expression including negative powers.",
+                "carrier": "spectralSum, spectralPolynomialOperator, unitaryLaurentPower, and laurentPolynomialOperator",
+                "status": "covered",
+                "evidence": "The exact spectral decomposition turns nonnegative powers into exp(imx_j) and negative powers into the prescribed adjoint powers exp(-i|m|x_j)."
+              },
+              {
+                "claim": "Convert the projected block equality into the normalized postselected output.",
+                "carrier": "controlZeroBranch, normalizedVector, and the nonzero premise in postselected_spectral_transformation",
+                "status": "covered",
+                "evidence": "The actual zero-control branch equals P(U)ψ before normalization, and the explicit nonzero side condition legitimizes dividing by its norm."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_QSPParameterTrace_SharedParameterShiftRuleRXTensorRZ.lean": {
+      "status": "passed",
+      "reviews": 1,
+      "last_review_iter": 3,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "RX and RZ use cos(θ/2)I-i sin(θ/2)X/Z, the spectator register is tensored with identity, the loss is Tr[O VρV†], and the derivative value has coefficients (2±√2)/4 at the exact ±π/4 and ±3π/4 shifts and source signs."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "The shared generator has loss Fourier frequencies at most 2; the two antisymmetric shift pairs interpolate the derivatives at frequencies 1 and 2, while finite trigonometric formulas establish the difference-quotient limit."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "IsDensityMatrix and IsObservable expose Hermiticity, positivity, trace one, and the actual matrix; HasRealDerivativeAt is an eliminable Tendsto statement for the difference quotient, not an opaque differentiability predicate."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The derivative and parameter-shift identity are exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "The tensor order RX then RZ then spectator identity, UρU† order, positive/negative π/4 differences, and reversed ±3π/4 difference are all fixed explicitly."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "The derivative predicate constrains the actual loss function by a limit, and the four shifted loss values are concrete evaluations; no arbitrary slope scalar or target-as-assumption is present."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Interpolate the derivative of the shared RX/RZ loss from four shifted evaluations.",
+                "carrier": "rotationX, rotationZ, sharedRotation, loss, HasRealDerivativeAt, and sharedParameterShiftRule",
+                "status": "covered",
+                "evidence": "Expanding the two rotations gives only Fourier frequencies 0, ±1, and ±2; the displayed coefficients give multipliers i and 2i on the two positive frequencies with conjugate behavior on negative frequencies."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "QAlgFormalized/problem_qalg_QSPParameterTrace_ThirdMomentTwoControlledSWAPTests.lean": {
+      "status": "passed",
+      "reviews": 1,
+      "last_review_iter": 3,
+      "reason": "all formalization Review entries passed",
+      "updated_at": "2026-07-28T13:16:55Z",
+      "review_schema_version": 2,
+      "certificate": {
+        "schema_version": 2,
+        "milestones": [
+          {
+            "schema_version": 2,
+            "checks": {
+              "source_faithfulness": {
+                "status": "passed",
+                "evidence": "The input is |+><+| on A1 and A2 tensored with ρ on B1,B2,B3; U1 controls S12 from A1, U2 controls S13 from A2, sigmaOut is U2 U1 sigmaIn U1† U2†, and the measured observable is X_A1⊗X_A2⊗I with target tr(ρ^3)."
+              },
+              "derivability": {
+                "status": "passed",
+                "evidence": "Expanding the ancilla coherences and controlled branches reduces the XX expectation to traces of products of S12 and S13 against ρ⊗ρ⊗ρ; the resulting three-cycle trace is exactly tr(ρ^3), with Hermiticity identifying the conjugate orientation."
+              },
+              "abstraction_sufficiency": {
+                "status": "passed",
+                "evidence": "The swaps are explicit permutation matrices, controlled operators are explicit projector/Kronecker sums, the density predicate exposes Hermiticity/positivity/trace one, and input, output, observable, and trace are transparent matrix formulas."
+              },
+              "uncertainty_propagation": {
+                "status": "not_applicable",
+                "evidence": "The controlled-SWAP moment identity is exact."
+              },
+              "branch_orientation": {
+                "status": "passed",
+                "evidence": "A1 controls B1↔B2, A2 controls B1↔B3, U1 acts before U2, the adjoints occur in reverse order, and the data-register nesting is fixed by explicit permutations."
+              },
+              "countermodel_resistance": {
+                "status": "passed",
+                "evidence": "All five registers and both swaps are concrete, and the conclusion mentions the actual sigmaOut and rho; no free moment functional, validity predicate, or disconnected trace scalar is available."
+              }
+            },
+            "bridge_obligations": [
+              {
+                "claim": "Convert the two controlled-SWAP ancilla coherence into the third density-matrix moment.",
+                "carrier": "swap12Operator, swap13Operator, U1, U2, sigmaIn, sigmaOut, xxObservable, and thirdMoment_twoControlledSWAPTests",
+                "status": "covered",
+                "evidence": "The XX observable selects the cross-ancilla branches whose ordered swap product is a three-cycle; tracing that permutation against ρ⊗ρ⊗ρ yields tr(ρ^3)."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "last_review_iter": 87,
+  "last_reopened_iter": 87
+}
