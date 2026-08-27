@@ -1,8 +1,6 @@
 # Lean QIT + QAlg formalization datasets
 
-本仓库镜像并整合了 Humanfia Lab 发布的 QAlg（量子算法）与 QIT（量子信息论）证明数据，同时保留可复现的 Lean 4 编译环境。数据、TeX 原题、生成的 Lean 形式化与证明、审查元数据和证明报告均完整保留。
-
-This repository mirrors the Humanfia Lab QAlg and QIT proof datasets and includes the pinned Lean 4 projects needed to kernel-check all generated formalizations and proofs.
+This repository mirrors and combines the Humanfia Lab QAlg (Quantum Algorithms) and QIT (Quantum Information Theory) proof datasets with reproducible Lean 4 build environments. It preserves the dataset tables, original TeX statements, generated Lean formalizations and proofs, review metadata, and proof reports.
 
 ## Contents
 
