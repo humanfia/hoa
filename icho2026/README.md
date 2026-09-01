@@ -38,6 +38,27 @@ The Kimi directory also contains [`FIRST_TURN_ABLATION.md`](kimi-k3-max/FIRST_TU
 which grades the nine unreviewed round-0 outputs and compares them with the
 final Humanize result under the same grading convention.
 
+## Answer-blind Lean formalizations
+
+The repository additionally publishes two fresh answer-blind Lean 4 runs over
+the same 32 selected theory subquestions (47 requested outputs, 168 rubric
+points). These runs were generated without access to the official solutions;
+the official-key comparison was performed only after generation and review.
+
+| Run | Formalization review | Proof review | Lake build | Placeholders | Official-answer comparison |
+|---|---:|---:|---:|---:|---:|
+| [GPT-5.6 Sol answer-blind](gpt-5.6-sol-answer-blind/) | 32/32 | 32/32 | passed | 0 | 47/47 outputs |
+| [Kimi-K3 answer-blind](kimi-k3-answer-blind/) | 32/32 | 32/32 | passed | 0 | 47/47 outputs |
+
+The corresponding normalized records are published in the
+[`humanfia-lab/icho-2026`](https://huggingface.co/datasets/humanfia-lab/icho-2026)
+dataset. Kimi has four non-proof grounding-log completeness warnings, disclosed
+in its run README; they do not change its compile or review results.
+
+Those normalized records include official solution and rubric text as post-run
+evaluation metadata. For both answer-blind runs, those fields were never model
+inputs.
+
 ## Scope
 
 The preserved runs cover the nine **theoretical** problems. The separate
