@@ -2,7 +2,7 @@
 
 This is part of RSI Effort at NVIDIA Research. Humanize is an [open agent loop/flow framework](https://github.com/humanfia/humanize2) that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
-With the power of Humanize, we, the **Humanfia team, have aced all 6/6 IMO 2026 problems** using a *fully agentic, YOLO-style approach*. Every solution has been **formally verified** by Lean 4. The project is pinned to Lean 4.31.0 and Mathlib v4.31.0.
+The **Humanfia team have aced all 6/6 IMO 2026 problems** using a *fully agentic, YOLO-style approach*. Every solution has been **formally verified** by Lean 4 and we open source the harness to reproduce. The project is pinned to Lean 4.31.0 and Mathlib v4.31.0.
 
 We build with open source, and build for open source. We release everything including: 
 * the [formal Lean 4 statements from AxiomMath](https://github.com/AxiomMath/IMO2026); 
