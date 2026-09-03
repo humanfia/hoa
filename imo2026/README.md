@@ -9,7 +9,7 @@ We build with open source, and build for open source. We **release everything** 
 * the final lean solutions [Kimi-K3](./kimi-solution) and [GPT-5.6](./gpt-5.6-solution); 
 * the [scripts](./scripts) and harness used for problem solving -- which most other partipants do not
 
-Notably, humanize enables **open source models** like Kimi-K3 to achieve a **full score at IMO 2026** as well, with half of the token costs! As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), We all love _open models X open harness_ 🎉
+Notably, humanize enables **open source models like Kimi-K3** to achieve a **full score at IMO 2026** as well, with half of the token costs! As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), We all love _open models X open harness_ 🎉
 
 ## Results
 
