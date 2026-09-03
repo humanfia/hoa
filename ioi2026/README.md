@@ -43,6 +43,54 @@ The checked-in IOI submissions and the
 `gpt-5.6-sol:max` runs. This repository does not label them as Kimi-generated;
 the Kimi support is the reproducible backend path for new experiments.
 
+## Launch a Kimi-K3 experiment
+
+Install [Humanize](https://github.com/humanfia/humanize2), and make sure both
+Kimi Code and Codex are installed and authenticated:
+
+```sh
+pip install git+https://github.com/humanfia/humanize2.git
+hmz --version
+kimi --version
+codex --version
+```
+
+From the repository root, the following example creates a clean Monuments
+workspace containing only the official problem package and its immutable plan.
+It then launches Kimi-K3 as the solving actor and GPT-5.6 Sol as the fresh
+reviewer, matching the worker/reviewer shape used by the IMO experiment:
+
+```sh
+experiment_root="$(mktemp -d /tmp/ioi2026-kimi-monuments.XXXXXXXX)"
+mkdir -p "$experiment_root/problem"
+cp -a problems/day1/monuments/. "$experiment_root/problem/"
+cp orchestration/plans/monuments.md "$experiment_root/plan.md"
+
+git -C "$experiment_root" init --initial-branch=main
+git -C "$experiment_root" config user.name "IOI Humanize Reproducer"
+git -C "$experiment_root" config user.email "ioi-humanize@localhost"
+git -C "$experiment_root" add .
+git -C "$experiment_root" commit -m "Seed Monuments experiment"
+
+(
+  cd "$experiment_root"
+  hmz exec -f official/rlar \
+    -a kimi/kimi-code/k3:swarmmax \
+    -a codex/gpt-5.6-sol:max \
+    "Solve the IOI 2026 Monuments task from problem/. Follow plan.md exactly. Work offline and do not use pre-existing submissions. Write and test the required full-score solution; stop only when the reviewer agrees it is complete."
+)
+
+test -f "$experiment_root/solutions/02-monuments/solution.cpp"
+(cd "$experiment_root" && ./test.sh)
+```
+
+The first `-a` entry is the persistent actor; the second is a fresh reviewer on
+every round. To run a fully Kimi experiment, replace the reviewer entry with a
+second `kimi/kimi-code/k3:swarmmax`. To launch another IOI task, change the
+problem directory, matching plan, task name, and expected solution path. Keep
+each task in a separate clean workspace so no worker can read the published
+submissions or another worker's result.
+
 ## Reproduce the public result
 
 Requirements: Bash, Python 3, `sha256sum`, and a C++20-capable `g++` (or set
@@ -82,8 +130,7 @@ worker from reading the reference results or sibling repositories.
 ```
 
 The checked-in launcher reproduces the archived Codex-backed configuration.
-For a Kimi-K3 experiment, configure the Kimi backend in Humanize and reuse the
-six problem seeds and matching plans under `orchestration/plans/`. See
+For Kimi-K3, use the clean single-task launch above once per task. See
 [`orchestration/README.md`](orchestration/README.md) for prerequisites,
 isolation behavior, model configuration, waiting, resuming, result collection,
 and output layout. Six max-effort runs can consume substantial time and model
