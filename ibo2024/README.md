@@ -38,6 +38,55 @@ workers and reviewed with Humanize RLCR, as recorded in [WORKERS.md](WORKERS.md)
 This repository does not label those files as Kimi-generated; Kimi-K3 is the
 supported open-model path for a new run.
 
+## Launch a Kimi-K3 experiment
+
+Install [Humanize](https://github.com/humanfia/humanize2), and make sure both
+Kimi Code and Codex are installed and authenticated:
+
+```sh
+pip install git+https://github.com/humanfia/humanize2.git
+hmz --version
+kimi --version
+codex --version
+```
+
+After placing the official PDFs under `source/`, run this example from the
+repository root. It creates a clean workspace without any published solutions,
+then assigns Theory Part A Task 1 to a Kimi-K3 actor and a fresh GPT-5.6 Sol
+reviewer:
+
+```sh
+experiment_root="$(mktemp -d /tmp/ibo2024-kimi-a01.XXXXXXXX)"
+mkdir -p "$experiment_root/source" "$experiment_root/solutions/part-a"
+cp "source/IBO2024 Theory A.pdf" "$experiment_root/source/"
+cp "source/IBO2024 Theory B.pdf" "$experiment_root/source/"
+cp AGENTS.md "$experiment_root/AGENTS.md"
+cp .gitignore "$experiment_root/.gitignore"
+
+git -C "$experiment_root" init --initial-branch=main
+git -C "$experiment_root" config user.name "IBO Humanize Reproducer"
+git -C "$experiment_root" config user.email "ibo-humanize@localhost"
+git -C "$experiment_root" add .
+git -C "$experiment_root" commit -m "Seed IBO A1 experiment"
+
+(
+  cd "$experiment_root"
+  hmz exec -f official/rlar \
+    -a kimi/kimi-code/k3:swarmmax \
+    -a codex/gpt-5.6-sol:max \
+    "Solve IBO 2024 Theory Part A Task 1 only. Follow AGENTS.md, work entirely offline, and inspect the question and embedded official answer in source/IBO2024 Theory A.pdf. Write solutions/part-a/q01.md with the official T/F pattern and clear reasoning for A-D. Stop only when the reviewer agrees it is complete."
+)
+
+test -f "$experiment_root/solutions/part-a/q01.md"
+```
+
+The first `-a` entry is the persistent actor; the second is a fresh reviewer on
+every round. To run a fully Kimi experiment, replace the reviewer entry with a
+second `kimi/kimi-code/k3:swarmmax`. Reproduce the full corpus by creating one
+isolated workspace per A1-A50 and B1-B50, changing the coordinate, PDF, output
+path, and task prompt together. Collect the 100 reviewed files only after all
+workers finish, then run the repository-wide validation below.
+
 ## Read the collection
 
 - [Official answer summary](answers.md)
@@ -78,12 +127,10 @@ The validator compares all 400 declared verdicts with the answer sections
 embedded in the official PDFs. It invokes only local tools and files: it does
 not browse, query a network service, or consult a third-party answer key.
 
-To reproduce the solving workflow with Kimi-K3, use [plan.md](plan.md) as the
-task contract and [AGENTS.md](AGENTS.md) as the offline worker policy, configure
-Kimi-K3 as the Humanize backend, and assign one isolated worker to each of the
-100 task coordinates in [WORKERS.md](WORKERS.md). Each worker receives only the
-corresponding official task and embedded answer; the validation commands above
-remain the final acceptance gate.
+The clean Kimi-K3 launch above reproduces one worker/reviewer experiment. The
+one-worker assignment contract in [plan.md](plan.md), the canonical coordinates
+in [WORKERS.md](WORKERS.md), and the validation commands above define how the
+100 isolated results are assembled and accepted.
 
 ## Source and license
 

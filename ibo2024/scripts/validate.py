@@ -19,7 +19,7 @@ from build import check_outputs, load_solutions, render_outputs, truth_words
 EXPECTED_COORDS = [(part, task) for part in ("A", "B") for task in range(1, 51)]
 EXPECTED_SET = set(EXPECTED_COORDS)
 CANONICAL_README_SHA256 = (
-    "791b9947b0e7c4aca7238698ddc213c7c9f0f88abbd33780f205d6e5ea323d52"
+    "1fbd2575db4a1f6a66b6488153d1c1bd63b7390de6f568068129eeeaa002d922"
 )
 ANSWER_BLOCK = re.compile(r"(?m)^\s*Task\s+#(\d+)\.?\s*$")
 SOURCE_VERDICT = re.compile(
