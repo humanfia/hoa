@@ -1,10 +1,95 @@
-# IOI 2026 clean reproduction bundle
+# Humanfia at IOI 2026
 
-This directory contains both a clean snapshot of the six IOI 2026 results and
-the machinery needed to recreate the six concurrent Humanize solving runs from
-the bundled official problem material.
+> **Note:** [Humanize](https://github.com/humanfia/humanize2) is part of the RSI effort and is led by [NVIDIA Research](https://www.nvidia.com/en-us/research/).
 
-## Contents
+**Result: 100% passed — all 6/6 IOI 2026 solutions received full scores on
+Codeforces.** Humanfia produced a submission-ready C++ solution for every task
+from both contest days. This repository releases the accepted solutions, the
+official problem material that can be redistributed, and the Humanize plans
+and orchestration used to recreate the six independent solving runs.
+
+## Results
+
+| Day | Task | Result | Submission |
+|---|---|---:|---|
+| 1 | Ball Machine | 100% passed | [`ballmachine.cpp`](submissions/ballmachine.cpp) |
+| 1 | Monuments | 100% passed | [`monuments.cpp`](submissions/monuments.cpp) |
+| 1 | Tiling Game | 100% passed | [`tiling.cpp`](submissions/tiling.cpp) |
+| 2 | Classroom Game | 100% passed | [`classroom.cpp`](submissions/classroom.cpp) |
+| 2 | Magic City | 100% passed | [`magiccity.cpp`](submissions/magiccity.cpp) |
+| 2 | Partition | 100% passed | [`partition.cpp`](submissions/partition.cpp) |
+|  | **Total** | **6/6 (100%)** |  |
+
+The solutions cover the full stated constraints. In particular, Ball Machine
+meets its full-score resource bounds, Classroom Game uses at most two integers
+per paper, Magic City stays within its construction bounds, and Partition
+supports the complete stated range. See [`solutions/README.md`](solutions/README.md)
+for the precise per-task guarantees.
+
+The 100% result comes from the Codeforces submissions. The public bundle can
+also compile every solution and replay every released Day 1 example locally;
+the Codeforces hidden judge remains an external verification step.
+
+## Open model × open harness
+
+[Humanize](https://github.com/humanfia/humanize2) supports
+[Kimi-K3](https://github.com/MoonshotAI/Kimi-K3), pairing an open model with an
+open harness. The task plans and problem-only worker seeds in this repository
+are model-independent, so they can be reused for a Kimi-K3 run through
+Humanize's Kimi backend.
+
+The checked-in IOI submissions and the
+[token-cost report](ioi2026-token-costs.md) come from the archived
+`gpt-5.6-sol:max` runs. This repository does not label them as Kimi-generated;
+the Kimi support is the reproducible backend path for new experiments.
+
+## Reproduce the public result
+
+Requirements: Bash, Python 3, `sha256sum`, and a C++20-capable `g++` (or set
+`CXX` to a compatible compiler).
+
+```sh
+git clone https://github.com/humanfia/ioi2026.git
+cd ioi2026
+./verify.sh
+```
+
+The verifier checks the bundle manifest, validates every orchestration script,
+builds all six sources in a disposable directory, runs every released Day 1
+example, validates Ball Machine's public topology and resource accounting, and
+strictly compiles the three Day 2 artifacts. A successful run ends with:
+
+```text
+PASS: IOI 2026 clean bundle verified
+```
+
+## Reproduce the six Humanize runs
+
+The worker repositories are seeded only with the corresponding official
+problem and immutable plan; the final files under `submissions/` are never
+copied into them. On Linux, the default filesystem boundary also prevents a
+worker from reading the reference results or sibling repositories.
+
+```sh
+# Check prerequisites without writing or launching workers.
+./orchestration/launch-six.sh --dry-run
+
+# Launch six detached Humanize RLCR workers.
+./orchestration/launch-six.sh --start
+
+# Follow their review rounds and final status.
+./orchestration/monitor.sh
+```
+
+The checked-in launcher reproduces the archived Codex-backed configuration.
+For a Kimi-K3 experiment, configure the Kimi backend in Humanize and reuse the
+six problem seeds and matching plans under `orchestration/plans/`. See
+[`orchestration/README.md`](orchestration/README.md) for prerequisites,
+isolation behavior, model configuration, waiting, resuming, result collection,
+and output layout. Six max-effort runs can consume substantial time and model
+quota, so the launcher requires the explicit `--start` flag.
+
+## What is included
 
 - `submissions/`: one submission-ready C++ source file per task.
 - `problems/day1/`: the three official Day 1 statements, contestant
@@ -16,74 +101,17 @@ the bundled official problem material.
 - `orchestration/`: six immutable task plans plus launch, monitor, resume, and
   collection scripts for independent Humanize RLCR workers.
 - `MANIFEST.sha256`: checksums for every bundled file except the manifest.
-- `verify.sh`: verifies the checksums, builds all six sources, and runs every
-  released Day 1 public example.
+- `verify.sh`: the one-command public reproduction gate.
 
 The official Day 1 attachment stubs are retained unchanged because they are
-part of the problem packages. No official/editorial solutions, alternative
-solutions, hidden tests, Humanize runtime state, model transcripts, build
-products, or nested Git repositories are included.
-
-## Reproduce the six Humanize runs
-
-The worker repositories are seeded with the problems and plans only; the
-files under `submissions/` are not copied into them. On Linux, the default
-filesystem boundary prevents workers from reading those reference results or
-any sibling repository.
-
-```sh
-# No-write prerequisite check
-./orchestration/launch-six.sh --dry-run
-
-# Explicitly launch six detached gpt-5.6-sol:max Humanize workers
-./orchestration/launch-six.sh --start
-
-# Follow their RLCR rounds
-./orchestration/monitor.sh
-```
-
-See `orchestration/README.md` for waiting, resuming, collecting results, model
-overrides, isolation behavior, prerequisites, and output layout. Six max-effort
-runs can consume substantial time and model quota, so the launcher never starts
-them without the explicit `--start` flag.
-
-## Reproduce the public result
-
-Requirements: Bash, Python 3, `sha256sum`, and a C++20-capable `g++` (or set
-`CXX` to a compatible compiler).
-
-```sh
-./verify.sh
-```
-
-The script builds in a disposable directory outside this tree. It checks exact
-outputs for all Monuments and Tiling public examples, validates Ball Machine's
-public topology and resource accounting, and strictly compiles the three Day 2
-artifacts. A successful run ends with `PASS: IOI 2026 clean bundle verified`.
-
-This reproduces the checks possible from the released public material. It
-cannot reproduce an official hidden-test score because hidden grading data is
-not present.
-
-## Submission files
-
-| Day | Task | Source |
-|---|---|---|
-| 1 | Ball Machine | `submissions/ballmachine.cpp` |
-| 1 | Monuments | `submissions/monuments.cpp` |
-| 1 | Tiling Game | `submissions/tiling.cpp` |
-| 2 | Classroom Game | `submissions/classroom.cpp` |
-| 2 | Magic City | `submissions/magiccity.cpp` |
-| 2 | Partition | `submissions/partition.cpp` |
-
-Each file implements its task's contestant API and must be submitted or linked
-separately with that task's grader and header.
+part of the problem packages. No official or editorial solutions, hidden
+tests, Humanize runtime state, model transcripts, build products, or nested Git
+repositories are included.
 
 ## Provenance
 
 The six sources were copied byte-for-byte from this repository's root sources
-at commit
-`b1c4c8bd775cadab3c00de11e49ff79f7c98a0a9`. Their hashes also match the
+at commit `b1c4c8bd775cadab3c00de11e49ff79f7c98a0a9`. Their hashes also match the
 finalized Humanize worker artifacts, including the separately reviewed
 Partition artifact.
 
