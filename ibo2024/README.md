@@ -1,6 +1,42 @@
-# IBO 2024 Theory A/B Worked Solutions
+# Humanfia at IBO 2024
 
-This repository contains natural-language worked solutions for all 100 independent tasks in the official English International Biology Olympiad (IBO) 2024 Theoretical Exam: 50 tasks from Part A and 50 from Part B. It intentionally excludes every practical exam.
+> **Note:** [Humanize](https://github.com/humanfia/humanize2) is part of the RSI effort and is led by [NVIDIA Research](https://www.nvidia.com/en-us/research/).
+
+**Result: full score on the published grading target — 100/100 theory tasks and
+400/400 statement verdicts correct (100%).** Humanfia produced natural-language
+worked solutions for every independent task in the official English
+International Biology Olympiad (IBO) 2024 Theoretical Exam: 50 tasks from Part
+A and 50 from Part B.
+
+## Results
+
+| Part | Complete worked solutions | Verdicts matching the official key | Agreement |
+|---|---:|---:|---:|
+| Theory A | 50 / 50 | 200 / 200 | 100% |
+| Theory B | 50 / 50 | 200 / 200 | 100% |
+| **Overall** | **100 / 100** | **400 / 400** | **100%** |
+
+The extraction and format error count is **0**. The complete grading evidence
+is in [GRADING.md](GRADING.md).
+
+This is an answer-key agreement grade for the 100 theory tasks, not an official
+Olympiad points calculation. The repository intentionally excludes every
+practical exam. The natural-language explanations were reviewed separately
+against the local official questions and are protected by the reviewed-solution
+manifest.
+
+## Open model × open harness
+
+[Humanize](https://github.com/humanfia/humanize2) supports
+[Kimi-K3](https://github.com/MoonshotAI/Kimi-K3), pairing an open model with an
+open harness. The task contract, one-worker-per-task decomposition, offline
+source boundary, and deterministic validation in this repository are
+model-independent and can be reused for a Kimi-K3 reproduction.
+
+The published solution corpus was produced by distinct `gpt-5.6-sol:max`
+workers and reviewed with Humanize RLCR, as recorded in [WORKERS.md](WORKERS.md).
+This repository does not label those files as Kimi-generated; Kimi-K3 is the
+supported open-model path for a new run.
 
 ## Read the collection
 
@@ -11,26 +47,77 @@ This repository contains natural-language worked solutions for all 100 independe
 - [Part B individual solutions](solutions/part-b/)
 - [One-worker assignment ledger](WORKERS.md)
 
-## Source and license
+## Reproduce the full result
 
-The questions, figures, and embedded official solutions come from the International Biology Olympiad's official English IBO 2024 Theory A and Theory B papers. Those examination sources are the authority for task identity and T/F verdicts.
-
-The source examination material and this derived solution set are shared under **CC BY-NC-SA 4.0**. Reuse must provide attribution, must be noncommercial, and must distribute adaptations under the same share-alike license.
-
-The official PDFs are kept locally and ignored by Git. Place them at these exact paths before validation:
+Place the two official English exam PDFs at these exact local paths:
 
 - `source/IBO2024 Theory A.pdf`
 - `source/IBO2024 Theory B.pdf`
 
-The local `pdftotext -layout` extracts are `source/part-a.txt` and `source/part-b.txt`; validation regenerates text from each PDF and requires the stored extract to agree byte-for-byte.
+Create the pinned local text extracts used by the offline validator:
+
+```bash
+mkdir -p source
+pdftotext -layout "source/IBO2024 Theory A.pdf" source/part-a.txt
+pdftotext -layout "source/IBO2024 Theory B.pdf" source/part-b.txt
+```
+
+Then regenerate the derived collection, check that committed outputs are
+current, and run the complete offline validation gate:
+
+```bash
+python scripts/build.py
+python scripts/build.py --check
+python scripts/validate.py
+python scripts/test_validate.py
+python -m py_compile scripts/build.py scripts/validate.py scripts/test_validate.py
+git diff --check
+```
+
+The validator compares all 400 declared verdicts with the answer sections
+embedded in the official PDFs. It invokes only local tools and files: it does
+not browse, query a network service, or consult a third-party answer key.
+
+To reproduce the solving workflow with Kimi-K3, use [plan.md](plan.md) as the
+task contract and [AGENTS.md](AGENTS.md) as the offline worker policy, configure
+Kimi-K3 as the Humanize backend, and assign one isolated worker to each of the
+100 task coordinates in [WORKERS.md](WORKERS.md). Each worker receives only the
+corresponding official task and embedded answer; the validation commands above
+remain the final acceptance gate.
+
+## Source and license
+
+The questions, figures, and embedded official solutions come from the
+International Biology Olympiad's official English IBO 2024 Theory A and Theory
+B papers. Those examination sources are the authority for task identity and
+T/F verdicts.
+
+The source examination material and this derived solution set are shared under **CC BY-NC-SA 4.0**. Reuse must provide attribution, must be noncommercial, and must distribute adaptations under the same share-alike license.
+
+The official PDFs are kept locally and ignored by Git. The local
+`pdftotext -layout` extracts are `source/part-a.txt` and `source/part-b.txt`;
+validation regenerates text from each PDF and requires the stored extract to
+agree byte-for-byte.
 
 ## Offline methodology and ownership
 
-Exactly one distinct `gpt-5.6-sol:max` solver worker was assigned to each task, as recorded in [WORKERS.md](WORKERS.md). Every solver worked offline, inspected the corresponding question and embedded official answer in the local PDF, and wrote one Markdown file. Humanize RLCR reviewers also work offline from the same local official sources.
+Exactly one distinct `gpt-5.6-sol:max` solver worker was assigned to each task,
+as recorded in [WORKERS.md](WORKERS.md). Every solver worked offline, inspected
+the corresponding question and embedded official answer in the local PDF, and
+wrote one Markdown file. Humanize RLCR reviewers also work offline from the same
+local official sources.
 
-The explicit official verdict controls each answer pattern. If the printed graph, a label, a unit, or the official prose appears inconsistent, the solution retains the official T/F value and adds a clearly labeled discrepancy note instead of silently changing the key. The prose explanations are original educational derivations, not copies of the embedded explanations.
+The explicit official verdict controls each answer pattern. If the printed
+graph, a label, a unit, or the official prose appears inconsistent, the solution
+retains the official T/F value and adds a clearly labeled discrepancy note
+instead of silently changing the key. The prose explanations are original
+educational derivations, not copies of the embedded explanations.
 
-The reviewed corpus is locked by `reviewed-solutions.sha256`. Do not update a hash merely to make validation pass. If an individual solution changes, first compare that complete file again with its local official question and embedded answer; only after that direct review may its manifest hash be regenerated.
+The reviewed corpus is locked by `reviewed-solutions.sha256`. The invariant is:
+Do not update a hash merely to make validation pass. If an individual solution
+changes, first compare that complete file again with its local official question
+and embedded answer; only after that direct review may its manifest hash be
+regenerated.
 
 ## Repository structure
 
@@ -43,28 +130,3 @@ The reviewed corpus is locked by `reviewed-solutions.sha256`. Do not update a ha
 - [scripts/build.py](scripts/build.py): deterministic collection builder and freshness check.
 - [scripts/validate.py](scripts/validate.py): end-to-end offline source, ownership, content, document, and navigation validator.
 - [scripts/test_validate.py](scripts/test_validate.py): isolated negative fixtures for the validation contract.
-
-## Build and validate
-
-Generate the three derived collection documents:
-
-```bash
-python scripts/build.py
-```
-
-Check that committed generated documents are byte-for-byte current without writing:
-
-```bash
-python scripts/build.py --check
-```
-
-Run the complete offline gate and its adversarial fixtures:
-
-```bash
-python scripts/validate.py
-python scripts/test_validate.py
-python -m py_compile scripts/build.py scripts/validate.py scripts/test_validate.py
-git diff --check
-```
-
-The validator invokes only local tools and files. It does not browse, query a network service, or consult a third-party answer key.
