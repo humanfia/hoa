@@ -2,12 +2,12 @@
 
 This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
-The **Humanfia team have aced all 6/6 IMO 2026 problems** using a *fully agentic, YOLO-style approach*. Every solution has been **formally verified** by Lean 4 and we open source the harness to reproduce. The project is pinned to Lean 4.31.0 and Mathlib v4.31.0.
+The **Humanfia team have aced all 6/6 IMO 2026 problems** using a *fully agentic, YOLO-style approach*. Every solution has been **formally verified** by Lean 4 . The project is pinned to Lean 4.31.0 and Mathlib v4.31.0.
 
-We build with open source, and build for open source. We release everything including: 
+We build with open source, and build for open source. We **release everything** including: 
 * the [formal Lean 4 statements from AxiomMath](https://github.com/AxiomMath/IMO2026); 
 * the final lean solutions [Kimi-K3](./kimi-solution) and [GPT-5.6](./gpt-5.6-solution); 
-* the [scripts](./scripts) used to reproduce the solving process.
+* the [scripts](./scripts) and harness used for problem solving -- which most other partipants do not
 
 Notably, humanize enables **open source models** like Kimi-K3 to achieve a **full score at IMO 2026** as well, with half of the token costs! As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), We all love _open models X open harness_ 🎉
 
