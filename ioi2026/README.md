@@ -10,7 +10,8 @@ We build with open source, and build for open source. We **release everything** 
 * the final [submissions](./submissions) as judged by Codeforces, and their [annotated solutions](./solutions); 
 * the [orchestration scripts](./orchestration) and harness used for problem solving -- which most other participants do not
 
-Notably, the same Codex harness also runs **open source models like Kimi-K3** on these tasks. The plans and problem-only worker seeds are model-independent; reproducing a run with Kimi only requires changing the Codex API key and model name. As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), We all love _open models X open harness_ 🎉
+Notably, the same Codex harness also runs **open source models like Kimi-K3** on these tasks. The plans and problem-only worker seeds are model-independent; reproducing a run with Kimi only requires changing the Codex API key and model name. As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), we all love _open models X open harness_ 🎉 and the combination achieves full score at every competiton: 
+* [IMO2026](https://github.com/humanfia/imo2026) / [IOI2026](https://github.com/humanfia/ioi2026) / [IPhO2026](https://github.com/humanfia/ipho2026) / [ICho2026](https://github.com/humanfia/icho2026) / [IBO2024](https://github.com/humanfia/icho2024)
 
 ## Results
 
