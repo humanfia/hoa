@@ -40,6 +40,12 @@ evaluation metadata; those fields were never model inputs.
 These are strict rubric-based reconstructions against the official English
 IChO 2026 solutions, not scores issued by the IChO jury. Both runs received
 full credit on Q1, Q2, Q4, Q5, and Q7; GPT also received full credit on Q9.
+
+Kimi-K3's one-point shortfall on Q9 was caused only by decimal rounding, not
+by the solution method. It rounded the molar mass of water to `18.02` before
+the final calculation and obtained `1134.98 g mol⁻¹`; retaining the booklet's
+atomic-mass precision gives the official `1135.01 g mol⁻¹`. The remaining
+deductions in the natural-language runs are documented under Q3, Q6, and Q8.
 See each run's `GRADING.md` for every subproblem-level deduction and the full
 grading convention.
 
