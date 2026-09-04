@@ -1,6 +1,6 @@
 # Humanfia at IBO 2024
 
-> This is part of RSI Effort at NVIDIA Research. Humanize is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
+> This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
 **Result: full score on the published grading target — 100/100 theory tasks and
 400/400 statement verdicts correct (100%).** Humanfia produced natural-language
@@ -24,19 +24,6 @@ Olympiad points calculation. The repository intentionally excludes every
 practical exam. The natural-language explanations were reviewed separately
 against the local official questions and are protected by the reviewed-solution
 manifest.
-
-## Open model × open harness
-
-The same Codex harness also runs open source models like
-[Kimi-K3](https://github.com/MoonshotAI/Kimi-K3). The task contract,
-one-worker-per-task decomposition, offline source boundary, and deterministic
-validation are model-independent; reproducing a run with Kimi only requires
-changing the Codex API key and model name.
-
-The published solution corpus was produced by distinct `gpt-5.6-sol:max`
-workers and reviewed with Humanize RLCR, as recorded in [WORKERS.md](WORKERS.md).
-This repository does not label those files as Kimi-generated; Kimi-K3 is the
-supported open-model path for a new run.
 
 ## Read the collection
 
@@ -83,6 +70,10 @@ coordinates in [WORKERS.md](WORKERS.md), and the validation commands above
 define how the 100 isolated results are assembled and accepted.
 
 ## Reproduce with Kimi-K3
+
+The published solution corpus was produced by distinct `gpt-5.6-sol:max`
+workers and reviewed with Humanize RLCR, as recorded in [WORKERS.md](WORKERS.md).
+This repository does not label those files as Kimi-generated.
 
 Kimi-K3 uses the same Codex harness, task contract, offline boundary, and review
 loop as the archived GPT-5.6 runs. No separate Kimi launcher or Kimi CLI is
