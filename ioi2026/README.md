@@ -1,6 +1,6 @@
 # Humanfia at IOI 2026
 
-> **Note:** [Humanize](https://github.com/humanfia/humanize2) is part of the RSI effort and is led by [NVIDIA Research](https://www.nvidia.com/en-us/research/).
+> **Note:** This is part of RSI Effort at NVIDIA Research. Humanize is a [open agent loop/flow framework](https://github.com/humanfia/humanize2) that led by [NVIDIA Research](https://www.nvidia.com/en-us/research/), [UCLA PolyArch](https://polyarch.cs.ucla.edu/), and [MIT HAN Lab](https://hanlab.mit.edu/). We are skying the limit with the power of agents by the Team name Humanfia with community members.
 
 **Result: 100% passed — all 6/6 IOI 2026 solutions received full scores on
 Codeforces.** Humanfia produced a submission-ready C++ solution for every task
