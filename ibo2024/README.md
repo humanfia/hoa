@@ -1,11 +1,14 @@
 # Humanfia at IBO 2024
 
+> [!NOTE]
 > This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
 The **Humanfia team have aced all 100/100 theory tasks in the
 International Biology Olympiad (IBO) 2024 Theoretical Exam** using a *fully
 agentic, YOLO-style approach*. All 400/400 statement verdicts match the official
-answer key, giving 100% agreement on the published grading target.
+answer key, giving 100% agreement on the published grading target. According to IBO
+committe policy, the problems will be hold for two years. We will update on 2026 problem
+set once it becomes public.
 
 We build with open source, and build for open source. We **release everything**
 including:
@@ -13,6 +16,9 @@ including:
 * the complete natural-language worked solutions for [Theory A](theory-a-solutions.md) and [Theory B](theory-b-solutions.md);
 * the [official-answer summary](answers.md) and complete [grading evidence](GRADING.md);
 * the [task plan](plan.md), [worker assignments](WORKERS.md), and [validation scripts](scripts/) used for problem solving.
+
+As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), We all love _open models X open harness_ 🎉 and the combination achieves full score at every competiton: 
+* [IMO2026](https://github.com/humanfia/imo2026) / [IOI2026](https://github.com/humanfia/ioi2026) / [IPhO2026](https://github.com/humanfia/ipho2026) / [ICho2026](https://github.com/humanfia/icho2026) / [IBO2024](https://github.com/humanfia/icho2024)
 
 ## Results
 
