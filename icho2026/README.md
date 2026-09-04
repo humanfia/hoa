@@ -1,63 +1,99 @@
-# IChO 2026 Humanize results
+# Humanfia at IChO 2026
 
-This repository preserves two Humanize runs for all nine theoretical problems
-of the 58th International Chemistry Olympiad (IChO 2026):
+> [!NOTE]
+> [Humanize](https://humanfia.ai) is part of the RSI effort and is led by [NVIDIA Research](https://research.nvidia.com/).
 
-- [`gpt-5.6-sol-max`](gpt-5.6-sol-max/solutions/) — GPT-5.6 Sol at maximum
-  reasoning for implementation and review.
-- [`kimi-k3-max`](kimi-k3-max/solutions/) — Kimi K3 at maximum reasoning for
-  implementation and review, followed by a focused image-aware audit.
+**Full verified result: both GPT-5.6 Sol and Kimi-K3 solved all 32/32 selected
+answer-blind Lean formalization targets, produced 47/47 requested outputs, and
+passed every proof review and the pinned Lean build with zero placeholders.**
+
+This repository also preserves Humanize runs over all nine theoretical
+problems of the 58th International Chemistry Olympiad (IChO 2026), together
+with worked solutions, grading reports, provenance, and independently
+buildable Lean projects.
 
 ## Results
+
+### Answer-blind Lean: full score
+
+The models received the official problem statements and images, but not the
+official solutions. Official-answer comparison happened only after generation
+and review had finished.
+
+| Run | Formalization review | Proof review | Lean build | Placeholders | Official-answer comparison |
+|---|---:|---:|---:|---:|---:|
+| [GPT-5.6 Sol](gpt-5.6-sol-answer-blind/) | **32/32** | **32/32** | passed | 0 | **47/47 outputs** |
+| [Kimi-K3](kimi-k3-answer-blind/) | **32/32** | **32/32** | passed | 0 | **47/47 outputs** |
+
+The normalized records are published in the
+[`humanfia-lab/icho-2026`](https://huggingface.co/datasets/humanfia-lab/icho-2026)
+dataset. Those records include official solution and rubric text as post-run
+evaluation metadata; those fields were never model inputs.
+
+### Full theoretical-paper runs
 
 | Run | Raw rubric score | Raw accuracy | Weighted theory score | Weighted accuracy |
 |---|---:|---:|---:|---:|
 | GPT-5.6 Sol max | 418.5/437 | 95.77% | 58.341/60 | 97.24% |
-| Kimi K3 max | 417.5/437 | 95.54% | 58.209/60 | 97.02% |
+| Kimi-K3 max | 417.5/437 | 95.54% | 58.209/60 | 97.02% |
 
-Both final result sets received full credit on Q1, Q2, Q4, Q5, and Q7. GPT
-also received full credit on Q9; Kimi received 52/53 because its final molar
-mass in Q9.1 differs from the official value after premature rounding. The
-other deductions were in Q3, Q6, and Q8. See each run's grading report for
-the subproblem-level breakdown and grading conventions.
+These are strict rubric-based reconstructions against the official English
+IChO 2026 solutions, not scores issued by the IChO jury. Both runs received
+full credit on Q1, Q2, Q4, Q5, and Q7; GPT also received full credit on Q9.
+See each run's `GRADING.md` for every subproblem-level deduction and the full
+grading convention.
 
-The scores are strict rubric-based reconstructions against the official
-English IChO 2026 solutions. They are not scores issued by the IChO jury.
-Textual descriptions of chemical drawings were accepted only when they
-unambiguously specified the required structure and stereochemistry.
+## Open model x open harness: Kimi-K3
 
-## Contents
+Humanize gives an open-model path the same auditable loop used for the
+frontier-model run. Kimi-K3 reached the full **32/32** answer-blind Lean result
+and **47/47** requested outputs, while the repository releases its final Lean
+project, checksums, grading, experiment record, and worked solutions.
 
-Each run contains:
+The historical Kimi campaign used `anthropic-kimi-k3` through Claude Code as
+the model client, with Humanize providing the agent loop and review workflow.
+Its four grounding-log completeness warnings are disclosed in the run README;
+they do not change the compile or proof-review results.
 
-- `solutions/Q1.md` through `solutions/Q9.md` — final worked solutions;
-- `GRADING.md` — official-key grading and detailed deductions; and
-- `EXPERIMENT.md` — Humanize configuration, review process, and provenance.
+## Reproduce the verified result
 
-The Kimi directory also contains [`FIRST_TURN_ABLATION.md`](kimi-k3-max/FIRST_TURN_ABLATION.md),
-which grades the nine unreviewed round-0 outputs and compares them with the
-final Humanize result under the same grading convention.
+Clone the repository and verify the released files:
 
-## Answer-blind Lean formalizations
+```bash
+git clone https://github.com/humanfia/icho2026.git
+cd icho2026
 
-The repository additionally publishes two fresh answer-blind Lean 4 runs over
-the same 32 selected theory subquestions (47 requested outputs, 168 rubric
-points). These runs were generated without access to the official solutions;
-the official-key comparison was performed only after generation and review.
+for run in gpt-5.6-sol-answer-blind kimi-k3-answer-blind; do
+  (cd "$run" && sha256sum -c CHECKSUMS.sha256)
+done
+```
 
-| Run | Formalization review | Proof review | Lake build | Placeholders | Official-answer comparison |
-|---|---:|---:|---:|---:|---:|
-| [GPT-5.6 Sol answer-blind](gpt-5.6-sol-answer-blind/) | 32/32 | 32/32 | passed | 0 | 47/47 outputs |
-| [Kimi-K3 answer-blind](kimi-k3-answer-blind/) | 32/32 | 32/32 | passed | 0 | 47/47 outputs |
+Build both pinned Lean projects:
 
-The corresponding normalized records are published in the
-[`humanfia-lab/icho-2026`](https://huggingface.co/datasets/humanfia-lab/icho-2026)
-dataset. Kimi has four non-proof grounding-log completeness warnings, disclosed
-in its run README; they do not change its compile or review results.
+```bash
+for run in gpt-5.6-sol-answer-blind kimi-k3-answer-blind; do
+  (
+    cd "$run"
+    lake exe cache get
+    lake build
+  )
+done
+```
 
-Those normalized records include official solution and rubric text as post-run
-evaluation metadata. For both answer-blind runs, those fields were never model
-inputs.
+A successful `lake build` type-checks the released formalizations and proofs
+under the toolchain pinned inside each project.
+
+## Released artifacts
+
+- [`gpt-5.6-sol-max`](gpt-5.6-sol-max/solutions/) and
+  [`kimi-k3-max`](kimi-k3-max/solutions/) contain `Q1.md` through `Q9.md`.
+- Each full-paper run includes `GRADING.md` and `EXPERIMENT.md`.
+- [`gpt-5.6-sol-answer-blind`](gpt-5.6-sol-answer-blind/) and
+  [`kimi-k3-answer-blind`](kimi-k3-answer-blind/) are standalone Lean 4
+  projects with pinned dependencies and checksums.
+- [`FIRST_TURN_ABLATION.md`](kimi-k3-max/FIRST_TURN_ABLATION.md) compares the
+  nine unreviewed Kimi round-0 outputs with the final Humanize result under the
+  same grading convention.
 
 ## Scope
 

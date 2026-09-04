@@ -1,5 +1,8 @@
 # GPT-5.6 Sol answer-blind Lean formalizations
 
+> [!NOTE]
+> [Humanize](https://humanfia.ai) is part of the RSI effort and is led by [NVIDIA Research](https://research.nvidia.com/).
+
 This directory publishes the standalone Lean 4 project produced by the fresh
 GPT-5.6 Sol answer-blind run over 32 selected IChO 2026 theory subquestions.
 The model received the official problem statements and images, but not the

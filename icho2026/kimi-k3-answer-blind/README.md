@@ -1,6 +1,9 @@
 # Kimi-K3 answer-blind Lean formalizations
 
-This directory publishes the standalone Lean 4 project produced by the fresh4
+> [!NOTE]
+> [Humanize](https://humanfia.ai) is part of the RSI effort and is led by [NVIDIA Research](https://research.nvidia.com/).
+
+This directory publishes the standalone Lean 4 project produced by the fresh
 Kimi-K3 answer-blind run over the same 32 selected IChO 2026 theory
 subquestions. The model received the official problem statements and images,
 but not the official solutions. Official-answer comparison occurred only after
