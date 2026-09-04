@@ -4,6 +4,11 @@
 
 With the power of Humanize, we, the **Humanfia team, have aced all 6/6 IOI 2026 problems**  using a *fully agentic, YOLO-style approach*. The scores are graded by [codeforces](https://codeforces.com/)
 
+We build with open source, and build for open source. We **release everything** including: 
+* the [official problem packages](./problems) for Day 1 and Day 2; 
+* the final [submissions](./submissions) as judged by Codeforces, and their [annotated solutions](./solutions); 
+* the [orchestration scripts](./orchestration) and harness used for problem solving -- which most other participants do not
+
 ## Results
 
 | Day | Task | Result | Submission |
