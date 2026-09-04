@@ -1,6 +1,6 @@
 # Humanfia at IBO 2024
 
-> **Note:** [Humanize](https://github.com/humanfia/humanize2) is part of the RSI effort and is led by [NVIDIA Research](https://www.nvidia.com/en-us/research/).
+> This is part of RSI Effort at NVIDIA Research. Humanize is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
 **Result: full score on the published grading target — 100/100 theory tasks and
 400/400 statement verdicts correct (100%).** Humanfia produced natural-language
@@ -27,65 +27,16 @@ manifest.
 
 ## Open model × open harness
 
-[Humanize](https://github.com/humanfia/humanize2) supports
-[Kimi-K3](https://github.com/MoonshotAI/Kimi-K3), pairing an open model with an
-open harness. The task contract, one-worker-per-task decomposition, offline
-source boundary, and deterministic validation in this repository are
-model-independent and can be reused for a Kimi-K3 reproduction.
+The same Codex harness also runs open source models like
+[Kimi-K3](https://github.com/MoonshotAI/Kimi-K3). The task contract,
+one-worker-per-task decomposition, offline source boundary, and deterministic
+validation are model-independent; reproducing a run with Kimi only requires
+changing the Codex API key and model name.
 
 The published solution corpus was produced by distinct `gpt-5.6-sol:max`
 workers and reviewed with Humanize RLCR, as recorded in [WORKERS.md](WORKERS.md).
 This repository does not label those files as Kimi-generated; Kimi-K3 is the
 supported open-model path for a new run.
-
-## Launch a Kimi-K3 experiment
-
-Install [Humanize](https://github.com/humanfia/humanize2), and make sure both
-Kimi Code and Codex are installed and authenticated:
-
-```sh
-pip install git+https://github.com/humanfia/humanize2.git
-hmz --version
-kimi --version
-codex --version
-```
-
-After placing the official PDFs under `source/`, run this example from the
-repository root. It creates a clean workspace without any published solutions,
-then assigns Theory Part A Task 1 to a Kimi-K3 actor and a fresh GPT-5.6 Sol
-reviewer:
-
-```sh
-experiment_root="$(mktemp -d /tmp/ibo2024-kimi-a01.XXXXXXXX)"
-mkdir -p "$experiment_root/source" "$experiment_root/solutions/part-a"
-cp "source/IBO2024 Theory A.pdf" "$experiment_root/source/"
-cp "source/IBO2024 Theory B.pdf" "$experiment_root/source/"
-cp AGENTS.md "$experiment_root/AGENTS.md"
-cp .gitignore "$experiment_root/.gitignore"
-
-git -C "$experiment_root" init --initial-branch=main
-git -C "$experiment_root" config user.name "IBO Humanize Reproducer"
-git -C "$experiment_root" config user.email "ibo-humanize@localhost"
-git -C "$experiment_root" add .
-git -C "$experiment_root" commit -m "Seed IBO A1 experiment"
-
-(
-  cd "$experiment_root"
-  hmz exec -f official/rlar \
-    -a kimi/kimi-code/k3:swarmmax \
-    -a codex/gpt-5.6-sol:max \
-    "Solve IBO 2024 Theory Part A Task 1 only. Follow AGENTS.md, work entirely offline, and inspect the question and embedded official answer in source/IBO2024 Theory A.pdf. Write solutions/part-a/q01.md with the official T/F pattern and clear reasoning for A-D. Stop only when the reviewer agrees it is complete."
-)
-
-test -f "$experiment_root/solutions/part-a/q01.md"
-```
-
-The first `-a` entry is the persistent actor; the second is a fresh reviewer on
-every round. To run a fully Kimi experiment, replace the reviewer entry with a
-second `kimi/kimi-code/k3:swarmmax`. Reproduce the full corpus by creating one
-isolated workspace per A1-A50 and B1-B50, changing the coordinate, PDF, output
-path, and task prompt together. Collect the 100 reviewed files only after all
-workers finish, then run the repository-wide validation below.
 
 ## Read the collection
 
@@ -127,10 +78,24 @@ The validator compares all 400 declared verdicts with the answer sections
 embedded in the official PDFs. It invokes only local tools and files: it does
 not browse, query a network service, or consult a third-party answer key.
 
-The clean Kimi-K3 launch above reproduces one worker/reviewer experiment. The
-one-worker assignment contract in [plan.md](plan.md), the canonical coordinates
-in [WORKERS.md](WORKERS.md), and the validation commands above define how the
-100 isolated results are assembled and accepted.
+The one-worker assignment contract in [plan.md](plan.md), the canonical
+coordinates in [WORKERS.md](WORKERS.md), and the validation commands above
+define how the 100 isolated results are assembled and accepted.
+
+## Reproduce with Kimi-K3
+
+Kimi-K3 uses the same Codex harness, task contract, offline boundary, and review
+loop as the archived GPT-5.6 runs. No separate Kimi launcher or Kimi CLI is
+needed. In the existing Codex harness configuration, make only these two
+changes:
+
+- replace the API key in the Codex auth file with the Kimi API key;
+- replace the Codex model name with the Kimi model name.
+
+Keep the 100 task assignments, local official PDFs, prompts, output paths, and
+validation commands unchanged. Each worker still receives one coordinate from
+[WORKERS.md](WORKERS.md), follows [AGENTS.md](AGENTS.md), and is accepted only
+after the repository-wide validation passes.
 
 ## Source and license
 
