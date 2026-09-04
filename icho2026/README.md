@@ -1,7 +1,6 @@
 # Humanfia at IChO 2026
 
-> [!NOTE]
-> [Humanize](https://humanfia.ai) is part of the RSI effort and is led by [NVIDIA Research](https://research.nvidia.com/).
+> This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
 **Full verified result: both GPT-5.6 Sol and Kimi-K3 solved all 32/32 selected
 answer-blind Lean formalization targets, produced 47/47 requested outputs, and
