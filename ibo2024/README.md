@@ -25,16 +25,7 @@ practical exam. The natural-language explanations were reviewed separately
 against the local official questions and are protected by the reviewed-solution
 manifest.
 
-## Read the collection
-
-- [Official answer summary](answers.md)
-- [Theory Part A consolidated solutions](theory-a-solutions.md)
-- [Theory Part B consolidated solutions](theory-b-solutions.md)
-- [Part A individual solutions](solutions/part-a/)
-- [Part B individual solutions](solutions/part-b/)
-- [One-worker assignment ledger](WORKERS.md)
-
-## Reproduce the full result
+## Reproduce the public result
 
 Place the two official English exam PDFs at these exact local paths:
 
@@ -87,6 +78,15 @@ Keep the 100 task assignments, local official PDFs, prompts, output paths, and
 validation commands unchanged. Each worker still receives one coordinate from
 [WORKERS.md](WORKERS.md), follows [AGENTS.md](AGENTS.md), and is accepted only
 after the repository-wide validation passes.
+
+## Read the collection
+
+- [Official answer summary](answers.md)
+- [Theory Part A consolidated solutions](theory-a-solutions.md)
+- [Theory Part B consolidated solutions](theory-b-solutions.md)
+- [Part A individual solutions](solutions/part-a/)
+- [Part B individual solutions](solutions/part-b/)
+- [One-worker assignment ledger](WORKERS.md)
 
 ## Offline methodology and ownership
 
