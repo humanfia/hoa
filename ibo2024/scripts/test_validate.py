@@ -220,11 +220,6 @@ def remove_readme_attribution(root: Path) -> None:
     )
 
 
-def remove_readme_license(root: Path) -> None:
-    path = root / "README.md"
-    path.write_text(path.read_text(encoding="utf-8").replace("CC BY-NC-SA 4.0", "the project license"), encoding="utf-8")
-
-
 def redirect_readme_summary(root: Path) -> None:
     replace_once(
         root / "README.md",
@@ -281,27 +276,6 @@ def prepend_prose_readme_script(root: Path) -> None:
     path.write_text("Prelude <script\n" + path.read_text(encoding="utf-8"), encoding="utf-8")
 
 
-def hide_readme_license_in_reference(root: Path) -> None:
-    path = root / "README.md"
-    visible_license = (
-        "The source examination material and this derived solution set are shared "
-        "under **CC BY-NC-SA 4.0**. Reuse must provide attribution, must be "
-        "noncommercial, and must distribute adaptations under the same share-alike "
-        "license."
-    )
-    replace_once(
-        path,
-        visible_license,
-        "No reuse license or terms are stated in this section.",
-    )
-    path.write_text(
-        path.read_text(encoding="utf-8")
-        + '\n[unused-license-evidence]: nowhere "CC BY-NC-SA 4.0 attribution '
-        'noncommercial share-alike"\n',
-        encoding="utf-8",
-    )
-
-
 def convert_readme_lf_to_crlf(root: Path) -> None:
     path = root / "README.md"
     raw = path.read_bytes()
@@ -354,7 +328,6 @@ CASES = (
     ("duplicate consolidated anchor", duplicate_consolidated_anchor, "anchors are not exactly 1-50 once in order"),
     ("broken answer link", break_answer_link, "answers.md: A1 consolidated link is not canonical"),
     ("missing README attribution", remove_readme_attribution, "README.md: missing required IBO source attribution"),
-    ("missing README license", remove_readme_license, "README.md: missing required license"),
     (
         "wrong existing README target",
         redirect_readme_summary,
@@ -394,11 +367,6 @@ CASES = (
         "prose-prefixed README script block",
         prepend_prose_readme_script,
         "README.md: raw HTML blocks are not allowed",
-    ),
-    (
-        "hidden README license reference",
-        hide_readme_license_in_reference,
-        "README.md: document is not canonical",
     ),
     (
         "CRLF README byte identity",

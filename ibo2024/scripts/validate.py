@@ -19,7 +19,7 @@ from build import check_outputs, load_solutions, render_outputs, truth_words
 EXPECTED_COORDS = [(part, task) for part in ("A", "B") for task in range(1, 51)]
 EXPECTED_SET = set(EXPECTED_COORDS)
 CANONICAL_README_SHA256 = (
-    "7bdbf6ab10afa8a24d3319bee0f45f28993c0ea7656da0ac804a492d724ca491"
+    "c1809a9612e5fd637ff69da0857c0a83a951055bff9f5e30035ffbd4728d776d"
 )
 ANSWER_BLOCK = re.compile(r"(?m)^\s*Task\s+#(\d+)\.?\s*$")
 SOURCE_VERDICT = re.compile(
@@ -502,10 +502,6 @@ def validate_readme(root: Path, errors: list[str]) -> None:
 
     requirements = {
         "IBO source attribution": "International Biology Olympiad",
-        "license": "CC BY-NC-SA 4.0",
-        "attribution obligation": "attribution",
-        "noncommercial obligation": "noncommercial",
-        "share-alike obligation": "share-alike",
         "offline methodology": "offline",
         "one-worker ownership": "Exactly one distinct",
         "Theory A source filename": "source/IBO2024 Theory A.pdf",

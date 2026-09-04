@@ -88,20 +88,6 @@ validation commands unchanged. Each worker still receives one coordinate from
 [WORKERS.md](WORKERS.md), follows [AGENTS.md](AGENTS.md), and is accepted only
 after the repository-wide validation passes.
 
-## Source and license
-
-The questions, figures, and embedded official solutions come from the
-International Biology Olympiad's official English IBO 2024 Theory A and Theory
-B papers. Those examination sources are the authority for task identity and
-T/F verdicts.
-
-The source examination material and this derived solution set are shared under **CC BY-NC-SA 4.0**. Reuse must provide attribution, must be noncommercial, and must distribute adaptations under the same share-alike license.
-
-The official PDFs are kept locally and ignored by Git. The local
-`pdftotext -layout` extracts are `source/part-a.txt` and `source/part-b.txt`;
-validation regenerates text from each PDF and requires the stored extract to
-agree byte-for-byte.
-
 ## Offline methodology and ownership
 
 Exactly one distinct `gpt-5.6-sol:max` solver worker was assigned to each task,
