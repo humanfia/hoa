@@ -2,19 +2,29 @@
 
 > This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
-**Result: full score on the published grading target — 100/100 theory tasks and
-400/400 statement verdicts correct (100%).** Humanfia produced natural-language
-worked solutions for every independent task in the official English
-International Biology Olympiad (IBO) 2024 Theoretical Exam: 50 tasks from Part
-A and 50 from Part B.
+The **Humanfia team have aced all 100/100 theory tasks in the
+International Biology Olympiad (IBO) 2024 Theoretical Exam** using a *fully
+agentic, YOLO-style approach*. All 400/400 statement verdicts match the official
+answer key, giving 100% agreement on the published grading target.
+
+We build with open source, and build for open source. We **release everything**
+including:
+
+* the complete natural-language worked solutions for [Theory A](theory-a-solutions.md) and [Theory B](theory-b-solutions.md);
+* the [official-answer summary](answers.md) and complete [grading evidence](GRADING.md);
+* the [task plan](plan.md), [worker assignments](WORKERS.md), and [validation scripts](scripts/) used for problem solving.
 
 ## Results
 
-| Part | Complete worked solutions | Verdicts matching the official key | Agreement |
-|---|---:|---:|---:|
-| Theory A | 50 / 50 | 200 / 200 | 100% |
-| Theory B | 50 / 50 | 200 / 200 | 100% |
-| **Overall** | **100 / 100** | **400 / 400** | **100%** |
+The Humanfia (GPT-5.6) workers solved all 100 Theory A and Theory B tasks. The
+results below report exact agreement with the answer sections embedded in the
+official English exam papers.
+
+| Part | Humanfia (GPT-5.6) | Official verdict agreement |
+| --- | ---: | ---: |
+| Theory A | ✅ 50/50 tasks | ✅ 200/200 (100%) |
+| Theory B | ✅ 50/50 tasks | ✅ 200/200 (100%) |
+| **Total** | **✅ 100/100 tasks** | **✅ 400/400 (100%)** |
 
 The extraction and format error count is **0**. The complete grading evidence
 is in [GRADING.md](GRADING.md).
