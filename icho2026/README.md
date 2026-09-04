@@ -49,6 +49,24 @@ deductions in the natural-language runs are documented under Q3, Q6, and Q8.
 See each run's `GRADING.md` for every subproblem-level deduction and the full
 grading convention.
 
+### Why points were deducted
+
+GPT-5.6 Sol and Kimi-K3 produced the same answers on the three shared
+deductions. Kimi-K3 had one additional rounding-only deduction on Q9.
+
+| Problem | GPT-5.6 Sol | Kimi-K3 | Reason |
+|---|---:|---:|---|
+| Q3 | −4 | −4 | In Q3.3, two cells under **Tetragonal 2** should be `XXX`, but were filled with `A4+B1` and `C3+D3`. With the official negative-marking rule, each cell changes from +1 to −1. |
+| Q6 | −6 | −6 | In Q6.2, structure B swaps a chlorine and radical position; structure D is monocyclic with one radical instead of the official open/fused structure with three radical centres. Structure C is correct. |
+| Q8 | −8.5 | −8.5 | In Q8.4, intermediate 11 has the wrong binding mode and `OS/CN/VE` values. In Q8.6, 10 mg was treated as the loaded composite mass rather than the C3N4 mass before catalyst loading, giving about 1.86% instead of 1.94%. |
+| Q9 | 0 | −1 | Kimi-K3 used the correct method but rounded the water molar mass too early, giving `1134.98 g mol⁻¹` instead of `1135.01 g mol⁻¹`. |
+
+Thus, the Q9 difference is purely numerical precision; the Q3, Q6, and Q8
+deductions come from topology, chemical-structure, or problem-interpretation
+differences. Full evidence is preserved in
+[`gpt-5.6-sol-max/GRADING.md`](gpt-5.6-sol-max/GRADING.md) and
+[`kimi-k3-max/GRADING.md`](kimi-k3-max/GRADING.md).
+
 ## Open model x open harness: Kimi-K3
 
 Humanize gives an open-model path the same auditable loop used for the
