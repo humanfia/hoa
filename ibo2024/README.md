@@ -37,35 +37,23 @@ manifest.
 
 # Quick start
 
-## Prerequisites
+## Launch with the reproduction prompt
 
-- Git
-- Python 3.10 or newer
-- Poppler's `pdftotext` command
-- The official English IBO 2024 Theory A and Theory B PDFs
-
-On Ubuntu or Debian, install the required command-line tools with:
+The complete launch prompt is checked in as [plan.md](plan.md).
+[AGENTS.md](AGENTS.md) supplies the offline worker policy. The launch shell
+creates a clean workspace containing the prompt, policy, and official PDFs, but
+none of the published solutions:
 
 ```bash
-sudo apt-get update
-sudo apt-get install -y git python3 poppler-utils
+bash scripts/run-ibo2024.sh \
+  --prompt plan.md \
+  --model gpt-5.6-sol
 ```
 
-On macOS with Homebrew:
-
-```bash
-brew install python poppler
-```
-
-The validation scripts use only the Python standard library; no `pip` packages
-are required.
-
-## Clone the repository
-
-```bash
-git clone https://github.com/humanfia/ibo2024.git
-cd ibo2024
-```
+The shell passes `plan.md` directly to `codex exec`. The prompt assigns one
+distinct worker to each of the 100 Theory A/B tasks and runs the review and
+assembly workflow. Add `--dry-run` to validate the inputs without creating a
+workspace or launching Codex.
 
 ## Reproduce the public result
 
@@ -116,6 +104,15 @@ changes:
 - replace the API key in the Codex auth file with the Kimi API key;
 - replace the Codex model name with the Kimi model name.
 
+Then run the same checked-in prompt through the same Codex harness:
+
+```bash
+CODEX_HOME=/path/to/codex-home-with-kimi-api-key \
+bash scripts/run-ibo2024.sh \
+  --prompt plan.md \
+  --model your-kimi-model-name
+```
+
 Keep the 100 task assignments, local official PDFs, prompts, output paths, and
 validation commands unchanged. Each worker still receives one coordinate from
 [WORKERS.md](WORKERS.md), follows [AGENTS.md](AGENTS.md), and is accepted only
@@ -159,5 +156,6 @@ regenerated.
 - `answers.md`: generated 100-row answer and navigation index.
 - `theory-a-solutions.md` and `theory-b-solutions.md`: generated ordered volumes.
 - [scripts/build.py](scripts/build.py): deterministic collection builder and freshness check.
+- [scripts/run-ibo2024.sh](scripts/run-ibo2024.sh): isolated Codex launcher for the checked-in reproduction prompt.
 - [scripts/validate.py](scripts/validate.py): end-to-end offline source, ownership, content, document, and navigation validator.
 - [scripts/test_validate.py](scripts/test_validate.py): isolated negative fixtures for the validation contract.

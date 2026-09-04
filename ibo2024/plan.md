@@ -2,7 +2,7 @@
 
 ## Goal Description
 
-Produce a complete, accurate, natural-language solution set for all 100 independent tasks in the official English IBO 2024 Theoretical Exams, Parts A and B. Assign exactly one solver worker to each task. Every solver and every Humanize RLCR reviewer must work offline and must be able to inspect both the original task and the embedded official answer in the local official PDF. Use `gpt-5.6-sol` at `max` reasoning effort for workers and RLCR review.
+Produce a complete, accurate, natural-language solution set for all 100 independent tasks in the official English IBO 2024 Theoretical Exams, Parts A and B. Assign exactly one solver worker to each task. Every solver and every Humanize RLCR reviewer must work offline and must be able to inspect both the original task and the embedded official answer in the local official PDF. Use the model selected by the Codex harness at `max` reasoning effort for workers and RLCR review; the archived run used `gpt-5.6-sol`.
 
 ## Acceptance Criteria
 
@@ -51,7 +51,7 @@ Produce a complete, accurate, natural-language solution set for all 100 independ
 - AC-6: Humanize RLCR review is completed.
   - Positive Tests (expected to PASS):
     - Implementation rounds are committed with required Humanize summaries.
-    - The `gpt-5.6-sol:max` reviewer checks completeness, official-key agreement, reasoning quality, and formatting.
+    - The configured max-effort reviewer checks completeness, official-key agreement, reasoning quality, and formatting.
     - All review findings are resolved before finalization.
   - Negative Tests (expected to FAIL):
     - The loop is bypassed, manually marked complete, or left with unresolved findings.
@@ -68,7 +68,7 @@ One accurate natural-language Markdown solution per theory task, all official T/
 
 ### Allowed Choices
 
-- Can use: the two local official PDFs, local PDF/text/image utilities, Markdown, shell scripts for deterministic validation, and collaboration workers using `gpt-5.6-sol:max`.
+- Can use: the two local official PDFs, local PDF/text/image utilities, Markdown, shell scripts for deterministic validation, and collaboration workers using the max-effort model selected by the Codex harness.
 - Cannot use: internet access, web search, remote APIs, third-party answer keys, practical-exam material, Lean, or formal theorem-prover output.
 
 ## Dependencies and Sequence
