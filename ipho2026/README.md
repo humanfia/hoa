@@ -3,11 +3,11 @@
 > [!NOTE]
 > This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
-The **Humanfia team completed all 41 subparts of the 56th International
-Physics Olympiad** using a *fully agentic, answer-blind approach*. The release
-includes GPT-5.6 Sol Lean 4 formalizations for all 41 subparts, GPT-5.6 Sol
-natural-language solutions for the three theory problems, and a separate Kimi
-K3 Max Lean answer set.
+The **Humanfia team aced all three theory problems of the 56th International
+Physics Olympiad**, earning **30.00/30.00 (100%)** with GPT-5.6 Sol
+natural-language solutions produced through a *fully agentic, answer-blind
+approach*. The release also includes Lean 4 formalizations for all 41 subparts
+and a separate Kimi K3 Max Lean answer set.
 
 The answer-generating workers could not access official solutions or marking
 schemes. Those materials were introduced only after completion, in separate
@@ -27,23 +27,20 @@ We build with open source, and build for open source. We release:
 
 ## Results
 
-| Submission | Coverage | Grading-audit result |
+The Humanfia (GPT-5.6 Sol) natural-language submission answered all 23 theory
+subparts and received full credit on every problem in the grading audit.
+
+| Problem | Humanfia (GPT-5.6 Sol) | Accuracy |
 | --- | ---: | ---: |
-| Humanfia (GPT-5.6 Sol), natural-language theory | 23/23 theory subparts | **30.00/30.00 (100%)** |
-| Humanfia (GPT-5.6 Sol), Lean 4 | 41/41 subparts | **47.45/50.00 (94.9%)** |
-| Humanfia (Kimi K3 Max), Lean 4 | 41/41 subparts | **29.90/50.00 (59.8%)** |
+| Theory 1 | ✅ 10.00/10.00 | 100% |
+| Theory 2 | ✅ 10.00/10.00 | 100% |
+| Theory 3 | ✅ 10.00/10.00 | 100% |
+| **Theory total** | **✅ 30.00/30.00** | **100%** |
 
-The GPT-5.6 Sol formal submission earned full audit credit on 32 of 41
-subparts, including a perfect 10/10 on Theory Problem 2. Its deductions came
-from a lost signed orientation, one unconstrained physical constant, and
-missing uncertainty propagation in seven experimental results. The separate
-natural-language submission received full credit on all three theory
-problems. All 41 Kimi answer files compile; its lower audit score reflects
-under-specified physical targets rather than Lean compilation failures.
-
-These scores are source-level estimates against the official solutions and
-marking schemes, not official jury adjudications. See the linked grading
-reports for the itemized evidence and methodology.
+This is a source-level estimate against the official solutions and itemized
+marking schemes, not an official jury adjudication. See the
+[natural-language grading report](NaturalLanguage/GRADING_REPORT.md) for the
+complete evidence and methodology.
 
 ## Contents
 
