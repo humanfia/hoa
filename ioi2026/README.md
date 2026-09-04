@@ -33,6 +33,51 @@ The 100% result comes from the Codeforces submissions. The public bundle can
 also compile every solution and replay every released Day 1 example locally;
 the Codeforces hidden judge remains an external verification step.
 
+## Reproduce the public result
+
+Requirements: Bash, Python 3, `sha256sum`, and a C++20-capable `g++` (or set
+`CXX` to a compatible compiler).
+
+```sh
+git clone https://github.com/humanfia/ioi2026.git
+cd ioi2026
+./verify.sh
+```
+
+The verifier checks the bundle manifest, validates every orchestration script,
+builds all six sources in a disposable directory, runs every released Day 1
+example, validates Ball Machine's public topology and resource accounting, and
+strictly compiles the three Day 2 artifacts. A successful run ends with:
+
+```text
+PASS: IOI 2026 clean bundle verified
+```
+
+## Reproduce the six Humanize runs
+
+The worker repositories are seeded only with the corresponding official
+problem and immutable plan; the final files under `submissions/` are never
+copied into them. On Linux, the default filesystem boundary also prevents a
+worker from reading the reference results or sibling repositories.
+
+```sh
+# Check prerequisites without writing or launching workers.
+./orchestration/launch-six.sh --dry-run
+
+# Launch six detached Humanize RLCR workers.
+./orchestration/launch-six.sh --start
+
+# Follow their review rounds and final status.
+./orchestration/monitor.sh
+```
+
+The checked-in launcher reproduces the archived Codex-backed configuration.
+For Kimi-K3, use the clean single-task launch below once per task. See
+[`orchestration/README.md`](orchestration/README.md) for prerequisites,
+isolation behavior, model configuration, waiting, resuming, result collection,
+and output layout. Six max-effort runs can consume substantial time and model
+quota, so the launcher requires the explicit `--start` flag.
+
 ## Launch a Kimi-K3 experiment
 
 Install [Humanize](https://github.com/humanfia/humanize2), and make sure both
@@ -80,51 +125,6 @@ second `kimi/kimi-code/k3:swarmmax`. To launch another IOI task, change the
 problem directory, matching plan, task name, and expected solution path. Keep
 each task in a separate clean workspace so no worker can read the published
 submissions or another worker's result.
-
-## Reproduce the public result
-
-Requirements: Bash, Python 3, `sha256sum`, and a C++20-capable `g++` (or set
-`CXX` to a compatible compiler).
-
-```sh
-git clone https://github.com/humanfia/ioi2026.git
-cd ioi2026
-./verify.sh
-```
-
-The verifier checks the bundle manifest, validates every orchestration script,
-builds all six sources in a disposable directory, runs every released Day 1
-example, validates Ball Machine's public topology and resource accounting, and
-strictly compiles the three Day 2 artifacts. A successful run ends with:
-
-```text
-PASS: IOI 2026 clean bundle verified
-```
-
-## Reproduce the six Humanize runs
-
-The worker repositories are seeded only with the corresponding official
-problem and immutable plan; the final files under `submissions/` are never
-copied into them. On Linux, the default filesystem boundary also prevents a
-worker from reading the reference results or sibling repositories.
-
-```sh
-# Check prerequisites without writing or launching workers.
-./orchestration/launch-six.sh --dry-run
-
-# Launch six detached Humanize RLCR workers.
-./orchestration/launch-six.sh --start
-
-# Follow their review rounds and final status.
-./orchestration/monitor.sh
-```
-
-The checked-in launcher reproduces the archived Codex-backed configuration.
-For Kimi-K3, use the clean single-task launch above once per task. See
-[`orchestration/README.md`](orchestration/README.md) for prerequisites,
-isolation behavior, model configuration, waiting, resuming, result collection,
-and output layout. Six max-effort runs can consume substantial time and model
-quota, so the launcher requires the explicit `--start` flag.
 
 ## What is included
 
