@@ -9,6 +9,8 @@ We build with open source, and build for open source. We **release everything** 
 * the final [submissions](./submissions) as judged by Codeforces, and their [annotated solutions](./solutions); 
 * the [orchestration scripts](./orchestration) and harness used for problem solving -- which most other participants do not
 
+Notably, humanize also runs **open source models like Kimi-K3** on these tasks -- the plans and problem-only worker seeds here are model-independent, so any task can be relaunched through Humanize's Kimi backend. As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), We all love _open models X open harness_ 🎉
+
 ## Results
 
 | Day | Task | Result | Submission |
@@ -30,19 +32,6 @@ for the precise per-task guarantees.
 The 100% result comes from the Codeforces submissions. The public bundle can
 also compile every solution and replay every released Day 1 example locally;
 the Codeforces hidden judge remains an external verification step.
-
-## Open model × open harness
-
-[Humanize](https://github.com/humanfia/humanize2) supports
-[Kimi-K3](https://github.com/MoonshotAI/Kimi-K3), pairing an open model with an
-open harness. The task plans and problem-only worker seeds in this repository
-are model-independent, so they can be reused for a Kimi-K3 run through
-Humanize's Kimi backend.
-
-The checked-in IOI submissions and the
-[token-cost report](ioi2026-token-costs.md) come from the archived
-`gpt-5.6-sol:max` runs. This repository does not label them as Kimi-generated;
-the Kimi support is the reproducible backend path for new experiments.
 
 ## Launch a Kimi-K3 experiment
 
