@@ -19,7 +19,7 @@ from build import check_outputs, load_solutions, render_outputs, truth_words
 EXPECTED_COORDS = [(part, task) for part in ("A", "B") for task in range(1, 51)]
 EXPECTED_SET = set(EXPECTED_COORDS)
 CANONICAL_README_SHA256 = (
-    "4b5f5e71944ea4c317a2cab3259ae03a47e1983c8ef7ac761578d0679f685510"
+    "c99fa8c53d392088a9db5174e7c803a952e199f422a24ff7b3f676a0d07550aa"
 )
 ANSWER_BLOCK = re.compile(r"(?m)^\s*Task\s+#(\d+)\.?\s*$")
 SOURCE_VERDICT = re.compile(
@@ -508,10 +508,10 @@ def validate_readme(root: Path, errors: list[str]) -> None:
         "Theory B source filename": "source/IBO2024 Theory B.pdf",
         "discrepancy policy": "discrepancy note",
         "manifest review rule": "Do not update a hash merely to make validation pass",
-        "build command": "python scripts/build.py",
-        "build check command": "python scripts/build.py --check",
-        "validation command": "python scripts/validate.py",
-        "negative-test command": "python scripts/test_validate.py",
+        "build command": "python3 scripts/build.py",
+        "build check command": "python3 scripts/build.py --check",
+        "validation command": "python3 scripts/validate.py",
+        "negative-test command": "python3 scripts/test_validate.py",
     }
     for label, phrase in requirements.items():
         if phrase not in text:

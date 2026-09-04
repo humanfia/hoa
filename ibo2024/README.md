@@ -35,6 +35,38 @@ practical exam. The natural-language explanations were reviewed separately
 against the local official questions and are protected by the reviewed-solution
 manifest.
 
+# Quick start
+
+## Prerequisites
+
+- Git
+- Python 3.10 or newer
+- Poppler's `pdftotext` command
+- The official English IBO 2024 Theory A and Theory B PDFs
+
+On Ubuntu or Debian, install the required command-line tools with:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y git python3 poppler-utils
+```
+
+On macOS with Homebrew:
+
+```bash
+brew install python poppler
+```
+
+The validation scripts use only the Python standard library; no `pip` packages
+are required.
+
+## Clone the repository
+
+```bash
+git clone https://github.com/humanfia/ibo2024.git
+cd ibo2024
+```
+
 ## Reproduce the public result
 
 Place the two official English exam PDFs at these exact local paths:
@@ -54,11 +86,11 @@ Then regenerate the derived collection, check that committed outputs are
 current, and run the complete offline validation gate:
 
 ```bash
-python scripts/build.py
-python scripts/build.py --check
-python scripts/validate.py
-python scripts/test_validate.py
-python -m py_compile scripts/build.py scripts/validate.py scripts/test_validate.py
+python3 scripts/build.py
+python3 scripts/build.py --check
+python3 scripts/validate.py
+python3 scripts/test_validate.py
+python3 -m py_compile scripts/build.py scripts/validate.py scripts/test_validate.py
 git diff --check
 ```
 
