@@ -1,5 +1,6 @@
 # Humanfia at IOI 2026
 
+> [!NOTE]
 > This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
 With the power of Humanize, we, the **Humanfia team, have aced all 6/6 IOI 2026 problems**  using a *fully agentic, YOLO-style approach*. The scores are graded by [codeforces](https://codeforces.com/)
