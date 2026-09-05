@@ -25,6 +25,23 @@ We build with open source, and build for open source. We release:
   [Kimi natural-language solutions](Kimi/NaturalLanguage/GRADING_REPORT.md), and
   optional [formalizations](GRADING_REPORT.md).
 
+## Results
+
+The Humanfia (GPT-5.6 Sol) natural-language submission answered all 23 theory
+subparts and received full credit on every problem in the grading audit.
+
+| Problem | Humanfia (GPT-5.6 Sol) | Accuracy |
+| --- | ---: | ---: |
+| Theory 1 | ✅ 10.00/10.00 | 100% |
+| Theory 2 | ✅ 10.00/10.00 | 100% |
+| Theory 3 | ✅ 10.00/10.00 | 100% |
+| **Theory total** | **✅ 30.00/30.00** | **100%** |
+
+This is a source-level estimate against the official solutions and itemized
+marking schemes, not an official jury adjudication. See the
+[natural-language grading report](NaturalLanguage/GRADING_REPORT.md) for the
+complete evidence and methodology.
+
 ## Natural-language experiment
 
 The primary experiment is the answer-blind natural-language run: one isolated
@@ -61,23 +78,6 @@ The published outputs are
 [`T3_solution.md`](NaturalLanguage/T3_solution.md). Their independent
 post-completion evaluation is in the
 [natural-language grading report](NaturalLanguage/GRADING_REPORT.md).
-
-## Results
-
-The Humanfia (GPT-5.6 Sol) natural-language submission answered all 23 theory
-subparts and received full credit on every problem in the grading audit.
-
-| Problem | Humanfia (GPT-5.6 Sol) | Accuracy |
-| --- | ---: | ---: |
-| Theory 1 | ✅ 10.00/10.00 | 100% |
-| Theory 2 | ✅ 10.00/10.00 | 100% |
-| Theory 3 | ✅ 10.00/10.00 | 100% |
-| **Theory total** | **✅ 30.00/30.00** | **100%** |
-
-This is a source-level estimate against the official solutions and itemized
-marking schemes, not an official jury adjudication. See the
-[natural-language grading report](NaturalLanguage/GRADING_REPORT.md) for the
-complete evidence and methodology.
 
 ## Contents
 
