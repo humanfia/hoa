@@ -28,9 +28,32 @@ We build with open source, and build for open source. We release:
 ## Natural-language experiment
 
 The primary experiment is the answer-blind natural-language run: one isolated
-Humanize worker solves one theory problem and writes a complete solution.
-Start with the three released solutions and their grading report; they are
-Markdown files and require no setup or build step.
+Humanize builder/reviewer loop solves one theory problem and writes a complete
+solution.
+The repository now includes
+[`scripts/run-natural-language-experiment.sh`](scripts/run-natural-language-experiment.sh),
+which prepares a clean problem-only Git workspace and starts the Humanize RLCR
+builder/reviewer loop.
+
+Install [Humanize](https://github.com/humanfia/humanize2), place one problem
+statement and its figures in an input directory, and run:
+
+```bash
+scripts/run-natural-language-experiment.sh \
+  T1 /path/to/T1-input ../ipho2026-runs/T1
+```
+
+Repeat with `T2` and `T3` in separate input and run directories. The run
+directory must be new or empty and outside this checkout; the launcher refuses
+obvious solution, answer, grading, marking-scheme, and rubric files. Humanize
+uses `codex/gpt-5.6-sol:max` for both builder and reviewer by default. Pass a
+fourth and fifth argument to select different Humanize agents. Run `--help` for
+the full command syntax.
+
+The launcher creates `solution.md` in the run directory. To reproduce the
+answer-blind conditions, execute it in a host or container whose network policy
+blocks outbound web access; the script prepares an isolated workspace and tells
+the agents not to use the network, but it cannot change the host network policy.
 
 The published outputs are
 [`NaturalLanguage/T1_solution.md`](NaturalLanguage/T1_solution.md),
@@ -64,6 +87,7 @@ complete evidence and methodology.
   their grading audit.
 - `Ipho2026Gpt56solBlind/` — optional GPT-5.6 Sol formalizations.
 - `Kimi/Ipho2026KimiK3Blind32/` — optional Kimi K3 Max formalizations.
+- `scripts/run-natural-language-experiment.sh` — answer-blind Humanize launcher.
 - `GRADING_REPORT.md` — post-completion comparison of the formalizations with
   the official results.
 
