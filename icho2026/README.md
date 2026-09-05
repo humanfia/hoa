@@ -49,12 +49,11 @@ deductions in the natural-language runs are documented under Q3, Q6, and Q8.
 See each run's `GRADING.md` for every subproblem-level deduction and the full
 grading convention.
 
-## Open model x open harness: Kimi-K3
-
-Humanize gives an open-model path the same auditable loop used for the
-frontier-model run. Kimi-K3 reached the full **32/32** answer-blind Lean result
-and **47/47** requested outputs, while the repository releases its final Lean
-project, checksums, grading, experiment record, and worked solutions.
+Humanize supports open models and an open harness, using the same auditable
+loop as the frontier-model run. With this setup, Kimi-K3 reached the full
+**32/32** answer-blind Lean result and produced **47/47** requested outputs. The
+repository releases its final Lean project, checksums, grading, experiment
+record, and worked solutions.
 
 The historical Kimi campaign used `anthropic-kimi-k3` through Claude Code as
 the model client, with Humanize providing the agent loop and review workflow.
