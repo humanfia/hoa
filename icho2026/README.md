@@ -3,14 +3,16 @@
 > [!NOTE]
 > This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
-**Full verified result: both GPT-5.6 Sol and Kimi-K3 solved all 32/32 selected
-answer-blind Lean formalization targets, produced 47/47 requested outputs, and
-passed every proof review and the pinned Lean build with zero placeholders.**
+The **Humanfia team have aced all 32/32 selected IChO 2026 answer-blind Lean formalization targets** using a *fully agentic, YOLO-style approach*. Every Lean proof has been **formally verified** by Lean 4. The project is pinned to Lean 4.31.0 and Mathlib v4.31.0.
 
-This repository also preserves Humanize runs over all nine theoretical
-problems of the 58th International Chemistry Olympiad (IChO 2026), together
-with worked solutions, grading reports, provenance, and independently
-buildable Lean projects.
+We build with open source, and build for open source. We **release everything** including:
+* the final answer-blind Lean 4 statements and proofs [Kimi-K3](./kimi-k3-answer-blind) and [GPT-5.6 Sol](./gpt-5.6-sol-answer-blind);
+* the final worked solutions [Kimi-K3](./kimi-k3-max/solutions) and [GPT-5.6 Sol](./gpt-5.6-sol-max/solutions);
+* the grading reports, experiment records, checksums, and provenance used to audit the results.
+
+Notably, humanize enables **open source models like Kimi-K3** to achieve a **full 32/32 answer-blind Lean score at IChO 2026** as well! As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), We all love _open models X open harness_ 🎉 and the combination achieves full score at every competition:
+* [IMO2026](https://github.com/humanfia/imo2026) / [IOI2026](https://github.com/humanfia/ioi2026) / [IPhO2026](https://github.com/humanfia/ipho2026) / [IChO2026](https://github.com/humanfia/icho2026) / [IBO2024](https://github.com/humanfia/ibo2024)
+
 
 ## Results
 
@@ -48,12 +50,6 @@ atomic-mass precision gives the official `1135.01 g mol⁻¹`. The remaining
 deductions in the natural-language runs are documented under Q3, Q6, and Q8.
 See each run's `GRADING.md` for every subproblem-level deduction and the full
 grading convention.
-
-Humanize supports open models and an open harness, using the same auditable
-loop as the frontier-model run. With this setup, Kimi-K3 reached the full
-**32/32** answer-blind Lean result and produced **47/47** requested outputs. The
-repository releases its final Lean project, checksums, grading, experiment
-record, and worked solutions.
 
 The historical Kimi campaign used `anthropic-kimi-k3` through Claude Code as
 the model client, with Humanize providing the agent loop and review workflow.
