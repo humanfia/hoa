@@ -25,32 +25,10 @@ We build with open source, and build for open source. We release:
   [Kimi natural-language solutions](Kimi/NaturalLanguage/GRADING_REPORT.md), and
   optional [formalizations](GRADING_REPORT.md).
 
-## Start the natural-language experiment
+## Natural-language experiment
 
 The primary experiment is the answer-blind natural-language run: one isolated
-Humanize worker solves one theory problem and writes a complete `solution.md`.
-Install [Humanize](https://github.com/humanfia/humanize2), create a clean
-workspace containing only the problem statement and its figures, and launch a
-worker from that workspace:
-
-```bash
-python3 -m pip install 'git+https://github.com/humanfia/humanize2.git'
-
-mkdir -p ipho2026-nl-runs/T1
-cp /path/to/T1-problem-and-figures.pdf ipho2026-nl-runs/T1/problem.pdf
-cd ipho2026-nl-runs/T1
-
-hmz exec -f ralph_loop \
-  -a codex/gpt-5.6-sol:max \
-  "Solve every part of the supplied IPhO theory problem. Write a rigorous, self-contained solution to solution.md, including derivations, units, numerical work, requested figures, and consistency checks. Do not use official solutions or marking schemes."
-```
-
-Replace the input path and workspace name for T2 and T3, keeping the three
-workers isolated. To preserve the answer-blind setup, do not place official
-solutions, marking schemes, this repository's grading reports, or previous
-answers in a worker workspace. Run the workers with outbound web access blocked
-by your sandbox; the command above starts the Humanize loop but does not define
-the host's network policy.
+Humanize worker solves one theory problem and writes a complete solution.
 
 The published outputs are
 [`NaturalLanguage/T1_solution.md`](NaturalLanguage/T1_solution.md),
@@ -94,30 +72,16 @@ metadata.
 ## Optional: verify the Lean formalizations
 
 The natural-language experiment does not require Lean. As an additional check,
-install [Git](https://git-scm.com/) and
-[Elan](https://lean-lang.org/install/), then build the two optional formal
-projects:
+the GPT-5.6 Sol formalizations can be built with Lean `v4.32.0`, Mathlib, and
+PhysLean:
 
 ```bash
-git clone git@github.com:humanfia/ipho2026-no-leakage.git
-cd ipho2026-no-leakage
-
-# GPT-5.6 Sol: Lean 4.32.0, Mathlib, and PhysLean.
 lake exe cache get
 lake build
-
-# Kimi K3 Max: Lean and Mathlib 4.31.0.
-(
-  cd Kimi
-  lake update
-  lake exe cache get
-  lake build
-)
 ```
 
-Elan reads each project's `lean-toolchain` file and selects the pinned version
-automatically. A successful pair of `lake build` commands verifies all released
-Lean files.
+The separate Kimi formalizations have their own optional build instructions in
+[`Kimi/README.md`](Kimi/README.md).
 
 Every submitted proof elaborates without `sorry`, `admit`, custom axioms, or
 unsafe proof escapes. Its transitive axiom closure uses only Lean/Mathlib's
