@@ -29,6 +29,8 @@ We build with open source, and build for open source. We release:
 
 The primary experiment is the answer-blind natural-language run: one isolated
 Humanize worker solves one theory problem and writes a complete solution.
+Start with the three released solutions and their grading report; they are
+Markdown files and require no setup or build step.
 
 The published outputs are
 [`NaturalLanguage/T1_solution.md`](NaturalLanguage/T1_solution.md),
@@ -73,12 +75,17 @@ metadata.
 
 The natural-language experiment does not require Lean. As an additional check,
 the GPT-5.6 Sol formalizations can be built with Lean `v4.32.0`, Mathlib, and
-PhysLean:
+PhysLean. After cloning this repository, open a shell in the repository root and
+run the existing commands below:
 
 ```bash
 lake exe cache get
 lake build
 ```
+
+`lake exe cache get` downloads the precompiled dependencies for the pinned
+toolchain. `lake build` then checks every GPT-5.6 Sol formalization. The check is
+complete when `lake build` exits successfully without an error.
 
 The separate Kimi formalizations have their own optional build instructions in
 [`Kimi/README.md`](Kimi/README.md).
