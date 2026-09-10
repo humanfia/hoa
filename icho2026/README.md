@@ -22,6 +22,15 @@ The models received the official problem statements and images, but not the
 official solutions. Official-answer comparison happened only after generation
 and review had finished.
 
+For GPT-5.6 Sol, the independent post-run comparison reports an expected
+**168/168 raw rubric points (100%) on the 32 selected theory subquestions**,
+covering 47 requested outputs. This selected-set score is separate from the
+full theoretical-paper run below; it does not cover the remaining theory
+subquestions or the practical examination. See the [GPT validation report](gpt-5.6-sol-answer-blind/RESULTS.md)
+for the numerical precision notes, known auxiliary-carrier limitation, and
+source provenance. The score is a rubric-based reconstruction, not an official
+IChO jury score.
+
 | Run | Formalization review | Proof review | Lean build | Placeholders | Official-answer comparison |
 |---|---:|---:|---:|---:|---:|
 | [GPT-5.6 Sol](gpt-5.6-sol-answer-blind/) | **32/32** | **32/32** | passed | 0 | **47/47 outputs** |

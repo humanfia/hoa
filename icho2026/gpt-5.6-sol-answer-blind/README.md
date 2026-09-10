@@ -15,12 +15,17 @@ inputs.
 
 ## Result
 
+- Expected raw rubric score on the 32 selected subquestions: **168/168 (100%)**.
 - Formalization review: 32/32 passed.
 - Proof review: 32/32 solved.
 - Default `lake build`: passed.
 - Active `sorry`/`admit` placeholders: 0.
 - Requested outputs: 47/47 equivalent to the official rubric answers under
   equivalent chemical notation and ordinary numerical precision.
+
+The score is an independent post-run rubric comparison, not an official IChO
+jury score or a full-exam score. See [RESULTS.md](RESULTS.md) for the scope,
+numerical precision notes, known auxiliary-carrier limitation, and provenance.
 
 Generation used OpenAI `gpt-5.6-sol` through Codex. The release project comes
 from source commit `c9fcdb4c7abcb33f242edc401bef9131f2417c53` in
