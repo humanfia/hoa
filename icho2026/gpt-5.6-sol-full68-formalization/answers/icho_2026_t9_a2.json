@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t9_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "1C4",
+      "id": "chair_conformation",
+      "kind": "classification",
+      "raw_value": "oneCFour: unique bridge-mismatch minimizer over {fourCOne, oneCFour}",
+      "unit": ""
+    },
+    {
+      "display_value": "heptakis(3,6-anhydro)-beta-cyclodextrin; C2-OH free in every alpha-D unit",
+      "id": "structure_k",
+      "kind": "classification",
+      "raw_value": "intramolecular36Cyclization(betaCDStructure): remove O6, H(O3), and H(O6), then add O3-C6 in each of 7 stereoretentive alpha-D-glucopyranoside repeats",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

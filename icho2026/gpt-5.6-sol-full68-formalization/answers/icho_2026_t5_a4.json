@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t5_a4",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "IBr",
+      "id": "compound_x_formula",
+      "kind": "formula",
+      "raw_value": "X=IBr; C18H32O2 + 2 IBr -> C18H32O2Br2I2; w(I)=100*(2*126.90)/(280.452+2*(126.90+79.904))%=1269000/34703%",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

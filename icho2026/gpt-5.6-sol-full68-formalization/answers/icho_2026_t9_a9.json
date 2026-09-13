@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t9_a9",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "120",
+      "id": "arrangement_count",
+      "kind": "integer",
+      "raw_value": "(6 - 1)! = 5! = 120",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

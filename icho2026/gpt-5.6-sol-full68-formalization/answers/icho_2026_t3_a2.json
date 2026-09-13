@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "icho_2026_t3_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "15.0",
+      "id": "cof2_internal_diameter",
+      "kind": "numeric",
+      "raw_value": "sqrt(3) * (2*1.39 + 2*1.56 + 2*1.38)",
+      "unit": "angstrom"
+    }
+  ]
+}

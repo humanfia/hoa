@@ -3,9 +3,13 @@
 > [!NOTE]
 > This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
 
-The **Humanfia team have aced all 32/32 selected IChO 2026 answer-blind Lean formalization targets** using a *fully agentic, YOLO-style approach*. Every Lean proof has been **formally verified** by Lean 4. The project is pinned to Lean 4.31.0 and Mathlib v4.31.0.
+The **GPT full-theory experiment has completed all 68/68 Lean formalization targets across the 9 IChO 2026 theory problems**, under their declared input scopes: **66 original-input results and 2 explicitly conditional results**. See the [complete formalization release](gpt-5.6-sol-full68-formalization/). This is a formalization-completion result, **not a claim of 100% official-answer accuracy**.
+
+The earlier GPT and Kimi experiments also completed all **32/32 selected answer-blind Lean targets**. The projects are pinned to Lean 4.31.0 and Mathlib v4.31.0.
 
 We build with open source, and build for open source. We **release everything** including:
+
+* the [complete GPT full-theory formalization: 68 subquestions](gpt-5.6-sol-full68-formalization/), including the latest T8-A8 contest-model proof and its 12 checked lemmas;
 * the final answer-blind Lean 4 statements and proofs [Kimi-K3](./kimi-k3-answer-blind) and [GPT-5.6 Sol](./gpt-5.6-sol-answer-blind);
 * the final worked solutions [Kimi-K3](./kimi-k3-max/solutions) and [GPT-5.6 Sol](./gpt-5.6-sol-max/solutions);
 * the grading reports, experiment records, checksums, and provenance used to audit the results.
@@ -16,7 +20,40 @@ Notably, humanize enables **open source models like Kimi-K3** to achieve a **ful
 
 ## Results
 
-### Answer-blind Lean: full score
+### Full theory formalization: 68/68 targets accepted
+
+| Experiment | Theory coverage | Formalization review | Proof review | Declared scope |
+|---|---:|---:|---:|---|
+| [GPT-5.6 Sol full68](gpt-5.6-sol-full68-formalization/) | **9 problems / 68 numbered subquestions** | **68/68** | **68/68** | **66 original-input + 2 conditional** |
+
+All theoretical-paper formalization targets have passed the experiment's
+acceptance gates. **T4-A8** supplements the printed flow unit with `m³/day`.
+**T8-A8** uses two user-authorized, experiment-local contest-model axioms: the
+dark condition has no drawn H₂/CO product stack, and higher photon energy among
+the three illuminated conditions implies a strictly larger H₂ mole fraction.
+These are disclosed model inputs, not additional facts proved from the problem
+figures or universal chemistry laws. The latest T8 proof concludes
+`a=N, b=B, c=G, d=R` and includes 12 rechecked lemmas.
+
+Lean checks deductions from the encoded inputs; it does not itself certify
+that every encoding matches the official chemical answer. Post-run answer
+scoring is separate and is not represented by **68/68**. The historical
+selected-set scores in their own section belong to different experiments.
+
+### Full68 answer scoring — generous, non-official
+
+| Run | Raw points | Raw accuracy | Weighted theory score | Weighted accuracy |
+|---|---:|---:|---:|---:|
+| [GPT-5.6 Sol full68](gpt-5.6-sol-full68-formalization/grading/GRADING.md) | **424.5/437** | **97.14%** | **58.736/60** | **97.89%** |
+
+This user-requested generous grading accepts equivalent representations,
+reasonable rounding and justified partial credit, without erasing substantive
+chemical errors. It is **not an official IChO jury score**. The remaining
+deductions are T3-A3 (15/23) and T8-A4 (24.5/29); see the linked item-level
+report and grading-method disclosure. Formalization **68/68** and answer-score
+**97.89% weighted** measure different things.
+
+### Historical selected-set answer-blind Lean results
 
 The models received the official problem statements and images, but not the
 official solutions. Official-answer comparison happened only after generation
@@ -44,24 +81,12 @@ The normalized records are published in the
 dataset. Those records include official solution and rubric text as post-run
 evaluation metadata; those fields were never model inputs.
 
-### Full theoretical-paper runs
+### Historical natural-language runs
 
-| Run | Raw rubric score | Raw accuracy | Weighted theory score | Weighted accuracy |
-|---|---:|---:|---:|---:|
-| GPT-5.6 Sol max | 418.5/437 | 95.77% | 58.341/60 | 97.24% |
-| Kimi-K3 max | 417.5/437 | 95.54% | 58.209/60 | 97.02% |
-
-These are strict rubric-based reconstructions against the official English
-IChO 2026 solutions, not scores issued by the IChO jury. Both runs received
-full credit on Q1, Q2, Q4, Q5, and Q7; GPT also received full credit on Q9.
-
-Kimi-K3's one-point shortfall on Q9 was caused only by decimal rounding, not
-by the solution method. It rounded the molar mass of water to `18.02` before
-the final calculation and obtained `1134.98 g mol⁻¹`; retaining the booklet's
-atomic-mass precision gives the official `1135.01 g mol⁻¹`. The remaining
-deductions in the natural-language runs are documented under Q3, Q6, and Q8.
-See each run's `GRADING.md` for every subproblem-level deduction and the full
-grading convention.
+The earlier natural-language-only experiments are separate from the full68
+formalization release. Their original grading reports remain available:
+[GPT-5.6 Sol max](gpt-5.6-sol-max/GRADING.md) and
+[Kimi-K3 max](kimi-k3-max/GRADING.md). Their scores are not reused for full68.
 
 The historical Kimi campaign used `anthropic-kimi-k3` through Claude Code as
 the model client, with Humanize providing the agent loop and review workflow.
@@ -95,6 +120,9 @@ done
 
 A successful `lake build` type-checks the released formalizations and proofs
 under the toolchain pinned inside each project.
+
+For the complete 68-question project and its separate 13-module T8 audit,
+follow the [full68 reproduction instructions](gpt-5.6-sol-full68-formalization/#reproduce).
 
 ## Released artifacts
 

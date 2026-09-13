@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t7_a4",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "(HOCH₂CH₂)₂NCH₃ + CO₂ + H₂O → [(HOCH₂CH₂)₂NHCH₃]⁺ + HCO₃⁻",
+      "id": "reaction_equation",
+      "kind": "formula",
+      "raw_value": "(HOCH2CH2)2NCH3 + CO2 + H2O -> [(HOCH2CH2)2NHCH3]+ + HCO3-",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

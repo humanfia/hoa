@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t4_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "20.0",
+      "id": "average_collision_count",
+      "kind": "numeric",
+      "raw_value": "ln((2*1000000)/(12/1000))/(948/1000)",
+      "unit": "collisions"
+    }
+  ],
+  "schema_version": 1
+}

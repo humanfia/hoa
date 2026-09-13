@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t4_a8",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "7.03e12",
+      "id": "daily_energy",
+      "kind": "numeric",
+      "raw_value": "217864860675000000000000000000/30971373252620819",
+      "unit": "J day^-1"
+    }
+  ],
+  "schema_version": 1
+}

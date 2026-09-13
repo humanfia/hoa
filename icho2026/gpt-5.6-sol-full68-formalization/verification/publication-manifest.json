@@ -1,0 +1,13 @@
+{
+  "source_run": "gpt56-003",
+  "model": "gpt-5.6-sol",
+  "solving_concurrency": 32,
+  "original_problem_count": 9,
+  "numbered_subquestion_count": 68,
+  "target_gate_passes": 68,
+  "t8_latest_status": "contest_model_main_verified",
+  "t8_proof_recovery_reuses_prior_proofs": true,
+  "claim": "All 68 formalization targets accepted under their declared input scopes; not all source-only or official-answer full credit.",
+  "export_policy": "Lean sources, answer submissions and selected verification receipts only; no credentials, model homes, sessions or runtime logs.",
+  "original_source_bundle_sha256": "865b4417565ec94097e4287aa7746ee08fb527c80f72b7c15378fa0db9fd8ddc"
+}

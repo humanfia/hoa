@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t2_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "6.00e-6",
+      "id": "hbro2_process_a",
+      "kind": "numeric",
+      "raw_value": "(10000 * (3/50) * (4/5)) / (2 * 40000000) = 3/500000",
+      "unit": "mol dm^-3"
+    },
+    {
+      "display_value": "5.04e-11",
+      "id": "hbro2_process_b",
+      "kind": "numeric",
+      "raw_value": "((21/10) * (3/50) * (4/5)) / 2000000000 = 63/1250000000000",
+      "unit": "mol dm^-3"
+    }
+  ],
+  "schema_version": 1
+}

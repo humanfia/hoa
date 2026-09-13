@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t2_a3",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "3.00e-7",
+      "id": "bromide_critical",
+      "kind": "numeric",
+      "raw_value": "3/10000000",
+      "unit": "mol dm^-3"
+    }
+  ],
+  "schema_version": 1
+}

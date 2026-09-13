@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t7_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "2.80e5",
+      "id": "annual_methane_mass",
+      "kind": "numeric",
+      "raw_value": "660000 / (97/100) * (7 * 16.043) / (16 * 17.031)",
+      "unit": "tons"
+    }
+  ],
+  "schema_version": 1
+}

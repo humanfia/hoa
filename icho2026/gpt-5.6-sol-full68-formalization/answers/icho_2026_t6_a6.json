@@ -1,0 +1,49 @@
+{
+  "id": "icho_2026_t6_a6",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "1-methyl-3,5-di-tert-butylbenzene (C15H24)",
+      "id": "structure_m",
+      "kind": "classification",
+      "raw_value": "candidateMDescriptor: from the ten page-4 di-tert-butylated-toluene regioisomers, the four-proton/thermodynamic observations and the source-scoped Geuze et al. constitution record (DOI 10.1002/recl.19560750309) select benzene positions 0/2/4 = methyl/tert-butyl/tert-butyl; all other ring sites H; neutral closed shell",
+      "unit": ""
+    },
+    {
+      "display_value": "3,5-di-tert-butylbenzaldehyde (C15H22O)",
+      "id": "structure_n",
+      "kind": "classification",
+      "raw_value": "candidateNDescriptor: candidate M connectivity with the position-0 methyl replaced by CHO; neutral closed shell",
+      "unit": ""
+    },
+    {
+      "display_value": "zinc(II) 5,15-bis(3,5-di-tert-butylphenyl)porphyrin (C48H52N4Zn)",
+      "id": "structure_o",
+      "kind": "classification",
+      "raw_value": "candidateODescriptor: Zn porphyrin with 3,5-di-tert-butylphenyl at meso 5,15 and H at meso 10,20; Zn2+ plus two N-; no radicals or stereocentres",
+      "unit": ""
+    },
+    {
+      "display_value": "P6: cyclic hexamer of six zinc(II) 5,15-bis(3,5-di-tert-butylphenyl)porphyrins joined at 10,20 by six butadiyne links (C312H300N24Zn6)",
+      "id": "structure_p",
+      "kind": "classification",
+      "raw_value": "candidatePDescriptor: six R-derived Zn-porphyrin units in one cycle; terminal ethynyl carbons are paired by six C-C bonds to form six -C#C-C#C- links; template guest absent after DABCO",
+      "unit": ""
+    },
+    {
+      "display_value": "zinc(II) 10,20-dibromo-5,15-bis(3,5-di-tert-butylphenyl)porphyrin (C48H50Br2N4Zn)",
+      "id": "structure_q",
+      "kind": "classification",
+      "raw_value": "candidateQDescriptor: candidate O connectivity with both remaining meso H atoms replaced by Br; neutral closed shell",
+      "unit": ""
+    },
+    {
+      "display_value": "zinc(II) 10,20-diethynyl-5,15-bis(3,5-di-tert-butylphenyl)porphyrin (C52H52N4Zn)",
+      "id": "structure_r",
+      "kind": "classification",
+      "raw_value": "candidateRDescriptor: candidate Q connectivity with each meso Br replaced by terminal ethynyl (-C#CH) after coupling and desilylation; neutral closed shell",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t3_a6",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "-38.3",
+      "id": "stacking_energy_aa",
+      "kind": "numeric",
+      "raw_value": "4*(-7.9)+(-6.7)",
+      "unit": "kJ mol^-1"
+    },
+    {
+      "display_value": "-49.8",
+      "id": "stacking_energy_ab",
+      "kind": "numeric",
+      "raw_value": "1*(-49.8)",
+      "unit": "kJ mol^-1"
+    },
+    {
+      "display_value": "-55.6",
+      "id": "stacking_energy_ab_prime",
+      "kind": "numeric",
+      "raw_value": "1*(-55.6)",
+      "unit": "kJ mol^-1"
+    }
+  ],
+  "schema_version": 1
+}

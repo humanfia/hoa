@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t1_a6",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "Al₂[C₆(COO)₆]·16H₂O",
+      "id": "stone_formula",
+      "kind": "formula",
+      "raw_value": "Al2C12O12·16H2O",
+      "unit": ""
+    },
+    {
+      "display_value": "Al₂O₃",
+      "id": "compound_h_formula",
+      "kind": "formula",
+      "raw_value": "Al2O3",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

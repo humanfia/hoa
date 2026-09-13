@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t7_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "[(PNP)Mo(η¹-N₂)₂]₂(μ-η¹:η¹-N₂)",
+      "id": "structure_5",
+      "kind": "classification",
+      "raw_value": "neutral [(PNP)Mo(eta1-N2)2]2(mu-eta1:eta1-N2); C46H86Mo2N12P4; no Mo-Mo bond",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

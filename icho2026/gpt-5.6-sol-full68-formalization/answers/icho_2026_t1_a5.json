@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t1_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "Hexamethylbenzene: aromatic C6 ring with CH3 at each of the six ring sites (C12H18)",
+      "id": "structure_e",
+      "kind": "classification",
+      "raw_value": "explicit graph structureE: ring(i)-methyl(i), methyl(i)-H(i,0/1/2), aromatic ring edges; all atoms neutral, closed-shell, achiral",
+      "unit": ""
+    },
+    {
+      "display_value": "Mellitic acid (benzene-1,2,3,4,5,6-hexacarboxylic acid): aromatic C6 ring with CO2H at every site (C12H6O12)",
+      "id": "structure_f",
+      "kind": "classification",
+      "raw_value": "explicit graph structureF: ring(i)-C(i)(=O(i))-O(i)-H(i) at each i in Fin 6; all atoms neutral, closed-shell, achiral",
+      "unit": ""
+    },
+    {
+      "display_value": "Mellitic trianhydride (C12O9): three cyclic anhydrides formed by adjacent acyl pairs, with a threefold axis",
+      "id": "structure_g",
+      "kind": "classification",
+      "raw_value": "explicit graph structureG: aromatic ring(i)-acyl(i)=O(i), with bridge O(j) joining acyl(2j) and acyl(2j+1) for j in Fin 3",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

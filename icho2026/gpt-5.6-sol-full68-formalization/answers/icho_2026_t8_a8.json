@@ -1,0 +1,35 @@
+{
+  "id": "icho_2026_t8_a8",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "N",
+      "id": "condition_a",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.T8A8.IlluminationCondition.noIrradiation",
+      "unit": ""
+    },
+    {
+      "display_value": "B",
+      "id": "condition_b",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.T8A8.IlluminationCondition.blue",
+      "unit": ""
+    },
+    {
+      "display_value": "G",
+      "id": "condition_c",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.T8A8.IlluminationCondition.green",
+      "unit": ""
+    },
+    {
+      "display_value": "R",
+      "id": "condition_d",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.T8A8.IlluminationCondition.red",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

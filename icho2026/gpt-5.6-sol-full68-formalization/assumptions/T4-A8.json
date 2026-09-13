@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "record_id": "icho_2026_t4_a8",
+  "source_bundle_sha256": "865b4417565ec94097e4287aa7746ee08fb527c80f72b7c15378fa0db9fd8ddc",
+  "source_record_sha256": "2d0e4b9c891b7752aa1dc83b95ba09a2784e5117cafe1c8d7f9b9b6fa131c38b",
+  "assumption_id": "t4_a8_flow_per_day_user_approved",
+  "evaluation_basis": "user_assumption_augmented",
+  "original_problem_unchanged": true,
+  "authorization": {
+    "kind": "explicit_user_approval",
+    "recorded_at": "2026-09-11T14:01:13Z"
+  },
+  "supplement": {
+    "source_locator": "theory_problem.pdf page 39 / Q4-3, flow datum before 4.8",
+    "quantity": "volumetric_flow_Q",
+    "magnitude": "2.2e5",
+    "printed_unit": "m^3",
+    "assumed_unit": "m^3 day^-1",
+    "statement": "For this assumption-augmented experiment only, interpret the printed volumetric-flow magnitude Q = 2.2 × 10^5 m^3 as Q = 2.2 × 10^5 m^3 day^-1. The time denominator is an explicit user-authorized supplementary input, NOT a datum printed in the original problem and NOT an official erratum. All other inputs, prior-part derivation/fallback rules, requested outputs and numeric-reporting requirements are unchanged. Derive the requested energy under this assumption, and label the Lean model and task report with assumption id t4_a8_flow_per_day_user_approved. A passing result is conditional on this supplement, never an unconditional original-paper result."
+  }
+}

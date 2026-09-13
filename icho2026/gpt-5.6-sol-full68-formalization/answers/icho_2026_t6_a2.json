@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t6_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "C14Cl3 monoradical: a six-membered carbon ring fused through C2-C3 to a ten-membered carbon ring; Cl is attached at C0, C4, and C5; C1 bears one unpaired electron; the ten-ring contains C6#C7, C8#C9, C10#C11, and C12#C13.",
+      "id": "structure_b",
+      "kind": "classification",
+      "raw_value": "Atoms C0..C13,Cl14..Cl16; '-'=single,'='=double,'#'=triple; bonds C0-C1,C1=C2,C2-C3,C3=C4,C4-C5,C5=C0,C2-C6,C6#C7,C7-C10,C10#C11,C11-C12,C12#C13,C13-C8,C8#C9,C9-C3,C0-Cl14,C4-Cl15,C5-Cl16; radical C1; all formal charges 0; no stereocentres.",
+      "unit": ""
+    },
+    {
+      "display_value": "C14Cl monoradical: a fourteen-membered cumulene-like carbon ring, with Cl on C0, a single C0-C1 bond, one unpaired electron on C1, and double bonds on every other ring edge.",
+      "id": "structure_c",
+      "kind": "classification",
+      "raw_value": "Atoms C0..C13,Cl14; '-'=single,'='=double; 14-cycle C0-C1=C2=C6=C7=C10=C11=C12=C13=C8=C9=C3=C4=C5=C0; bond C0-Cl14; radical C1; all formal charges 0; no stereocentres.",
+      "unit": ""
+    },
+    {
+      "display_value": "C14Cl5 triradical: two fused six-membered carbon rings bearing two terminal Cl-C#C- arms; Cl is attached at C0, C5, C9, C11, and C12; C6, C10, and C13 each bear one unpaired electron.",
+      "id": "structure_d",
+      "kind": "classification",
+      "raw_value": "Atoms C0..C13,Cl14..Cl18; '-'=single,'='=double,'#'=triple; bonds C0#C1,C1-C2,C2=C3,C3-C4,C4#C5,C2-C6,C6=C7,C7-C8,C8=C9,C3-C9,C7-C10,C10=C11,C11-C12,C12=C13,C8-C13,C0-Cl14,C5-Cl15,C9-Cl16,C11-Cl17,C12-Cl18; radicals C6,C10,C13; all formal charges 0; no stereocentres.",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

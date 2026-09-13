@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t9_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "beta-CD L (primary A,D diol): all 14 secondary boxes are OBn; primary boxes 1 (A) and 4 (D) are CH2OH; primary boxes 2, 3, 5, 6, and 7 are CH2OBn; alpha-D-glucopyranoside stereochemistry is retained",
+      "id": "structure_l",
+      "kind": "classification",
+      "raw_value": "neutral closed-shell C175H184O35 beta-cyclodextrin with retained alpha-D-glucopyranoside stereochemistry; every C2/C3 oxygen is OBn; C6 is CH2OH at units 1 and 4 and CH2OBn at units 2, 3, 5, 6, and 7",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}
