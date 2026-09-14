@@ -72,11 +72,11 @@ The models received the official problem statements and images, but not the
 official solutions. Official-answer comparison happened only after generation
 and review had finished.
 
-For GPT-5.6 Sol, the independent post-run comparison reports an expected
-**168/168 raw rubric points (100%) on the 32 selected theory subquestions**,
-covering 47 requested outputs. This selected-set score is separate from the
-full theoretical-paper run below; it does not cover the remaining theory
-subquestions or the practical examination. See the [GPT validation report](gpt-5.6-sol-answer-blind/RESULTS.md)
+The independent post-run comparison reports an expected **168/168 raw rubric
+points (100%) on the 32 selected theory subquestions** for both GPT-5.6 Sol
+and Kimi-K3, covering 47 requested outputs. This selected-set score is
+separate from the full theoretical-paper run; it does not cover the remaining
+theory subquestions or the practical examination. See the [GPT validation report](gpt-5.6-sol-answer-blind/RESULTS.md)
 for the numerical precision notes, known auxiliary-carrier limitation, and
 source provenance. The score is a rubric-based reconstruction, not an official
 IChO jury score.
@@ -84,10 +84,7 @@ IChO jury score.
 | Run | Expected raw rubric points (selected set) | Formalization review | Proof review | Lean build | Placeholders | Official-answer comparison |
 |---|---:|---:|---:|---:|---:|---:|
 | [GPT-5.6 Sol](gpt-5.6-sol-answer-blind/) | **168/168 (100%)** | **32/32** | **32/32** | passed | 0 | **47/47 outputs** |
-| [Kimi-K3](kimi-k3-answer-blind/) | — | **32/32** | **32/32** | passed | 0 | **47/47 outputs** |
-
-The dash indicates that a raw-point total is not reported here for Kimi-K3;
-its output-comparison and review results are shown separately.
+| [Kimi-K3](kimi-k3-answer-blind/) | **168/168 (100%)** | **32/32** | **32/32** | passed | 0 | **47/47 outputs** |
 
 The normalized records are published in the
 [`humanfia-lab/icho-2026`](https://huggingface.co/datasets/humanfia-lab/icho-2026)

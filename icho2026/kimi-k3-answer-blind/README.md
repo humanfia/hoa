@@ -19,6 +19,7 @@ inputs.
 - Proof review: 32/32 solved.
 - Default `lake build`: passed.
 - Active `sorry`/`admit` placeholders: 0.
+- Expected raw rubric score on the 32 selected subquestions: **168/168 (100%)**.
 - Requested outputs: 47/47 equivalent to the official rubric answers under
   equivalent chemical notation and ordinary numerical precision.
 - Grounding logs: 28 complete; four documentation warnings remain for T5-A4,
