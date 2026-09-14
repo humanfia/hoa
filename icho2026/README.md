@@ -5,14 +5,14 @@
 
 The **GPT full-theory experiment has completed all 68/68 Lean formalization targets across the 9 IChO 2026 theory problems**, under their declared input scopes: **66 original-input results and 2 explicitly conditional results**. See the [complete formalization release](gpt-5.6-sol-full68-formalization/). This is a formalization-completion result, **not a claim of 100% official-answer accuracy**.
 
-**Kimi-K3 has now also completed all 68 numbered theory subquestions**: the earlier [32-target answer-blind run](kimi-k3-answer-blind/) plus the [remaining 36 formalizations](kimi-k3-nl-gpt36-formalization/). Combined coverage is **68/68** under those two releases' disclosed scopes. This is likewise formalization completion, **not a claim of 100% official-answer accuracy**.
+**Kimi-K3 has now also completed all 68 numbered theory subquestions**: the earlier [32-target answer-blind run](kimi-k3-answer-blind/) plus the [remaining 36 formalizations](kimi-k3-nl-36-formalization/). Combined coverage is **68/68** under those two releases' disclosed scopes. This is likewise formalization completion, **not a claim of 100% official-answer accuracy**.
 
 The earlier GPT selected-set experiment remains **32/32 answer-blind**. The projects are pinned to Lean 4.31.0 and Mathlib v4.31.0.
 
 We build with open source, and build for open source. We **release everything** including:
 
 * the [complete GPT full-theory formalization: 68 subquestions](gpt-5.6-sol-full68-formalization/), including the latest T8-A8 contest-model proof and its 12 checked lemmas;
-* the [Kimi-K3 remaining 36 formalizations](kimi-k3-nl-gpt36-formalization/), which together with the [earlier 32 answer-blind targets](kimi-k3-answer-blind/) cover all 68 theory subquestions;
+* the [Kimi-K3 remaining 36 formalizations](kimi-k3-nl-36-formalization/), which together with the [earlier 32 answer-blind targets](kimi-k3-answer-blind/) cover all 68 theory subquestions;
 * the final answer-blind Lean 4 statements and proofs [Kimi-K3](./kimi-k3-answer-blind) and [GPT-5.6 Sol](./gpt-5.6-sol-answer-blind);
 * the final worked solutions [Kimi-K3](./kimi-k3-max/solutions) and [GPT-5.6 Sol](./gpt-5.6-sol-max/solutions);
 * the grading reports, experiment records, checksums, and provenance used to audit the results.
@@ -28,7 +28,7 @@ Notably, humanize enables **open source models like Kimi-K3** to achieve **68/68
 | Experiment | Theory coverage | Formalization review | Proof review | Declared scope |
 |---|---:|---:|---:|---|
 | [GPT-5.6 Sol full68](gpt-5.6-sol-full68-formalization/) | **9 problems / 68 numbered subquestions** | **68/68** | **68/68** | **66 original-input + 2 conditional** |
-| [Kimi-K3 32+36](kimi-k3-nl-gpt36-formalization/) | **9 problems / 68 numbered subquestions** | **68/68** | **68/68** | **32 answer-blind + 31 original Kimi-NL + 3 conditional + 2 authorized corrections** |
+| [Kimi-K3 32+36](kimi-k3-nl-36-formalization/) | **9 problems / 68 numbered subquestions** | **68/68** | **68/68** | **32 answer-blind + 31 original Kimi-NL + 3 conditional + 2 authorized corrections** |
 
 All theoretical-paper formalization targets have passed the experiment's
 acceptance gates. **T4-A8** supplements the printed flow unit with `m³/day`.
@@ -40,7 +40,7 @@ figures or universal chemistry laws. The latest T8 proof concludes
 `a=N, b=B, c=G, d=R` and includes 12 rechecked lemmas.
 
 Kimi-K3's **68/68** is the union of two published campaigns, not a fresh
-full-paper answer-blind rerun. The additional [36-target release](kimi-k3-nl-gpt36-formalization/)
+full-paper answer-blind rerun. The additional [36-target release](kimi-k3-nl-36-formalization/)
 formalizes supplied Kimi natural-language answers. Its disclosed scopes are
 **T2-A6**, **T7-A6** and **T8-A8** (conditional contest-model inputs) plus
 authorized answer corrections on **T1-A1** and **T8-A4**. The remaining 31 of
@@ -115,7 +115,7 @@ Clone the repository and verify the released files:
 git clone https://github.com/humanfia/icho2026.git
 cd icho2026
 
-for run in gpt-5.6-sol-answer-blind kimi-k3-answer-blind kimi-k3-nl-gpt36-formalization; do
+for run in gpt-5.6-sol-answer-blind kimi-k3-answer-blind kimi-k3-nl-36-formalization; do
   (cd "$run" && sha256sum -c CHECKSUMS.sha256)
 done
 ```
@@ -123,7 +123,7 @@ done
 Build the pinned Lean projects:
 
 ```bash
-for run in gpt-5.6-sol-answer-blind kimi-k3-answer-blind kimi-k3-nl-gpt36-formalization; do
+for run in gpt-5.6-sol-answer-blind kimi-k3-answer-blind kimi-k3-nl-36-formalization; do
   (
     cd "$run"
     lake exe cache get
@@ -137,7 +137,7 @@ under the toolchain pinned inside each project.
 
 For the complete 68-question GPT project and its separate 13-module T8 audit,
 follow the [full68 reproduction instructions](gpt-5.6-sol-full68-formalization/#reproduce).
-The Kimi remaining-36 project has its own [reproduction notes](kimi-k3-nl-gpt36-formalization/#reproduce).
+The Kimi remaining-36 project has its own [reproduction notes](kimi-k3-nl-36-formalization/#reproduce).
 
 ## Released artifacts
 
@@ -147,7 +147,7 @@ The Kimi remaining-36 project has its own [reproduction notes](kimi-k3-nl-gpt36-
 - [`gpt-5.6-sol-answer-blind`](gpt-5.6-sol-answer-blind/) and
   [`kimi-k3-answer-blind`](kimi-k3-answer-blind/) are standalone Lean 4
   projects with pinned dependencies and checksums.
-- [`kimi-k3-nl-gpt36-formalization`](kimi-k3-nl-gpt36-formalization/) is the
+- [`kimi-k3-nl-36-formalization`](kimi-k3-nl-36-formalization/) is the
   remaining 36-target Kimi Lean project; together with
   [`kimi-k3-answer-blind`](kimi-k3-answer-blind/) it covers all 68 theory
   subquestions.

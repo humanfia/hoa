@@ -72,7 +72,7 @@ dependency caches are included. The source experiments were not edited.
 ## Reproduce
 
 ```bash
-cd kimi-k3-nl-gpt36-formalization
+cd kimi-k3-nl-36-formalization
 sha256sum -c CHECKSUMS.sha256
 lake exe cache get
 lake build
