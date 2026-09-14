@@ -1,56 +1,67 @@
 # Kimi-K3 — native Codex `/goal` baseline
 
-Fresh answer-blind experiment over **9 theory problems / 68 numbered subquestions**,
-using NVIDIA `nvidia/moonshotai/kimi-k3` and native persisted Codex goals.
-Maximum solver concurrency: **32**. This is separate from the historical
-Kimi 32+36 formalizations and does not use the Humanize review/redraft loop.
+Separate fresh answer-blind experiment over **9 theory problems / 68 numbered
+subquestions**, using native persisted Codex goals, Kimi-K3
+(`nvidia/moonshotai/kimi-k3`) and an observed peak of **32 concurrent solver
+jobs**. This is not the Humanize review/redraft solver loop and is not the
+earlier 32+36 Humanize coverage.
 
 | Measure | Result |
 |---|---:|
-| Native goals completed | 67/68; T1-A6 blocked and finally marked failed |
-| Canonical-path Lean compilation | 66/68 |
-| Alternate-path Lean compilation | 2/2 (T3-A6, T4-A6; filename exceptions) |
+| Native goals completed | 67/68 (T1-A6 blocked) |
+| Independently checked Lean compilation | 66/68 canonical; T3-A6 and T4-A6 have alternate-path receipts only |
 | Semantic review passed | 46/68 |
 | Proof review passed | 44/68 |
 | Combined independent acceptance | **31/68 (45.59%)** |
-| Structured reviews obtained | 66/68; 2 review-format errors |
-| Official-answer score | Not performed for this release |
+| Official-answer rubric score | **340.2/437 (77.85%); 47.674/60 (79.46%)** |
 
-Semantic outcomes: 46 passed, 13 conditional, 7 failed, 2 unavailable.
-Proof outcomes: 44 passed, 15 conditional, 7 failed, 2 unavailable.
-T5-A3 and T8-A5 produced prose-only reviews without valid structured verdicts;
-they are not accepted and are not silently counted as scientific failures.
-The aggregate gate also checks output coverage, unsupported-assumption fields,
-artifact conformance and fresh hashes. Reviewer field inconsistencies are preserved.
-Review verdicts are model assessments, not infallible judgments.
+Semantic outcomes: 46 passed, 13 conditional, 7 failed, 2 pending (T5-A3 and
+T8-A5 are review-format errors, not scientific fail verdicts). Proof outcomes:
+44 passed, 15 conditional, 7 failed, 2 pending. Canonical compilation is
+necessary but does not establish that a theorem faithfully proves the chemistry
+question. Independent reviews are model assessments, not infallible judgments.
 
-See [per-target results](controller/RESULTS.md),
-[machine-readable summary](controller/results-summary.json), and
-[final audit](controller/FINAL-AUDIT.md).
-Compilation and native goal completion do not establish chemistry correctness.
-**45.59% is formalization acceptance, not official-answer accuracy.**
+See [all 68 results and reviewer explanations](controller/RESULTS.md),
+[machine-readable outcomes](controller/results-summary.json),
+[final experiment audit](controller/FINAL-AUDIT.md), and the
+[official-answer grade](grading/GRADING.md).
 
-## Protocol
+## Protocol and scope
 
-Solvers received original questions, diagrams and blank answer sheets, but no
-historical generated answers, standard answers, grading records or supplementary
-user model assumptions. Each job had an isolated workspace. Other question
-statements were permitted; other generated answers and reviews were not inputs.
-Independent Kimi reviews used fresh contexts, without feedback to solvers.
-No rejected or conditional candidate was repaired during this evaluation.
+- Solvers received question-only material, original question images/PDF and blank
+  student answer sheets. No previous GPT/Kimi answers, grading records, or
+  supplementary user model assumptions were provided.
+- All solver outputs were frozen before independent semantic/proof evaluation.
+  Reviews did not feed back into solver goals; failed outputs were not repaired.
+  T1-A6 is a final blocked native goal by user instruction.
+- Ordinary scientific web references were allowed; official competition answers
+  were forbidden during solving. This run recorded zero native web-search events.
+  That is not a network-isolation guarantee.
+- PyMuPDF was installed before launch so the already supplied PDF could be read.
+- Reported native-goal usage: 21,134,287 tokens. This is not a billing estimate.
+- This is not a matched-budget causal comparison against the historical
+  Humanize experiments, which used different workflows and input scopes.
 
-Ordinary scientific HTTP was permitted; this was not a network air gap.
-The [transport record](controller/TRANSPORT.md) documents compatibility handling
-and two rate-limit recoveries preserving the original threads. Solver concurrency
-is not simultaneous upstream request concurrency. Reported native-goal usage:
-21,134,287 tokens, excluding review/preflight work; not a provider billing total.
+## Official-answer scoring status
 
-## Files and verification
+Post-run official-rubric comparison of the frozen answers is now complete:
+**340.2/437 raw (77.85%)**, **47.674/60 weighted
+(79.46%)**. Remaining deductions include T1-A6 (1/4),
+T2-A4 (0/2), T3-A3 (12/23), T3-A6 (0/12), T4-A3 (1.2/3), T4-A8 (1/2),
+T4-A9 (2/4), T5-A5 (0/2), T6-A1 (5/10), T6-A2 (5/11), T6-A6 (9/20),
+T7-A3 (2/15), T7-A5 (3/6), T8-A5 (3/5), T8-A6 (6/10), T8-A8 (0/4),
+T9-A2 (2/6), T9-A6 (0/4) and T9-A7 (0/6). The 45.59% figure
+above is formalization acceptance, not this chemistry score. No grading result
+was sent back to the frozen solvers. See [GRADING.md](grading/GRADING.md).
 
-Each `jobs/<target>/campaign/workspace/` contains the frozen answer, metadata,
-verification notes, Lean sources and pinned Lake files. `reviews/` contains
-original review outputs and input hashes; `controller/validation/` contains
-independent compilation receipts. Shared problem material is in `inputs/`.
+## Released files and local verification
+
+Each `jobs/<target>/campaign/workspace/` contains the frozen natural-language
+answer, result metadata, verification notes, Lean sources and pinned Lake files.
+`reviews/<target>/` contains the independent review and candidate-hash receipt;
+T5-A3 and T8-A5 also keep their format-recovery records. `controller/validation/<target>/`
+contains the independent Lean receipt and log, or the alternate-path receipt for
+T3-A6 and T4-A6. `inputs/` contains the shared question-only source material.
 
 ```bash
 sha256sum -c CHECKSUMS.sha256
@@ -59,9 +70,13 @@ lake exe cache get
 lake env lean IChO2026Problems/problem_icho_2026_t1_a1.lean
 ```
 
-These are 68 separate projects, not one merged build. T3-A6 and T4-A6 use the
-alternate filenames in their validation receipts. Historical absolute paths
-are retained as provenance; optional source lookup can use `../../../../inputs/`.
-The harness snapshot is for inspection, not a portable turnkey launcher.
-Credentials, authentication homes, raw model conversations, binaries and
-dependency caches are excluded. Prior experiments are unchanged by this release.
+Repeat the target-specific command for other jobs. The release contains separate
+projects, not a merged `lake build` project. Any optional source-image lookup from
+a job workspace can use the shared `../../../../inputs/` directory. Historical
+verification commands and controller receipts retain their original absolute
+paths as provenance; those host paths are not prerequisites for local compilation.
+
+`harness-snapshot/` preserves the main launcher/evaluator scripts for inspection.
+They retain original host paths and depend on infrastructure outside this release;
+they are **not a turnkey portable launcher**. Authentication homes, API credentials,
+raw model conversations, runtime binaries and dependency caches are excluded.

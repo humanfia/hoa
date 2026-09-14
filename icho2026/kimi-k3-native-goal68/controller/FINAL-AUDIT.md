@@ -17,6 +17,6 @@ The fresh Kimi-K3 native-goal 68-target run and its independent validation/revie
 - All known solver, validation, and review controller handles were confirmed absent after terminal results. No jobs remain queued.
 - `../reviews/status.json` is the controller's original exit snapshot (65 reviewed, 3 errors, 30 accepted), before host-only T9-A9 format recovery. The current per-target records and `results-summary.json` supersede those counts (66 reviewed, 2 errors, 31 accepted); the exit snapshot is preserved for provenance.
 
-No official-answer comparison was performed for this fresh run. The 31/68 aggregate acceptance fraction is **not** an official-answer accuracy score.
+Official-answer comparison of the frozen answers is recorded in [GRADING.md](../grading/GRADING.md): 340.2/437 raw, 47.674/60 weighted. The 31/68 aggregate acceptance fraction is **not** an official-answer accuracy score.
 
 See [per-target results](RESULTS.md) and [machine-readable summary](results-summary.json).

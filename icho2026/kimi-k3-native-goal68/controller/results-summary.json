@@ -35,7 +35,14 @@
     "failed": 1
   },
   "reported_goal_tokens": 21134287,
-  "official_answer_comparison": "not_performed",
+  "official_answer_comparison": {
+    "status": "graded",
+    "raw": "340.2",
+    "maximum": 437,
+    "weighted": "47.67394402790174556485081604",
+    "weighted_maximum": 60,
+    "full_credit_parts": 49
+  },
   "feedback_to_solver": false,
   "targets": [
     {
@@ -129,7 +136,7 @@
       "final_disposition": {
         "outcome": "failed",
         "rerun": false,
-        "authority": "User: T1-A6 \u963b\u585e\u5982\u679c\u4e00\u76f4\u963b\u585e\u5c31\u5224\u4ed6\u5931\u8d25",
+        "authority": "User: T1-A6 阻塞如果一直阻塞就判他失败",
         "reason": "Terminal goal_blocked; independent semantic and proof reviews both failed. Not awaiting further solver work.",
         "native_status_preserved": true,
         "review_status_preserved": true

@@ -8,7 +8,7 @@ Native goal outcomes: `{'goal_complete': 67, 'goal_blocked': 1}`.
 Fresh canonical-path Lean passes: 66/68.
 Review states: `{'reviewed': 66, 'review_error': 2}`. Accepted with fresh evidence: 31/68.
 
-Goal completion and Lean compilation alone do not establish chemistry correctness. Pending reviews are not failures. Conditional findings will remain conditional. No official-answer comparison has been performed for this run.
+Goal completion and Lean compilation alone do not establish chemistry correctness. Pending reviews are not failures. Conditional findings will remain conditional. Official-answer comparison of the frozen answers is now complete: **340.2/437 (77.85%)**, **47.674/60 (79.46%)**. See [GRADING.md](../grading/GRADING.md).
 
 Review errors mean no valid structured verdict was obtained, not a scientific failure or acceptance. A semantic/proof passed pair can still fail the aggregate gate (for example, a nonempty unsupported-assumptions field). Original reviewer fields are preserved, including inconsistencies.
 
