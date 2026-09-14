@@ -1,0 +1,14 @@
+IChO2026Problems/problem_icho_2026_t7_a6.lean:445:14: warning: This simp argument is unused:
+  page3Entries
+
+Hint: Omit it from the simp argument list.
+  simp [p̵a̵g̵e̵3̵E̵n̵t̵r̵i̵e̵s̵,̵ ̵mathematicalConsistencyWitness,
+  ̵  ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵MolarResponseScale.toAmmoniaAmount,
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲consistencyResponseScale,
+  ̵  ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵mathematicalWitnessScore, activeTriflateWitnessScore,
+            zeroYieldReferencePotential, zeroYieldReference, entryFeatures]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+IChO2026Problems/problem_icho_2026_t7_a6.lean:467:72: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

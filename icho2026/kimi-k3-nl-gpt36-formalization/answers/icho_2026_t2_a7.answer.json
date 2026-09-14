@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t2_a7",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "bottom-right graph: dG/dt stays below or on zero, is periodically modulated with decaying amplitude, and approaches zero",
+      "id": "gibbs_rate_graph",
+      "kind": "classification",
+      "raw_value": "the unique panel whose dG/dt is nonpositive for every nonnegative time, repeatedly modulated, and tends to 0 as time tends to infinity",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

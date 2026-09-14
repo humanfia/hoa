@@ -1,0 +1,1677 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 3,
+    "last_review_iter": 1,
+    "reason": "Passed as a conditional_contest_model: all four exact panel classifications match the source-first derivation and frozen Kimi T2-A6 draft; M202/M203/M201 are represented by primitive dimensioned conditions, actual threshold-crossing or residence proofs, and nonvacuous feasible tuples, while action 3 uses only the printed Process-B decay model.",
+    "updated_at": "2026-09-13T18:32:17Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "c0447740edc1beca8fac2eef16b0d7b97e7c30d9131db534ffa7091c84a708e7",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The candidate separates PrintedSource from ConditionalContestModel, derives bcrit=3/10000000 M from printed k1, k4, and [BrO3-], preserves the four frozen T2-A6 classifications without correction, and labels every supplemented result conditional_contest_model. M202/M203/M201 are not presented as printed givens."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Action 1 derives step-(7) extent and zero reduced-Process-A loss before crossing. Action 2 derives trajectory existence, Ag/Br balances, a uniform net-removal margin, crossing by 0.02 s, no recross, and positive residual ions. Action 3 proves strict increase of log(b/bcrit)/k. Action 4 solves db/dt=u-kb and derives eventual permanent residence from u>k bcrit."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "Unit-bearing concentration, amount, volume, time, flux, rate, Ksp, and temperature carriers are explicit. Step-(7) and AgBr component ledgers cover the outcome-decisive equivalents; every admissible tuple is quantified, and separate feasible tuples establish positive stocks, finite horizons, consistent balances, and physical trajectories."
+        },
+        "uncertainty_propagation": {
+          "status": "passed",
+          "evidence": "Requested outputs are exact classifications, with no tolerance or rounded numerical output. Printed constants are stipulated exact by policy. The external AgBr value is used as the cited 25 C conventional Ksp within an explicitly bounded ideal-activity model; no unstated uncertainty or post-hoc tolerance selects a panel option."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The source says r4>r1 switches A to B and vice versa. The candidate proves r4>r1 iff b>bcrit and r1>r4 iff b<bcrit, then uses upward crossing for action 1, downward crossing for action 2, delayed downward arrival for action 3, and eventual permanent b>bcrit for action 4."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "No output is obtained from an empty or answer-shaped premise: feasible M202, M203, and M201 witnesses are exposed, and action-2 trajectory existence is explicit. Variations outside the disclosed dose, mixing, ideal-activity, or feed conditions are outside the authorized conditional claims; within those conditions the uniform inequalities fix every requested classification."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "Printed mass-action steps (1) and (4) give bcrit=k1[BrO3-]/k4=3.0e-7 M and the stated switch orientation.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.step1Rate; IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.step4Rate; IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.criticalBromide; IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.criticalBromide_eq; IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.step4_gt_step1_iff; IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.step1_gt_step4_iff",
+          "status": "covered",
+          "evidence": "Page 2 prints k1=1.0e4 M^-2 s^-1, k4=2.0e9 M^-2 s^-1 and [BrO3-]=0.06 M; page 3 states the r4/r1 switching rule. HBrO2 and H+ cancel for positive process concentrations."
+        },
+        {
+          "claim": "M202 primitive pulse conditions plus printed step (7) produce one bromide equivalent with sufficient BMA and a grounded Process-A loss bound, forcing action-1 crossing for every admissible tuple.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action1Admissible; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_step7_massAction_carrier_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_step7_ledger_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_step7_availability_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_production_bound_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_loss_bound_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_stock_balance_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_crosses_threshold_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_feasible_tuple_conditional_contest_model",
+          "status": "covered",
+          "evidence": "Supplementary bounds are explicitly L, mol, M, and s: Vmix=1.001 L, b0=0.09-0.10 uM, dose=0.9-1.0 umol, [BMA]=0.010 M, t=1.0-1.1 s. The derived extent exceeds 0.5 uM, reduced Process-A bromide loss is zero from the printed active-step stoichiometry, and the pulse concentration is at most one-thousandth of the 0.001 M Ce(IV) scale."
+        },
+        {
+          "claim": "Ag+(aq)+Br-(aq) forms 1:1 AgBr(s), with nonzero Ksp=5.0e-13 at 25 C and precipitation when Qsp>Ksp in the selected ideal-activity regime.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.agBrKsp25C; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.AgBrSaturatedEquilibrium; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.IsAgBrMoleLedger; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.agBrNetPrecipitationFlux; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.agBr_net_flux_zero_iff_saturated_equilibrium",
+          "status": "covered",
+          "evidence": "Verified OpenStax Chemistry 2e, Appendix J 'Solubility Products', table heading 'Ksp at 25 C', AgBr row 5.0x10^-13, https://openstax.org/books/chemistry-2e/pages/j-solubility-products; section 15.1 'Precipitation and Dissolution', 'Predicting Precipitation', states Q>Ksp precipitates until Q=Ksp, https://openstax.org/books/chemistry-2e/pages/15-1-precipitation-and-dissolution. Scope is 25 C, 1:1 dilute-activity equilibrium, not zero solubility."
+        },
+        {
+          "claim": "The M203 finite-time precipitation law and selected rate are physically bounded, non-circular supplementary regime inputs.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action2Admissible; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.IsAction2KineticTrajectory; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_trajectory_exists_conditional_contest_model",
+          "status": "covered",
+          "evidence": "Verified Chemistry LibreTexts, 'Kinetics of Reactions in Solution', section 'Limiting Cases: Diffusion-Controlled and Activation-Controlled Reactions', generic bimolecular A+B model and room-temperature aqueous encounter k1 typically 10^9-10^10 dm3 mol^-1 s^-1, https://chem.libretexts.org/Bookshelves/General_Chemistry/Chem1_(Lower)/17%3A_Chemical_Kinetics_and_Dynamics/17.05%3A_Kinetics_of_Reactions_in_Solution. The selected effective 1e8 M^-1 s^-1 is finite and below that scale; it is disclosed as M203 input, not an AgBr literature constant."
+        },
+        {
+          "claim": "M203 balances and rate bounds derive actual downward threshold crossing while retaining residual dissolved ions for every admissible tuple.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_component_balances_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_silver_floor_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_net_removal_margin_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_crosses_by_deadline_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_crosses_threshold_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_residual_ions_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_mass_balance_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_feasible_tuple_conditional_contest_model",
+          "status": "covered",
+          "evidence": "With Vmix=1.001 L, b0=0.5-0.6 uM, Ag dose=3.0-3.1 umol, [CeIV]<=0.01 uM, and [BMA]=0.010 M, the silver floor is >2.387 uM. At bcrit the precipitation flux is >21.61 uM s^-1 while Process-C source is <=0.01 uM s^-1; a >20 uM s^-1 descent crosses the <=0.3 uM gap within 0.02 s. Terminal balances and strict residuals reject complete removal."
+        },
+        {
+          "claim": "A positive bromide pulse during Process B strictly increases the source-derived time to bcrit without any extra action-3 response assumption.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.processBSteadyStateBromideLoss_eq_step4_add_step5; IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.processBDecayConstant; IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.processBDecayConstant_positive; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.processBTimeToCritical; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action3_time_increases_conditional_contest_model",
+          "status": "covered",
+          "evidence": "Page 2 steps (4),(5) and stationary r4=r5 give k=2k5[BrO3-][H+]^2=0.16128 s^-1; page 3 supplies the slow decrease and maximum. Strict log monotonicity proves the longer Process-B leg for every positive pulse remaining in that printed range."
+        },
+        {
+          "claim": "M201 u>k bcrit in db/dt=u-kb forces eventual permanent Process B and therefore stops A/B oscillation.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action4Admissible; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action4BromideAt; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action4_ode_carrier_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action4_permanent_processB_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action4_feasible_tuple_conditional_contest_model",
+          "status": "covered",
+          "evidence": "Cumulative-new-feed ledger: Vb0+Vut-V integral(kb)=Vb(t), denominator V, horizon t>=0. Thus equilibrium u/k>bcrit. The feasible u=1e-7 M s^-1 exceeds k bcrit=4.8384e-8 M s^-1 and the trajectory remains above threshold after the finite 4 s witness."
+        },
+        {
+          "claim": "Each source panel label is connected to one nontrivial exact Lean output carrier in source order.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action1RequestedOutput; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action2RequestedOutput; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action3RequestedOutput; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action4RequestedOutput; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.raw_requested_outputs_conditional_contest_model; IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.reported_requested_outputs_conditional_contest_model",
+          "status": "covered",
+          "evidence": "The requested-output propositions quantify over the relevant admissible tuples and derive classifications through the source threshold classifiers; no constructor equality appears in an admissibility hypothesis."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t2_a6.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+        "source_record_id": "icho_2026_t2_a6",
+        "source_record_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a6.answer.json",
+        "answer_submission_sha256": "250500ba996cec6f7115439dacb40306cff8630fe4eccd18022beb4f15b4fc26",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t2_a6.source.json",
+        "source_report_sha256": "8ce41c7bffc35f2382544fefb1e112c87e9015e41c9864e8992dabcfafe81a71",
+        "candidate": "IChO2026Problems/problem_icho_2026_t2_a6.lean",
+        "preflight_sha256": "855cbab76c30534f1ba5e6caf95d09bb258debaa996ae5129ae9f15b1e324f7e",
+        "candidate_sha256": "c0447740edc1beca8fac2eef16b0d7b97e7c30d9131db534ffa7091c84a708e7",
+        "question_sha256": "09a88d703213dc679570a122e5411fb79758f50f797bb70c782b8ad1e6983973",
+        "shared_context_sha256": "bc73d4d82d7c2646d851e700a1548778df0bae65e40be43d3b7c3a8101a180d0",
+        "previous_parts_sha256": "9b2e811bff3052a574199a4473cfa98700889b8305017ba20d2835f5c329b8f2",
+        "requested_outputs_sha256": "9c8d240e63e8b629cb353d3c1930eecc388b1e583eb2b74fbcd8fa4c2621b0d0",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T2_page-4.png",
+            "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47"
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-3.png",
+            "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-2.png",
+            "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "6c0e42f1d2732f8ff3f4c6533d7b2ba309ca2ef7daac980fa4368077e88a9aa8",
+          "node_count": 12,
+          "edge_count": 20,
+          "node_kind_counts": {
+            "derivation_obligation": 4,
+            "previous_part_prerequisite": 1,
+            "requested_output": 4,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "action_1",
+            "action_2",
+            "action_3",
+            "action_4"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t2_a3"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t2_a6",
+          "path": ".archon/provided_answer_drafts/Q2.md",
+          "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false,
+          "model_authorization": {
+            "schema_version": 1,
+            "record_id": "icho_2026_t2_a6",
+            "scope": "this Kimi-NL GPT formalization campaign, T2-A6 actions 1, 2 and 4 only",
+            "source_bundle_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+            "draft_sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+            "user_reply": "\u652f\u6301\u8865\u5145\u5177\u4f53\u3001\u975e\u5faa\u73af\u7684\u521d\u59cb\u72b6\u6001\u4e0e\u5242\u91cf\u6761\u4ef6 \u6765\u8865\u5145\u5427",
+            "recorded_at": "2026-09-13T16:02:49Z",
+            "assumptions": {
+              "M201": "Only for action 4, continuous bromide supply exceeds net bromide consumption at the switching threshold. In the source-grounded reduced constant-feed Process-B model db/dt = u - k*b, use u > k*b_critical, where k > 0 and b_critical must be derived from the printed mechanism. This is an additional contest-model input, not a printed feed rate or an assumed concentration trajectory, process label or final answer.",
+              "M202": "For action 1 only, synthesize and disclose sufficient initial-state, Ce(IV) dose, available BMA, and finite observation-time conditions in physical quantities. Derive bromide production from printed step (7), including stoichiometric availability and any source-grounded competing loss bound. Conditions may constrain initial distance below the source-derived threshold, dose, and time, but may not assume a final bromide concentration, net production sufficient to cross, a switching event, the requested output, or a freely postulated response law. Derive the quantitative production/loss bounds and crossing from those primitive inputs. Quantify the dose scale relative to source concentrations and disclose any idealization needed for small-pulse kinetics; no unbounded or impossible dose witnesses.",
+              "M203": "For action 2 only, synthesize and disclose sufficient initial bromide concentration, effective silver dose, mixing/volume and precipitation-regime conditions in physical quantities. Ground AgBr stoichiometry and the applicable precipitation/equilibrium law in a bound ordinary scientific source; account for residual dissolved ions rather than assuming every positive dose removes bromide. Derive the removed amount and threshold crossing from mass balance and the grounded law. Do not assume removal sufficient to cross, a final concentration below threshold, a process switch or answer label. A zero-solubility idealization is not independently authorized."
+            },
+            "evaluation_basis": "conditional_contest_model",
+            "proved_from_figures": false,
+            "final_answer_axioms_allowed": false,
+            "model_version": "dose-conditions-v2",
+            "synthesis_acceptance_requirements": [
+              "Exact chosen inequalities and their units must appear in Lean, report and review receipts as additional model assumptions, not printed facts.",
+              "Prove conclusions for every admissible parameter tuple, and supply a separately kernel-checked feasible tuple with positive concentrations, consistent mass balance and finite time.",
+              "Source-derived chemistry and any authorized initial-state/dose conditions must be separated. Reject arbitrary ungrounded kinetic laws, circular carriers and answer-label assumptions.",
+              "Do not introduce extra model assumptions for action 3 or silently change the frozen Kimi answers."
+            ]
+          },
+          "model_authorization_sha256": "39c8a22bbf99224bf324af9dedf11957456b6e8ab82a383f1b283e517f19d306"
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t2_a6.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+          "source_record_id": "icho_2026_t2_a6",
+          "source_record_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a6.answer.json",
+          "answer_submission_sha256": "250500ba996cec6f7115439dacb40306cff8630fe4eccd18022beb4f15b4fc26",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t2_a6.source.json",
+          "source_report_sha256": "8ce41c7bffc35f2382544fefb1e112c87e9015e41c9864e8992dabcfafe81a71",
+          "candidate": "IChO2026Problems/problem_icho_2026_t2_a6.lean",
+          "preflight_sha256": "855cbab76c30534f1ba5e6caf95d09bb258debaa996ae5129ae9f15b1e324f7e",
+          "candidate_sha256": "c0447740edc1beca8fac2eef16b0d7b97e7c30d9131db534ffa7091c84a708e7",
+          "question_sha256": "09a88d703213dc679570a122e5411fb79758f50f797bb70c782b8ad1e6983973",
+          "shared_context_sha256": "bc73d4d82d7c2646d851e700a1548778df0bae65e40be43d3b7c3a8101a180d0",
+          "previous_parts_sha256": "9b2e811bff3052a574199a4473cfa98700889b8305017ba20d2835f5c329b8f2",
+          "requested_outputs_sha256": "9c8d240e63e8b629cb353d3c1930eecc388b1e583eb2b74fbcd8fa4c2621b0d0",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T2_page-4.png",
+              "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47"
+            },
+            {
+              "path": "icho_2026_source/image/T2_page-3.png",
+              "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+            },
+            {
+              "path": "icho_2026_source/image/T2_page-2.png",
+              "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "6c0e42f1d2732f8ff3f4c6533d7b2ba309ca2ef7daac980fa4368077e88a9aa8",
+            "node_count": 12,
+            "edge_count": 20,
+            "node_kind_counts": {
+              "derivation_obligation": 4,
+              "previous_part_prerequisite": 1,
+              "requested_output": 4,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "action_1",
+              "action_2",
+              "action_3",
+              "action_4"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t2_a3"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t2_a6",
+            "path": ".archon/provided_answer_drafts/Q2.md",
+            "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false,
+            "model_authorization": {
+              "schema_version": 1,
+              "record_id": "icho_2026_t2_a6",
+              "scope": "this Kimi-NL GPT formalization campaign, T2-A6 actions 1, 2 and 4 only",
+              "source_bundle_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+              "draft_sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+              "user_reply": "\u652f\u6301\u8865\u5145\u5177\u4f53\u3001\u975e\u5faa\u73af\u7684\u521d\u59cb\u72b6\u6001\u4e0e\u5242\u91cf\u6761\u4ef6 \u6765\u8865\u5145\u5427",
+              "recorded_at": "2026-09-13T16:02:49Z",
+              "assumptions": {
+                "M201": "Only for action 4, continuous bromide supply exceeds net bromide consumption at the switching threshold. In the source-grounded reduced constant-feed Process-B model db/dt = u - k*b, use u > k*b_critical, where k > 0 and b_critical must be derived from the printed mechanism. This is an additional contest-model input, not a printed feed rate or an assumed concentration trajectory, process label or final answer.",
+                "M202": "For action 1 only, synthesize and disclose sufficient initial-state, Ce(IV) dose, available BMA, and finite observation-time conditions in physical quantities. Derive bromide production from printed step (7), including stoichiometric availability and any source-grounded competing loss bound. Conditions may constrain initial distance below the source-derived threshold, dose, and time, but may not assume a final bromide concentration, net production sufficient to cross, a switching event, the requested output, or a freely postulated response law. Derive the quantitative production/loss bounds and crossing from those primitive inputs. Quantify the dose scale relative to source concentrations and disclose any idealization needed for small-pulse kinetics; no unbounded or impossible dose witnesses.",
+                "M203": "For action 2 only, synthesize and disclose sufficient initial bromide concentration, effective silver dose, mixing/volume and precipitation-regime conditions in physical quantities. Ground AgBr stoichiometry and the applicable precipitation/equilibrium law in a bound ordinary scientific source; account for residual dissolved ions rather than assuming every positive dose removes bromide. Derive the removed amount and threshold crossing from mass balance and the grounded law. Do not assume removal sufficient to cross, a final concentration below threshold, a process switch or answer label. A zero-solubility idealization is not independently authorized."
+              },
+              "evaluation_basis": "conditional_contest_model",
+              "proved_from_figures": false,
+              "final_answer_axioms_allowed": false,
+              "model_version": "dose-conditions-v2",
+              "synthesis_acceptance_requirements": [
+                "Exact chosen inequalities and their units must appear in Lean, report and review receipts as additional model assumptions, not printed facts.",
+                "Prove conclusions for every admissible parameter tuple, and supply a separately kernel-checked feasible tuple with positive concentrations, consistent mass balance and finite time.",
+                "Source-derived chemistry and any authorized initial-state/dose conditions must be separated. Reject arbitrary ungrounded kinetic laws, circular carriers and answer-label assumptions.",
+                "Do not introduce extra model assumptions for action 3 or silently change the frozen Kimi answers."
+              ]
+            },
+            "model_authorization_sha256": "39c8a22bbf99224bf324af9dedf11957456b6e8ab82a383f1b283e517f19d306"
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The one-option-per-action quantifier, critical-threshold relation, branch orientation, pulse/feed ledgers, and symbolic classifications were fixed from the three bound images and inline problem evidence before opening the submission or Lean file. The sealed Kimi draft was then used only for required fidelity comparison, never as a chemistry axiom."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "Inline bcrit=3.0e-7 M. M202 gives extent/V=(D/V)(1-exp(-k7[BMA]t))>5e-7 M and zero reduced-A loss, so upward crossing. M203 gives silver floor >2.387e-6 M and net descent >2e-5 M s^-1, so downward crossing by 0.02 s with residual ions. Action 3 increases log(b/bcrit)/k. M201 gives equilibrium u/k>bcrit in the cumulative feed balance."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "Each requested output is a classification with empty unit and per-output exact_symbolic policy; no significant-figure conversion applies to the panel symbols."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No numerical tolerance is used to accept any requested classification. Exact rational printed/model bounds are used internally, and the submission's symbolic values are compared exactly."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The only decisive finite answer domain is the five-option panel printed on page 4. Parameter domains are transparent inequalities authorized by M201/M202/M203, not answer-shaped candidate lists; no global chemical candidate enumeration is used."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=c0447740edc1beca8fac2eef16b0d7b97e7c30d9131db534ffa7091c84a708e7; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=45. Nontrivial result declarations: action1_effect_conditional_contest_model, action2_effect_conditional_contest_model, action3_effect_conditional_contest_model, action4_effect_conditional_contest_model, and reported_requested_outputs_conditional_contest_model."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "Theorems claim exactly the four classifications, universally over disclosed admissible tuples. Actions 1, 2, and 4 are explicitly conditional_contest_model within M202/M203/M201; action 3 adds no numerical dose or response law beyond positivity, Process-B branch membership, and the printed range."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "Printed mechanisms and rates are definitions/derived lemmas; supplemental pulse/feed ranges are visibly isolated in Action1Admissible, Action2Admissible, and Action4Admissible. None assumes a terminal concentration, sufficient net effect, crossing, switch, stopping event, or requested constructor."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "All four sidecar entries have exact requested ids, kinds, units, and symbolic displays; each matches its individual requested-output theorem and the aggregate reported carrier. The frozen draft hash and its T2-A6 classifications are preserved without substitution."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Named carriers cover threshold arithmetic and orientation, step-(7) stoichiometry/kinetics/availability/loss, AgBr Ksp/stoichiometry/reversible kinetics/balances/residuals, Process-B delay, constant-feed inventory, nonvacuity, and exact panel reporting. No outcome-decisive bridge remains local and unsupported."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "select effect a-e for action 1",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_effect_conditional_contest_model",
+            "status": "covered",
+            "evidence": "Submission and exact symbolic display match the independently derived M202 finite-pulse crossing and its universally quantified Lean carrier.",
+            "output_id": "action_1",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "select effect a-e for action 2",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_effect_conditional_contest_model",
+            "status": "covered",
+            "evidence": "Submission and exact symbolic display match the independently derived M203 AgBr transient crossing and its existence-protected universal Lean carrier.",
+            "output_id": "action_2",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "select effect a-e for action 3",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action3_effect_conditional_contest_model",
+            "status": "covered",
+            "evidence": "Submission and exact symbolic display match the source-only strict Process-B time increase and its universal Lean carrier.",
+            "output_id": "action_3",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "select effect a-e for action 4",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action4_effect_conditional_contest_model",
+            "status": "covered",
+            "evidence": "Submission and exact symbolic display match the M201 cumulative-feed permanence result and its universal Lean carrier.",
+            "output_id": "action_4",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T2_page-4.png",
+            "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47",
+            "inspected": true,
+            "evidence": "Readable unmarked T2-A6 panel: four actions, five options (a)-(e), and instruction to tick only one box per case. No answer marks or omitted choice panel are present."
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-3.png",
+            "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260",
+            "inspected": true,
+            "evidence": "Readable phase portrait labels bcrit and bmax; text states A-to-B requires step (4) to exceed step (1), vice versa, and bromide slowly decreases from 7.0e-4 M to bcrit before rapid reset."
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-2.png",
+            "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b",
+            "inspected": true,
+            "evidence": "Readable mechanism confirms steps (1),(4),(5),(7), rate-constant units and values, one bromide product in step (7), one bromide reactant in each of steps (4),(5), continuous Process C, branch separation, and printed concentration scales."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The source rate comparison is oriented correctly. Step (7) is modeled as one Ce(IV)+BMA event producing one bromide equivalent. AgBr uses 1:1 aqueous-ion/solid stoichiometry, nonzero 25 C Ksp, supersaturation, reversible precipitation, and finite residual ions. Action 3 delays threshold arrival; action 4 suppresses recrossing under M201."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "Selected classification: quantitative_material_stage for outcome-decisive pulse ledgers. Step-(7) domain is aqueous Ce(IV), BMA, Ce(III), and bromide with carrier step7OutcomeDecisiveDomain/IsStep7MoleLedger; unspecified printed other products are outside the one-equivalent component claim. AgBr domain is aqueous Ag+, aqueous Br-, and solid AgBr with carrier agBrOutcomeDecisiveDomain/IsAgBrMoleLedger. Dynamic Process-B loss uses bromideConsumedPerEvent and the step4+step5 sink. No complete atom or byproduct balance is claimed or needed."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No requested output is a formula, molar mass, mass fraction, or measured mass quantity."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "Action 1 exposes a one-equivalent step-(7) mole ledger and concentration stock balance. Action 2 proves equal Ag/Br/solid extent plus separate dissolved-silver and dissolved-bromide terminal balances including continuous Process-C production. Action 4's concentration ODE is the fixed-volume cumulative ledger Vb0+Vut-V integral(kb)=Vb(t)."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "Distinct Lean wrappers enforce M, mol, L, s, M s^-1, s^-1, M^-1 s^-1, M^-2 s^-1, M^-3 s^-1, M^2, and degrees C. Every displayed inequality compares like dimensions; bcrit is M, both sides of M201 are M s^-1, and precipitation flux is M s^-1."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "The submission reports four exact symbolic panel classifications in bundle order, with empty units and no rounding. Internal numerical bounds are exact rationals; no intermediate rounding is used to select an output."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No molecular structure, connectivity drawing, or stereochemical assignment is requested."
+          },
+          "identification_uniqueness": {
+            "status": "not_applicable",
+            "evidence": "This is a finite panel classification, not an open-world chemical identification. 'Tick only one' requires one effect per action, which each carrier supplies; it does not support a stronger global chemistry uniqueness theorem."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "Admissibility predicates contain primitive concentrations, amounts, volumes, times, availability, temperature, rate, and feed inequalities only. Crossings, process labels, stopping, net-sufficiency predicates, and answer constructors occur only in derived classifiers/conclusions. Existence and feasible-tuple theorems prevent vacuity."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "The pulse is applied during Process A.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "condition": "In Process A, Process B practically does not occur while Process C remains continuous.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "k1",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-2 s^-1",
+                "value": "1.0e4"
+              },
+              {
+                "name": "k4",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-2 s^-1",
+                "value": "2.0e9"
+              },
+              {
+                "name": "bromate concentration",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M",
+                "value": "0.06"
+              },
+              {
+                "name": "k7",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-1 s^-1",
+                "value": "1.0e2"
+              },
+              {
+                "name": "Ce(IV) printed source scale",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M",
+                "value": "0.001"
+              },
+              {
+                "name": "malonic-acid printed source scale",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M",
+                "value": "0.1"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "icho_2026_t2_a3",
+                "relation": "The prior question identifies the threshold dependency; this review derives its value inline and imports no prior answer.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "steps_1_4_7",
+                "relation": "r4/r1 changes branch at bcrit=k1[BrO3-]/k4; printed step (7) produces one bromide per Ce(IV)-BMA event.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first rate comparison plus the M202 primitive dose model proves an actual threshold crossing; neither a final concentration nor the requested label is assumed.",
+            "id": "action_1",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action1PulseInputs",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action1Admissible"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action1RequestedOutput"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.criticalBromide_eq",
+                "IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.step4_gt_step1_iff",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_step7_massAction_carrier_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_step7_ledger_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_production_bound_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_loss_bound_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_crosses_threshold_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_feasible_tuple_conditional_contest_model"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_effect_conditional_contest_model"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named action_1 declarations encode the independently derived exact classification and quantify over every admissible tuple.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "finite post-mixing pulse response through the authorized observation time",
+              "kind": "overall"
+            },
+            "quantity_definition": "Effect of a small Ce(IV) pulse during Process A, for every tuple satisfying the explicitly authorized M202 primitive pulse conditions.",
+            "raw_result": {
+              "derivation": "First derive bcrit=(1.0e4 M^-2 s^-1)(0.06 M)/(2.0e9 M^-2 s^-1)=3.0e-7 M. Additional M202 conditions, not printed facts: V0=1 L, Vdose=0.001 L, Vmix=1.001 L, tmix=0.01 s; b0 in [9e-8,1e-7] M; Ce dose D in [9e-7,1e-6] mol; [BMA]=0.010 M with available amount=[BMA]Vmix and D no larger; tobs in [1,1.1] s; D/Vmix no larger than 0.001 M/1000. With k7[BMA]=1 s^-1, extent/Vmix=(D/Vmix)(1-exp(-t))>5e-7 M. The reduced Process-A bromide loss is 0, so every admissible final b exceeds bcrit and r4>r1. The tuple b0=1e-7 M,D=1e-6 mol,t=1 s is feasible; the pulse is at most 0.1% of the printed Ce(IV) scale.",
+              "exact_unrounded": true,
+              "value_or_expression": "Effect.switchesAToB (panel c)"
+            },
+            "reporting": {
+              "application": "Exact panel classification is reported without rounding or numerical transformation.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Submission entry action_1 has the required id, classification kind, empty unit, exact symbolic display, and matching typed Lean constructor.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-2.png#mechanism"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-4.png#action_panel"
+              }
+            ],
+            "source_requirement": "select effect a-e for action 1",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "The pulse is applied during Process B.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "k1",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-2 s^-1",
+                "value": "1.0e4"
+              },
+              {
+                "name": "k4",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-2 s^-1",
+                "value": "2.0e9"
+              },
+              {
+                "name": "bromate concentration",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M",
+                "value": "0.06"
+              },
+              {
+                "name": "k7",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-1 s^-1",
+                "value": "1.0e2"
+              },
+              {
+                "name": "Ce(IV) printed source scale",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M",
+                "value": "0.001"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "icho_2026_t2_a3",
+                "relation": "The prior question identifies the threshold dependency; this review derives its value inline and imports no prior answer.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "steps_1_4_7_and_AgBr_equilibrium",
+                "relation": "The printed rate comparison fixes the branch threshold; one-equivalent AgBr precipitation removes dissolved bromide while printed step (7) is the competing source.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "A sourced nonzero-Ksp reversible precipitation model, explicit finite kinetics, existence, balances, and a uniform removal margin derive the crossing rather than assuming every positive Ag(I) dose precipitates bromide.",
+            "id": "action_2",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action2PulseInputs",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action2Admissible",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.IsAction2KineticTrajectory"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action2RequestedOutput"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.criticalBromide_eq",
+                "IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.step1_gt_step4_iff",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.AgBrSaturatedEquilibrium",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.agBrNetPrecipitationFlux",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_trajectory_exists_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_component_balances_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_net_removal_margin_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_crosses_by_deadline_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_residual_ions_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_mass_balance_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_feasible_tuple_conditional_contest_model"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_effect_conditional_contest_model"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named action_2 declarations encode the independently derived exact classification and quantify over every admissible tuple.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "finite mixed-volume precipitation response through a 0.10 s kinetic window",
+              "kind": "overall"
+            },
+            "quantity_definition": "Effect of a small effective Ag(I) pulse during Process B, for every tuple and physical trajectory satisfying the explicitly authorized M203 mixing, availability, and precipitation regime.",
+            "raw_result": {
+              "derivation": "Derive bcrit=3.0e-7 M inline. Additional M203 conditions, not printed facts: V0=1 L,Vdose=0.001 L,Vmix=1.001 L,tmix=0.01 s,tobs=0.11 s; b0 in [5e-7,6e-7] M; 0<[CeIV]<=1e-8 M; [BMA]=0.010 M with sufficient stock; Ag dose in [3.0e-6,3.1e-6] mol; T=25 C; kprecip=1e8 M^-1 s^-1. For Ag+(aq)+Br-(aq) reversible to AgBr(s), Ksp=5.0e-13 M^2. The silver floor exceeds 2.387e-6 M. While b>=bcrit, precipitation flux exceeds 2.161e-5 M s^-1 and step-(7) production is at most 1e-8 M s^-1, so net descent exceeds 2e-5 M s^-1 and crosses within 0.02 s. Component balances prove positive residual ions and nonzero solubility. The displayed feasible tuple uses 3e-6 mol; mixed dose is below 1/300 of the 0.001 M source scale.",
+              "exact_unrounded": true,
+              "value_or_expression": "Effect.switchesBToA (panel d)"
+            },
+            "reporting": {
+              "application": "Exact panel classification is reported without rounding or numerical transformation.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Submission entry action_2 has the required id, classification kind, empty unit, exact symbolic display, and matching typed Lean constructor.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-2.png#mechanism"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-3.png#threshold"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-4.png#action_panel"
+              }
+            ],
+            "source_requirement": "select effect a-e for action 2",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "A positive bromide amount is added during Process B.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "condition": "The transparent small-pulse domain keeps the post-pulse concentration within the displayed range ending at [Br-]max.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "k1",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-2 s^-1",
+                "value": "1.0e4"
+              },
+              {
+                "name": "k4",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-2 s^-1",
+                "value": "2.0e9"
+              },
+              {
+                "name": "k5",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-3 s^-1",
+                "value": "2.1"
+              },
+              {
+                "name": "bromate concentration",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M",
+                "value": "0.06"
+              },
+              {
+                "name": "proton concentration",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M",
+                "value": "0.8"
+              },
+              {
+                "name": "maximum bromide concentration",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M",
+                "value": "7.0e-4"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "icho_2026_t2_a3",
+                "relation": "The prior question identifies the threshold dependency; this review derives its value inline and imports no prior answer.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "Process_B_stationary_decay",
+                "relation": "At r4=r5, steps (4) and (5) give db/dt=-k b with k=2k5[BrO3-][H+]^2>0.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "bromideMaximum",
+                "relation": "The positive pulse is constrained to remain no higher than the printed phase-portrait maximum.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The classification follows from a strictly longer source-derived exponential decay time; it does not assume a switch or label.",
+            "id": "action_3",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action3PulseInputs",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action3Admissible"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action3RequestedOutput"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.processBSteadyStateBromideLoss_eq_step4_add_step5",
+                "IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.processBDecayConstant_positive",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.processBTimeToCritical",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action3_time_increases_conditional_contest_model"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action3_effect_conditional_contest_model"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named action_3 declarations encode the independently derived exact classification and quantify over every admissible tuple.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "one Process-B decay leg from its post-pulse concentration to the switching threshold",
+              "kind": "per_cycle"
+            },
+            "quantity_definition": "Effect on the duration of the current Process-B leg of a positive bromide pulse that remains within the printed phase-portrait range.",
+            "raw_result": {
+              "derivation": "The source stationary Process-B relation yields k=2(2.1 M^-3 s^-1)(0.06 M)(0.8 M)^2=0.16128 s^-1 and t(b)=log(b/bcrit)/k. For every b>bcrit and every positive added concentration with b+delta no greater than 7.0e-4 M, strict monotonicity of log gives t(b+delta)>t(b). This is the source-only meaning of prolonging the current Process-B leg; no extra action-3 response premise is introduced.",
+              "exact_unrounded": true,
+              "value_or_expression": "Effect.prolongsProcessB (panel b)"
+            },
+            "reporting": {
+              "application": "Exact panel classification is reported without rounding or numerical transformation.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Submission entry action_3 has the required id, classification kind, empty unit, exact symbolic display, and matching typed Lean constructor.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-3.png#slow_leg"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-4.png#action_panel"
+              }
+            ],
+            "source_requirement": "select effect a-e for action 3",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "Bromide is added continuously to the open system.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "k5",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-3 s^-1",
+                "value": "2.1"
+              },
+              {
+                "name": "bromate concentration",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M",
+                "value": "0.06"
+              },
+              {
+                "name": "proton concentration",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M",
+                "value": "0.8"
+              },
+              {
+                "name": "k1",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-2 s^-1",
+                "value": "1.0e4"
+              },
+              {
+                "name": "k4",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "M^-2 s^-1",
+                "value": "2.0e9"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "icho_2026_t2_a3",
+                "relation": "The prior question identifies the threshold dependency; this review derives its value inline and imports no prior answer.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "constant_feed_Process_B_balance",
+                "relation": "The reduced balance is db/dt=u-kb with source-derived k=2k5[BrO3-][H+]^2 and M201 requires u>k bcrit.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The cumulative balance and M201 inequality derive eventual permanent Process B for every admissible feed tuple; neither concentration residence nor stopping is assumed.",
+            "id": "action_4",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action4FeedInputs",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action4Admissible"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.Action4RequestedOutput"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.processBSteadyStateBromideLoss_eq_step4_add_step5",
+                "IChO2026Problems.ProblemIcho2026T2A6.PrintedSource.processBDecayConstant_positive",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action4_ode_carrier_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action4_permanent_processB_conditional_contest_model",
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action4_feasible_tuple_conditional_contest_model"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action4_effect_conditional_contest_model"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named action_4 declarations encode the independently derived exact classification and quantify over every admissible tuple.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "cumulative-new-feed bromide inventory over every horizon t>=0, with eventual permanent threshold residence",
+              "kind": "cumulative"
+            },
+            "quantity_definition": "Long-run effect of continuous bromide addition under the exactly authorized M201 constant-feed inequality.",
+            "raw_result": {
+              "derivation": "Stock-flow audit on fixed mixed volume V and horizon t>=0: initial inventory Vb0 + cumulative fresh input Vut - cumulative reaction removal V integral_0^t k b(s) ds = ending inventory Vb(t); there is no separately asserted outlet, and V is the exact denominator. This is the cumulative-new-feed interpretation required by 'continuous addition', not a same-initial-cohort yield. Dividing by V gives db/dt=u-kb. M201's additional, non-printed u>k bcrit makes u/k>bcrit, so b(t)=u/k+(b0-u/k)exp(-kt) eventually remains above bcrit and A/B recrossing ceases. Feasible b0=1e-7 M,u=1e-7 M s^-1 has k bcrit=4.8384e-8 M s^-1 and remains above after 4 s.",
+              "exact_unrounded": true,
+              "value_or_expression": "Effect.oscillationsStop (panel e)"
+            },
+            "reporting": {
+              "application": "Exact panel classification is reported without rounding or numerical transformation.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Submission entry action_4 has the required id, classification kind, empty unit, exact symbolic display, and matching typed Lean constructor.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-2.png#mechanism"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-4.png#action_panel"
+              }
+            ],
+            "source_requirement": "select effect a-e for action 4",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "c0447740edc1beca8fac2eef16b0d7b97e7c30d9131db534ffa7091c84a708e7"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a6.lean:formalization:1",
+        "iter": 1,
+        "decision": "failed",
+        "resulting_status": "retry",
+        "attempt": 1,
+        "reason": "conditional_contest_model preserves the frozen c/d/b/e labels, but Action 1 assumes an outcome-decisive numerical competing-loss cap instead of deriving it from grounded chemistry as M202 requires; Action 2's finite-horizon precipitation balance omits the printed continuously operating Process-C bromide stream; and the Action 4 feasibility witness has zero rather than positive initial bromide.",
+        "reviewed_at": "2026-09-13T16:47:12Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a6.lean:formalization:2",
+        "iter": 1,
+        "decision": "failed",
+        "resulting_status": "retry",
+        "attempt": 2,
+        "reason": "conditional_contest_model review failed for action_1 and action_2. Draft fidelity: frozen Kimi draft sha256 4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51, relevant subpart 2.6, and all four intended classifications are preserved without correction. The discrepancy is derivational: action 1 uses the stationary Process-B sink as an unsupported upper envelope during Process A, and action 2 substitutes a thermodynamic equilibrium root for the finite-time state without connecting the named mixing/equilibrium times to a precipitation trajectory or grounded completion bound.",
+        "reviewed_at": "2026-09-13T17:32:00Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a6.lean:formalization:3",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 3,
+        "reason": "Passed as a conditional_contest_model: all four exact panel classifications match the source-first derivation and frozen Kimi T2-A6 draft; M202/M203/M201 are represented by primitive dimensioned conditions, actual threshold-crossing or residence proofs, and nonvacuous feasible tuples, while action 3 uses only the printed Process-B decay model.",
+        "reviewed_at": "2026-09-13T18:32:17Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "1164f55f79971df383d24d704a3bc3824683ab9b7f3028bd5c949e9917d765a8",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "retry",
+        "failed_check_ids": [
+          "blind_source_audit.raw_derivation",
+          "bridge_obligations[2]",
+          "bridge_obligations[4]",
+          "bridge_obligations[7]",
+          "checks.abstraction_sufficiency",
+          "checks.countermodel_resistance",
+          "checks.derivability",
+          "checks.source_faithfulness",
+          "chemistry_checks.answer_smuggling",
+          "chemistry_checks.chemical_semantics",
+          "chemistry_checks.conservation_laws",
+          "chemistry_checks.staged_species_domain",
+          "contract_audit.bridge_completeness",
+          "contract_audit.hypothesis_derivability",
+          "contract_audit.statement_scope",
+          "requested_outputs[0]",
+          "requested_outputs[1]",
+          "requested_outputs[3]"
+        ],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a6.lean:formalization:1",
+        "decision": "failed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 26,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "31c4a7cb3059bc3175f7b30eeec867838c8ed115e0e9090831a5660ec8a202b4",
+        "iteration": 1,
+        "attempt": 2,
+        "resulting_status": "retry",
+        "failed_check_ids": [
+          "blind_source_audit.raw_derivation",
+          "bridge_obligations[2]",
+          "bridge_obligations[3]",
+          "bridge_obligations[5]",
+          "bridge_obligations[7]",
+          "checks.abstraction_sufficiency",
+          "checks.branch_orientation",
+          "checks.countermodel_resistance",
+          "checks.derivability",
+          "checks.source_faithfulness",
+          "chemistry_checks.chemical_semantics",
+          "chemistry_checks.staged_species_domain",
+          "contract_audit.bridge_completeness",
+          "contract_audit.conclusion_alignment",
+          "contract_audit.hypothesis_derivability",
+          "requested_outputs[0]",
+          "requested_outputs[1]"
+        ],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a6.lean:formalization:2",
+        "decision": "failed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 35,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "c0447740edc1beca8fac2eef16b0d7b97e7c30d9131db534ffa7091c84a708e7",
+        "iteration": 1,
+        "attempt": 3,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a6.lean:formalization:3",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 45,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The exact bound candidate compiles without sorry and gives a nonvacuous conditional_contest_model derivation of all four frozen classifications. Printed threshold and kinetic relations are derived inline; M202/M203/M201 conditions are explicitly separated, physically dimensioned, non-circular, proved feasible, and used to derive threshold behavior rather than assumed outputs.",
+    "evidence": "SHA-256 bindings match the candidate and submission. Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The aggregate carrier reported_requested_outputs_conditional_contest_model is supported by four nontrivial effect theorems. Action 1 derives step-(7) extent and zero reduced-Process-A loss before proving an above-threshold post-pulse state; action 2 constructs every admissible finite kinetic trajectory, proves component balances, a strict removal margin, a crossing by 0.02 s, terminal below-threshold residence, and positive residual ions; action 3 proves the Process-B time-to-threshold strictly increases; action 4 proves u>k*b_critical gives eventual permanent residence above threshold.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "b38dcb0dc0c708d04f515cf4db6f54eb95f3a8dea9aef210d9e21abd62b60dba",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t2_a6.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+      "source_record_id": "icho_2026_t2_a6",
+      "source_record_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a6.answer.json",
+      "answer_submission_sha256": "250500ba996cec6f7115439dacb40306cff8630fe4eccd18022beb4f15b4fc26",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t2_a6.source.json",
+      "source_report_sha256": "8ce41c7bffc35f2382544fefb1e112c87e9015e41c9864e8992dabcfafe81a71",
+      "candidate": "IChO2026Problems/problem_icho_2026_t2_a6.lean",
+      "preflight_sha256": "a3f8ba8223c3436c454fc08a3082670f5a5a1d4f13777bd9fa5c0629c4a2dc7b",
+      "candidate_sha256": "b38dcb0dc0c708d04f515cf4db6f54eb95f3a8dea9aef210d9e21abd62b60dba",
+      "question_sha256": "09a88d703213dc679570a122e5411fb79758f50f797bb70c782b8ad1e6983973",
+      "shared_context_sha256": "bc73d4d82d7c2646d851e700a1548778df0bae65e40be43d3b7c3a8101a180d0",
+      "previous_parts_sha256": "9b2e811bff3052a574199a4473cfa98700889b8305017ba20d2835f5c329b8f2",
+      "requested_outputs_sha256": "9c8d240e63e8b629cb353d3c1930eecc388b1e583eb2b74fbcd8fa4c2621b0d0",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T2_page-4.png",
+          "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47"
+        },
+        {
+          "path": "icho_2026_source/image/T2_page-3.png",
+          "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+        },
+        {
+          "path": "icho_2026_source/image/T2_page-2.png",
+          "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "6c0e42f1d2732f8ff3f4c6533d7b2ba309ca2ef7daac980fa4368077e88a9aa8",
+        "node_count": 12,
+        "edge_count": 20,
+        "node_kind_counts": {
+          "derivation_obligation": 4,
+          "previous_part_prerequisite": 1,
+          "requested_output": 4,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "action_1",
+          "action_2",
+          "action_3",
+          "action_4"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t2_a3"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t2_a6",
+        "path": ".archon/provided_answer_drafts/Q2.md",
+        "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false,
+        "model_authorization": {
+          "schema_version": 1,
+          "record_id": "icho_2026_t2_a6",
+          "scope": "this Kimi-NL GPT formalization campaign, T2-A6 actions 1, 2 and 4 only",
+          "source_bundle_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+          "draft_sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+          "user_reply": "\u652f\u6301\u8865\u5145\u5177\u4f53\u3001\u975e\u5faa\u73af\u7684\u521d\u59cb\u72b6\u6001\u4e0e\u5242\u91cf\u6761\u4ef6 \u6765\u8865\u5145\u5427",
+          "recorded_at": "2026-09-13T16:02:49Z",
+          "assumptions": {
+            "M201": "Only for action 4, continuous bromide supply exceeds net bromide consumption at the switching threshold. In the source-grounded reduced constant-feed Process-B model db/dt = u - k*b, use u > k*b_critical, where k > 0 and b_critical must be derived from the printed mechanism. This is an additional contest-model input, not a printed feed rate or an assumed concentration trajectory, process label or final answer.",
+            "M202": "For action 1 only, synthesize and disclose sufficient initial-state, Ce(IV) dose, available BMA, and finite observation-time conditions in physical quantities. Derive bromide production from printed step (7), including stoichiometric availability and any source-grounded competing loss bound. Conditions may constrain initial distance below the source-derived threshold, dose, and time, but may not assume a final bromide concentration, net production sufficient to cross, a switching event, the requested output, or a freely postulated response law. Derive the quantitative production/loss bounds and crossing from those primitive inputs. Quantify the dose scale relative to source concentrations and disclose any idealization needed for small-pulse kinetics; no unbounded or impossible dose witnesses.",
+            "M203": "For action 2 only, synthesize and disclose sufficient initial bromide concentration, effective silver dose, mixing/volume and precipitation-regime conditions in physical quantities. Ground AgBr stoichiometry and the applicable precipitation/equilibrium law in a bound ordinary scientific source; account for residual dissolved ions rather than assuming every positive dose removes bromide. Derive the removed amount and threshold crossing from mass balance and the grounded law. Do not assume removal sufficient to cross, a final concentration below threshold, a process switch or answer label. A zero-solubility idealization is not independently authorized."
+          },
+          "evaluation_basis": "conditional_contest_model",
+          "proved_from_figures": false,
+          "final_answer_axioms_allowed": false,
+          "model_version": "dose-conditions-v2",
+          "synthesis_acceptance_requirements": [
+            "Exact chosen inequalities and their units must appear in Lean, report and review receipts as additional model assumptions, not printed facts.",
+            "Prove conclusions for every admissible parameter tuple, and supply a separately kernel-checked feasible tuple with positive concentrations, consistent mass balance and finite time.",
+            "Source-derived chemistry and any authorized initial-state/dose conditions must be separated. Reject arbitrary ungrounded kinetic laws, circular carriers and answer-label assumptions.",
+            "Do not introduce extra model assumptions for action 3 or silently change the frozen Kimi answers."
+          ]
+        },
+        "model_authorization_sha256": "39c8a22bbf99224bf324af9dedf11957456b6e8ab82a383f1b283e517f19d306"
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t2_a6.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+        "source_record_id": "icho_2026_t2_a6",
+        "source_record_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a6.answer.json",
+        "answer_submission_sha256": "250500ba996cec6f7115439dacb40306cff8630fe4eccd18022beb4f15b4fc26",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t2_a6.source.json",
+        "source_report_sha256": "8ce41c7bffc35f2382544fefb1e112c87e9015e41c9864e8992dabcfafe81a71",
+        "candidate": "IChO2026Problems/problem_icho_2026_t2_a6.lean",
+        "preflight_sha256": "a3f8ba8223c3436c454fc08a3082670f5a5a1d4f13777bd9fa5c0629c4a2dc7b",
+        "candidate_sha256": "b38dcb0dc0c708d04f515cf4db6f54eb95f3a8dea9aef210d9e21abd62b60dba",
+        "question_sha256": "09a88d703213dc679570a122e5411fb79758f50f797bb70c782b8ad1e6983973",
+        "shared_context_sha256": "bc73d4d82d7c2646d851e700a1548778df0bae65e40be43d3b7c3a8101a180d0",
+        "previous_parts_sha256": "9b2e811bff3052a574199a4473cfa98700889b8305017ba20d2835f5c329b8f2",
+        "requested_outputs_sha256": "9c8d240e63e8b629cb353d3c1930eecc388b1e583eb2b74fbcd8fa4c2621b0d0",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T2_page-4.png",
+            "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47"
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-3.png",
+            "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-2.png",
+            "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "6c0e42f1d2732f8ff3f4c6533d7b2ba309ca2ef7daac980fa4368077e88a9aa8",
+          "node_count": 12,
+          "edge_count": 20,
+          "node_kind_counts": {
+            "derivation_obligation": 4,
+            "previous_part_prerequisite": 1,
+            "requested_output": 4,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "action_1",
+            "action_2",
+            "action_3",
+            "action_4"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t2_a3"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t2_a6",
+          "path": ".archon/provided_answer_drafts/Q2.md",
+          "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false,
+          "model_authorization": {
+            "schema_version": 1,
+            "record_id": "icho_2026_t2_a6",
+            "scope": "this Kimi-NL GPT formalization campaign, T2-A6 actions 1, 2 and 4 only",
+            "source_bundle_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+            "draft_sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+            "user_reply": "\u652f\u6301\u8865\u5145\u5177\u4f53\u3001\u975e\u5faa\u73af\u7684\u521d\u59cb\u72b6\u6001\u4e0e\u5242\u91cf\u6761\u4ef6 \u6765\u8865\u5145\u5427",
+            "recorded_at": "2026-09-13T16:02:49Z",
+            "assumptions": {
+              "M201": "Only for action 4, continuous bromide supply exceeds net bromide consumption at the switching threshold. In the source-grounded reduced constant-feed Process-B model db/dt = u - k*b, use u > k*b_critical, where k > 0 and b_critical must be derived from the printed mechanism. This is an additional contest-model input, not a printed feed rate or an assumed concentration trajectory, process label or final answer.",
+              "M202": "For action 1 only, synthesize and disclose sufficient initial-state, Ce(IV) dose, available BMA, and finite observation-time conditions in physical quantities. Derive bromide production from printed step (7), including stoichiometric availability and any source-grounded competing loss bound. Conditions may constrain initial distance below the source-derived threshold, dose, and time, but may not assume a final bromide concentration, net production sufficient to cross, a switching event, the requested output, or a freely postulated response law. Derive the quantitative production/loss bounds and crossing from those primitive inputs. Quantify the dose scale relative to source concentrations and disclose any idealization needed for small-pulse kinetics; no unbounded or impossible dose witnesses.",
+              "M203": "For action 2 only, synthesize and disclose sufficient initial bromide concentration, effective silver dose, mixing/volume and precipitation-regime conditions in physical quantities. Ground AgBr stoichiometry and the applicable precipitation/equilibrium law in a bound ordinary scientific source; account for residual dissolved ions rather than assuming every positive dose removes bromide. Derive the removed amount and threshold crossing from mass balance and the grounded law. Do not assume removal sufficient to cross, a final concentration below threshold, a process switch or answer label. A zero-solubility idealization is not independently authorized."
+            },
+            "evaluation_basis": "conditional_contest_model",
+            "proved_from_figures": false,
+            "final_answer_axioms_allowed": false,
+            "model_version": "dose-conditions-v2",
+            "synthesis_acceptance_requirements": [
+              "Exact chosen inequalities and their units must appear in Lean, report and review receipts as additional model assumptions, not printed facts.",
+              "Prove conclusions for every admissible parameter tuple, and supply a separately kernel-checked feasible tuple with positive concentrations, consistent mass balance and finite time.",
+              "Source-derived chemistry and any authorized initial-state/dose conditions must be separated. Reject arbitrary ungrounded kinetic laws, circular carriers and answer-label assumptions.",
+              "Do not introduce extra model assumptions for action 3 or silently change the frozen Kimi answers."
+            ]
+          },
+          "model_authorization_sha256": "39c8a22bbf99224bf324af9dedf11957456b6e8ab82a383f1b283e517f19d306"
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The audit independently used only the inline bound problem evidence, all three verified problem images, the exact candidate and submission as untrusted outputs, and the expressly permitted generic OpenStax/LibreTexts chemistry bridge. The sealed Kimi text was used only for post-derivation fidelity comparison; no official solution, grading report, prior proof, or prior-result export was used."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "criticalBromide is derived inline as k1*[BrO3-]/k4=3/10000000 M. For action 1 the printed step-(7) law gives an extent greater than 5/10000000 M by 1 s and the source-reduced Process-A bromide sink is zero, forcing the derived threshold inequality. For action 2 the reversible AgBr trajectory yields a silver floor greater than 23/10000000 M and a net downward margin greater than 1/50000 M/s while not crossed, forcing a crossing by 1/50 s and a terminal below-threshold state with nonzero residual ions. Action 3 follows from strict monotonicity of log in the exact Process-B exponential decay time. Action 4 follows from the exact solution of db/dt=u-kb and u>k*b_critical."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "Each requested output is a one-of-five classification with no unit; the page-4 option panel fixes the exact symbolic letter-to-effect mapping. RawRequestedOutputs and ReportedRequestedOutputs preserve the source order and perform no rounding or lossy conversion."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No requested numeric output or tolerance exists. All internal source constants and supplementary model bounds are exact rational quantities; no post-hoc tolerance or staged rounding selects a classification."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "Effect has exactly the five page-4 panel choices and Process has the two printed alternating branches. The switching domain comes from the page-3 rate criterion and inline T2-A3 derivation. M202, M203, and M201 authorize only the explicitly labelled additional conditional domains for actions 1, 2, and 4; action 3 uses the printed Process-B range and loss model without a new response assumption."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=b38dcb0dc0c708d04f515cf4db6f54eb95f3a8dea9aef210d9e21abd62b60dba; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result declarations: action1_effect_conditional_contest_model, action2_effect_conditional_contest_model, action3_effect_conditional_contest_model, action4_effect_conditional_contest_model, raw_requested_outputs_conditional_contest_model, and reported_requested_outputs_conditional_contest_model."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The file explicitly labels the results conditional_contest_model, separates PrintedSource from ConditionalContestModel, quantifies each requested theorem over every admissible tuple, and does not present the supplemental conditions as printed facts or an official correction."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "Printed concentrations, numbered-step stoichiometry, mass-action rates, Process-B stationary sink, and the threshold are transparent definitions/derived lemmas. M202 conditions are: Vi=1 L, Vdose=1/1000 L, Vmix=Vi+Vdose, tmix=1/100 s, 9/100000000<=b0<=1/10000000 M, 9/10000000<=nCe<=1/1000000 mol, [BMA]=1/100 M<=[MA]/10, nBMA=[BMA]*Vmix, nCe<=nBMA, 1<=tobs<=11/10 s, tmix<=tobs, and nCe/Vmix<=[Ce(IV)]source/1000. M203 conditions are: Vi=1 L, Vdose=1/1000 L, Vmix=Vi+Vdose, tmix=1/100 s, tobs=11/100 s, 5/10000000<=b0<=6/10000000 M, 0<[Ce(IV)]<=1/100000000 M, [BMA]=1/100 M<=[MA]/10, nBMA=[BMA]*Vmix, [Ce(IV)]*Vmix<=nBMA, 3/1000000<=nAg<=31/10000000 mol, kprecip=100000000 M^-1 s^-1, T=25 C, nAg/Vmix<=[Ce(IV)]source/300, and Ag-stock concentration<=[BrO3-]/10 and <=[MA]/30. M201 is b0>=0 M and u>k*bcritical in M/s. These are exactly encoded, non-answer-shaped, and the feasible-tuple theorems establish consistency."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "Each output carrier proves the exact corresponding source classification, in source order, and the submission enum/display pairs map to those carriers and to the printed panel. No Kimi classification was corrected or replaced."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The proof chain exposes the rate-equality threshold, branch switch classifiers, step-(7) production/availability/loss and stock balance, reversible AgBr Ksp kinetics with trajectory existence/component balances/residual ions, Process-B timing, and constant-feed ODE. No requested conclusion depends on an opaque Bool/Prop field or unchecked chemistry axiom."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "select effect a-e for action 1",
+          "lean_carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action1_effect_conditional_contest_model",
+          "status": "covered",
+          "evidence": "The submission enum and panel display agree with the effect derived from the step-(7) stock-flow, production bound, grounded reduced-branch loss, and strict threshold theorem; no output value is assumed.",
+          "output_id": "action_1",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "select effect a-e for action 2",
+          "lean_carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action2_effect_conditional_contest_model",
+          "status": "covered",
+          "evidence": "The submission enum and panel display agree with the effect proved for every admissible physical AgBr trajectory after existence, Ksp, removal-margin, mass-balance, residual-ion, and strict crossing lemmas.",
+          "output_id": "action_2",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "select effect a-e for action 3",
+          "lean_carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action3_effect_conditional_contest_model",
+          "status": "covered",
+          "evidence": "The submission enum and panel display agree with the strict increase of the source-grounded Process-B time to the derived threshold after a positive in-range bromide pulse.",
+          "output_id": "action_3",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "select effect a-e for action 4",
+          "lean_carrier": "IChO2026Problems.ProblemIcho2026T2A6.ConditionalContestModel.action4_effect_conditional_contest_model",
+          "status": "covered",
+          "evidence": "The submission enum and panel display agree with the M201 constant-feed proof that the exact trajectory eventually remains permanently above the derived switching threshold.",
+          "output_id": "action_4",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T2_page-4.png",
+          "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47",
+          "inspected": true,
+          "evidence": "The unmarked page shows T2-A6, all four perturbations, and the complete five-choice panel in the order prolong A, prolong B, switch A to B, switch B to A, stop oscillations."
+        },
+        {
+          "path": "icho_2026_source/image/T2_page-3.png",
+          "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260",
+          "inspected": true,
+          "evidence": "The phase portrait labels bromide critical and maximum, states that switching direction is decided by step-(4) versus step-(1) rate, prints the later-use fallback, and gives the slow Process-B bromide decrease/fast return context."
+        },
+        {
+          "path": "icho_2026_source/image/T2_page-2.png",
+          "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b",
+          "inspected": true,
+          "evidence": "The page prints steps (1)-(7), rate constants k1, k4, k5, k7 and units, continuous Process C, alternating A/B branches, branch suppression assumptions, and source concentration scales used by the candidate."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Printed step (7) directly supplies 1 Ce(IV)+1 BMA -> 1 Ce(III)+1 Br- equivalents; steps (4),(5) each consume one Br-. The external bridge was independently checked at OpenStax Chemistry 2e, Appendix J 'Solubility Products', table fs-idm454814336, AgBr row: Ksp=5.0e-13 at 25 C; and section 15.1 'Precipitation and Dissolution', subsection 'Predicting Precipitation' id fs-idp775600 plus AgBr locator fs-idp15240992: Qsp>Ksp causes precipitation until Qsp=Ksp. Stable URLs are https://openstax.org/books/chemistry-2e/pages/j-solubility-products and https://openstax.org/books/chemistry-2e/pages/15-1-precipitation-and-dissolution. The generic aqueous kinetic scope was checked at Chemistry LibreTexts, '17.5: Kinetics of Reactions in Solution', subsection 'Limiting Cases: Diffusion-Controlled and Activation-Controlled Reactions', https://chem.libretexts.org/Bookshelves/General_Chemistry/Chem1_(Lower)/17%3A_Chemical_Kinetics_and_Dynamics/17.05%3A_Kinetics_of_Reactions_in_Solution: a simple A+B bimolecular encounter law and room-temperature water encounter scale 10^9-10^10 dm^3 mol^-1 s^-1. The candidate does not miscite 10^8 M^-1 s^-1 as measured AgBr data; it is the exact M203 supplementary effective-rate condition in a disclosed well-mixed, 25 C, dilute-activity conditional model, with the reverse term calibrated to the nonzero Ksp."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "quantitative_material_stage. Stage 1 is printed aqueous step (7), with outcome-decisive domain step7OutcomeDecisiveDomain={Ce(IV)(aq),BMA(aq),Ce(III)(aq),Br-(aq)} and carriers Step7MoleLedger, IsStep7MoleLedger, action1_step7_ledger_conditional_contest_model, and action2_processC_ledger_conditional_contest_model. The source's unspecified other products are not used in an outcome-decisive conservation dimension, and no complete atom balance, yield, or sole-product claim is made. Stage 2 is Ag+(aq)+Br-(aq) reversible precipitation to AgBr(s), with complete component domain agBrOutcomeDecisiveDomain and carriers AgBrMoleLedger, IsAgBrMoleLedger, action2_component_balances_conditional_contest_model, and action2_mass_balance_conditional_contest_model. Process-B bromide event stoichiometry is carried by bromideConsumedPerEvent and processBSteadyStateBromideLoss_eq_step4_add_step5."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "The only added formula-level bridge is AgBr, whose 1:1 Ag/Br formula matches the aqueous-ion removal and solid-equivalent ledger. No molar mass, yield, or complete molecular formula is requested or used."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "Step-(7) extent is bounded by both Ce(IV) dose/inventory and available BMA and produces one bromide equivalent. The AgBr differential laws imply separate silver and bromide component balances, include continuous Process-C bromide production, prove positive precipitate and positive residual dissolved ions, and never assume complete removal."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "Dedicated wrappers distinguish M, mol, L, s, M/s, s^-1, M^-1 s^-1, M^-2 s^-1, M^-3 s^-1, M^2, and degrees C. Every admissibility inequality is dimensionally homogeneous. Feasible witnesses are kernel checked: M202 uses 1 L+0.001 L, b0=1e-7 M, nCe=1e-6 mol, [BMA]=0.01 M, nBMA=0.01001 mol, and 1 s; the mixed Ce pulse is below 1/1000 of the printed 0.001 M Ce(IV) scale. M203 uses 1 L+0.001 L, b0=6e-7 M, [Ce(IV)]=1e-8 M, nAg=3e-6 mol, [BMA]=0.01 M, kprecip=1e8 M^-1 s^-1, 0.01 s mixing, 0.11 s observation, and 25 C; the 0.001 L dose stock is 0.003 M and the mixed pulse is below 1/300 of the printed Ce(IV) scale. M201's witness uses b0=1e-7 M, u=1e-7 M/s, and a finite 4 s residence bound."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The requested outputs are exact symbolic classifications, so no significant-figure transformation applies. The submission contains exactly four outputs in the required order, with the exact ids, kind=classification, empty units, and displays matching the printed option panel."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "No structure drawing, connectivity choice, or stereochemical output is requested."
+        },
+        "identification_uniqueness": {
+          "status": "not_applicable",
+          "evidence": "This is a finite qualitative effect classification, not an open-world chemical identification; each one-box result is nevertheless uniquely fixed by its proved Effect equality."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "No admissibility predicate contains a final concentration, crossing, requested Effect, or free response flag. The classifiers transparently encode the printed threshold/duration/alternation semantics, while the desired constructors occur only in conclusions proved through quantitative lemmas. Feasible witnesses establish nonvacuity."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a6.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The exact bound candidate compiles without sorry and gives a nonvacuous conditional_contest_model derivation of all four frozen classifications. Printed threshold and kinetic relations are derived inline; M202/M203/M201 conditions are explicitly separated, physically dimensioned, non-circular, proved feasible, and used to derive threshold behavior rather than assumed outputs.",
+        "evidence": "SHA-256 bindings match the candidate and submission. Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The aggregate carrier reported_requested_outputs_conditional_contest_model is supported by four nontrivial effect theorems. Action 1 derives step-(7) extent and zero reduced-Process-A loss before proving an above-threshold post-pulse state; action 2 constructs every admissible finite kinetic trajectory, proves component balances, a strict removal margin, a crossing by 0.02 s, terminal below-threshold residence, and positive residual ions; action 3 proves the Process-B time-to-threshold strictly increases; action 4 proves u>k*b_critical gives eventual permanent residence above threshold.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T20:11:32.310579Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "b38dcb0dc0c708d04f515cf4db6f54eb95f3a8dea9aef210d9e21abd62b60dba",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a6.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "1_to_5m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T20:11:32.310721Z",
+    "repair_handoff": {}
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t1_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "hexamethylbenzene, C6(CH3)6 (C12H18)",
+      "id": "structure_e",
+      "kind": "classification",
+      "raw_value": "C6(CH3)6: a six-membered aromatic carbon ring bearing one CH3 substituent at every ring carbon",
+      "unit": ""
+    },
+    {
+      "display_value": "mellitic acid (benzenehexacarboxylic acid), C6(COOH)6 (C12H6O12)",
+      "id": "structure_f",
+      "kind": "classification",
+      "raw_value": "C6[C(=O)OH]6: a six-membered aromatic carbon ring bearing one carboxylic-acid group at every ring carbon",
+      "unit": ""
+    },
+    {
+      "display_value": "mellitic anhydride (mellitic trianhydride), C12O9",
+      "id": "structure_g",
+      "kind": "classification",
+      "raw_value": "C12O9: the six adjacent carboxyl carbons of the mellitic skeleton are paired (1,2), (3,4), and (5,6) by three C(=O)-O-C(=O) anhydride bridges",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

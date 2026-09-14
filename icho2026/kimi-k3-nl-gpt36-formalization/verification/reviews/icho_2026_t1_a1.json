@@ -1,0 +1,906 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "Passed: both requested exact-symbolic identities are independently supported by the bound table image, same-formula graph audit, forward qualitative acid-cycloisomerization topology, and Y mirror permutation. The sole authorized Y auxiliary-connectivity correction is exact, preserves both Kimi identities, and every result is labelled gpt_corrected_kimi_draft; no uniqueness, yield, or completion claim is added.",
+    "updated_at": "2026-09-13T11:55:55Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "cc8d5c705d9c94937f5aaafee966f814c536f01e1ce2be27e0f3cbcdd659da70",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "T1_page-2 supplies the numbered/formula-labelled structures, four distinct elixir roles, forward X-to-Y acid isomerization, and Y symmetry. The candidate returns the source-supported compound-6 and compound-3 witnesses, preserves their identities, corrects only Y's auxiliary connectivity, and does not claim global uniqueness or quantitative reaction completion."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "The image-read c6 and corrected c3 graphs each have 10 C, 1 O, and 18 valence-completed H. The ordered graph audit records the two alkene-to-single changes plus C1-C6 and O-C7 closures, and the explicit c3 involution swaps both ethylene bridges and gem methyls while preserving atoms and bonds."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "HeavyAtomGraph, CyclizationRoles, formula realization, the ordered qualitative certificate, and the explicit mirror permutation cover every identity-decisive structural fact. Three-dimensional coordinates and mechanistic intermediates are omitted, but the requested concrete identifications rely only on the depicted constitution, its visible symmetry, and non-quantitative direction."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "Both outputs are exact symbolic classifications. No measured quantity, tolerance, significant-figure choice, or numerical uncertainty enters T1-A1."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The source direction is X as the compound-6 allylic-alcohol graph at the tail and Y as the corrected compound-3 ether cage at the head in acidic medium. The certificate parameters, roles, stages, and submitted pair preserve that direction and never use the reverse implication."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The theorem supplies concrete witnesses rather than an open-world uniqueness claim. Each witness is tied to a complete source-read graph, formula audit, forward compatibility certificate, and (for Y) a nontrivial core reflection. No free Bool/Prop exclusion, candidate singleton domain, or source-compatible alternative invalidates these requested witnesses."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The X output denotes the numbered compound-6 structure and its linalool constitution/formula.",
+          "carrier": "IChO2026Problems.Icho2026T1A1.Compound6ImageCarrier; IChO2026Problems.Icho2026T1A1.IdentityXRawResult",
+          "status": "covered",
+          "evidence": "The c6 image carrier expands the complete 10-C/1-O acyclic graph, validates all bonds and valences, realizes C10H18O, and binds the table number; the output packages that nontrivial graph rather than assuming an identity predicate."
+        },
+        {
+          "claim": "The Y output denotes the numbered compound-3 1,8-cineole cage and its corrected auxiliary representation.",
+          "carrier": "IChO2026Problems.Icho2026T1A1.Compound3ImageCarrier; IChO2026Problems.Icho2026T1A1.IdentityYRawResult",
+          "status": "covered",
+          "evidence": "The c3 carrier expands the full 10-C/1-O bicyclo[2.2.2] graph, validates formula/valence and number, and the raw output binds the independently checked corrected string and graph."
+        },
+        {
+          "claim": "Compound 6 is compatible with the source-stated forward isomerization to compound 3 in acidic medium, used non-quantitatively.",
+          "carrier": "IChO2026Problems.Icho2026T1A1.QualitativeAcidCycloisomerizationCertificate; IChO2026Problems.Icho2026T1A1.linalool_to_corrected_cineole_qualitative_compatibility",
+          "status": "covered",
+          "evidence": "The problem statement supplies the limited named-transform authority. The ordered certificate transparently binds tail/head graphs, atom retention, both complete connectivities, formula conservation, six named acid-cyclization stages, and expressly makes no yield, completion, phase, or sole-product assertion."
+        },
+        {
+          "claim": "The selected Y has the source-stated plane of symmetry.",
+          "carrier": "IChO2026Problems.Icho2026T1A1.cineoleReflection; IChO2026Problems.Icho2026T1A1.corrected_cineole_mirror_plane",
+          "status": "covered",
+          "evidence": "The explicit involution fixes the bridgeheads, O, gem carbon, and bridgehead methyl while exchanging the two two-carbon bridges and the two gem methyls; it preserves every element label and bond."
+        },
+        {
+          "claim": "Only the authorized Y auxiliary SMILES/connectivity is changed, with the frozen draft retained and the exact discrepancy exposed.",
+          "carrier": "IChO2026Problems.Icho2026T1A1.frozenDraftYSmiles; IChO2026Problems.Icho2026T1A1.YConnectivityCorrection; IChO2026Problems.Icho2026T1A1.AuthorizedCorrectionOnly",
+          "status": "covered",
+          "evidence": "The original string is preserved verbatim. The old graph connects the methyl-bearing bridgehead to the gem carbon and the opposite bridgehead to O; the corrected graph swaps exactly those two attachments. All X fields and all non-connectivity Y fields are proved unchanged."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t1_a1.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+        "source_record_id": "icho_2026_t1_a1",
+        "source_record_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a1.answer.json",
+        "answer_submission_sha256": "cea183dda45ffde970ac59eefb8aaed09791c01625634569e07c2abc3fd60b81",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t1_a1.source.json",
+        "source_report_sha256": "45eced091584c581be8ccac304e25310b38f84aa37b416447d6393bf6af04f13",
+        "candidate": "IChO2026Problems/problem_icho_2026_t1_a1.lean",
+        "preflight_sha256": "b4f1d27f2bc87e71d3b0ac645af9abccdc8377b9d38b51850487cc432ef2a2de",
+        "candidate_sha256": "cc8d5c705d9c94937f5aaafee966f814c536f01e1ce2be27e0f3cbcdd659da70",
+        "question_sha256": "9ecd8d8002b2782087b7d5b95f77b4850e4bc915f9d922788d87f0ce5a0868b8",
+        "shared_context_sha256": "3280382b825c3143ac50f9c404de6338fd41405f9bdd04c8e2acde9821385cc4",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "00d39449bae50cb1142b496aaa8ce543fe295d68b1389afcbdee59ebf4cb0eb6",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-1.png",
+            "sha256": "c03ceb7b203d63570c24c999ca3894c33b346a86ea54879d30c3c2650e992f52"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "618c42f7f288740aad169d0e62602404d14ebe1ab732fc7f5387c55fc8728d3a",
+          "node_count": 7,
+          "edge_count": 8,
+          "node_kind_counts": {
+            "derivation_obligation": 2,
+            "requested_output": 2,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "identity_x",
+            "identity_y"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t1_a1",
+          "path": ".archon/provided_answer_drafts/Q1.md",
+          "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": true,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false,
+          "correction_authorization": {
+            "schema_version": 1,
+            "record_id": "icho_2026_t1_a1",
+            "source_bundle_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+            "draft_sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+            "recorded_at": "2026-09-13T11:05:27Z",
+            "user_reply": "\u5355\u72ec\u91cd\u8dd1\u8fd9\u4e24\u9898",
+            "scope": "Preserve the source-supported compound numbers and identities. Correct only the inconsistent auxiliary Y SMILES/connectivity to match the depicted molecule and the original Kimi chemical name; keep the original string and exact graph discrepancy in the report. Independently verify the corrected representation.",
+            "evaluation_basis": "gpt_corrected_kimi_draft",
+            "preserve_original": true,
+            "scientific_model_assumptions_authorized": false
+          },
+          "correction_authorization_sha256": "1f9b309f68ea161954d22d3104777d4718afd735a40f03289162c4186ae02db7"
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t1_a1.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+          "source_record_id": "icho_2026_t1_a1",
+          "source_record_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a1.answer.json",
+          "answer_submission_sha256": "cea183dda45ffde970ac59eefb8aaed09791c01625634569e07c2abc3fd60b81",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t1_a1.source.json",
+          "source_report_sha256": "45eced091584c581be8ccac304e25310b38f84aa37b416447d6393bf6af04f13",
+          "candidate": "IChO2026Problems/problem_icho_2026_t1_a1.lean",
+          "preflight_sha256": "b4f1d27f2bc87e71d3b0ac645af9abccdc8377b9d38b51850487cc432ef2a2de",
+          "candidate_sha256": "cc8d5c705d9c94937f5aaafee966f814c536f01e1ce2be27e0f3cbcdd659da70",
+          "question_sha256": "9ecd8d8002b2782087b7d5b95f77b4850e4bc915f9d922788d87f0ce5a0868b8",
+          "shared_context_sha256": "3280382b825c3143ac50f9c404de6338fd41405f9bdd04c8e2acde9821385cc4",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "00d39449bae50cb1142b496aaa8ce543fe295d68b1389afcbdee59ebf4cb0eb6",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T1_page-2.png",
+              "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+            },
+            {
+              "path": "icho_2026_source/image/T1_page-1.png",
+              "sha256": "c03ceb7b203d63570c24c999ca3894c33b346a86ea54879d30c3c2650e992f52"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "618c42f7f288740aad169d0e62602404d14ebe1ab732fc7f5387c55fc8728d3a",
+            "node_count": 7,
+            "edge_count": 8,
+            "node_kind_counts": {
+              "derivation_obligation": 2,
+              "requested_output": 2,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "identity_x",
+              "identity_y"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t1_a1",
+            "path": ".archon/provided_answer_drafts/Q1.md",
+            "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": true,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false,
+            "correction_authorization": {
+              "schema_version": 1,
+              "record_id": "icho_2026_t1_a1",
+              "source_bundle_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+              "draft_sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+              "recorded_at": "2026-09-13T11:05:27Z",
+              "user_reply": "\u5355\u72ec\u91cd\u8dd1\u8fd9\u4e24\u9898",
+              "scope": "Preserve the source-supported compound numbers and identities. Correct only the inconsistent auxiliary Y SMILES/connectivity to match the depicted molecule and the original Kimi chemical name; keep the original string and exact graph discrepancy in the report. Independently verify the corrected representation.",
+              "evaluation_basis": "gpt_corrected_kimi_draft",
+              "preserve_original": true,
+              "scientific_model_assumptions_authorized": false
+            },
+            "correction_authorization_sha256": "1f9b309f68ea161954d22d3104777d4718afd735a40f03289162c4186ae02db7"
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "Both digest-matched student pages were inspected and the identify-witness quantifier, absence of any stock-flow issue, graph inventories, symmetry, and forward transformation were frozen before the generated submission and Lean candidate were opened. The sealed Kimi draft was treated only as the correction-history object, never as a source axiom."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "End-to-end exact carriers are linaloolGraph/compound6_image_carrier -> linalool_to_corrected_cineole_qualitative_compatibility -> correctedCineoleGraph/compound3_image_carrier -> corrected_cineole_mirror_plane -> IdentityXRawResult and IdentityYRawResult. No rounding or answer-key value is used."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0] and [1] specify exact_symbolic classifications with empty units; the submission and IdentityXReportedResult/IdentityYReportedResult apply that rule once. The required gpt_corrected_kimi_draft label is present."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or needed: the outputs, table numbers, formulas, graph adjacencies, strings, and reporting comparison are exact."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The only finite filter represented is the non-singleton set {2,3,6,10}, derived uniformly from the repeated printed C10H18O formula and distinct X/Y roles. It is not asserted to exhaust the chemical universe or used to claim uniqueness; the requested outputs are direct source-supported witnesses."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=cc8d5c705d9c94937f5aaafee966f814c536f01e1ce2be27e0f3cbcdd659da70; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=16. Nontrivial result declarations are IdentityXRawResult, IdentityYRawResult, IdentityXReportedResult, IdentityYReportedResult, AuthorizedCorrectionOnly, and icho_2026_t1_a1_target."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The main theorem proves the two concrete identification witnesses plus exact authorized-correction fidelity. It neither strengthens 'Identify' to uniqueness/all-solutions nor adds quantitative yield, sole-product, or mechanism claims."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The target is closed: table formulas/rows and both molecular graphs are transparent data copied from the bound image, while validity, formula, graph-edit, mirror, and correction relations are explicit propositions. No requested identity is injected as a hypothesis or free selectable flag."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "RawResult and ReportedResult expose exactly identity_x then identity_y as concrete classifications, and the bound answer JSON has the same two ids/kinds/units/order. Neither output is a diagnostic sentinel or unresolved placeholder."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are named: each image graph/formula, forward qualitative acid transformation, Y mirror mapping, exact-symbolic reporting, and the scoped original-to-corrected Y connectivity audit. No dormant empirical bridge is needed."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "identity of X",
+            "lean_carrier": "IChO2026Problems.Icho2026T1A1.IdentityXReportedResult",
+            "status": "covered",
+            "evidence": "The first submission object has the exact required id/kind/empty unit and an exact-symbolic concrete classification matching the independently audited compound-6 image and forward-transform carriers.",
+            "output_id": "identity_x",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "identity of Y",
+            "lean_carrier": "IChO2026Problems.Icho2026T1A1.IdentityYReportedResult",
+            "status": "covered",
+            "evidence": "The second submission object has the exact required id/kind/empty unit and an exact-symbolic concrete classification matching the independently audited compound-3 image, mirror, and authorized corrected-connectivity carriers.",
+            "output_id": "identity_y",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [
+          {
+            "source_claim": "The compound-3 drawing has the third bridge ordered methyl-bearing bridgehead-O-gem-dimethyl carbon-other bridgehead.",
+            "blueprint_or_lean_claim": "The frozen Kimi auxiliary string CC12CCC(CC1)OC2(C)C instead bonds the methyl-bearing bridgehead to the gem-dimethyl carbon and the opposite bridgehead to O; the Lean file preserves that original and substitutes CC12CCC(CC1)C(C)(C)O2 only in the corrected output.",
+            "status": "resolved_in_favor_of_problem_source",
+            "evidence": "Independent token-by-token parsing gives C10H18O for both strings but non-isomorphic element-colored graphs. YConnectivityCorrection records exactly the two removed adjacencies and two replacement adjacencies, and AuthorizedCorrectionOnly freezes every other X/Y field."
+          }
+        ],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb",
+            "inspected": true,
+            "evidence": "All table panels and labels were read. The repeated-formula panels are 2,3,6,10. Panel 6 has 11 heavy nodes (10 C, 1 O): C=C-C(OH)(Me)-C-C-C=C(Me)2, heavy-degree pattern 1,2,4,2,2,2,3,1,1,1 plus terminal O degree 1, and valence completion C10H18O. Panel 3 has 11 heavy nodes, all single bonds: bridgeheads joined by two C-C bridges and BMe-O-C(Me)2-B, carbon degrees 4,4,3, four degree-2 and three degree-1 nodes, O degree 2, giving C10H18O. Its reflection swaps both C-C bridges and the gem methyls. Panels 2 and 10 are respectively a saturated bicyclic alcohol and cyclic ketone, not those tail/head topologies. There are no legends, repeat brackets, caps, condensation losses, or cross-boundary bonds."
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-1.png",
+            "sha256": "c03ceb7b203d63570c24c999ca3894c33b346a86ea54879d30c3c2650e992f52",
+            "inspected": true,
+            "evidence": "The page contains the title, scoring table, narrative, and Part 1 setup. It confirms the table is the chemist's list of extractable compounds and contains no student answer, hidden structure panel, repeat unit, reaction arrow, numerical datum, or competing T1-A1 output."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "Isomerization is applied only to distinct compounds with the same C10H18O formula. Compound 6 is the depicted tertiary allylic alcohol and compound 3 the depicted bicyclic ether; the transparent bond-order changes and two ring closures provide the limited constitutional compatibility required by the source observation."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only: the source relation 'X can isomerise into Y in an acidic medium' is represented with compound-6/linaloolGraph as tail, acidic activation/catalyst-regeneration as the named medium role, and corrected compound-3/correctedCineoleGraph as head, in that direction. QualitativeAcidCycloisomerizationCertificate and linalool_to_corrected_cineole_qualitative_compatibility bind full tail/head atoms, formulas, connectivities, roles, and stages. No quantitative ledger, yield, completion, omitted-stream absence, or sole-product claim is made."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "Both independently recounted graphs contain exactly 10 C and 1 O and complete ordinary valences with exactly 18 H, agreeing with every relevant printed formula and both submission formula strings. No molar mass is requested or used."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "For the qualitative isomerization use, the carrier retains the same 11 heavy atoms and C10H18O inventory. Two double bonds become single bonds while C1-C6 and O-C7 close; implicit-H relocation preserves 18 H. This is not asserted as a complete material-stage balance."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "The requested outputs are classifications with the contractually empty unit; no dimensional quantity occurs."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "Exact symbolic identities and exact strings are reported; no arithmetic, rounding, significant figures, or displayed tolerance applies."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "The c3 involution maps the two ethylene bridges and gem methyls pairwise while fixing both bridgeheads, oxygen, gem carbon, and bridgehead methyl, matching the visible mirror plane. The corrected SMILES has O adjacent to the methyl-bearing bridgehead and is independently verified against the depicted cage; c6 retains its acyclic tertiary-alcohol topology."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The verb is 'Identify', so one evidence-supported witness for each role is required. The formalization returns those witnesses and does not claim global uniqueness or exhaustive coverage; therefore no open-world chemical catalogue is an outcome-decisive premise."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The answers are output data, not assumptions. Their numbers are checked against nontrivial image graphs, valence/formula audits, an ordered structural transformation certificate, and a mirror permutation. The repeated-formula domain is source-derived and non-singleton, no free exclusion flags occur, and the correction theorem preserves the frozen draft while exposing rather than hiding the rewiring."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [],
+            "evidence": "The source-first compound-6 graph, exact formula, and forward qualitative cycloisomerization topology agree with the submission card and all named Lean carriers.",
+            "id": "identity_x",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.Icho2026T1A1.Compound6ImageCarrier",
+                "IChO2026Problems.Icho2026T1A1.linaloolGraph"
+              ],
+              "raw_result": [
+                "IChO2026Problems.Icho2026T1A1.IdentityXRawResult"
+              ],
+              "relations": [
+                "IChO2026Problems.Icho2026T1A1.linalool_to_corrected_cineole_qualitative_compatibility",
+                "IChO2026Problems.Icho2026T1A1.submitted_pair_meets_source_constraints"
+              ],
+              "reported_result": [
+                "IChO2026Problems.Icho2026T1A1.IdentityXReportedResult"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The compound number, graph, formula, forward X role, exact-symbolic result, and correction label all match the independent source-first derivation.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Identity classification; no time, cycle, recycle, feed, or cumulative-flow scope is present.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "A concrete identification of the elixir role X among the numbered structures in the student-visible table.",
+            "raw_result": {
+              "derivation": "The displayed acyclic tertiary allylic alcohol has ten carbons and formula C10H18O; reducing its two alkene bond orders while closing C1-C6 and O-C7 gives the displayed compound-3 cage with the same atom inventory in the source-stated forward acid transformation.",
+              "exact_unrounded": true,
+              "value_or_expression": "gpt_corrected_kimi_draft: compound 6, linalool (3,7-dimethylocta-1,6-dien-3-ol), C10H18O"
+            },
+            "reporting": {
+              "application": "No rounding is applicable; render the final classification exactly once with the required correction label.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Output id, classification kind, empty unit, exact-symbolic policy, and source requirement match the controller card.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-2.png#table.compound6"
+              }
+            ],
+            "source_requirement": "identity of X",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [],
+            "evidence": "The source-first compound-3 cage, mirror permutation, exact formula, and independently parsed corrected connectivity agree with the submission card and all named Lean carriers.",
+            "id": "identity_y",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.Icho2026T1A1.Compound3ImageCarrier",
+                "IChO2026Problems.Icho2026T1A1.correctedCineoleGraph",
+                "IChO2026Problems.Icho2026T1A1.YConnectivityCorrection"
+              ],
+              "raw_result": [
+                "IChO2026Problems.Icho2026T1A1.IdentityYRawResult"
+              ],
+              "relations": [
+                "IChO2026Problems.Icho2026T1A1.corrected_cineole_mirror_plane",
+                "IChO2026Problems.Icho2026T1A1.submitted_pair_meets_source_constraints"
+              ],
+              "reported_result": [
+                "IChO2026Problems.Icho2026T1A1.IdentityYReportedResult"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The compound number, corrected graph/string, formula, forward Y role, mirror carrier, exact-symbolic result, and correction label match the independent source-first derivation.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Identity classification; no time, cycle, recycle, feed, or cumulative-flow scope is present.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "A concrete identification of the elixir role Y, including the authorized auxiliary-connectivity correction, among the numbered table structures.",
+            "raw_result": {
+              "derivation": "The displayed compound-3 cage has two equivalent two-carbon bridges and the third path methyl-bearing bridgehead-O-gem-dimethyl carbon-other bridgehead; reflection swaps the carbon bridges and gem methyls. The corrected SMILES parses to this C10H18O graph, whereas the frozen string reverses the O/gem-carbon bridgehead attachments.",
+              "exact_unrounded": true,
+              "value_or_expression": "gpt_corrected_kimi_draft: compound 3, 1,8-cineole (eucalyptol), C10H18O; corrected auxiliary SMILES CC12CCC(CC1)C(C)(C)O2"
+            },
+            "reporting": {
+              "application": "No rounding is applicable; render the final classification and corrected auxiliary string exactly once with the required correction label.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Output id, classification kind, empty unit, exact-symbolic policy, and source requirement match the controller card.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-2.png#table.compound3"
+              }
+            ],
+            "source_requirement": "identity of Y",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "cc8d5c705d9c94937f5aaafee966f814c536f01e1ce2be27e0f3cbcdd659da70"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a1.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "Passed: both requested exact-symbolic identities are independently supported by the bound table image, same-formula graph audit, forward qualitative acid-cycloisomerization topology, and Y mirror permutation. The sole authorized Y auxiliary-connectivity correction is exact, preserves both Kimi identities, and every result is labelled gpt_corrected_kimi_draft; no uniqueness, yield, or completion claim is added.",
+        "reviewed_at": "2026-09-13T11:55:55Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "cc8d5c705d9c94937f5aaafee966f814c536f01e1ce2be27e0f3cbcdd659da70",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a1.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 16,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The exact-symbolic X and Y identifications are independently supported by the bound table drawings, common molecular formula, Y mirror plane, and the source-stated qualitative acid isomerization; the sole authorized Y auxiliary-connectivity correction is exact and independently verified.",
+    "evidence": "Both image digests, the answer-submission digest, and candidate digest match the contract. The complete candidate has no sorry/admit/local axiom, the supplied deterministic preflight passed (compiles=true, returncode=0, sorry_count=0), and the final theorem proves RawResult, ReportedResult, and AuthorizedCorrectionOnly through transparent graph, formula, symmetry, qualitative-direction, and correction carriers.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "0b2ec7715bd8b0b0d518efe14fe8ea2e15dc7e01db145308cc1e3cfcac795897",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t1_a1.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+      "source_record_id": "icho_2026_t1_a1",
+      "source_record_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a1.answer.json",
+      "answer_submission_sha256": "cea183dda45ffde970ac59eefb8aaed09791c01625634569e07c2abc3fd60b81",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t1_a1.source.json",
+      "source_report_sha256": "45eced091584c581be8ccac304e25310b38f84aa37b416447d6393bf6af04f13",
+      "candidate": "IChO2026Problems/problem_icho_2026_t1_a1.lean",
+      "preflight_sha256": "f1a7d6676cd7396f7b451c3325da9c59fbe1f5c5ecb7ddde73bb159abe6297fc",
+      "candidate_sha256": "0b2ec7715bd8b0b0d518efe14fe8ea2e15dc7e01db145308cc1e3cfcac795897",
+      "question_sha256": "9ecd8d8002b2782087b7d5b95f77b4850e4bc915f9d922788d87f0ce5a0868b8",
+      "shared_context_sha256": "3280382b825c3143ac50f9c404de6338fd41405f9bdd04c8e2acde9821385cc4",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "00d39449bae50cb1142b496aaa8ce543fe295d68b1389afcbdee59ebf4cb0eb6",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T1_page-2.png",
+          "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+        },
+        {
+          "path": "icho_2026_source/image/T1_page-1.png",
+          "sha256": "c03ceb7b203d63570c24c999ca3894c33b346a86ea54879d30c3c2650e992f52"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "618c42f7f288740aad169d0e62602404d14ebe1ab732fc7f5387c55fc8728d3a",
+        "node_count": 7,
+        "edge_count": 8,
+        "node_kind_counts": {
+          "derivation_obligation": 2,
+          "requested_output": 2,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "identity_x",
+          "identity_y"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t1_a1",
+        "path": ".archon/provided_answer_drafts/Q1.md",
+        "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": true,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false,
+        "correction_authorization": {
+          "schema_version": 1,
+          "record_id": "icho_2026_t1_a1",
+          "source_bundle_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+          "draft_sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+          "recorded_at": "2026-09-13T11:05:27Z",
+          "user_reply": "\u5355\u72ec\u91cd\u8dd1\u8fd9\u4e24\u9898",
+          "scope": "Preserve the source-supported compound numbers and identities. Correct only the inconsistent auxiliary Y SMILES/connectivity to match the depicted molecule and the original Kimi chemical name; keep the original string and exact graph discrepancy in the report. Independently verify the corrected representation.",
+          "evaluation_basis": "gpt_corrected_kimi_draft",
+          "preserve_original": true,
+          "scientific_model_assumptions_authorized": false
+        },
+        "correction_authorization_sha256": "1f9b309f68ea161954d22d3104777d4718afd735a40f03289162c4186ae02db7"
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t1_a1.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+        "source_record_id": "icho_2026_t1_a1",
+        "source_record_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a1.answer.json",
+        "answer_submission_sha256": "cea183dda45ffde970ac59eefb8aaed09791c01625634569e07c2abc3fd60b81",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t1_a1.source.json",
+        "source_report_sha256": "45eced091584c581be8ccac304e25310b38f84aa37b416447d6393bf6af04f13",
+        "candidate": "IChO2026Problems/problem_icho_2026_t1_a1.lean",
+        "preflight_sha256": "f1a7d6676cd7396f7b451c3325da9c59fbe1f5c5ecb7ddde73bb159abe6297fc",
+        "candidate_sha256": "0b2ec7715bd8b0b0d518efe14fe8ea2e15dc7e01db145308cc1e3cfcac795897",
+        "question_sha256": "9ecd8d8002b2782087b7d5b95f77b4850e4bc915f9d922788d87f0ce5a0868b8",
+        "shared_context_sha256": "3280382b825c3143ac50f9c404de6338fd41405f9bdd04c8e2acde9821385cc4",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "00d39449bae50cb1142b496aaa8ce543fe295d68b1389afcbdee59ebf4cb0eb6",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-1.png",
+            "sha256": "c03ceb7b203d63570c24c999ca3894c33b346a86ea54879d30c3c2650e992f52"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "618c42f7f288740aad169d0e62602404d14ebe1ab732fc7f5387c55fc8728d3a",
+          "node_count": 7,
+          "edge_count": 8,
+          "node_kind_counts": {
+            "derivation_obligation": 2,
+            "requested_output": 2,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "identity_x",
+            "identity_y"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t1_a1",
+          "path": ".archon/provided_answer_drafts/Q1.md",
+          "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": true,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false,
+          "correction_authorization": {
+            "schema_version": 1,
+            "record_id": "icho_2026_t1_a1",
+            "source_bundle_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+            "draft_sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+            "recorded_at": "2026-09-13T11:05:27Z",
+            "user_reply": "\u5355\u72ec\u91cd\u8dd1\u8fd9\u4e24\u9898",
+            "scope": "Preserve the source-supported compound numbers and identities. Correct only the inconsistent auxiliary Y SMILES/connectivity to match the depicted molecule and the original Kimi chemical name; keep the original string and exact graph discrepancy in the report. Independently verify the corrected representation.",
+            "evaluation_basis": "gpt_corrected_kimi_draft",
+            "preserve_original": true,
+            "scientific_model_assumptions_authorized": false
+          },
+          "correction_authorization_sha256": "1f9b309f68ea161954d22d3104777d4718afd735a40f03289162c4186ae02db7"
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The review rederived the classifications from the inline problem text and both digest-bound student-visible images. The submission and Lean file were treated only as untrusted outputs; the sealed Kimi draft was used solely for the mandated fidelity/correction comparison and not as a chemistry premise."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "The printed formulas give the source-derived distinct-isomer domain {c2,c3,c6,c10}. compound6_image_carrier and compound3_image_carrier audit the complete depicted heavy-atom graphs and C10H18O valence completion; corrected_cineole_mirror_plane supplies the Y symmetry witness; linalool_to_corrected_cineole_qualitative_compatibility supplies the directed non-quantitative source/target topology carrier."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "Both requested outputs are controller-bound exact_symbolic classifications. IdentityXReportedResult and IdentityYReportedResult use exact string equalities, so no rounding or discretionary formatting rule is introduced."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No numerical tolerance is applicable to either unitless exact-symbolic classification; the candidate asserts exact formula, graph, number, name, correction, and display equalities."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "repeatedFormulaDomain is the non-singleton set of all and only table entries carrying the repeated printed C10H18O formula, and distinct_same_formula_domain proves the restriction by exhaustive case analysis. The concrete witness is then checked against the source graph, mirror-plane, and qualitative acid-isomerization constraints; no open-world exhaustive universe is assumed."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=0b2ec7715bd8b0b0d518efe14fe8ea2e15dc7e01db145308cc1e3cfcac795897; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0, duration_bucket=under_1m. Nontrivial result declarations: IdentityXRawResult, IdentityYRawResult, IdentityXReportedResult, IdentityYReportedResult, y_connectivity_correction_exact, and IChO2026Problems.Icho2026T1A1.icho_2026_t1_a1_target."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The reviewed theorem is target-scoped to subpart 1.1 and concludes the combined raw and reported contracts in requested source order together with the narrowly authorized correction audit; it makes no claims about later subparts."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The theorem has no answer-bearing hypotheses. Its finite table/formula data and heavy-atom connectivities are direct transcriptions of T1_page-2; standard valence completion and finite graph calculations are transparent; the acid statement is used only in the source-authorized qualitative direction."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "RawResult and ReportedResult expose exactly identity_x followed by identity_y, both with evaluation basis gpt_corrected_kimi_draft; AuthorizedCorrectionOnly preserves the frozen string and changes only the authorized auxiliary Y connectivity."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "Named carriers cover table occurrence and number, printed formula, full source/target heavy-atom topology, valence-derived hydrogens, graph validity, nontrivial Y reflection, source-to-target qualitative acid-cycloisomerization direction, exact display, and the two-bond attachment swap between frozen and corrected Y representations."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "identity of X",
+          "lean_carrier": "identityXOutput; IdentityXRawResult; IdentityXReportedResult",
+          "status": "covered",
+          "evidence": "The submission schema entry has the required id, classification kind, empty unit, and exact-symbolic display; all raw identity fields agree with the source drawing and are carried by the named output record plus its graph/formula/source-constraint theorem.",
+          "output_id": "identity_x",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "identity of Y",
+          "lean_carrier": "identityYOutput; IdentityYRawResult; IdentityYReportedResult; YConnectivityCorrection",
+          "status": "covered",
+          "evidence": "The submission schema entry has the required id, classification kind, empty unit, and exact-symbolic display; the identity agrees with the depicted symmetric bicyclic ether, and its auxiliary string agrees with the independently parsed corrected graph and exact authorized discrepancy carrier.",
+          "output_id": "identity_y",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T1_page-2.png",
+          "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb",
+          "inspected": true,
+          "evidence": "Readable full page inspected: all ten connected structures, plant-row placements, repeated compound-3 panels, printed formulas, the four-distinct-substances sentence, the acidic X-to-Y isomerization observation, the Y plane-of-symmetry observation, and the exact identify-X-and-Y request were checked. The compound-6 acyclic allylic alcohol topology and compound-3 bicyclic ether topology match the candidate graphs."
+        },
+        {
+          "path": "icho_2026_source/image/T1_page-1.png",
+          "sha256": "c03ceb7b203d63570c24c999ca3894c33b346a86ea54879d30c3c2650e992f52",
+          "inspected": true,
+          "evidence": "Readable full page inspected: it supplies the title, narrative, scoring table, and Part 1 setup that the following page is a student problem table; it contains no filled student response, answer key, or additional chemical premise for subpart 1.1."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Independent structure reading confirms that the submitted X record names the depicted compound-6 acyclic tertiary allylic alcohol and the submitted Y record names the depicted compound-3 1,8-epoxy bicyclo[2.2.2] skeleton. Both graphs realize the printed formula and satisfy the stated qualitative relation and Y symmetry."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only. Source locator: T1_page-2 paragraph stating that X can isomerise into Y in an acidic medium. Finite role/domain: compound-6 source graph, acidic-medium condition, and compound-3 target graph, directed source-to-target. Carrier linalool_to_corrected_cineole_qualitative_compatibility binds atom inventory, formulas, valence-valid endpoint connectivities, direction, and named structural stages; no yield, completion, phase, sole-product, byproduct-absence, or quantitative ledger is claimed."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Both selected table panels print C10H18O. linalool_formula_audit and corrected_cineole_formula_audit independently count ten carbons, one oxygen, and eighteen valence-completed hydrogens; no molar-mass claim is made."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "The qualitative isomerization carrier proves equal explicit heavy-atom inventory and the same C10H18O formula at both endpoints. Because the requested use is non-quantitative, no unsupported yield, stream, atom-identity, charge, phase, or mass-balance conclusion is drawn."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "Both requested outputs are unitless chemical classifications with the contract-required empty unit."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "The outputs are exact symbolic classifications; there is no arithmetic, displayed precision, interval, or rounding tolerance."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "The source graphs are fully connected and valence-valid. cineoleReflection exchanges the two ethylene bridges and the two equivalent gem-methyl groups while fixing the mirror-plane skeleton. Independent SMILES parsing confirms that the corrected Y representation places O next to the methyl-bearing bridgehead and the gem-dimethyl carbon next to the other bridgehead, matching the figure and stated systematic name."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source asks for concrete identifications and contains no unique/all/every quantifier, so the policy requires an evidence-supported witness rather than open-world exhaustiveness. The witness lies in the complete source-derived repeated-formula domain and satisfies both decisive observations; inspection of the depicted alternatives does not produce a competing pair satisfying the same graph-symmetry and directed cyclization constraints."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "No answer is assumed as a theorem hypothesis, no singleton domain or free Bool/Prop flag is used, and the decisive domain has four source-derived entries. Each named output is backed by transparent full graph, formula, validity, symmetry/transform compatibility, and correction declarations rather than a reflexive identity alone."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a1.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The exact-symbolic X and Y identifications are independently supported by the bound table drawings, common molecular formula, Y mirror plane, and the source-stated qualitative acid isomerization; the sole authorized Y auxiliary-connectivity correction is exact and independently verified.",
+        "evidence": "Both image digests, the answer-submission digest, and candidate digest match the contract. The complete candidate has no sorry/admit/local axiom, the supplied deterministic preflight passed (compiles=true, returncode=0, sorry_count=0), and the final theorem proves RawResult, ReportedResult, and AuthorizedCorrectionOnly through transparent graph, formula, symmetry, qualitative-direction, and correction carriers.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T12:26:30.407636Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "0b2ec7715bd8b0b0d518efe14fe8ea2e15dc7e01db145308cc1e3cfcac795897",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a1.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T12:26:30.407720Z",
+    "repair_handoff": {}
+  }
+}

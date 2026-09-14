@@ -1,0 +1,940 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The source Jablonski model adds a positive pseudo-first-order quenching rate to each state's intrinsic decay rate, so both reciprocal lifetimes strictly decrease as nonnegative [Red] increases; the submission and all named Lean result carriers encode exactly those two classifications without assuming them.",
+    "updated_at": "2026-09-13T08:37:50Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "c9e326a65091ce313794e9f314aab6bb493ba47dd031090c1e6f506b4beb1530",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "T8 page 5 prints positive k_S and k_T, identifies reductive quenching from S1 and T1, gives positive quencher-free lifetimes, and asks the trend under increasing [Red]. The candidate converts the four printed quantities exactly and reports one classification for each requested state."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "For X in {S1,T1}, the transparent carriers define tau_X(c)=1/(1/tau0_X+k_X*c). On c>=0 the denominator is positive and strictly increases because k_X>0, so reciprocal order proves StrictAntiOn. No requested result occurs in a hypothesis."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "The candidate models the physical concentration domain, dimensions, intrinsic and quenching rates, total rate, reciprocal lifetime, all three printed choices, and separate raw/reported carriers for S1 and T1. T8-A9's numerical percentages are not outcome-decisive for this trend (and are nevertheless derived inline). The auxiliary theorem named raw_result has an unqualified type not locally linked to the two raw propositions, so it is not accepted as a carrier; the closed reported_result theorem remains definitionally tied to and proves both requested propositions."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The outputs are exact qualitative classifications with no tolerance or requested numerical rounding. Only positivity of the printed constants is decisive, so ordinary display uncertainty cannot change either branch."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "Both the submission inequality and Lean StrictAntiOn use c1<c2 with tau(c2)<tau(c1), exactly orienting an increase in [Red] toward the printed decreasing-lifetime branch."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Within the source-stated dynamic-quenching model, positive tau0 and k force a positive, strictly increasing denominator for every nonnegative concentration. A different requested classification would require violating a printed positive rate or abandoning the depicted additive quenching channel."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The printed S1/T1 lifetimes and bimolecular quenching constants are positive source inputs on the nonnegative molar-concentration domain.",
+          "carrier": "IChO2026Problems.T8A10.singletUnquenchedLifetimeSeconds; IChO2026Problems.T8A10.tripletUnquenchedLifetimeSeconds; IChO2026Problems.T8A10.singletQuenchingRatePerMolarSecond; IChO2026Problems.T8A10.tripletQuenchingRatePerMolarSecond; IChO2026Problems.T8A10.nonnegativeMolarConcentrations",
+          "status": "covered",
+          "evidence": "The numeral definitions exactly convert 2.9 ns, 84 microseconds, 2.7e9 M^-1 s^-1, and 1.5e8 M^-1 s^-1 from T8 page 5; concentrations are physically nonnegative."
+        },
+        {
+          "claim": "A depicted bimolecular dynamic-quenching channel contributes k_X[Red] to the intrinsic first-order decay rate, and lifetime is the reciprocal total rate.",
+          "carrier": "IChO2026Problems.T8A10.quenchingRatePerSecond; IChO2026Problems.T8A10.totalDecayRatePerSecond; IChO2026Problems.T8A10.quenchedLifetimeSeconds; IChO2026Problems.T8A10.quenchedLifetime_eq_sternVolmer",
+          "status": "covered",
+          "evidence": "The page-5 arrows label the additional S1 and T1 channels by bimolecular constants; standard parallel first-order kinetics gives the transparent additive-rate relation and reciprocal lifetime. Units reduce to s^-1 and s."
+        },
+        {
+          "claim": "Positive lifetime and quenching constant imply strict lifetime decrease for increasing nonnegative concentration, separately for S1 and T1.",
+          "carrier": "IChO2026Problems.T8A10.quenchedLifetime_strictAntiOn; IChO2026Problems.T8A10.LifetimeS1RawResult; IChO2026Problems.T8A10.LifetimeT1RawResult",
+          "status": "covered",
+          "evidence": "The generic strict-antitonicity theorem is instantiated by each pair of exact positive numeral inputs; the two raw propositions preserve the requested output split."
+        },
+        {
+          "claim": "The strict-antitonicity result maps to the correct printed multiple-choice classification for both requested outputs.",
+          "carrier": "IChO2026Problems.T8A10.LifetimeTrend; IChO2026Problems.T8A10.HasLifetimeTrend; IChO2026Problems.T8A10.lifetimeS1Answer; IChO2026Problems.T8A10.lifetimeT1Answer; IChO2026Problems.T8A10.reported_result",
+          "status": "covered",
+          "evidence": "HasLifetimeTrend defines the decreasing constructor by the already established StrictAntiOn property, so the named answers are verified rather than premise-injected."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a10.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t8_a10",
+        "source_record_sha256": "c39015191a8f0a5e04cc5f1ceb61286678a2dda11098b03237733ca0f63f6a07",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a10.answer.json",
+        "answer_submission_sha256": "5a1f188ec9616680f65739355d7b8c7a07bdc9c95189074dbe3960be9531293a",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a10.source.json",
+        "source_report_sha256": "10ba4396981c1ad29c00eedea48ee20c2d7c2059d9dcb1ec45a34110e6eced90",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a10.lean",
+        "preflight_sha256": "c8fe2b95e4e60c65c62218e5767a157aa79bb848528e3b5330f3aed887821b38",
+        "candidate_sha256": "c9e326a65091ce313794e9f314aab6bb493ba47dd031090c1e6f506b4beb1530",
+        "question_sha256": "4bc8ccc2742fb8fce689d4d73ee0f37aa6c5685d69ffc9cf12f682fcb1f08681",
+        "shared_context_sha256": "4932a05f34dec763a74275a7d2ce6a1e6eae9627d00f9fd8de73bad9af6d9f98",
+        "previous_parts_sha256": "2c067fe37036cf3b5d263620d91885de5cb043b5d34eb8b3471ea8be492b5d90",
+        "requested_outputs_sha256": "b9bcbd31fb62dd4bdd3fd223c6c0281aa72b855ea8d136c7fe744685b9fdd021",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-5.png",
+            "sha256": "2e6c474d4a7e74a268c029c53b69c64eb30e63f58696855bec0e204c0614dad4"
+          },
+          {
+            "path": "icho_2026_source/image/T8_page-4.png",
+            "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "f1fa48d7c40884b21d4299e43084d1eaad1126c7bccabdb41a5bd0f46480fbab",
+          "node_count": 8,
+          "edge_count": 10,
+          "node_kind_counts": {
+            "derivation_obligation": 2,
+            "previous_part_prerequisite": 1,
+            "requested_output": 2,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "lifetime_s1",
+            "lifetime_t1"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t8_a9"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a10",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t8_a10.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t8_a10",
+          "source_record_sha256": "c39015191a8f0a5e04cc5f1ceb61286678a2dda11098b03237733ca0f63f6a07",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a10.answer.json",
+          "answer_submission_sha256": "5a1f188ec9616680f65739355d7b8c7a07bdc9c95189074dbe3960be9531293a",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t8_a10.source.json",
+          "source_report_sha256": "10ba4396981c1ad29c00eedea48ee20c2d7c2059d9dcb1ec45a34110e6eced90",
+          "candidate": "IChO2026Problems/problem_icho_2026_t8_a10.lean",
+          "preflight_sha256": "c8fe2b95e4e60c65c62218e5767a157aa79bb848528e3b5330f3aed887821b38",
+          "candidate_sha256": "c9e326a65091ce313794e9f314aab6bb493ba47dd031090c1e6f506b4beb1530",
+          "question_sha256": "4bc8ccc2742fb8fce689d4d73ee0f37aa6c5685d69ffc9cf12f682fcb1f08681",
+          "shared_context_sha256": "4932a05f34dec763a74275a7d2ce6a1e6eae9627d00f9fd8de73bad9af6d9f98",
+          "previous_parts_sha256": "2c067fe37036cf3b5d263620d91885de5cb043b5d34eb8b3471ea8be492b5d90",
+          "requested_outputs_sha256": "b9bcbd31fb62dd4bdd3fd223c6c0281aa72b855ea8d136c7fe744685b9fdd021",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T8_page-5.png",
+              "sha256": "2e6c474d4a7e74a268c029c53b69c64eb30e63f58696855bec0e204c0614dad4"
+            },
+            {
+              "path": "icho_2026_source/image/T8_page-4.png",
+              "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "f1fa48d7c40884b21d4299e43084d1eaad1126c7bccabdb41a5bd0f46480fbab",
+            "node_count": 8,
+            "edge_count": 10,
+            "node_kind_counts": {
+              "derivation_obligation": 2,
+              "previous_part_prerequisite": 1,
+              "requested_output": 2,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "lifetime_s1",
+              "lifetime_t1"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t8_a9"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t8_a10",
+            "path": ".archon/provided_answer_drafts/Q8.md",
+            "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, lack of stock-flow relevance, image facts, and per-state monotonic derivation were frozen from the inline problem evidence and both verified images before the submission, Lean candidate, or sanitized process metadata were inspected."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "For each state the exact carrier is tau(c)=1/(1/tau0+k*c); for c2>c1>=0, positive k makes the denominator strictly larger and the lifetime strictly smaller. No intermediate rounding or prior-part answer is used."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "The current-question panel supplies the three classifications and requests a tick; requested_outputs[0].reporting_policy and requested_outputs[1].reporting_policy require exact symbolic classifications."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance, interval, or rounded numerical display decides either output. Exact printed values are used, and their strictly positive signs make the classification robust."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The three result alternatives come verbatim from current_question, and the comparison domain is the ordinary nonnegative domain of molar concentration. No finite chemical-candidate domain, uniqueness claim, or exhaustive enumeration is outcome-decisive."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=c9e326a65091ce313794e9f314aab6bb493ba47dd031090c1e6f506b4beb1530; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=11. Nontrivial result declarations: IChO2026Problems.T8A10.LifetimeS1RawResult, IChO2026Problems.T8A10.LifetimeT1RawResult, IChO2026Problems.T8A10.LifetimeS1ReportedResult, IChO2026Problems.T8A10.LifetimeT1ReportedResult, and IChO2026Problems.T8A10.reported_result; the latter unfolds to and proves both strict-antitonicity propositions. The unrelated auxiliary raw_result declaration is not used as a carrier."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The source asks how each lifetime changes as [Red] increases. Strict antitonicity over nonnegative concentrations faithfully supplies that qualitative pairwise trend and neither asserts uniqueness nor an unrelated open-world chemistry claim."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The main result is closed. Its transparent definitions use exact printed constants and the depicted dynamic-quenching network; positivity and reciprocal-order reasoning are derivable, and no answer-shaped hypothesis, free flag, axiom, or opaque predicate is present."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "Both required output ids occur exactly once in bundle order, with classification kind and empty unit; submission raw/display fields and the corresponding separate Lean propositions match the independently derived trends."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Named carriers cover every decisive bridge: source constants/domain, pseudo-first-order rate, additive total rate, reciprocal lifetime, strict antitonicity, choice semantics, and the combined reported_result whose two conjuncts are the per-output results. The unlinked auxiliary raw_result declaration is excluded from the mapping and cannot affect either output. No external chemistry bridge is needed."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "emission lifetime trend for S1 with increasing Red concentration",
+            "lean_carrier": "IChO2026Problems.T8A10.reported_result",
+            "status": "covered",
+            "evidence": "The first and only submission entry for this id has the required classification kind and empty unit; its exact raw monotonic relation and display selection agree with the independent derivation and the named nontrivial Lean carrier.",
+            "output_id": "lifetime_s1",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "emission lifetime trend for T1 with increasing Red concentration",
+            "lean_carrier": "IChO2026Problems.T8A10.reported_result",
+            "status": "covered",
+            "evidence": "The second and only submission entry for this id has the required classification kind and empty unit; its exact raw monotonic relation and display selection agree with the independent derivation and the named nontrivial Lean carrier.",
+            "output_id": "lifetime_t1",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T8_page-5.png",
+            "sha256": "2e6c474d4a7e74a268c029c53b69c64eb30e63f58696855bec0e204c0614dad4",
+            "inspected": true,
+            "evidence": "Digest matched. The panel shows S1 and T1 levels; emission/intrinsic arrows k_F,k_IC,k_ISC for S1 and k_P,k_N,k_RISC for T1; positive printed k values and positive quencher-free lifetimes; and the complete 8.10 choice panel. Arrow certificates: the first printed arrow runs from tail precursors PS(S1)+Red to head products PS radical anion+Red radical cation under k_S, retaining each molecular scaffold while transferring one electron; the second analogously runs PS(T1)+Red to the same product roles under k_T. The outer diagram arrows cross-check those state-specific quenching directions. No molecular formula/topology, repeat boundary, component count, or atom ledger contributes to this target."
+          },
+          {
+            "path": "icho_2026_source/image/T8_page-4.png",
+            "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a",
+            "inspected": true,
+            "evidence": "Digest matched. This page contains the four a-d H2/CO bar panels and legend for T8-A8, not a lifetime input or choice. It has no outgoing connection, repeat unit, chemical structure, or quantitative component used by either T8-A10 output."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The candidate uses the two source equations and matching diagram arrows only for their directed PS(S1/T1)+Red to PS radical anion+Red radical cation quenching roles and positive pseudo-first-order loss rates. Scaffold identity is retained across electron transfer; no material-stage balance is inferred. It makes no unsupported mechanistic, yield, or product claim."
+          },
+          "staged_species_domain": {
+            "status": "not_applicable",
+            "evidence": "not_staged_transformation: neither requested output depends on a depicted material-conversion stage, species inventory, arrow product, yield, or conservation ledger; the Jablonski arrows are excited-state kinetic pathways."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No requested molecular formula, molar mass, mass fraction, or component count is used."
+          },
+          "conservation_laws": {
+            "status": "not_applicable",
+            "evidence": "No atom, charge, mass, phase, recycle, feed, inventory, or yield balance is used by the lifetime-trend classifications."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "tau0 is converted to seconds, k has M^-1 s^-1, concentration has M, k*c has s^-1, the intrinsic and total rates have s^-1, and their reciprocal has seconds. The classification outputs correctly have empty units."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "Both outputs are exact symbolic classifications. The submission preserves exact rational/scientific-notation inputs and uses no rounding; the global three-significant-figure default is inapplicable to the final classification."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No chemical structure or stereochemical identification is requested or used."
+          },
+          "identification_uniqueness": {
+            "status": "not_applicable",
+            "evidence": "The verb asks for a trend selection, not identification, uniqueness, all solutions, or exhaustive coverage. Exactly one printed branch is established for each state."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "Although lifetimeS1Answer and lifetimeT1Answer name the selected constructor, HasLifetimeTrend expands it to a nontrivial StrictAntiOn obligation proved from independent input and kinetic carriers. No result is injected into a premise or singleton domain."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "Compare physically admissible concentrations c1 and c2 with 0 <= c1 < c2.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "tau0(S1)",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-5.png#tau0_s1"
+                },
+                "unit": "s",
+                "value": "29 / 10^10"
+              },
+              {
+                "name": "k_S",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-5.png#quenching_rate_s1"
+                },
+                "unit": "M^-1 s^-1",
+                "value": "27 * 10^8"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "parallel first-order dynamic-quenching relation",
+                "relation": "tau_S1(c) = 1 / (1 / tau0(S1) + k_S * c)",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-5.png#jablonski_dynamic_quenching"
+                }
+              }
+            ],
+            "evidence": "The source-first strict-decrease derivation agrees with the submission card and every named Lean carrier.",
+            "id": "lifetime_s1",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T8A10.singletUnquenchedLifetimeSeconds",
+                "IChO2026Problems.T8A10.singletQuenchingRatePerMolarSecond",
+                "IChO2026Problems.T8A10.nonnegativeMolarConcentrations"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T8A10.LifetimeS1RawResult",
+                "IChO2026Problems.T8A10.reported_result"
+              ],
+              "relations": [
+                "IChO2026Problems.T8A10.quenchingRatePerSecond",
+                "IChO2026Problems.T8A10.totalDecayRatePerSecond",
+                "IChO2026Problems.T8A10.quenchedLifetimeSeconds",
+                "IChO2026Problems.T8A10.quenchedLifetime_strictAntiOn",
+                "IChO2026Problems.T8A10.HasLifetimeTrend"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T8A10.lifetimeS1Answer",
+                "IChO2026Problems.T8A10.LifetimeS1ReportedResult",
+                "IChO2026Problems.T8A10.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The input numerals, nonnegative domain, reciprocal-rate relation, strict inequality orientation, and reported classification all match the source-first derivation.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Pairwise trend as reductant concentration increases within the stated S1 dynamic-quenching model.",
+              "kind": "marginal"
+            },
+            "quantity_definition": "Classification of the S1 emission-lifetime change under an increase in reductant concentration.",
+            "raw_result": {
+              "derivation": "For 0 <= c1 < c2, positivity of tau0(S1) and k_S gives 0 < D(c1) < D(c2), where D(c)=1/tau0(S1)+k_S*c; reciprocal order gives tau_S1(c2) < tau_S1(c1).",
+              "exact_unrounded": true,
+              "value_or_expression": "forall c1 c2, 0 <= c1 < c2 -> tau_S1(c2) < tau_S1(c1), with tau_S1(c)=1/(1/(29/10^10)+(27*10^8)*c)"
+            },
+            "reporting": {
+              "application": "Select the exact printed classification matching the strict-decrease relation; no numerical rounding applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission has the exact id, kind, empty unit, symbolic strict-decrease raw relation, and corresponding printed classification.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-5.png#question_8.10"
+              }
+            ],
+            "source_requirement": "emission lifetime trend for S1 with increasing Red concentration",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "Compare physically admissible concentrations c1 and c2 with 0 <= c1 < c2.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "tau0(T1)",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-5.png#tau0_t1"
+                },
+                "unit": "s",
+                "value": "84 / 10^6"
+              },
+              {
+                "name": "k_T",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-5.png#quenching_rate_t1"
+                },
+                "unit": "M^-1 s^-1",
+                "value": "15 * 10^7"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "parallel first-order dynamic-quenching relation",
+                "relation": "tau_T1(c) = 1 / (1 / tau0(T1) + k_T * c)",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-5.png#jablonski_dynamic_quenching"
+                }
+              }
+            ],
+            "evidence": "The source-first strict-decrease derivation agrees with the submission card and every named Lean carrier.",
+            "id": "lifetime_t1",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T8A10.tripletUnquenchedLifetimeSeconds",
+                "IChO2026Problems.T8A10.tripletQuenchingRatePerMolarSecond",
+                "IChO2026Problems.T8A10.nonnegativeMolarConcentrations"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T8A10.LifetimeT1RawResult",
+                "IChO2026Problems.T8A10.reported_result"
+              ],
+              "relations": [
+                "IChO2026Problems.T8A10.quenchingRatePerSecond",
+                "IChO2026Problems.T8A10.totalDecayRatePerSecond",
+                "IChO2026Problems.T8A10.quenchedLifetimeSeconds",
+                "IChO2026Problems.T8A10.quenchedLifetime_strictAntiOn",
+                "IChO2026Problems.T8A10.HasLifetimeTrend"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T8A10.lifetimeT1Answer",
+                "IChO2026Problems.T8A10.LifetimeT1ReportedResult",
+                "IChO2026Problems.T8A10.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The input numerals, nonnegative domain, reciprocal-rate relation, strict inequality orientation, and reported classification all match the source-first derivation.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Pairwise trend as reductant concentration increases within the stated T1 dynamic-quenching model.",
+              "kind": "marginal"
+            },
+            "quantity_definition": "Classification of the T1 emission-lifetime change under an increase in reductant concentration.",
+            "raw_result": {
+              "derivation": "For 0 <= c1 < c2, positivity of tau0(T1) and k_T gives 0 < D(c1) < D(c2), where D(c)=1/tau0(T1)+k_T*c; reciprocal order gives tau_T1(c2) < tau_T1(c1).",
+              "exact_unrounded": true,
+              "value_or_expression": "forall c1 c2, 0 <= c1 < c2 -> tau_T1(c2) < tau_T1(c1), with tau_T1(c)=1/(1/(84/10^6)+(15*10^7)*c)"
+            },
+            "reporting": {
+              "application": "Select the exact printed classification matching the strict-decrease relation; no numerical rounding applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission has the exact id, kind, empty unit, symbolic strict-decrease raw relation, and corresponding printed classification.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-5.png#question_8.10"
+              }
+            ],
+            "source_requirement": "emission lifetime trend for T1 with increasing Red concentration",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "c9e326a65091ce313794e9f314aab6bb493ba47dd031090c1e6f506b4beb1530"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a10.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The source Jablonski model adds a positive pseudo-first-order quenching rate to each state's intrinsic decay rate, so both reciprocal lifetimes strictly decrease as nonnegative [Red] increases; the submission and all named Lean result carriers encode exactly those two classifications without assuming them.",
+        "reviewed_at": "2026-09-13T08:37:50Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "c9e326a65091ce313794e9f314aab6bb493ba47dd031090c1e6f506b4beb1530",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a10.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 11,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The candidate faithfully formalizes dynamic reductive quenching as an added positive pseudo-first-order decay channel and proves the required lifetime classification for both requested states without assumptions, placeholders, or answer substitution.",
+    "evidence": "No Lean error is present: deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. The bound page-5 reaction rates and unquenched lifetimes, together with the standard competing-first-order rate law, give tau(c)=1/(1/tau0+k*c); positivity of tau0 and k makes this function strictly antitone on nonnegative concentrations. The nontrivial raw and reported carriers discharge both requested outputs and the inline prior-part obligation.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "0e12582aae9cdfff27225e316708466415b894ef8147e489ebf1cbd2d75aeca6",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t8_a10.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t8_a10",
+      "source_record_sha256": "c39015191a8f0a5e04cc5f1ceb61286678a2dda11098b03237733ca0f63f6a07",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a10.answer.json",
+      "answer_submission_sha256": "5a1f188ec9616680f65739355d7b8c7a07bdc9c95189074dbe3960be9531293a",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t8_a10.source.json",
+      "source_report_sha256": "10ba4396981c1ad29c00eedea48ee20c2d7c2059d9dcb1ec45a34110e6eced90",
+      "candidate": "IChO2026Problems/problem_icho_2026_t8_a10.lean",
+      "preflight_sha256": "4f705d7739c01a864a05b6f2dfebf0bb66648830df4345d859a51a333a184c02",
+      "candidate_sha256": "0e12582aae9cdfff27225e316708466415b894ef8147e489ebf1cbd2d75aeca6",
+      "question_sha256": "4bc8ccc2742fb8fce689d4d73ee0f37aa6c5685d69ffc9cf12f682fcb1f08681",
+      "shared_context_sha256": "4932a05f34dec763a74275a7d2ce6a1e6eae9627d00f9fd8de73bad9af6d9f98",
+      "previous_parts_sha256": "2c067fe37036cf3b5d263620d91885de5cb043b5d34eb8b3471ea8be492b5d90",
+      "requested_outputs_sha256": "b9bcbd31fb62dd4bdd3fd223c6c0281aa72b855ea8d136c7fe744685b9fdd021",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T8_page-5.png",
+          "sha256": "2e6c474d4a7e74a268c029c53b69c64eb30e63f58696855bec0e204c0614dad4"
+        },
+        {
+          "path": "icho_2026_source/image/T8_page-4.png",
+          "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "f1fa48d7c40884b21d4299e43084d1eaad1126c7bccabdb41a5bd0f46480fbab",
+        "node_count": 8,
+        "edge_count": 10,
+        "node_kind_counts": {
+          "derivation_obligation": 2,
+          "previous_part_prerequisite": 1,
+          "requested_output": 2,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "lifetime_s1",
+          "lifetime_t1"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t8_a9"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t8_a10",
+        "path": ".archon/provided_answer_drafts/Q8.md",
+        "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a10.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t8_a10",
+        "source_record_sha256": "c39015191a8f0a5e04cc5f1ceb61286678a2dda11098b03237733ca0f63f6a07",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a10.answer.json",
+        "answer_submission_sha256": "5a1f188ec9616680f65739355d7b8c7a07bdc9c95189074dbe3960be9531293a",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a10.source.json",
+        "source_report_sha256": "10ba4396981c1ad29c00eedea48ee20c2d7c2059d9dcb1ec45a34110e6eced90",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a10.lean",
+        "preflight_sha256": "4f705d7739c01a864a05b6f2dfebf0bb66648830df4345d859a51a333a184c02",
+        "candidate_sha256": "0e12582aae9cdfff27225e316708466415b894ef8147e489ebf1cbd2d75aeca6",
+        "question_sha256": "4bc8ccc2742fb8fce689d4d73ee0f37aa6c5685d69ffc9cf12f682fcb1f08681",
+        "shared_context_sha256": "4932a05f34dec763a74275a7d2ce6a1e6eae9627d00f9fd8de73bad9af6d9f98",
+        "previous_parts_sha256": "2c067fe37036cf3b5d263620d91885de5cb043b5d34eb8b3471ea8be492b5d90",
+        "requested_outputs_sha256": "b9bcbd31fb62dd4bdd3fd223c6c0281aa72b855ea8d136c7fe744685b9fdd021",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-5.png",
+            "sha256": "2e6c474d4a7e74a268c029c53b69c64eb30e63f58696855bec0e204c0614dad4"
+          },
+          {
+            "path": "icho_2026_source/image/T8_page-4.png",
+            "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "f1fa48d7c40884b21d4299e43084d1eaad1126c7bccabdb41a5bd0f46480fbab",
+          "node_count": 8,
+          "edge_count": 10,
+          "node_kind_counts": {
+            "derivation_obligation": 2,
+            "previous_part_prerequisite": 1,
+            "requested_output": 2,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "lifetime_s1",
+            "lifetime_t1"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t8_a9"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a10",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The trend was independently derived from the bound page-5 source facts and standard competing-first-order kinetics before comparison with the untrusted submission and the authorized sealed Kimi draft; no official solution, grading artifact, unlisted prior result, registry lookup, or other project artifact was used."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "For either state, the source quenching step has pseudo-first-order rate k*[Red], so the total population-decay rate is 1/tau0+k*c and the lifetime is its reciprocal. For 0<=c1<c2 and source-positive k and tau0, the second total rate is strictly larger and positive, hence its reciprocal is strictly smaller. This is represented by quenchedLifetime_strictAntiOn and instantiated by lifetimeS1_raw_result and lifetimeT1_raw_result."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The page-5 current-question panel explicitly supplies the three classifications and asks for a box to be ticked; both requested outputs therefore use the controller-bound exact_symbolic classification policy, with no decimal display rule."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No tolerance, measurement interval, or rounding is used for either exact classification. Printed positive constants are represented exactly, and the strict trend is invariant under their displayed magnitudes."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The finite LifetimeTrend constructors correspond exactly to the three page-5 choices. Restriction to nonnegative molar concentration is the physical domain, and the only modeling bridge is the transparent standard law that rates of competing first-order decay channels add."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=0e12582aae9cdfff27225e316708466415b894ef8147e489ebf1cbd2d75aeca6; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial carriers are IChO2026Problems.T8A10.lifetimeS1_raw_result, lifetimeS1_reported_result, lifetimeT1_raw_result, lifetimeT1_reported_result, raw_result, and reported_result."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "ReportedResult is the conjunction of the two source-ordered requested classification propositions. Each proposition denotes strict antitonicity of the appropriate concentration-dependent lifetime over nonnegative concentrations, directly matching the scope of increasing reductant concentration."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The result theorems have no external hypotheses. The unquenched lifetimes and bimolecular constants are exact page-5 data, their positivity is proved by normalization, and the T8-A9 prerequisite is independently reconstructed by previousPart_singletQuenchingPercentage and previousPart_tripletQuenchingPercentage rather than assumed."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The raw strict-antitonicity propositions and the reported choice semantics cover both output IDs in the prescribed order. They agree with the complete bound submission and preserve the authorized Kimi subpart without correction or substitution."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The candidate transparently defines intrinsic rate 1/tau0, bimolecular quenching rate k*c, their additive total rate, and reciprocal lifetime, then proves the strict order result from source-positive parameters. These are the full standard dynamic-quenching bridges needed for the classification; no opaque chemistry predicate or local axiom is used."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "emission lifetime trend for S1 with increasing Red concentration",
+          "lean_carrier": "IChO2026Problems.T8A10.lifetimeS1_raw_result; IChO2026Problems.T8A10.lifetimeS1_reported_result",
+          "status": "covered",
+          "evidence": "Submission schema_version, output order, id, classification kind, empty unit, symbolic raw inequality, and page-choice display all match; the named carriers prove the corresponding source-derived trend rather than assume the submitted field.",
+          "output_id": "lifetime_s1",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "emission lifetime trend for T1 with increasing Red concentration",
+          "lean_carrier": "IChO2026Problems.T8A10.lifetimeT1_raw_result; IChO2026Problems.T8A10.lifetimeT1_reported_result",
+          "status": "covered",
+          "evidence": "Submission schema_version, output order, id, classification kind, empty unit, symbolic raw inequality, and page-choice display all match; the named carriers prove the corresponding source-derived trend rather than assume the submitted field.",
+          "output_id": "lifetime_t1",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T8_page-5.png",
+          "sha256": "2e6c474d4a7e74a268c029c53b69c64eb30e63f58696855bec0e204c0614dad4",
+          "inspected": true,
+          "evidence": "The image is readable and shows both reductive-quenching reactions with positive bimolecular rate constants, the Jablonski diagram with reductant-dependent loss channels from S1 and T1, both unquenched lifetimes, the T8-A9 prerequisite, and the complete T8-A10 three-choice panel."
+        },
+        {
+          "path": "icho_2026_source/image/T8_page-4.png",
+          "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a",
+          "inspected": true,
+          "evidence": "The image is readable and contains the preceding T8-A8 irradiation/product chart and its prompt; it supplies no competing lifetime datum or choice and does not alter the T8-A10 kinetic derivation."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "In the depicted dynamic reductive-quenching mechanism, multiplication of each bimolecular constant by reductant molarity gives an added first-order loss rate. Competing first-order loss rates add, so increasing a positive added rate shortens the population/emission lifetime for each state."
+        },
+        "staged_species_domain": {
+          "status": "not_applicable",
+          "evidence": "not_staged_transformation: the requested outputs classify concentration-dependent excited-state lifetimes; no staged material transformation, product identity, yield, stream, or material ledger is used."
+        },
+        "formula_mass_consistency": {
+          "status": "not_applicable",
+          "evidence": "No molecular formula, molar mass, composition, or mass-derived output is requested or used."
+        },
+        "conservation_laws": {
+          "status": "not_applicable",
+          "evidence": "No atom, charge, mass, phase, or reaction-material balance is outcome-decisive for this kinetic trend classification."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "Each printed k has units M^-1 s^-1 and concentration has units M, so k*c has units s^-1; 1/tau0 has units s^-1 and the reciprocal total rate has units seconds. The ns and microsecond constants are converted exactly to seconds."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "Both requested outputs are exact symbolic classifications; no rounded numerical value, significant-figure choice, or tolerance is reported."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "No molecular structure, connectivity, geometry, or stereochemical output occurs in T8-A10."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source supplies exactly three mutually exclusive trend choices. Strict antitonicity on a domain containing distinct concentrations supports one classification and is incompatible with the increasing and constant alternatives; open-world chemical enumeration is irrelevant."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "Although the two answer names are transparent enum definitions, they cannot prove their specifications by reflexivity: the reported theorems unfold them and rely on independently proved raw strict-antitonicity. There is no candidate-shaped hypothesis, singleton premise, opaque decisive predicate, local axiom, sorry, or admit."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a10.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The candidate faithfully formalizes dynamic reductive quenching as an added positive pseudo-first-order decay channel and proves the required lifetime classification for both requested states without assumptions, placeholders, or answer substitution.",
+        "evidence": "No Lean error is present: deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. The bound page-5 reaction rates and unquenched lifetimes, together with the standard competing-first-order rate law, give tau(c)=1/(1/tau0+k*c); positivity of tau0 and k makes this function strictly antitone on nonnegative concentrations. The nontrivial raw and reported carriers discharge both requested outputs and the inline prior-part obligation.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T08:54:03.555921Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "0e12582aae9cdfff27225e316708466415b894ef8147e489ebf1cbd2d75aeca6",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a10.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T08:54:03.555958Z",
+    "repair_handoff": {}
+  }
+}

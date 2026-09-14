@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t2_a4",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "clockwise",
+      "id": "phase_direction",
+      "kind": "classification",
+      "raw_value": "clockwise",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

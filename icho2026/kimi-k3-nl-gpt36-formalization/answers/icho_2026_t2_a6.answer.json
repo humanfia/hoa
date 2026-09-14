@@ -1,0 +1,35 @@
+{
+  "id": "icho_2026_t2_a6",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "c",
+      "id": "action_1",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.ProblemIcho2026T2A6.Effect.switchesAToB",
+      "unit": ""
+    },
+    {
+      "display_value": "d",
+      "id": "action_2",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.ProblemIcho2026T2A6.Effect.switchesBToA",
+      "unit": ""
+    },
+    {
+      "display_value": "b",
+      "id": "action_3",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.ProblemIcho2026T2A6.Effect.prolongsProcessB",
+      "unit": ""
+    },
+    {
+      "display_value": "e",
+      "id": "action_4",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.ProblemIcho2026T2A6.Effect.oscillationsStop",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

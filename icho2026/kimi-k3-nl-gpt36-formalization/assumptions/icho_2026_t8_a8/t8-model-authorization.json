@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "record_id": "icho_2026_t8_a8",
+  "scope": "this Kimi-NL GPT formalization campaign, T8-A8 only",
+  "source_bundle_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+  "draft_sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+  "user_reply": "\u5f53\u524dkimi\u7248\u672c\u4e5f\u6388\u6743",
+  "recorded_at": "2026-09-13T09:13:09Z",
+  "assumptions": {
+    "M001": "In this experiment the N condition has no plotted H2/CO product stack; this does not assert absence of every dark reaction.",
+    "M002": "For any two of this experiment's three illuminated LED conditions u and v, E_photon(u) < E_photon(v) implies chi_H2(u) < chi_H2(v)."
+  },
+  "evaluation_basis": "conditional_contest_model",
+  "proved_from_figures": false,
+  "final_answer_axioms_allowed": false
+}

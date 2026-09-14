@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t7_a1",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "{N₂, CO, H₂}",
+      "id": "gases_m1",
+      "kind": "finite_set",
+      "raw_value": "{N₂, CO, H₂}",
+      "unit": ""
+    },
+    {
+      "display_value": "{N₂, H₂, NH₃}",
+      "id": "gases_m2",
+      "kind": "finite_set",
+      "raw_value": "{N₂, H₂, NH₃}",
+      "unit": ""
+    },
+    {
+      "display_value": "x > y",
+      "id": "xy_relation",
+      "kind": "classification",
+      "raw_value": "x - y = 2; therefore x > y",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

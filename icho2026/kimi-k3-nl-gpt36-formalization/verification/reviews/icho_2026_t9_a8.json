@@ -1,0 +1,1399 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "All five requested structures are source-faithful concrete witnesses, are derived by transparent qualitative arrow relations without desired assignments in premises, and preserve the sealed Kimi 9.8 answer (draft SHA-256 6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8).",
+    "updated_at": "2026-09-13T09:35:22Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "a1b6157a6a04824726446753f29b73e384ece361c01a48db2458fce197c13151",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The source-first page-4 topology and arrow audit fixes the N template, O/P primary edits, the unit-2/unit-5 N/O bridge in Q, its Boc and benzyl caps in R/S, the remaining boxes, and the invariant secondary rim; all agree with the submission and Lean graphs."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "SourceRouteFits starts from the depicted N state and applies uniform transparent Swern, Wittig, directed-debenzylation, azide, bridge, Boc, deprotection, and N-benzylation relations. No O-S primary assignment is a premise; derivedRoute_primary_assignments is downstream."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "AlphaCDStructure/molecularGraph bind all heavy atoms, attached hydrogens, bond orders, formal charges, radicals, six glycosidic cross-boundary links, twelve secondary benzyl fragments, every primary environment, bridge/cap topology, chair, and five stereocentres per residue."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "All five outputs are exact symbolic structures; the source supplies no measured quantity, tolerance, or rounding-sensitive classification."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "clockwise12, counterclockwise13, and opposite14 encode the source orientation; source_direction_audit checks u1\u2192u2, u2\u2192u5, occupied-target fallback u2\u2192u6, and u6\u2192u3."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Within the displayed six-site route, each stage has one eligible transformed site and the maximum-strength director is unique when direction matters. The shared bridge consumes u5 before the fallback. No source-compatible alternative changes an O-S requested box under the same arrows and assumptions."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The depicted N-to-O arrow converts the unique unit-1 primary alcohol through oxidation/methylenation to a terminal vinyl group while retaining the alpha-CD scaffold.",
+          "carrier": "sourceStageReagents.nToO; SwernOxidation; WittigMethylenation; SourceRouteFits",
+          "status": "covered",
+          "evidence": "Page 4 fixes tail, ordered reagents, rightward head, and persistent scaffold; the relations are transparent local topology edits and claim only qualitative compatibility."
+        },
+        {
+          "claim": "The O-to-P arrow applies alkene-directed clockwise 1,2 debenzylation at unit 2 and the displayed mesyl/azide substitution.",
+          "carrier": "directingStrength; clockwise12; directedTarget; DibalDirectedDebenzylation; MesylAzideSubstitution",
+          "status": "covered",
+          "evidence": "The page-4 arrow, ortho-directing statement, and current-question clockwise convention bind the only active branch; the edit is uniform and not answer-specific."
+        },
+        {
+          "claim": "The P-to-Q arrow reduces the unit-2 azide, lets the resulting protic amine select available unit 5, and closes the single N/O bridge with the displayed symmetric dichloride.",
+          "carrier": "DibalAzideReduction; DibalDirectedDebenzylation; BridgeClosure; HasNOBridge",
+          "status": "covered",
+          "evidence": "Page 4 supplies the two-equivalent DIBAL-H/NaH/dichloride arrow; page 3 and the prompt bind protic priority and the 1,4 target. Explicit bridge atoms and both attachment boundaries are checked."
+        },
+        {
+          "claim": "The Q-to-R arrow uses bridge NH direction, occupied-opposite fallback to counterclockwise unit 6, N-Boc protection, and azide installation.",
+          "carrier": "directedTarget; DibalDirectedDebenzylation; BocProtection; MesylAzideSubstitution",
+          "status": "covered",
+          "evidence": "The opposite u5 environment is already the bridge O end; the source fallback/orientation selects u6. Page 4 fixes the leftward arrow and reagent order, and the carrier expands the Boc group."
+        },
+        {
+          "claim": "The R-to-S arrow removes Boc, N-benzylates the bridge, reduces unit-6 azide, and lets the new strongest protic group direct opposite debenzylation to unit 3.",
+          "carrier": "TrifluoroaceticDeprotection; NitrogenBenzylation; DibalAzideReduction; DibalDirectedDebenzylation",
+          "status": "covered",
+          "evidence": "Page 4 fixes the leftward reagent sequence and page 3/current text bind protic priority and the 1,4 rule. The final graph retains all unaffected motifs."
+        },
+        {
+          "claim": "Every O-S output preserves the six-unit alpha-D-glucopyranoside scaffold, twelve secondary O-benzyl groups, full electronic structure, and requested stereochemistry.",
+          "carrier": "coreBonds; secondaryBenzylBonds; routeAtomSpec; CompleteAlphaCDStructure; stereoCentre",
+          "status": "covered",
+          "evidence": "The shared context and template establish the scaffold; all route chemistry is on the depicted primary rim. The complete-structure predicate makes the graph definition, neutral valence checks, and explicit face/disposition data mandatory."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t9_a8.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t9_a8",
+        "source_record_sha256": "f905fafb3d51707b5f967e59f86e10b3211dafa4c74b2ad4055e7fbc90c9417f",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a8.answer.json",
+        "answer_submission_sha256": "19b7ab851c78fe18f91186535766501843c06041d86392b26d2592ec16302cae",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t9_a8.source.json",
+        "source_report_sha256": "972dcfcc35bfe52d09a45e7b2d4de61551e92c8fbe10239fe431f999177373f3",
+        "candidate": "IChO2026Problems/problem_icho_2026_t9_a8.lean",
+        "preflight_sha256": "a12d6f831dab386fabf84aa3069a7b29b8c9da5385f7a05cdce4c8ef5591ca40",
+        "candidate_sha256": "a1b6157a6a04824726446753f29b73e384ece361c01a48db2458fce197c13151",
+        "question_sha256": "3fa3a46ccb1854f87c3edfc91e47b6a00636013b8d2bc888ec7d82e27fbe7c1c",
+        "shared_context_sha256": "d61193beda891c334f627e26d620e0c9dc49f29ab2848df98e321d040012d5de",
+        "previous_parts_sha256": "8a6a8c1b8fd12ba5d0f7298a6b2e9b6ba9aa31c4164f4e6faa8a2cb3eab88d10",
+        "requested_outputs_sha256": "21c6ed04a4f15cd60bf56fd32675b1c78402262e122d93d785ba8cd4bf671c4e",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T9_page-4.png",
+            "sha256": "a387cc56150da4c1070f2eb0b61e1e7c130429b1ec58594613fdfdb816476a1d"
+          },
+          {
+            "path": "icho_2026_source/image/T9_page-3.png",
+            "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "e1e6cc54511ff82ea9a16e757693c0a52764eb3ba2a48d92976b2d9a80596971",
+          "node_count": 14,
+          "edge_count": 25,
+          "node_kind_counts": {
+            "derivation_obligation": 5,
+            "previous_part_prerequisite": 1,
+            "requested_output": 5,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_o",
+            "structure_p",
+            "structure_q",
+            "structure_r",
+            "structure_s"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t9_a5"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t9_a8",
+          "path": ".archon/provided_answer_drafts/Q9.md",
+          "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t9_a8.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t9_a8",
+          "source_record_sha256": "f905fafb3d51707b5f967e59f86e10b3211dafa4c74b2ad4055e7fbc90c9417f",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a8.answer.json",
+          "answer_submission_sha256": "19b7ab851c78fe18f91186535766501843c06041d86392b26d2592ec16302cae",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t9_a8.source.json",
+          "source_report_sha256": "972dcfcc35bfe52d09a45e7b2d4de61551e92c8fbe10239fe431f999177373f3",
+          "candidate": "IChO2026Problems/problem_icho_2026_t9_a8.lean",
+          "preflight_sha256": "a12d6f831dab386fabf84aa3069a7b29b8c9da5385f7a05cdce4c8ef5591ca40",
+          "candidate_sha256": "a1b6157a6a04824726446753f29b73e384ece361c01a48db2458fce197c13151",
+          "question_sha256": "3fa3a46ccb1854f87c3edfc91e47b6a00636013b8d2bc888ec7d82e27fbe7c1c",
+          "shared_context_sha256": "d61193beda891c334f627e26d620e0c9dc49f29ab2848df98e321d040012d5de",
+          "previous_parts_sha256": "8a6a8c1b8fd12ba5d0f7298a6b2e9b6ba9aa31c4164f4e6faa8a2cb3eab88d10",
+          "requested_outputs_sha256": "21c6ed04a4f15cd60bf56fd32675b1c78402262e122d93d785ba8cd4bf671c4e",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T9_page-4.png",
+              "sha256": "a387cc56150da4c1070f2eb0b61e1e7c130429b1ec58594613fdfdb816476a1d"
+            },
+            {
+              "path": "icho_2026_source/image/T9_page-3.png",
+              "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "e1e6cc54511ff82ea9a16e757693c0a52764eb3ba2a48d92976b2d9a80596971",
+            "node_count": 14,
+            "edge_count": 25,
+            "node_kind_counts": {
+              "derivation_obligation": 5,
+              "previous_part_prerequisite": 1,
+              "requested_output": 5,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "structure_o",
+              "structure_p",
+              "structure_q",
+              "structure_r",
+              "structure_s"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t9_a5"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t9_a8",
+            "path": ".archon/provided_answer_drafts/Q9.md",
+            "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The requested quantifier, route direction, site numbering, arrow certificates, and O-S topology were frozen from the inline problem evidence and both digest-verified images before opening the bound submission or candidate. The sealed Kimi text was used only for the required later fidelity comparison."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The exact symbolic chain is carried end-to-end by sourceNState, SourceRouteFits, derivedRoute_fits, derivedRoute_primary_assignments, molecularGraph, and the five Structure*Specification predicates; no intermediate rounding exists."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "Each problem-only output row prescribes exact_symbolic reporting; RawResult and ReportedResult preserve identical structural propositions."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or needed for these exact structural classifications."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The source asks to draw concrete structures, not enumerate an open chemical universe. The only finite carrier used decisively is the source-given six-unit template with explicit site states; internal route uniqueness is bounded to transparent displayed edits and is not global chemical uniqueness."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=a1b6157a6a04824726446753f29b73e384ece361c01a48db2458fce197c13151; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=15. Nontrivial result declarations: structure_o, structure_p, structure_q, structure_r, structure_s, derivedRoute_primary_assignments, derived_component_audit, raw_result, reported_result in IChO2026Problems.T9A8."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The five public result propositions supply concrete witnesses for the source verb Draw. The internal \u2203! theorem concerns only the deterministic finite route-state model and does not assert global uniqueness or exhaustive chemical coverage."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The result theorems have no user-supplied hypotheses. Source scheme data are transcribed, the redundant T9-A5 conjunct is independently derived from page 3 and does not select any alpha-route assignment, and all outcome-decisive route relations are transparent."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "Each requested id maps once, in bundle order, to a complete graph-valued Structure*Result and exact-symbolic reported carrier; no blocked or unknown sentinel replaces a requested structure."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All five depicted arrows, both direction branches, directing-strength precedence, bridge construction/protection, scaffold retention, and electronic/stereochemical graph interpretation have named covered carriers. No dormant bridge is needed for the permitted qualitative-arrow use."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "complete structure of O, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T9A8.structure_o",
+            "status": "covered",
+            "evidence": "The bound submission row has the exact id/kind/unit contract and agrees with the independently derived complete graph carrier; exact-symbolic display introduces no rounding.",
+            "output_id": "structure_o",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of P, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T9A8.structure_p",
+            "status": "covered",
+            "evidence": "The bound submission row has the exact id/kind/unit contract and agrees with the independently derived complete graph carrier; exact-symbolic display introduces no rounding.",
+            "output_id": "structure_p",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of Q, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T9A8.structure_q",
+            "status": "covered",
+            "evidence": "The bound submission row has the exact id/kind/unit contract and agrees with the independently derived complete graph carrier; exact-symbolic display introduces no rounding.",
+            "output_id": "structure_q",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of R, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T9A8.structure_r",
+            "status": "covered",
+            "evidence": "The bound submission row has the exact id/kind/unit contract and agrees with the independently derived complete graph carrier; exact-symbolic display introduces no rounding.",
+            "output_id": "structure_r",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of S, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T9A8.structure_s",
+            "status": "covered",
+            "evidence": "The bound submission row has the exact id/kind/unit contract and agrees with the independently derived complete graph carrier; exact-symbolic display introduces no rounding.",
+            "output_id": "structure_s",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T9_page-4.png",
+            "sha256": "a387cc56150da4c1070f2eb0b61e1e7c130429b1ec58594613fdfdb816476a1d",
+            "inspected": true,
+            "evidence": "Source-first visual/arrow audit: N has six clockwise primary boxes (u1 CH2OH; u2-u6 CH2OBn) and (OBn)12 on the secondary rim. Arrowheads/reagents are N\u2192O right (oxalyl chloride/DMSO, then methylene phosphorane), O\u2192P right (DIBAL-H(1), MsCl, NaN3), P\u2192Q down (DIBAL-H(2), NaH, ClCH2-C(=CH2)-CH2Cl), Q\u2192R left (DIBAL-H(1), Boc2O(1), MsCl, NaN3), and R\u2192S left (TFA, NaH/BnI, DIBAL-H(2)); the alpha-CD scaffold persists and the symmetric dichloride motif supplies the bridge introduced at Q. Component recount after expanding boundaries: each residue contributes 10 core heavy nodes/11 core bonds, including one c1-O-c4(next) glycosidic connection; 12 secondary Bn fragments contribute 84 nodes/96 bonds. Bn is attachment-CH2-C6H5 (7 C nodes, 8 bonds including its anchor); Boc is N-C(=O)-O-C(CH3)3 (5 C+2 O nodes, 7 bonds); azide has 3 N; vinyl adds one terminal C to core C6; the bridge adds 4 C plus u2 N and u5 O. Recombination gives O/P/Q/R/S heavy-node:bonds totals 185:208, 180:202, 175:197, 177:198, 168:189."
+          },
+          {
+            "path": "icho_2026_source/image/T9_page-3.png",
+            "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f",
+            "inspected": true,
+            "evidence": "Source-first visual audit: the printed general rule says one protic NH/OH at unit 1 directs the next primary reductive debenzylation to unit 4, or to unit 3 if unit 4 is unavailable. The beta-CD L panel is not used as an answer source for O-S; the candidate's included A5 derivation is redundant to the alpha-route outputs."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "All named reagents are assigned to the correct arrow direction and only transparent local structure edits needed for the drawn products are modeled. O-S are neutral closed-shell connected alpha-CD graphs with the canonical neutral azide Lewis form and explicit N/O bridge caps."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only: stages N\u2192O, O\u2192P, P\u2192Q, Q\u2192R, and R\u2192S use the exact page-4 source arrows. sourceStageReagents binds every displayed tail reagent; SourceRouteFits binds precursor/head direction; molecularGraph and the five Structure*Specification carriers check non-exclusive topology compatibility. No yield, sole-product, phase, omitted-stream, or quantitative ledger claim is made."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "No mass is requested, so consistency is graph-level. Before counting, Bn was expanded as attachment-CH2-C6H5 (C7H7), Boc as N-C(=O)-O-C(CH3)3 (C5H9O2), azide as three charged/neutral N sites, vinyl as core-C6H=CH2, and the linker as N-CH2-C(=CH2)-CH2-O with a distinct oxygen-side CH2 (four linker C; N/O belong to the prior amine/alcohol). Primary OBn includes its O; secondary O is already in the residue core. Six 10-node/11-bond cores plus twelve 7-node/8-bond secondary Bn fragments and each stage-specific primary/bridge/cap ledger reproduce DerivedComponentAudit. LocalValencesValid, netFormalCharge, and totalRadicalElectrons bind hydrogens/electronic data and prevent boundary double-counting."
+          },
+          "conservation_laws": {
+            "status": "not_applicable",
+            "evidence": "The structures use qualitative named transformations only and claim neither quantitative material balance nor yield/completeness; omitted leaving groups and byproducts remain unknown as required."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "The outputs are structural classifications with empty units; printed equivalents are dimensionless and are recorded only as exact route controls."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "Exact-symbolic structure reporting has no significant figures, tolerance, or rounding operation."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "Every requested primary box and all twelve secondary boxes are fixed. Q-R-S use one explicit u2-N/u5-O bridge with exomethylene and H/Boc/Bn nitrogen cap as appropriate. coreBonds plus stereoCentre retain alpha-(1\u21924) connectivity, 4C1 chair, alpha-D-gluco face pattern, and all five centres on each residue."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The source verb Draw requires one concrete evidence-supported structure for each named intermediate, not a global uniqueness theorem. The candidate supplies those witnesses; its bounded route-state uniqueness merely checks determinism of the displayed six-site sequence."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "SourceRouteFits contains the source N state and uniform transformation relations but none of the desired O-S primary tables. The tables occur only in the downstream derivedRoute_primary_assignments theorem and complete specifications; graph carriers are nontrivial and connected."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [
+              {
+                "name": "alpha-CD glucose-unit count",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#alpha_cd_six_units"
+                },
+                "unit": "dimensionless",
+                "value": 6
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "source N template",
+                "relation": "supplies the six primary-rim environments and twelve secondary O-benzyl sites at the N-to-O tail",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#n_template"
+                }
+              }
+            ],
+            "evidence": "The source-first arrow trace and complete visual box inventory agree with the submission row and the graph-valued Lean carrier.",
+            "id": "structure_o",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T9A8.sourceNState",
+                "IChO2026Problems.T9A8.sourceStageReagents"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T9A8.derivedO",
+                "IChO2026Problems.T9A8.StructureOResult"
+              ],
+              "relations": [
+                "IChO2026Problems.T9A8.SwernOxidation",
+                "IChO2026Problems.T9A8.WittigMethylenation",
+                "IChO2026Problems.T9A8.SourceRouteFits"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T9A8.structure_o"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The O carrier fixes every primary site, all secondary benzyl ethers, absence of a bridge, the full atom/bond graph, and retained scaffold stereochemistry exactly as independently derived.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "product structure at the head of the depicted N-to-O step",
+              "kind": "per_step"
+            },
+            "quantity_definition": "Complete structure of O on the six-unit alpha-CD template, including every primary and secondary box, bridge state, atom/bond/electronic data, and retained stereochemistry.",
+            "raw_result": {
+              "derivation": "The sole N primary alcohol at unit 1 is oxidized by the displayed oxalyl-chloride/DMSO operation and methylenated by the displayed phosphorane; all other template sites and the alpha-CD scaffold persist.",
+              "exact_unrounded": true,
+              "value_or_expression": "O = alpha-CD[u1=CH=CH2; u2,u3,u4,u5,u6=CH2OBn; secondary=(OBn)12; bridge=absent; six 4C1 alpha-D-glucopyranoside residues]"
+            },
+            "reporting": {
+              "application": "Exact-symbolic reporting preserves the complete graph and stereochemical assignment without rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output is an exact structural classification with no numerical unit and covers the complete O structure required by the card.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-4.png#route_n_to_o"
+              }
+            ],
+            "source_requirement": "complete structure of O, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "The unit-1 alkene directs the 1,2 modification clockwise to unit 2.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "alpha-CD glucose-unit count",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#alpha_cd_six_units"
+                },
+                "unit": "dimensionless",
+                "value": 6
+              },
+              {
+                "name": "DIBAL-H equivalents in O-to-P",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_o_to_p"
+                },
+                "unit": "dimensionless",
+                "value": 1
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_o",
+                "relation": "O is the tail state of the O-to-P arrow.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_o_to_p"
+                }
+              }
+            ],
+            "evidence": "The source-first clockwise branch trace and complete visual box inventory agree with the submission row and the graph-valued Lean carrier.",
+            "id": "structure_p",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T9A8.derivedRoute",
+                "IChO2026Problems.T9A8.sourceStageReagents"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T9A8.derivedP",
+                "IChO2026Problems.T9A8.StructurePResult"
+              ],
+              "relations": [
+                "IChO2026Problems.T9A8.DibalDirectedDebenzylation",
+                "IChO2026Problems.T9A8.MesylAzideSubstitution",
+                "IChO2026Problems.T9A8.source_direction_audit"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T9A8.structure_p"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The P carrier fixes all six primary sites, the canonical neutral azide charge/bond representation, all secondary benzyl ethers, and retained scaffold stereochemistry exactly as independently derived.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "product structure at the head of the depicted O-to-P step",
+              "kind": "per_step"
+            },
+            "quantity_definition": "Complete structure of P after the displayed alkene-directed clockwise 1,2 modification and azide installation.",
+            "raw_result": {
+              "derivation": "One displayed DIBAL-H equivalent removes the primary benzyl group at the clockwise neighbor selected by the unit-1 alkene; the displayed mesylation/azide sequence replaces that alcohol at unit 2 by azidomethyl.",
+              "exact_unrounded": true,
+              "value_or_expression": "P = alpha-CD[u1=CH=CH2; u2=CH2N3; u3,u4,u5,u6=CH2OBn; secondary=(OBn)12; bridge=absent; six 4C1 alpha-D-glucopyranoside residues]"
+            },
+            "reporting": {
+              "application": "Exact-symbolic reporting preserves the complete graph and stereochemical assignment without rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output is an exact structural classification with no numerical unit and covers the complete P structure required by the card.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-4.png#route_o_to_p"
+              }
+            ],
+            "source_requirement": "complete structure of P, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "Azide reduction at unit 2 creates the sole protic aminomethyl director before the directed debenzylation.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_p_to_q"
+                }
+              },
+              {
+                "condition": "The unit-2 protic group outranks the unit-1 alkene and selects its available 1,4-related unit 5.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#protic_directing_rule"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "alpha-CD glucose-unit count",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#alpha_cd_six_units"
+                },
+                "unit": "dimensionless",
+                "value": 6
+              },
+              {
+                "name": "DIBAL-H equivalents in P-to-Q",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_p_to_q"
+                },
+                "unit": "dimensionless",
+                "value": 2
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_p",
+                "relation": "P is the tail state of the P-to-Q arrow.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_p_to_q"
+                }
+              }
+            ],
+            "evidence": "The source-first protic-direction and bridge-topology trace agree with the submission row and the graph-valued Lean carrier.",
+            "id": "structure_q",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T9A8.derivedRoute",
+                "IChO2026Problems.T9A8.sourceStageReagents"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T9A8.derivedQ",
+                "IChO2026Problems.T9A8.StructureQResult"
+              ],
+              "relations": [
+                "IChO2026Problems.T9A8.DibalAzideReduction",
+                "IChO2026Problems.T9A8.DibalDirectedDebenzylation",
+                "IChO2026Problems.T9A8.BridgeClosure",
+                "IChO2026Problems.T9A8.HasNOBridge"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T9A8.structure_q"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The Q carrier fixes both occupied bridge boxes and every bridge atom/bond, the remaining four primary environments, all secondary benzyl ethers, and retained stereochemistry exactly as independently derived.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "product structure at the head of the depicted P-to-Q step",
+              "kind": "per_step"
+            },
+            "quantity_definition": "Complete structure of Q after azide reduction, protic-directed 1,4 debenzylation, and intramolecular N/O bridge closure.",
+            "raw_result": {
+              "derivation": "The two displayed DIBAL-H equivalents reduce unit-2 azide and free its available opposite unit-5 alcohol; NaH and the symmetric dichloromethylene reagent connect those unique N and O sites through one neutral bridge.",
+              "exact_unrounded": true,
+              "value_or_expression": "Q = alpha-CD[u1=CH=CH2; u2/u5 bridge=(u2)-CH2-NH-CH2-C(=CH2)-CH2-O-CH2-(u5); u3,u4,u6=CH2OBn; secondary=(OBn)12; six 4C1 alpha-D-glucopyranoside residues]"
+            },
+            "reporting": {
+              "application": "Exact-symbolic reporting preserves the complete graph and stereochemical assignment without rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output is an exact structural classification with no numerical unit and covers the complete Q structure required by the card.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-3.png#protic_direction"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-4.png#route_p_to_q"
+              }
+            ],
+            "source_requirement": "complete structure of Q, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "The bridge NH at unit 2 is protic and therefore outranks the alkene during the one-equivalent DIBAL-H operation.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "condition": "Unit 5, the 1,4 target of unit 2, is occupied by the bridge, so the stated fallback is the counterclockwise 1,3-related unit 6.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-3.png#protic_fallback"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "alpha-CD glucose-unit count",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#alpha_cd_six_units"
+                },
+                "unit": "dimensionless",
+                "value": 6
+              },
+              {
+                "name": "DIBAL-H equivalents in Q-to-R",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_q_to_r"
+                },
+                "unit": "dimensionless",
+                "value": 1
+              },
+              {
+                "name": "Boc2O equivalents in Q-to-R",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_q_to_r"
+                },
+                "unit": "dimensionless",
+                "value": 1
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_q",
+                "relation": "Q is the tail state of the Q-to-R arrow.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_q_to_r"
+                }
+              }
+            ],
+            "evidence": "The source-first occupied-target fallback, protection, and azide-installation trace agree with the submission row and the graph-valued Lean carrier.",
+            "id": "structure_r",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T9A8.derivedRoute",
+                "IChO2026Problems.T9A8.sourceStageReagents"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T9A8.derivedR",
+                "IChO2026Problems.T9A8.StructureRResult"
+              ],
+              "relations": [
+                "IChO2026Problems.T9A8.DibalDirectedDebenzylation",
+                "IChO2026Problems.T9A8.BocProtection",
+                "IChO2026Problems.T9A8.MesylAzideSubstitution",
+                "IChO2026Problems.T9A8.source_direction_audit"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T9A8.structure_r"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The R carrier expands the N-Boc cap, fixes the unit-6 canonical azide and all other boxes, retains the shared bridge, and fixes scaffold stereochemistry exactly as independently derived.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "product structure at the head of the depicted Q-to-R step",
+              "kind": "per_step"
+            },
+            "quantity_definition": "Complete structure of R after protic-directed counterclockwise fallback debenzylation, bridge-N Boc protection, and unit-6 azide installation.",
+            "raw_result": {
+              "derivation": "The bridge NH directs the displayed one-equivalent DIBAL-H step; its opposite unit 5 is occupied, so the stated counterclockwise 1,3 fallback frees unit 6, after which Boc2O caps N and MsCl/NaN3 installs the unit-6 azide.",
+              "exact_unrounded": true,
+              "value_or_expression": "R = alpha-CD[u1=CH=CH2; u2/u5 bridge=(u2)-CH2-N(Boc)-CH2-C(=CH2)-CH2-O-CH2-(u5); u3,u4=CH2OBn; u6=CH2N3; secondary=(OBn)12; six 4C1 alpha-D-glucopyranoside residues]"
+            },
+            "reporting": {
+              "application": "Exact-symbolic reporting preserves the complete graph and stereochemical assignment without rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output is an exact structural classification with no numerical unit and covers the complete R structure required by the card.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-3.png#protic_fallback"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-4.png#route_q_to_r"
+              }
+            ],
+            "source_requirement": "complete structure of R, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "Trifluoroacetic acid restores bridge NH and NaH/benzyl iodide converts it to a non-protic N-benzyl site before the final DIBAL-H operations.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_r_to_s"
+                }
+              },
+              {
+                "condition": "Reduction of the unit-6 azide creates the sole strongest protic director; its available 1,4-related target is unit 3.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#protic_directing_rule"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "alpha-CD glucose-unit count",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#alpha_cd_six_units"
+                },
+                "unit": "dimensionless",
+                "value": 6
+              },
+              {
+                "name": "DIBAL-H equivalents in R-to-S",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_r_to_s"
+                },
+                "unit": "dimensionless",
+                "value": 2
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_r",
+                "relation": "R is the tail state of the R-to-S arrow.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-4.png#route_r_to_s"
+                }
+              }
+            ],
+            "evidence": "The source-first deprotection/N-benzylation, azide-reduction, and final protic-direction trace agree with the submission row and the graph-valued Lean carrier.",
+            "id": "structure_s",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T9A8.derivedRoute",
+                "IChO2026Problems.T9A8.sourceStageReagents"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T9A8.derivedS",
+                "IChO2026Problems.T9A8.StructureSResult"
+              ],
+              "relations": [
+                "IChO2026Problems.T9A8.TrifluoroaceticDeprotection",
+                "IChO2026Problems.T9A8.NitrogenBenzylation",
+                "IChO2026Problems.T9A8.DibalAzideReduction",
+                "IChO2026Problems.T9A8.DibalDirectedDebenzylation"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T9A8.structure_s"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The S carrier expands the N-benzyl cap, fixes the unit-3 alcohol and unit-6 amine plus every other box, retains the bridge, and fixes scaffold stereochemistry exactly as independently derived.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "product structure at the head of the depicted R-to-S step",
+              "kind": "per_step"
+            },
+            "quantity_definition": "Complete structure of S after bridge-N deprotection/N-benzylation, azide reduction, and final protic-directed 1,4 debenzylation.",
+            "raw_result": {
+              "derivation": "The displayed acid removes Boc, NaH/benzyl iodide installs N-benzyl, and two DIBAL-H equivalents reduce the unit-6 azide and then free its available opposite unit-3 primary alcohol; all other graph features persist.",
+              "exact_unrounded": true,
+              "value_or_expression": "S = alpha-CD[u1=CH=CH2; u2/u5 bridge=(u2)-CH2-N(Bn)-CH2-C(=CH2)-CH2-O-CH2-(u5); u3=CH2OH; u4=CH2OBn; u6=CH2NH2; secondary=(OBn)12; six 4C1 alpha-D-glucopyranoside residues]"
+            },
+            "reporting": {
+              "application": "Exact-symbolic reporting preserves the complete graph and stereochemical assignment without rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output is an exact structural classification with no numerical unit and covers the complete S structure required by the card.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-3.png#protic_direction"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-4.png#route_r_to_s"
+              }
+            ],
+            "source_requirement": "complete structure of S, including all requested stereochemistry and template fields",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "a1b6157a6a04824726446753f29b73e384ece361c01a48db2458fce197c13151"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a8.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "All five requested structures are source-faithful concrete witnesses, are derived by transparent qualitative arrow relations without desired assignments in premises, and preserve the sealed Kimi 9.8 answer (draft SHA-256 6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8).",
+        "reviewed_at": "2026-09-13T09:35:22Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "a1b6157a6a04824726446753f29b73e384ece361c01a48db2458fce197c13151",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a8.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 15,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "All five exact-symbolic O-S structures are independently supported by the bound figures and stated directing rules, match the submission and frozen Kimi 9.8 draft, and are carried by complete graph-and-stereochemistry Lean theorems with no unsupported premise or weakened conclusion.",
+    "evidence": "The candidate and submission SHA-256 values exactly match the source contract. Deterministic preflight reports status passed, compiles=true, returncode=0, sorry_count=0. The source-bounded N-to-O-to-P-to-Q-to-R-to-S route is encoded by generic topology edits and directing rules, proved uniquely within that route model, expanded to complete neutral connected molecular graphs, and exposed by structure_o through structure_s plus raw_result and reported_result.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "9927e1a5fa0c3cdfa8fa8d12efa6f9486eda24c4aef643f13eb3fa194d7352ea",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t9_a8.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t9_a8",
+      "source_record_sha256": "f905fafb3d51707b5f967e59f86e10b3211dafa4c74b2ad4055e7fbc90c9417f",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a8.answer.json",
+      "answer_submission_sha256": "19b7ab851c78fe18f91186535766501843c06041d86392b26d2592ec16302cae",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t9_a8.source.json",
+      "source_report_sha256": "972dcfcc35bfe52d09a45e7b2d4de61551e92c8fbe10239fe431f999177373f3",
+      "candidate": "IChO2026Problems/problem_icho_2026_t9_a8.lean",
+      "preflight_sha256": "02cb93e2ed943d728e63fc19d45fac90c06d8057edfbd414ddf03f2cfa73b31b",
+      "candidate_sha256": "9927e1a5fa0c3cdfa8fa8d12efa6f9486eda24c4aef643f13eb3fa194d7352ea",
+      "question_sha256": "3fa3a46ccb1854f87c3edfc91e47b6a00636013b8d2bc888ec7d82e27fbe7c1c",
+      "shared_context_sha256": "d61193beda891c334f627e26d620e0c9dc49f29ab2848df98e321d040012d5de",
+      "previous_parts_sha256": "8a6a8c1b8fd12ba5d0f7298a6b2e9b6ba9aa31c4164f4e6faa8a2cb3eab88d10",
+      "requested_outputs_sha256": "21c6ed04a4f15cd60bf56fd32675b1c78402262e122d93d785ba8cd4bf671c4e",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T9_page-4.png",
+          "sha256": "a387cc56150da4c1070f2eb0b61e1e7c130429b1ec58594613fdfdb816476a1d"
+        },
+        {
+          "path": "icho_2026_source/image/T9_page-3.png",
+          "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "e1e6cc54511ff82ea9a16e757693c0a52764eb3ba2a48d92976b2d9a80596971",
+        "node_count": 14,
+        "edge_count": 25,
+        "node_kind_counts": {
+          "derivation_obligation": 5,
+          "previous_part_prerequisite": 1,
+          "requested_output": 5,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "structure_o",
+          "structure_p",
+          "structure_q",
+          "structure_r",
+          "structure_s"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t9_a5"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t9_a8",
+        "path": ".archon/provided_answer_drafts/Q9.md",
+        "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t9_a8.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t9_a8",
+        "source_record_sha256": "f905fafb3d51707b5f967e59f86e10b3211dafa4c74b2ad4055e7fbc90c9417f",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a8.answer.json",
+        "answer_submission_sha256": "19b7ab851c78fe18f91186535766501843c06041d86392b26d2592ec16302cae",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t9_a8.source.json",
+        "source_report_sha256": "972dcfcc35bfe52d09a45e7b2d4de61551e92c8fbe10239fe431f999177373f3",
+        "candidate": "IChO2026Problems/problem_icho_2026_t9_a8.lean",
+        "preflight_sha256": "02cb93e2ed943d728e63fc19d45fac90c06d8057edfbd414ddf03f2cfa73b31b",
+        "candidate_sha256": "9927e1a5fa0c3cdfa8fa8d12efa6f9486eda24c4aef643f13eb3fa194d7352ea",
+        "question_sha256": "3fa3a46ccb1854f87c3edfc91e47b6a00636013b8d2bc888ec7d82e27fbe7c1c",
+        "shared_context_sha256": "d61193beda891c334f627e26d620e0c9dc49f29ab2848df98e321d040012d5de",
+        "previous_parts_sha256": "8a6a8c1b8fd12ba5d0f7298a6b2e9b6ba9aa31c4164f4e6faa8a2cb3eab88d10",
+        "requested_outputs_sha256": "21c6ed04a4f15cd60bf56fd32675b1c78402262e122d93d785ba8cd4bf671c4e",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T9_page-4.png",
+            "sha256": "a387cc56150da4c1070f2eb0b61e1e7c130429b1ec58594613fdfdb816476a1d"
+          },
+          {
+            "path": "icho_2026_source/image/T9_page-3.png",
+            "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "e1e6cc54511ff82ea9a16e757693c0a52764eb3ba2a48d92976b2d9a80596971",
+          "node_count": 14,
+          "edge_count": 25,
+          "node_kind_counts": {
+            "derivation_obligation": 5,
+            "previous_part_prerequisite": 1,
+            "requested_output": 5,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_o",
+            "structure_p",
+            "structure_q",
+            "structure_r",
+            "structure_s"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t9_a5"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t9_a8",
+          "path": ".archon/provided_answer_drafts/Q9.md",
+          "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The chemistry audit was rederived only from the inline problem evidence and the two digest-bound figures. The generated submission was treated as untrusted, and the sealed Kimi draft was used only for the mandated fidelity comparison, never as a source premise or chemistry axiom."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "previous_part_a5_derived reconstructs the declared T9-A5 prerequisite inline; source_scheme_transcribed and SourceRouteFits encode the complete symbolic route; existsUniqueSourceRoute and derivedRoute_primary_assignments derive the five primary-rim states; derived_component_audit and the five structure theorems expand and validate the requested graphs without rounding."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "Each controller requested output is a classification with problem-output reporting kind exact_symbolic. RawResult and ReportedResult contain the same ordered conjunction, so reporting introduces no transformation or precision loss."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No numerical measurement, rounding, or tolerance is used: all five outputs are exact symbolic structures with an empty unit field."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "Fin 6, clockwise numbering, the fixed alpha-CD scaffold, the N template, reagent arrows, the protic 1,4/available-1,3 fallback, alkene 1,2 direction, and director priority are visible in the bound figures. The route relations are uniform transparent edits for the depicted named transforms; no answer-shaped singleton or open-world candidate exclusion is assumed."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=9927e1a5fa0c3cdfa8fa8d12efa6f9486eda24c4aef643f13eb3fa194d7352ea; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result declarations are IChO2026Problems.T9A8.structure_o, structure_p, structure_q, structure_r, structure_s, raw_result, and reported_result, supported by previous_part_a5_derived, existsUniqueSourceRoute, derivedRoute_primary_assignments, and derived_component_audit."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "ReportedResult preserves the exact five-output O, P, Q, R, S scope. Each specification requires a complete molecular graph, all six primary sites, all twelve secondary benzyl ethers, all six glycosidic links, bridge atoms where applicable, charge/radical/valence checks, chair, residue identity, and all ring stereocentres."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The exported theorems have no external hypotheses. The prior T9-A5 result is rederived from the page-3 benzylation/debenzylation scheme and printed directing rule; all alpha-CD route facts are proved from sourceNState, source-stage transcription, and uniform structural transformation relations."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The five Lean specifications, five ordered submission entries, independently traced source route, and sealed Kimi 9.8 assignments agree exactly; no requested box, bridge end, protection state, secondary-rim field, or retained stereochemistry is omitted from the raw result."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The problem arrows and named reagents ground qualitative source-tail/reagent/head compatibility; transparent graph edits encode oxidation/methylenation, directed debenzylation, azide substitution/reduction, N/O bridge closure, Boc cycling, and N-benzylation. Direction selection is tied directly to the page-3 rule and page-4 clockwise/counterclockwise and priority instructions. No yield, completeness, or unprinted stream is inferred."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "complete structure of O, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T9A8.structure_o : StructureOResult",
+          "status": "covered",
+          "evidence": "The first submission entry has the exact id/kind/unit schema and agrees with the independently traced N-to-O arrow. StructureOSpecification binds the complete scaffold, every primary and secondary template field, retained stereochemistry, and absence of a bridge.",
+          "output_id": "structure_o",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of P, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T9A8.structure_p : StructurePResult",
+          "status": "covered",
+          "evidence": "The second entry agrees with alkene-directed clockwise modification followed by the displayed substitution sequence. StructurePSpecification binds its full neutral graph and stereochemical scaffold.",
+          "output_id": "structure_p",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of Q, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T9A8.structure_q : StructureQResult",
+          "status": "covered",
+          "evidence": "The third entry agrees with azide reduction, stronger protic 1,4 direction, and closure by the depicted bifunctional reagent. HasNOBridge explicitly binds both occupied units and every atom, bond order, and N-H state of the shared outside-the-box bridge.",
+          "output_id": "structure_q",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of R, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T9A8.structure_r : StructureRResult",
+          "status": "covered",
+          "evidence": "The fourth entry agrees with the occupied-opposite-site fallback, subsequent protection, and displayed substitution. StructureRSpecification explicitly binds the protected bridge, modified primary site, unchanged boxes, and stereochemistry.",
+          "output_id": "structure_r",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of S, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T9A8.structure_s : StructureSResult",
+          "status": "covered",
+          "evidence": "The fifth entry agrees with deprotection, N-functionalization, azide reduction, and stronger-protic directed final debenzylation. StructureSSpecification binds all six differentiated environments, the shared bridge, complete secondary rim, and retained stereochemistry.",
+          "output_id": "structure_s",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T9_page-4.png",
+          "sha256": "a387cc56150da4c1070f2eb0b61e1e7c130429b1ec58594613fdfdb816476a1d",
+          "inspected": true,
+          "evidence": "Readable source page: it shows the numbered six-unit N template, its primary and secondary-rim labels, the full N-to-O-to-P-to-Q-to-R-to-S reagent sequence, the bifunctional dichloro-alkene reagent, and the clockwise 1,2/counterclockwise 1,3 plus protic-priority instructions."
+        },
+        {
+          "path": "icho_2026_source/image/T9_page-3.png",
+          "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f",
+          "inspected": true,
+          "evidence": "Readable source page: it states that one NH/OH director at unit 1 sends the next primary reductive debenzylation to unit 4, or to unit 3 when unit 4 is unavailable, and supplies the preceding beta-CD context rederived in the candidate."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Independent stage tracing gives the same five structures: Swern/Wittig changes only the initial primary site; alkene direction selects the clockwise neighbour; azide reduction creates the stronger protic director for the opposite site; the unique NH/OH pair closes through the shown symmetric dichloride; an occupied opposite site triggers the stated counterclockwise 1,3 fallback; and the final amine out-directs the retained alkene. All remaining primary boxes and twelve secondary benzyl ethers are tracked."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only. Named stages are N-to-O, O-to-P, P-to-Q, Q-to-R, and R-to-S from T9_page-4.png; sourceStageReagents and SourceSchemeTranscribed bind their reagent roles and direction, while SourceRouteFits, molecularGraph, and StructureO/ P/ Q/ R/ SSpecification are transparent compatibility carriers. The requested conclusion is structural only, so no yield, sole-product, phase, omitted-stream, or quantitative material ledger is asserted."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Although no formula or mass is requested, every reported structure is expanded to a connected heavy-atom graph with attached hydrogen counts. derived_component_audit checks whole-structure atom/bond assembly only after including six residues, twelve secondary benzyl groups, all glycosidic connectors, all primary fragments, and each bridge/protecting group; the complete specifications prove neutral ordinary local valences and zero radicals."
+        },
+        "conservation_laws": {
+          "status": "not_applicable",
+          "evidence": "The arrows are used only for qualitative named-product topology compatibility. No quantitative material balance, yield, completeness, byproduct absence, or cross-stage mass/charge ledger is needed or claimed; local atom valence, formal charge, and radical consistency are checked in each product graph."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "All requested outputs are dimensionless exact-symbolic structure classifications with unit equal to the empty string."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "There are no numerical requested values, significant figures, rounding operations, measured intervals, or tolerances in T9-A8."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "The graph explicitly contains every scaffold and substituent atom and bond order, canonical neutral azide charge separation, full Boc/Bn fragments, and the single shared N/O bridge. Face, axial/equatorial disposition, fourCOne chair, alpha-D-glucopyranoside configuration, and five ordered stereocentres per residue are retained because every depicted edit is at the primary rim."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source asks for concrete drawings, not open-world exhaustive uniqueness. The candidate supplies concrete evidence-supported witnesses; existsUniqueSourceRoute is only an internal audit over all states satisfying the same uniform source-bounded route relations and is not used to claim global chemical-product uniqueness."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "No requested structure is a premise. The expected-state definitions are downstream readable normal forms; SourceRouteFits contains only the starting template, source transcription, independently derived prerequisite, and generic uniformly applied transformation relations. The route is then proved unique in that model before its primary assignments and full graphs are extracted."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a8.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "All five exact-symbolic O-S structures are independently supported by the bound figures and stated directing rules, match the submission and frozen Kimi 9.8 draft, and are carried by complete graph-and-stereochemistry Lean theorems with no unsupported premise or weakened conclusion.",
+        "evidence": "The candidate and submission SHA-256 values exactly match the source contract. Deterministic preflight reports status passed, compiles=true, returncode=0, sorry_count=0. The source-bounded N-to-O-to-P-to-Q-to-R-to-S route is encoded by generic topology edits and directing rules, proved uniquely within that route model, expanded to complete neutral connected molecular graphs, and exposed by structure_o through structure_s plus raw_result and reported_result.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T10:17:42.060168Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "9927e1a5fa0c3cdfa8fa8d12efa6f9486eda24c4aef643f13eb3fa194d7352ea",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a8.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T10:17:42.060212Z",
+    "repair_handoff": {}
+  }
+}

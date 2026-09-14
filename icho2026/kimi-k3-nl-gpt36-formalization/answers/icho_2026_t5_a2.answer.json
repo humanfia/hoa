@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t5_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "R-C(=O)-O-CH2-C*_L(H)(O-C(=O)-R)-CH2-O-P_L(=O)(OH)-O-CH2-CH(OH)-CH2-O-P_R(=O)(OH)-O-CH2-C*_R(H)(O-C(=O)-R)-CH2-O-C(=O)-R; C*_L = (R), C*_R = (R)",
+      "id": "structure_pl1",
+      "kind": "classification",
+      "raw_value": "R-C(=O)-O-CH2-C*_L(H)(O-C(=O)-R)-CH2-O-P_L(=O)(OH)-O-CH2-CH(OH)-CH2-O-P_R(=O)(OH)-O-CH2-C*_R(H)(O-C(=O)-R)-CH2-O-C(=O)-R; C*_L = (R), C*_R = (R)",
+      "unit": ""
+    },
+    {
+      "display_value": "Monoanion (-1): R-C(=O)-O-CH2-C*_L(H)(O-C(=O)-R)-CH2-O-P_L(=O)(OH)-O-CH2-CH(OH)-CH2-O-P_R(=O)(O^-)-O-CH2-C*_R(H)(O-C(=O)-R)-CH2-O-C(=O)-R; C*_L = (R), C*_R = (R); folded relay P_L-O-H...O_c-H...O^--P_R, with the L/R-exchanged arrangement equivalent",
+      "id": "structure_y",
+      "kind": "classification",
+      "raw_value": "Monoanion (-1): R-C(=O)-O-CH2-C*_L(H)(O-C(=O)-R)-CH2-O-P_L(=O)(OH)-O-CH2-CH(OH)-CH2-O-P_R(=O)(O^-)-O-CH2-C*_R(H)(O-C(=O)-R)-CH2-O-C(=O)-R; C*_L = (R), C*_R = (R); intramolecular H bonds P_L-O-H...O_c and O_c-H...O^--P_R form the central-OH-mediated cooperative relay; the L/R-exchanged arrangement is equivalent",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

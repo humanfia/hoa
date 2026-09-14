@@ -1,0 +1,1296 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The candidate faithfully formalizes T8-A8 as conditional_contest_model: source chart facts, the ordinary visible-color photon-energy order, and separately named controller-authorized M001/M002 imply all four requested classifications for every bijective readout-preserving actual assignment. No requested result is assumed, and the bound sidecar matches every exact-symbolic output.",
+    "updated_at": "2026-09-13T10:12:02Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "89a41c0a5e56857d21709b93b7856475df16aebe376120c3e1f36f8e86ec5fc2",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "Page 4 is transcribed without fabricated decimals: a has no plotted H2/CO stack or readouts; b, c, and d have binary stacks and strictly decreasing H2 segments. Option.none is explicitly distinguished from numerical zero. M001 and M002 are separate scoped hypotheses and are not presented as figure-derived facts."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Bijection and stack preservation exclude N from b/c/d under M001 and force it at a. The strict page-4 H2 chain, red<green<blue photon-energy chain, M002, positive percent scaling, and illuminated readout preservation uniquely align b/c/d. The theorem ranges over every actual assignment; the permitted sorry does not alter this semantic statement audit."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "Condition and Panel each have exactly the four source-named members. ActualAssignment supplies the non-answer-shaped bijection plus stack and illuminated H2/CO readout preservation needed to express correspondence. RequestedAssignment and four individual result theorems expose every requested output."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The requested outputs are exact classifications. The proof uses only visually separated strict segment order, not decimal bar estimates, thresholds, numerical tolerances, or rounded quantities."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The implication direction is correct: ordinary visible-light ordering is red<green<blue in photon energy, M002 maps greater energy to strictly greater H2 fraction, and page 4 orders H2 as d<c<b. No inverse or universal selectivity law is asserted."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Within the stated conditional model, no alternative permutation survives: a stacked panel cannot map to M001's stackless N; after N is placed, the two strict three-element chains eliminate every non-order-preserving illuminated permutation. No free flag, answer-shaped singleton, or assumed final assignment remains."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "Page-4 panel a lacks a plotted H2/CO stack, panels b/c/d have stacks, and their H2 segments satisfy d<c<b.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T8A8.Page4FigureFacts",
+          "status": "covered",
+          "evidence": "Directly inspected in icho_2026_source/image/T8_page-4.png; the carrier uses stack visibility, optional readouts, and only the robust strict ordering rather than invented decimal values."
+        },
+        {
+          "claim": "The four panels correspond one-to-one to the four different named experimental conditions and preserve the displayed condition readouts.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T8A8.ActualAssignment",
+          "status": "covered",
+          "evidence": "The source says the chart is under four different conditions and asks which of those four corresponds to a,b,c,d. Bijectivity and readout preservation encode correspondence without specifying any answer."
+        },
+        {
+          "claim": "For these named visible LEDs, photon energy is ordered red below green below blue.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T8A8.VisibleLEDPhotonEnergyOrder",
+          "status": "covered",
+          "evidence": "The source names red, green, and blue light; the ordering follows the ordinary visible-spectrum wavelength order together with E=hc/lambda. The carrier is ordinal and experiment-scoped, with no unsupported numerical energies."
+        },
+        {
+          "claim": "M001: N has no plotted H2/CO product stack, without asserting absence of every dark reaction.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T8A8.M001 and theorem hypothesis M001_input",
+          "status": "covered",
+          "evidence": "Exact target-scoped controller authorization is bound by model_authorization_sha256 a5a2efb40aaee84da0386a961e8e0726350a8223a665c6d45fb57781e8caf5a2. The definition states only stack visibility and remains a named conditional hypothesis."
+        },
+        {
+          "claim": "M002: among this experiment's three illuminated conditions, greater photon energy implies strictly greater H2 mole fraction.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T8A8.M002 and theorem hypothesis M002_input",
+          "status": "covered",
+          "evidence": "The same exact authorization receipt covers this relation. The quantified domain is IlluminatedCondition only, and the theorem treats it as a named conditional hypothesis rather than a figure proof, kernel axiom, universal law, or final assignment."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a8.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+        "source_record_id": "icho_2026_t8_a8",
+        "source_record_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a8.answer.json",
+        "answer_submission_sha256": "2fcca24247cff6fb53876c610867b431dc9fcd878d146276212694af42663e86",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a8.source.json",
+        "source_report_sha256": "555d119269856aa83c6146cfa2a7059399bdd0451762e9a48d9d51fb2ea87cd0",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a8.lean",
+        "preflight_sha256": "1a21e68a9eba69bcc8c189d174135ed33a18f533cce5a6f32a3e49f80527575f",
+        "candidate_sha256": "89a41c0a5e56857d21709b93b7856475df16aebe376120c3e1f36f8e86ec5fc2",
+        "question_sha256": "aced0bfabc3484fe295d4b3e52c77814ea488cb8701f33dfd4ac32fe5faa075a",
+        "shared_context_sha256": "2772e7205f5cec75acc1d6d55df832e14788854aa08b739059914c2ba607a66a",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "558274d8aa8871881556d3fe716f0219d8704072e81ba2bd85c470347d0e01d0",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-4.png",
+            "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a"
+          },
+          {
+            "path": "icho_2026_source/image/T8_page-3.png",
+            "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "9063672777d17a2b92d263ff9047aef6b33196e0810c1d1e6019829082cded11",
+          "node_count": 11,
+          "edge_count": 16,
+          "node_kind_counts": {
+            "derivation_obligation": 4,
+            "requested_output": 4,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "condition_a",
+            "condition_b",
+            "condition_c",
+            "condition_d"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a8",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false,
+          "model_authorization": {
+            "schema_version": 1,
+            "record_id": "icho_2026_t8_a8",
+            "scope": "this Kimi-NL GPT formalization campaign, T8-A8 only",
+            "source_bundle_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+            "draft_sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+            "user_reply": "\u5f53\u524dkimi\u7248\u672c\u4e5f\u6388\u6743",
+            "recorded_at": "2026-09-13T09:13:09Z",
+            "assumptions": {
+              "M001": "In this experiment the N condition has no plotted H2/CO product stack; this does not assert absence of every dark reaction.",
+              "M002": "For any two of this experiment's three illuminated LED conditions u and v, E_photon(u) < E_photon(v) implies chi_H2(u) < chi_H2(v)."
+            },
+            "evaluation_basis": "conditional_contest_model",
+            "proved_from_figures": false,
+            "final_answer_axioms_allowed": false
+          },
+          "model_authorization_sha256": "a5a2efb40aaee84da0386a961e8e0726350a8223a665c6d45fb57781e8caf5a2"
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t8_a8.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+          "source_record_id": "icho_2026_t8_a8",
+          "source_record_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a8.answer.json",
+          "answer_submission_sha256": "2fcca24247cff6fb53876c610867b431dc9fcd878d146276212694af42663e86",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t8_a8.source.json",
+          "source_report_sha256": "555d119269856aa83c6146cfa2a7059399bdd0451762e9a48d9d51fb2ea87cd0",
+          "candidate": "IChO2026Problems/problem_icho_2026_t8_a8.lean",
+          "preflight_sha256": "1a21e68a9eba69bcc8c189d174135ed33a18f533cce5a6f32a3e49f80527575f",
+          "candidate_sha256": "89a41c0a5e56857d21709b93b7856475df16aebe376120c3e1f36f8e86ec5fc2",
+          "question_sha256": "aced0bfabc3484fe295d4b3e52c77814ea488cb8701f33dfd4ac32fe5faa075a",
+          "shared_context_sha256": "2772e7205f5cec75acc1d6d55df832e14788854aa08b739059914c2ba607a66a",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "558274d8aa8871881556d3fe716f0219d8704072e81ba2bd85c470347d0e01d0",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T8_page-4.png",
+              "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a"
+            },
+            {
+              "path": "icho_2026_source/image/T8_page-3.png",
+              "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "9063672777d17a2b92d263ff9047aef6b33196e0810c1d1e6019829082cded11",
+            "node_count": 11,
+            "edge_count": 16,
+            "node_kind_counts": {
+              "derivation_obligation": 4,
+              "requested_output": 4,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "condition_a",
+              "condition_b",
+              "condition_c",
+              "condition_d"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t8_a8",
+            "path": ".archon/provided_answer_drafts/Q8.md",
+            "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false,
+            "model_authorization": {
+              "schema_version": 1,
+              "record_id": "icho_2026_t8_a8",
+              "scope": "this Kimi-NL GPT formalization campaign, T8-A8 only",
+              "source_bundle_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+              "draft_sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+              "user_reply": "\u5f53\u524dkimi\u7248\u672c\u4e5f\u6388\u6743",
+              "recorded_at": "2026-09-13T09:13:09Z",
+              "assumptions": {
+                "M001": "In this experiment the N condition has no plotted H2/CO product stack; this does not assert absence of every dark reaction.",
+                "M002": "For any two of this experiment's three illuminated LED conditions u and v, E_photon(u) < E_photon(v) implies chi_H2(u) < chi_H2(v)."
+              },
+              "evaluation_basis": "conditional_contest_model",
+              "proved_from_figures": false,
+              "final_answer_axioms_allowed": false
+            },
+            "model_authorization_sha256": "a5a2efb40aaee84da0386a961e8e0726350a8223a665c6d45fb57781e8caf5a2"
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, no-stack observation, strict H2 panel order, finite condition set, and exact-symbolic reporting rule were frozen from the bound text and both verified images before the untrusted sidecar and candidate were opened. M001/M002 were used only as the explicit target-scoped conditional inputs."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "End-to-end symbolic chain: page4 gives one unstacked panel plus d<c<b for H2; M001 and bijective stack preservation fix the dark position; visible-energy order plus M002 and readout preservation align the remaining three ordered positions. Each independent_rederivation entry records its exact unrounded constructor."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "Each requested output is a classification with reporting policy exact_symbolic and empty unit; the sidecar supplies one exact condition token per output with no numeric formatting."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is used or needed. The derivation relies on categorical stack presence and strict visually resolved order; no bar-height decimal, measurement interval, or rounding margin is introduced."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The finite domain is source-given, not candidate-selected: four panels a-d and four different named conditions N/R/G/B. ActualAssignment quantifies over all bijections and does not preselect a witness or singleton."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=89a41c0a5e56857d21709b93b7856475df16aebe376120c3e1f36f8e86ec5fc2; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=1, duration_bucket=under_1m. Nontrivial result carriers are conditional_contest_model, condition_a_result, condition_b_result, condition_c_result, and condition_d_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The main theorem is explicitly labelled conditional_contest_model and proves the requested assignment for every ActualAssignment satisfying figure facts, visible-energy order, M001, and M002. It neither claims an unconditional official answer nor extends M001/M002 beyond this experiment."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "Page4FigureFacts comes from the bound chart; the panel/condition bijection and readout preservation unpack the source's correspondence wording; visible color energy order is an ordinary scoped physical relation; M001/M002 are exactly the two authorized supplementary inputs. None is a final-assignment premise."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "RequestedAssignment contains exactly condition_a through condition_d in bundle order, individual result theorems expose each, and all four bound submission entries match the independently derived exact classifications and the sealed Kimi T8-A8 final answer."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are inventoried above: chart observation, actual-correspondence semantics, visible photon-energy order, M001, and M002. The page-3 Gibbs diagram is not silently used as a selectivity law, and no additional chemistry premise is needed."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "condition corresponding to curve a in the diagram",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T8A8.condition_a_result",
+            "status": "covered",
+            "evidence": "The sidecar entry has the required id, classification kind, empty unit, exact symbolic display, and the independently derived raw constructor; the named theorem carries the same conclusion.",
+            "output_id": "condition_a",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "condition corresponding to curve b in the diagram",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T8A8.condition_b_result",
+            "status": "covered",
+            "evidence": "The sidecar entry has the required id, classification kind, empty unit, exact symbolic display, and the independently derived raw constructor; the named theorem carries the same conclusion.",
+            "output_id": "condition_b",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "condition corresponding to curve c in the diagram",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T8A8.condition_c_result",
+            "status": "covered",
+            "evidence": "The sidecar entry has the required id, classification kind, empty unit, exact symbolic display, and the independently derived raw constructor; the named theorem carries the same conclusion.",
+            "output_id": "condition_c",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "condition corresponding to curve d in the diagram",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T8A8.condition_d_result",
+            "status": "covered",
+            "evidence": "The sidecar entry has the required id, classification kind, empty unit, exact symbolic display, and the independently derived raw constructor; the named theorem carries the same conclusion.",
+            "output_id": "condition_d",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T8_page-4.png",
+            "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a",
+            "inspected": true,
+            "evidence": "Digest matched. Legend maps blue diagonal hatching to H2 and red vertical hatching to CO. Panel a has no plotted stack; b, c, and d each reach 100%, with H2 segments visibly ordered b>c>d. This is a bar chart, so molecular building-block connectivity and atom topology accounting do not apply."
+          },
+          {
+            "path": "icho_2026_source/image/T8_page-3.png",
+            "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f",
+            "inspected": true,
+            "evidence": "Digest matched. The page shows the preceding TOF plot and Gibbs-energy pathways for CO2 reduction and additional-proton reduction, but no a-d panel/color assignment. It is not used to manufacture the M002 response relation, which remains separately authorized."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The model distinguishes a missing plotted product stack from zero H2 or absence of all dark chemistry, represents H2 and CO readouts as mole fractions/percentages with the factor 100, and confines M002 to the three illuminated conditions."
+          },
+          "staged_species_domain": {
+            "status": "not_applicable",
+            "evidence": "not_staged_transformation: T8-A8 classifies four irradiation-condition panels; it does not derive an output from a reaction arrow, material stage, recycle, feed, inventory, yield, or omitted stream."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No formula, molar mass, mass loading, or material-composition calculation is requested or used for these classifications."
+          },
+          "conservation_laws": {
+            "status": "not_applicable",
+            "evidence": "No atom, charge, mass, phase, or flow conservation relation decides a requested output. The optional binary-stack sum-to-100 carrier faithfully reflects mole percentages but is not used to force the assignment."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "H2/CO chart readouts are percentages while ExperimentData stores dimensionless fractions; ActualAssignment explicitly multiplies by 100. The requested classifications correctly have empty units."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "All outputs are exact symbols. No arithmetic, intermediate rounding, significant figures, or tolerance is involved."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No molecular structure, connectivity, geometry, or stereochemistry is requested in T8-A8."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The source asks for the condition corresponding to each of four panels from the explicitly stated four-condition experiment. The candidate proves all four classifications uniformly over the full source-bounded bijective assignment type, without claiming open-world chemical uniqueness."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The desired constructors occur only in output definitions and conclusions. Page4FigureFacts, ActualAssignment, VisibleLEDPhotonEnergyOrder, M001, and M002 contain no panel-specific final assignment; M001/M002 are exact scoped model inputs rather than answer axioms."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "page4_stack_visibility",
+                "relation": "Panel a has no plotted H2/CO stack, whereas panels b, c, and d each have a plotted stack.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-4.png#product_composition_chart"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "M001",
+                "relation": "Controller-authorized, target-scoped conditional input: N has no plotted H2/CO product stack; the problem text locator fixes N as this experiment's no-irradiation condition.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "four_condition_correspondence",
+                "relation": "The four displayed panels correspond bijectively to the four different named experimental conditions.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "evidence": "Source-first conditional derivation matches the condition_a semantic card, submitted exact-symbolic classification, and named Lean carrier.",
+            "id": "condition_a",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T8A8.Page4FigureFacts",
+                "IChO2026Problems.ProblemIcho2026T8A8.VisibleLEDPhotonEnergyOrder",
+                "IChO2026Problems.ProblemIcho2026T8A8.ActualAssignment",
+                "IChO2026Problems.ProblemIcho2026T8A8.M001",
+                "IChO2026Problems.ProblemIcho2026T8A8.M002"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T8A8.condition_a"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T8A8.conditional_contest_model"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T8A8.condition_a_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The condition_a proposition and condition_a_result theorem state exactly the independently derived panel classification under the scoped hypotheses.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Categorical assignment of one displayed panel; no time, cycle, feed, inventory, or yield horizon applies.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "The one of N, R, G, and B assigned to panel a of the H2/CO mole-percentage chart.",
+            "raw_result": {
+              "derivation": "The figure makes a the only panel without a plotted product stack; b, c, and d have stacks. Under M001 and bijective stack-preserving correspondence, the no-irradiation condition cannot occupy b, c, or d and therefore occupies a.",
+              "exact_unrounded": true,
+              "value_or_expression": "IChO2026Problems.ProblemIcho2026T8A8.Condition.noIrradiation"
+            },
+            "reporting": {
+              "application": "Return the exact condition symbol; no numeric rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output id, classification kind, empty unit, exact-symbolic policy, and source requirement all match for condition_a.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-4.png#product_composition_chart"
+              }
+            ],
+            "source_requirement": "condition corresponding to curve a in the diagram",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "page4_h2_order",
+                "relation": "The H2 segments in illuminated panels satisfy the strict displayed order d below c below b.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-4.png#product_composition_chart"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "named_led_conditions",
+                "relation": "The illuminated experimental conditions are red, green, and blue LEDs.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "visible_led_photon_energy_order",
+                "relation": "For the named visible colors, the ordinary E = hc/lambda relation and spectral color ordering give red below green below blue in photon energy.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "M002",
+                "relation": "Controller-authorized, target-scoped conditional input: within these three LEDs, strictly greater photon energy implies strictly greater H2 mole fraction.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "four_condition_correspondence",
+                "relation": "After the no-irradiation panel is fixed, the three stacked panels bijectively carry the three illuminated conditions and preserve their readouts.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "evidence": "Source-first conditional derivation matches the condition_b semantic card, submitted exact-symbolic classification, and named Lean carrier.",
+            "id": "condition_b",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T8A8.Page4FigureFacts",
+                "IChO2026Problems.ProblemIcho2026T8A8.VisibleLEDPhotonEnergyOrder",
+                "IChO2026Problems.ProblemIcho2026T8A8.ActualAssignment",
+                "IChO2026Problems.ProblemIcho2026T8A8.M001",
+                "IChO2026Problems.ProblemIcho2026T8A8.M002"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T8A8.condition_b"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T8A8.conditional_contest_model"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T8A8.condition_b_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The condition_b proposition and condition_b_result theorem state exactly the independently derived panel classification under the scoped hypotheses.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Categorical assignment of one displayed panel; no time, cycle, feed, inventory, or yield horizon applies.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "The one of N, R, G, and B assigned to panel b of the H2/CO mole-percentage chart.",
+            "raw_result": {
+              "derivation": "Once a carries the no-irradiation condition, b, c, and d carry the three LEDs. The chart has H2(d) < H2(c) < H2(b); visible-light photon energies satisfy red < green < blue, and M002 transfers that strict order to H2 fraction, forcing the greatest member at b.",
+              "exact_unrounded": true,
+              "value_or_expression": "IChO2026Problems.ProblemIcho2026T8A8.Condition.blue"
+            },
+            "reporting": {
+              "application": "Return the exact condition symbol; no numeric rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output id, classification kind, empty unit, exact-symbolic policy, and source requirement all match for condition_b.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-4.png#product_composition_chart"
+              }
+            ],
+            "source_requirement": "condition corresponding to curve b in the diagram",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "page4_h2_order",
+                "relation": "The H2 segments in illuminated panels satisfy the strict displayed order d below c below b.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-4.png#product_composition_chart"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "named_led_conditions",
+                "relation": "The illuminated experimental conditions are red, green, and blue LEDs.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "visible_led_photon_energy_order",
+                "relation": "For the named visible colors, the ordinary E = hc/lambda relation and spectral color ordering give red below green below blue in photon energy.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "M002",
+                "relation": "Controller-authorized, target-scoped conditional input: within these three LEDs, strictly greater photon energy implies strictly greater H2 mole fraction.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "four_condition_correspondence",
+                "relation": "After the no-irradiation panel is fixed, the three stacked panels bijectively carry the three illuminated conditions and preserve their readouts.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "evidence": "Source-first conditional derivation matches the condition_c semantic card, submitted exact-symbolic classification, and named Lean carrier.",
+            "id": "condition_c",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T8A8.Page4FigureFacts",
+                "IChO2026Problems.ProblemIcho2026T8A8.VisibleLEDPhotonEnergyOrder",
+                "IChO2026Problems.ProblemIcho2026T8A8.ActualAssignment",
+                "IChO2026Problems.ProblemIcho2026T8A8.M001",
+                "IChO2026Problems.ProblemIcho2026T8A8.M002"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T8A8.condition_c"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T8A8.conditional_contest_model"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T8A8.condition_c_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The condition_c proposition and condition_c_result theorem state exactly the independently derived panel classification under the scoped hypotheses.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Categorical assignment of one displayed panel; no time, cycle, feed, inventory, or yield horizon applies.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "The one of N, R, G, and B assigned to panel c of the H2/CO mole-percentage chart.",
+            "raw_result": {
+              "derivation": "Once a carries the no-irradiation condition, b, c, and d carry the three LEDs. The strict chart and M002 energy-response chains have the same three ordered positions, so the middle-energy and middle-H2 member occupies c.",
+              "exact_unrounded": true,
+              "value_or_expression": "IChO2026Problems.ProblemIcho2026T8A8.Condition.green"
+            },
+            "reporting": {
+              "application": "Return the exact condition symbol; no numeric rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output id, classification kind, empty unit, exact-symbolic policy, and source requirement all match for condition_c.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-4.png#product_composition_chart"
+              }
+            ],
+            "source_requirement": "condition corresponding to curve c in the diagram",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "page4_h2_order",
+                "relation": "The H2 segments in illuminated panels satisfy the strict displayed order d below c below b.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-4.png#product_composition_chart"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "named_led_conditions",
+                "relation": "The illuminated experimental conditions are red, green, and blue LEDs.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "visible_led_photon_energy_order",
+                "relation": "For the named visible colors, the ordinary E = hc/lambda relation and spectral color ordering give red below green below blue in photon energy.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "M002",
+                "relation": "Controller-authorized, target-scoped conditional input: within these three LEDs, strictly greater photon energy implies strictly greater H2 mole fraction.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "four_condition_correspondence",
+                "relation": "After the no-irradiation panel is fixed, the three stacked panels bijectively carry the three illuminated conditions and preserve their readouts.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "evidence": "Source-first conditional derivation matches the condition_d semantic card, submitted exact-symbolic classification, and named Lean carrier.",
+            "id": "condition_d",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T8A8.Page4FigureFacts",
+                "IChO2026Problems.ProblemIcho2026T8A8.VisibleLEDPhotonEnergyOrder",
+                "IChO2026Problems.ProblemIcho2026T8A8.ActualAssignment",
+                "IChO2026Problems.ProblemIcho2026T8A8.M001",
+                "IChO2026Problems.ProblemIcho2026T8A8.M002"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T8A8.condition_d"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T8A8.conditional_contest_model"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T8A8.condition_d_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The condition_d proposition and condition_d_result theorem state exactly the independently derived panel classification under the scoped hypotheses.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Categorical assignment of one displayed panel; no time, cycle, feed, inventory, or yield horizon applies.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "The one of N, R, G, and B assigned to panel d of the H2/CO mole-percentage chart.",
+            "raw_result": {
+              "derivation": "Once a carries the no-irradiation condition, b, c, and d carry the three LEDs. The strict chart and M002 energy-response chains have the same three ordered positions, so the least-energy and least-H2 member occupies d.",
+              "exact_unrounded": true,
+              "value_or_expression": "IChO2026Problems.ProblemIcho2026T8A8.Condition.red"
+            },
+            "reporting": {
+              "application": "Return the exact condition symbol; no numeric rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output id, classification kind, empty unit, exact-symbolic policy, and source requirement all match for condition_d.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-4.png#product_composition_chart"
+              }
+            ],
+            "source_requirement": "condition corresponding to curve d in the diagram",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "89a41c0a5e56857d21709b93b7856475df16aebe376120c3e1f36f8e86ec5fc2"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a8.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The candidate faithfully formalizes T8-A8 as conditional_contest_model: source chart facts, the ordinary visible-color photon-energy order, and separately named controller-authorized M001/M002 imply all four requested classifications for every bijective readout-preserving actual assignment. No requested result is assumed, and the bound sidecar matches every exact-symbolic output.",
+        "reviewed_at": "2026-09-13T10:12:02Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "89a41c0a5e56857d21709b93b7856475df16aebe376120c3e1f36f8e86ec5fc2",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a8.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 1,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "No proof or contract defect was found: the candidate derives all four exact classifications uniformly from the bound chart facts, the ordinary visible-light energy order, and the separately named target-scoped M001/M002 inputs.",
+    "evidence": "The candidate hash and submission hash match the controller bindings. Deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. The theorem conditional_contest_model quantifies over every bijective readout-preserving ActualAssignment; it excludes the dark condition from all three plotted stacks via M001, matches the two strict three-element orders via M002, and returns all four RequestedAssignment fields. No final classification is a premise.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "98b05df861a4513d15e62d6125367208627010544421faf7d6dd6f15182853a3",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t8_a8.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+      "source_record_id": "icho_2026_t8_a8",
+      "source_record_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a8.answer.json",
+      "answer_submission_sha256": "2fcca24247cff6fb53876c610867b431dc9fcd878d146276212694af42663e86",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t8_a8.source.json",
+      "source_report_sha256": "555d119269856aa83c6146cfa2a7059399bdd0451762e9a48d9d51fb2ea87cd0",
+      "candidate": "IChO2026Problems/problem_icho_2026_t8_a8.lean",
+      "preflight_sha256": "2dc1aa195c991e43d45aaadea10f710bf2afa145164116b4c68602b8c3f4463a",
+      "candidate_sha256": "98b05df861a4513d15e62d6125367208627010544421faf7d6dd6f15182853a3",
+      "question_sha256": "aced0bfabc3484fe295d4b3e52c77814ea488cb8701f33dfd4ac32fe5faa075a",
+      "shared_context_sha256": "2772e7205f5cec75acc1d6d55df832e14788854aa08b739059914c2ba607a66a",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "558274d8aa8871881556d3fe716f0219d8704072e81ba2bd85c470347d0e01d0",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T8_page-4.png",
+          "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a"
+        },
+        {
+          "path": "icho_2026_source/image/T8_page-3.png",
+          "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "9063672777d17a2b92d263ff9047aef6b33196e0810c1d1e6019829082cded11",
+        "node_count": 11,
+        "edge_count": 16,
+        "node_kind_counts": {
+          "derivation_obligation": 4,
+          "requested_output": 4,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "condition_a",
+          "condition_b",
+          "condition_c",
+          "condition_d"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t8_a8",
+        "path": ".archon/provided_answer_drafts/Q8.md",
+        "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false,
+        "model_authorization": {
+          "schema_version": 1,
+          "record_id": "icho_2026_t8_a8",
+          "scope": "this Kimi-NL GPT formalization campaign, T8-A8 only",
+          "source_bundle_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+          "draft_sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "user_reply": "\u5f53\u524dkimi\u7248\u672c\u4e5f\u6388\u6743",
+          "recorded_at": "2026-09-13T09:13:09Z",
+          "assumptions": {
+            "M001": "In this experiment the N condition has no plotted H2/CO product stack; this does not assert absence of every dark reaction.",
+            "M002": "For any two of this experiment's three illuminated LED conditions u and v, E_photon(u) < E_photon(v) implies chi_H2(u) < chi_H2(v)."
+          },
+          "evaluation_basis": "conditional_contest_model",
+          "proved_from_figures": false,
+          "final_answer_axioms_allowed": false
+        },
+        "model_authorization_sha256": "a5a2efb40aaee84da0386a961e8e0726350a8223a665c6d45fb57781e8caf5a2"
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a8.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+        "source_record_id": "icho_2026_t8_a8",
+        "source_record_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a8.answer.json",
+        "answer_submission_sha256": "2fcca24247cff6fb53876c610867b431dc9fcd878d146276212694af42663e86",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a8.source.json",
+        "source_report_sha256": "555d119269856aa83c6146cfa2a7059399bdd0451762e9a48d9d51fb2ea87cd0",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a8.lean",
+        "preflight_sha256": "2dc1aa195c991e43d45aaadea10f710bf2afa145164116b4c68602b8c3f4463a",
+        "candidate_sha256": "98b05df861a4513d15e62d6125367208627010544421faf7d6dd6f15182853a3",
+        "question_sha256": "aced0bfabc3484fe295d4b3e52c77814ea488cb8701f33dfd4ac32fe5faa075a",
+        "shared_context_sha256": "2772e7205f5cec75acc1d6d55df832e14788854aa08b739059914c2ba607a66a",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "558274d8aa8871881556d3fe716f0219d8704072e81ba2bd85c470347d0e01d0",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-4.png",
+            "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a"
+          },
+          {
+            "path": "icho_2026_source/image/T8_page-3.png",
+            "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "9063672777d17a2b92d263ff9047aef6b33196e0810c1d1e6019829082cded11",
+          "node_count": 11,
+          "edge_count": 16,
+          "node_kind_counts": {
+            "derivation_obligation": 4,
+            "requested_output": 4,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "condition_a",
+            "condition_b",
+            "condition_c",
+            "condition_d"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a8",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false,
+          "model_authorization": {
+            "schema_version": 1,
+            "record_id": "icho_2026_t8_a8",
+            "scope": "this Kimi-NL GPT formalization campaign, T8-A8 only",
+            "source_bundle_sha256": "aa35a9fbcee09e5ffaa9a3991eccaa4443a7fbbc5a034ec9088012d26f0e9e6e",
+            "draft_sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+            "user_reply": "\u5f53\u524dkimi\u7248\u672c\u4e5f\u6388\u6743",
+            "recorded_at": "2026-09-13T09:13:09Z",
+            "assumptions": {
+              "M001": "In this experiment the N condition has no plotted H2/CO product stack; this does not assert absence of every dark reaction.",
+              "M002": "For any two of this experiment's three illuminated LED conditions u and v, E_photon(u) < E_photon(v) implies chi_H2(u) < chi_H2(v)."
+            },
+            "evaluation_basis": "conditional_contest_model",
+            "proved_from_figures": false,
+            "final_answer_axioms_allowed": false
+          },
+          "model_authorization_sha256": "a5a2efb40aaee84da0386a961e8e0726350a8223a665c6d45fb57781e8caf5a2"
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The semantic rederivation used only the inline bound problem evidence, both digest-matched images, ordinary photon-energy ordering, and the exact controller-authorized M001/M002 supplement. The sealed Kimi draft was checked only for required fidelity and was not treated as an official answer, source fact, or proof; no other artifact was opened."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "Page 4 gives one panel with no plotted stack, three panels with stacks, and a strict descending H2-segment chain across those three. The red-to-green-to-blue photon-energy chain and M002 give a strict ascending illuminated-condition H2 chain. Readout preservation plus bijectivity identifies the illuminated panels by the unique order isomorphism; M001 plus stack preservation and surjectivity identifies the remaining panel as the no-irradiation condition. This is the end-to-end symbolic derivation used by conditional_contest_model."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "All four requested outputs are source-declared classifications with exact_symbolic reporting and empty units; the submission uses one exact condition token per output, so no numerical formatting rule is introduced."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No numerical tolerance or rounding is applicable to these exact symbolic classifications. The proof uses only strict qualitative ordering visible in separated chart segments."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The source enumerates exactly four conditions (N, R, G, B) and the figure labels exactly four panels (a, b, c, d). Condition and Panel encode precisely those finite domains, and ActualAssignment requires a bijection while imposing chart/readout preservation uniformly."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=98b05df861a4513d15e62d6125367208627010544421faf7d6dd6f15182853a3; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0, duration_bucket=under_1m. Nontrivial result declarations: conditional_contest_model, condition_a_result, condition_b_result, condition_c_result, and condition_d_result."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The theorem is explicitly labeled conditional_contest_model and universally quantifies chart, experiment, and every ActualAssignment satisfying the source/readout constraints; it does not prove only an answer-shaped witness or make a universal claim beyond this experiment."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "Page4FigureFacts is directly grounded in the plotted-stack visibility and strict H2 segment ordering. VisibleLEDPhotonEnergyOrder is the ordinary color/photon-energy order for the named red, green, and blue LEDs. M001 and M002 are separate named hypotheses matching the exact target-scoped controller authorization; neither is claimed to be proved by the figures, and M001 does not assert absence of every dark reaction."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "RequestedAssignment contains exactly condition_a, condition_b, condition_c, and condition_d in source order, and the four projection theorems expose one named nontrivial Lean carrier for each requested output."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The proof connects condition-indexed data to panel-indexed observations through ActualAssignment.preservesProductStack and preservesIlluminatedReadouts, uses bijectivity for one-to-one coverage, uses M001 only for plotted-stack absence, and uses M002 only among illuminated conditions. Page 3 is not misrepresented as proving M002."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "condition corresponding to curve a in the diagram",
+          "lean_carrier": "IChO2026Problems.ProblemIcho2026T8A8.condition_a_result",
+          "status": "covered",
+          "evidence": "The first submission entry has the exact required id, kind, empty unit, and position; its enum constructor and display token agree with the independently derived classification, and condition_a_result proves the named condition_a carrier.",
+          "output_id": "condition_a",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "condition corresponding to curve b in the diagram",
+          "lean_carrier": "IChO2026Problems.ProblemIcho2026T8A8.condition_b_result",
+          "status": "covered",
+          "evidence": "The second submission entry has the exact required id, kind, empty unit, and position; its enum constructor and display token agree with the independently derived classification, and condition_b_result proves the named condition_b carrier.",
+          "output_id": "condition_b",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "condition corresponding to curve c in the diagram",
+          "lean_carrier": "IChO2026Problems.ProblemIcho2026T8A8.condition_c_result",
+          "status": "covered",
+          "evidence": "The third submission entry has the exact required id, kind, empty unit, and position; its enum constructor and display token agree with the independently derived classification, and condition_c_result proves the named condition_c carrier.",
+          "output_id": "condition_c",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "condition corresponding to curve d in the diagram",
+          "lean_carrier": "IChO2026Problems.ProblemIcho2026T8A8.condition_d_result",
+          "status": "covered",
+          "evidence": "The fourth submission entry has the exact required id, kind, empty unit, and position; its enum constructor and display token agree with the independently derived classification, and condition_d_result proves the named condition_d carrier.",
+          "output_id": "condition_d",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T8_page-4.png",
+          "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a",
+          "inspected": true,
+          "evidence": "The image shows labels a-d; a has no plotted H2/CO stack, b-d each have a full stack, and the blue-hatched H2 segments are visibly and strictly ordered b above c above d. The legend identifies the H2 and CO components."
+        },
+        {
+          "path": "icho_2026_source/image/T8_page-3.png",
+          "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f",
+          "inspected": true,
+          "evidence": "The image states that CO2 reduction can be accompanied by proton reduction and depicts the two Gibbs-energy paths. It does not itself establish a monotone LED-color/selectivity response, so the candidate correctly leaves that experiment-specific bridge as authorized M002."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The candidate distinguishes product-stack absence from absence of all dark chemistry, represents mole composition separately from photon energy, confines M002 to the three illuminated conditions, and uses the standard red < green < blue photon-energy ordering only inside this experiment."
+        },
+        "staged_species_domain": {
+          "status": "not_applicable",
+          "evidence": "not_staged_transformation: this target classifies four irradiation conditions from a static product-composition chart; it does not request or consume a staged material transformation, yield, stream, residue, or reaction ledger."
+        },
+        "formula_mass_consistency": {
+          "status": "not_applicable",
+          "evidence": "No formula or molar-mass output is requested or used."
+        },
+        "conservation_laws": {
+          "status": "not_applicable",
+          "evidence": "No atom, charge, mass, phase, or stage-balance conclusion is used; the source chart's binary stack normalization is represented transparently but is not outcome-decisive."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "The chart carrier records displayed values as mole percent while experiment data records mole fractions, and readout preservation applies the dimensionless factor 100 consistently. Requested classifications correctly have empty units."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "Each output is exact symbolic; no raw arithmetic, decimal readout, tolerance, or rounding is asserted. Only a robust strict ordering of visually separated segments is formalized."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "No molecular structure or stereochemical output is involved."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source-bounded four-condition domain, bijection, plotted-stack distinction, and matching strict three-element orders determine every panel uniformly; conditional_contest_model proves the same RequestedAssignment for every actual assignment satisfying those constraints."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "No conclusion appears in a hypothesis, no singleton or answer table is used, and there is no opaque predicate, selected witness, local axiom, sorry, or admit. The output-named definitions occur only as transparent conclusions; M001/M002 are exact authorized conditional hypotheses rather than final-answer assumptions."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a8.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "No proof or contract defect was found: the candidate derives all four exact classifications uniformly from the bound chart facts, the ordinary visible-light energy order, and the separately named target-scoped M001/M002 inputs.",
+        "evidence": "The candidate hash and submission hash match the controller bindings. Deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. The theorem conditional_contest_model quantifies over every bijective readout-preserving ActualAssignment; it excludes the dark condition from all three plotted stacks via M001, matches the two strict three-element orders via M002, and returns all four RequestedAssignment fields. No final classification is a premise.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T10:28:24.415817Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "98b05df861a4513d15e62d6125367208627010544421faf7d6dd6f15182853a3",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a8.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T10:28:24.415885Z",
+    "repair_handoff": {}
+  }
+}

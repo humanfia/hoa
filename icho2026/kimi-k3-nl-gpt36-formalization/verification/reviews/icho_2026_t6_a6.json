@@ -1,0 +1,1423 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "All six controller outputs match the source-first structures and exact-symbolic reporting. The Lean carrier uses explicit atom/bond graphs, correctly orients every qualitative source arrow, resolves the absent P box as the displayed P6 product, and constructs the protected A5 conjunct from the hash-verified closed theorem in the main, raw, and reported results.",
+    "updated_at": "2026-09-13T13:18:37Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "f32299c5d06bde0d9709bcb82802026f4664ece908ab3cb6df391e4eb020b56a",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "Page 4 was audited before generated artifacts: M,N,O,Q,R are the printed intermediate labels, P6 is the separately drawn six-porphyrin cyclic product, and all structures/formulas in the submission and Lean graph carriers match that reading. Pages 2-3 add no contrary A6 identity."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Each result is a closed theorem from a source-arrow context and transparent graph edit, followed by nontrivial connectivity/valence/formula checks; no requested structure is a hypothesis. The final A5 conjunct is supplied directly by IChO2026Problems.T6A5.structures_f_to_l."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "MolecularGraph records every heavy atom, attached H count, formal charge, radical count, stereochemical descriptor, unordered bond, bond order, and N-Zn coordination. P6 expands all six monomers and six cross-boundary coupling bonds."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The requested outputs are exact symbolic structures; the source provides no measured quantity, tolerance, or rounding-sensitive classification for A6."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The encoded route is toluene\u2192M\u2192N\u2192O\u2192Q\u2192R\u2192templated P6\u2192isolated P6, matching every page-4 arrowhead; the source shows no competing A6 branch."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The source asks to draw concrete witnesses, not prove global uniqueness. Each witness satisfies the full depicted scaffold, reagent-directed edit, formula, valence, charge, and proton-environment constraints; resonance-equivalent Kekule drawings do not alter the identified connectivity."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The M graph is the thermodynamic twofold tert-butylation witness with four proton environments.",
+          "carrier": "IChO2026Problems.T6A6.thermodynamicDiTertButylationProduct; IChO2026Problems.T6A6.MFourProtonEnvironments; IChO2026Problems.T6A6.structure_m",
+          "status": "covered",
+          "evidence": "Page-4 toluene/t-BuCl(2 equiv.)/AlCl3 arrow and hint are encoded; the graph has the less-crowded 1,3,5 arrangement and explicit 3/18/2/1-H environment classes."
+        },
+        {
+          "claim": "The M\u2192N arrow converts the sole benzylic methyl substituent to an aldehyde while retaining the arene scaffold.",
+          "carrier": "IChO2026Problems.T6A6.sommeletFormylationProduct; IChO2026Problems.T6A6.QualitativeReactionStep.sommeletFormylation",
+          "status": "covered",
+          "evidence": "The exact page-4 arrow/reagent context is checked and the local graph edit is transparent; no completion or yield is asserted."
+        },
+        {
+          "claim": "The N\u2192O arrow yields the opposite-diaryl neutral zinc porphyrin topology.",
+          "carrier": "IChO2026Problems.T6A6.transA2ZincPorphyrinProduct; IChO2026Problems.T6A6.porphyrinCore; IChO2026Problems.T6A6.structure_o",
+          "status": "covered",
+          "evidence": "The aldehyde/dipyrromethane, CF3COOH, DDQ, and Zn(OAc)2 roles are bound to the correct source arrow; the graph explicitly retains two aryl residues at opposite meso sites and four N-Zn edges."
+        },
+        {
+          "claim": "The O\u2192Q arrow replaces exactly the two remaining meso H atoms by Br.",
+          "carrier": "IChO2026Problems.T6A6.mesoDibrominationProduct; IChO2026Problems.T6A6.structure_q",
+          "status": "covered",
+          "evidence": "The source NBS arrow, two-free-meso-site context, and exact two-site graph edit are all represented."
+        },
+        {
+          "claim": "The Q\u2192R sequence replaces both meso Br atoms by terminal ethynyl groups after desilylation.",
+          "carrier": "IChO2026Problems.T6A6.terminalDiethynylationProduct; IChO2026Problems.T6A6.structure_r",
+          "status": "covered",
+          "evidence": "Pd(0)/PPh3/CuI, expanded trihexylsilylacetylene, and n-Bu4NF are bound to the correctly directed arrow; each product C\u2261CH fragment is explicit."
+        },
+        {
+          "claim": "The printed P6 is six R-derived units joined cyclically by six butadiyne links, and no separate P intermediate is printed.",
+          "carrier": "IChO2026Problems.T6A6.PLabelReservation; IChO2026Problems.T6A6.oxidativeCyclohexamerizationProduct; IChO2026Problems.T6A6.structure_p",
+          "status": "covered",
+          "evidence": "The page-4 label list, template-assembly/removal arrows, six monomer copies, twelve terminal-H removals, and six cross-unit C-C edges are all separately exposed."
+        },
+        {
+          "claim": "The accepted same-run A5 result is an actual conjunct of the A6 main, raw, and reported results.",
+          "carrier": "IChO2026Problems.T6A5.structures_f_to_l; IChO2026Problems.T6A6.structures_m_to_r; IChO2026Problems.T6A6.structures_m_to_r_raw_result; IChO2026Problems.T6A6.structures_m_to_r_reported_result",
+          "status": "covered",
+          "evidence": "VerifiedA5.lean hashes to 5cdda63d73e11946e8e9af882fec76b927d5f38d222205540eb71ac91d522601; each theorem constructs StructuresFToLResult with the imported closed theorem, not a hypothesis, axiom, False, or unused have."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t6_a6.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "5c9e04c9dfd0f0aa20df979bbf50da94239952aea2f54c2e2c23b5bd011619c3",
+        "source_record_id": "icho_2026_t6_a6",
+        "source_record_sha256": "5c9e04c9dfd0f0aa20df979bbf50da94239952aea2f54c2e2c23b5bd011619c3",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a6.answer.json",
+        "answer_submission_sha256": "80aa68898b22ae99d894594ac1a5a235e62738f5d37c675eab3e19c7c059d8ee",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t6_a6.source.json",
+        "source_report_sha256": "209029837ad7c7ca48b57760538cab4c05efe91b8007e7e5d88441d1312f288e",
+        "candidate": "IChO2026Problems/problem_icho_2026_t6_a6.lean",
+        "preflight_sha256": "6b5781f156ecb83546ac78cdd21a9a7b74f6a45a5a2b40d99b58a63d69197ba5",
+        "candidate_sha256": "f32299c5d06bde0d9709bcb82802026f4664ece908ab3cb6df391e4eb020b56a",
+        "question_sha256": "87a2b662a3fb99a6005be453793d658282047a7e7a9d2f6137e9fb96a0449a23",
+        "shared_context_sha256": "c279de50a80e75337cb5490e983e09d3e1bcd2b051e7c4554fbe5d4b74b24bf2",
+        "previous_parts_sha256": "1ae28e56b295434d98228d8b67a3dd0a87eeaf896e0fa70973887275d1cc0188",
+        "requested_outputs_sha256": "0ff2048e672dbe2e816541de0a10561ea846a9e2a31a3dc299a57d90d6e7b50e",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T6_page-4.png",
+            "sha256": "fd4ea1325d4a9b1980cce5824fc9878e7607a8cab8572c2e5699ea0d7eab7631"
+          },
+          {
+            "path": "icho_2026_source/image/T6_page-3.png",
+            "sha256": "7ae1859c62e61f1da4136e4651d0b7f3f15930b9672a36cb31684f02291c34e5"
+          },
+          {
+            "path": "icho_2026_source/image/T6_page-2.png",
+            "sha256": "d9fd1e2d82d0e8a94ab6bcee210a2aee319715da722bbeb8d1df38e35d7d3362"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "d2c04928c4564675651ad923050dbfa2bd927f2598ce0580385da0f3ab27a9af",
+          "node_count": 16,
+          "edge_count": 30,
+          "node_kind_counts": {
+            "derivation_obligation": 6,
+            "previous_part_prerequisite": 1,
+            "requested_output": 6,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_m",
+            "structure_n",
+            "structure_o",
+            "structure_p",
+            "structure_q",
+            "structure_r"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t6_a5"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t6_a6",
+          "path": ".archon/provided_answer_drafts/Q6.md",
+          "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false,
+          "verified_lean_prerequisites": [
+            {
+              "path": "IChO2026Chem/VerifiedA5.lean",
+              "sha256": "5cdda63d73e11946e8e9af882fec76b927d5f38d222205540eb71ac91d522601",
+              "theorem": "IChO2026Problems.T6A5.structures_f_to_l",
+              "result_type": "IChO2026Problems.T6A5.StructuresFToLResult",
+              "origin": "accepted same-run Kimi A5 formalization"
+            }
+          ]
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t6_a6.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "5c9e04c9dfd0f0aa20df979bbf50da94239952aea2f54c2e2c23b5bd011619c3",
+          "source_record_id": "icho_2026_t6_a6",
+          "source_record_sha256": "5c9e04c9dfd0f0aa20df979bbf50da94239952aea2f54c2e2c23b5bd011619c3",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a6.answer.json",
+          "answer_submission_sha256": "80aa68898b22ae99d894594ac1a5a235e62738f5d37c675eab3e19c7c059d8ee",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t6_a6.source.json",
+          "source_report_sha256": "209029837ad7c7ca48b57760538cab4c05efe91b8007e7e5d88441d1312f288e",
+          "candidate": "IChO2026Problems/problem_icho_2026_t6_a6.lean",
+          "preflight_sha256": "6b5781f156ecb83546ac78cdd21a9a7b74f6a45a5a2b40d99b58a63d69197ba5",
+          "candidate_sha256": "f32299c5d06bde0d9709bcb82802026f4664ece908ab3cb6df391e4eb020b56a",
+          "question_sha256": "87a2b662a3fb99a6005be453793d658282047a7e7a9d2f6137e9fb96a0449a23",
+          "shared_context_sha256": "c279de50a80e75337cb5490e983e09d3e1bcd2b051e7c4554fbe5d4b74b24bf2",
+          "previous_parts_sha256": "1ae28e56b295434d98228d8b67a3dd0a87eeaf896e0fa70973887275d1cc0188",
+          "requested_outputs_sha256": "0ff2048e672dbe2e816541de0a10561ea846a9e2a31a3dc299a57d90d6e7b50e",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T6_page-4.png",
+              "sha256": "fd4ea1325d4a9b1980cce5824fc9878e7607a8cab8572c2e5699ea0d7eab7631"
+            },
+            {
+              "path": "icho_2026_source/image/T6_page-3.png",
+              "sha256": "7ae1859c62e61f1da4136e4651d0b7f3f15930b9672a36cb31684f02291c34e5"
+            },
+            {
+              "path": "icho_2026_source/image/T6_page-2.png",
+              "sha256": "d9fd1e2d82d0e8a94ab6bcee210a2aee319715da722bbeb8d1df38e35d7d3362"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "d2c04928c4564675651ad923050dbfa2bd927f2598ce0580385da0f3ab27a9af",
+            "node_count": 16,
+            "edge_count": 30,
+            "node_kind_counts": {
+              "derivation_obligation": 6,
+              "previous_part_prerequisite": 1,
+              "requested_output": 6,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "structure_m",
+              "structure_n",
+              "structure_o",
+              "structure_p",
+              "structure_q",
+              "structure_r"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t6_a5"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t6_a6",
+            "path": ".archon/provided_answer_drafts/Q6.md",
+            "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false,
+            "verified_lean_prerequisites": [
+              {
+                "path": "IChO2026Chem/VerifiedA5.lean",
+                "sha256": "5cdda63d73e11946e8e9af882fec76b927d5f38d222205540eb71ac91d522601",
+                "theorem": "IChO2026Problems.T6A5.structures_f_to_l",
+                "result_type": "IChO2026Problems.T6A5.StructuresFToLResult",
+                "origin": "accepted same-run Kimi A5 formalization"
+              }
+            ]
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, arrow directions, label inventory, structure topology, and composition ledgers were frozen from the three hash-bound problem images and inline problem text before the answer JSON or Lean file was opened; no official answer, report, or prior-run solution was used."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "End-to-end exact symbolic derivations are recorded per output: arene substitutions for M/N, explicit porphyrin-core plus aryl composition for O/Q/R, and six full R units minus twelve terminal H with six new coupling edges for P6."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "Each bundle row requires exact_symbolic reporting; submission raw/display fields and Lean raw/reported carriers apply no numerical rounding."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or used because all six classifications are exact symbolic structures and the source declares no measurement uncertainty for them."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No finite domain is used to claim uniqueness or exhaustiveness. The source verb Draw requires concrete witnesses; M's symmetry/thermodynamic constraints and every later source-arrow scaffold edit are checked directly."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=f32299c5d06bde0d9709bcb82802026f4664ece908ab3cb6df391e4eb020b56a; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=8. Nontrivial carriers are structure_m, structure_n, structure_o, structure_p, structure_q, structure_r, structures_m_to_r, structures_m_to_r_raw_result, and structures_m_to_r_reported_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The statement gives concrete exact structures without claiming all solutions, global uniqueness, yields, sole products, or an A5\u2192A6 chemical cause."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The six structure theorems and three combined theorems are closed. Source contexts reduce to bound figure/reagent data, and the required prior result is constructed from the protected imported theorem."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "All six requested ids occur once in bundle order with matching classification kind and empty unit; the no-P-box/P6 interpretation preserves the page and sealed Kimi A6 answer."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Every outcome-decisive source-to-Lean bridge is inventoried above: M selection, four subsequent structure edits, P6/label topology, and actual A5 conjunction. No dormant registry rule is needed."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "complete structure of M, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T6A6.structure_m : IChO2026Problems.T6A6.StructureMResult",
+            "status": "covered",
+            "evidence": "Both submission fields match the independently derived exact graph/formula/proton-environment result; exact-symbolic reporting is preserved.",
+            "output_id": "structure_m",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of N, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T6A6.structure_n : IChO2026Problems.T6A6.StructureNResult",
+            "status": "covered",
+            "evidence": "Both submission fields match the independently derived aldehyde graph and source-arrow relation; exact-symbolic reporting is preserved.",
+            "output_id": "structure_n",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of O, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T6A6.structure_o : IChO2026Problems.T6A6.StructureOResult",
+            "status": "covered",
+            "evidence": "Both submission fields match the independently derived full zinc-porphyrin graph, formula, coordination, and exact-symbolic policy.",
+            "output_id": "structure_o",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of P, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T6A6.structure_p : IChO2026Problems.T6A6.StructurePResult",
+            "status": "covered",
+            "evidence": "Both submission fields correctly report the absent intermediate label and bind the displayed isolated P6 to a complete expanded graph; exact-symbolic reporting is preserved.",
+            "output_id": "structure_p",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of Q, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T6A6.structure_q : IChO2026Problems.T6A6.StructureQResult",
+            "status": "covered",
+            "evidence": "Both submission fields match the independently derived two-meso-bromide graph and exact-symbolic reporting policy.",
+            "output_id": "structure_q",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of R, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T6A6.structure_r : IChO2026Problems.T6A6.StructureRResult",
+            "status": "covered",
+            "evidence": "Both submission fields match the independently derived bis-terminal-ethynyl graph and exact-symbolic reporting policy.",
+            "output_id": "structure_r",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [
+          {
+            "source_claim": "Page 4 prints intermediate labels M, N, O, Q, and R; it labels the separately depicted cyclic product P6 and contains no boxed intermediate P.",
+            "blueprint_or_lean_claim": "The controller semantic card includes a structure_p slot phrased as a complete structure of P; the Lean candidate resolves that slot with PLabelReservation plus the explicit P6 graph.",
+            "status": "resolved_in_favor_of_problem_source",
+            "evidence": "Direct visual inspection of T6_page-4.png confirms the skipped intermediate letter and P6 label; the submission and StructurePResult preserve that distinction rather than inventing P."
+          }
+        ],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T6_page-4.png",
+            "sha256": "fd4ea1325d4a9b1980cce5824fc9878e7607a8cab8572c2e5699ea0d7eab7631",
+            "inspected": true,
+            "evidence": "Panel 6.6 was inspected at original resolution. Arrowheads give toluene\u2192M\u2192N\u2192O\u2192Q\u2192R, then R\u2192templated ring and DABCO\u2192isolated P6. M's hint says thermodynamic/four proton types. O/Q/R retain the same opposite-Ar zinc-porphyrin scaffold. P6 contains six degree-2 porphyrin nodes, six butadiyne inter-node links, two Ar substituents per node, and no template after the leftward removal arrow."
+          },
+          {
+            "path": "icho_2026_source/image/T6_page-3.png",
+            "sha256": "7ae1859c62e61f1da4136e4651d0b7f3f15930b9672a36cb31684f02291c34e5",
+            "inspected": true,
+            "evidence": "Panel 6.5 shows the independent F\u2192L protected [5]CPP route. It supplies no A6 scaffold or causal arrow; it is used only to verify the mandated protected A5 conjunct."
+          },
+          {
+            "path": "icho_2026_source/image/T6_page-2.png",
+            "sha256": "d9fd1e2d82d0e8a94ab6bcee210a2aee319715da722bbeb8d1df38e35d7d3362",
+            "inspected": true,
+            "evidence": "Panel 6.4 shows C48 and macrocycle E/mass-spectrum context only. It contains no M\u2013R structure, arrow, repeated unit, cap, or cross-boundary bond used by A6."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "All requested structures follow the source sequence and retain the distinctive arene/porphyrin scaffolds. M's symmetry and thermodynamic steric ordering, N formylation, O trans-A2 assembly, Q meso dibromination, R terminal ethynylation, and P6 cyclic coupling are represented at the proper scope."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only. Source-arrow certificates: toluene+t-BuCl(2 eq.)/AlCl3\u2192M; M+NBS/(BzO)2 then HMTA then HCl/H2O\u2192N; N+dipyrromethane/CF3COOH then DDQ then Zn(OAc)2\u2192O; O+NBS\u2192Q; Q+Pd(0)/PPh3/CuI+expanded (C6H13)3Si-C\u2261CH then n-Bu4NF\u2192R; six R+benzoquinone/PdCl2/PPh3/CuI+sixfold pyridyl template\u2192templated P6; DABCO\u2192isolated P6. Carriers arrowToM through arrowToIsolatedP6 and StagedSpeciesDomain bind directions and reagents; graph edits trace methyl/arene, aldehyde-derived Ar, porphyrin, meso sites, alkynes, and all coupling edges. Omitted streams remain unknown; no yield/completion claim is made."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "Graph recounts give M C15H24; N is M-H2+O; each O aryl is C14H21 and the substituted Zn-porphyrin core is C20H10N4Zn; Q is O-H2+Br2; R is Q-Br2+2C2H; P6 is 6R-12H. No molar mass is requested or claimed."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "Only outcome-used local atom/topology edits were audited: two tert-butyl substitutions, CH3\u2192CHO, two aryl attachments to the porphyrin, two H\u2192Br edits, two Br\u2192C2H edits, and six terminal-H-pair removals with six new C-C bonds. A complete yield/byproduct ledger is neither used nor asserted."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "Every requested classification has the required empty unit, and all formula counts, atom indices, bond orders, formal charges, radical counts, and coordination counts are dimensionless exact data."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "No numerical measurement or rounded display is requested; exact-symbolic raw and reported carriers coincide."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "Every heavy atom, implicit attached-H count, bond order, substituent position, formal charge, radical count, and Zn-N coordinate edge is explicit. The source assigns no wedge/dash or E/Z center, and NoAssignedStereochemistry records that fact."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "Draw requests concrete evidence-supported identifications only. The candidate claims neither global uniqueness nor exhaustive chemical-universe coverage; the P-label ambiguity is resolved directly from the printed labels."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "No output graph appears as a hypothesis, singleton candidate domain, free Boolean/Prop field, or reflexive equality. Product patterns are computed from prior patterns by transparent source-arrow graph edits and then independently checked by ExactStructure; the candidate-local literature metadata is not needed to exceed the limited source-arrow compatibility scope."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "T6-A5 structures F-L prerequisite",
+                "relation": "required independent conjunct of the combined raw/reported theorem; not a chemical premise for this A6 identity",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              }
+            ],
+            "evidence": "The source-first regioisomer, graph, formula, and proton-environment audit match the submission and its named Lean carrier.",
+            "id": "structure_m",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A6.page4Figure",
+                "IChO2026Problems.T6A6.sourceToluene",
+                "IChO2026Problems.T6A6.arrowToM"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A6.structureM",
+                "IChO2026Problems.T6A6.formulaM",
+                "IChO2026Problems.T6A6.structure_m"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A6.thermodynamicDiTertButylationProduct",
+                "IChO2026Problems.T6A6.MFourProtonEnvironments",
+                "IChO2026Problems.T6A6.ExactStructure"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A6.structures_m_to_r_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structure_m relates sourceToluene to structureMPattern, checks its complete graph/formula, and verifies four proton-environment classes; the reported theorem includes this result and the imported A5 conjunct.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "per_step",
+              "description": "product identity at the source-toluene to M arrow"
+            },
+            "quantity_definition": "Heavy-atom connectivity and attached hydrogens of the thermodynamic twofold tert-butylation product at the M arrowhead.",
+            "raw_result": {
+              "derivation": "Two tert-butyl substitutions on toluene plus the four-proton-environment hint leave the symmetric 2,6/3,5 patterns; minimizing the two methyl/tert-butyl ortho contacts rejects 2,6, giving the 1,3,5 arrangement. C7H8 - 2H + 2(C4H9) = C15H24.",
+              "exact_unrounded": true,
+              "value_or_expression": "1-methyl-3,5-di-tert-butylbenzene; explicit neutral closed-shell graph; C15H24; no assigned stereochemistry"
+            },
+            "reporting": {
+              "application": "Report the exact symbolic structure, connectivity, charge state, and formula without numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The exact graph binds the six arene sites, methyl, both tert-butyl groups, hydrogens, charges, radicals, and unspecified stereochemistry as required.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context#M_hint"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T6_page-4.png#scheme.M"
+              }
+            ],
+            "source_requirement": "complete structure of M, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "T6-A5 structures F-L prerequisite",
+                "relation": "required independent conjunct of the combined raw/reported theorem; not a chemical premise for this A6 identity",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              }
+            ],
+            "evidence": "The source-first scaffold-retention and aldehyde edit match both submission fields and StructureNResult.",
+            "id": "structure_n",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A6.page4Figure",
+                "IChO2026Problems.T6A6.structureMPattern",
+                "IChO2026Problems.T6A6.arrowToN"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A6.structureN",
+                "IChO2026Problems.T6A6.formulaN",
+                "IChO2026Problems.T6A6.structure_n"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A6.sommeletFormylationProduct",
+                "IChO2026Problems.T6A6.QualitativeReactionStep.sommeletFormylation",
+                "IChO2026Problems.T6A6.ExactStructure"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A6.structures_m_to_r_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structure_n computes the methyl-to-aldehyde edit from structureMPattern under the correctly oriented page-4 reagent context and audits the resulting graph and formula.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "per_step",
+              "description": "product identity at the M to N arrow"
+            },
+            "quantity_definition": "Heavy-atom connectivity and attached hydrogens of the aldehyde at the M-to-N arrowhead.",
+            "raw_result": {
+              "derivation": "The NBS/peroxide then HMTA/HCl/H2O sequence retains the 3,5-di-tert-butyl arene and changes its benzylic CH3 substituent to CHO. Relative to M this removes H2 and adds O.",
+              "exact_unrounded": true,
+              "value_or_expression": "3,5-di-tert-butylbenzaldehyde; explicit neutral closed-shell graph; C15H22O; no assigned stereochemistry"
+            },
+            "reporting": {
+              "application": "Report the exact symbolic structure, connectivity, charge state, and formula without numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The aldehyde carbon, oxygen double bond, complete arene substitution, hydrogens, charge/radical state, and stereochemical status are explicit.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T6_page-4.png#scheme.M_to_N"
+              }
+            ],
+            "source_requirement": "complete structure of N, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "T6-A5 structures F-L prerequisite",
+                "relation": "required independent conjunct of the combined raw/reported theorem; not a chemical premise for this A6 identity",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              }
+            ],
+            "evidence": "The source-first porphyrin assembly topology and atom ledger match the submission and StructureOResult.",
+            "id": "structure_o",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A6.page4Figure",
+                "IChO2026Problems.T6A6.structureNPattern",
+                "IChO2026Problems.T6A6.arrowToO"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A6.structureO",
+                "IChO2026Problems.T6A6.formulaO",
+                "IChO2026Problems.T6A6.structure_o"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A6.transA2ZincPorphyrinProduct",
+                "IChO2026Problems.T6A6.porphyrinCore",
+                "IChO2026Problems.T6A6.ExactStructure"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A6.structures_m_to_r_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structure_o computes opposite aryl meso sites from N and verifies every core/aryl atom, Kekule bond, formal charge, and four N-Zn coordinate edges.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "per_step",
+              "description": "product identity at the N to O assembly/zincation arrow"
+            },
+            "quantity_definition": "Complete neutral zinc trans-A2 porphyrin graph at the N-to-O arrowhead, including aryl substitution and coordination.",
+            "raw_result": {
+              "derivation": "Two aldehyde-derived C14H21 aryl residues occupy opposite meso sites of the porphyrin formed with dipyrromethane; DDQ gives the conjugated macrocycle and Zn(OAc)2 inserts Zn. C20H10N4Zn + 2(C14H21) = C48H52N4Zn.",
+              "exact_unrounded": true,
+              "value_or_expression": "zinc(II) 5,15-bis(3,5-di-tert-butylphenyl)porphyrin with meso-H at 10 and 20; explicit graph; C48H52N4Zn"
+            },
+            "reporting": {
+              "application": "Report the exact symbolic structure, connectivity, charge state, and formula without numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The named carrier is a full graph rather than a name/formula surrogate and includes both free meso hydrogens and both opposite aryl groups.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T6_page-4.png#scheme.N_to_O"
+              }
+            ],
+            "source_requirement": "complete structure of O, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "T6-A5 structures F-L prerequisite",
+                "relation": "required independent conjunct of the combined raw/reported theorem; not a chemical premise for this A6 identity",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              }
+            ],
+            "evidence": "The source-first label/topology recount matches the submission's explicit no-box interpretation and StructurePResult.",
+            "id": "structure_p",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A6.page4Figure",
+                "IChO2026Problems.T6A6.page4IntermediateLabels",
+                "IChO2026Problems.T6A6.rMonomer",
+                "IChO2026Problems.T6A6.arrowToTemplatedP6",
+                "IChO2026Problems.T6A6.arrowToIsolatedP6"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A6.structureP6",
+                "IChO2026Problems.T6A6.formulaP6",
+                "IChO2026Problems.T6A6.structure_p"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A6.PLabelReservation",
+                "IChO2026Problems.T6A6.oxidativeCyclohexamerizationProduct",
+                "IChO2026Problems.T6A6.ExactStructure"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A6.structures_m_to_r_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structure_p proves P is absent from page4IntermediateLabels, equates the sixfold computed cyclic graph with structureP6, and checks the expanded graph/formula; both template-assembly and DABCO-removal arrows are separately represented.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "overall",
+              "description": "label audit and final isolated P6 topology across template cyclization and removal"
+            },
+            "quantity_definition": "Source-label resolution for the absent intermediate P together with the complete isolated P6 graph explicitly depicted on page 4.",
+            "raw_result": {
+              "derivation": "The page lists M,N,O,Q,R and separately labels the isolated cyclic product P6. Six R graphs contribute 6(C52H52N4Zn); six terminal-alkyne homocouplings add six cross-unit C-C bonds and remove 12 terminal H, giving C312H300N24Zn6.",
+              "exact_unrounded": true,
+              "value_or_expression": "no intermediate P box; P is reserved for P6, a cycle of six R-derived zinc porphyrins joined by six butadiyne links; explicit graph C312H300N24Zn6"
+            },
+            "reporting": {
+              "application": "Report the exact symbolic structure, connectivity, charge state, and formula without numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The controller P slot is matched by the source-faithful label reservation plus the complete displayed isolated P6 graph, without inventing a boxed P intermediate.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T6_page-4.png#scheme.P6_and_labels"
+              }
+            ],
+            "source_requirement": "complete structure of P, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "T6-A5 structures F-L prerequisite",
+                "relation": "required independent conjunct of the combined raw/reported theorem; not a chemical premise for this A6 identity",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              }
+            ],
+            "evidence": "The source-first two-site substitution matches both answer fields and StructureQResult.",
+            "id": "structure_q",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A6.page4Figure",
+                "IChO2026Problems.T6A6.structureOPattern",
+                "IChO2026Problems.T6A6.arrowToQ"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A6.structureQ",
+                "IChO2026Problems.T6A6.formulaQ",
+                "IChO2026Problems.T6A6.structure_q"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A6.mesoDibrominationProduct",
+                "IChO2026Problems.T6A6.QualitativeReactionStep.mesoBromination",
+                "IChO2026Problems.T6A6.ExactStructure"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A6.structures_m_to_r_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structure_q computes bromination only at the two hydrogen meso sites and verifies the resulting full graph, valence, coordination, neutrality, and formula.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "per_step",
+              "description": "product identity at the O to Q arrow"
+            },
+            "quantity_definition": "Complete neutral zinc porphyrin graph after bromination of O's two free meso sites.",
+            "raw_result": {
+              "derivation": "The O-to-Q NBS arrow retains the porphyrin and both aryl substituents while replacing its two remaining meso H atoms by Br: O - H2 + Br2.",
+              "exact_unrounded": true,
+              "value_or_expression": "zinc(II) 10,20-dibromo-5,15-bis(3,5-di-tert-butylphenyl)porphyrin; explicit graph; C48H50Br2N4Zn"
+            },
+            "reporting": {
+              "application": "Report the exact symbolic structure, connectivity, charge state, and formula without numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Both bromine atoms and their exact meso attachments are explicit; all retained core/aryl connectivity is preserved.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T6_page-4.png#scheme.O_to_Q"
+              }
+            ],
+            "source_requirement": "complete structure of Q, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "T6-A5 structures F-L prerequisite",
+                "relation": "required independent conjunct of the combined raw/reported theorem; not a chemical premise for this A6 identity",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              }
+            ],
+            "evidence": "The source-first coupling/desilylation edit matches both answer fields and StructureRResult.",
+            "id": "structure_r",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A6.page4Figure",
+                "IChO2026Problems.T6A6.structureQPattern",
+                "IChO2026Problems.T6A6.arrowToR"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A6.structureR",
+                "IChO2026Problems.T6A6.formulaR",
+                "IChO2026Problems.T6A6.structure_r"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A6.terminalDiethynylationProduct",
+                "IChO2026Problems.T6A6.QualitativeReactionStep.terminalEthynylation",
+                "IChO2026Problems.T6A6.ExactStructure"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A6.structures_m_to_r_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structure_r converts exactly the two brominated meso descriptors to explicit C\u2261CH fragments and audits the full graph and formula.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "per_step",
+              "description": "product identity at the Q to R arrow"
+            },
+            "quantity_definition": "Complete neutral zinc porphyrin graph bearing two terminal ethynyl groups after coupling and desilylation.",
+            "raw_result": {
+              "derivation": "Two Sonogashira substitutions at Q's meso-Br sites install protected ethynyl units; fluoride removes the Si(C6H13)3 caps. Net Q - Br2 + 2(C2H) gives the terminal dialkyne.",
+              "exact_unrounded": true,
+              "value_or_expression": "zinc(II) 10,20-diethynyl-5,15-bis(3,5-di-tert-butylphenyl)porphyrin with two terminal C\u2261CH groups; explicit graph; C52H52N4Zn"
+            },
+            "reporting": {
+              "application": "Report the exact symbolic structure, connectivity, charge state, and formula without numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Both ethynyl carbon pairs, triple bonds, terminal hydrogens, retained porphyrin/aryl graph, charges, radicals, and stereochemistry are explicit.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T6_page-4.png#scheme.Q_to_R"
+              }
+            ],
+            "source_requirement": "complete structure of R, including all requested stereochemistry and template fields",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "f32299c5d06bde0d9709bcb82802026f4664ece908ab3cb6df391e4eb020b56a"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a6.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "All six controller outputs match the source-first structures and exact-symbolic reporting. The Lean carrier uses explicit atom/bond graphs, correctly orients every qualitative source arrow, resolves the absent P box as the displayed P6 product, and constructs the protected A5 conjunct from the hash-verified closed theorem in the main, raw, and reported results.",
+        "reviewed_at": "2026-09-13T13:18:37Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "f32299c5d06bde0d9709bcb82802026f4664ece908ab3cb6df391e4eb020b56a",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a6.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 8,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The hash-bound candidate compiles without sorry/admit, its closed combined theorem preserves all six exact graph outputs and constructs the mandatory protected A5 conjunct from the imported closed theorem; the answer submission schema, order, identities, graph references, formulas, and exact-symbolic displays all match the independently audited page-4 route and sealed Kimi 6.6 draft.",
+    "evidence": "Candidate SHA-256 020dc94fa051ae0c4ce01e242af204fd6841c060cc7a211d146adb3428e704c3 and submission SHA-256 80aa68898b22ae99d894594ac1a5a235e62738f5d37c675eab3e19c7c059d8ee match the contract. Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). StructuresMToRResult, StructuresMToRRawResult, and StructuresMToRReportedResult are each definitionally T6A5.StructuresFToLResult \u2227 CurrentStructuresMToRResult, and all three proofs supply T6A5.structures_f_to_l directly. Explicit finite graphs and ExactStructure checks cover atom identities, hydrogens, formal charges, radicals, stereochemical descriptors, bond orders, valence, coordination, formula, and bond count.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "020dc94fa051ae0c4ce01e242af204fd6841c060cc7a211d146adb3428e704c3",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t6_a6.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "5c9e04c9dfd0f0aa20df979bbf50da94239952aea2f54c2e2c23b5bd011619c3",
+      "source_record_id": "icho_2026_t6_a6",
+      "source_record_sha256": "5c9e04c9dfd0f0aa20df979bbf50da94239952aea2f54c2e2c23b5bd011619c3",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a6.answer.json",
+      "answer_submission_sha256": "80aa68898b22ae99d894594ac1a5a235e62738f5d37c675eab3e19c7c059d8ee",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t6_a6.source.json",
+      "source_report_sha256": "209029837ad7c7ca48b57760538cab4c05efe91b8007e7e5d88441d1312f288e",
+      "candidate": "IChO2026Problems/problem_icho_2026_t6_a6.lean",
+      "preflight_sha256": "0c404b0f50432352c163759c26fcf6a869e706ff57f1878f3afb3dba4629ca19",
+      "candidate_sha256": "020dc94fa051ae0c4ce01e242af204fd6841c060cc7a211d146adb3428e704c3",
+      "question_sha256": "87a2b662a3fb99a6005be453793d658282047a7e7a9d2f6137e9fb96a0449a23",
+      "shared_context_sha256": "c279de50a80e75337cb5490e983e09d3e1bcd2b051e7c4554fbe5d4b74b24bf2",
+      "previous_parts_sha256": "1ae28e56b295434d98228d8b67a3dd0a87eeaf896e0fa70973887275d1cc0188",
+      "requested_outputs_sha256": "0ff2048e672dbe2e816541de0a10561ea846a9e2a31a3dc299a57d90d6e7b50e",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T6_page-4.png",
+          "sha256": "fd4ea1325d4a9b1980cce5824fc9878e7607a8cab8572c2e5699ea0d7eab7631"
+        },
+        {
+          "path": "icho_2026_source/image/T6_page-3.png",
+          "sha256": "7ae1859c62e61f1da4136e4651d0b7f3f15930b9672a36cb31684f02291c34e5"
+        },
+        {
+          "path": "icho_2026_source/image/T6_page-2.png",
+          "sha256": "d9fd1e2d82d0e8a94ab6bcee210a2aee319715da722bbeb8d1df38e35d7d3362"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "d2c04928c4564675651ad923050dbfa2bd927f2598ce0580385da0f3ab27a9af",
+        "node_count": 16,
+        "edge_count": 30,
+        "node_kind_counts": {
+          "derivation_obligation": 6,
+          "previous_part_prerequisite": 1,
+          "requested_output": 6,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "structure_m",
+          "structure_n",
+          "structure_o",
+          "structure_p",
+          "structure_q",
+          "structure_r"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t6_a5"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t6_a6",
+        "path": ".archon/provided_answer_drafts/Q6.md",
+        "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false,
+        "verified_lean_prerequisites": [
+          {
+            "path": "IChO2026Chem/VerifiedA5.lean",
+            "sha256": "5cdda63d73e11946e8e9af882fec76b927d5f38d222205540eb71ac91d522601",
+            "theorem": "IChO2026Problems.T6A5.structures_f_to_l",
+            "result_type": "IChO2026Problems.T6A5.StructuresFToLResult",
+            "origin": "accepted same-run Kimi A5 formalization"
+          }
+        ]
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t6_a6.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "5c9e04c9dfd0f0aa20df979bbf50da94239952aea2f54c2e2c23b5bd011619c3",
+        "source_record_id": "icho_2026_t6_a6",
+        "source_record_sha256": "5c9e04c9dfd0f0aa20df979bbf50da94239952aea2f54c2e2c23b5bd011619c3",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a6.answer.json",
+        "answer_submission_sha256": "80aa68898b22ae99d894594ac1a5a235e62738f5d37c675eab3e19c7c059d8ee",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t6_a6.source.json",
+        "source_report_sha256": "209029837ad7c7ca48b57760538cab4c05efe91b8007e7e5d88441d1312f288e",
+        "candidate": "IChO2026Problems/problem_icho_2026_t6_a6.lean",
+        "preflight_sha256": "0c404b0f50432352c163759c26fcf6a869e706ff57f1878f3afb3dba4629ca19",
+        "candidate_sha256": "020dc94fa051ae0c4ce01e242af204fd6841c060cc7a211d146adb3428e704c3",
+        "question_sha256": "87a2b662a3fb99a6005be453793d658282047a7e7a9d2f6137e9fb96a0449a23",
+        "shared_context_sha256": "c279de50a80e75337cb5490e983e09d3e1bcd2b051e7c4554fbe5d4b74b24bf2",
+        "previous_parts_sha256": "1ae28e56b295434d98228d8b67a3dd0a87eeaf896e0fa70973887275d1cc0188",
+        "requested_outputs_sha256": "0ff2048e672dbe2e816541de0a10561ea846a9e2a31a3dc299a57d90d6e7b50e",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T6_page-4.png",
+            "sha256": "fd4ea1325d4a9b1980cce5824fc9878e7607a8cab8572c2e5699ea0d7eab7631"
+          },
+          {
+            "path": "icho_2026_source/image/T6_page-3.png",
+            "sha256": "7ae1859c62e61f1da4136e4651d0b7f3f15930b9672a36cb31684f02291c34e5"
+          },
+          {
+            "path": "icho_2026_source/image/T6_page-2.png",
+            "sha256": "d9fd1e2d82d0e8a94ab6bcee210a2aee319715da722bbeb8d1df38e35d7d3362"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "d2c04928c4564675651ad923050dbfa2bd927f2598ce0580385da0f3ab27a9af",
+          "node_count": 16,
+          "edge_count": 30,
+          "node_kind_counts": {
+            "derivation_obligation": 6,
+            "previous_part_prerequisite": 1,
+            "requested_output": 6,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_m",
+            "structure_n",
+            "structure_o",
+            "structure_p",
+            "structure_q",
+            "structure_r"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t6_a5"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t6_a6",
+          "path": ".archon/provided_answer_drafts/Q6.md",
+          "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false,
+          "verified_lean_prerequisites": [
+            {
+              "path": "IChO2026Chem/VerifiedA5.lean",
+              "sha256": "5cdda63d73e11946e8e9af882fec76b927d5f38d222205540eb71ac91d522601",
+              "theorem": "IChO2026Problems.T6A5.structures_f_to_l",
+              "result_type": "IChO2026Problems.T6A5.StructuresFToLResult",
+              "origin": "accepted same-run Kimi A5 formalization"
+            }
+          ]
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The chemistry audit was rederived from the inline problem evidence and all three hash-verified figures; the candidate and submission were treated as untrusted outputs, no official solution or grading material was used, and the sealed Kimi draft was used only for the expressly required fidelity comparison rather than as a chemistry axiom."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "The source-scoped route is represented by arrowToM through arrowToR and transparent graph-edit functions, then audited by StructureMResult through StructureRResult and ExactStructure. current_structures_m_to_r assembles the six outputs, while each final raw/combined carrier independently pairs it with the imported closed A5 proof."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "Every requested output is an exact-symbolic classification with an empty unit; raw and displayed submissions preserve molecular identities and graph references without decimal rounding or an unstated presentation rule."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No measured or numerical output and no tolerance occur in this structure-drawing task; exact equality is used throughout."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The page-4 starting structures, reagents, directions, thermodynamic/four-proton hint, and named qualitative transformations support concrete witnesses. The verb draw does not demand open-world exhaustiveness; the P slot is resolved from the visibly absent P box and displayed P6 label rather than from an answer-shaped candidate universe."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=020dc94fa051ae0c4ce01e242af204fd6841c060cc7a211d146adb3428e704c3; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial carriers are structure_m, structure_n, structure_o, structure_p, structure_q, structure_r, current_structures_m_to_r, structures_m_to_r, structures_m_to_r_raw_result, and structures_m_to_r_reported_result in IChO2026Problems.T6A6."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "CurrentStructuresMToRResult contains StagedSpeciesDomain and all six controller-ordered result propositions. The actual final, raw, and reported types explicitly retain T6A5.StructuresFToLResult as a conjunct."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "All requested theorems are closed. Scheme contexts reduce to the hash-bound page-4 arrow data and transparent reagent lists, graph checks are decidable computations, and the A5 premise is supplied only by the closed imported T6A5.structures_f_to_l theorem."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "Each answer record maps in order to the correspondingly named graph/result theorem. The source has intermediate labels M, N, O, Q, R and a displayed cyclic P6 product; StructurePResult explicitly proves that P is not an intermediate label and gives the P6 graph."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "Each qualitative source arrow has a typed page-4 locator, tail/head role, reagent list, applicability context, and transparent net topology edit. ExactStructure closes graph well-formedness, covalent valence, Zn-N coordination, charge/radical, stereochemistry, formula, atom-count, and bond-count obligations; no quantitative yield or omitted-stream assertion is made."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "complete structure of M, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T6A6.structure_m : StructureMResult",
+          "status": "covered",
+          "evidence": "The submitted identity, formula, and graph reference agree with the thermodynamic twofold alkylation product and the four proton-environment audit encoded by the explicit arene graph.",
+          "output_id": "structure_m",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of N, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T6A6.structure_n : StructureNResult",
+          "status": "covered",
+          "evidence": "The submitted identity, formula, and graph reference agree with the depicted benzylic bromination/Sommelet formylation edit while retaining the arene substituent pattern.",
+          "output_id": "structure_n",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of O, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T6A6.structure_o : StructureOResult",
+          "status": "covered",
+          "evidence": "The submitted trans-A2 zinc-porphyrin description maps to the explicit opposite-meso aryl pattern and its closed-shell coordinated graph audit.",
+          "output_id": "structure_o",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of P, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T6A6.structure_p : StructurePResult",
+          "status": "covered",
+          "evidence": "The submission correctly reports that the scheme has no intermediate P and binds the displayed P6 cyclic six-monomer nanoring to a complete repeated graph with six butadiyne closure bonds.",
+          "output_id": "structure_p",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of Q, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T6A6.structure_q : StructureQResult",
+          "status": "covered",
+          "evidence": "The submitted dibrominated porphyrin maps to replacement of both free meso hydrogens and passes the explicit graph and formula audit.",
+          "output_id": "structure_q",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of R, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T6A6.structure_r : StructureRResult",
+          "status": "covered",
+          "evidence": "The submitted terminal-diethynyl porphyrin maps to the two depicted coupling/desilylation edits and passes the explicit graph and formula audit.",
+          "output_id": "structure_r",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T6_page-4.png",
+          "sha256": "fd4ea1325d4a9b1980cce5824fc9878e7607a8cab8572c2e5699ea0d7eab7631",
+          "inspected": true,
+          "evidence": "The figure shows toluene to M to N to O to Q to R, the exact reagent sets and thermodynamic/four-proton hint, no intermediate P box, a six-pyridyl template complex, template removal, and the isolated P6 repeat drawing."
+        },
+        {
+          "path": "icho_2026_source/image/T6_page-3.png",
+          "sha256": "7ae1859c62e61f1da4136e4651d0b7f3f15930b9672a36cb31684f02291c34e5",
+          "inspected": true,
+          "evidence": "The figure shows the separate F-L [5]CPP route. It was checked as the protected prerequisite context and is not used as a causal chemistry premise for A6."
+        },
+        {
+          "path": "icho_2026_source/image/T6_page-2.png",
+          "sha256": "d9fd1e2d82d0e8a94ab6bcee210a2aee319715da722bbeb8d1df38e35d7d3362",
+          "inspected": true,
+          "evidence": "The figure supplies earlier T6 shared context for 6.3-6.4 and contains no competing M-R identities or reporting rule."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Independent inspection confirms the thermodynamic arene substitution, benzylic-to-aldehyde edit, opposite-meso porphyrin assembly/zincation, free-meso dibromination, terminal ethynyl installation, and sixfold butadiyne ring closure represented by the submitted graphs. These preserve the sealed Kimi 6.6 identities without correction."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only. StagedSpeciesDomain binds page-4 arrowToM, arrowToN, arrowToO, arrowToQ, arrowToR, arrowToTemplatedP6, and arrowToIsolatedP6 with named tail/head roles, directions, locators, and reagent uses; QualitativeReactionStep and the transparent graph-edit carriers provide the non-exclusive compatibility checks. No yield, sole-product, completion, phase, coefficient, or omitted-stream claim is made, so a quantitative material ledger is neither used nor required."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "formulaOfGraph is proved equal to the declared exact formula for every molecular carrier; the manually audited substituent edits and six-unit dehydrogenative P6 construction give the same element counts. No molar mass is requested."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "The requested conclusions use only qualitative net topology edits. Retained scaffolds and the atom/hydrogen changes represented in each product graph are consistent with the named substitutions and coupling; no complete material balance or anonymous stream is asserted."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "All six requested outputs are unitless exact molecular-structure classifications."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "There is no measured scalar, rounding, significant-figure operation, or numerical tolerance in the requested outputs."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "Every heavy atom, implicit attached-hydrogen count, formal charge, radical count, bond endpoint/order, Zn-N coordinate edge, and stereochemical descriptor is explicit. The source assigns no wedge/dash or E/Z descriptor, and NoAssignedStereochemistry is proved for every graph."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The prompt asks to draw concrete structures and does not assert unique/all/every. Each witness satisfies all decisive route and figure constraints; the thermodynamic/four-proton cue distinguishes M, and the P-label audit handles the skipped intermediate letter without inventing a box."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "No requested graph is assumed as a theorem hypothesis, no singleton candidate domain or opaque success predicate is used, and no answer file is imported. Source contexts feed transparent structure transforms; graph equality and all structural audits are computed. The protected A5 proof is imported at its verified hash and is used as an actual final conjunct."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a6.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The hash-bound candidate compiles without sorry/admit, its closed combined theorem preserves all six exact graph outputs and constructs the mandatory protected A5 conjunct from the imported closed theorem; the answer submission schema, order, identities, graph references, formulas, and exact-symbolic displays all match the independently audited page-4 route and sealed Kimi 6.6 draft.",
+        "evidence": "Candidate SHA-256 020dc94fa051ae0c4ce01e242af204fd6841c060cc7a211d146adb3428e704c3 and submission SHA-256 80aa68898b22ae99d894594ac1a5a235e62738f5d37c675eab3e19c7c059d8ee match the contract. Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). StructuresMToRResult, StructuresMToRRawResult, and StructuresMToRReportedResult are each definitionally T6A5.StructuresFToLResult \u2227 CurrentStructuresMToRResult, and all three proofs supply T6A5.structures_f_to_l directly. Explicit finite graphs and ExactStructure checks cover atom identities, hydrogens, formal charges, radicals, stereochemical descriptors, bond orders, valence, coordination, formula, and bond count.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T14:19:56.259634Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "020dc94fa051ae0c4ce01e242af204fd6841c060cc7a211d146adb3428e704c3",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a6.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "5_to_15m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T14:19:56.259704Z",
+    "repair_handoff": {}
+  }
+}

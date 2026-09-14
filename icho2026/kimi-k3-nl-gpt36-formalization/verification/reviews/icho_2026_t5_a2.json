@@ -1,0 +1,909 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "Both requested concrete structure witnesses match the source-first fragment, stereochemical, acid-base, and hydrogen-bond topology; the sealed Kimi 5.2 answer is preserved without discrepancy, and the closed Lean theorem checks nontrivial explicit molecular carriers rather than assuming either result.",
+    "updated_at": "2026-09-13T09:04:17Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "c75cc263a8bf304223ceffe2e86d69401409bfd3ef50c6ca533a440e190ea309",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "Both bound image digests were verified and inspected. Page 1 gives a:n one-port H caps, b:2 two-port phosphate cores, c:3 three-port glycerol units, d:4 one-port R-carbonyl acyl units, acyclicity, no peroxide, the chirality/symmetry facts, and the diprotic/monoanion facts; page 2 requests one PL1 enantiomer and stabilized Y. The submitted and Lean structures preserve all of these facts."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Before artifact inspection, the source port/tree ledger gave n+17=2(n+8), hence n=1. Valence and no O-O bonds give four glycerol-acyl, four glycerol-phosphate, and one glycerol-H attachments; the stated symmetry/chirality pattern selects a central 2-OH with two equivalent phosphatidyl arms and homochiral terminal centers. Removing one phosphate proton and folding the central OH between the unlike phosphate states derives Y."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "MolecularStructure, PL1Site, pl1NeutralNode, pl1CovalentBonds, configuration data, formal charges, radicals, implicit displayed H counts, HydrogenBond, fragment contraction, tree, and ring-path predicates explicitly carry every requested atom outside authorized R, bond order, charge, stereocentre, and stabilizing contact. No string equality carries the Lean conclusion."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "Both outputs are exact symbolic structures; no measured quantity, numerical tolerance, or rounding-sensitive classification is used."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "structureY selects right-phosphate first deprotonation, retains the neutral left P-OH donor, and orients the relay left P-OH to central OH to right P-O-. StructureIsomorphicVia reflectPL1Equiv structureY yLeftDeprotonated proves the explicitly stated L/R-exchanged branch is equivalent."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The source verb draw asks for one compatible witness, not global uniqueness. The chosen witness is constrained by a complete explicit graph, port contraction, valence, charge, tree, peroxide, stereochemical, deprotonation, and two-contact relay checks; arbitrary graphs or free identity flags cannot satisfy the contract. The mirror enantiomer or exchanged monoanion is an allowed equivalent alternative, not a countermodel."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The page-1 fragment multiplicities, port counts, complete port use, and acyclic connected molecule force exactly one type-a H cap.",
+          "carrier": "IChO2026Problems.T5A2.SourceFragmentAssembly; IChO2026Problems.T5A2.hydrogenCapCount_eq_one; IChO2026Problems.T5A2.pl1FragmentAssembly_matches_source",
+          "status": "covered",
+          "evidence": "The visual degrees are 1,2,3,1 with multiplicities n,2,3,4. The tree degree identity is represented transparently and yields n=1 without importing T5.1's answer."
+        },
+        {
+          "claim": "The fragment attachment semantics and ordinary valence produce the complete neutral PL1 covalent graph with four R-acyl esters, two phosphate diesters, three glycerol skeletons, and no peroxide.",
+          "carrier": "IChO2026Problems.T5A2.pl1NeutralNode; IChO2026Problems.T5A2.pl1CovalentBonds; IChO2026Problems.T5A2.FragmentContractionMatchesSource; IChO2026Problems.T5A2.ValidMolecularStructure",
+          "status": "covered",
+          "evidence": "The explicit node/edge list realizes every source port. The component recount is C13O17P2 plus four boundary-marked R nodes and 18 displayed attached H outside R; all bond orders and valences are checked."
+        },
+        {
+          "claim": "The source-stated chiral pair and achiral symmetric diastereomer are realized by two equivalent terminal glycerol stereocentres, allowing the requested homochiral enantiomer witness.",
+          "carrier": "IChO2026Problems.T5A2.ExactlyTerminalConfigurations; IChO2026Problems.T5A2.IsEnantiomericPair; IChO2026Problems.T5A2.MirrorRelatedVia; IChO2026Problems.T5A2.reflectPL1Equiv",
+          "status": "covered",
+          "evidence": "The two configured carbons are tied to their three explicit covalent ligands and attached H. RR/SS are mirror-related and nonsuperposable in the carrier, while reflection exchanges the terminal sites and maps the mixed form to its configuration-inverted self."
+        },
+        {
+          "claim": "Y is the first-deprotonation monoanion of PL1 with one neutral phosphate, one anionic phosphate, and a central-OH-mediated two-hydrogen-bond folded relay whose donor pattern is lost on second deprotonation.",
+          "carrier": "IChO2026Problems.T5A2.FirstDeprotonationAt; IChO2026Problems.T5A2.CooperativeHydrogenRelay; IChO2026Problems.T5A2.TwoHydrogenBondedRelayRingClosures; IChO2026Problems.T5A2.SecondDeprotonationPenaltyPattern",
+          "status": "covered",
+          "evidence": "The carrier retains the complete covalent scaffold, removes exactly one acid-O H to give charge -1, validates both O-H donor/O acceptor contacts and their intramolecular paths, and exposes loss of the two-donor relay plus two distinct phosphate O- sites after the second deprotonation."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t5_a2.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t5_a2",
+        "source_record_sha256": "bbf0a851c294714dc0695974568c0d687ec5c0e774cf59d61e8852a1a3d125a9",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a2.answer.json",
+        "answer_submission_sha256": "a8080931e0cc95c4c7ea9b1b6b38b502cfd901cdfb2f00c6b89f8d18d2c4c6b7",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t5_a2.source.json",
+        "source_report_sha256": "4da164139f1cc75f0cd7e4da252dd1f332a0399d001a99ce3441fe4f297d061d",
+        "candidate": "IChO2026Problems/problem_icho_2026_t5_a2.lean",
+        "preflight_sha256": "0405a67e8a72ab17f5f3080f90be65e48231466f33903ffec1f7661bc4b2be47",
+        "candidate_sha256": "c75cc263a8bf304223ceffe2e86d69401409bfd3ef50c6ca533a440e190ea309",
+        "question_sha256": "5465d46fe1d711805999f6bd55704267833f9c4b6856ac85dc8e8fc17a4d30de",
+        "shared_context_sha256": "4a1335cfc8a386bb204ce1e2e67af80fdf1712bef752aaec3e15b6b147fb2177",
+        "previous_parts_sha256": "5362e112a9d5796bb4000141fb062379a0698d3cce62e8bef84429c2125b1e33",
+        "requested_outputs_sha256": "97f0a15e673f7bba96716d21910798fa7f7885fd981711efdc3db92395df09f3",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T5_page-2.png",
+            "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-1.png",
+            "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "7c5c74989f0a9384d24666d2612c7ec7e7f16bfd99786e70a4ba06f187516604",
+          "node_count": 8,
+          "edge_count": 10,
+          "node_kind_counts": {
+            "derivation_obligation": 2,
+            "previous_part_prerequisite": 1,
+            "requested_output": 2,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_pl1",
+            "structure_y"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t5_a1"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t5_a2",
+          "path": ".archon/provided_answer_drafts/Q5.md",
+          "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t5_a2.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t5_a2",
+          "source_record_sha256": "bbf0a851c294714dc0695974568c0d687ec5c0e774cf59d61e8852a1a3d125a9",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a2.answer.json",
+          "answer_submission_sha256": "a8080931e0cc95c4c7ea9b1b6b38b502cfd901cdfb2f00c6b89f8d18d2c4c6b7",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t5_a2.source.json",
+          "source_report_sha256": "4da164139f1cc75f0cd7e4da252dd1f332a0399d001a99ce3441fe4f297d061d",
+          "candidate": "IChO2026Problems/problem_icho_2026_t5_a2.lean",
+          "preflight_sha256": "0405a67e8a72ab17f5f3080f90be65e48231466f33903ffec1f7661bc4b2be47",
+          "candidate_sha256": "c75cc263a8bf304223ceffe2e86d69401409bfd3ef50c6ca533a440e190ea309",
+          "question_sha256": "5465d46fe1d711805999f6bd55704267833f9c4b6856ac85dc8e8fc17a4d30de",
+          "shared_context_sha256": "4a1335cfc8a386bb204ce1e2e67af80fdf1712bef752aaec3e15b6b147fb2177",
+          "previous_parts_sha256": "5362e112a9d5796bb4000141fb062379a0698d3cce62e8bef84429c2125b1e33",
+          "requested_outputs_sha256": "97f0a15e673f7bba96716d21910798fa7f7885fd981711efdc3db92395df09f3",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T5_page-2.png",
+              "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+            },
+            {
+              "path": "icho_2026_source/image/T5_page-1.png",
+              "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "7c5c74989f0a9384d24666d2612c7ec7e7f16bfd99786e70a4ba06f187516604",
+            "node_count": 8,
+            "edge_count": 10,
+            "node_kind_counts": {
+              "derivation_obligation": 2,
+              "previous_part_prerequisite": 1,
+              "requested_output": 2,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "structure_pl1",
+              "structure_y"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t5_a1"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t5_a2",
+            "path": ".archon/provided_answer_drafts/Q5.md",
+            "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, static scope, fragment topology, component ledger, stereochemical pattern, and Y relay were frozen from only the inline problem evidence and the two digest-verified images before the generated submission, Lean candidate, or sealed draft was opened. The authorized draft was then used only for fidelity comparison and never as a scientific premise."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The exact symbolic derivation runs from the visual port/tree equation through source-constrained attachment types and symmetry to the full neutral graph, then through one explicit O-H deprotonation and two well-formed intramolecular hydrogen bonds to Y. Carriers are structurePL1Result, structureYResult, and rawResult_valid."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "Both bundle outputs specify exact_symbolic reporting from problem_output_type; raw and display strings are concrete structures and no significant-figure operation applies."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance, measured interval, atomic constant, or approximate numerical comparison is used for either exact symbolic output."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No finite candidate domain is used to prove uniqueness or exhaustiveness. The source verb draw requests one witness; the explicit candidate is checked directly against every decisive source constraint."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=c75cc263a8bf304223ceffe2e86d69401409bfd3ef50c6ca533a440e190ea309; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=11. Nontrivial result declarations: IChO2026Problems.T5A2.structurePL1, structureY, PL1StructureSpec, YStructureSpec, structurePL1_satisfies_source, structureY_satisfies_source, rawResult_valid, reportedResult_valid, and problem_icho_2026_t5_a2."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The closed main theorem supplies exactly one neutral PL1 enantiomer witness and one stabilized Y witness. It does not assert global uniqueness, enumerate the open chemical universe, or claim a quantitative pKa value."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The main theorem has no result-bearing hypothesis. SourceFragmentAssembly is a transparent inventory/port/tree predicate, T5.1 is derived inline, and every output property is checked on explicit data rather than introduced as an axiom or free Bool/Prop field."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The two conjuncts of problem_icho_2026_t5_a2 are PL1StructureSpec structurePL1 and YStructureSpec structureY in bundle order, matching both concrete submission outputs and their exact symbolic reporting policy."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are named: visual fragment ledger and tree count; valence/no-peroxide covalent construction; terminal stereochemistry and molecular symmetry; first deprotonation and charge; and the central-OH relay, ring closures, reflected branch, and second-deprotonation penalty pattern."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "complete structure of PL1, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T5A2.structurePL1 with PL1StructureSpec and structurePL1_satisfies_source",
+            "status": "covered",
+            "evidence": "The submission is a concrete neutral structure with complete connectivity and the selected homochiral terminal pair; it matches the explicit graph carrier and exact-symbolic contract.",
+            "output_id": "structure_pl1",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of Y, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T5A2.structureY with YStructureSpec and structureY_satisfies_source",
+            "status": "covered",
+            "evidence": "The submission is a concrete -1 monoanion retaining the full selected skeleton and displaying both central-OH relay contacts and exchange equivalence; it matches the explicit Lean carrier and exact-symbolic contract.",
+            "output_id": "structure_y",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T5_page-2.png",
+            "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96",
+            "inspected": true,
+            "evidence": "Digest verified. This is the unmarked Q5-2 answer page; its only problem content is the 5.2 instruction to draw one PL1 enantiomer and Y so stabilization explains the pKa difference, using R. It contributes no hidden choice, formula, reaction arrow, or marked answer."
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-1.png",
+            "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347",
+            "inspected": true,
+            "evidence": "Digest verified. The legend/example fixes a as a one-port H cap, b as P(=O)(OH) with two P attachment ports, c as O-CH2-CH(O)-CH2-O with three O ports, and d as one-port R-C(=O); PL1 uses n,2,3,4 copies. Source-only recount: n+9 fragment nodes, n+17 ports, n+8 tree edges, hence n=1. No O-O bond permits four c-d and four c-b links plus one c-a link. The c-b-c-b-c backbone has residual degrees 2,1,2; the stated symmetry/chirality locates a on central C2-O and two d on each terminal glycerol. Expanded outside R: c contributes C9O9 and 15 C-H, b contributes P2O4 and two O-H, d contributes C4O4 plus four boundary R nodes, and a contributes one H, totaling C13O17P2, four R, and 18 attached H; stub joining adds bonds without atom loss."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "R is used only as the source-authorized neutral one-attachment hydrocarbon substituent and each boundary is R-C(=O). Neutral phosphate diesters, four fatty-acyl esters, three glycerol backbones, the central alcohol, deprotonated phosphate O-, and O-H donor/O acceptor relay roles all have ordinary valence and match the visual fragments."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only: the source-stated acid-base relation has non-ionised diprotic PL1 as precursor, first deprotonation as direction, and named monoanion Y as product. FirstDeprotonationAt and SameCovalentSkeletonVia retain the entire scaffold and change one phosphate O-H to O-. No quantitative stage balance, yield, completion, sole-product, phase, or omitted-stream claim is made; the graphical fragment assembly itself is static, not a material stage."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "No full formula or mass is requested because R remains unexpanded. The independently expanded displayed-component ledger gives 13 explicit C, 17 O, 2 P, four R boundaries, and 18 attached H for neutral PL1; the Lean count carriers match. Y differs by exactly one H and charge -1 through FirstDeprotonationAt."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "Fragment ports satisfy n+17=2(n+8), every one of nine glycerol O ports is used once, and the explicit graph is connected and acyclic. The acid-base edit conserves the covalent skeleton and all nodes while removing one proton and changing total formal charge from 0 to -1. No unused quantitative material ledger is claimed."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "Both classifications have the required empty unit; no dimensional numerical quantity occurs."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "The required reporting is exact_symbolic. Raw and display values are concrete, semantically equivalent structures; there is no rounding, tolerance, or numerical precision step."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "All explicit nodes, bond orders, attached H counts, formal charges, radical counts, and four R attachment sites are carried. Only the two terminal glycerol C2 sites are configured; RR has the explicit SS mirror partner, while the mixed configuration is self-mirror under left/right reflection. Y retains those configurations and adds the two directional H bonds."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The verb draw requires one evidence-supported witness for each requested item and contains no unique/all/every instruction. The formalization supplies one selected enantiomer and one symmetry representative for Y while explicitly recognizing the mirror/exchanged alternatives; no global uniqueness theorem is used."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The answer carriers are explicit finite molecular data in the conclusion, not candidate-injected premises. Their specs independently check valence, graph topology, charge, radicals, fragment contraction, stereochemistry, deprotonation, and relay geometry; there is no singleton domain, opaque identity predicate, free exclusion flag, local chemistry axiom, or reflexive string equality."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "icho_2026_t5_a1",
+                "relation": "The type-a cap count is rederived inline from the prior question's fragment inventory and tree ledger; no prior answer is imported.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "page-1 fragment inventory",
+                "relation": "Multiplicities and connector degrees supply the complete attachment ledger.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T5_page-1.png#pl1_fragment_inventory"
+                }
+              }
+            ],
+            "evidence": "The source-first structure, answer-card output, and named Lean carrier agree atom-for-atom outside authorized R and agree on both terminal configurations.",
+            "id": "structure_pl1",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T5A2.SourceFragmentAssembly",
+                "IChO2026Problems.T5A2.pl1FragmentAssembly"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T5A2.structurePL1",
+                "IChO2026Problems.T5A2.structurePL1Result"
+              ],
+              "relations": [
+                "IChO2026Problems.T5A2.hydrogenCapCount_eq_one",
+                "IChO2026Problems.T5A2.pl1FragmentAssembly_matches_source",
+                "IChO2026Problems.T5A2.PL1StructureSpec",
+                "IChO2026Problems.T5A2.structurePL1_satisfies_source"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T5A2.reportedResult",
+                "IChO2026Problems.T5A2.problem_icho_2026_t5_a2"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structurePL1 is the explicit neutral graph; PL1StructureSpec checks its complete fragment contraction, graph, charge, atom kinds, valence, acyclicity, peroxide exclusion, terminal configurations, mirror pair, and meso symmetry.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Static molecular-structure witness; no time, cycle, yield, or material-flow horizon applies.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "One complete non-ionised enantiomeric PL1 connectivity and absolute-configuration witness, retaining R only for each fatty-acid hydrocarbon substituent.",
+            "raw_result": {
+              "derivation": "The source degrees give n+17=2(n+8), so n=1. Four acyl and four phosphate ports consume eight glycerol O ports; the H cap consumes the ninth. The source symmetry and stereoisomer pattern place central 2-OH between two identical arms and require matching terminal configurations.",
+              "exact_unrounded": true,
+              "value_or_expression": "R-C(=O)-O-CH2-C*(H)(O-C(=O)-R)-CH2-O-P(=O)(OH)-O-CH2-CH(OH)-CH2-O-P(=O)(OH)-O-CH2-C*(H)(O-C(=O)-R)-CH2-O-C(=O)-R, with terminal configurations (R,R)"
+            },
+            "reporting": {
+              "application": "Report the exact symbolic connectivity and stereochemistry without numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The sidecar has the correct id, kind, empty unit, concrete connectivity, four R boundaries, neutral phosphate groups, central OH, and a homochiral terminal pair.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-1.png#pl1_fragment_inventory"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-2.png#question_5.2"
+              }
+            ],
+            "source_requirement": "complete structure of PL1, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_pl1",
+                "relation": "Y retains PL1's complete covalent scaffold and terminal stereochemistry under the first deprotonation.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "previous_part",
+                "reference": "icho_2026_t5_a1",
+                "relation": "The inline n=1 derivation supplies the central free OH used in the relay; no prior answer is imported.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              }
+            ],
+            "evidence": "The source-first monoanion and relay match both answer-card forms and the explicit Lean charge, deprotonation, hydrogen-bond, ring-path, and reflection carriers.",
+            "id": "structure_y",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T5A2.structurePL1",
+                "IChO2026Problems.T5A2.yRightDeprotonated",
+                "IChO2026Problems.T5A2.yLeftDeprotonated"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T5A2.structureY",
+                "IChO2026Problems.T5A2.structureYResult"
+              ],
+              "relations": [
+                "IChO2026Problems.T5A2.FirstDeprotonationAt",
+                "IChO2026Problems.T5A2.CooperativeHydrogenRelay",
+                "IChO2026Problems.T5A2.TwoHydrogenBondedRelayRingClosures",
+                "IChO2026Problems.T5A2.SecondDeprotonationPenaltyPattern",
+                "IChO2026Problems.T5A2.YStructureSpec",
+                "IChO2026Problems.T5A2.structureY_satisfies_source"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T5A2.reportedResult",
+                "IChO2026Problems.T5A2.problem_icho_2026_t5_a2"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structureY changes exactly one phosphate acid O-H to O-, retains the full explicit RR skeleton, has net charge -1, carries both directional central-OH relay contacts, validates both intramolecular closures, and proves the reflected branch equivalent.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Static monoanion structure and qualitative first-deprotonation relation; no quantitative process horizon applies.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "The complete first-deprotonation monoanion of the selected PL1 enantiomer, drawn with the cooperative intramolecular hydrogen-bond stabilization that distinguishes the two acid dissociations.",
+            "raw_result": {
+              "derivation": "Remove H+ from one of the two symmetry-equivalent phosphate OH groups without changing the covalent scaffold. Fold the central glycerol so the remaining phosphate OH donates to central O and central O-H donates to the anionic phosphate O; left/right exchange gives the equivalent branch.",
+              "exact_unrounded": true,
+              "value_or_expression": "The same (R,R) PL1 skeleton with one P(=O)(OH) group and one P(=O)(O-) group, net -1, folded as P_L-O-H...O_c-H...O--P_R; the L/R-exchanged form is equivalent"
+            },
+            "reporting": {
+              "application": "Report the exact symbolic charged structure and hydrogen-bond contacts without numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The sidecar has the correct id, kind, empty unit, complete monoanion skeleton, one phosphate anion, the two-contact central-OH relay, and the equivalent exchanged arrangement.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-1.png#diprotic_monoanion_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-2.png#question_5.2"
+              }
+            ],
+            "source_requirement": "complete structure of Y, including all requested stereochemistry and template fields",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "c75cc263a8bf304223ceffe2e86d69401409bfd3ef50c6ca533a440e190ea309"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a2.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "Both requested concrete structure witnesses match the source-first fragment, stereochemical, acid-base, and hydrogen-bond topology; the sealed Kimi 5.2 answer is preserved without discrepancy, and the closed Lean theorem checks nontrivial explicit molecular carriers rather than assuming either result.",
+        "reviewed_at": "2026-09-13T09:04:17Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "c75cc263a8bf304223ceffe2e86d69401409bfd3ef50c6ca533a440e190ea309",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a2.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 11,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The exact-hash candidate is a closed, nontrivial exact-symbolic construction of both requested molecular structures. Its explicit graph, charge, stereochemistry, fragment, symmetry, and hydrogen-bond checks agree with the bound figures and preserve the authorized Kimi 5.2 answer without using that draft as a chemistry premise.",
+    "evidence": "The candidate and submission hashes match the controller bindings. Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The final declaration closes PL1StructureSpec structurePL1 and YStructureSpec structureY through structurePL1_satisfies_source and structureY_satisfies_source; supporting finite proofs validate the source fragment inventory, valences, acyclicity, formal charges, terminal configurations, mirror relation, first deprotonation, central-OH relay, ring closures, and the structural penalty on second deprotonation.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "3e40975f170c9c5e772a4fc248cf1f891c7b42ce45c0bdaf4cc4f844ba33b0e6",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t5_a2.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t5_a2",
+      "source_record_sha256": "bbf0a851c294714dc0695974568c0d687ec5c0e774cf59d61e8852a1a3d125a9",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a2.answer.json",
+      "answer_submission_sha256": "a8080931e0cc95c4c7ea9b1b6b38b502cfd901cdfb2f00c6b89f8d18d2c4c6b7",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t5_a2.source.json",
+      "source_report_sha256": "4da164139f1cc75f0cd7e4da252dd1f332a0399d001a99ce3441fe4f297d061d",
+      "candidate": "IChO2026Problems/problem_icho_2026_t5_a2.lean",
+      "preflight_sha256": "48839a7cbb21ec6dca8ddc8fa88dfbe022837b91e9c7eaae5ebb7948dc9aa6b7",
+      "candidate_sha256": "3e40975f170c9c5e772a4fc248cf1f891c7b42ce45c0bdaf4cc4f844ba33b0e6",
+      "question_sha256": "5465d46fe1d711805999f6bd55704267833f9c4b6856ac85dc8e8fc17a4d30de",
+      "shared_context_sha256": "4a1335cfc8a386bb204ce1e2e67af80fdf1712bef752aaec3e15b6b147fb2177",
+      "previous_parts_sha256": "5362e112a9d5796bb4000141fb062379a0698d3cce62e8bef84429c2125b1e33",
+      "requested_outputs_sha256": "97f0a15e673f7bba96716d21910798fa7f7885fd981711efdc3db92395df09f3",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T5_page-2.png",
+          "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+        },
+        {
+          "path": "icho_2026_source/image/T5_page-1.png",
+          "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "7c5c74989f0a9384d24666d2612c7ec7e7f16bfd99786e70a4ba06f187516604",
+        "node_count": 8,
+        "edge_count": 10,
+        "node_kind_counts": {
+          "derivation_obligation": 2,
+          "previous_part_prerequisite": 1,
+          "requested_output": 2,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "structure_pl1",
+          "structure_y"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t5_a1"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t5_a2",
+        "path": ".archon/provided_answer_drafts/Q5.md",
+        "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t5_a2.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t5_a2",
+        "source_record_sha256": "bbf0a851c294714dc0695974568c0d687ec5c0e774cf59d61e8852a1a3d125a9",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a2.answer.json",
+        "answer_submission_sha256": "a8080931e0cc95c4c7ea9b1b6b38b502cfd901cdfb2f00c6b89f8d18d2c4c6b7",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t5_a2.source.json",
+        "source_report_sha256": "4da164139f1cc75f0cd7e4da252dd1f332a0399d001a99ce3441fe4f297d061d",
+        "candidate": "IChO2026Problems/problem_icho_2026_t5_a2.lean",
+        "preflight_sha256": "48839a7cbb21ec6dca8ddc8fa88dfbe022837b91e9c7eaae5ebb7948dc9aa6b7",
+        "candidate_sha256": "3e40975f170c9c5e772a4fc248cf1f891c7b42ce45c0bdaf4cc4f844ba33b0e6",
+        "question_sha256": "5465d46fe1d711805999f6bd55704267833f9c4b6856ac85dc8e8fc17a4d30de",
+        "shared_context_sha256": "4a1335cfc8a386bb204ce1e2e67af80fdf1712bef752aaec3e15b6b147fb2177",
+        "previous_parts_sha256": "5362e112a9d5796bb4000141fb062379a0698d3cce62e8bef84429c2125b1e33",
+        "requested_outputs_sha256": "97f0a15e673f7bba96716d21910798fa7f7885fd981711efdc3db92395df09f3",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T5_page-2.png",
+            "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-1.png",
+            "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "7c5c74989f0a9384d24666d2612c7ec7e7f16bfd99786e70a4ba06f187516604",
+          "node_count": 8,
+          "edge_count": 10,
+          "node_kind_counts": {
+            "derivation_obligation": 2,
+            "previous_part_prerequisite": 1,
+            "requested_output": 2,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_pl1",
+            "structure_y"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t5_a1"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t5_a2",
+          "path": ".archon/provided_answer_drafts/Q5.md",
+          "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The audit used only the inline bound problem evidence, both digest-verified problem images, and the two required untrusted generated files. The sealed Kimi draft supplied inline was used solely for mandated fidelity comparison, not as a source fact or proof; no official solution, prior proof, grading material, or unlisted artifact was opened."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "hydrogenCapCount_eq_one derives the sole hydrogen cap from the source port multiplicities and the connected-acyclic degree/edge identity; pl1FragmentAssembly_matches_source verifies the concrete contraction. The explicit pl1CovalentBonds/pl1NeutralNode and yRightNode/yRightHydrogenBonds carriers are then audited by structurePL1_satisfies_source, structureY_satisfies_source, and rawResult_valid without rounding or an assumed equality."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "Both controller outputs are exact_symbolic classifications. rawResult preserves their required order, and reportedResult/reportedResult_valid apply no numerical formatting or rounding."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No numerical tolerance, measured interval, or approximate comparison is used; every requested structural field is checked by exact typed equality or finite graph predicates."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The source asks for one enantiomer, so an evidence-supported concrete witness suffices. The witness is checked against the page-1 fragment kinds and multiplicities, complete port use, connected acyclicity, no O-O bond, identical arms, source-stated stereochemical pattern, diprotic charge states, and ordinary donor/acceptor valence constraints. No finite-domain exhaustiveness or global uniqueness premise is used."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=3e40975f170c9c5e772a4fc248cf1f891c7b42ce45c0bdaf4cc4f844ba33b0e6; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result carriers are structurePL1, structureY, structurePL1Result, structureYResult, structurePL1_satisfies_source, structureY_satisfies_source, rawResult_valid, reportedResult_valid, and problem_icho_2026_t5_a2."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The reviewed declaration is exactly the conjunction of PL1StructureSpec structurePL1 and YStructureSpec structureY, covering the two requested outputs and no unrelated later subpart. It has no hypotheses that could weaken or assume the result."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The theorem is closed. The only upstream dependency, T5.1's cap count, is independently derived in hydrogenCapCount_eq_one from the bound fragment diagram and acyclic connected assembly, and the concrete source instance is proved by pl1FragmentAssembly_matches_source rather than imported from a sibling answer."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "PL1StructureSpec binds the complete neutral covalent graph, four common R nodes, two terminal R configurations, charge, valence, acyclicity, fragment contraction, mirror/enantiomer behavior, and peroxide exclusion. YStructureSpec binds the corresponding monoanion, the precise first-deprotonation edit, the two intramolecular relay interactions, equivalent exchanged form, and loss of that two-donor pattern upon second deprotonation."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "Every decisive drawing feature reduces to transparent local node, bond, configuration, charge, path, and symmetry definitions. The requested pKa explanation is structural rather than numerical: the candidate explicitly exhibits the cooperative intramolecular relay and proves that removing the remaining phosphate proton creates two distinct anionic oxygens and destroys that relay. No local axiom, opaque chemistry predicate, or empirical inverse rule is used."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "complete structure of PL1, including all requested stereochemistry and template fields",
+          "lean_carrier": "structurePL1; structurePL1Result; structurePL1_satisfies_source",
+          "status": "covered",
+          "evidence": "The first submission entry has the exact id/kind/unit and gives the same neutral connectivity and selected terminal configuration as the fully explicit Lean carrier. Raw and display forms are semantically identical under exact-symbolic structural notation.",
+          "output_id": "structure_pl1",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of Y, including all requested stereochemistry and template fields",
+          "lean_carrier": "structureY; structureYResult; structureY_satisfies_source",
+          "status": "covered",
+          "evidence": "The second submission entry has the exact id/kind/unit and agrees with the Lean monoanion, deprotonated phosphate site, central-hydroxyl-mediated two-interaction relay, terminal configurations,, and symmetry-equivalent exchanged arrangement. Its raw and display forms preserve the same exact structural classification.",
+          "output_id": "structure_y",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T5_page-2.png",
+          "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96",
+          "inspected": true,
+          "evidence": "The digest matches. This page contains the exact T5.2 draw request and an unmarked answer area; it supplies no hidden answer, alternative panel, formula, numerical tolerance, or fallback."
+        },
+        {
+          "path": "icho_2026_source/image/T5_page-1.png",
+          "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347",
+          "inspected": true,
+          "evidence": "The digest matches. The figure shows type a as a one-port hydrogen cap, two two-port phosphate fragments b, three three-port glycerol fragments c, and four one-port acyl fragments d with R attached to the carbonyl. The text supplies acyclicity, no peroxide bonds, the stereoisomer pattern, two equivalent acidic groups, and the specially stabilized monoanion cue."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Independent reconstruction pairs all source ports into four acyl esters, four phosphate-esters, and one central alcohol, yielding the symmetric three-glycerol/two-phosphate cardiolipin witness. Neutral valences and charge are correct. First phosphate deprotonation gives a monoanion whose remaining phosphate OH and central alcohol form a cooperative donor/acceptor relay to the anionic phosphate; the exchanged drawing is equivalent."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only: page 1's final paragraph supplies the named direction non-ionised PL1 --first deprotonation--> monoanion Y and the qualitative comparison with second deprotonation. The local species roles are neutral PL1, either symmetry-related monoanion, and a conditional dianion; FirstDeprotonationAt, SecondDeprotonationAt, structureY_firstDeprotonation, structureY_reflectionIso, and structureY_secondDeprotonationPenalty are the transparent compatibility carriers. No yield, completeness, sole-product, quantitative balance, solvent, proton sink, or omitted stream is asserted."
+        },
+        "formula_mass_consistency": {
+          "status": "not_applicable",
+          "evidence": "This subquestion requests structures with R intentionally unexpanded and supplies no formula or mass output. The candidate nevertheless checks every explicit non-R node count and valence."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "For the qualitative acid-base edit actually used, FirstDeprotonationAt preserves the entire covalent skeleton and all other nodes/configurations while changing one phosphate oxygen from OH to O(-); exact total-charge carriers verify neutral PL1 and monoanion Y. The conditional second edit analogously yields two distinct anionic phosphate oxygens. No broader material ledger is claimed."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "Neither requested classification has a physical unit, and both submission unit fields are exactly empty as required."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "The outputs are exact symbolic structures; there is no arithmetic result, significant-figure operation, or tolerance."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "All explicit atoms outside R, covalent bond orders, attached hydrogens, charges, radicals, and hydrogen bonds are typed. Exactly the two terminal glycerol carbons carry the selected R configuration; the opposite pair is proved mirror-related and non-superposable, while the mixed configuration has the source-required mirror relation."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The wording asks for one enantiomer, not all structures or a globally unique chemical classification. The submitted concrete witness satisfies every decisive source constraint, and the two choices of deprotonated phosphate in Y are explicitly proved symmetry-equivalent."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The named output definitions are permitted concrete witnesses, not premises. Their specifications unfold to finite atom/bond/configuration lists and nontrivial graph, valence, charge, symmetry, fragment, deprotonation, and relay checks; the final theorem has no answer-valued hypothesis, singleton candidate-domain premise, opaque predicate, axiom, sorry, or reflexive string equality."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a2.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The exact-hash candidate is a closed, nontrivial exact-symbolic construction of both requested molecular structures. Its explicit graph, charge, stereochemistry, fragment, symmetry, and hydrogen-bond checks agree with the bound figures and preserve the authorized Kimi 5.2 answer without using that draft as a chemistry premise.",
+        "evidence": "The candidate and submission hashes match the controller bindings. Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The final declaration closes PL1StructureSpec structurePL1 and YStructureSpec structureY through structurePL1_satisfies_source and structureY_satisfies_source; supporting finite proofs validate the source fragment inventory, valences, acyclicity, formal charges, terminal configurations, mirror relation, first deprotonation, central-OH relay, ring closures, and the structural penalty on second deprotonation.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T11:30:42.608289Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "3e40975f170c9c5e772a4fc248cf1f891c7b42ce45c0bdaf4cc4f844ba33b0e6",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a2.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "1_to_5m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T11:30:42.608328Z",
+    "repair_handoff": {}
+  }
+}

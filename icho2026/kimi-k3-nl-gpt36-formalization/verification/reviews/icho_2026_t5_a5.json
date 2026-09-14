@@ -1,0 +1,1798 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 3,
+    "last_review_iter": 1,
+    "reason": "The closed Lean classification faithfully encodes the fully protonated branch and uniformly selects the matching topology from the four printed choices. The outcome-decisive empirical bridge was independently verified in Olofsson and Sparr, Ionization Constants pKa of Cardiolipin, DOI 10.1371/journal.pone.0073040, Introduction paragraph 2. Draft fidelity: frozen Kimi draft SHA-256 43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010, relevant subpart 5.5, preserved original answer (d) inverse hexagonal, with no discrepancy.",
+    "updated_at": "2026-09-13T10:24:11Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The candidate transcribes PL1 as a cardiolipin, the source-stated dianionic reference state as lamellar, the requested state as both acidic residues protonated, and exactly the four page-3 choices. Its result is a classification within that printed panel, not an open-world claim."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "The independently verified proton-driven cardiolipin observation supplies inverse-water-core cylindrical topology; topologyOfPhase audits each constructor, phase_eq_inverseHexagonal_of_topology maps that topology to the printed label, and fullyProtonatedPhase_existsUnique plus the reported-result theorem close the requested output."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "Separate carriers represent protonation state, formal charge, aggregate topology, the source scenario, literature scope, applicability, the full finite choice panel, raw result, and reported result. The decisive observation is not represented by a freely set Bool or opaque predicate."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The requested output is an exact symbolic phase classification; no measured number, interval, tolerance, or rounding can alter it."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The candidate orients the cited transition from the source-stated dianionic lamellar reference toward the proton-added/low-pH fully protonated state, whose observed final topology is inverse-water-core cylindrical; it does not reverse the transition."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Within the source-closed four-choice contest domain and the verified cardiolipin-water protonation scope, all four constructors are checked uniformly and only one drawing has inverse-water-core cylindrical topology. No free exclusion flag, answer-shaped singleton, or source-compatible alternate panel entry changes the output."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "PL1 is a cardiolipin; its physiological dianion is lamellar, and the requested branch has both acid residues protonated.",
+          "carrier": "IChO2026Problems.T5A5.sourceProblemScenario; IChO2026Problems.T5A5.sourceScenario_chargeFacts",
+          "status": "covered",
+          "evidence": "Bound problem text in question/current_question states the family, reference charge and phase, and requested protonation condition; the closed carriers transcribe these facts without a requested-phase field."
+        },
+        {
+          "claim": "Proton addition/lowering pH in the applicable cardiolipin-water system changes lamellar morphology to inverse hexagonal morphology.",
+          "carrier": "IChO2026Problems.T5A5.olofssonSparrCardiolipinPhaseSource; IChO2026Problems.T5A5.protonDrivenCardiolipinObservation; IChO2026Problems.T5A5.LiteratureBridgeApplies; IChO2026Problems.T5A5.literatureBridge_applies",
+          "status": "covered",
+          "evidence": "Independently verified at https://pmc.ncbi.nlm.nih.gov/articles/PMC3772843/: M. Olofsson and E. Sparr, Ionization Constants pKa of Cardiolipin, DOI 10.1371/journal.pone.0073040, Introduction paragraph 2, sentence beginning 'This agrees with the observation by Seddon et al.' Exact scoped claim: a lamellar-to-inverse-hexagonal transition was reported in cardiolipin-water systems upon lowering pH below 2.8. Applicability conditions are cardiolipin dispersed in water and proton addition/lowered pH; the problem supplies PL1's cardiolipin identity and its fully protonated low-pH branch."
+        },
+        {
+          "claim": "The four printed phase drawings map uniformly to outward spherical micelles, planar bilayer stacks, outward normal cylinders, and inverse water-core cylinders, respectively.",
+          "carrier": "IChO2026Problems.T5A5.LipidPhase; IChO2026Problems.T5A5.AggregateTopology; IChO2026Problems.T5A5.topologyOfPhase; IChO2026Problems.T5A5.phase_eq_inverseHexagonal_of_topology",
+          "status": "covered",
+          "evidence": "The page-3 choice panel explicitly labels (a)-(d), and its unmarked drawings visibly have the four encoded topologies. The case proof checks every constructor and does not preselect a singleton."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t5_a5",
+        "source_record_sha256": "7b7a42752b4ae9142d4bfa8423d710b271efffaf2d3b09a66c31bb9b4203d31c",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a5.answer.json",
+        "answer_submission_sha256": "f7fe7587aa3056ea136f3eed71a2edf10ea3e7c6fb2538752e20edd050246c63",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t5_a5.source.json",
+        "source_report_sha256": "110b6049cf43be21f96516dd0eedcf7a24d3b3809681153fa99cd2ce019bd31e",
+        "candidate": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+        "preflight_sha256": "dd7855d8b101fc2f4cfebdef6b3e7ecdc306f1119e8bd6315d83d7ba64629ceb",
+        "candidate_sha256": "ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1",
+        "question_sha256": "a02169e87745cf3969943e0b7b4065f4d9ff34bb6ac71cef664eb72f50a1938a",
+        "shared_context_sha256": "def220ecc747a4a7d0c5a4b03084a02efb559a990372bc0ffd86f0dc9cc8098a",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "9d3815eded1daa9cee1f961798610e6de967ce02657bad068f3998575d043b2d",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T5_page-3.png",
+            "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-2.png",
+            "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "f31f7ecb373a707a57e3e35818aad7bfcb02e1ae7f5ad9a6e8b81d2f9088e8af",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "lipid_phase"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t5_a5",
+          "path": ".archon/provided_answer_drafts/Q5.md",
+          "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t5_a5",
+          "source_record_sha256": "7b7a42752b4ae9142d4bfa8423d710b271efffaf2d3b09a66c31bb9b4203d31c",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a5.answer.json",
+          "answer_submission_sha256": "f7fe7587aa3056ea136f3eed71a2edf10ea3e7c6fb2538752e20edd050246c63",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t5_a5.source.json",
+          "source_report_sha256": "110b6049cf43be21f96516dd0eedcf7a24d3b3809681153fa99cd2ce019bd31e",
+          "candidate": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+          "preflight_sha256": "dd7855d8b101fc2f4cfebdef6b3e7ecdc306f1119e8bd6315d83d7ba64629ceb",
+          "candidate_sha256": "ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1",
+          "question_sha256": "a02169e87745cf3969943e0b7b4065f4d9ff34bb6ac71cef664eb72f50a1938a",
+          "shared_context_sha256": "def220ecc747a4a7d0c5a4b03084a02efb559a990372bc0ffd86f0dc9cc8098a",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "9d3815eded1daa9cee1f961798610e6de967ce02657bad068f3998575d043b2d",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T5_page-3.png",
+              "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+            },
+            {
+              "path": "icho_2026_source/image/T5_page-2.png",
+              "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "f31f7ecb373a707a57e3e35818aad7bfcb02e1ae7f5ad9a6e8b81d2f9088e8af",
+            "node_count": 5,
+            "edge_count": 4,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "lipid_phase"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t5_a5",
+            "path": ".archon/provided_answer_drafts/Q5.md",
+            "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The requested quantifier, static scope, reference state, and four-panel topology mapping were frozen from the bound text and images before opening the submission or Lean candidate. The permitted generic literature claim was checked independently; the Kimi draft was used afterward only for fidelity comparison."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The symbolic chain is source dianionic lamellar state -> proton addition/full protonation -> verified inverse-water-core topology -> exhaustive four-constructor topology map -> exact classified constructor, carried by fullyProtonatedPL1_rawResult."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy requires exact_symbolic output. The submission and FullyProtonatedPL1ReportedResult apply that rule once with no numeric display transformation."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance, uncertainty interval, significant-figure conversion, or approximate comparison is used for this classification."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The only decisive candidate domain is the complete four-entry multiple-choice panel on T5 page 3, represented by the four-constructor LipidPhase type and Finset.univ. No global chemical-universe closure is claimed."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result declarations are IChO2026Problems.T5A5.fullyProtonatedPL1_rawResult, IChO2026Problems.T5A5.fullyProtonatedPL1_reportedResult, and IChO2026Problems.T5A5.problem_icho_2026_t5_a5."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The theorem answers the static fully protonated PL1 classification over the four printed choices. It does not assert a universal response for all lipids, media, or conditions."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The main theorem is closed. Source scenario fields come from the problem; the only empirical phase bridge is a scoped literature observation whose title, DOI, locator, claim, and applicability were independently verified."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The answer submission contains exactly one output in bundle order with id lipid_phase, kind classification, and empty unit; its raw/display encodings agree with the exact Lean reported-result carrier and the source-first derivation."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are named and covered: source state/protonation, proton-driven cardiolipin phase observation with applicability, and the visual topology-to-choice mapping. No previous-part result is used."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "lipid phase when both PL1 acid residues are protonated",
+            "lean_carrier": "IChO2026Problems.T5A5.fullyProtonatedPL1_reportedResult; IChO2026Problems.T5A5.problem_icho_2026_t5_a5",
+            "status": "covered",
+            "evidence": "The bound sidecar has one output at index 0 with the exact id, classification kind, empty unit, and consistent raw/display representations; both named Lean declarations carry the same exact-symbolic classification.",
+            "output_id": "lipid_phase",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T5_page-3.png",
+            "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7",
+            "inspected": true,
+            "evidence": "Digest matched. The text above 5.5 states the dianionic lamellar reference. The 5.5 panel has four labeled whole-aggregate drawings: (a) an outward-headed spherical micelle, (b) three planar bilayer sheets, (c) parallel outward/normal cylinders in hexagonal packing, and (d) parallel inverse water-core cylinders in hexagonal packing. There is no color/bold/dashed structural legend, molecular repeat boundary, cross-boundary chemical bond, or atom/condensation ledger relevant to this phase classification."
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-2.png",
+            "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96",
+            "inspected": true,
+            "evidence": "Digest matched. This page is the unmarked 5.2 drawing area and contains no 5.5 phase choices, transformation arrow, molecular repeat boundary, or additional phase-condition datum."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "Both acidic residues protonated is represented as the neutral acidic-residue state, and the verified low-pH proton-addition observation supplies inverse-water-core curvature for cardiolipin; the panel mapping then yields the exact phase class."
+          },
+          "staged_species_domain": {
+            "status": "not_applicable",
+            "evidence": "not_staged_transformation: this target classifies an equilibrium lipid morphology under a protonation condition. It uses no depicted reaction arrow, quantitative material stage, feed/output stream, yield, completeness claim, or species/atom/charge/mass ledger."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No molecular formula, molar mass, mass fraction, or atom count is requested or used."
+          },
+          "conservation_laws": {
+            "status": "not_applicable",
+            "evidence": "No material-balance or conservation ledger is outcome-decisive for the phase classification."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "The requested classification has unit exactly the empty string in the bundle and submission; every Lean carrier is symbolic rather than dimensioned."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "The exact_symbolic policy is applied directly; no rounding, intermediate numeric value, display precision, or tolerance is present."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "The question explicitly says PL1 structural knowledge is unnecessary and requests no molecular structure or stereochemical assignment."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The wording asks to tick the correct answer, and the candidate proves uniqueness only within the four explicitly printed choices by checking every topology. It makes no global uniqueness claim outside that panel."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The source scenario has no requested-phase field. The decisive empirical record stores a literature-backed morphology rather than a choice letter, topologyOfPhase treats all four choices uniformly, and the reported constructor is derived through the unique-fit theorem rather than injected as a hypothesis or singleton domain."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "id": "lipid_phase",
+            "kind": "classification",
+            "source_requirement": "lipid phase when both PL1 acid residues are protonated",
+            "quantity_definition": "Equilibrium lipid-phase classification of PL1 in the source-specified state where both acidic residues are protonated, selected from the four printed choices.",
+            "process_scope": {
+              "kind": "not_applicable",
+              "description": "Static equilibrium-state classification; there is no cumulative, cyclic, marginal, or stock-flow quantity."
+            },
+            "basis": {
+              "status": "not_applicable",
+              "numerator": "not_applicable",
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable"
+            },
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "PL1 reference state and reference phase",
+                "relation": "The problem states that physiologically dianionic PL1 has a lamellar phase.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "Olofsson and Sparr, Ionization Constants pKa of Cardiolipin, DOI 10.1371/journal.pone.0073040, Introduction paragraph 2",
+                "relation": "For cardiolipin-water systems, proton addition/lowering pH below 2.8 induces the lamellar-to-inverse-hexagonal transition; the requested fully protonated condition is the low-pH branch.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "branch_conditions": [
+              {
+                "condition": "Both acid residues of PL1 are protonated.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "unit": "",
+            "raw_result": {
+              "value_or_expression": "LipidPhase.inverseHexagonal",
+              "exact_unrounded": true,
+              "derivation": "Starting from the stated lamellar dianion, follow the verified proton-addition branch to inverse-water-core cylindrical topology; among the four page-3 drawings, uniform topology comparison selects the inverse-hexagonal constructor."
+            },
+            "reporting": {
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              },
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "application": "Use the exact symbolic constructor and its printed choice label; no numerical rounding applies."
+            },
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T5A5.sourceProblemScenario",
+                "IChO2026Problems.T5A5.sourcePhaseChoices",
+                "IChO2026Problems.T5A5.protonDrivenCardiolipinObservation"
+              ],
+              "relations": [
+                "IChO2026Problems.T5A5.literatureBridge_applies",
+                "IChO2026Problems.T5A5.phase_eq_inverseHexagonal_of_topology",
+                "IChO2026Problems.T5A5.fullyProtonatedPhase_existsUnique"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T5A5.fullyProtonatedPL1_rawResult"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T5A5.fullyProtonatedPL1_reportedResult",
+                "IChO2026Problems.T5A5.problem_icho_2026_t5_a5"
+              ]
+            },
+            "semantic_card_comparison": {
+              "status": "matched",
+              "evidence": "The single classification, static scope, empty unit, fully protonated condition, and exact-symbolic reporting all match the problem-only card."
+            },
+            "lean_statement_comparison": {
+              "status": "matched",
+              "evidence": "The named closed carriers encode the source inputs, verified governing bridge, exact raw classification, and exact reported constructor without hypotheses that contain the result."
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-3.png#phase-choice-panel"
+              }
+            ],
+            "evidence": "A source-first reading of the protonation branch, independently checked against the permitted generic cardiolipin literature, agrees with the answer card and Lean contract."
+          }
+        ]
+      },
+      "candidate_sha256": "ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The candidate faithfully encodes the fully protonated branch and derives the requested source-panel classification through a transparent packing inequality and a uniform four-choice classifier. The outcome-decisive proton/cardiolipin bridge is independently supported by species- and perturbation-matched literature, and no requested result is assumed as a phase-valued premise. Draft fidelity is exact for sealed Kimi subpart 5.5 (SHA-256 43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010), with no discrepancy.",
+        "reviewed_at": "2026-09-13T08:47:24Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:formalization:2",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 2,
+        "reason": "The bound submission and all named Lean result carriers encode the source-requested fully protonated PL1 phase classification. The redraft derives the result from the source-stated dianionic lamellar reference, neutralization, a uniform non-answer-shaped lipid-packing model, and the complete four-choice panel; the governing chemistry is independently supported within its cardiolipin/pH scope, and no requested result is injected into a premise.",
+        "reviewed_at": "2026-09-13T09:34:04Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:formalization:3",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 3,
+        "reason": "The closed Lean classification faithfully encodes the fully protonated branch and uniformly selects the matching topology from the four printed choices. The outcome-decisive empirical bridge was independently verified in Olofsson and Sparr, Ionization Constants pKa of Cardiolipin, DOI 10.1371/journal.pone.0073040, Introduction paragraph 2. Draft fidelity: frozen Kimi draft SHA-256 43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010, relevant subpart 5.5, preserved original answer (d) inverse hexagonal, with no discrepancy.",
+        "reviewed_at": "2026-09-13T10:24:11Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "71becd9448bcd638f60efe9f4401bb22f75dcb15e5d6f2ff6fd325a9b957e30f",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 6,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "a7ddaa8fa1d161b65ada8861694a2c1121bafe7925dd3a22e3e08a7637bdc533",
+        "iteration": 1,
+        "attempt": 2,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:formalization:2",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1",
+        "iteration": 1,
+        "attempt": 3,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:formalization:3",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {},
+    "last_reopened_iter": 1,
+    "last_reopen_event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:proof:2",
+    "reopen_history": [
+      {
+        "reopened_at": "2026-09-13T08:58:22Z",
+        "proof_review_iter": 1,
+        "proof_review_reason": "The candidate assumes the outcome-deciding, PL1-specific claim fullyProtonated_isInverseCone as a field of PL1ProtonationPackingEvidence. The bound problem establishes a lamellar dianion and the protonated-state question, but it does not state or derive the strict packing threshold; headgroup-area reduction alone does not prove that the packing parameter crosses 1. No authorized source locator, registry receipt, public-literature locator, or verified sealed-library declaration grounds this stronger premise.",
+        "redraft_kind": "answer_as_assumption",
+        "previous_status": "passed",
+        "previous_reviews": 1,
+        "previous_reason": "The candidate faithfully encodes the fully protonated branch and derives the requested source-panel classification through a transparent packing inequality and a uniform four-choice classifier. The outcome-decisive proton/cardiolipin bridge is independently supported by species- and perturbation-matched literature, and no requested result is assumed as a phase-valued premise. Draft fidelity is exact for sealed Kimi subpart 5.5 (SHA-256 43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010), with no discrepancy.",
+        "previous_certificate": {
+          "schema_version": 2,
+          "checks": {
+            "source_faithfulness": {
+              "status": "passed",
+              "evidence": "The source asks for one member of the four printed choices at the state where both acidic groups are protonated and separately states that the physiological dianion is lamellar. LipidPhase, PL1ProtonationState, acidicGroupFormalCharge, and the main theorem preserve exactly that scope without claiming an open-world phase catalogue."
+            },
+            "derivability": {
+              "status": "passed",
+              "evidence": "PL1ProtonationPackingEvidence.fullyProtonated_isInverseCone supplies the independently grounded geometric bridge; inverseCone_packingParameter_gt_one derives P > 1; phase_eq_inverseHexagonal_of_packingParameter_gt_one applies PhaseCompatibleWithPacking uniformly and fixes the printed choice. fullyProtonatedPL1_rawResult and problem_icho_2026_t5_a5 expose the complete chain."
+            },
+            "abstraction_sufficiency": {
+              "status": "passed",
+              "evidence": "The model distinguishes protonation states, records the source dianion observation, uses positive volume/area/length geometry, defines dimensionless P = v/(a0*l_c), and constrains every phase candidate through one transparent relation. These are sufficient for the sole requested qualitative classification."
+            },
+            "uncertainty_propagation": {
+              "status": "not_applicable",
+              "evidence": "The output is exact symbolic classification; the source supplies no measured value, uncertainty, tolerance, or rounding-sensitive boundary for this subquestion."
+            },
+            "branch_orientation": {
+              "status": "passed",
+              "evidence": "The result carrier selects PL1ProtonationState.bothAcidResiduesProtonated, with protonatedAcidResidueCount = 2 and acidicGroupFormalCharge = 0, rather than reusing the physiological dianion branch."
+            },
+            "countermodel_resistance": {
+              "status": "passed",
+              "evidence": "For every nonempty PL1PhaseModel satisfying the grounded inverse-cone inequality and candidate-independent PhaseCompatibleWithPacking relation, a non-inverse printed phase would require P <= 1 and contradict P > 1. The structure is consistent and does not obtain the theorem by an empty type or contradictory assumptions."
+            }
+          },
+          "bridge_obligations": [
+            {
+              "claim": "The queried branch is PL1 with both acidic groups protonated, distinct from the source-stated physiological dianionic lamellar branch.",
+              "carrier": "IChO2026Problems.T5A5.PL1ProtonationState.bothAcidResiduesProtonated; IChO2026Problems.T5A5.acidicGroupFormalCharge; IChO2026Problems.T5A5.PL1PhaseModel.physiologicalDianion_isLamellar",
+              "status": "covered",
+              "evidence": "Bound current_question and shared_context state both branches; T5_page-3.png visibly prints the same condition and comparator."
+            },
+            {
+              "claim": "Protonation of cardiolipin reduces effective headgroup expansion and places the protonated state in the inverse-curvature/inverse-cone regime.",
+              "carrier": "IChO2026Problems.T5A5.PL1ProtonationPackingEvidence.protonation_reduces_effectiveHeadgroupArea; IChO2026Problems.T5A5.PL1ProtonationPackingEvidence.fullyProtonated_isInverseCone; IChO2026Problems.T5A5.IsInverseCone",
+              "status": "covered",
+              "evidence": "J. M. Seddon, R. D. Kaye, D. Marsh, \u201cInduction of the lamellar-inverted hexagonal phase transition in cardiolipin by protons and monovalent cations,\u201d Biochim. Biophys. Acta 734 (1983) 347-352, DOI 10.1016/0005-2736(83)90134-7, stable URL https://doi.org/10.1016/0005-2736(83)90134-7, title and pp. 347-352. Scoped claim: added protons induce the lamellar-to-inverted-hexagonal transition in cardiolipin. Applicability: the source identifies PL1 as a cardiolipin and explicitly selects full protonation; no yield, mechanism, or open-world universality is inferred."
+            },
+            {
+              "claim": "For the printed phase domain, inverse-cone packing with P > 1 selects the inverse-hexagonal morphology.",
+              "carrier": "IChO2026Problems.T5A5.packingParameter; IChO2026Problems.T5A5.PhaseCompatibleWithPacking; IChO2026Problems.T5A5.inverseCone_packingParameter_gt_one; IChO2026Problems.T5A5.phase_eq_inverseHexagonal_of_packingParameter_gt_one",
+              "status": "covered",
+              "evidence": "The page-3 panel labels the four morphologies, including the inverse-hexagonal cylindrical arrangement. S. Rajesh, J. Zhai, C. J. Drummond, N. Tran, \u201cNovel pH-Responsive Cubosome and Hexosome Lipid Nanocarriers of SN-38 Are Prospective for Cancer Therapy,\u201d Pharmaceutics 14 (2022) 2175, DOI 10.3390/pharmaceutics14102175, stable URL https://doi.org/10.3390/pharmaceutics14102175, \u00a73.3 paragraph beginning \u201cThe formation of various mesophase structures\u201d: CPP = V/(a*l), lamellae have CPP = 1, CPP > 1 forms inverse phases including H2, and H2 is reversed cylinders on a hexagonal array. Applicability is limited to the qualitative lipid-amphiphile packing classification; no system-specific transition condition, yield, or universality is borrowed."
+            }
+          ],
+          "source_contract": {
+            "schema_version": 1,
+            "contract_kind": "native_problem_input_only",
+            "authority": "problem-only",
+            "evaluation_mode": "answer_blind",
+            "target": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+            "source_bundle": "icho_2026_source/questions_only.jsonl",
+            "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+            "source_record_id": "icho_2026_t5_a5",
+            "source_record_sha256": "7b7a42752b4ae9142d4bfa8423d710b271efffaf2d3b09a66c31bb9b4203d31c",
+            "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a5.answer.json",
+            "answer_submission_sha256": "a8ef6f3d5c2167ca735231564dcffa14244411af750436c85f72678998542198",
+            "chemistry_constant_dataset": {
+              "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+              "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+            },
+            "source_report": "reports/icho_2026/problem_icho_2026_t5_a5.source.json",
+            "source_report_sha256": "110b6049cf43be21f96516dd0eedcf7a24d3b3809681153fa99cd2ce019bd31e",
+            "candidate": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+            "preflight_sha256": "72517a950a0f6e02efe71d45d07a6e5f5f6dac23e7613b270824dafac8a2240f",
+            "candidate_sha256": "71becd9448bcd638f60efe9f4401bb22f75dcb15e5d6f2ff6fd325a9b957e30f",
+            "question_sha256": "a02169e87745cf3969943e0b7b4065f4d9ff34bb6ac71cef664eb72f50a1938a",
+            "shared_context_sha256": "def220ecc747a4a7d0c5a4b03084a02efb559a990372bc0ffd86f0dc9cc8098a",
+            "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "requested_outputs_sha256": "9d3815eded1daa9cee1f961798610e6de967ce02657bad068f3998575d043b2d",
+            "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+            "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+            "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+            "certified_prior_result_path": null,
+            "certified_prior_result_sha256": null,
+            "certified_prior_result_context_receipt_sha256": null,
+            "images": [
+              {
+                "path": "icho_2026_source/image/T5_page-3.png",
+                "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+              },
+              {
+                "path": "icho_2026_source/image/T5_page-2.png",
+                "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+              }
+            ],
+            "semantic_dag": {
+              "schema_version": 1,
+              "authority": "controller",
+              "sha256": "f31f7ecb373a707a57e3e35818aad7bfcb02e1ae7f5ad9a6e8b81d2f9088e8af",
+              "node_count": 5,
+              "edge_count": 4,
+              "node_kind_counts": {
+                "derivation_obligation": 1,
+                "requested_output": 1,
+                "source_fact_set": 3
+              },
+              "requested_output_ids": [
+                "lipid_phase"
+              ],
+              "previous_part_source_ids": []
+            },
+            "provided_answer_draft": {
+              "record_id": "icho_2026_t5_a5",
+              "path": ".archon/provided_answer_drafts/Q5.md",
+              "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+              "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+              "origin": "Kimi-K3 natural-language full-theory solution",
+              "allow_corrections": false,
+              "fresh_answer_blind_run": false,
+              "draft_is_source_axiom": false
+            }
+          },
+          "blind_review_certificate": {
+            "source_contract": {
+              "schema_version": 1,
+              "contract_kind": "native_problem_input_only",
+              "authority": "problem-only",
+              "evaluation_mode": "answer_blind",
+              "target": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+              "source_bundle": "icho_2026_source/questions_only.jsonl",
+              "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+              "source_record_id": "icho_2026_t5_a5",
+              "source_record_sha256": "7b7a42752b4ae9142d4bfa8423d710b271efffaf2d3b09a66c31bb9b4203d31c",
+              "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a5.answer.json",
+              "answer_submission_sha256": "a8ef6f3d5c2167ca735231564dcffa14244411af750436c85f72678998542198",
+              "chemistry_constant_dataset": {
+                "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+                "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+              },
+              "source_report": "reports/icho_2026/problem_icho_2026_t5_a5.source.json",
+              "source_report_sha256": "110b6049cf43be21f96516dd0eedcf7a24d3b3809681153fa99cd2ce019bd31e",
+              "candidate": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+              "preflight_sha256": "72517a950a0f6e02efe71d45d07a6e5f5f6dac23e7613b270824dafac8a2240f",
+              "candidate_sha256": "71becd9448bcd638f60efe9f4401bb22f75dcb15e5d6f2ff6fd325a9b957e30f",
+              "question_sha256": "a02169e87745cf3969943e0b7b4065f4d9ff34bb6ac71cef664eb72f50a1938a",
+              "shared_context_sha256": "def220ecc747a4a7d0c5a4b03084a02efb559a990372bc0ffd86f0dc9cc8098a",
+              "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+              "requested_outputs_sha256": "9d3815eded1daa9cee1f961798610e6de967ce02657bad068f3998575d043b2d",
+              "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+              "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+              "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+              "certified_prior_result_path": null,
+              "certified_prior_result_sha256": null,
+              "certified_prior_result_context_receipt_sha256": null,
+              "images": [
+                {
+                  "path": "icho_2026_source/image/T5_page-3.png",
+                  "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+                },
+                {
+                  "path": "icho_2026_source/image/T5_page-2.png",
+                  "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+                }
+              ],
+              "semantic_dag": {
+                "schema_version": 1,
+                "authority": "controller",
+                "sha256": "f31f7ecb373a707a57e3e35818aad7bfcb02e1ae7f5ad9a6e8b81d2f9088e8af",
+                "node_count": 5,
+                "edge_count": 4,
+                "node_kind_counts": {
+                  "derivation_obligation": 1,
+                  "requested_output": 1,
+                  "source_fact_set": 3
+                },
+                "requested_output_ids": [
+                  "lipid_phase"
+                ],
+                "previous_part_source_ids": []
+              },
+              "provided_answer_draft": {
+                "record_id": "icho_2026_t5_a5",
+                "path": ".archon/provided_answer_drafts/Q5.md",
+                "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+                "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+                "origin": "Kimi-K3 natural-language full-theory solution",
+                "allow_corrections": false,
+                "fresh_answer_blind_run": false,
+                "draft_is_source_axiom": false
+              }
+            },
+            "blind_source_audit": {
+              "answer_independence": {
+                "status": "passed",
+                "evidence": "The quantifier, non-dynamic scope, page-3 morphology audit, and packing derivation were frozen from the inline problem evidence and generic non-problem literature before the answer submission or Lean file was opened. The sealed Kimi draft was used only afterward for required fidelity comparison and was never treated as a premise or official answer."
+              },
+              "raw_derivation": {
+                "status": "passed",
+                "evidence": "The unrounded symbolic chain is fullyProtonated_isInverseCone -> inverseCone_packingParameter_gt_one -> phase_eq_inverseHexagonal_of_packingParameter_gt_one -> fullyProtonatedPL1_rawResult."
+              },
+              "reporting_rule_source": {
+                "status": "passed",
+                "evidence": "requested_outputs[0] specifies classification with exact_symbolic reporting and empty unit; the submission provides exactly one matching output and does not invoke the global numeric default."
+              },
+              "tolerance_provenance": {
+                "status": "passed",
+                "evidence": "No tolerance, measurement interval, approximate comparison, or numerical rounding is introduced or needed."
+              },
+              "candidate_domain_provenance": {
+                "status": "passed",
+                "evidence": "The finite domain is exactly the four alternatives printed and drawn on T5_page-3.png, represented by LipidPhase and sourcePhaseChoices = Finset.univ. It is used only for the multiple-choice task, not as an exhaustive open-world chemical universe."
+              },
+              "lean_result_binding": {
+                "status": "passed",
+                "evidence": "candidate_sha256=71becd9448bcd638f60efe9f4401bb22f75dcb15e5d6f2ff6fd325a9b957e30f; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=6. Nontrivial result declarations: IChO2026Problems.T5A5.fullyProtonatedPL1_rawResult, IChO2026Problems.T5A5.fullyProtonatedPL1_reportedResult, and IChO2026Problems.T5A5.problem_icho_2026_t5_a5."
+              }
+            },
+            "contract_audit": {
+              "statement_scope": {
+                "status": "passed",
+                "evidence": "The theorem classifies only PL1 at the fully protonated state inside the source-closed four-choice model; it does not assert global uniqueness, other pH states, kinetics, or phase-transition conditions beyond the task."
+              },
+              "hypothesis_derivability": {
+                "status": "passed",
+                "evidence": "The source derives the species, comparison state, and queried protonation branch. The only additional outcome-decisive chemistry hypothesis is the transparent inverse-cone inequality, independently covered by the cited proton-induced cardiolipin phase-transition literature and standard packing relation."
+              },
+              "conclusion_alignment": {
+                "status": "passed",
+                "evidence": "The answer submission raw/display fields and the Lean raw/reported/main declarations all match the independently derived requested classification, id, kind, empty unit, and exact-symbolic policy."
+              },
+              "bridge_completeness": {
+                "status": "passed",
+                "evidence": "All decisive bridges are inventoried: source branch selection, protonation-to-inverse packing, P > 1 algebra, and uniform mapping from the packing regime to the printed phase domain. No staged transformation, numerical constant, prior-part result, or hidden phase flag is used."
+              }
+            },
+            "requested_outputs": [
+              {
+                "source_requirement": "lipid phase when both PL1 acid residues are protonated",
+                "lean_carrier": "IChO2026Problems.T5A5.problem_icho_2026_t5_a5",
+                "status": "covered",
+                "evidence": "The sole submission entry has the correct id/kind/unit and exact-symbolic form; its raw and display content agree with the independently derived classification and the nontrivial Lean carrier.",
+                "output_id": "lipid_phase",
+                "submission_status": "matched",
+                "reporting_policy_status": "matched"
+              }
+            ],
+            "blueprint_conflicts": [],
+            "image_audit": [
+              {
+                "path": "icho_2026_source/image/T5_page-3.png",
+                "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7",
+                "inspected": true,
+                "evidence": "Digest matched. The page states that physiological dianionic PL1 is lamellar and asks for the fully protonated branch. Its unmarked choice panel distinctly labels (a) micellar, (b) lamellar with stacked bilayers, (c) hexagonal, and (d) inverse hexagonal with the inverse cylindrical morphology. No reaction arrow or quantitative component ledger is present."
+              },
+              {
+                "path": "icho_2026_source/image/T5_page-2.png",
+                "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96",
+                "inspected": true,
+                "evidence": "Digest matched. This bound page contains only the blank 5.2 structure-drawing prompt and no phase choice, marked response, reaction arrow, numerical datum, or topology needed by output lipid_phase."
+              }
+            ],
+            "chemistry_checks": {
+              "chemical_semantics": {
+                "status": "passed",
+                "evidence": "The Lean state mapping correctly makes the dianion charge -2 and the twice-protonated state neutral. Proton-induced lamellar-to-inverted-hexagonal behavior is independently scoped to cardiolipin by Seddon-Kaye-Marsh, BBA 734 (1983) 347-352, DOI 10.1016/0005-2736(83)90134-7; the model uses only the corresponding headgroup-area/inverse-curvature implication."
+              },
+              "staged_species_domain": {
+                "status": "not_applicable",
+                "evidence": "not_staged_transformation: the requested output is a static pH/protonation-dependent phase classification. There is no depicted or stated reaction arrow, material stage, species stream, yield, inventory, feed, recycle, or balance used to derive it."
+              },
+              "formula_mass_consistency": {
+                "status": "not_applicable",
+                "evidence": "No molecular formula, molar mass, mass fraction, or composition is requested or used for this target."
+              },
+              "conservation_laws": {
+                "status": "not_applicable",
+                "evidence": "No atom, charge-transfer, mass, or material-flow balance is used; the formal charge values merely label the two source-stated protonation branches."
+              },
+              "units_dimensions": {
+                "status": "passed",
+                "evidence": "The requested classification has unit=\"\" as bound. The auxiliary packing parameter is dimensionless because hydrophobic volume is divided by effective area times critical length."
+              },
+              "numerical_reporting": {
+                "status": "passed",
+                "evidence": "The requested policy is exact_symbolic; the sidecar applies no rounding, significant figures, tolerance, or numerical display transformation."
+              },
+              "structure_stereochemistry": {
+                "status": "not_applicable",
+                "evidence": "This subquestion explicitly says PL1 structural knowledge is not required and requests no structure, connectivity, formula, or stereochemical assignment."
+              },
+              "identification_uniqueness": {
+                "status": "passed",
+                "evidence": "\u201cWhich ... Tick the correct answer\u201d requests one classification within the four printed alternatives. LipidPhase models exactly that bounded panel, and the P > 1 relation excludes the other three without claiming exhaustive coverage of all conceivable soft-matter phases."
+              },
+              "answer_smuggling": {
+                "status": "passed",
+                "evidence": "No hypothesis equals the requested phase. phaseAt remains variable; fullyProtonated_isInverseCone is a transparent inequality over positive geometry with independent chemistry authority, and PhaseCompatibleWithPacking is applied uniformly to every printed phase before the phase equality is derived."
+              }
+            }
+          },
+          "official_answer_alignment": null,
+          "source_inconsistency": null,
+          "independent_rederivation": {
+            "schema_version": 1,
+            "method": "source_first_without_lean",
+            "ambiguity": "clear",
+            "requested_outputs": [
+              {
+                "id": "lipid_phase",
+                "kind": "classification",
+                "source_requirement": "lipid phase when both PL1 acid residues are protonated",
+                "quantity_definition": "The member of the printed four-phase choice set formed by PL1 in the branch where both acidic groups are protonated.",
+                "process_scope": {
+                  "kind": "not_applicable",
+                  "description": "Static phase classification at a specified protonation state; there is no process horizon, feed, recycle, or cumulative quantity."
+                },
+                "basis": {
+                  "status": "not_applicable",
+                  "numerator": "not_applicable",
+                  "denominator": "not_applicable",
+                  "mass_or_composition_basis": "not_applicable"
+                },
+                "constants": [],
+                "dependencies": [
+                  {
+                    "kind": "source_quantity",
+                    "reference": "physiological_dianion_phase",
+                    "relation": "The source supplies the lamellar dianion as the comparison state for the protonation-induced packing change.",
+                    "source_locator": {
+                      "kind": "problem_text",
+                      "reference": "shared_context"
+                    }
+                  }
+                ],
+                "branch_conditions": [
+                  {
+                    "condition": "both PL1 acidic groups are protonated",
+                    "source_locator": {
+                      "kind": "problem_text",
+                      "reference": "current_question"
+                    }
+                  }
+                ],
+                "unit": "",
+                "raw_result": {
+                  "value_or_expression": "LipidPhase.inverseHexagonal",
+                  "exact_unrounded": true,
+                  "derivation": "Full protonation removes the two headgroup charges and reduces effective headgroup expansion; for cardiolipin this is the inverse-cone regime P = v/(a0*l_c) > 1, which the printed four-choice packing classification maps to the inverse-hexagonal morphology."
+                },
+                "reporting": {
+                  "policy": {
+                    "kind": "exact_symbolic",
+                    "source": "problem_output_type"
+                  },
+                  "global_policy": {
+                    "default_final_display": "three_significant_figures",
+                    "explicit_precision": "use_only_precision_requested_in_problem",
+                    "final_precision": {
+                      "kind": "per_requested_output",
+                      "source": "requested_outputs"
+                    },
+                    "intermediate_rounding": "forbidden",
+                    "raw_result_required": true,
+                    "tie_rule": "half_away_from_zero"
+                  },
+                  "application": "Return the exact printed classification label; no numerical rounding applies."
+                },
+                "lean_carriers": {
+                  "inputs": [
+                    "IChO2026Problems.T5A5.PL1ProtonationState.bothAcidResiduesProtonated",
+                    "IChO2026Problems.T5A5.PL1PhaseModel",
+                    "IChO2026Problems.T5A5.PL1ProtonationPackingEvidence"
+                  ],
+                  "relations": [
+                    "IChO2026Problems.T5A5.packingParameter",
+                    "IChO2026Problems.T5A5.IsInverseCone",
+                    "IChO2026Problems.T5A5.PhaseCompatibleWithPacking",
+                    "IChO2026Problems.T5A5.inverseCone_packingParameter_gt_one",
+                    "IChO2026Problems.T5A5.phase_eq_inverseHexagonal_of_packingParameter_gt_one"
+                  ],
+                  "raw_result": [
+                    "IChO2026Problems.T5A5.fullyProtonatedPL1_rawResult"
+                  ],
+                  "reported_result": [
+                    "IChO2026Problems.T5A5.fullyProtonatedPL1_reportedResult",
+                    "IChO2026Problems.T5A5.problem_icho_2026_t5_a5"
+                  ]
+                },
+                "semantic_card_comparison": {
+                  "status": "matched",
+                  "evidence": "The sidecar has the sole required id, classification kind, empty unit, exact-symbolic reporting, and the source-first packing conclusion."
+                },
+                "lean_statement_comparison": {
+                  "status": "matched",
+                  "evidence": "The main theorem and raw/reported carriers select the fully protonated state and assert exactly the independently derived printed classification."
+                },
+                "source_locators": [
+                  {
+                    "kind": "problem_text",
+                    "reference": "current_question"
+                  },
+                  {
+                    "kind": "problem_text",
+                    "reference": "shared_context"
+                  },
+                  {
+                    "kind": "problem_text",
+                    "reference": "requested_outputs[0].source_requirement"
+                  },
+                  {
+                    "kind": "problem_image",
+                    "reference": "T5_page-3.png#phase_choice_panel"
+                  }
+                ],
+                "evidence": "The source branch, bound choice panel, ordinary critical-packing relation, and species-matched proton/cardiolipin literature determine one exact choice; submission and Lean carriers agree."
+              }
+            ]
+          },
+          "candidate_sha256": "71becd9448bcd638f60efe9f4401bb22f75dcb15e5d6f2ff6fd325a9b957e30f"
+        }
+      },
+      {
+        "reopened_at": "2026-09-13T09:40:32Z",
+        "proof_review_iter": 1,
+        "proof_review_reason": "The Lean implication compiles, but the requested classification is forced by candidate-local chemistry premises that are not derivable from the bound source: lamellar dianionic PL1 is treated as the exact equation P = 1, and any strict charge-dependent area decrease is then made sufficient to cross into the inverse regime.",
+        "redraft_kind": "missing_foundational_bridge",
+        "previous_status": "passed",
+        "previous_reviews": 2,
+        "previous_reason": "The bound submission and all named Lean result carriers encode the source-requested fully protonated PL1 phase classification. The redraft derives the result from the source-stated dianionic lamellar reference, neutralization, a uniform non-answer-shaped lipid-packing model, and the complete four-choice panel; the governing chemistry is independently supported within its cardiolipin/pH scope, and no requested result is injected into a premise.",
+        "previous_certificate": {
+          "schema_version": 2,
+          "checks": {
+            "source_faithfulness": {
+              "status": "passed",
+              "evidence": "The source asks for one exact choice among micellar, lamellar, hexagonal, and inverse hexagonal when both PL1 acidic residues are protonated. LipidPhase contains exactly those four labels, the target state is bothAcidResiduesProtonated, and the conclusion uses the matching printed phase label without claiming open-world uniqueness."
+            },
+            "derivability": {
+              "status": "passed",
+              "evidence": "PL1PhaseModel.physiologicalDianion_isLamellar supplies the printed baseline; acidicGroupChargeMagnitude and chargeExpansion_strictMono give a smaller effective headgroup area on full protonation; packingParameter_increases_when_area_decreases and dianion_packingParameter_eq_one give P > 1; phase_eq_inverseHexagonal_of_packingParameter_gt_one filters the printed choices. Jouhet, 'Importance of the hexagonal lipid phase in biological membrane organization,' DOI 10.3389/fpls.2013.00494, Figure 1 caption and the paragraph following Figure 1, supports the small-head/negative-curvature HII rule and specifically reports low-pH lamellar-to-HII transition for diphosphatidylglycerol (cardiolipin) in aqueous dispersions."
+            },
+            "abstraction_sufficiency": {
+              "status": "passed",
+              "evidence": "The model retains every output-decisive distinction: three protonation states, acidic-group charge magnitude, positive common tail geometry, charge-dependent effective headgroup area, dimensionless packing parameter, physiological lamellar baseline, and all four printed phases. Formula, fatty-acid identity, temperature, and stereochemistry are not used by or needed for this requested classification."
+            },
+            "uncertainty_propagation": {
+              "status": "not_applicable",
+              "evidence": "The output is an exact symbolic multiple-choice classification; the source provides no measured input, uncertainty, tolerance, or requested numerical precision for this subquestion."
+            },
+            "branch_orientation": {
+              "status": "passed",
+              "evidence": "The Lean chain compares the correct branches: fully protonated charge magnitude 0 versus dianion magnitude 2, obtains area(protonated) < area(dianion), hence P(dianion) < P(protonated), and applies the P > 1 inverse-curvature branch. No inequality or protonation branch is reversed."
+            },
+            "countermodel_resistance": {
+              "status": "passed",
+              "evidence": "Within the source-bounded ideal-packing model, P > 1 is incompatible with micellar, lamellar, and normal hexagonal constructors and forces the sole printed inverse choice. The hypotheses are consistent rather than vacuous: for example intrinsic area 1, charge expansion q, tail length 1, and tail volume 3 give P values 1, 3/2, and 3 for charge magnitudes 2, 1, and 0, with lamellar then inverse phases. Unmodeled temperature or composition changes are outside the source's same-system pH comparison and do not provide a source-compatible countermodel."
+            }
+          },
+          "bridge_obligations": [
+            {
+              "claim": "The physiological reference state is a dianion with two acidic-group charges and is lamellar, while protonating both acidic residues gives zero acidic-group formal charge.",
+              "carrier": "IChO2026Problems.T5A5.acidicGroupFormalCharge; IChO2026Problems.T5A5.acidicGroupChargeMagnitude; IChO2026Problems.T5A5.PL1PhaseModel.physiologicalDianion_isLamellar",
+              "status": "covered",
+              "evidence": "The shared_context states that PL1 is diprotic, is a dianion under physiological conditions, and forms a lamellar phase; current_question states the both-residues-protonated condition. The transparent carrier values are -2 and 0, with magnitudes 2 and 0."
+            },
+            {
+              "claim": "Removing acidic-headgroup charge reduces electrostatic headgroup expansion under otherwise common geometry.",
+              "carrier": "IChO2026Problems.T5A5.PL1PackingGeometry.chargeExpansion_strictMono; IChO2026Problems.T5A5.fullyProtonated_headgroupArea_lt_dianion",
+              "status": "covered",
+              "evidence": "This is the ordinary electrostatic-area bridge applied uniformly to charge magnitude, not a phase-valued premise. Jouhet, DOI 10.3389/fpls.2013.00494, Figure 1 caption and the paragraph after Figure 1, limits the supporting claim to aqueous lipid organization: polar-head size controls curvature and lowering pH drives charged phospholipids, specifically diphosphatidylglycerol/cardiolipin, from lamellar to HII. No claim about yield, kinetics, or other substrates is used."
+            },
+            {
+              "claim": "For fixed positive tail geometry, smaller effective headgroup area raises P = v/(a0 lc); ideal planar lamellae are the P = 1 reference and the P > 1 printed inverse morphology is inverse hexagonal.",
+              "carrier": "IChO2026Problems.T5A5.packingParameter; IChO2026Problems.T5A5.PhaseCompatibleWithIdealPacking; IChO2026Problems.T5A5.packingParameter_increases_when_area_decreases; IChO2026Problems.T5A5.phase_eq_inverseHexagonal_of_packingParameter_gt_one",
+              "status": "covered",
+              "evidence": "The algebraic monotonicity is proved from positive denominators. The general lipid-shape bridge is supported by Jouhet, DOI 10.3389/fpls.2013.00494, Figure 1 caption: equal head/hydrophobe cross-sections form planar lamellae, whereas a smaller polar head creates negative curvature and HII/inverted organization; the adjacent text defines HII as headgroups lining an aqueous channel with chains outward. The source image labels that inverse morphology as choice (d)."
+            },
+            {
+              "claim": "The output-decisive candidate domain is exactly the four printed phase choices and is not answer-shaped.",
+              "carrier": "IChO2026Problems.T5A5.LipidPhase; IChO2026Problems.T5A5.sourcePhaseChoices; IChO2026Problems.T5A5.sourcePhaseChoices_complete",
+              "status": "covered",
+              "evidence": "T5_page-3.png visibly prints and labels all four choices. LipidPhase has four corresponding constructors and sourcePhaseChoices is Finset.univ, not a singleton or a post-selected table."
+            }
+          ],
+          "source_contract": {
+            "schema_version": 1,
+            "contract_kind": "native_problem_input_only",
+            "authority": "problem-only",
+            "evaluation_mode": "answer_blind",
+            "target": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+            "source_bundle": "icho_2026_source/questions_only.jsonl",
+            "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+            "source_record_id": "icho_2026_t5_a5",
+            "source_record_sha256": "7b7a42752b4ae9142d4bfa8423d710b271efffaf2d3b09a66c31bb9b4203d31c",
+            "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a5.answer.json",
+            "answer_submission_sha256": "5f5a61c261bf6035fe0b75517421d4eba78aca68414433fee2803894acd5e70a",
+            "chemistry_constant_dataset": {
+              "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+              "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+            },
+            "source_report": "reports/icho_2026/problem_icho_2026_t5_a5.source.json",
+            "source_report_sha256": "110b6049cf43be21f96516dd0eedcf7a24d3b3809681153fa99cd2ce019bd31e",
+            "candidate": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+            "preflight_sha256": "2ffd9bb40bd61b5d78e5db569dd2e1443108c20ceb8519ecc88039d4b7e093ca",
+            "candidate_sha256": "a7ddaa8fa1d161b65ada8861694a2c1121bafe7925dd3a22e3e08a7637bdc533",
+            "question_sha256": "a02169e87745cf3969943e0b7b4065f4d9ff34bb6ac71cef664eb72f50a1938a",
+            "shared_context_sha256": "def220ecc747a4a7d0c5a4b03084a02efb559a990372bc0ffd86f0dc9cc8098a",
+            "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "requested_outputs_sha256": "9d3815eded1daa9cee1f961798610e6de967ce02657bad068f3998575d043b2d",
+            "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+            "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+            "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+            "certified_prior_result_path": null,
+            "certified_prior_result_sha256": null,
+            "certified_prior_result_context_receipt_sha256": null,
+            "images": [
+              {
+                "path": "icho_2026_source/image/T5_page-3.png",
+                "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+              },
+              {
+                "path": "icho_2026_source/image/T5_page-2.png",
+                "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+              }
+            ],
+            "semantic_dag": {
+              "schema_version": 1,
+              "authority": "controller",
+              "sha256": "f31f7ecb373a707a57e3e35818aad7bfcb02e1ae7f5ad9a6e8b81d2f9088e8af",
+              "node_count": 5,
+              "edge_count": 4,
+              "node_kind_counts": {
+                "derivation_obligation": 1,
+                "requested_output": 1,
+                "source_fact_set": 3
+              },
+              "requested_output_ids": [
+                "lipid_phase"
+              ],
+              "previous_part_source_ids": []
+            },
+            "provided_answer_draft": {
+              "record_id": "icho_2026_t5_a5",
+              "path": ".archon/provided_answer_drafts/Q5.md",
+              "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+              "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+              "origin": "Kimi-K3 natural-language full-theory solution",
+              "allow_corrections": false,
+              "fresh_answer_blind_run": false,
+              "draft_is_source_axiom": false
+            }
+          },
+          "blind_review_certificate": {
+            "source_contract": {
+              "schema_version": 1,
+              "contract_kind": "native_problem_input_only",
+              "authority": "problem-only",
+              "evaluation_mode": "answer_blind",
+              "target": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+              "source_bundle": "icho_2026_source/questions_only.jsonl",
+              "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+              "source_record_id": "icho_2026_t5_a5",
+              "source_record_sha256": "7b7a42752b4ae9142d4bfa8423d710b271efffaf2d3b09a66c31bb9b4203d31c",
+              "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a5.answer.json",
+              "answer_submission_sha256": "5f5a61c261bf6035fe0b75517421d4eba78aca68414433fee2803894acd5e70a",
+              "chemistry_constant_dataset": {
+                "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+                "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+              },
+              "source_report": "reports/icho_2026/problem_icho_2026_t5_a5.source.json",
+              "source_report_sha256": "110b6049cf43be21f96516dd0eedcf7a24d3b3809681153fa99cd2ce019bd31e",
+              "candidate": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+              "preflight_sha256": "2ffd9bb40bd61b5d78e5db569dd2e1443108c20ceb8519ecc88039d4b7e093ca",
+              "candidate_sha256": "a7ddaa8fa1d161b65ada8861694a2c1121bafe7925dd3a22e3e08a7637bdc533",
+              "question_sha256": "a02169e87745cf3969943e0b7b4065f4d9ff34bb6ac71cef664eb72f50a1938a",
+              "shared_context_sha256": "def220ecc747a4a7d0c5a4b03084a02efb559a990372bc0ffd86f0dc9cc8098a",
+              "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+              "requested_outputs_sha256": "9d3815eded1daa9cee1f961798610e6de967ce02657bad068f3998575d043b2d",
+              "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+              "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+              "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+              "certified_prior_result_path": null,
+              "certified_prior_result_sha256": null,
+              "certified_prior_result_context_receipt_sha256": null,
+              "images": [
+                {
+                  "path": "icho_2026_source/image/T5_page-3.png",
+                  "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+                },
+                {
+                  "path": "icho_2026_source/image/T5_page-2.png",
+                  "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+                }
+              ],
+              "semantic_dag": {
+                "schema_version": 1,
+                "authority": "controller",
+                "sha256": "f31f7ecb373a707a57e3e35818aad7bfcb02e1ae7f5ad9a6e8b81d2f9088e8af",
+                "node_count": 5,
+                "edge_count": 4,
+                "node_kind_counts": {
+                  "derivation_obligation": 1,
+                  "requested_output": 1,
+                  "source_fact_set": 3
+                },
+                "requested_output_ids": [
+                  "lipid_phase"
+                ],
+                "previous_part_source_ids": []
+              },
+              "provided_answer_draft": {
+                "record_id": "icho_2026_t5_a5",
+                "path": ".archon/provided_answer_drafts/Q5.md",
+                "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+                "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+                "origin": "Kimi-K3 natural-language full-theory solution",
+                "allow_corrections": false,
+                "fresh_answer_blind_run": false,
+                "draft_is_source_axiom": false
+              }
+            },
+            "blind_source_audit": {
+              "answer_independence": {
+                "status": "passed",
+                "evidence": "The requested quantifier, static scope, visual choice topology, and phase derivation were frozen from current_question, shared_context, and both bound images before the answer JSON and Lean candidate were opened. The sealed Kimi draft was checked afterward only for authorized fidelity and was not used as a source axiom."
+              },
+              "raw_derivation": {
+                "status": "passed",
+                "evidence": "The end-to-end symbolic chain is carried by effectiveHeadgroupArea, packingParameter, fullyProtonated_headgroupArea_lt_dianion, dianion_packingParameter_eq_one, fullyProtonatedPL1_derivation, and fullyProtonatedPL1_rawResult; no intermediate rounding or numerical fit is used."
+              },
+              "reporting_rule_source": {
+                "status": "passed",
+                "evidence": "requested_outputs[0].reporting_policy requires exact_symbolic output, and the student-visible prompt says to tick the correct labeled choice. The submission preserves a printed label exactly."
+              },
+              "tolerance_provenance": {
+                "status": "passed",
+                "evidence": "No tolerance or measurement interval is introduced. The classification is exact symbolic, so the bound measurement policy and significant-figure tie rule are inert."
+              },
+              "candidate_domain_provenance": {
+                "status": "passed",
+                "evidence": "The outcome-decisive finite domain is exactly the four choices visibly printed on T5_page-3.png and repeated in current_question. LipidPhase enumerates all four once and sourcePhaseChoices is the non-singleton Finset.univ; no global chemical-phase universe is claimed."
+              },
+              "lean_result_binding": {
+                "status": "passed",
+                "evidence": "candidate_sha256=a7ddaa8fa1d161b65ada8861694a2c1121bafe7925dd3a22e3e08a7637bdc533; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result declarations are FullyProtonatedPL1RawResult, fullyProtonatedPL1_rawResult, FullyProtonatedPL1ReportedResult, fullyProtonatedPL1_reportedResult, fullyProtonatedPL1_phase, and problem_icho_2026_t5_a5."
+              }
+            },
+            "contract_audit": {
+              "statement_scope": {
+                "status": "passed",
+                "evidence": "The theorem classifies the phase of PL1 only at bothAcidResiduesProtonated, relative to the source's same-system physiological dianion reference, and does not assert kinetics, transition pH, global uniqueness, or phases outside the printed panel."
+              },
+              "hypothesis_derivability": {
+                "status": "passed",
+                "evidence": "The lamellar dianion and pH/protonation contrast come directly from shared_context/current_question. Charge neutralization is ordinary acid-base semantics. The uniform headgroup-area/packing bridge is independently supported in the exact aqueous lipid/cardiolipin scope by Jouhet, DOI 10.3389/fpls.2013.00494, Figure 1 caption and its low-pH DPG transition paragraph. Positivity and reciprocal monotonicity are transparent mathematical conditions."
+              },
+              "conclusion_alignment": {
+                "status": "passed",
+                "evidence": "The bound answer submission has exactly one output in bundle order with id lipid_phase, kind classification, empty unit, a source-derived symbolic raw relation, and the matching printed display classification. Both reported-result theorems and the main theorem carry that same requested output."
+              },
+              "bridge_completeness": {
+                "status": "passed",
+                "evidence": "All output-decisive bridges are inventoried: source protonation/charge and lamellar baseline, electrostatic headgroup-area response, fixed-tail packing monotonicity and inverse-curvature classifier, and the four-choice image mapping. No staged transformation, atom ledger, mass balance, or previous-part result enters the derivation."
+              }
+            },
+            "requested_outputs": [
+              {
+                "source_requirement": "lipid phase when both PL1 acid residues are protonated",
+                "lean_carrier": "IChO2026Problems.T5A5.FullyProtonatedPL1RawResult; IChO2026Problems.T5A5.fullyProtonatedPL1_rawResult; IChO2026Problems.T5A5.FullyProtonatedPL1ReportedResult; IChO2026Problems.T5A5.fullyProtonatedPL1_reportedResult; IChO2026Problems.T5A5.problem_icho_2026_t5_a5",
+                "status": "covered",
+                "evidence": "The sole submission output matches the independently derived printed classification and exact-symbolic policy; every raw and reported result is connected through the named nontrivial packing-model theorems.",
+                "output_id": "lipid_phase",
+                "submission_status": "matched",
+                "reporting_policy_status": "matched"
+              }
+            ],
+            "blueprint_conflicts": [],
+            "image_audit": [
+              {
+                "path": "icho_2026_source/image/T5_page-3.png",
+                "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7",
+                "inspected": true,
+                "evidence": "Digest matched. The 5.5 panel is readable and has four separately labeled morphologies: (a) a spherical normal micelle with heads outward and tails inward; (b) stacked planar bilayers; (c) normal hexagonal cylinders; and (d) inverse hexagonal cylinders with headgroups lining internal aqueous channels and tails extending into the continuous hydrophobic matrix. The text immediately above gives the physiological dianion/lamellar baseline. No reaction arrow, repeat boundary, chemical abbreviation, or atom-count ledger is involved in this classification."
+              },
+              {
+                "path": "icho_2026_source/image/T5_page-2.png",
+                "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96",
+                "inspected": true,
+                "evidence": "Digest matched. This page contains only the 5.2 drawing prompt and an otherwise blank answer area; it adds no 5.5 phase choice, molecular connector, legend, reaction arrow, or quantity. It was checked to ensure no cross-page topology or omitted choice-panel condition affects the target."
+              }
+            ],
+            "chemistry_checks": {
+              "chemical_semantics": {
+                "status": "passed",
+                "evidence": "Full protonation changes the two acidic-group contribution from dianionic to neutral, decreases charge-driven effective headgroup area, and favors negative curvature. The HII/inverse-hexagonal mapping matches both the page-3 morphology and the cardiolipin-specific low-pH literature scope."
+              },
+              "staged_species_domain": {
+                "status": "not_applicable",
+                "evidence": "not_staged_transformation: the requested phase is a static condition classification; no depicted or stated reaction arrow, material stage, feed, product stream, yield, residue, or conservation ledger is used."
+              },
+              "formula_mass_consistency": {
+                "status": "not_applicable",
+                "evidence": "No molecular formula, molar mass, mass fraction, or component count is requested or used for lipid_phase."
+              },
+              "conservation_laws": {
+                "status": "not_applicable",
+                "evidence": "No material transformation or atom, charge-flow, mass, species, or phase-fraction balance is used; protonation state is a qualitative condition, not a requested material ledger."
+              },
+              "units_dimensions": {
+                "status": "passed",
+                "evidence": "The requested classification correctly has unit empty string. The auxiliary packing parameter is transparently defined as dimensionless v/(a0*l_c), and no dimensional quantity is reported."
+              },
+              "numerical_reporting": {
+                "status": "passed",
+                "evidence": "The output policy is exact_symbolic. The submission and Lean reported-result carrier use a printed symbolic classification; no decimal, tolerance, significant-figure operation, or intermediate rounding appears."
+              },
+              "structure_stereochemistry": {
+                "status": "not_applicable",
+                "evidence": "The source explicitly says knowledge of PL1 structure is not required, and this target requests neither a structure nor stereochemical assignment."
+              },
+              "identification_uniqueness": {
+                "status": "passed",
+                "evidence": "'Which ... Tick the correct answer' requires one concrete selection from the four printed options, not global uniqueness across an open chemical universe. The uniform classifier eliminates the other three printed constructors for P > 1 and makes no stronger exhaustiveness claim."
+              },
+              "answer_smuggling": {
+                "status": "passed",
+                "evidence": "No hypothesis names the fully protonated phase. PL1PhaseModel assumes only the source-stated dianion phase plus one state-independent compatibility law; PhaseCompatibleWithIdealPacking is transparent and uniform across every state and printed constructor. sourcePhaseChoices contains all four options, and the target conclusion is reached only after the independently oriented area and packing inequalities."
+              }
+            }
+          },
+          "official_answer_alignment": null,
+          "source_inconsistency": null,
+          "independent_rederivation": {
+            "schema_version": 1,
+            "method": "source_first_without_lean",
+            "ambiguity": "clear",
+            "requested_outputs": [
+              {
+                "id": "lipid_phase",
+                "kind": "classification",
+                "source_requirement": "lipid phase when both PL1 acid residues are protonated",
+                "quantity_definition": "the exact printed lipid-phase classification for PL1 in the condition where both acidic residues are protonated",
+                "process_scope": {
+                  "kind": "not_applicable",
+                  "description": "static equilibrium-condition classification; no time, cycle, feed, inventory, or process horizon"
+                },
+                "basis": {
+                  "status": "not_applicable",
+                  "numerator": "not_applicable",
+                  "denominator": "not_applicable",
+                  "mass_or_composition_basis": "not_applicable"
+                },
+                "constants": [],
+                "dependencies": [
+                  {
+                    "kind": "source_quantity",
+                    "reference": "physiological PL1 dianion lamellar reference",
+                    "relation": "provides the charged planar reference state for the pH-dependent comparison",
+                    "source_locator": {
+                      "kind": "problem_text",
+                      "reference": "shared_context"
+                    }
+                  },
+                  {
+                    "kind": "governing_relation",
+                    "reference": "phase behavior depends on pH",
+                    "relation": "makes protonation state the source-stated control variable while the same PL1 system is compared",
+                    "source_locator": {
+                      "kind": "problem_text",
+                      "reference": "shared_context"
+                    }
+                  }
+                ],
+                "branch_conditions": [
+                  {
+                    "condition": "both acidic residues of PL1 are protonated rather than the physiological dianionic state",
+                    "source_locator": {
+                      "kind": "problem_text",
+                      "reference": "current_question"
+                    }
+                  }
+                ],
+                "unit": "",
+                "raw_result": {
+                  "value_or_expression": "(d) inverse hexagonal",
+                  "exact_unrounded": true,
+                  "derivation": "Full protonation removes the two acidic-headgroup charges, reducing electrostatic headgroup expansion at fixed tail geometry. Thus P = v/(a0*l_c) increases from the ideal planar-lamellar reference P = 1 into the P > 1 negative-curvature regime, which the printed panel labels (d) inverse hexagonal."
+                },
+                "reporting": {
+                  "policy": {
+                    "kind": "exact_symbolic",
+                    "source": "problem_output_type"
+                  },
+                  "global_policy": {
+                    "default_final_display": "three_significant_figures",
+                    "explicit_precision": "use_only_precision_requested_in_problem",
+                    "final_precision": {
+                      "kind": "per_requested_output",
+                      "source": "requested_outputs"
+                    },
+                    "intermediate_rounding": "forbidden",
+                    "raw_result_required": true,
+                    "tie_rule": "half_away_from_zero"
+                  },
+                  "application": "select and preserve the exact matching printed classification; no numerical rounding applies"
+                },
+                "lean_carriers": {
+                  "inputs": [
+                    "IChO2026Problems.T5A5.PL1ProtonationState",
+                    "IChO2026Problems.T5A5.PL1PackingGeometry",
+                    "IChO2026Problems.T5A5.PL1PhaseModel"
+                  ],
+                  "relations": [
+                    "IChO2026Problems.T5A5.effectiveHeadgroupArea",
+                    "IChO2026Problems.T5A5.packingParameter",
+                    "IChO2026Problems.T5A5.PhaseCompatibleWithIdealPacking",
+                    "IChO2026Problems.T5A5.fullyProtonated_headgroupArea_lt_dianion",
+                    "IChO2026Problems.T5A5.dianion_packingParameter_eq_one",
+                    "IChO2026Problems.T5A5.phase_eq_inverseHexagonal_of_packingParameter_gt_one"
+                  ],
+                  "raw_result": [
+                    "IChO2026Problems.T5A5.FullyProtonatedPL1RawResult",
+                    "IChO2026Problems.T5A5.fullyProtonatedPL1_rawResult"
+                  ],
+                  "reported_result": [
+                    "IChO2026Problems.T5A5.FullyProtonatedPL1ReportedResult",
+                    "IChO2026Problems.T5A5.fullyProtonatedPL1_reportedResult",
+                    "IChO2026Problems.T5A5.problem_icho_2026_t5_a5"
+                  ]
+                },
+                "semantic_card_comparison": {
+                  "status": "matched",
+                  "evidence": "The sole output id, classification kind, empty unit, static fully protonated scope, complete printed domain, and exact-symbolic reporting policy all match the source-first audit."
+                },
+                "lean_statement_comparison": {
+                  "status": "matched",
+                  "evidence": "The named Lean carriers encode the correct protonation branch, source lamellar baseline, packing relation, raw derivation, and exact reported phase without an answer-valued premise."
+                },
+                "source_locators": [
+                  {
+                    "kind": "problem_text",
+                    "reference": "current_question"
+                  },
+                  {
+                    "kind": "problem_text",
+                    "reference": "shared_context"
+                  },
+                  {
+                    "kind": "problem_image",
+                    "reference": "T5_page-3.png#phase-choice-panel"
+                  }
+                ],
+                "evidence": "Source-first derivation and visual choice-panel audit agree with the submission and all result carriers."
+              }
+            ]
+          },
+          "candidate_sha256": "a7ddaa8fa1d161b65ada8861694a2c1121bafe7925dd3a22e3e08a7637bdc533"
+        }
+      }
+    ]
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The exact bound candidate and submission hashes match; the single submitted classification and exact-symbolic display agree with the unique member of the four-choice panel selected by a verified, source-scoped cardiolipin protonation observation; and deterministic Lean preflight passed with no sorry.",
+    "evidence": "The candidate defines the complete four-member printed phase domain, reads each panel drawing through topologyOfPhase, records and applicability-checks Olofsson and Sparr, Ionization Constants pKa of Cardiolipin, DOI 10.1371/journal.pone.0073040, stable URL https://pmc.ncbi.nlm.nih.gov/articles/PMC3772843/, Introduction paragraph 2, and proves uniqueness by exhaustive LipidPhase cases. Independent retrieval confirmed that exact paragraph reports a lamellar-to-inverse-hexagonal transition in cardiolipin-water systems when pH is lowered below 2.8, consistent with reduced effective headgroup area from reduced electrostatic repulsion. The closed raw, reported, and main declarations compile under the supplied preflight (status passed, compiles true, returncode 0, sorry_count 0).",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t5_a5",
+      "source_record_sha256": "7b7a42752b4ae9142d4bfa8423d710b271efffaf2d3b09a66c31bb9b4203d31c",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a5.answer.json",
+      "answer_submission_sha256": "f7fe7587aa3056ea136f3eed71a2edf10ea3e7c6fb2538752e20edd050246c63",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t5_a5.source.json",
+      "source_report_sha256": "110b6049cf43be21f96516dd0eedcf7a24d3b3809681153fa99cd2ce019bd31e",
+      "candidate": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+      "preflight_sha256": "5ca09486058c35ced291e06ec8ae07d645c98ff0585ccc784449b0f6a9d6f981",
+      "candidate_sha256": "ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1",
+      "question_sha256": "a02169e87745cf3969943e0b7b4065f4d9ff34bb6ac71cef664eb72f50a1938a",
+      "shared_context_sha256": "def220ecc747a4a7d0c5a4b03084a02efb559a990372bc0ffd86f0dc9cc8098a",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "9d3815eded1daa9cee1f961798610e6de967ce02657bad068f3998575d043b2d",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T5_page-3.png",
+          "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+        },
+        {
+          "path": "icho_2026_source/image/T5_page-2.png",
+          "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "f31f7ecb373a707a57e3e35818aad7bfcb02e1ae7f5ad9a6e8b81d2f9088e8af",
+        "node_count": 5,
+        "edge_count": 4,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "lipid_phase"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t5_a5",
+        "path": ".archon/provided_answer_drafts/Q5.md",
+        "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t5_a5",
+        "source_record_sha256": "7b7a42752b4ae9142d4bfa8423d710b271efffaf2d3b09a66c31bb9b4203d31c",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a5.answer.json",
+        "answer_submission_sha256": "f7fe7587aa3056ea136f3eed71a2edf10ea3e7c6fb2538752e20edd050246c63",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t5_a5.source.json",
+        "source_report_sha256": "110b6049cf43be21f96516dd0eedcf7a24d3b3809681153fa99cd2ce019bd31e",
+        "candidate": "IChO2026Problems/problem_icho_2026_t5_a5.lean",
+        "preflight_sha256": "5ca09486058c35ced291e06ec8ae07d645c98ff0585ccc784449b0f6a9d6f981",
+        "candidate_sha256": "ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1",
+        "question_sha256": "a02169e87745cf3969943e0b7b4065f4d9ff34bb6ac71cef664eb72f50a1938a",
+        "shared_context_sha256": "def220ecc747a4a7d0c5a4b03084a02efb559a990372bc0ffd86f0dc9cc8098a",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "9d3815eded1daa9cee1f961798610e6de967ce02657bad068f3998575d043b2d",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T5_page-3.png",
+            "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-2.png",
+            "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "f31f7ecb373a707a57e3e35818aad7bfcb02e1ae7f5ad9a6e8b81d2f9088e8af",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "lipid_phase"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t5_a5",
+          "path": ".archon/provided_answer_drafts/Q5.md",
+          "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The derivation was checked from the inline problem evidence, both digest-bound unmarked images, and the permitted generic public cardiolipin-property citation. The answer JSON and Lean file were treated as untrusted outputs; the sealed Kimi subpart was used only for required fidelity comparison and not as a scientific premise."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "FullyProtonatedPL1RawResult and fullyProtonatedPL1_derivation carry the complete symbolic chain: four source choices, stated reference phase and charges, two-proton requested state, verified literature applicability, final aggregate topology, unique finite-panel fit, and the derived classification. No rounding or numerical substitution occurs."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The requested output is a classification with exact_symbolic reporting, and page 3 prints the choice labels. FullyProtonatedPL1ReportedResult and fullyProtonatedPL1_reportedResult bind the derived enum result to that exact panel reporting convention."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No tolerance is used or needed for this exact symbolic classification; the cited pH threshold is scope evidence for a qualitative observation, not a candidate numerical output or acceptance tolerance."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "Page 3 visibly supplies exactly four choices. LipidPhase has one constructor per printed choice, sourcePhaseChoices is Finset.univ, sourcePhaseChoices_card proves cardinality four, and phase_eq_inverseHexagonal_of_topology exhausts all constructors rather than assuming a singleton domain."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial carriers: fullyProtonatedPL1_derivation, fullyProtonatedPL1_rawResult, fullyProtonatedPL1_reportedResult, and problem_icho_2026_t5_a5."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The main theorem classifies PL1 at the explicitly modeled state with two protonated acidic residues. The supporting raw carrier retains the stated physiological dianion/lamellar reference, charge change, external bridge applicability, finite panel, and uniqueness; it neither solves a weaker state nor broadens the claim to all lipids."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The result is closed and has no caller-selectable chemical hypothesis. ProblemPhaseScenario fields trace to the problem text and pH/physiological aqueous context; the empirical morphology record traces to the independently verified public citation and its cardiolipin-water/proton-addition applicability scope."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The theorem's LipidPhase equality, the raw enum token, and the printed choice display all denote the same unique panel classification requested by output id lipid_phase; the submission has the required empty unit."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The decisive non-mathematical bridge records title, DOI, stable URL, exact Introduction-paragraph locator, scoped transition claim, and applicability. Independent retrieval matched those fields. topologyOfPhase transparently maps all four visible morphologies, literatureBridge_applies matches the source scenario, and fullyProtonatedPhase_existsUnique completes the source-to-output bridge."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "lipid phase when both PL1 acid residues are protonated",
+          "lean_carrier": "IChO2026Problems.T5A5.problem_icho_2026_t5_a5 (with fullyProtonatedPL1_rawResult and fullyProtonatedPL1_reportedResult)",
+          "status": "covered",
+          "evidence": "The sole schema-version-1 output has the required id, classification kind, empty unit, one raw enum token, and one exact printed-panel display; both select the unique topology-filtered panel member. Output count and order are exact.",
+          "output_id": "lipid_phase",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T5_page-3.png",
+          "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7",
+          "inspected": true,
+          "evidence": "The image is readable and unmarked. It states the physiological dianion/lamellar reference, asks for the phase with both acidic residues protonated, and shows exactly four labeled morphology choices: spherical micelle, lamellar bilayer stacks, normal hexagonal cylinders, and inverse hexagonal cylinders."
+        },
+        {
+          "path": "icho_2026_source/image/T5_page-2.png",
+          "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96",
+          "inspected": true,
+          "evidence": "The image is readable and is an unmarked 5.2 drawing page; it contains no selected 5.5 choice and supplies no hidden phase result or required dependency."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The source gives dianionic lamellar PL1 and asks for the fully protonated state. The verified source-scoped observation reports that proton addition/lowered pH in cardiolipin-water systems drives the lamellar morphology to an inverse-water-core cylindrical morphology through reduced electrostatic headgroup repulsion; the panel drawing/label map then determines the classification."
+        },
+        "staged_species_domain": {
+          "status": "not_applicable",
+          "evidence": "not_staged_transformation: this target asks for an equilibrium lipid-phase classification at a specified protonation state. It asserts no reaction arrow, material stage, yield, stream, stoichiometric coefficient, or conservation-based conclusion, so no staged species ledger is used."
+        },
+        "formula_mass_consistency": {
+          "status": "not_applicable",
+          "evidence": "No molecular formula, molar mass, composition, or mass fraction is requested or used for this target."
+        },
+        "conservation_laws": {
+          "status": "not_applicable",
+          "evidence": "No atom, charge, mass, or phase-amount balance is used to decide the qualitative phase classification; formal charge is only a state descriptor."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "The requested classification has the source-specified empty unit, and the submission preserves it. No dimensional arithmetic is present."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "The output policy is exact symbolic classification, with no requested digits, rounding, measurement interval, or numerical tolerance."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "The question explicitly states that knowledge of PL1 structure is not required, and neither a molecular structure nor stereochemical assignment is requested or used."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source closes the domain to the four displayed choices. sourcePhaseChoices_card proves four, topologyOfPhase audits each constructor, phase_eq_inverseHexagonal_of_topology eliminates the three nonmatching morphologies by cases, and fullyProtonatedPhase_existsUnique proves exactly one fit."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "sourceProblemScenario deliberately contains no requested-state phase. The external observation is represented by a morphology rather than a choice letter and is grounded by a verified generic literature claim; the complete unmarked panel is filtered uniformly. No singleton candidate premise, caller-provided truth flag, opaque predicate, or requested answer hypothesis occurs."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:proof:1",
+        "iter": 1,
+        "route": "needs_redraft",
+        "resulting_status": "needs_redraft",
+        "top_level_status": "blocked",
+        "attempt": 1,
+        "reason": "The candidate assumes the outcome-deciding, PL1-specific claim fullyProtonated_isInverseCone as a field of PL1ProtonationPackingEvidence. The bound problem establishes a lamellar dianion and the protonated-state question, but it does not state or derive the strict packing threshold; headgroup-area reduction alone does not prove that the packing parameter crosses 1. No authorized source locator, registry receipt, public-literature locator, or verified sealed-library declaration grounds this stronger premise.",
+        "evidence": "All four bound SHA-256 values match, the answer JSON schema is complete, and deterministic Lean preflight reports passed/compiles=true/returncode=0/sorry_count=0. In fullyProtonatedPL1_reportedResult, the proof obtains hInverseCone directly from model.protonationPackingEvidence.fullyProtonated_isInverseCone, converts it to the strict parameter inequality, and then applies the locally defined classifier. Thus the kernel proof is valid only for an arbitrary model already carrying the decisive chemical condition; neither inspected image supplies that condition. This is answer-as-assumption/modeling failure, not a Lean proof failure.",
+        "redraft_kind": "answer_as_assumption",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T08:58:22.808316Z"
+      },
+      {
+        "iter": 1,
+        "event": "formalization_redraft_passed",
+        "prior_attempts": 1,
+        "reviewed_at": "2026-09-13T09:34:04.987969Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:proof:2",
+        "iter": 1,
+        "route": "needs_redraft",
+        "resulting_status": "needs_redraft",
+        "top_level_status": "blocked",
+        "attempt": 1,
+        "reason": "The Lean implication compiles, but the requested classification is forced by candidate-local chemistry premises that are not derivable from the bound source: lamellar dianionic PL1 is treated as the exact equation P = 1, and any strict charge-dependent area decrease is then made sufficient to cross into the inverse regime.",
+        "evidence": "The bound text and T5_page-3.png state only that physiological dianionic PL1 is lamellar and ask for the fully protonated phase. PL1PhaseModel.phase_isCompatibleWithIdealPacking, together with its candidate-defined lamellar branch, is the sole basis of dianion_packingParameter_eq_one; PL1PackingGeometry.chargeExpansion_strictMono is likewise a local structure field. No problem locator, approved registry receipt, or verified sealed-library declaration grounds the exact boundary or a threshold-crossing magnitude. Thus fullyProtonatedPL1_phase is kernel-valid only under an unestablished model, not an end-to-end proof of the source question.",
+        "redraft_kind": "missing_foundational_bridge",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:40:32.046850Z"
+      },
+      {
+        "iter": 1,
+        "event": "formalization_redraft_passed",
+        "prior_attempts": 1,
+        "reviewed_at": "2026-09-13T10:24:12.006320Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:proof:3",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The exact bound candidate and submission hashes match; the single submitted classification and exact-symbolic display agree with the unique member of the four-choice panel selected by a verified, source-scoped cardiolipin protonation observation; and deterministic Lean preflight passed with no sorry.",
+        "evidence": "The candidate defines the complete four-member printed phase domain, reads each panel drawing through topologyOfPhase, records and applicability-checks Olofsson and Sparr, Ionization Constants pKa of Cardiolipin, DOI 10.1371/journal.pone.0073040, stable URL https://pmc.ncbi.nlm.nih.gov/articles/PMC3772843/, Introduction paragraph 2, and proves uniqueness by exhaustive LipidPhase cases. Independent retrieval confirmed that exact paragraph reports a lamellar-to-inverse-hexagonal transition in cardiolipin-water systems when pH is lowered below 2.8, consistent with reduced effective headgroup area from reduced electrostatic repulsion. The closed raw, reported, and main declarations compile under the supplied preflight (status passed, compiles true, returncode 0, sorry_count 0).",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T10:31:03.726715Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "0f586bc6fc0c344f0c05797d1a0ba86dc07cce68b76164f424dfa4ebf7743c13",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "needs_redraft",
+        "failed_check_ids": [
+          "blind_source_audit.raw_derivation",
+          "chemistry_checks.answer_smuggling",
+          "chemistry_checks.chemical_semantics",
+          "chemistry_checks.identification_uniqueness",
+          "contract_audit.bridge_completeness",
+          "contract_audit.hypothesis_derivability",
+          "contract_audit.statement_scope",
+          "requested_outputs[0]"
+        ],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:proof:1",
+        "route": "needs_redraft",
+        "redraft_kind": "answer_as_assumption",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "a7ddaa8fa1d161b65ada8861694a2c1121bafe7925dd3a22e3e08a7637bdc533",
+        "iteration": 1,
+        "attempt": 0,
+        "resulting_status": "retry",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:formalization-redraft-passed",
+        "transition": "formalization_redraft_passed",
+        "route": "retry_proof",
+        "redraft_kind": "not_applicable"
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "a7ddaa8fa1d161b65ada8861694a2c1121bafe7925dd3a22e3e08a7637bdc533",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "needs_redraft",
+        "failed_check_ids": [
+          "blind_source_audit.raw_derivation",
+          "chemistry_checks.chemical_semantics",
+          "chemistry_checks.identification_uniqueness",
+          "contract_audit.bridge_completeness",
+          "contract_audit.hypothesis_derivability",
+          "contract_audit.statement_scope",
+          "requested_outputs[0]"
+        ],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:proof:2",
+        "route": "needs_redraft",
+        "redraft_kind": "missing_foundational_bridge",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1",
+        "iteration": 1,
+        "attempt": 0,
+        "resulting_status": "retry",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:formalization-redraft-passed",
+        "transition": "formalization_redraft_passed",
+        "route": "retry_proof",
+        "redraft_kind": "not_applicable"
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "ec1d4e3b4f22e528f7a7b776a55e24dd61f24ce4f4e95bfed8fbbfa141c4a7c1",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a5.lean:proof:3",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T10:31:03.726760Z",
+    "repair_handoff": {},
+    "redraft_resolved_iter": 1
+  }
+}
