@@ -85,31 +85,26 @@ of the nine natural-language solutions; the 32+36 Lean artifacts were not given
 a second generous marking. Formalization **68/68** and these answer scores
 measure different things.
 
-### Historical selected-set answer-blind Lean results
+### Answer-blind Lean results — all 68 theory subquestions
 
-The models received the official problem statements and images, but not the
-official solutions. Official-answer comparison happened only after generation
-and review had finished.
+The table below covers every numbered theory subquestion, not the earlier
+32-target subset. Official-answer comparison happened only after generation
+and review had finished. These scores are rubric reconstructions, not IChO
+jury scores.
 
-The independent post-run comparison reports an expected **168/168 raw rubric
-points (100%) on the 32 selected theory subquestions** for the Humanize
-GPT-5.6 Sol and Kimi-K3 answer-blind runs, covering 47 requested outputs.
-This selected-set score is separate from the full theoretical-paper run; it
-does not cover the remaining theory subquestions or the practical examination.
-See the [GPT validation report](gpt-5.6-sol-answer-blind/RESULTS.md)
-for the numerical precision notes, known auxiliary-carrier limitation, and
-source provenance. The score is a rubric-based reconstruction, not an official
-IChO jury score.
+GPT-5.6 Sol Humanize uses the [complete 68-target formalization](gpt-5.6-sol-full68-formalization/).
+Kimi-K3 is the [32-target answer-blind run](kimi-k3-answer-blind/) plus the
+[remaining 36 formalizations](kimi-k3-nl-36-formalization/). Native `/goal`
+is a one-shot baseline with **no review/redraft**, so its Lean pass rate is
+much lower. The old selected-set snapshot remains **168/168 raw** and
+**47/47 outputs** on those 32 IDs for the two Humanize runs; see the
+[GPT validation report](gpt-5.6-sol-answer-blind/RESULTS.md).
 
-The same 32 IDs were also scored inside the separate native `/goal` baseline.
-There the one-shot reviews do **not** redraft failed formalizations, so the
-Lean pass rate is much lower even though compilation still succeeds.
-
-| Run | Expected raw rubric points (selected set) | Formalization review | Proof review | Lean build | Placeholders | Official-answer comparison |
+| Run | Expected raw rubric points | Formalization review | Proof review | Lean build | Placeholders | Official-answer comparison |
 |---|---:|---:|---:|---:|---:|---:|
-| [GPT-5.6 Sol](gpt-5.6-sol-answer-blind/) | **168/168 (100%)** | **32/32** | **32/32** | passed | 0 | **47/47 outputs** |
-| [Kimi-K3](kimi-k3-answer-blind/) | **168/168 (100%)** | **32/32** | **32/32** | passed | 0 | **47/47 outputs** |
-| [GPT-5.6 Sol native `/goal`](gpt-5.6-sol-native-goal68/) | **159/168 (94.64%)** | **23/32** | **21/32** | passed | 0 | **159/168 points** |
+| [GPT-5.6 Sol](gpt-5.6-sol-full68-formalization/) | **424.5/437 (97.14%)** | **68/68** | **68/68** | passed | 0 | **424.5/437** |
+| [Kimi-K3](kimi-k3-nl-36-formalization/) | **417.5/437 (95.54%)** | **68/68** | **68/68** | passed | 0 | **417.5/437** |
+| [GPT-5.6 Sol native `/goal`](gpt-5.6-sol-native-goal68/) | **415/437 (94.97%)** | **45/68** | **32/68** | passed | 0 | **415/437** |
 
 The normalized records are published in the
 [`humanfia-lab/icho-2026`](https://huggingface.co/datasets/humanfia-lab/icho-2026)
