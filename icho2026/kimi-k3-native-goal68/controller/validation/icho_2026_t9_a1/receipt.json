@@ -1,0 +1,62 @@
+{
+  "target": "icho_2026_t9_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789364574.031557,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "16bc2bc607d04f2b5d20816a19b498c2b486493ad4c5ae31eba1934864f2d4a7",
+    "IChO2026Problems/problem_icho_2026_t9_a1.lean": "2a517997a7c948162095ee6b7d92af3d34a65353598aadffaae12b347a214cfc",
+    "answer.md": "d1ad73480bac9a7b3092b643ec742682c46455a1f66de47d3f6cf73194be526c",
+    "verification.md": "0b0d34f943f1c41cff443bad77231cc6f23733de0098635b5c1610263e41a9e3",
+    "result.json": "706fec4caee446e2a2c4515ee203503714203658f6853c345a88e93cf57084c3"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a1",
+    "status": "completed",
+    "answer_summary": "M(\u03b2-CD) = 7 \u00d7 180.16 \u2212 7 \u00d7 18.016 = 1135.008 g mol\u207b\u00b9; reported at three significant figures as 1135 g mol\u207b\u00b9 (\u2248 1.14 \u00d7 10\u00b3 g mol\u207b\u00b9).",
+    "theorem_names": [
+      "IChO2026Problems.T9A1.waterMass_value",
+      "IChO2026Problems.T9A1.betaCDMolarMass_value",
+      "IChO2026Problems.T9A1.betaCDMolarMass_reports_1135",
+      "IChO2026Problems.T9A1.betaCDSubmission_valid"
+    ],
+    "assumptions": [
+      "\u03b2-CD contains 7 glucose units (stated in the shared problem context on Q9-1 and confirmed by the figure label 'n = 7 \u03b2-CD').",
+      "Each of the 7 \u03b1-1,4-glycosidic bonds eliminates one H\u2082O, so 1 mol of \u03b2-CD corresponds to 7 mol glucose \u2212 7 mol water.",
+      "M(H\u2082O) is derived from the IChO 2026 data sheet printed on the inside front cover of theory_problem.pdf: A_r(H) = 1.008, A_r(O) = 16.00.",
+      "M\ud835\udc64(glucose) = 180.16 g mol\u207b\u00b9 is exact as printed, per the problem statement.",
+      "Final display follows the TASK.json reporting policy: exactly three significant figures, quantum 1 g mol\u207b\u00b9 for a value in [1000, 10000), ties half-away-from-zero."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      {
+        "cmd": "lake build",
+        "cwd": "/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t9_a1/campaign/workspace",
+        "exit_code": 0,
+        "note": "Build completed successfully (8581 jobs)."
+      },
+      {
+        "cmd": "lake env lean IChO2026Problems/problem_icho_2026_t9_a1.lean",
+        "exit_code": 0,
+        "note": "All four final theorems depend only on [propext, Classical.choice, Quot.sound]; no custom or unchecked axioms."
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

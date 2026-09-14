@@ -1,0 +1,47 @@
+{
+  "target_id": "icho_2026_t4_a1",
+  "status": "completed",
+  "answer_summary": "Atomic abundance of 235U in natural uranium = 2/301 ≈ 0.6644518... % of atoms, reported as 0.664 % (3 significant figures). Derived from 235.04·x + 238.05·(1−x) = 238.03, where 235.04 and 238.05 are the isotopic masses given in problem 4.1 (Q4-1, theory_problem.pdf p.37) and 238.03 is the atomic weight of uranium printed in the official IChO 2026 periodic table (theory_problem.pdf, page header G1-5).",
+  "raw_answer": {
+    "exact_fraction_percent": "200/301",
+    "decimal": 0.6644518272,
+    "reported": "0.664 %",
+    "reporting_quantum": 0.001,
+    "unit": "%"
+  },
+  "theorem_names": [
+    "IChO2026Problems.T4A1.abundance_unique",
+    "IChO2026Problems.T4A1.abundance_iff",
+    "IChO2026Problems.T4A1.abundance_percent",
+    "IChO2026Problems.T4A1.uranium235_abundance_reports_three_sig_figs",
+    "IChO2026Problems.T4A1.submission_valid",
+    "IChO2026Problems.T4A1.tabulated_weight_consistent",
+    "IChO2026Problems.T4A1.reported_is_multiple",
+    "IChO2026Problems.T4A1.raw_in_reporting_interval"
+  ],
+  "assumptions": [
+    "Natural uranium is a two-component isotopic mixture of 235U and 238U only (stated in problem 4.1).",
+    "Isotopic masses m(235U)=235.04 a.u. and m(238U)=238.05 a.u. are exact stipulated constants as printed in the problem (Q4-1, theory_problem.pdf source page 37).",
+    "The average atomic weight of natural uranium A(U)=238.03 is the value printed under 'U' in the official 'Periodic Table of Elements' included in theory_problem.pdf (page header G1-5, PDF page 5); it is a stipulated tabulated constant of the examination booklet, treated as exact as printed.",
+    "Mean isotopic mass of the mixture equals the abundance-weighted sum of the isotopic masses (standard two-component mixing law implicit in the problem).",
+    "Reporting is at three significant figures per the target's answer-blind reporting policy (the problem itself specifies no precision)."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake build IChO2026Chem",
+      "result": "success: Built IChO2026Chem (9.1s), completed 8561 jobs"
+    },
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t4_a1.lean",
+      "result": "exit code 0; #print axioms for the four main theorems list only [propext, Classical.choice, Quot.sound]; no sorryAx"
+    },
+    {
+      "command": "lake build IChO2026Problems",
+      "result": "success: Built IChO2026Problems (39s), 8564/8564 jobs; one pre-existing style warning in protected skeleton file IChO2026Problems.lean (line length), unrelated to this target"
+    }
+  ],
+  "custom_axioms": [],
+  "axiom_inspection": "Standard Lean logical axioms only: propext, Classical.choice, Quot.sound. No sorryAx, no custom unchecked axioms.",
+  "notes": "Solved answer-blind from problem-only materials; official solutions, marking schemes and answer repositories were not consulted."
+}

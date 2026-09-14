@@ -1,0 +1,38 @@
+```json
+{
+  "target_id": "icho_2026_t3_a1",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "Both requested outputs are correctly derived from problem-only material and fully machine-checked. Independent pixel inspection of T3_page-1.png confirms B3 = hexahydroxytriphenylene C18H12O6 (triphenylene core with three catechol pairs / six OH) and A2 = benzene-1,4-diboronic acid C6H8B2O4 (para B(OH)2 groups); the COF-1 network drawing and the printed -H2O arrows ground complete boronate-ester condensation. Honeycomb sharing (2 vertices, 3 edges per hexagon) gives raw per-hexagon counts C54H24B6O12; division by gcd 6 yields the empirical formula C9H4BO2, which also matches the independently known HHTP+BDBA framework stoichiometry. The printed periodic table (G1-5) was inspected directly and supplies A(H)=1.008, A(B)=10.81, A(C)=12.01, A(O)=16.00; with these, w(C) = 900750/12911 = 69.7660909... % lies strictly in [69.765, 69.775), so the requested two-decimal answer 69.77 % is correct and is additionally shown stable under four-figure masses (69.7687 %, same window). The blank answer sheet A3-1 (PDF p. 32) confirms the requested output fields. The Lean deliverable compiles cleanly with 'lake env lean' (independently re-run, exit 0), all 11 theorems depend only on [propext, Classical.choice, Quot.sound], and no sorry/admit/axiom/unsafe/native_decide occurs. Structural givens enter as transparent definitions (problem-derived data), not as asserted theorem-shaped answers; proofs are genuine norm_num/linarith arithmetic over those givens, and the final theorem packages composition, gcd reduction, molar mass, and rounding window rather than a tautology or precomputed answer table. Minor imprecision only in prose: the candidate describes the linker as six-membered B-O-B-O-C-C rings, whereas the drawing shows two five-membered C2O2B boronate-ester rings per linker; this is chemically inconsequential and does not affect any count.",
+  "coverage": [
+    {
+      "output_id": "cof1_empirical_formula",
+      "status": "passed",
+      "theorem": "IChO2026T3A1.answer_icho_2026_t3_a1 (with hexagon_composition, empirical_counts, gcd_is_six)",
+      "evidence": "Structure transcription matches the pixels: B3 = C18H12O6 and A2 = C6H8B2O4 verified against T3_page-1.png crops; Lean proves raw per-hexagon counts (54, 24, 6, 12) from the defined building-block counts (2 B3 + 3 A2 - 12 H2O), proves each count factors through 6, and proves Nat.gcd of (54,24,6,12) = 6, giving the reduced ratio 9:4:1:2, i.e. C9H4BO2, consistent with the reported answer and the known COF composition. Compilation re-run locally: exit 0; axioms [propext, Classical.choice, Quot.sound] only."
+    },
+    {
+      "output_id": "cof1_carbon_mass_percent",
+      "status": "passed",
+      "theorem": "IChO2026T3A1.carbon_percent_value, carbon_percent_rounding_window, carbon_percent_reports_to_6977 (packaged in answer_icho_2026_t3_a1)",
+      "evidence": "Atomic masses 12.01/1.008/10.81/16.00 verified directly against the printed periodic table page G1-5. carbonPercent is defined from the same per-hexagon counts; Lean proves carbonPercent = 900750/12911 exactly, proves 69.765 <= carbonPercent < 69.775 (the half-away-from-zero capture interval of 69.77 at quantum 0.01; tie rule not invoked, nonnegativity proved for the branch condition), and answer_icho_2026_t3_a1 reproves the window from the raw counts themselves. Independent Python exact-rational recomputation matches (69.76609093... %). Sensitivity theorem carbon_percent_four_figure_masses shows 12.011/15.999 masses give 69.7687 %, inside the same window, so the reported digits are convention-independent."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "T3_page-1.png inspected at full page and zoomed crops: B3 drawn as triphenylene core with three catechol pairs (six OH) -> C18H12O6; A2 drawn as benzene with two para B(OH)2 -> C6H8B2O4; COF-1 network shows B(OH)2 + catechol condensation into C2O2B boronate-ester rings with -H2O arrows printed; honeycomb topology supports 6/3 = 2 vertices and 6/2 = 3 edges per hexagon.",
+    "Periodic table page G1-5 of theory_problem.pdf rendered and inspected: A(B) = 10.81, A(C) = 12.01, A(O) = 16.00 confirmed; H cell shows element 1 with four-significant-figure mass convention consistent with 1.008; all four masses match the candidate's definitions.",
+    "Blank answer sheet A3-1 (theory_problem.pdf p. 32) inspected: fields 'COF-1: ____' and 'C: ____ %' match the two requested_outputs ids and units; 2.0 pt allocation matches TASK.json.",
+    "Independent stoichiometry recomputation from source pixels: 2*B3 + 3*A2 - 12*H2O gives (C54, H24, B6, O12), gcd 6 -> C9H4BO2, matching the known HHTP/BDBA framework (COF-5-type) composition without consulting any official solution.",
+    "Independent exact-arithmetic recomputation: w(C) = 900750/12911 = 69.7660909... % lies strictly in [69.765, 69.775), so two-decimal half-away-from-zero reporting yields 69.77 %; four-figure masses give 69.7687 %, same reported value."
+  ],
+  "proof_checks": [
+    "Re-ran 'lake env lean IChO2026Problems/problem_icho_2026_t3_a1.lean' myself: exit code 0, no errors, no warnings, output produced solely via import Mathlib.",
+    "Re-ran '#print axioms' on all 11 theorems from a temporary copy: every theorem depends only on [propext, Classical.choice, Quot.sound]; no custom or unchecked axioms.",
+    "Shortcut scan: no occurrences of sorry, admit, 'axiom ', unsafe, native_decide, or decide anywhere in the deliverable.",
+    "Semantic audit of theorem statements: defs B3_*/A2_*/nB3/nA2/nW/ar* are transparent problem-given data, not asserted conclusions; composition theorems derive (54,24,6,12) and the factorization 6*(9,4,1,2) by norm_num from those givens; gcd_is_six is genuine Nat gcd computation; molar-mass and percentage theorems chain the same hexC/6 counts rather than hardcoding an answer, and final theorem answer_icho_2026_t3_a1 packages all components with no vacuous or false premises.",
+    "Reporting convention: carbon_percent_reports_to_6977 states the exact half-open rounding window and carbon_percent_nonneg justifies the nonnegativity branch of half-away-from-zero; intermediate values are exact rationals over the reals with no intermediate rounding.",
+    "Shared infrastructure (IChO2026Chem/*.lean, IChO2026Run/*.lean) contains only reporting-convention definitions with proved elementary lemmas; the problem deliverable uses only mathlib and its own definitions."
+  ]
+}
+```

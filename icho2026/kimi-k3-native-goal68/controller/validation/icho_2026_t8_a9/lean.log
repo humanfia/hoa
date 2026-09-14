@@ -1,0 +1,10 @@
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t8_a9/campaign/workspace/IChO2026Problems/problem_icho_2026_t8_a9.lean:155:5: warning: Variable name `hpop` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'IChO2026.ProbT8A9.quenchingPercentage_S1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.ProbT8A9.quenchingPercentage_T1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.ProbT8A9.fractionQuenched_of_competingChannels' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.ProbT8A9.validSubmission_S1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.ProbT8A9.validSubmission_T1' depends on axioms: [propext, Classical.choice, Quot.sound]

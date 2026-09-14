@@ -1,0 +1,55 @@
+{
+  "target": "icho_2026_t7_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789361870.7517056,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t7_a7.lean": "4b459506d2e75ada5f1e796e08f71147e6a744552ccba3e27451656af30865a3",
+    "answer.md": "54dad2d861abb35e609d40fb8907f58f37469dc4b11a5f60e743cb9dfedbfd36",
+    "verification.md": "3d66fd1c6515ef2f16eeb673ac8ade7a9c2fa754014c6d76da8e5bcd6583ab10",
+    "result.json": "451b1818e42c5b35a09984c78f813a41880bafc57938c0fde38b68d3cdc0610f"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t7_a7",
+    "status": "completed",
+    "answer_summary": "7 = LaN; 8 = Ca3N2; 9 = Si3N4; 10 = La5Ca9O2[SiNO3][Si12N24] (Q=La, alpha=5, R=Ca, beta=9); S = O2- (monoatomic oxide); T = [SiNO3]5- (tetrahedral SiN1O3 anion). Quantitative stoichiometry 10 LaN + 6 Ca3N2 + 7 Si3N4 + 5 SiO2 -> 2 units of 10, consistent with printed w(N) and mass ratio within half-quantum rounding intervals.",
+    "theorem_names": [
+      "IChO2026T7A7.wN_consistency",
+      "IChO2026T7A7.massRatio_consistency",
+      "IChO2026T7A7.atom_balance",
+      "IChO2026T7A7.charge_balance",
+      "IChO2026T7A7.anionS_inventory",
+      "IChO2026T7A7.anionT_inventory",
+      "IChO2026T7A7.icho_2026_t7_a7"
+    ],
+    "assumptions": [
+      "Printed IChO 2026 periodic-table atomic masses are exact as printed: N 14.007, La 138.9055, Ca 40.078, Si 28.085, O 15.999.",
+      "Each printed measured decimal (w(N) values, mass-ratio entries) is interpreted via the half-quantum interval of its last displayed digit (+-0.005 % and +-0.005 respectively), per the project measurement policy.",
+      "The problem-stated intact structural unit [Si12N24] per minimal formula unit of 10 is taken as a problem input."
+    ],
+    "source_gaps": [
+      "The problem statement does not itself prove that the [Si12N24] skeleton is preserved during formation of 10; this structural premise is asserted by the problem text ('the minimal possible formula, describing the structure ... is Q_aR_bS2T[Si12N24]') and is used only as stated. No additional unsupported scientific premise was required: atom conservation, charge neutrality, monoatomicity of S, tetrahedrality of T, and the printed mass numbers then uniquely force S = O2- and T = [SiNO3]5-."
+    ],
+    "verification_commands": [
+      "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t7_a7/campaign/workspace && lake env lean IChO2026Problems/problem_icho_2026_t7_a7.lean",
+      "#print axioms output: 'IChO2026T7A7.icho_2026_t7_a7' depends on axioms: [propext, Classical.choice, Quot.sound] (standard logical axioms only; no sorryAx, no custom axioms)"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

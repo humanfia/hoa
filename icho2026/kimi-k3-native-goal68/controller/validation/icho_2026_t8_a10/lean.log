@@ -1,0 +1,4 @@
+'IChO2026Problems.answer_T8_A10' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.lifetime_s1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.lifetime_t1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.sternVolmerLifetime_strictAntiOn' depends on axioms: [propext, Classical.choice, Quot.sound]

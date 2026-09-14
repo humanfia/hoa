@@ -1,0 +1,73 @@
+{
+  "target": "icho_2026_t2_a6",
+  "goal_status": "goal_complete",
+  "checked_at": 1789360639.3576696,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t2_a6.lean": "b8b3f51def53c904d155de1e0bcf766a7acb5fb018bf941dfb3c194aa1c8bb49",
+    "answer.md": "b28adbb845a66fa7e65889c89997e6f5ada982ebaee27ff064fb909d14ddde4e",
+    "verification.md": "2c438c3d932b740f6a763f5e84040139a5add6f603c7ce5d5f3ba44b2af9c43d",
+    "result.json": "9545b8c64f83b3073f7f39736918bc9c4dcf742896a5e590e6d7758b2b946cd9"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a6",
+    "status": "completed",
+    "answer_summary": "1->c (Ce4+ during A: extra Ce4+ accelerates continuous step (7) Ce4+ + BMA -> Ce3+ + Br-, pushing [Br-] to [Br-]critical = k1[BrO3-]/k4 = 3.0e-7 M where r4 > r1, so Process A switches to Process B); 2->d (Ag+ during B removes Br- as AgBr(s), bringing [Br-] to critical so B switches to A); 3->b (added Br- during B raises [Br-] away from critical, prolonging Process B); 4->e (continuous Br- feed pins [Br-] above critical, r4 > r1 holds forever, oscillations stop).",
+    "theorem_names": [
+      "IChO2026.T2.A6.answer_action1",
+      "IChO2026.T2.A6.answer_action2",
+      "IChO2026.T2.A6.answer_action3",
+      "IChO2026.T2.A6.answer_action4",
+      "IChO2026.T2.A6.answer_summary",
+      "IChO2026.T2.A6.rate4_gt_rate1_iff",
+      "IChO2026.T2.A6.above_crit_forces_B",
+      "IChO2026.T2.A6.below_crit_forces_A",
+      "IChO2026.T2.A6.BrCrit_value",
+      "IChO2026.T2.A6.BrCrit_lt_BrMax",
+      "IChO2026.T2.A6.ce4_raises_bromide_flux",
+      "IChO2026.T2.A6.action1_chemistry",
+      "IChO2026.T2.A6.action2_chemistry",
+      "IChO2026.T2.A6.action3_chemistry",
+      "IChO2026.T2.A6.action4_chemistry",
+      "IChO2026.T2.A6.classify_unique",
+      "IChO2026.T2.A6.answers_all_distinct"
+    ],
+    "assumptions": [
+      "Elementary mass-action rate laws r1 = k1[HBrO2][BrO3-][H+], r4 = k4[HBrO2][Br-][H+], r7 = k7[Ce4+][BMA] (trusted general law of chemical kinetics, applied to the mechanism printed in the problem).",
+      "The problem-stated switching criterion (part 2.3 lead-in): Process B takes over iff r4 > r1; derived that this is equivalent to [Br-] > [Br-]critical = k1[BrO3-]/k4 = 3.0e-7 M.",
+      "Problem-stated model facts: Process C occurs continuously; [BrO3-] and [H+] are maintained constant; [Br-]max = 7.0e-4 M with the slow drain toward [Br-]critical during Process B; the part 2.2 steady state [HBrO2]_A = k1[BrO3-][H+]/(2k3) is independent of cerium, so added cerium acts on the switch only through the bromide flux of step (7).",
+      "Standard general-chemistry fact (not in the problem text): Ag+ precipitates Br- as sparingly soluble AgBr(s), lowering free [Br-].",
+      "Tick-box semantics: each classification depends only on the sign of the perturbation's effect on the bromide balance, so no quantitative meaning of 'small amount' is required."
+    ],
+    "source_gaps": [
+      "AgBr low solubility is not printed in the problem; it is ordinary textbook chemistry and is listed as an explicit assumption. All other premises are grounded directly in the problem statement (pages Q2-2, Q2-3, Q2-4 and blank answer sheet A2-5)."
+    ],
+    "verification_commands": [
+      "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t2_a6/campaign/workspace && timeout 1800 lake env lean IChO2026Problems/problem_icho_2026_t2_a6.lean"
+    ],
+    "verification_result": "lake env lean exit code 0; no errors or warnings; no sorry/admit. #print axioms (embedded at end of source): answer_action1..4, answer_summary depend on no axioms; rate4_gt_rate1_iff and action1_chemistry depend only on [propext, Classical.choice, Quot.sound]. No custom axioms, no sorryAx.",
+    "official_answer_seen": false,
+    "deliverables": {
+      "answer": "answer.md",
+      "lean": "IChO2026Problems/problem_icho_2026_t2_a6.lean",
+      "verification": "verification.md"
+    }
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

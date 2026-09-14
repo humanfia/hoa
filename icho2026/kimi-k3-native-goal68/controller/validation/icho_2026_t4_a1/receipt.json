@@ -1,0 +1,81 @@
+{
+  "target": "icho_2026_t4_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789360459.2182133,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "812f9b2cb2a78ccd726bf172c76dbb8311165f4fda9cf573eb282b311fca0ead",
+    "IChO2026Problems/problem_icho_2026_t4_a1.lean": "c2722436edbaba461bf65b527d0444242a266d51b2445cbd4dd3d8b5da8a124f",
+    "answer.md": "c0e33cdab18775cb320dba1a4d4c8916aa4636609f4f275ff87a1bcac4db690b",
+    "verification.md": "3914ead8c7ea9c3a0fa206046aa70bdef3bd4a082aeb88dbd0be73a2adae26b5",
+    "result.json": "7611789a95abb77f465f11850463334fa238fb949d4dae1ad83b21c1478e36fc"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a1",
+    "status": "completed",
+    "answer_summary": "Atomic abundance of 235U in natural uranium = 2/301 \u2248 0.6644518... % of atoms, reported as 0.664 % (3 significant figures). Derived from 235.04\u00b7x + 238.05\u00b7(1\u2212x) = 238.03, where 235.04 and 238.05 are the isotopic masses given in problem 4.1 (Q4-1, theory_problem.pdf p.37) and 238.03 is the atomic weight of uranium printed in the official IChO 2026 periodic table (theory_problem.pdf, page header G1-5).",
+    "raw_answer": {
+      "exact_fraction_percent": "200/301",
+      "decimal": 0.6644518272,
+      "reported": "0.664 %",
+      "reporting_quantum": 0.001,
+      "unit": "%"
+    },
+    "theorem_names": [
+      "IChO2026Problems.T4A1.abundance_unique",
+      "IChO2026Problems.T4A1.abundance_iff",
+      "IChO2026Problems.T4A1.abundance_percent",
+      "IChO2026Problems.T4A1.uranium235_abundance_reports_three_sig_figs",
+      "IChO2026Problems.T4A1.submission_valid",
+      "IChO2026Problems.T4A1.tabulated_weight_consistent",
+      "IChO2026Problems.T4A1.reported_is_multiple",
+      "IChO2026Problems.T4A1.raw_in_reporting_interval"
+    ],
+    "assumptions": [
+      "Natural uranium is a two-component isotopic mixture of 235U and 238U only (stated in problem 4.1).",
+      "Isotopic masses m(235U)=235.04 a.u. and m(238U)=238.05 a.u. are exact stipulated constants as printed in the problem (Q4-1, theory_problem.pdf source page 37).",
+      "The average atomic weight of natural uranium A(U)=238.03 is the value printed under 'U' in the official 'Periodic Table of Elements' included in theory_problem.pdf (page header G1-5, PDF page 5); it is a stipulated tabulated constant of the examination booklet, treated as exact as printed.",
+      "Mean isotopic mass of the mixture equals the abundance-weighted sum of the isotopic masses (standard two-component mixing law implicit in the problem).",
+      "Reporting is at three significant figures per the target's answer-blind reporting policy (the problem itself specifies no precision)."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      {
+        "command": "lake build IChO2026Chem",
+        "result": "success: Built IChO2026Chem (9.1s), completed 8561 jobs"
+      },
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t4_a1.lean",
+        "result": "exit code 0; #print axioms for the four main theorems list only [propext, Classical.choice, Quot.sound]; no sorryAx"
+      },
+      {
+        "command": "lake build IChO2026Problems",
+        "result": "success: Built IChO2026Problems (39s), 8564/8564 jobs; one pre-existing style warning in protected skeleton file IChO2026Problems.lean (line length), unrelated to this target"
+      }
+    ],
+    "custom_axioms": [],
+    "axiom_inspection": "Standard Lean logical axioms only: propext, Classical.choice, Quot.sound. No sorryAx, no custom unchecked axioms.",
+    "notes": "Solved answer-blind from problem-only materials; official solutions, marking schemes and answer repositories were not consulted."
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t4_a1.lean": {
+      "sorry": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

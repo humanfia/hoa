@@ -1,0 +1,43 @@
+{
+  "at": 1789386797.1755543,
+  "previous_status": {
+    "status": "review_error",
+    "target": "icho_2026_t2_a5",
+    "error": "Expected exactly one review JSON payload",
+    "at": 1789386752.849178
+  },
+  "original_review_sha256": "1656832d26dbe906865c26408c3deb1b6b08523a7cbdbe7ee57c8350e119fcc8",
+  "recovered_payload": {
+    "target_id": "icho_2026_t2_a5",
+    "semantic_status": "passed",
+    "proof_status": "passed",
+    "reason": "The answer \u03c4 = 48.1 s (raw ln(7000/3)/0.16128 = 48.0844\u2026 s) is semantically grounded entirely in problem-text data verified against the page images: all rate constants, maintained concentrations, [Br\u207b]max = 7.0\u00d710\u207b\u2074 M, the step(4)/step(1) switching criterion, and the 'slowly decreases \u2026 almost immediately' traversal statement were confirmed pixel-by-pixel on Q2-2 and Q2-3. Preceding-part dependencies (2.2 steady states [HBrO\u2082]A = 1.2\u00d710\u207b\u2075 M, [HBrO\u2082]B = 5.04\u00d710\u207b\u00b9\u00b9 M; 2.3 [Br\u207b]crit = k\u2081[BrO\u2083\u207b]/k\u2084 = 3.0\u00d710\u207b\u2077 M) were re-derived independently and check out; no fallback values were needed. During the colourless Process-B leg the problem's own colour definitions (colourless \u21d2 Ce\u00b3\u207a dominant \u21d2 [Ce\u2074\u207a]\u22480) switch off step (7), the only Br\u207b source; steps (4) and (5) consume Br\u207b at equal rates by the 2.2 stationarity, so d[Br\u207b]/dt = \u2212\u03bb[Br\u207b] is an exact first-order decay with \u03bb = 2\u00b7k\u2085[BrO\u2083\u207b][H\u207a]\u00b2 = 0.16128 s\u207b\u00b9 \u2014 matching the announced non-constant traversal velocity. The return leg being 'almost immediate' is verbatim in the source, so the descent duration is the period. The Lean development defines \u03c4 from this physical expression rather than a precomputed decimal, certifies the logarithm via Mathlib artanh-series bounds through the exact factorisation 7000/3 = 2\u00b9\u00b9\u00b7(875/768), proves the strict reporting band 48.05 < \u03c4 < 48.15 (quantum 0.1 s, 3 s.f.), and compiles cleanly; my re-run of the build (8562 jobs) and axiom audit confirmed all key theorems depend only on propext, Classical.choice, Quot.sound, with no sorry/admit/custom axioms/unsafe/native_decide.",
+    "coverage": [
+      {
+        "output_id": "oscillation_period",
+        "status": "passed",
+        "theorem": "IChO2026T2A5.tauSubmission_contract (with tauSubmission_valid, tau_report_band, log_ratio_bounds, brCritical_value, hbrO2_B_value, lambda_value, tau_eq)",
+        "evidence": "tau is defined as Real.log (brMax / brCritical) / lambda with brMax = 7.0\u00d710\u207b\u2074, brCritical = k1\u00b7brO3/k4 = 3\u00d710\u207b\u2077 (exactly proved), lambda = k4\u00b7hbrO2_B\u00b7hPlus + k5\u00b7brO3\u00b7hPlus\u00b2 = 0.16128 (exactly proved, two Br\u207b sinks equal by the 2.2 stationarity of hbrO2_B). log_ratio_bounds certifies 7.75504327 \u2264 ln(7000/3) \u2264 7.75505986 from Mathlib's Real.sum_range_le_log_div / Real.log_div_le_sum_range_add with 7000/3 = 2\u00b9\u00b9\u00b7(875/768); tau_report_band then proves 48.05 < \u03c4 < 48.15. tauSubmission_valid proves ReportsAtQuantum \u03c4 48.1 0.1 (\u03c4 is a multiple-of-quantum display whose half-quantum band contains the raw value) and tauSubmission_contract discharges the target-independent ValidNumericSubmission contract. Independent recomputation: ln(7000/3) = 7.755053139369286, \u03c4 = 48.0844\u2026s, inside the band with margin \u2265 5.5\u00d710\u207b\u2076; 48.1 s is the forced 3-s.f. display. lake build succeeded independently; #print axioms on tauSubmission_valid, tauSubmission_contract, tau_report_band, log_ratio_bounds, log_two_bounds, log_875_768_bounds, brCritical_characterisation, hbrO2_B_value, lambda_value, tauSubmission_raw, tau_pos, brCritical_value, hbrO2_A_value, tau_eq all returned [propext, Classical.choice, Quot.sound] only."
+      }
+    ],
+    "unsupported_assumptions": [],
+    "source_checks": [
+      "Inspected T2_page-2.png directly: mechanism steps (1)-(7) and rate constants k1 = 1.0\u00d710\u2074 M\u207b\u00b2 s\u207b\u00b9, k2 = 6.2\u00d710\u2074, k3 = 4.0\u00d710\u2077, k4 = 2.0\u00d710\u2079, k5 = 2.1, k6 = 8.2, k7 = 1.0\u00d710\u00b2 match the candidate's transcriptions exactly; maintained concentrations [BrO\u2083\u207b]\u2080 = 0.06 M, [MA]\u2080 = 0.1 M, [H\u207a]\u2080 = 0.8 M, [Ce\u2074\u207a]\u2080 = 0.001 M and the colour/exclusivity rules ('when Process A occurs the solution is yellow\u2026', 'when Process B occurs the solution is colourless\u2026') confirmed.",
+      "Inspected T2_page-3.png directly: phase-portrait sketch with [HBrO\u2082]A/[HBrO\u2082]B levels and [Br\u207b]critical/[Br\u207b]max labels; statement '[Br\u207b]max = 7.0\u00d710\u207b\u2074 M', 'slowly decreases \u2026 to [Br\u207b]critical, and then almost immediately reaches [Br\u207b]max again', and the switching criterion 'rate of step (4) must exceed that of step (1)' all match the candidate's use; question 2.5 asks for the period \u03c4 in seconds (9.0 pt).",
+      "Independently re-derived dependencies answer-blind: [HBrO\u2082]A = k\u2081[BrO\u2083\u207b][H\u207a]/k\u2083 = 1.2\u00d710\u207b\u2075 M; [HBrO\u2082]B = (k\u2085/k\u2084)[BrO\u2083\u207b][H\u207a] = 5.04\u00d710\u207b\u00b9\u00b9 M (the [Br\u207b] factor cancels exactly); [Br\u207b]crit = k\u2081[BrO\u2083\u207b]/k\u2084 = 3.0\u00d710\u207b\u2077 M. Problem-stated fallbacks (1\u00d710\u207b\u2075, 1\u00d710\u207b\u00b9\u2070, 1\u00d710\u207b\u2077) were not used, per policy.",
+      "Checked the slow-phase kinetic accounting: per event, steps (4) and (5) each consume exactly one Br\u207b; the 2.2 stationarity r\u2084 = r\u2085 makes the two sink terms equal, so d[Br\u207b]/dt = \u2212(k\u2084[HBrO\u2082]B[H\u207a] + k\u2085[BrO\u2083\u207b][H\u207a]\u00b2)\u00b7[Br\u207b] = \u2212\u03bb[Br\u207b] with \u03bb = 2\u00b7k\u2085[BrO\u2083\u207b][H\u207a]\u00b2 = 0.16128 s\u207b\u00b9; numerical check ln(7000/3)/0.16128 = 48.0844\u2026 s.",
+      "The only modeling step beyond rate-law algebra \u2014 colourless phase \u21d2 [Ce\u2074\u207a] \u2248 0 \u21d2 step (7) inactive \u2014 is grounded in the problem's own colour definitions ('yellow (due to Ce\u2074\u207a) \u2026 colourless (due to Ce\u00b3\u207a)', 'when Process B occurs the solution is colourless') and is explicitly disclosed; the negligible return leg is stated verbatim in the source; the steady-state approximation is mandated by subquestion 2.2. No unstated or result-shaped assumptions found."
+    ],
+    "proof_checks": [
+      "Re-ran build: 'lake build IChO2026Chem IChO2026Problems.problem_icho_2026_t2_a5' completed successfully (8562 jobs) on toolchain leanprover/lean4:v4.31.0 with the pinned lake-manifest.",
+      "Independent axiom audit via #print axioms on 14 theorems (tauSubmission_valid, tauSubmission_contract, tau_report_band, log_ratio_bounds, log_two_bounds, log_875_768_bounds, brCritical_characterisation, hbrO2_B_value, lambda_value, tauSubmission_raw, tau_pos, brCritical_value, hbrO2_A_value, tau_eq): all depend only on [propext, Classical.choice, Quot.sound].",
+      "Grepped the problem file: no sorry, admit, axiom, unsafe, partial, native_decide, implemented_by, or custom attributes anywhere.",
+      "Verified theorem semantics: tau is defined from the physical expression ln(brMax/brCritical)/\u03bb (tau_eq is rfl, not a precomputed decimal); brCritical_characterisation states the switching criterion as an iff k4\u00b7x\u00b7b\u00b7hp = k1\u00b7x\u00b7brO3\u00b7hp \u2194 b = brCritical with nonzero side conditions \u2014 no vacuous or false premises.",
+      "Verified the transcendental certification: log_two_bounds and log_875_768_bounds use Mathlib's artanh-series lemmas Real.sum_range_le_log_div / Real.log_div_le_sum_range_add with x = 1/3 (24 terms) and x = 107/1643 (5 terms); the factorisation 7000/3 = 2\u00b9\u00b9\u00b7(875/768) is proved by ratio_decompose (independently recomputed: 2048\u00b7875/768 = 7000/3).",
+      "Checked reporting-contract math: ReportsAtQuantum \u03c4 48.1 0.1 reduces to 48.05 \u2264 \u03c4 < 48.15 for \u03c4 \u2265 0, discharged from tau_report_band (strict bounds) and tau_pos; the raw/reported separation follows the answer-blind Reporting contract; on-demand axiom check files were written only to /tmp/icho_review_a5, with no candidate files modified."
+    ]
+  },
+  "model_rerun": false,
+  "verdict_changed": false,
+  "feedback_to_solver": false
+}

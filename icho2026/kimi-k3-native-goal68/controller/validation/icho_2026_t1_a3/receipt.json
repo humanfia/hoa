@@ -1,0 +1,57 @@
+{
+  "target": "icho_2026_t1_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789366346.1036727,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t1_a3.lean": "6a99c637ed93b53e6a540dc642b652c63c9e62e43a85570581474d22d6a3e456",
+    "answer.md": "c9429d3be84f9cab4d00255e1c0fbf50855762329ece5b5fc1c3fab44b5e0ff0",
+    "verification.md": "b97cb70c33198b3676b958b7edb8971f65d18371626991038d7bc3640bd2852a",
+    "result.json": "2717af517b680725f3711ff16f135d069b81dd34535efc69cafb7c24814b87be"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t1_a3",
+    "status": "completed",
+    "answer_summary": "n = 10 carbon atoms. From the stated two-isotope carbon model, I[M]+/I[M+1]+ = p/(n\u00b7q) with p = 0.989 and q = 0.011, so the observed ratio 9 gives n = 989/99 \u2248 9.99, i.e. n = 10 (uniquely over the extraction table: n = 11 predicts 8.17 \u2260 9 at the printed precision). W carries a phenolic OH (Fe3+ colour change) and 10 carbons; among the table's candidates only compound 5 (C10H12O2, eugenol methyl ether, 4-allyl-1-methoxy-2-hydroxybenzene) satisfies both, so W = compound 5.",
+    "theorem_names": [
+      "Problems.Icho2026T1A3.prob_pair_mul",
+      "Problems.Icho2026T1A3.binomialRecurrence",
+      "Problems.Icho2026T1A3.isotope_ratio",
+      "Problems.Icho2026T1A3.carbon_count_ratio",
+      "Problems.Icho2026T1A3.candidate_arithmetic",
+      "Problems.Icho2026T1A3.table_carbon_counts_correct",
+      "Problems.Icho2026T1A3.phenolic_candidates_correct",
+      "Problems.Icho2026T1A3.identification_of_W",
+      "Problems.Icho2026T1A3.t1_a3_main"
+    ],
+    "assumptions": [
+      "Binomial (Bernoulli-product) isotope model: peak [M]+ = all-12C molecules, [M+1]+ = exactly-one-13C molecules (multiple 13C negligible); this model hierarchy is what the problem's assumptions stipulate, and the n-slot recurrence is proved in Lean.",
+      "13C abundance = 1 - 0.989 = 0.011, from the problem's exclusive-two-isotopes clause.",
+      "The printed ratio 9:1 is used exactly for solving; the integer fit is validated at half the unit quantum (IChO measurement policy).",
+      "Trusted general law (ordinary qualitative-analysis chemistry): a colour change with aqueous Fe3+ indicates a phenolic OH group; applied to the drawn extraction-table structures."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t1_a3.lean  \u2192 exit 0; '#print axioms' reports [propext, Classical.choice, Quot.sound]",
+      "lake env lean IChO2026Run/Dependencies.lean  \u2192 exit 0 (dependency graph intact)",
+      "lake build  \u2192 fails only on IChO2026Problems.All, a controller-rewritten umbrella module absent from the workspace (infrastructure-owned, not modified); all existing generic modules build"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

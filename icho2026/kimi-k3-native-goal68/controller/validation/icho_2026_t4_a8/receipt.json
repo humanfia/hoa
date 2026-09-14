@@ -1,0 +1,85 @@
+{
+  "target": "icho_2026_t4_a8",
+  "goal_status": "goal_complete",
+  "checked_at": 1789367127.0556176,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t4_a8.lean": "4028239733608f03bb3cf97756eda4f4cdb7bb062a1209a7ce0f07efb9bbc41e",
+    "answer.md": "6c09a6cb3afe36860cadaa86f4442c31cea0b80628122fa2094bda0c725977fe",
+    "verification.md": "87d731f99fe10d73df10135fb2638fb361044be23b74353ef18cab155356b633",
+    "result.json": "04ad99305480c999d37e7980cdfccf026a79f254e675308e40fe9ef5df6a7025"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a8",
+    "status": "completed",
+    "answer_summary": "E = n(CH4)/day x |dH2000| = [101325 Pa x 2.2e5 m3 s-1 x 86400 s / (8.31 J mol-1 K-1 x 298 K)] x 781876 J mol-1 = 6.080980774...e17 J day-1, i.e. 6.08e17 J day-1 to three significant figures (raw exact rational 25098031949760000000000/41273 J day-1). The 4.6/4.7 enthalpies were derived inline: dH298 = -802.3 kJ/mol (Hess), dH2000 = -781.876 kJ/mol (Kirchhoff, dCp = 12 J mol-1 K-1), so no printed fallback was used.",
+    "theorem_names": [
+      "IChO2026T4A8.h_dH298",
+      "IChO2026T4A8.h_deltaCp",
+      "IChO2026T4A8.h_dH2000",
+      "IChO2026T4A8.molarFlowPerDay_eq",
+      "IChO2026T4A8.rawDailyEnergy_eq",
+      "IChO2026T4A8.dailyEnergy_rounds_lower",
+      "IChO2026T4A8.dailyEnergy_rounds_upper",
+      "IChO2026T4A8.dailyEnergy_rounds_three_sig",
+      "IChO2026T4A8.validSubmission",
+      "IChO2026T4A8.dailyEnergy_gt",
+      "IChO2026T4A8.dailyEnergy_lt",
+      "IChO2026T4A8.energy_per_hour_gt_tnt"
+    ],
+    "assumptions": [
+      "Q in 'volumetric flow Q = 2.2 x 10^5 m3' is interpreted as a volumetric flow RATE of 2.2e5 m3 s-1 (the daily gas volume is Q x 86400 s); the official PDF clips the time basis of the unit at a line break, and the physical/fallback context only supports the flow-rate reading. All Lean definitions keep Q symbolic, so the derivation is exact for any restored unit.",
+      "Gas constant R = 8.31 J mol-1 K-1 taken as an ordinary scientific reference value (trusted_general_law); no value of R is printed in the paper. Result is insensitive at 3 s.f. to using 8.314.",
+      "Kirchhoff correction uses the Cp part only (dH2000 = dH298 + dCp*dT), matching the per-mole-of-CH4, all-gaseous, constant-Cp convention of parts 4.6-4.7 and the printed data; fallbacks (-750, -700 kJ/mol) not used.",
+      "Three-significant-figure reporting with half-away-from-zero ties via IChO2026Chem.Reporting.ReportsAtQuantum; quantum 1e15 J day-1."
+    ],
+    "source_gaps": [
+      "Unit of the volumetric flow Q is printed as 'm3' with the time unit clipped at a line break in theory_problem.pdf (PDF page 39, confirmed at word level); the flow-rate reading Q = 2.2e5 m3 s-1 is the physically and contextually forced interpretation but is formally a source gap (flagged, not silently assumed).",
+      "No gas constant is printed anywhere in the problem materials; R supplied from general scientific reference.",
+      "If instead Q were read as a daily volume, E would be 7.04e12 J day-1; if a PV-converted enthalpy convention were used, E = 6.19e17 J day-1. Both alternatives are documented in answer.md."
+    ],
+    "verification_commands": [
+      {
+        "command": "lake build IChO2026Chem",
+        "result": "Build completed successfully (8561 jobs); only pre-existing style-linter warnings in fixed infrastructure."
+      },
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t4_a8.lean",
+        "result": "exit 0, no errors, no warnings, no sorry"
+      },
+      {
+        "command": "lake build IChO2026Problems.problem_icho_2026_t4_a8",
+        "result": "Built IChO2026Problems.problem_icho_2026_t4_a8 (34s); Build completed successfully (8559 jobs)."
+      },
+      {
+        "command": "lake env lean /tmp/print_axioms.lean  (script: import + #print axioms for each final theorem)",
+        "result": "every theorem depends only on [propext, Classical.choice, Quot.sound]"
+      },
+      {
+        "command": "grep -n \"sorry\\|admit\\|axiom \\|native_decide\\|unsafe\" IChO2026Problems/problem_icho_2026_t4_a8.lean",
+        "result": "no matches (exit 1)"
+      },
+      {
+        "command": "python3 exact-rational cross-check of 781876*101325*220000*86400/(8.31*298) vs rawDailyEnergy_eq RHS",
+        "result": "equal; decimal 6.080980774297967e17 J day-1; E/1e15 = 608.0980774 (rounds to 608)"
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

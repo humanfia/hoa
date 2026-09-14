@@ -1,0 +1,64 @@
+All checks complete. The re-verified compile matches the claimed axiom profile (only `propext`, `Classical.choice`, `Quot.sound`), no sorry/admit/native_decide/custom axioms anywhere in the target or helper files, and the direction arithmetic (+1 = 1,2-clockwise, +3 = 1,4, −2 = 1,3-counterclockwise on the 6-ring) matches the unit geometry verified directly from the N template figure and the blank answer sheets A9-4/A9-5.
+
+Key semantic findings from my independent trace of the scheme: the dichloride is the 2-methylallyl dichloride ClCH₂–C(=CH₂)–CH₂Cl (confirmed by crop), supporting the –CH₂–NR–CH₂–C(=CH₂)–CH₂–O– bridge reading; the "2 equiv." DIBAL-H steps force azide→amine reduction (a disclosed trusted general law, also forced by the downstream Boc₂O step needing an N–H); the R→S director-clash resolution relies only on the printed availability fallback and is structurally robust (even reading NHBn as non-directing yields the same S); the final S is genuinely hexadifferentiated consistent with the problem preamble. The candidate's structures and theorems are derivations from the problem-given substrate N via named reagent-semantics functions, with availability/clash side-conditions proved, not assumed.
+
+```json
+{
+  "target_id": "icho_2026_t9_a8",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "All five requested template structures (O-S) are derived in Lean from the problem-given starting material N (verified against T9_page-4 pixels: CH2OH on unit 1, CH2OBn on 2-6, (OBn)12 rim) using only printed rules (Sinay protic 1,4 with printed 1,3-if-blocked fallback; Sollogoub alkene ortho; 9.8 clockwise/counterclockwise convention; protic > alkene) plus disclosed trusted general chemistry (Swern/Wittig, MsCl/NaN3 SN2, Boc2O/TFA, NaH/BnI, double alkylation with the printed 2-methylallyl dichloride, DIBAL-H azide-to-amine reduction for the 2-equiv steps). Direction arithmetic encoded as +1 (1,2-cw), +3 (1,4), -2 (1,3-ccw) on Fin 6 was verified directly against the clockwise-numbered templates on the N figure and the blank answer sheets A9-4/A9-5 (PDF pages 92-93). The R->S director competition is resolved by the printed availability fallback, and the derived S coincides under either reading of NHBn proticity, so no load-bearing unsupported condition exists. S's pairwise-distinct six boxes are proved, matching the problem-stated 'hexadifferentiated alpha-CD S'. File re-compiled with exit 0; all final theorems depend only on [propext, Classical.choice, Quot.sound] or [propext, Quot.sound]; no sorry/admit/native_decide/custom axioms in target or helper sources.",
+  "coverage": [
+    {
+      "output_id": "structure_o",
+      "status": "passed",
+      "theorem": "ICho2026T9A8.structure_o_derivation (with o_director_is_alkene)",
+      "evidence": "structureO proved equal to swernWittig substrateN 0: unit 1 = -CH=CH2, units 2-6 = CH2OBn. Matches source: N has the sole free primary OH at unit 1 (verified from figure); Swern oxidation + Wittig methylenation is trusted general chemistry. o_director_is_alkene proves vinyl is an alkene and no protic group exists in O, grounding the next step's rule choice. Axioms: [propext, Classical.choice, Quot.sound]."
+    },
+    {
+      "output_id": "structure_p",
+      "status": "passed",
+      "theorem": "ICho2026T9A8.structure_p_derivation (with step_o_to_p_regiochemistry)",
+      "evidence": "structureP proved equal to mesylateAzide (debenzylate structureO (oneTwoCW 0)) 1: unit 1 = vinyl, unit 2 = CH2N3, units 3-6 = CH2OBn. step_o_to_p_regiochemistry proves the alkene-directed clockwise-ortho target oneTwoCW 0 = 1 is an available benzyl ether (siteAvailable), so the regiochemistry is established, not assumed. MsCl/NaN3 OH->N3 SN2 conversion is standard. Unit numbering +1 = clockwise 1,2 verified against template geometry. Axioms: [propext, Classical.choice, Quot.sound]."
+    },
+    {
+      "output_id": "structure_q",
+      "status": "passed",
+      "theorem": "ICho2026T9A8.structure_q_derivation (with step_p_to_q_regiochemistry, bridge_units_fixed)",
+      "evidence": "structureQ proved equal to installBridge (debenzylate pAfterAzideReduction (oneFour 1)) 1 4: unit 2 carries the bridge N-arm (cap H), unit 5 the O-arm, vinyl at 1, CH2OBn at 3,4,6; bridge datum fixes nUnit=2, oUnit=5. step_p_to_q_regiochemistry proves the azide-reduced amine at unit 2 is protic (overriding the alkene) and its 1,4 target oneFour 1 = 4 (unit 5) is available. The 2-equiv DIBAL-H azide->amine reading is a disclosed trusted general law and is forced by the downstream Boc2O-on-N-H step. Bridge connectivity matches the printed 2-methylallyl dichloride ClCH2-C(=CH2)-CH2Cl (verified by crop of the reagent). Axioms: [propext, Classical.choice, Quot.sound]."
+    },
+    {
+      "output_id": "structure_r",
+      "status": "passed",
+      "theorem": "ICho2026T9A8.structure_r_derivation (with step_q_to_r_regiochemistry, bridge_caps)",
+      "evidence": "structureR proved equal to mesylateAzide (capBridge (debenzylate structureQ (oneThreeCCW 1)) .boc) 5: bridge N-arm now Boc-capped at unit 2, O-arm at 5, CH2N3 at unit 6, CH2OBn at 3,4. step_q_to_r_regiochemistry proves bridge NH at unit 2 is protic, its 1,4 site (unit 5, bridge) is NOT available, the printed fallback oneThreeCCW 1 = 5 (printed unit 6) is taken and available. This exercises the exact printed parenthetical 'or to unit 3 if the unit 4 position is not available' under the 9.8 counterclockwise convention (-2 mapping verified geometrically). Boc capping and subsequent mesylate/azide at the freed OH are standard. Axioms: [propext, Classical.choice, Quot.sound]."
+    },
+    {
+      "output_id": "structure_s",
+      "status": "passed",
+      "theorem": "ICho2026T9A8.structure_s_derivation (with step_r_to_s_regiochemistry, structure_s_hexadifferentiated, bridge_caps, bridge_units_fixed)",
+      "evidence": "structureS proved equal to debenzylate rAfterDeprotection (oneFour 5): unit 1 = vinyl, unit 2 = bridge N-arm (cap Bn), unit 3 = CH2OH, unit 4 = CH2OBn, unit 5 = bridge O-arm, unit 6 = CH2NH2. step_r_to_s_regiochemistry proves (by decide on the model) that exactly the units 2 and 6 substituents are protic, that the unit-2 director's 1,4 (bridge) and 1,3-ccw (amine) sites are both unavailable, and that the unit-6 amine's 1,4 target oneFour 5 = 2 (printed unit 3) is available. structure_s_hexadifferentiated proves the six boxes pairwise distinct, matching the problem preamble's 'hexadifferentiated alpha-CD S'. Result is robust to the interpretive question of NHBn proticity (same S either way). Axioms: [propext, Classical.choice, Quot.sound]."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "T9_page-4.png inspected directly: scheme N->O->P->Q->R->S with reagents (COCl)2/DMSO then Ph3P=CH2; DIBAL-H (1 eq)/MsCl/NaN3; DIBAL-H (2 eq)/NaH + 2-methylallyl dichloride; DIBAL-H (1 eq)/Boc2O (1 eq)/MsCl/NaN3; CF3COOH/NaH,BnI/DIBAL-H (2 eq); and the 9.8 instruction '1,2-unit modification happens clockwise, while 1,3-unit modification happens counterclockwise; protic groups have stronger directing effects than alkenes' - all match candidate transcription.",
+    "Zoomed crop of the reagent next to arrow P->Q confirms the printed dichloride is ClCH2-C(=CH2)-CH2Cl (terminal =CH2 on the central carbon), supporting the candidate's -CH2-NR-CH2-C(=CH2)-CH2-O- bridge with retained central alkene.",
+    "Zoomed crop of the N template confirms unit 1 = CH2OH (top), units 2 and 3 = mirrored BnOH2C on the right (clockwise), units 4-6 = CH2OBn, and preprinted (OBn)12 - exactly substrateN in Lean; clockwise numbering verifies oneTwoCW u = u+1, oneFour u = u+3, oneThreeCCW u = u-2 on Fin 6.",
+    "T9_page-3.png inspected: Sinay rule printed as protic group directs debenzylation to unit 4 in the macrocyclic ring 'or to unit 3 if the unit 4 position is not available'; Bn legend present; no additional directing rules printed - candidate used none beyond these plus the printed Sollogoub ortho rule.",
+    "Blank answer sheets A9-4 (PDF page 92) and A9-5 (page 93) rendered from theory_problem.pdf and inspected: five templates O,P,Q,R,S with boxes numbered 1-6 clockwise from top and preprinted (OBn)12 on each - confirming five required outputs, box granularity, and that no pyranose-ring stereochemistry is to be drawn (template answers are box contents).",
+    "Shared context check: preamble on Q9-4 states the sequence is for the synthesis of 'hexadifferentiated alpha-CD S'; S's six boxes (vinyl / NBn-bridge arm / CH2OH / CH2OBn / O-bridge arm / CH2NH2) are pairwise distinct and this is proved (structure_s_hexadifferentiated).",
+    "R->S director competition checked independently: even under the alternative reading where N-benzyl amine is not a protic director, the freshly formed primary amine at unit 6 gives the identical 1,4 target (unit 3), so the final structure S is not conditioned on that interpretive choice; the fallback used in the formalized reading is the printed one.",
+    "DIBAL-H 2-equiv steps: the candidate's reading (azide reduction + one directed debenzylation) is standard DIBAL-H chemoselectivity and is independently forced by the printed downstream Boc2O (1 equiv.) step which requires a secondary N-H; disclosed as a trusted general law in answer.md/result.json, within the allowed source classes."
+  ],
+  "proof_checks": [
+    "Re-ran verification independently: 'lake env lean IChO2026Problems/problem_icho_2026_t9_a8.lean' exits 0 in ~58 s with no errors or warnings; embedded #print axioms output matches the candidate's record exactly.",
+    "grep over the target file and all helper sources (IChO2026Chem Core/Reporting, IChO2026Run Basic/Dependencies) finds no sorry, admit, native_decide, unsafe, opaque, or axiom declarations; helper files contain only the shared reporting scaffolding (unused by this structural target).",
+    "All final theorems depend only on standard Lean axioms: derivation theorems on [propext, Classical.choice, Quot.sound], regiochemistry/output-check theorems on [propext, Quot.sound]; no sorryAx and no custom axioms.",
+    "Structures are derived, not assumed: each structure_*_derivation proves equality between the claimed AlphaCD and a composition of reagent-semantics functions (swernWittig, debenzylate, mesylateAzide, dibalReduceAzide, installBridge, capBridge) applied to problem-input substrateN with regiochemical indices computed by the direction helpers and justified by availability side-conditions proved via decide on explicit face data.",
+    "Fallback and selectivity logic checked semantically in the source: siteAvailable requires cH2OBn (occupied sites correctly block direction), isProtic includes NH/OH and bridge-N caps H and Bn but excludes Boc (correct - Boc has no N-H, consistent with R being directed before Boc protection), isAlkene only vinyl; step theorems assert availability/unavailability facts actually proved by computation, not vacuous premises.",
+    "Template granularity honored: PrimSubst constructors and Bridge datum bind each box's substituent (bond types via constructor semantics documented per constructor, N-cap H/Boc/Bn explicit, bridge endpoints and central alkene part of the datum); requested stereochemistry is exhausted by the alpha-CD template boxes per the blank sheets, and no new stereocenters arise in this sequence (SN2 occurs at CH2 positions).",
+    "No precomputed answer tables: the face vectors of structureO-S are the desugared outputs of the derivation equalities, and each derivation is a definitional computation from substrateN; the hexadifferentiation and bridge-cap theorems are proved by decide/rfl over the derived structures."
+  ]
+}
+```

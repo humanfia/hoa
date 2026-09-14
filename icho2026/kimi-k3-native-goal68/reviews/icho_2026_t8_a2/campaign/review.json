@@ -1,0 +1,61 @@
+All checks are complete. The source image, answer sheet, Lean sources, build, and axiom audit have all been inspected independently. Compiling my final structured review.
+
+```json
+{
+  "target_id": "icho_2026_t8_a2",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "Independent source review of T8_page-1.png confirms every problem datum the submission relies on: compound 2 is drawn as N(CH2CH2OH)3 (triethanolamine), the scheme 2 ->(-1e-)-> 3 ->(-H+)-> 4 ->(-1e-)-> 5 ->(+H2O,-H+)-> 6+7 is printed exactly as transcribed, and the text states 'Species 3, 4, and 5 are short-lived ionic and radical intermediates' and '7 yields a silver mirror with the [Ag(NH3)2]OH test'. The blank answer sheet (A8-1, PDF page 77) shows five bare boxes 3-7 with no stereochemistry request, consistent with the submission. The derived identities match the standard, source-consistent chemistry of TEOA as a sacrificial donor: single-electron oxidation to the amine radical cation (3), alpha-C-H deprotonation to the neutral alpha-amino radical (4), second oxidation to the iminium ion (5), and iminium hydrolysis to diethanolamine (6) plus glycolaldehyde (7), the only C2H4O2 isomer consistent with the Tollens-positive clue. Each general-law step used is among the task's allowed 'trusted_general_law' sources and is disclosed in answer.md, and the alpha- (vs O-H) deprotonation choice is argued from the problem's own downstream constraints (six-carbon retention in 5, secondary amine + Tollens-positive C2 fragment) rather than assumed. The Lean file represents each species with explicit per-atom element/charge/radical records and an explicit bond list with bond orders (not a string equality): species5's N=C double bond and four-coordinate N+, species4's localized carbon radical with its single remaining alpha C-H, and species7's -CHO group are all explicit data. The theorems then computationally verify per-species atom inventories (C6H15NO3, C6H14NO3, C6H14NO3, C4H11NO2, C2H4O2), charge/radical classification matching the 'ionic and radical' text, the -CHO connectivity behind the Tollens statement (proved by decide over the actual bond list), atom and charge balance of all four printed arrows, and the net 2 + H2O -> 6 + 7 + 2H+ + 2e- consistent with the 8.1 conjugate half-reaction derived inline. These are genuine constraint-verification proofs on constructed witnesses, not precomputed tables, tautologies, or vacuous premises. Direct compile of problem_icho_2026_t8_a2.lean and the full lake build (8581 jobs) succeeded; #print axioms on all 22 final theorems shows either no axioms or standard propext only; no sorry/admit/native_decide/custom axioms anywhere in the candidate sources. The electon/proton bookkeeping convention (electron modeled as an atom of charge -1 with no elemental content; H+ for the released proton) is disclosed, standard, and does not distort any derived atom or charge count.",
+  "coverage": [
+    {
+      "output_id": "structure_3",
+      "status": "passed",
+      "theorem": "species3_atoms, species3_charge_radical, step1_atoms_balanced, step1_charge_balanced, radical_fate_through_scheme",
+      "evidence": "Definition teoaRadicalCation gives explicit atoms (N with charge +1 and one radical, connectivity identical to transcribed TEOA figure) with all 25 atoms and 24 bonds listed. species3_atoms proves composition C6H15NO3 (axiom-free rfl), species3_charge_radical proves charge = 1 and one unpaired electron (propext only), matching the printed -1e- arrow and the 'ionic and radical' classification, and step1 balance theorems tie it to species 2 exactly as the scheme prints."
+    },
+    {
+      "output_id": "structure_4",
+      "status": "passed",
+      "theorem": "species4_atoms, species4_charge_radical, step2_atoms_balanced, step2_charge_balanced, radical_fate_through_scheme",
+      "evidence": "Definition alphaAminoRadical: 24 explicit atoms with the radical localized on the alpha-carbon C(1), N neutral and three-coordinate, one alpha C-H removed relative to 3. species4_atoms proves C6H14NO3 axiom-free; species4_charge_radical proves neutral radical; step2 balance theorems prove 3 = 4 + H+ per element and charge, exactly the printed -H+ arrow; the alpha (not O-H) site is justified in answer.md from the problem's own constraints (six-carbon retention and Tollens-positive C2 fragment), an allowed derived-step argument."
+    },
+    {
+      "output_id": "structure_5",
+      "status": "passed",
+      "theorem": "species5_atoms, species5_charge_radical, step3_atoms_balanced, step3_charge_balanced",
+      "evidence": "Definition iminium: explicit N(+1)-C(1) bond of order 2, four-coordinate N, no radicals, all six carbons retained. species5_atoms proves C6H14NO3 axiom-free; species5_charge_radical proves closed-shell +1, completing the 'ionic and radical' trio (3 ionic radical, 4 neutral radical, 5 ionic); step3 balance theorems prove 4 = 5 + electron per element and charge, matching the second printed -1e- arrow."
+    },
+    {
+      "output_id": "structure_6",
+      "status": "passed",
+      "theorem": "species6_atoms, species6_species7_closed, step4_atoms_balanced, step4_charge_balanced, overall_two_electron_donation",
+      "evidence": "Definition deoa gives HN(CH2CH2OH)2 with explicit N-H bond and two 2-hydroxyethyl arms (secondary amine as required by iminium hydrolysis). species6_atoms proves C4H11NO2 axiom-free; species6_species7_closed proves neutral closed-shell; step4 and overall theorems prove the +H2O/-H+ hydrolysis and net balances connect species 5 to 6 atom-by-atom."
+    },
+    {
+      "output_id": "structure_7",
+      "status": "passed",
+      "theorem": "species7_atoms, tollens_implies_aldehyde, step4_atoms_balanced, overall_two_electron_donation",
+      "evidence": "Definition glycolaldehyde: explicit bond list with aldehyde carbon C(0) double bonded to O(1) and single bonded to H(2) and C(3). species7_atoms proves C2H4O2 axiom-free; tollens_implies_aldehyde proves the -CHO group from the recorded connectivity by decide (propext only), grounding the stated silver-mirror test and fixing 7 as glycolaldehyde rather than another C2H4O2 isomer; hydrolysis balances conserve all atoms between 5 and 6+7+H+."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Read TASK.json in full; confirmed five requested outputs structure_3-structure_7 (classification/exact_symbolic, no stereochemistry fields beyond requested).",
+    "Inspected problem image T8_page-1.png directly: compound 2 drawn as tertiary amine with three 2-hydroxyethyl arms (TEOA); arrows labeled -1e-, -H+, -1e-, and +H2O/-H+ leading to 6+7; sentences 'Species 3, 4, and 5 are short-lived ionic and radical intermediates' and '7 yields a silver mirror with the [Ag(NH3)2]OH test' verified verbatim against the pixels; 8.2 worth 16.0 pt as in TASK.json.",
+    "Rendered blank student answer sheet A8-1 (theory_problem.pdf page 77, 93-page PDF opened via PyMuPDF): five empty boxes labeled 3,4,5,6,7 and no other fields; confirms no stereochemistry or extra data requested, matching the submission's assumption.",
+    "Confirmed candidate's transcription of compound 2 (25 atoms, three N-CH2-CH2-OH arms) matches the drawn figure; no numerical givens, units, or precision requirements apply to this structure-drawing part.",
+    "Preceding-part dependency T8-A1 (CO2 + 2H+ + 2e- -> CO + H2O) used only as a two-electron consistency check via overall_two_electron_donation, derived inline from problem context as the isolation policy allows; no official solution, rubric, or prior answer material was consulted.",
+    "Chemistry cross-check from ordinary reference knowledge: TEOA one-electron oxidation -> amine radical cation -> alpha-deprotonation -> alpha-amino radical -> second oxidation -> iminium -> hydrolysis to diethanolamine + glycolaldehyde is the established sacrificial-donor pathway; glycolaldehyde is Tollens-positive; candidate structures are consistent with this and with every printed scheme constraint."
+  ],
+  "proof_checks": [
+    "grep over IChO2026Problems, IChO2026Chem and IChO2026Run: no sorry, admit, native_decide or custom axiom declarations.",
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a2.lean: exit 0, no errors or warnings.",
+    "lake build: Build completed successfully (8581 jobs); only pre-existing style linter warnings in non-target umbrella files.",
+    "Axiom audit via a temporary review file (removed after use) running #print axioms on all 22 final theorems: atom-inventory and per-step atom-balance theorems depend on no axioms; charge/radical, Tollens, and net-reaction theorems depend on [propext] only - a standard Lean logical axiom; no sorryAx or custom axioms.",
+    "Molecule representations carry explicit per-atom charge and radical counts and explicit (index, index, order) bond lists; structures are constructed witnesses whose requested properties are proved by rfl/decide over the data - no string equalities, no assumed target, no result-shaped unproved hypotheses.",
+    "Hand-verified balance arithmetic underlying the rfl proofs: step1 0 = +1 + (-1) with atoms unchanged; step2 C6H15NO3+ = C6H14NO3 + H+; step3 atoms unchanged, 0 = +1 + (-1); step4 C6H14NO3 + H2O = C4H11NO2 + C2H4O2 + H+ per element (H: 14+2 = 11+4+1; O: 3+1 = 2+2) and charge +1 = +1; net 2 + H2O -> 6 + 7 + 2H+ + 2e- balances atoms (H 17 = 17, O 4 = 4) and charge (0 = 2-2).",
+    "Verified connectivity details of the witnesses: alphaAminoRadical C(1) retains exactly one C-H bond and bears the radical; iminium N is four-coordinate with N(0)-C(1) order 2; deoa contains the required N-H bond of a secondary amine; glycolaldehyde aldehyde carbon satisfies the hasAldehyde predicate (C=O double bond plus C-H single bond) computed by decide over the actual bonds, so the Tollens conclusion is read from data, not stated.",
+    "Electron-modeling convention (H-atom of charge -1, no elemental content) is a disclosed bookkeeping device inside the Molecule language; it affects only charge arithmetic of the formal e- species and leaves all real atom inventories and charges correct."
+  ]
+}
+```

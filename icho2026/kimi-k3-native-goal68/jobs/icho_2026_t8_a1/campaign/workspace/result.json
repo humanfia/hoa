@@ -1,0 +1,29 @@
+{
+  "target_id": "icho_2026_t8_a1",
+  "status": "completed",
+  "answer_summary": "CO2 + 2 H+ + 2 e- -> CO + H2O (balanced acidic reduction half equation; 2-electron reduction of carbon from +IV to +II; C, O, H and charge all conserved; coefficients uniquely forced by atom balance).",
+  "theorem_names": [
+    "IChO2026.Problems.T8.A1.half_equation_balanced",
+    "IChO2026.Problems.T8.A1.is_reduction",
+    "IChO2026.Problems.T8.A1.substrates_as_printed",
+    "IChO2026.Problems.T8.A1.two_electron_reduction",
+    "IChO2026.Problems.T8.A1.coefficients_forced"
+  ],
+  "assumptions": [
+    "Species inventories (CO2 = (C1,O2), CO = (C1,O1), H+ = (H1, charge +1), H2O = (H2,O1), e- = charge -1) taken as trusted general chemistry definitions.",
+    "Standard half-equation balancing conventions for acidic aqueous medium (balance O with H2O, H with H+, charge with e-) taken as trusted general law.",
+    "Stoichiometry 1 CO2 consumed per 1 CO formed is grounded in the printed scheme 'CO2 --1--> CO' on T8_page-1.png / theory_problem.pdf source page 72.",
+    "Standard Lean logical axioms (propext, Quot.sound) only; no custom axioms."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t8_a1.lean",
+      "result": "exit 0; no errors/warnings; #print axioms: half_equation_balanced -> [propext], coefficients_forced -> [propext, Quot.sound]"
+    },
+    {
+      "command": "python3 (PyMuPDF) text extraction of theory_problem.pdf source page 72",
+      "result": "Subquestion 8.1 text confirmed verbatim: 'Write the half equation for the reduction of CO2 to CO in an acidic medium. 2.0 pt' with printed CO2 -> CO scheme."
+    }
+  ]
+}

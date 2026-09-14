@@ -1,0 +1,13 @@
+{
+  "target": "icho_2026_t3_a6",
+  "checked_at": 1789367821.0532546,
+  "actual_path": "IChO2026Problems/ProblemIcho2026T3A6.lean",
+  "exit_code": 0,
+  "source_sha256": "bf222aa9a59c2f99b02df6d6307f13b6146b957bc3076dc8a4fc62c80eece9c2",
+  "source_unchanged": true,
+  "kernel_check": "passed",
+  "canonical_path_conformance": false,
+  "accepted": false,
+  "semantic_review": "pending",
+  "feedback_to_solver": false
+}

@@ -1,0 +1,8 @@
+{
+  "observed_peak_solver_intervals": 32,
+  "recorded_solver_attempts": 176,
+  "interval_records_skipped": [],
+  "recovery_threads_preserved": true,
+  "interval_scope": "Current per-job status timestamps plus saved transport-recovery snapshots; running intervals end at observation time. Not a process-level trace.",
+  "checked_at": 1789376371.5146735
+}

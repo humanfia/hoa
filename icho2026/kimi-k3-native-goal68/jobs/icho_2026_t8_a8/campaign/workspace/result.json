@@ -1,0 +1,37 @@
+{
+  "target_id": "icho_2026_t8_a8",
+  "status": "completed",
+  "answer_summary": {
+    "condition_a": "N (no irradiation) — bar a shows no measurable H2 or CO; only the dark condition produces nothing",
+    "condition_b": "R (red light) — largest H2 mole percentage (~29%); the least energetic photon drives the CO sequence least completely against the competing proton-reduction (H2) branch",
+    "condition_c": "G (green light) — intermediate H2 share (~10%), between red and blue",
+    "condition_d": "B (blue light) — smallest nonzero H2 share (~3%); the most energetic photon channels the excited electron preferentially into the thermally-activated CO sequence"
+  },
+  "theorem_names": [
+    "IChO2026T8A8.assignment_forced",
+    "IChO2026T8A8.officialSubmission_matches",
+    "IChO2026T8A8.no_product_bar_is_distinct",
+    "IChO2026T8A8.green_lower_H2_than_red",
+    "IChO2026T8A8.blue_lower_H2_than_green",
+    "IChO2026T8A8.stacked_bars_sum_to_100",
+    "IChO2026T8A8.led_wavelength_ordering",
+    "IChO2026T8A8.photonEnergy_antitone",
+    "IChO2026T8A8.co_sequence_overall_ΔG",
+    "IChO2026T8A8.h2_branch_photo_charging_step",
+    "IChO2026T8A8.hcEVnm_exact",
+    "IChO2026T8A8.co_requirement_wavelength"
+  ],
+  "assumptions": [
+    "Bar percentages read from the printed chart of Q8-4 (T8_page-4.png / theory_problem.pdf p.75): a has no measurable H2 or CO (chi = 0%), b has chi(H2) = 29%, c has chi(H2) = 10%, d has chi(H2) = 3%; CO complements to 100% (stacked-bar convention).",
+    "Gibbs-energy steps transcribed from the printed DeltaG diagram of Q8-3 (T8_page-3.png / p.74): CO branch -0.04, +0.02, +0.16, -0.36, -0.22, +0.1 eV; H2 branch +0.756, +1.832, -0.168, -1.14 eV, signed per the printed y-axis.",
+    "Physical principle (answer-blind, trusted general law): photon energy E = hc/lambda decreases with wavelength, and a more energetic photon drives the CO2-to-CO sequence (net endergonic deficit 0.14 eV, lambda <= 1097 nm) more completely against the competing H2 branch (whose largest step is the +1.832 eV photo-electron transfer), so chi(H2) is monotone decreasing in photon energy; every condition is realised by exactly one bar and each bar by one condition.",
+    "Nominal LED wavelengths used only for ordering: blue < green < red; exact peak values are not needed for the classification."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t8_a8.lean",
+      "result": "exit code 0; no errors or warnings; #print axioms: IChO2026T8A8.assignment_forced depends on [propext, Classical.choice, Quot.sound]; IChO2026T8A8.officialSubmission_matches depends on no axioms"
+    }
+  ]
+}

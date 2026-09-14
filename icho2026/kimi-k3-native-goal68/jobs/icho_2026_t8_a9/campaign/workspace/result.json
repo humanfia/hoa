@@ -1,0 +1,58 @@
+{
+  "target_id": "icho_2026_t8_a9",
+  "status": "completed",
+  "answer_summary": {
+    "s1_quenching": {
+      "raw_fraction": "783/1783",
+      "raw_percent": "43.9147...%",
+      "reported": "43.9%",
+      "formula": "eta_q(S1) = kS*[Red] / (kS*[Red] + 1/tau0(S1)) = 0.783/1.783"
+    },
+    "t1_quenching": {
+      "raw_fraction": "1260/1261",
+      "raw_percent": "99.9207...%",
+      "reported": "99.9%",
+      "formula": "eta_q(T1) = kT*[Red] / (kT*[Red] + 1/tau0(T1)) = 1260/1261"
+    }
+  },
+  "theorem_names": [
+    "IChO2026.ProbT8A9.fractionQuenched_of_competingChannels",
+    "IChO2026.ProbT8A9.kq_S1",
+    "IChO2026.ProbT8A9.k0_S1",
+    "IChO2026.ProbT8A9.kq_T1",
+    "IChO2026.ProbT8A9.k0_T1",
+    "IChO2026.ProbT8A9.competitionRatio_S1",
+    "IChO2026.ProbT8A9.competitionRatio_T1",
+    "IChO2026.ProbT8A9.quenchingPercentage_S1",
+    "IChO2026.ProbT8A9.quenchingPercentage_T1",
+    "IChO2026.ProbT8A9.quenchingPercentage_S1_lt_100",
+    "IChO2026.ProbT8A9.quenchingPercentage_T1_gt_99",
+    "IChO2026.ProbT8A9.quenchingPercentage_T1_gt_S1",
+    "IChO2026.ProbT8A9.reportsAt_S1",
+    "IChO2026.ProbT8A9.reportsAt_T1",
+    "IChO2026.ProbT8A9.validSubmission_S1",
+    "IChO2026.ProbT8A9.validSubmission_T1"
+  ],
+  "assumptions": {
+    "problem_printed_data": {
+      "kS": "2.7e9 M^-1 s^-1 (printed, stipulated exact)",
+      "kT": "1.5e8 M^-1 s^-1 (printed, stipulated exact)",
+      "redConc": "0.1 M (printed, stipulated exact)",
+      "tau0S1": "2.9 ns (printed unquenched emission lifetime)",
+      "tau0T1": "84 us (printed unquenched emission lifetime)"
+    },
+    "kinetic_model": "Competing first-order natural decay (k0 = 1/tau0) versus pseudo-first-order reductive quenching (kq = kQ*[Red]); monoexponential excited-state decay. The problem note k_F >> k_ISC makes S1 -> T1 intersystem crossing negligible, so S1 and T1 quench as independent populations with their printed lifetimes. The quenching fraction kq/(k0+kq) is *derived* in Lean from this model via the improper integral of the quenching channel rate, not assumed.",
+    "reporting": "Three significant figures as per TASK.json uniform blind evaluation default; quantum 0.1 percentage points; nearest multiple, ties half away from zero (project Reporting contract)."
+  },
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake build IChO2026Chem",
+      "result": "Build completed successfully (8561 jobs)."
+    },
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t8_a9.lean",
+      "result": "exit code 0; #print axioms for quenchingPercentage_S1, quenchingPercentage_T1, fractionQuenched_of_competingChannels, validSubmission_S1, validSubmission_T1 all report only [propext, Classical.choice, Quot.sound]; one cosmetic unusedVariables linter warning on the explicit model hypothesis hpop; no sorry/admit/unsafe/custom axioms."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "target_id": "icho_2026_t3_a6",
+  "status": "completed",
+  "answer_summary": "π–π stacking energies between two layers of one COF-8 repeat unit (kJ mol^-1): AA = -85.7 (1 eclipsed t-t + 10 eclipsed b-b contacts); AB = -75.6 (6 slipped b-b contacts, triazine nodes above hexagon-hole centres); AB' = -333.6 (6 slipped b-t contacts, complementary hole-centred registry). Values are computed from the problem's own interaction table (-7.9/-12.6 b-b, -49.8/-55.6 b-t, -6.7/-16.7 t-t) counting only aromatic units (triazine cores and benzene/phenylene rings; vinyl C=C and nitrile units excluded per the problem's assumption).",
+  "theorem_names": [
+    "IChO2026T3A6.stacking_energy_aa",
+    "IChO2026T3A6.stacking_energy_ab",
+    "IChO2026T3A6.stacking_energy_ab_prime",
+    "IChO2026T3A6.requested_outputs_summary",
+    "IChO2026T3A6.centroids_distinct",
+    "IChO2026T3A6.aa_prime_datum_ordering"
+  ],
+  "assumptions": [
+    "Repeat unit of one COF-8 layer contains 1 triazine ring and 10 benzene/phenylene rings carrying pi density (read off the printed COF-8 structure with the blue dashed repeat-unit boundary).",
+    "Vinyl C=C linkers and nitrile groups are not aromatic and contribute no pi-pi stacking, per the problem's explicit assumption.",
+    "AA registry = perfectly eclipsed: 1 t-t + 10 b-b eclipsed contacts per bilayer repeat unit.",
+    "AB registry = triazine nodes above hexagon-hole centres: 6 slipped b-b contacts (edge-midpoint aromatic jobs over benzene jobs), no t-t contacts.",
+    "AB' = complementary hole-centred registry: 6 slipped b-t contacts; AB and AB' are inequivalent because no lattice translation swaps the up-/down-pointing edge-midpoint triangles.",
+    "The given AA' datum (-67.1 kJ/mol) is an independent problem input and was not used to calibrate any of the three requested outputs.",
+    "Interaction energies are additive over ring-ring contacts using the two table columns (eclipsed vs slipped) as printed."
+  ],
+  "source_gaps": [
+    "The ring-contact multiplicities (10 b-b eclipsed for AA; 6 b-b slipped for AB; 6 b-t slipped for AB') are distilled from the printed structure and stacking-mode figures and asserted as definitions in the Lean file; the problem supplies these only pictorially, so a machine-checked derivation of the multiplicities from a formal honeycomb geometry is not possible from the provided inputs alone. All arithmetic consequences of the counts are formally proved with only standard Lean axioms."
+  ],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/ProblemIcho2026T3A6.lean",
+      "exit_code": 0,
+      "result": "All theorems elaborate; #print axioms shows [propext, Classical.choice, Quot.sound] for every final theorem; no sorryAx."
+    },
+    {
+      "command": "lake build",
+      "exit_code": 0,
+      "result": "Build completed successfully (8581 jobs); only a pre-existing style warning in the fixed generic umbrella IChO2026Problems.lean."
+    }
+  ]
+}

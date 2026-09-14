@@ -1,0 +1,102 @@
+{
+  "target": "icho_2026_t6_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789362802.1328108,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "6382f6b21439de1ffa2d6e41e2bf493dbcdbc8771fa6d1cac1fd140e15a6e150",
+    "IChO2026Problems/problem_icho_2026_t6_a1.lean": "2cc3f1033cafc24fbc36c74be30fd8e11b35b79b6077ad3c42b5f779bbb9bf4a",
+    "answer.md": "62d7fae025894caa2c3831f3c6c65ac74a8ce1cc4049039645d32a2c8b477a99",
+    "verification.md": "8c84ef21506b086e3656e830f10ac106408dc045a76d979fb4c004325a4ca0d7",
+    "result.json": "0b2985d33d34d97c5a9db04eec4db8ea667a73f4e478ad76c3f71a437cb72d55"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t6_a1",
+    "status": "completed",
+    "answer_summary": {
+      "c18_aromatic": 2,
+      "c18_antiaromatic": 0,
+      "c16_aromatic": 0,
+      "c16_antiaromatic": 2,
+      "triplet_c13_aromatic": 0,
+      "triplet_c13_antiaromatic": 1,
+      "singlet_c13_aromatic": 0,
+      "singlet_c13_antiaromatic": 0,
+      "table": {
+        "C18": {
+          "A": 2,
+          "AA": 0
+        },
+        "C16": {
+          "A": 0,
+          "AA": 2
+        },
+        "3C13": {
+          "A": 0,
+          "AA": 1
+        },
+        "1C13": {
+          "A": 0,
+          "AA": 0
+        }
+      },
+      "reasoning": "sp-hybridised cyclo[n]carbon rings carry two orthogonal cyclic pi systems with n pi electrons each. C18: 18 = 4*4+2 in both systems (2 aromatic). C16: 16 = 4*4 in both systems (2 anti-aromatic). C13: odd ring forces open shells (13 electrons per spin class is odd); triplet 3C13 delocalises 12 of 13 unpaired-spin electrons in the singly occupied system, 12 = 4*3 (1 anti-aromatic), while the 13-electron paired system is an open shell (neither); singlet 1C13 leaves the second system non-conjugated (lone pair orthogonal to cyclic pi), so both systems are neither aromatic nor anti-aromatic."
+    },
+    "theorem_names": [
+      "IChO2026Problems.T6A1.answer_c18_aromatic",
+      "IChO2026Problems.T6A1.answer_c18_antiaromatic",
+      "IChO2026Problems.T6A1.answer_c16_aromatic",
+      "IChO2026Problems.T6A1.answer_c16_antiaromatic",
+      "IChO2026Problems.T6A1.answer_triplet_c13_aromatic",
+      "IChO2026Problems.T6A1.answer_triplet_c13_antiaromatic",
+      "IChO2026Problems.T6A1.answer_singlet_c13_aromatic",
+      "IChO2026Problems.T6A1.answer_singlet_c13_antiaromatic",
+      "IChO2026Problems.T6A1.huckel_exclusion",
+      "IChO2026Problems.T6A1.huckel_aromatic_count_eq",
+      "IChO2026Problems.T6A1.huckel_antiaromatic_count_eq",
+      "IChO2026Problems.T6A1.aromatic_18",
+      "IChO2026Problems.T6A1.antiaromatic_16",
+      "IChO2026Problems.T6A1.antiaromatic_12",
+      "IChO2026Problems.T6A1.not_aromatic_16",
+      "IChO2026Problems.T6A1.not_antiaromatic_18",
+      "IChO2026Problems.T6A1.not_aromatic_12",
+      "IChO2026Problems.T6A1.not_antiaromatic_13",
+      "IChO2026Problems.T6A1.not_aromatic_13",
+      "IChO2026Problems.T6A1.huckel_requires_loop",
+      "IChO2026Problems.T6A1.c13_loop_not_closed_shell",
+      "IChO2026Problems.T6A1.c13_loop_odd",
+      "IChO2026Problems.T6A1.completedTable_correct"
+    ],
+    "assumptions": [
+      "Standard textbook model of cyclo[n]carbons: every ring carbon is sp-hybridised and supports two orthogonal cyclic pi systems (in-plane and out-of-plane), each receiving one pi electron per ring carbon.",
+      "Hueckel's rule applied per cyclic conjugated pi loop: aromatic iff electron count = 4k+2, anti-aromatic iff = 4k (closed-shell loops).",
+      "For odd C13 the two orthogonal systems cannot both be closed shells; the problem-given spin isomers carry one fully occupied (13 paired electrons) and one singly occupied (13 unpaired-spin electrons) pi system.",
+      "3C13 (S=1): Hund's rule separates the two frontier electrons into different MOs, so 12 of 13 unpaired-spin electrons count toward cyclic delocalisation; 13-electron loops are open shells (13 is neither 4k nor 4k+2).",
+      "1C13 (S=0): frontier electrons pair up, depopulating the second cyclic loop (lone pair orthogonal to cyclic pi conjugation), so no second aromatic/anti-aromatic system exists.",
+      "Counts of 'distinct pi systems' are per orthogonal cyclic conjugated loop, the standard cyclocarbon counting."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t6_a1.lean  (exit 0; #print axioms report only propext, Classical.choice, Quot.sound for all final theorems)",
+      "lake build  (Build completed successfully, 8581 jobs)",
+      "grep -n \"sorry\\|admit\\|axiom \" IChO2026Problems/problem_icho_2026_t6_a1.lean  (no matches)"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

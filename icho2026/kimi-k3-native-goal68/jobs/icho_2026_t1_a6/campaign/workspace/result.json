@@ -1,0 +1,40 @@
+{
+  "target_id": "icho_2026_t1_a6",
+  "status": "blocked",
+  "answer_summary": "Stone: Al2(C12O6)·xH2O (aluminium mellitate hydrate) with x ≈ 22 forced by the first TG plateau (required interval [22.03, 22.15] - non-integral), nearest candidate Al2(C12O6)·22H2O; H: Al2O3 (corundum), forced as the only aluminium compound stable in open air above 400 C, with the final-residue datum pinning x ≈ 21.41 (also non-integral). Proved in Lean: the printed TG data (10.00 g -> 5.75 g @ 200 C -> 1.50 g residue) are arithmetically inconsistent with the unique compound class the problem's own 1.4/1.5 clues force (Q = Al via cryolite Na3AlF6 32.85/12.85%; mellitate anion via mellitic acid C12H6O12 -> C12O9 49.98% O): no stoichiometric aluminium-mellitate hydrate reproduces both plateaus within the displayed half-quantum measurement windows.",
+  "theorem_names": [
+    "IChO2026T1A6.cryolite_sodium_fraction",
+    "IChO2026T1A6.cryolite_aluminium_fraction",
+    "IChO2026T1A6.aluminium_fluoride_trihydrate_water_fraction",
+    "IChO2026T1A6.cyclononacarbon_oxygen_fraction",
+    "IChO2026T1A6.stone_x12_first_plateau_fails",
+    "IChO2026T1A6.stone_x22_first_plateau_fails",
+    "IChO2026T1A6.stone_x21_second_plateau_fails",
+    "IChO2026T1A6.tg_system_inconsistent"
+  ],
+  "assumptions": [
+    "problem_text: T1 page Q1-4 text as printed (10.00 g, 5.75 g @ 200 C, 1.50 g final residue)",
+    "problem_text: 1.4 clue chain (D: 32.85% Na, 12.85% Q; C.xH2O: 39.16% H2O) forces Q = Al, D = Na3AlF6, C.xH2O = AlF3.3H2O",
+    "problem_text: 1.5 clue chain (G: 49.98% O, 3-fold axis, F + P2O5) forces F = mellitic acid C12H6O12, anion mellitate C12O6(6-)",
+    "trusted_general_law: stoichiometric charge neutrality forces anhydrous core Al2(C12O6)",
+    "trusted_general_law: the residue stable in open air above 400 C from an aluminium salt is corundum Al2O3",
+    "trusted_general_law: standard atomic masses H 1.008, C 12.011, O 15.999, Al 26.982, Na 22.990, F 18.998 g/mol",
+    "measurement_policy: displayed masses/percentages interpreted with half-last-digit windows"
+  ],
+  "source_gaps": [
+    "The printed TG data as captured in the bundle (1.50 g final residue, 5.75 g first plateau on a 10.00 g sample) admit no stoichiometric Al2(C12O6).xH2O within displayed tolerances: plateau 1 requires x in [22.03, 22.15] (non-integral; nearest integer x = 22 leaves 4.26 g, not 5.75 g) while plateau 2 with H = Al2O3 requires x in [21.29, 21.54] (non-integral; nearest integer x = 21 leaves 1.52 g, not 1.50 g). The two plateaus are mutually inconsistent for any single integer x. This is proved by tg_system_inconsistent in IChO2026Problems/problem_icho_2026_t1_a6.lean. No answer-blind reconstruction of the intended numbers was possible from the problem text alone without contradicting one of the displayed measurements."
+  ],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t1_a6.lean  # exit 0; all 8 theorems prove with axioms [propext, Classical.choice, Quot.sound] only",
+    "lake build IChO2026Problems  # Build completed successfully (8564 jobs)"
+  ],
+  "notes": "No sorry/admit; native_decide deliberately unused (would add trusted-compiler axioms). answer.md contains the full derivation; verification.md records commands and the #print axioms output. Lean index file IChO2026Problems/All.lean created to import this target (required by the pre-existing generic root IChO2026Problems.lean). status=blocked because the problem's own data, as printed, has no internally consistent exact answer: formalizing 'the formulae' unconditionally would require contradicting one of the displayed measurements.",
+  "raw_results": {
+    "stone_family": "Al2(C12O6).xH2O, M(x) = 294.090 + 18.015 x g/mol",
+    "plateau1_required_x": 22.086,
+    "plateau2_required_x": 21.407,
+    "x22_first_plateau_residue_g": 4.2596,
+    "x12_first_plateau_residue_g": 5.7634,
+    "x21_final_residue_g_with_Al2O3": 1.5164
+  }
+}

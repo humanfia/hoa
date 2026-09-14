@@ -1,0 +1,43 @@
+{
+  "at": 1789388785.498245,
+  "previous_status": {
+    "status": "review_error",
+    "target": "icho_2026_t4_a1",
+    "error": "Expected exactly one review JSON payload",
+    "at": 1789388706.1764803
+  },
+  "original_review_sha256": "4efa9e1aa47de1a6dfdde34af371346da5e79ca2a5c060faebcd89b4be8d728d",
+  "recovered_payload": {
+    "target_id": "icho_2026_t4_a1",
+    "semantic_status": "passed",
+    "proof_status": "passed",
+    "reason": "The answer 0.664 % (= 200/301 % exactly) is correctly derived source-first: T4_page-1.png (Q4-1, item 4.1) gives isotopic masses 235.04 and 238.05 a.u. and the two-isotope assumption; the official periodic table printed in the same booklet (PDF page index 4, header G1-5) shows U = 238.03, the only atomic weight for uranium in the materials (text search across all 93 PDF pages found no other occurrence); the blank answer sheet (PDF page index 39, header A4-1) asks '4.1 (2.0 pt) 235U : ____ %'. The weighted-mean equation 235.04x + 238.05(1-x) = 238.03 yields x = 0.02/3.01 = 2/301, hence 100x = 200/301 % = 0.6644518... %, reported as 0.664 % at three significant figures (the stipulated answer-blind reporting default; the problem specifies no precision). The raw value lies strictly inside the reporting interval [0.6635, 0.6645), so no tie occurs and no intermediate rounding is used. The Lean formalization proves uniqueness (abundance_unique: any real consistent with the model equals 2/301), existence (abundance_iff), the exact percentage (abundance_percent), and the correct 3-sig-fig reporting via the pinned ReportsAtQuantum relation (uranium235_abundance_reports_three_sig_figs), with norm_num-verified strict inequalities (400000 < 400029). Hardcoded constants 235.04/238.05/238.03 are faithful transcriptions of printed givens, not result-shaped assumptions; the two-component abundance-weighted mean is the standard, correctly-scoped mixing law disclosed in answer.md. Independent build (lake build IChO2026Problems, toolchain v4.31.0) succeeds with only a pre-existing skeleton style warning, and #print axioms on all main theorems shows only propext, Classical.choice, Quot.sound. No sorry/admit/native_decide/unsafe constructs or custom axioms found in the candidate Lean sources.",
+    "coverage": [
+      {
+        "output_id": "uranium235_abundance",
+        "status": "passed",
+        "theorem": "IChO2026Problems.T4A1.uranium235_abundance_reports_three_sig_figs (with abundance_unique, abundance_percent, submission_valid)",
+        "evidence": "abundance_unique proves any x : R satisfying the exact weighted-mean model m235*x + m238*(1-x) = mAvg (235.04, 238.05, 238.03 transcribed from problem page Q4-1 and periodic table G1-5) equals 2/301; abundance_percent proves 100*x = 200/301 (%); uranium235_abundance_reports_three_sig_figs proves ReportsAtQuantum (200/301) 0.664 0.001 with quantum positive, 0.664 = 664*0.001, and raw strictly inside the half-quantum interval (ties away from zero never invoked). Axiom inspection of all four main theorems: [propext, Classical.choice, Quot.sound] only. Direct PDF/image verification: problem text on T4_page-1.png, U = 238.03 in the printed periodic table, answer sheet A4-1 requesting a percentage."
+      }
+    ],
+    "unsupported_assumptions": [],
+    "source_checks": [
+      "Verified item 4.1 text and constants 235.04 a.u. / 238.05 a.u. against T4_page-1.png pixels (header Q4-1; sha256 matches TASK.json problem_assets f3b2...dcbf)",
+      "Rendered PDF page index 4 (header G1-5) and visually confirmed the periodic table prints U, Z = 92, atomic weight 238.03; full-PDF text search found 238.03 on no other page, so it is the unique uranium weight in the booklet",
+      "Blank student answer sheet on PDF page index 39 (header A4-1) reads '4.1 (2.0 pt) 235U : ____ %', confirming the requested output quantity and unit match TASK.json requested_outputs and 2.0 points",
+      "TASK.json reporting policy (3 significant figures, ties half away from zero, no intermediate rounding) is a stipulated evaluation default, not a problem precision; the candidate applies it only at the final reporting boundary and 200/301 % is strictly interior to the reporting interval, so no tie rule is exercised"
+    ],
+    "proof_checks": [
+      "lake build IChO2026Problems completed successfully (8564 jobs, toolchain leanprover/lean4:v4.31.0); the only warning is a pre-existing long-line style warning in the pinned skeleton IChO2026Problems.lean, unrelated to the target",
+      "Independent run of lake env lean IChO2026Problems/problem_icho_2026_t4_a1.lean exited 0; #print axioms for uranium235_abundance_reports_three_sig_figs, submission_valid, abundance_unique and abundance_percent each list only [propext, Classical.choice, Quot.sound]",
+      "Grep over IChO2026Problems and IChO2026Chem found no sorry, admit, unsafe, axiom declarations, or native_decide",
+      "Reviewed IChO2026Chem/Reporting.lean (pinned skeleton, sha256 matches isolation_manifest): ReportsAtQuantum and ValidNumericSubmission are honest relations over reals, not equipped with per-answer constructors; submission_valid forces s.rawValue = exactAbundancePercent definitionally via rfl",
+      "The abundance predicate contains no result-shaped assumption: it encodes only the weighted-mean equation with printed constants; uniqueness is proved by linarith over norm_num-normalized arithmetic rather than asserted, and existence is checked by substitution at x = 2/301",
+      "tabulated_weight_consistent double-checks that 235.04*(2/301) + 238.05*(299/301) = 238.03 exactly via norm_num, confirming internal consistency of the model with the tabulated weight"
+    ]
+  },
+  "model_rerun": false,
+  "verdict_changed": false,
+  "parser_policy": "single payload; optional JSON trailing-comma removal; strict schema",
+  "feedback_to_solver": false
+}

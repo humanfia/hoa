@@ -1,0 +1,23 @@
+{
+  "target_id": "icho_2026_t4_a2",
+  "status": "completed",
+  "answer_summary": "4.2 nuclear reaction equations: (a) 11_5B + 4_2He -> 14_7N + 1_0n; (b) 2_1D + gamma -> 1_1H + 1_0n (photodisintegration of the deuteron); (c) 9_4Be + 4_2He -> 12_6C + 1_0n. Each is forced uniquely by conservation of mass number A and atomic number Z together with the problem's stipulation that each channel produces a neutron.",
+  "theorem_names": [
+    "IChO2026T4.reaction_a_balanced",
+    "IChO2026T4.reaction_b_balanced",
+    "IChO2026T4.reaction_c_balanced",
+    "IChO2026T4.reaction_a_residual_forced",
+    "IChO2026T4.reaction_b_residual_forced",
+    "IChO2026T4.reaction_c_residual_forced"
+  ],
+  "assumptions": [
+    "trusted_general_law: conservation of mass number A and atomic number Z in nuclear reactions",
+    "problem_text: reactants are (a) 11B + alpha, (b) gamma + 2D, (c) 9Be + alpha",
+    "problem_text (surrounding prose of T4): each channel produces neutrons, so a single 1_0n is among the products"
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a2.lean  # exit 0, no errors/warnings",
+    "lake env lean /tmp/axcheck_t4/check.lean  # final file + six '#print axioms' lines; output lists only [propext, Classical.choice, Quot.sound] for balanced theorems and [propext, Quot.sound] for residual_forced theorems"
+  ]
+}

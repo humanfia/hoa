@@ -1,0 +1,4 @@
+'IChO2026.T8.A7.co_rate_trend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T8.A7.measured_rates_increase_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T8.A7.endpoint_rate_increases_robust' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T8.A7.last_step_direction_not_determined' depends on axioms: [propext, Classical.choice, Quot.sound]

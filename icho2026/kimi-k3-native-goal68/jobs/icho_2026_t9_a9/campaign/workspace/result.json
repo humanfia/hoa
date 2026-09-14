@@ -1,0 +1,29 @@
+{
+  "target_id": "icho_2026_t9_a9",
+  "status": "completed",
+  "answer_summary": "120 arrangements: 6! = 720 bijective assignments of six distinct functional groups to the six primary CH2OH sites of alpha-CD, divided by the 6 rotations of the macrocycle (free action because all six groups are distinct; no reflection symmetry since alpha-CD is chiral), giving 720/6 = 5! = 120.",
+  "requested_outputs": {
+    "arrangement_count": 120
+  },
+  "theorem_names": [
+    "IChO2026.T9.A9.patterns_count",
+    "IChO2026.T9.A9.rotation_action_isFree",
+    "IChO2026.T9.A9.orbit_card_eq_six",
+    "IChO2026.T9.A9.rotations_count",
+    "IChO2026.T9.A9.arrangement_count",
+    "IChO2026.T9.A9.answer_numeric"
+  ],
+  "final_theorem": "IChO2026.T9.A9.arrangement_count",
+  "final_theorem_statement": "Fintype.card Arrangement = 120, where Arrangement is the quotient of addressed patterns (ZMod 6 ≃ Fin 6) by the rotation action of Multiplicative (ZMod 6).",
+  "assumptions": [
+    "alpha-CD contains exactly six alpha-D-glucopyranoside units, hence six CH2OH modification sites arranged on a 6-site cyclic array (problem text, Q9 preamble).",
+    "hexadifferentiated means the six sites carry six distinct functional groups (context of Q9-8, compound S).",
+    "arrangements are counted up to rotation of the macrocycle only; alpha-CD is chiral (all-D-glucose), so reflection produces the enantiomer, a different molecule, and is not quotiented out.",
+    "standard chemistry knowledge used: cyclodextrin macrocyclic topology and chirality of D-glucose-derived cyclooligosaccharides."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "/home/jing/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lake env lean IChO2026Problems/problem_icho_2026_t9_a9.lean  (exit 0; #print axioms shows only propext, Classical.choice, Quot.sound for all four key theorems)"
+  ],
+  "verification_log": "verification.md"
+}

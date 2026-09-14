@@ -1,0 +1,94 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Calculate the mass of CH4 (tons) required annually to produce 660, 000 tons of ammonia, if the Navoiazot operates according to the Fig. 1.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t7_a2",
+  "image": "T7_page-1.png",
+  "images": [
+    "T7_page-1.png"
+  ],
+  "index": "icho_2026_t7_a2",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T7",
+  "part_id": "T7-A2",
+  "phase": "solve",
+  "points": 8.0,
+  "previous_parts": [
+    {
+      "dependency_policy": "derive_in_answer_blind_run_or_use_problem_stated_fallback",
+      "part_id": "T7-A1",
+      "question": "Tick the gases contained in M1 and M2; and tick the correct relationship between \ud835\udc65and \ud835\udc66.",
+      "source_id": "icho_2026_t7_a1"
+    }
+  ],
+  "printed_page": 1,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T7_page-1.png",
+      "printed_page": 1,
+      "sha256": "ee7fe1adff7ac3aae8701bf684981bd2b1e21b28f1c9e4b21dd9c38c3bdb79ad",
+      "source_page": 63
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 63
+    }
+  ],
+  "problem_id": "icho_2026_t7",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT7. Nitrogen Fixation 7% The Haber\u2013Bosch process is the principal industrial method for ammonia production. A simplified diagram of an ammonia synthesis plant is shown below. Fig. 1. M1 - Mixture 1, M2 - Mixture 2, Z \u2212CO2 scrubber, CLR - cooler In the following calculations, assume that all reactions in Fig. 1, except NH3 formation, are quantitative. 7.1 Tick the gases contained in M1 and M2; and tick the correct relationship between \ud835\udc65and \ud835\udc66. An ammonia production complex with a capacity of 660, 000 tons per year was commissioned at the Navoiazot plant in Uzbekistan, which operates with a 97.0% of overall yield.\n\n## Current subquestion T7-A2\nCalculate the mass of CH4 (tons) required annually to produce 660, 000 tons of ammonia, if the Navoiazot operates according to the Fig. 1.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "digits": 3,
+      "kind": "significant_figures",
+      "source": "uniform_blind_evaluation_default"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "annual_methane_mass",
+      "kind": "numeric",
+      "reporting_policy": {
+        "digits": 3,
+        "kind": "significant_figures",
+        "source": "uniform_blind_evaluation_default"
+      },
+      "source_requirement": "annual methane mass required",
+      "unit": "tons"
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T7. Nitrogen Fixation 7% The Haber\u2013Bosch process is the principal industrial method for ammonia production. A simplified diagram of an ammonia synthesis plant is shown below. Fig. 1. M1 - Mixture 1, M2 - Mixture 2, Z \u2212CO2 scrubber, CLR - cooler In the following calculations, assume that all reactions in Fig. 1, except NH3 formation, are quantitative. 7.1 Tick the gases contained in M1 and M2; and tick the correct relationship between \ud835\udc65and \ud835\udc66. An ammonia production complex with a capacity of 660, 000 tons per year was commissioned at the Navoiazot plant in Uzbekistan, which operates with a 97.0% of overall yield.",
+  "source_index": "T7-A2",
+  "source_page": 63,
+  "source_pdf": "theory_problem.pdf"
+}

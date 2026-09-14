@@ -1,0 +1,10 @@
+{
+  "icho_2026_t1_a6": {
+    "outcome": "failed",
+    "rerun": false,
+    "authority": "User: T1-A6 阻塞如果一直阻塞就判他失败",
+    "reason": "Terminal goal_blocked; independent semantic and proof reviews both failed. Not awaiting further solver work.",
+    "native_status_preserved": true,
+    "review_status_preserved": true
+  }
+}

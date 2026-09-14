@@ -1,0 +1,64 @@
+{
+  "at": 1789386219.590281,
+  "previous_status": {
+    "status": "review_error",
+    "target": "icho_2026_t1_a5",
+    "error": "Expected exactly one review JSON payload",
+    "at": 1789386147.238656
+  },
+  "original_review_sha256": "b389e162227eb0b3767199ba7b2e7520011e1b2cdc390aa85f66a7a0a083bdfb",
+  "recovered_payload": {
+    "target_id": "icho_2026_t1_a5",
+    "semantic_status": "conditional",
+    "proof_status": "conditional",
+    "reason": "The candidate identifies E = hexamethylbenzene C6(CH3)6, F = mellitic (benzenehexacarboxylic) acid C6(COOH)6, G = mellitic trianhydride C12O9. I independently verified the problem data against the authorized source images (Q1-3 page pixels: E 11.18% H with six-fold axis, G binary with 49.98% O and three-fold axis, scheme E\u2014KMnO4/HNO3\u2192F\u2014P2O5\u2192G) and my own arithmetic: 18.144/162.264 = 0.111818 \u2208 [0.11175, 0.11185) and 144/288.12 = 0.49977 \u2208 [0.49975, 0.49985); G = F \u2212 3 H2O is the unique H-free (hence 'binary') P2O5-dehydration product. These are the unique chemically sensible structures consistent with all printed data plus standard general laws (acidic KMnO4 side-chain oxidation; P2O5 anhydride formation). The Lean development defines explicit molecular graphs (every atom typed and placed, adjacency symmetric/irreflexive, decidable), proves order-6 automorphisms for E and F and an order-3 automorphism for G with genuine group-theoretic work, proves all atom counts by kernel computation, and derives the empirical ratios from the measured windows via honest integer squeezes. The file compiles with exit 0 and every audited theorem depends only on [propext, Classical.choice, Quot.sound]; no sorry/admit/native_decide/custom axioms exist. Two substantive caveats keep this short of unconditional pass: (1) the formula-uniqueness theorems empirical_formula_E/G are conditioned on extra hypotheses, most notably hmin bounding the molar mass by exactly the answer's own mass (\u2264 162.264 for E, \u2264 288.12 for G) \u2014 the minimal-mass convention encoded in a result-shaped hypothesis \u2014 plus declared scale hypotheses (a \u2264 488, x \u2264 1430); these are the conventional olympiad empirical\u2192molecular step and are openly disclosed, but they are extra model conditions not printed in the problem. (2) Uniqueness of the specific structures (rather than just the molecular formulae) and the E\u2192F\u2192G chemistry rest on labelled general laws (LAW1\u2013LAW3) and prose reasoning, not derivations inside Lean; additionally the MolGraph bond relation is unlabeled, so bond orders (aromatic vs C=O vs C\u2013O) are conveyed only by atom constructors and conventional reading, a partial deviation from the 'bond order explicit' semantic requirement. The final conjunction theorem structures_EFG is an unconditional, genuine consistency certificate that the three explicit structures satisfy every printed datum, but machine-level uniqueness is the conditioned part.",
+    "coverage": [
+      {
+        "output_id": "structure_e",
+        "status": "conditional",
+        "theorem": "IChO2026T1A5.structures_EFG (E clauses); supporting: hexamethylbenzene (MolGraph over EAtom/EBond), E_carbon_count, E_hydrogen_count, E_is_hydrocarbon, hexamethylbenzene_axis (rot6E of order 6), E_hydrogen_fraction, empirical_formula_E",
+        "evidence": "Explicit 30-atom graph: 6 ring C (ZMod 6 6-cycle), 6 methyl C, 18 methyl H; counts proved by decide (=12 C, =18 H); six-fold axis proved via an explicitly constructed order-6 permutation automorphism (no trusted computation); H mass fraction 18\u00b71.008/162.264 proved inside the printed 11.18% window, independently confirmed numerically. Connectivity matches hexamethylbenzene. Caveats: empirical_formula_E concludes (a,b)=(12,18) only under hypotheses 6\u2223a, 2\u2223b (valence parity LAW3, assumed), mass \u2264 mass(C12H18) (result-shaped minimal-mass convention), and a \u2264 488; uniqueness of hexamethylbenzene among C6-symmetric C12H18 structures is argued in prose via LAW1, not derived in Lean; bond orders are not represented (unlabeled adjacency)."
+      },
+      {
+        "output_id": "structure_f",
+        "status": "conditional",
+        "theorem": "IChO2026T1A5.structures_EFG (F clauses); supporting: melliticAcid (MolGraph over FAtom/FBond), F_carbon_count, F_hydrogen_count, F_oxygen_count, melliticAcid_axis (rot6F of order 6)",
+        "evidence": "Explicit 36-atom graph of benzenehexacarboxylic acid: 6 ring C, 6 carboxyl C, 6 carbonyl O, 6 hydroxyl O, 6 acidic H; counts =12/6/12 proved by decide; six-fold axis proved via constructed order-6 automorphism, substantiating the problem's 'highly symmetrical acid' clue; connectivity (ring\u2013C(=O)\u2013O\u2013H per position) matches mellitic acid. F's identity is derived from E only via the labelled general law LAW1 (hot acidic KMnO4 oxidizes every benzylic methyl to COOH) plus the coal-deposit/mellite general-knowledge clue \u2014 both disclosed in prose, not internalized as proved Lean premises; no mass data exist for F in the problem, so the consistency certificate plus the E\u2192F law is the full evidence. Bond orders implicit (carbonyl vs hydroxyl O distinguished by atom constructor, not by a bond-order field)."
+      },
+      {
+        "output_id": "structure_g",
+        "status": "conditional",
+        "theorem": "IChO2026T1A5.structures_EFG (G clauses); supporting: melliticTrianhydride (MolGraph over GAtom/GBond), G_carbon_count, G_oxygen_count, G_hydrogen_count, G_is_binary, melliticTrianhydride_axis (rot3G of order 3), G_oxygen_fraction, empirical_formula_G",
+        "evidence": "Explicit 27-atom graph: 6 ring C, 6 carboxyl C, 6 carbonyl O, 3 bridging anhydride O joining adjacent carboxyl pairs (2k, 2k+1) \u2014 i.e. three fused five-membered anhydride rings, exactly mellitic trianhydride; counts =12 C/9 O/0 H proved; BinaryCO proved; three-fold axis proved via constructed order-3 automorphism with a checked anhydride-anchor identity (posOfAnhydride_add); O fraction 144/288.12 = 0.49977 proved in the printed 49.98% window, independently confirmed. Caveats: empirical_formula_G concludes (x,y)=(12,9) only under 3\u2223x, mass \u2264 mass(C12O9) (result-shaped minimal-mass hypothesis), and x \u2264 1430; the exclusion of alternative anhydride pairing patterns and the F\u2192G dehydration stoichiometry (LAW2, \u22123 H2O forced by 'binary') are prose-level chemistry arguments, not Lean derivations; bond orders unlabeled."
+      }
+    ],
+    "unsupported_assumptions": [
+      "empirical_formula_E and empirical_formula_G carry the hypothesis hmin bounding the candidate's molar mass by exactly the answer's own mass (\u2264 12\u00b712.01+18\u00b71.008 and \u2264 12\u00b712.01+9\u00b716): the minimal-mass 'empirical\u2192molecular formula' convention encoded as a result-shaped hypothesis rather than derived from printed data",
+      "Scale hypotheses a \u2264 488 (E) and x \u2264 1430 (G) \u2014 disclosed and thousands of times looser than needed, but extra model conditions not printed in the problem",
+      "2\u2223b (valence parity of a closed-shell hydrocarbon, LAW3) is assumed as a hypothesis of empirical_formula_E rather than proved from graph/valence structure",
+      "LAW1 (acidic KMnO4 oxidizes benzylic side chains to COOH) and LAW2 (P2O5 closes adjacent COOH pairs to anhydrides, exactly 3 H2O lost) are asserted general laws justifying the E\u2192F\u2192G structural chain and its uniqueness only in prose; no Lean theorem derives F from E or G from F",
+      "The qualitative clue 'highly symmetrical acid F' is interpreted as a six-fold axis and the coal-deposit stone as aluminium mellitate (mellite/honeystone) using general textbook knowledge \u2014 reasonable and disclosed, but interpretive",
+      "Atomic masses H 1.008 / C 12.01 / O 16.00 are cited to the booklet's periodic-table page; I could extract no text layer from the provided PDF to independently confirm the printed values, though they are the standard IChO table values and the windows close identically",
+      "MolGraph bonds carry no bond-order label, so aromatic/five-membered-ring bond orders and C=O vs C\u2013O are represented only by atom constructors and conventional naming, not explicitly as the semantic requirements request"
+    ],
+    "source_checks": [
+      "Inspected T1_page-3.png (Q1-3 English Official) directly from the authorized seed: it prints verbatim 'E contains 11.18% of hydrogen by mass and has a six-fold symmetry axis', 'binary compound G, which contains 49.98% of oxygen by mass and has a three-fold symmetry axis', the scheme E \u2014KMnO4/HNO3\u2192 F \u2014P2O5\u2192 G, the coal-deposit sentence, and question 1.5 'Draw the structures of E, F, and G' (7.0 pt) \u2014 matches TASK.json and the candidate's transcription, including the media artifact in the extracted text where the author inadvertently left the word missing near 'by mass' (the printed page reads correctly)",
+      "Inspected T1_page-2.png (Q1-2): the plant/compound table and subquestion 1.1 match TASK.json's shared context; no graphical data needed for 1.5",
+      "Inspected T1_page-4.png (Q1-4): contains subquestion 1.6 with the thermogravimetric data (10.00 g \u2192 5.75 g at 200 \u00b0C \u2192 1.50 g H at 400 \u00b0C); the candidate's use of 1.6 data as a problem-stated fallback is faithful to the printed numbers",
+      "SHA-256 of T1_page-3.png (fbdc901f\u2026) and theory_problem.pdf (af51373f\u2026) match TASK.json's problem_assets and isolation_manifest.json entries",
+      "Independent numerical check with H 1.008, C 12.01, O 16.00: H fraction of C12H18 = 0.1118178 \u2208 [0.11175, 0.11185); O fraction of C12O9 = 0.4997723 \u2208 [0.49975, 0.49985); the empirical lines 2b=3a and 4y=3x reproduce the same fractions; molar mass of F (C12H6O12) = 342.168 and F \u2212 3H2O = 288.12, consistent with the candidate's claims",
+      "No official solutions, rubrics, or answer repositories were consulted; only the authorized problem images, the problem PDF, and ordinary reference arithmetic were used"
+    ],
+    "proof_checks": [
+      "Compiled IChO2026Problems/problem_icho_2026_t1_a5.lean myself (lake env lean, toolchain leanprover/lean4:v4.31.0, after lake build IChO2026Chem): exit 0, zero errors; the pre-existing workspace lacks the controller-generated IChO2026Problems/All.lean, which is unrelated to the target file",
+      "Axiom audit from my own compile: structures_EFG, empirical_formula_E, empirical_formula_G, empirical_ratio_E, empirical_ratio_G, hexamethylbenzene_axis, melliticAcid_axis, melliticTrianhydride_axis, E_hydrogen_fraction, G_oxygen_fraction each depend only on [propext, Classical.choice, Quot.sound] \u2014 no sorryAx, no Lean.ofReduceBool, no custom axioms",
+      "grep over all workspace Lean sources: no sorry/admit/native_decide/unsafe/implemented_by/extern/'^axiom' anywhere (the two 'axiom' matches are the doc comment and the #print axioms directives)",
+      "Read the full 1442-line proof file: MolGraph/automorphism framework is substantive (aut as a Subgroup of the permutation group with correct closure proofs; orbit\u2013stabilizer derived, not assumed); rot6E/rot6F/rot3G automorphisms are explicitly constructed with order proofs via induction and ZMod arithmetic \u2014 genuine order-6 and order-3 rotations, not vacuous; atom-count theorems are kernel-checked decide over explicit Finsets; the number-type squeezes (E_scaled/G_scaled/E_dev_zero/G_dev_zero) are correct cross-multiplications over \u211a/\u2124 discharged by nlinarith/omega with kernel-checked witnesses",
+      "Verified the squeeze constants independently: E window cross-multiplied gives 2b=3a for a \u2264 488 (next off-ratio hit C489H733) and G window gives 4y=3x for x \u2264 1430 \u2014 the disclosed bounds are real, honest constraints of the data, and the theorems state them explicitly in their types",
+      "Final theorem structures_EFG expresses the three explicit structures plus every problem datum (counts, hydrocarbon/binary character, both axes, both measured fractions) as a proved conjunction assembled from proved lemmas \u2014 no tautological restatement and no precomputed answer table; the conditioned parts are isolated in empirical_formula_E/G as documented above"
+    ]
+  },
+  "model_rerun": false,
+  "verdict_changed": false,
+  "feedback_to_solver": false
+}

@@ -1,0 +1,78 @@
+{
+  "target": "icho_2026_t8_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789367307.299273,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "6cb0225c55d87d822f132795399d88f3a817265a7b7f96b089273c7b939ed2b1",
+    "IChO2026Problems/problem_icho_2026_t8_a2.lean": "965c53f35df319de64e57f681d699097e7c31c3c0c0f4d2b36bafc556ac8466f",
+    "answer.md": "e6a10fa4029f73d7daf9902a3147e7c7fa6111132665bf7ef69d947a72af6afe",
+    "verification.md": "32b238d5d7c730e7cea79839aa3a203c4ce7902fec2fb4c84f3073d0a8b2405a",
+    "result.json": "7015464795c613a8431b13d558f81481d3e6764bb0ce7e168ef4ec0255277669"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a2",
+    "status": "completed",
+    "answer_summary": "Species 3 = triethanolamine radical cation [N(CH2CH2OH)3]+ (one unpaired electron and +1 charge on N, C6H15NO3); species 4 = neutral alpha-amino radical (HOCH2CH2)2N-CH(.)-CH2OH (alpha-C-H proton removed, unpaired electron on the alpha-carbon, C6H14NO3); species 5 = iminium cation [(HOCH2CH2)2N=CH-CH2OH]+ (second oxidation, N=C double bond, closed shell, C6H14NO3); hydrolysis of 5 (+H2O, -H+) gives species 6 = diethanolamine HN(CH2CH2OH)2 (C4H11NO2) and species 7 = glycolaldehyde HOCH2-CHO (C2H4O2), the aldehyde that gives the positive [Ag(NH3)2]OH silver-mirror test. Net: 2 + H2O -> 6 + 7 + 2H+ + 2e-, supplying the two electrons of the 8.1 half-reaction CO2 + 2H+ + 2e- -> CO + H2O.",
+    "theorem_names": [
+      "teoa_atoms",
+      "species3_atoms",
+      "species4_atoms",
+      "species5_atoms",
+      "species6_atoms",
+      "species7_atoms",
+      "species2_closed",
+      "species3_charge_radical",
+      "species4_charge_radical",
+      "species5_charge_radical",
+      "species6_species7_closed",
+      "tollens_implies_aldehyde",
+      "step1_atoms_balanced",
+      "step1_charge_balanced",
+      "step2_atoms_balanced",
+      "step2_charge_balanced",
+      "step3_atoms_balanced",
+      "step3_charge_balanced",
+      "step4_atoms_balanced",
+      "step4_charge_balanced",
+      "radical_fate_through_scheme",
+      "overall_two_electron_donation"
+    ],
+    "assumptions": [
+      "Compound 2 is triethanolamine N(CH2CH2OH)3 as drawn on T8_page-1.png (tertiary amine, three 2-hydroxyethyl arms).",
+      "Trusted general chemistry laws (allowed by TASK.json candidate_domain_policy): one-electron oxidation of a tertiary amine gives the amine radical cation; amine radical cations are strong alpha-C-H acids and deprotonate alpha to N to give alpha-amino radicals; a second one-electron oxidation gives an iminium ion; iminium ions hydrolyse to a secondary amine plus an aldehyde; the [Ag(NH3)2]OH silver-mirror (Tollens) test is selective for the aldehyde -CHO group.",
+      "Alpha-C-H (rather than O-H) deprotonation of species 3 is forced by the downstream constraints in the problem scheme: only the alpha-amino radical can be oxidised to a species that hydrolyses to a secondary amine plus a Tollens-positive two-carbon aldehyde while conserving all atoms.",
+      "The 8.1 half-equation (previous part, derived inline from the problem): CO2 + 2H+ + 2e- -> CO + H2O, i.e. the conjugate oxidation must deliver exactly two electrons; this is satisfied by the derived structures (theorem overall_two_electron_donation).",
+      "No stereochemistry is requested or possible (all species are acyclic with no stereocentres); the blank student answer sheet for 8.2 asks only for drawn structures in boxes labeled 3-7.",
+      "Electrons are represented in the standard electron-balance convention (H atom = proton + electron) so that atom- and charge-balance theorems can treat bare electrons uniformly."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t8_a2.lean",
+        "result": "exit code 0; no errors, no warnings; no sorry/admit anywhere in the file"
+      },
+      {
+        "command": "lake env lean axcheck.lean (temporary file: import IChO2026Problems.problem_icho_2026_t8_a2 plus #print axioms for all 22 final theorems; removed after use)",
+        "result": "exit code 0; species-atom-inventory and per-step atom-balance theorems depend on no axioms at all; the charge/radical, Tollens and net-reaction theorems depend on [propext] only; no sorryAx, no custom or unchecked axioms"
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

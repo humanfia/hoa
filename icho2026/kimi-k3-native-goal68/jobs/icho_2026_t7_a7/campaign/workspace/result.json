@@ -1,0 +1,26 @@
+{
+  "target_id": "icho_2026_t7_a7",
+  "status": "completed",
+  "answer_summary": "7 = LaN; 8 = Ca3N2; 9 = Si3N4; 10 = La5Ca9O2[SiNO3][Si12N24] (Q=La, alpha=5, R=Ca, beta=9); S = O2- (monoatomic oxide); T = [SiNO3]5- (tetrahedral SiN1O3 anion). Quantitative stoichiometry 10 LaN + 6 Ca3N2 + 7 Si3N4 + 5 SiO2 -> 2 units of 10, consistent with printed w(N) and mass ratio within half-quantum rounding intervals.",
+  "theorem_names": [
+    "IChO2026T7A7.wN_consistency",
+    "IChO2026T7A7.massRatio_consistency",
+    "IChO2026T7A7.atom_balance",
+    "IChO2026T7A7.charge_balance",
+    "IChO2026T7A7.anionS_inventory",
+    "IChO2026T7A7.anionT_inventory",
+    "IChO2026T7A7.icho_2026_t7_a7"
+  ],
+  "assumptions": [
+    "Printed IChO 2026 periodic-table atomic masses are exact as printed: N 14.007, La 138.9055, Ca 40.078, Si 28.085, O 15.999.",
+    "Each printed measured decimal (w(N) values, mass-ratio entries) is interpreted via the half-quantum interval of its last displayed digit (+-0.005 % and +-0.005 respectively), per the project measurement policy.",
+    "The problem-stated intact structural unit [Si12N24] per minimal formula unit of 10 is taken as a problem input."
+  ],
+  "source_gaps": [
+    "The problem statement does not itself prove that the [Si12N24] skeleton is preserved during formation of 10; this structural premise is asserted by the problem text ('the minimal possible formula, describing the structure ... is Q_aR_bS2T[Si12N24]') and is used only as stated. No additional unsupported scientific premise was required: atom conservation, charge neutrality, monoatomicity of S, tetrahedrality of T, and the printed mass numbers then uniquely force S = O2- and T = [SiNO3]5-."
+  ],
+  "verification_commands": [
+    "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t7_a7/campaign/workspace && lake env lean IChO2026Problems/problem_icho_2026_t7_a7.lean",
+    "#print axioms output: 'IChO2026T7A7.icho_2026_t7_a7' depends on axioms: [propext, Classical.choice, Quot.sound] (standard logical axioms only; no sorryAx, no custom axioms)"
+  ]
+}

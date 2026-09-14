@@ -1,0 +1,57 @@
+{
+  "target": "icho_2026_t4_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789360519.2428827,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t4_a4.lean": "9b134fc28fe75be20c5ff78781759e0fa0ec946a40b7a91205524917ad850fae",
+    "answer.md": "91464672f02e53860ef478c55646a2fdaea7e482922e2341d4db268603f9e921",
+    "verification.md": "4afdc0c8b069a59544ddca23e77ddc4b45ad002a10df0e4d6ce5096c15b3f207",
+    "result.json": "baac85bacfe98ff61d131a51f467f7f68abc4ec5cf513a9ec0e5247649f2e6f1"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a4",
+    "status": "completed",
+    "answer_summary": "Energy released per 235U fission event: \u0394E = 233 \u00d7 8.45 \u2212 235 \u00d7 7.59 = 1968.85 \u2212 1783.65 = 185.2 MeV, reported as 185 MeV (three significant figures). The reaction is the 4.3 fission equation 235U + n \u2192 93Rb + 140Cs + 3n (Rb and Cs are both group-1 elements; 93+140+3 = 236, 37+55 = 92), derived from the printed shared context (three emitted neutrons), the printed yield-curve peaks at A \u2248 93 and A \u2248 140, mass/charge conservation, and the same-group condition.",
+    "theorem_names": [
+      "IChO2026.T4.A4.mass_balance",
+      "IChO2026.T4.A4.charge_balance",
+      "IChO2026.T4.A4.nucleons_fission_products_value",
+      "IChO2026.T4.A4.fissionEnergy_eq",
+      "IChO2026.T4.A4.fissionEnergy_value",
+      "IChO2026.T4.A4.products_binding_energy",
+      "IChO2026.T4.A4.uranium_binding_energy",
+      "IChO2026.T4.A4.fission_releases_energy",
+      "IChO2026.T4.A4.submission_valid",
+      "IChO2026.T4.A4.t4_a4_answer"
+    ],
+    "assumptions": [
+      "'this reaction' in 4.4 refers to the 4.3 fission equation 235U + n \u2192 93Rb + 140Cs + 3n, derived inline from problem-only inputs (three emitted neutrons per the shared context, yield-curve peaks at A \u2248 93 and 140, same-group condition, mass and charge conservation). The numeric result depends only on the conserved nucleon counts (235 bound initially, 233 bound finally), not on the specific fragment identities.",
+      "The absorbed neutron and the three emitted neutrons all carry zero binding energy, per the printed instruction to neglect the binding energy of free neutrons and the fact that the absorbed neutron is free.",
+      "The printed binding energies BE(235U) = 7.59 MeV/nucleon and BE(fis.) = 8.45 MeV/nucleon are treated as exact stipulated constants, per the measurement policy for stipulated constants; no tolerance intervals are propagated.",
+      "Final display uses the project-wide answer-blind default of three significant figures (185 MeV at quantum 1 MeV); the raw value 185.2 MeV is exact and no intermediate rounding is performed."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem  \u2192 Build completed successfully (8561 jobs)",
+      "lake env lean IChO2026Problems/problem_icho_2026_t4_a4.lean  \u2192 exit 0, no errors/warnings; output: 'IChO2026.T4.A4.t4_a4_answer' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

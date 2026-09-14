@@ -1,0 +1,46 @@
+{
+  "target_id": "icho_2026_t7_a2",
+  "status": "completed",
+  "answer_summary": "Annual methane requirement for 660 000 t NH3 at 97.0% overall yield, operating per Fig. 1 (H2-exact two-stage SMR/ATR network): net stoichiometry 7 CH4 + 7 H2O + 8 N2 -> 16 NH3 + 7 CO2, so n(CH4) = (7/16)·n(NH3)/0.970. With printed-table molar masses M(CH4)=16.042, M(NH3)=17.034 g/mol (C 12.01, N 14.01, H 1.008, PDF page 5 G1-5), m(CH4) = 16.042·(7/16)·(660000/17.034)/0.970 = 77202125000/275383 ≈ 280 344.56 t/yr, reporting (3 s.f., quantum 1000 t, half away from zero) as 2.80×10^5 t ≈ 280 000 tons per year. Raw value is required by the task and is proved exactly.",
+  "reported_answer": {
+    "raw_value_tons": "77202125000/275383 ≈ 280344.556 t",
+    "reported_tons": 280000,
+    "reporting": "3 significant figures, quantum 1000 t, half away from zero",
+    "display": "2.80×10^5 tons CH4 per year"
+  },
+  "theorem_names": [
+    "IChO2026T7A2.M_CH4_value",
+    "IChO2026T7A2.M_NH3_value",
+    "IChO2026T7A2.excess_eq_of_generation_air",
+    "IChO2026T7A2.tile_methane_N2",
+    "IChO2026T7A2.tile_N2_methane",
+    "IChO2026T7A2.tile_H2_methane",
+    "IChO2026T7A2.tile_NH3_theoretical",
+    "IChO2026T7A2.methane_ratio_H2_exact",
+    "IChO2026T7A2.feed_split_H2_exact",
+    "IChO2026T7A2.nh3_eq_yield",
+    "IChO2026T7A2.methane_mol_chain",
+    "IChO2026T7A2.methaneMassTons_raw_value",
+    "IChO2026T7A2.methaneMassTons_reports_280e3",
+    "IChO2026T7A2.annual_methane_mass_chain"
+  ],
+  "assumptions": [
+    "Printed inputs only: capacity 660000 t NH3/yr, overall yield 0.970, Fig. 1 reaction network (SMR CH4+H2O→CO+3H2, ATR 2CH4+O2→2CO+4H2 with air 4N2+1O2, shift CO+H2O→CO2+H2, synthesis N2+3H2⇌2NH3 with N2/H2 recycle), and 'all reactions in Fig. 1, except NH3 formation, are quantitative' (T7 page, source_page 63).",
+    "Relative atomic masses from the periodic table printed on PDF page 5 (G1-5): C 12.01, N 14.01, H 1.008, giving M(CH4)=16.042 and M(NH3)=17.034 (proved as M_CH4_value, M_NH3_value).",
+    "Trusted general law: element balance of N2+3H2→2NH3 (one N2 per two NH3) applied at overall yield η; encoded as HaberStoichiometry.",
+    "Interpretation: 'operates according to Fig. 1' includes H2-exact operation (excess = h2Gen - 3·n2 = 0, no persistent H2 reserve). Fig. 1 does not print the feed split x:y or any uplift factor, so with non-zero excess the methane demand is underdetermined; the H2-exact operation is the unique read consistent with all printed flows at their stoichiometric destinations. This is the PlantState.excess hypothesis (hex) in the Lean theorems.",
+    "Ton units: 1 t = 10^6 g, so tons/ (g/mol) directly yields kmol; the 10^3 kg↔t factor cancels, proved by the exact rational value in methaneMassTons_raw_value."
+  ],
+  "source_gaps": [
+    "Fig. 1 does not numerically state the feed split x:y between the two reforming units; the ratio f:e = 3:4 is derived from the H2-exact reading (excess = 0), which is an interpretation assumption flagged above rather than a printed datum.",
+    "The periodic table appears only as an image on PDF page 5 (G1-5); the values C 12.01, N 14.01, H 1.008 were transcribed from that image into the Lean file as printed inputs.",
+    "No prerequisite result from T7-A1 is needed for 7.2; the answer follows from the Fig. 1 stoichiometry plus printed capacity/yield."
+  ],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t7_a2.lean  (exit 0, no errors or warnings)",
+    "lake build IChO2026Problems.problem_icho_2026_t7_a2  ('Build completed successfully (8561 jobs)')",
+    "lake env lean /tmp/axiom_check_t7a2.lean  (all six final theorems depend only on [propext, Classical.choice, Quot.sound])"
+  ],
+  "no_external_solutions": true,
+  "notes": "Derived independently from the problem sheet only; no official solutions, marking schemes, or answer repositories consulted. Integer-mass shortcut M=16/17 would give 280169.8 t, the same rounded cell, so the 3 s.f. answer is robust to the molar-mass convention."
+}

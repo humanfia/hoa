@@ -1,0 +1,62 @@
+{
+  "target": "icho_2026_t2_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789359648.1774938,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "da783a43a135ea34a53f2405c6c8495f2bdfc8a5c8edb67457fa5f34ff2273cc",
+    "IChO2026Problems/problem_icho_2026_t2_a4.lean": "747138ba1224364f3d5f2a5daa5ab783e182bf842c06f00265f286f3a9d6061e",
+    "answer.md": "87792d610292ebd517aaf146ecd9eaee1e80cb88911a6b812ae4bda052fd5947",
+    "verification.md": "3faf31db9f59bb96c480f39f80a52eb0aaa014b336d892ec6806611c228fec6a",
+    "result.json": "e8be1d2cc65801304291f95d08df0956f669a4f0b04319a131baeed909e476b5"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a4",
+    "status": "completed",
+    "answer_summary": "Counterclockwise direction in the [HBrO2] (vertical) vs [Br-] (horizontal) phase portrait: along the bottom edge at [HBrO2] = [HBrO2]B (Process B), [Br-] decreases from [Br-]max = 7.0e-4 M to [Br-]critical (right to left; Br- is consumed by steps (4) and (5), as also stated verbatim in the problem text below 2.4); at [Br-]critical the B->A switch (rate(1) > rate(4)) jumps [HBrO2] up from [HBrO2]B to [HBrO2]A (left edge, bottom to top); along the top edge at [HBrO2] = [HBrO2]A (Process A), [Br-] increases back to [Br-]max (left to right; the continuous Process C step (7) regenerates Br- while Process B is off); at [Br-]max the A->B switch (rate(4) > rate(1)) drops [HBrO2] from [HBrO2]A to [HBrO2]B (right edge, top to bottom). This is the bottom-left of the four tick-box diagrams on blank answer sheet A2-3.",
+    "theorem_names": [
+      "IChO2026T2A4.icho_2026_t2_a4_answer",
+      "IChO2026T2A4.icho_2026_t2_a4_phase_direction_checks",
+      "IChO2026T2A4.icho_2026_t2_a4_unique_direction",
+      "IChO2026T2A4.icho_2026_t2_a4_supports_choice"
+    ],
+    "assumptions": [
+      "Problem-stated constraints encoded in CompatibleWithProblem: (i) [Br-] decreases during Process B (printed verbatim on Q2-3; Br- consumed by steps (4),(5)); (ii) [HBrO2] jumps upward at the B->A switch at [Br-]critical (rate(1) > rate(4), autocatalytic Process A); (iii) [Br-] increases during Process A because the continuous Process C step (7) produces Br- while Process B is off; (iv) [HBrO2] falls at the A->B switch at [Br-]max (rate(4) > rate(1)).",
+      "PortraitData records the axis ordering printed in the Q2-3 sketch: [Br-]critical < [Br-]max and [HBrO2]B < [HBrO2]A (consistent with 2.3, [Br-]critical = k1[BrO3-]/k4 = 3e-7 M, and the printed [Br-]max = 7.0e-4 M).",
+      "Directions are qualitative (ChangeSign dec/inr per edge); the classification requested is exact symbolic and requires no numerical evaluation.",
+      "Standard Lean logical axioms may appear in auxiliary geometric lemmas (propext, Classical.choice, Quot.sound); the four final classification theorems depend on no axioms at all."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t2_a4.lean",
+        "result": "exit 0; #print axioms: the four final theorems icho_2026_t2_a4_answer, icho_2026_t2_a4_phase_direction_checks, icho_2026_t2_a4_unique_direction, icho_2026_t2_a4_supports_choice each 'does not depend on any axioms'; auxiliary counterclockwise_traversal depends only on [propext, Classical.choice, Quot.sound]"
+      },
+      {
+        "command": "lake build",
+        "result": "Build completed successfully (8581 jobs); only repo-wide style-linter warnings, no errors"
+      },
+      {
+        "command": "grep -nE 'sorry|admit|axiom |native_decide' IChO2026Problems/problem_icho_2026_t2_a4.lean",
+        "result": "no matches; no proof shortcuts or custom axioms"
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

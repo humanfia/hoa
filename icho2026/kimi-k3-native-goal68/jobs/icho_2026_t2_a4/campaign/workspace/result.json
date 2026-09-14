@@ -1,0 +1,32 @@
+{
+  "target_id": "icho_2026_t2_a4",
+  "status": "completed",
+  "answer_summary": "Counterclockwise direction in the [HBrO2] (vertical) vs [Br-] (horizontal) phase portrait: along the bottom edge at [HBrO2] = [HBrO2]B (Process B), [Br-] decreases from [Br-]max = 7.0e-4 M to [Br-]critical (right to left; Br- is consumed by steps (4) and (5), as also stated verbatim in the problem text below 2.4); at [Br-]critical the B->A switch (rate(1) > rate(4)) jumps [HBrO2] up from [HBrO2]B to [HBrO2]A (left edge, bottom to top); along the top edge at [HBrO2] = [HBrO2]A (Process A), [Br-] increases back to [Br-]max (left to right; the continuous Process C step (7) regenerates Br- while Process B is off); at [Br-]max the A->B switch (rate(4) > rate(1)) drops [HBrO2] from [HBrO2]A to [HBrO2]B (right edge, top to bottom). This is the bottom-left of the four tick-box diagrams on blank answer sheet A2-3.",
+  "theorem_names": [
+    "IChO2026T2A4.icho_2026_t2_a4_answer",
+    "IChO2026T2A4.icho_2026_t2_a4_phase_direction_checks",
+    "IChO2026T2A4.icho_2026_t2_a4_unique_direction",
+    "IChO2026T2A4.icho_2026_t2_a4_supports_choice"
+  ],
+  "assumptions": [
+    "Problem-stated constraints encoded in CompatibleWithProblem: (i) [Br-] decreases during Process B (printed verbatim on Q2-3; Br- consumed by steps (4),(5)); (ii) [HBrO2] jumps upward at the B->A switch at [Br-]critical (rate(1) > rate(4), autocatalytic Process A); (iii) [Br-] increases during Process A because the continuous Process C step (7) produces Br- while Process B is off; (iv) [HBrO2] falls at the A->B switch at [Br-]max (rate(4) > rate(1)).",
+    "PortraitData records the axis ordering printed in the Q2-3 sketch: [Br-]critical < [Br-]max and [HBrO2]B < [HBrO2]A (consistent with 2.3, [Br-]critical = k1[BrO3-]/k4 = 3e-7 M, and the printed [Br-]max = 7.0e-4 M).",
+    "Directions are qualitative (ChangeSign dec/inr per edge); the classification requested is exact symbolic and requires no numerical evaluation.",
+    "Standard Lean logical axioms may appear in auxiliary geometric lemmas (propext, Classical.choice, Quot.sound); the four final classification theorems depend on no axioms at all."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t2_a4.lean",
+      "result": "exit 0; #print axioms: the four final theorems icho_2026_t2_a4_answer, icho_2026_t2_a4_phase_direction_checks, icho_2026_t2_a4_unique_direction, icho_2026_t2_a4_supports_choice each 'does not depend on any axioms'; auxiliary counterclockwise_traversal depends only on [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "command": "lake build",
+      "result": "Build completed successfully (8581 jobs); only repo-wide style-linter warnings, no errors"
+    },
+    {
+      "command": "grep -nE 'sorry|admit|axiom |native_decide' IChO2026Problems/problem_icho_2026_t2_a4.lean",
+      "result": "no matches; no proof shortcuts or custom axioms"
+    }
+  ]
+}

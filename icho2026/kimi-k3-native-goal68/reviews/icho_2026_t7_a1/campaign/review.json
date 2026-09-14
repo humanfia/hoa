@@ -1,0 +1,46 @@
+All checks are complete. The compile is clean with only standard axioms, my direct pixel inspection of Fig. 1 verifies the printed stoichiometries and labels, I independently carried through the element balances (a:b:c = 3:4:8, x:y = 7:3), and I confirmed no T7 answer-sheet page or printed list of candidate x–y relations exists anywhere in the authorized sources.
+
+```json
+{
+  "target_id": "icho_2026_t7_a1",
+  "semantic_status": "conditional",
+  "proof_status": "conditional",
+  "reason": "M1 = {N2, CO, H2} is correctly derived from the pixels of Fig.1 (air feed 4N2+1O2 into reactor II; shift reactor and scrubber Z downstream of M1; quantitative reactors consume CH4), and M2 = {N2, H2, NH3} is forced by the figure (M2 label sits on the reactor->CLR line; only NH3 exits CLR; N2,H2 recycle is printed; NH3 formation is the one stipulated non-quantitative step). Both match the submitted sets. For x-y, I independently reproduced the balance derivation b = c/2 (2CH4:O2 with air 4N2+1O2), 4a+3b = 3c (scrubber output printed N2,H2 feeding N2+3H2), giving a:b:c = 3:4:8 and, under the reading x = total CH4 = a+b, y = steam = a (1:1 reforming), x:y = 7:3, so x > y. However the figure prints only one composite arrow xCH4+yH2O and no printed list of tickable relations exists on any authorized page (I inspected T7 pages 1-4 and the full question inventory), so the identifications x=a+b and y=a are an additional reading assumption, not unconditionally pixel-forced; the candidate disclosed this as a source gap and declined the underivable identity 2x=3y, which is honest and correct. The xy answer is therefore a correctly derived but additionally conditioned result, so conditional rather than passed. In Lean, composition_M1/M2 and completeness are definitional (rfl/simp over a declared Finset) - they express the requested outputs and rule out other species, but assert rather than derive the chemistry; xy_relation_from_balances proves x>y (and x=7c/8, y=3c/8) only under explicit hypotheses including the reading identifications hx, hy plus balance premises, so the substantive proved theorem is premise-conditioned. Compile is clean (exit 0, verified by my own rebuild) with only standard axioms [propext, Classical.choice, Quot.sound], no sorry/admit/native_decide/custom axioms.",
+  "coverage": [
+    {
+      "output_id": "gases_m1",
+      "status": "passed",
+      "theorem": "IChO2026T7A1.composition_M1, IChO2026T7A1.M1_complete",
+      "evidence": "M1 defined as {N2, CO, H2}, completeness theorem g in M1 iff g = N2 or CO or H2 over the 7-constructor Gas universe (excludes CO2, NH3, CH4, H2O). Verified against T7_page-1.png: M1 is the reactor-II effluent; N2 from the printed 4N2+1O2 air feed is inert; CO and H2 are products of printed reactions I and II; CH4 is consumed by the stipulated quantitative reactors; the H2O-consuming shift reactor and CO2 scrubber Z lie downstream of M1. Set is definitionally asserted in Lean but semantically verified directly from the figure."
+    },
+    {
+      "output_id": "gases_m2",
+      "status": "passed",
+      "theorem": "IChO2026T7A1.composition_M2, IChO2026T7A1.M2_complete",
+      "evidence": "M2 defined as {N2, H2, NH3} with a completeness biconditional. Pixel check: on both T7_page-1.png (Fig.1) and T7_page-2.png (Fig.2) the M2 label is on the line from the ammonia reactor to CLR; only NH3 exits CLR; the N2,H2 recycle stream is printed; NH3 formation is the stipulated non-quantitative (equilibrium) step, so unreacted N2 and H2 must be present with NH3 before the cooler. Matches the submitted answer and problem semantics."
+    },
+    {
+      "output_id": "xy_relation",
+      "status": "conditional",
+      "theorem": "IChO2026T7A1.xy_relation_from_balances, IChO2026T7A1.xy_relation",
+      "evidence": "Proves from hb: b=c/2 (2CH4+O2 stoichiometry with printed 4N2+1O2 air), hH2: 4a+3b=3c (H2 inventory 3a+2b plus shifted CO (a+b) feeding N2+3H2, i.e. scrubber output printed N2,H2), hx: x=a+b, hy: y=a that x>y with x=7c/8, y=3c/8 (x:y=7:3); I independently verified the algebra. But no list of candidate x-y relations is printed on any authorized page (checked T7 pages 1-4 images and the full questions_only.jsonl inventory; the PDF contains no T7 answer sheet), and the identifications x=total CH4, y=steam for the reformed part are an added reading of the single composite feed arrow xCH4+yH2O, not unconditionally pixel-forced. The candidate disclosed this source gap and correctly refused to assert the underivable identity 2x=3y. Result is correct and proved but additionally conditioned -> conditional."
+    }
+  ],
+  "unsupported_assumptions": [
+    "Reading the single printed feed label xCH4+yH2O as x = total CH4 (reformed plus partial-oxidation methane) and y = steam for the reformed part only (1:1 with reformed CH4) is an additional model condition not uniquely fixed by the figure pixels; the xy_relation theorems hold only under these identifications (declared as hypotheses hx, hy, so the conditioning is disclosed, not hidden).",
+    "Implicit stoichiometric air matching b = c/2 (no excess O2 in M1) and exact-loop H2 stoichiometry 4a+3b = 3c assume the plant operates at design stoichiometry; this is standard for the problem but is a problem-framing convention rather than a printed numeric datum. The disclosed source gap is that no printed list of candidate x-y relations or T7 answer sheet exists in the authorized materials."
+  ],
+  "source_checks": [
+    "Inspected T7_page-1.png (sha256 ee7fe1ad... matches isolation_manifest) directly: Fig.1 prints reactions CH4+H2O->CO+3H2, 2CH4+O2->2CO+4H2, CO+H2O->CO2+H2 with one H2O each side as relevant, feeds xCH4+yH2O and 4N2+1O2, inter-reactor stream CH4,CO,H2, M1 outlet below reactor II, shift side streams H2O in/out, scrubber Z with inlet N2,CO2,H2 and outlet N2,H2, ammonia reactor N2+3H2<->2NH3, M2 on the line to CLR, NH3 product and N2,H2 recycle; caption M1-Mixture1, M2-Mixture2, Z-CO2 scrubber, CLR-cooler; stipulation that all reactions except NH3 formation are quantitative.",
+    "Inspected T7_page-2/3/4: Q7.3-7.7 contain no answer boxes and no candidate list of x-y relations for 7.1; searched the full questions_only.jsonl inventory - no alternative/tick data anywhere; provided theory_problem.pdf contains no separate T7 answer-sheet page.",
+    "Independently reproduced the element balances: b=c/2, 4a+3b=3c -> a:b:c = 3:4:8, hence x:y = 7:3 > 1 under the composite-feed reading; confirmed 2x=3y is not derivable from the printed inputs (2x=7c/4 vs 3y=9c/8), so reporting x>y with the gap disclosed is semantically accurate.",
+    "No official solutions, rubrics or answer repositories were consulted; only the authorized problem images/PDF plus general conservation-of-elements reasoning."
+  ],
+  "proof_checks": [
+    "Recompiled IChO2026Problems/problem_icho_2026_t7_a1.lean with the pinned toolchain (leanprover/lean4:v4.31.0): exit code 0, no errors or warnings.",
+    "Axiom audit output on all eight printed theorems shows only [propext, Classical.choice, Quot.sound] - no sorryAx, no custom axioms; grep confirms no sorry/admit/native_decide/unsafe in the source.",
+    "composition_M1/composition_M2 are rfl and the membership/completeness theorems are simp: they are definitional assertions of the answer sets rather than derivations from a chemistry model; the Gas universe has exactly the seven printed species and the completeness biconditionals genuinely exclude CO2/NH3/CH4/H2O from M1 and CO2/CO/CH4/H2O from M2, so the statements do express the requested finite-set outputs without vacuity.",
+    "xy_relation_from_balances is a genuine linarith/ring derivation of x>y, x=7c/8, y=3c/8 from the balance equations, but its hypotheses include hb, hH2, hx, hy - i.e. the stoichiometric balances and the feed-label reading are assumed as premises, so the theorem does not unconditionally establish x>y from primitive figure data; xy_relation repackages the same bundle existentially. This matches the disclosed extra model condition and is why proof_status is conditional rather than passed."
+  ]
+}
+```

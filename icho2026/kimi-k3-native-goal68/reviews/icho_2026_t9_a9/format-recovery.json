@@ -1,0 +1,45 @@
+{
+  "at": 1789398318.2403882,
+  "previous_status": {
+    "status": "review_error",
+    "target": "icho_2026_t9_a9",
+    "error": "Expected exactly one review JSON payload",
+    "at": 1789398263.3702297
+  },
+  "original_review_sha256": "8701c7a80f8be2c895cbcc84fac6b5bb51c2e8fe9bb2a6a95b7f98670f5706d2",
+  "recovered_payload": {
+    "target_id": "icho_2026_t9_a9",
+    "semantic_status": "passed",
+    "proof_status": "passed",
+    "reason": "The submitted answer 120 is semantically correct and fully proved. Question 9.9 (verified verbatim on source image T9_page-5.png, 4.0 pt) asks for the number of functional-group arrangements on a hexadifferentiated alpha-CD with only CH2OH groups modified. Alpha-CD contains 6 alpha-D-glucopyranoside units (verified on T9_page-1.png), giving 6 primary sites; question 9.8 context (T9_page-4.png) confirms S carries six distinct groups. Arrangements of 6 distinct groups on a 6-site ring, counted up to rotation of the chiral macrocycle (reflection gives the enantiomer, a distinct molecule), number 6!/6 = 120. The Lean formalization models this exactly: Pattern = ZMod 6 equiv Fin 6 (720 addressed assignments, proved via Fintype.card_perm), Arrangement = orbitRel quotient by Multiplicative (ZMod 6), freeness of the rotation action proved by injectivity, orbit size 6 via orbit-stabilizer, and card Arrangement = 120 via selfEquivSigmaOrbits. Proof script is sound, calculus-free, and depends only on standard Lean axioms.",
+    "coverage": [
+      {
+        "output_id": "arrangement_count",
+        "status": "passed",
+        "theorem": "IChO2026.T9.A9.arrangement_count",
+        "evidence": "Lim arrangement_count : Fintype.card Arrangement = 120, where Arrangement is the quotient of bijective assignments (ZMod 6 equiv Fin 6) of six distinct groups to six CH2OH sites by the 6-element rotation group. Supporting theorems patterns_count (720 = 6!, via Fintype.card_perm), rotation_action_isFree (injectivity forces trivial stabilizer), orbit_card_eq_six (orbit-stabilizer), rotations_count (card Rot = 6) are all proved. Re-verified independently: lake env lean IChO2026Problems/problem_icho_2026_t9_a9.lean exits 0 and #print axioms reports only [propext, Classical.choice, Quot.sound] for all key theorems. Semantic value 120 = 5! matches the standard necklace count for 6 distinct groups on a chiral 6-membered ring; sha256 of T9_page-4/5.png match TASK.json manifest."
+      }
+    ],
+    "unsupported_assumptions": [],
+    "source_checks": [
+      "Inspected T9_page-5.png directly: question 9.9 box reads 'Determine the number of all possible arrangements of the functional groups on a hexadifferentiated alpha-CD (assume only the CH2OH groups have been modified). 4.0 pt' \u2014 matches candidate transcription exactly.",
+      "Inspected T9_page-1.png: preamble confirms alpha-, beta-, gamma-CD contain 6, 7, 8 alpha-D-glucopyranoside units; CD template graphic shows one CH2OH box per unit, so 'only CH2OH modified' gives exactly 6 sites.",
+      "Inspected T9_page-4.png: Sollogoub sequence N to S with installed groups (OBn, Ms/N3 precursors, BnI/Boc2O steps, CF3COOH deprotection) confirms hexadifferentiation = six distinct functional groups on the primary rim.",
+      "sha256 of both workspace T9 page images match TASK.json problem_assets manifest (09b3167e..., a387cc56...).",
+      "Chirality of alpha-CD (all-D-glucopyranoside, alpha-1,4 links) is structural and visible in the source diagrams; counting arrangements up to rotation only (not reflection) is the standard chemical convention for constitutionally distinct molecules, and is explicitly disclosed in answer.md and the Lean module docstring.",
+      "No preceding-part numerical dependency exists for 9.9 beyond unit count and hexadifferentiation context, both source-verified; reporting policy (exact integer) is satisfied."
+    ],
+    "proof_checks": [
+      "Independent recompile of IChO2026Problems/problem_icho_2026_t9_a9.lean with pinned Lean 4 v4.31.0 / mathlib: exit code 0; no errors or warnings.",
+      "Axiom audit via #print axioms: patterns_count, rotation_action_isFree, orbit_card_eq_six, arrangement_count depend only on [propext, Classical.choice, Quot.sound] \u2014 no sorryAx, no custom axioms, no native_decide, no unsafe code (grep confirms none present in the problem file).",
+      "Model fidelity: Pattern := ZMod 6 equiv Fin 6 captures bijective assignment of 6 distinct groups; SMul/MulAction instances proved by hand (one_smul, mul_smul via Equiv.ext); Arrangement := MulAction.orbitRel.Quotient Rot Pattern is the rotation quotient, no reflection coset \u2014 matching the disclosed semantic model.",
+      "Proof structure is substantive: orbit_card_eq_six uses MulAction.card_orbit_mul_card_stabilizer_eq_card_group with a proved trivial stabilizer (from rotation_action_isFree); arrangement_count decomposes card Pattern via selfEquivSigmaOrbits and sum of orbit sizes, closes by omega on 720 = 120 * 6. No result-shaped assumption; 720 and 120 never appear as hypotheses.",
+      "answer_numeric sanity theorem (6! = 720, 720/6 = 120) proved by decide on closed naturals \u2014 acceptable arithmetic, not native_decide.",
+      "Quotient Fintype instances are noncomputable but definitionally standard (Quotient.fintype of orbitRel); no effect on logical soundness."
+    ]
+  },
+  "model_rerun": false,
+  "verdict_changed": false,
+  "parser_policy": "single payload; optional JSON trailing-comma removal; strict schema",
+  "feedback_to_solver": false
+}

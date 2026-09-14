@@ -1,0 +1,26 @@
+{
+  "target_id": "icho_2026_t7_a6",
+  "status": "completed",
+  "answer_summary": "Ranking of Red/Ad combinations by decreasing NH3 yield: B > C > D > A. Grounding: at fixed acid (A vs C, pKa 13.7) the stronger reductant Cp2V (E°=-1.10 V) beats Cp2Ni (-0.09 V), so C > A; at fixed reductant (Cp2V) the higher-pKa acid wins, so B (pKa 15.0) > C (13.7) > D (10.6). The cross-parameter pair D vs A is settled by the Bordwell CPET conversion 0.0591 V/pKa: D's reductant advantage (1.01 V) exceeds its acid disadvantage (3.1 x 0.0591 = 0.183 V) by >5x, so D > A. Final: B > C > D > A.",
+  "theorem_names": [
+    "IChO2026.Problems.T7A6.C_above_A",
+    "IChO2026.Problems.T7A6.B_above_C",
+    "IChO2026.Problems.T7A6.C_above_D",
+    "IChO2026.Problems.T7A6.B_above_D",
+    "IChO2026.Problems.T7A6.B_above_A",
+    "IChO2026.Problems.T7A6.D_above_A",
+    "IChO2026.Problems.T7A6.ranking_BCDA",
+    "IChO2026.Problems.T7A6.rank_positions",
+    "IChO2026.Problems.T7A6.all_pairs"
+  ],
+  "assumptions": [
+    "YieldOrder.potential_mono: at fixed pKa, a more negative reductant E° gives higher NH3 yield (grounded in the problem's printed reference yields 1 vs 3 on T7_page-3.png: Cp2Cr 0 mol vs Cp2Co 9.1 mol at near-equal pKa).",
+    "YieldOrder.pKa_mono: at fixed reductant, a higher-pKa CF3SO3- acid gives higher NH3 yield (grounded in the printed reference yields 3 vs 4: pKa 13.9 -> 9.1 mol vs pKa 14.4 -> 11.8 mol, same Cp2Co reductant and counterion).",
+    "YieldOrder.bordwell_joint: Bordwell linear free-energy relation for CPET with conversion 0.0591 V per pKa unit at 298 K (trusted general physical-organic chemistry law); used only to compare D vs A, where both E° and pKa change."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t7_a6.lean  (exit 0, no errors/warnings)",
+    "lake env lean /tmp/axcheck_t7a6.lean  (file copy + open namespace + #print axioms on the seven final theorems; every theorem: [propext, Classical.choice, Quot.sound] only)"
+  ]
+}

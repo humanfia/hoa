@@ -1,0 +1,62 @@
+{
+  "target_id": "icho_2026_t2_a5",
+  "status": "completed",
+  "answer_summary": "τ = ln([Br⁻]max/[Br⁻]crit)/λ = ln(7000/3)/0.16128 = 48.084406866… s, reported to 3 s.f. as 48.1 s. During the colourless Process-B leg, Ce⁴⁺ ≈ 0 switches off step (7) (the only Br⁻ source); steps (4) and (5) consume Br⁻ at equal rates (the 2.2 stationary condition), giving exact first-order decay d[Br⁻]/dt = −λ[Br⁻] with λ = 2·k₅[BrO₃⁻][H⁺]² = 0.16128 s⁻¹. The return leg is 'almost immediate' per the problem (page Q2-3), so the descent duration is the period.",
+  "theorem_names": [
+    "IChO2026T2A5.k1_value",
+    "IChO2026T2A5.k2_value",
+    "IChO2026T2A5.k3_value",
+    "IChO2026T2A5.k4_value",
+    "IChO2026T2A5.k5_value",
+    "IChO2026T2A5.k6_value",
+    "IChO2026T2A5.k7_value",
+    "IChO2026T2A5.brMax_value",
+    "IChO2026T2A5.brCritical_value",
+    "IChO2026T2A5.hbrO2_A_value",
+    "IChO2026T2A5.hbrO2_B_value",
+    "IChO2026T2A5.lambda_value",
+    "IChO2026T2A5.lambda_eq_twice_k5",
+    "IChO2026T2A5.br_ratio",
+    "IChO2026T2A5.tau_eq",
+    "IChO2026T2A5.hbrO2_A_gt_B",
+    "IChO2026T2A5.brCritical_characterisation",
+    "IChO2026T2A5.log_two_bounds",
+    "IChO2026T2A5.log_875_768_bounds",
+    "IChO2026T2A5.ratio_decompose",
+    "IChO2026T2A5.log_ratio_bounds",
+    "IChO2026T2A5.tau_report_band",
+    "IChO2026T2A5.tau_pos",
+    "IChO2026T2A5.tauSubmission",
+    "IChO2026T2A5.tauSubmission_raw",
+    "IChO2026T2A5.tauSubmission_valid",
+    "IChO2026T2A5.tauSubmission_contract"
+  ],
+  "assumptions": [
+    "Steady-state approximation for HBrO2 in Processes A and B (mandated by subquestion 2.2).",
+    "During the colourless Process-B leg, [Ce4+] is negligible, so step (7) — the only bromide source — is inactive; grounded in the problem's colour definitions (yellow due to Ce4+, colourless due to Ce3+) and 'when Process B occurs the solution is colourless'.",
+    "The return leg from [Br-]critical back to [Br-]max takes negligible time — stated verbatim on page Q2-3 ('almost immediately reaches [Br-]max again').",
+    "[HBrO2]B is independent of [Br-]; this is derived (not assumed) from the 2.2 stationary condition in which the [Br-] factor cancels between step (4) and step (5).",
+    "Final reporting to three significant figures with quantum 0.1 s and tie rule half away from zero (uniform answer-blind default from TASK.json reporting_policy)."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t2_a5.lean",
+      "result": "exit 0, no diagnostics"
+    },
+    {
+      "command": "lake build IChO2026Problems.problem_icho_2026_t2_a5",
+      "result": "Build completed successfully (8561 jobs)"
+    },
+    {
+      "command": "lake env lean /tmp/check_axioms.lean   # file with #print axioms for tauSubmission_valid, tauSubmission_contract, tau_report_band, log_ratio_bounds, brCritical_characterisation, hbrO2_B_value",
+      "result": "all six theorems depend only on [propext, Classical.choice, Quot.sound]"
+    }
+  ],
+  "raw_answer": {
+    "expression": "Real.log (7000/3) / 0.16128",
+    "approx_seconds": 48.084406866,
+    "reported_seconds": 48.1,
+    "significant_figures": 3
+  }
+}

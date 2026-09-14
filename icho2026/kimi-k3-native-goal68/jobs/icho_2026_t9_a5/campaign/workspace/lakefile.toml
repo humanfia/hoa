@@ -1,0 +1,34 @@
+name = "icho_2026_run"
+version = "0.1.0"
+keywords = ["chemistry", "icho", "formalization"]
+defaultTargets = ["IChO2026Run"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.31.0"
+
+[[require]]
+name = "Physlib"
+git = "https://github.com/leanprover-community/physlib"
+rev = "1706ae68b63996f1d97717e672e50c9e3933d933"
+
+[[require]]
+name = "crnt-lean"
+git = "https://github.com/marpaia/crnt-lean"
+rev = "99137993e729c8add247388718a22a0e0f393dab"
+
+[[lean_lib]]
+name = "IChO2026Run"
+
+[[lean_lib]]
+name = "IChO2026Chem"
+
+[[lean_lib]]
+name = "IChO2026Problems"

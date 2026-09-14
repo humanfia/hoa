@@ -1,0 +1,74 @@
+{
+  "target": "icho_2026_t8_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789360639.3540144,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "8a2e37d6016864f0c6e69fcee09840f96b82818d44a7a3417f1afe62f2139fa8",
+    "IChO2026Problems/problem_icho_2026_t8_a7.lean": "bcf1bf3781d2de436317e76cd563e2fea657443efcc70cbdce9410d36d4513f4",
+    "answer.md": "7e3697c7e9c27a73c98284060794641f0421ae78c49c816bdf761aa0a5ae53e3",
+    "verification.md": "501bf17bcb409bfd7880d55c82454378a9e7c457aef9628613177664e41a3fa7",
+    "result.json": "7b94dbe6669ba8829c3dab0ad34d763c4b6889c9ab4c5cc5f58c9956a5b1f4e9"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a7",
+    "status": "completed",
+    "answer_summary": "Box (a) increases. The rate of CO formation per gram of loaded C3N4 is TOF(omega) x (omega/100) x N_A / M_cat, proportional to omega x TOF. Across the measured points of the Q8-3 diagram the product omega x TOF climbs from 6.2 (% . h^-1) at omega_cat = 0.1% to ~31 at 2.9% and 30.4 at 3.8%, i.e. a net ~4.9-fold increase even though TOF itself falls from 62 to 8 h^-1. The increase is strict through every interior measured step and robust at the endpoints under the half-quantum measurement tolerance; only the final small step (2.9% -> 3.8%) is not sign-determined by the integer displays, which is proven honestly in the Lean file.",
+    "theorem_names": [
+      "IChO2026.T8.A7.co_rate_trend",
+      "IChO2026.T8.A7.co_rate_increases_over_measured_range",
+      "IChO2026.T8.A7.measured_rates_increase_interior",
+      "IChO2026.T8.A7.endpoint_rate_increases_robust",
+      "IChO2026.T8.A7.last_step_direction_not_determined",
+      "IChO2026.T8.A7.displayed_last_step_dips",
+      "IChO2026.T8.A7.catMoleculesPerGram_strictMonoOn",
+      "IChO2026.T8.A7.coRatePerGram_strictMono_tof",
+      "IChO2026.T8.A7.coRatePerGram_factor",
+      "IChO2026.T8.A7.specificFactor_pos"
+    ],
+    "assumptions": [
+      "Rate per gram = TOF x catalyst molecules per gram, from the problem-stated TOF definition on page Q8-2 (number of product molecules per active catalyst molecule per hour) combined with the mass-fraction definition of omega_cat and M_cat = 557.21 g/mol (problem 8.5) and N_A = 6.022e23 mol^-1 (official constants page G1-3).",
+      "Data points (omega_cat %, TOF h^-1) = (0.1,62), (0.3,56), (0.6,37), (1,29), (2,15), (2.9,11), (3.8,8) read from the diagram on Q8-3, cross-anchored by the text statement TOF = 8 h^-1 at omega_cat = 3.8% on page Q8-2.",
+      "Integer TOF labels are treated as displays with half-quantum tolerance +/-0.5 per the project measurement convention (IChO2026Chem.Reporting); the endpoint conclusion is proven for all toleranced values, while displayed values are used for the interior chain.",
+      "Standard Lean logical axioms only (propext, Classical.choice, Quot.sound); N_A and M_cat are inputs, not axioms."
+    ],
+    "source_gaps": [
+      "The direction of the final displayed step (omega_cat 2.9% -> 3.8%, product 31.9 -> 30.4) is not sign-determined by the integer TOF displays within the +/-1/2 quantum tolerance; proven in Lean as last_step_direction_not_determined. This does not change the requested classification, which concerns the overall trend and is fixed by the strict interior chain and the worst-case-robust endpoint comparison.",
+      "No other gaps: all numeric inputs come from the problem text, the printed diagram, or the official constants page; no official solutions or external answer sources were consulted."
+    ],
+    "verification_commands": [
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t8_a7.lean",
+        "exit_code": 0,
+        "output": "'IChO2026.T8.A7.co_rate_trend' depends on axioms: [propext, Classical.choice, Quot.sound]; 'IChO2026.T8.A7.measured_rates_increase_interior' depends on axioms: [propext, Classical.choice, Quot.sound]; 'IChO2026.T8.A7.endpoint_rate_increases_robust' depends on axioms: [propext, Classical.choice, Quot.sound]; 'IChO2026.T8.A7.last_step_direction_not_determined' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      },
+      {
+        "command": "lake build IChO2026Problems",
+        "exit_code": 0,
+        "output": "Build completed successfully (8564 jobs). Built IChO2026Problems (12s). Only warning is a pre-existing style linter note in controller-owned umbrella IChO2026Problems.lean."
+      },
+      {
+        "command": "grep -nE 'sorry|admit|axiom |unsafe' IChO2026Problems/problem_icho_2026_t8_a7.lean",
+        "exit_code": 1,
+        "output": "no matches"
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

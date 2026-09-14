@@ -1,0 +1,55 @@
+{
+  "target": "icho_2026_t8_a6",
+  "goal_status": "goal_complete",
+  "checked_at": 1789363853.0982275,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "dca3520ae17ad72772b0b770492bcd294c8cb6883cced5565ad0a6e6d143c9ee",
+    "IChO2026Problems/problem_icho_2026_t8_a6.lean": "9a986b5217995f593784ebb19b71d704616cd651c4e0b27a0f7350554139a5b7",
+    "answer.md": "fa4e4c873e0ddeedae0338291a2936adcf69562b8ea812ed8f4d7c1f15da9e37",
+    "verification.md": "9cc8b4736eababf7c41c4616969e7571d69ffce44036596f88bdd3ed41c09ca7",
+    "result.json": "f85678cd6e3162070441aea2b3ad4f71601bad26ec8d9b198df4f6b7d5662b9f"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a6",
+    "status": "completed",
+    "answer_summary": "Quantum yield for CO formation phi = (2*TOF*n_cat*NA) / (P*t*lam/(h*c)) * 100%% with TOF=8 h^-1, n_cat = (10 mg * 3.8%%)/557.21 g/mol, P = 50 mW, lambda = 390 nm, t = 3600 s, and exact SI constants; phi = 18940872892793693114789369/10186495312500000000000000 = 1.85941016...%%, reported = 1.86%% (3 s.f.).",
+    "theorem_names": [
+      "IChO2026.T8.A6.co_quantum_yield_raw",
+      "IChO2026.T8.A6.co_quantum_yield_reported",
+      "IChO2026.T8.A6.quantumYieldPercent_eq",
+      "IChO2026.T8.A6.quantumYieldPercent_bounds",
+      "IChO2026.T8.A6.quantumYieldPercent_pos"
+    ],
+    "assumptions": [
+      "Each CO formed consumes 2 reacted electrons (part 8.1 half-equation CO2 + 2H+ + 2e- -> CO + H2O; carbon +4 -> +2), proved/stated inline from the problem statement.",
+      "Photon energy E = h c / lambda and photon count = optical energy / photon energy (standard Planck-relation physics, trusted_general_law).",
+      "h = 6.62607015e-34 J s, c = 2.99792458e8 m/s, N_A = 6.02214076e23 mol^-1 are exact SI-defined constants used as stipulated exact values.",
+      "Printed experimental numbers (390 nm, 50 mW, 8 h^-1, 10 mg, 3.8%%, 557.21 g/mol) are treated as exact as printed per the task measurement policy.",
+      "Reporting: uniform blind-evaluation default of 3 significant figures (quantum 0.01%%, ties half away from zero)."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t8_a6/campaign/workspace && lake env lean IChO2026Problems/problem_icho_2026_t8_a6.lean",
+      "python3 fractions cross-check (recorded in verification.md)"
+    ],
+    "verification_result": "lake env lean exits 0; #print axioms for co_quantum_yield_raw and co_quantum_yield_reported list only [propext, Classical.choice, Quot.sound] - no sorryAx, no custom axioms."
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

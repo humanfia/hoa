@@ -1,0 +1,75 @@
+{
+  "target": "icho_2026_t8_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789367668.1959484,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t8_a5.lean": "9577e35abbee87af131b56c64f267e8418a87aaf60d1620d7b251897a7ca9032",
+    "answer.md": "79cd6a82d15f969a492d91e364a3ab1c76a75d9f85c77b82d9e0e1ca48330112",
+    "verification.md": "b94a402ca76a4481c5fd5a3276ea0f13aca1450c208e55afc0997eeecf703c49",
+    "result.json": "6787919b57e0cae860b022c78d5bbc1bf17ca25a81f4a390547cbe6974e35b31"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a5",
+    "status": "completed",
+    "answer_summary": "N_cat = (0.038 \u00d7 6.022e23) / (557.21 g/mol \u00d7 17.8 m\u00b2/g \u00d7 10^18 nm\u00b2/m\u00b2) = 2.3072\u2026 catalytic molecules per nm\u00b2, reported to 3 significant figures as 2.31 molecules nm\u207b\u00b2.",
+    "theorem_names": [
+      "IChO2026T8.catalystSurfaceDensity",
+      "IChO2026T8.massFractionPct",
+      "IChO2026T8.molarMassCat",
+      "IChO2026T8.specificSurfaceArea",
+      "IChO2026T8.avogadroPrinted",
+      "IChO2026T8.catalystSurfaceDensityRaw",
+      "IChO2026T8.catalystSurfaceDensityRaw_pos",
+      "IChO2026T8.reportQuantum",
+      "IChO2026T8.catalystReported",
+      "IChO2026T8.reportQuantum_pos",
+      "IChO2026T8.catalystReported_isMultiple",
+      "IChO2026T8.catalyst_raw_in_report_interval",
+      "IChO2026T8.catalystSurfaceDensity_reports",
+      "IChO2026T8.catalystSurfaceDensityLow",
+      "IChO2026T8.catalystSurfaceDensityHigh",
+      "IChO2026T8.catalystSurfaceDensity_low_bounds",
+      "IChO2026T8.catalystSurfaceDensity_high_bounds",
+      "IChO2026T8.catalystSurfaceDensityRaw_tight",
+      "IChO2026T8.catalystSurfaceDensityLow_tight",
+      "IChO2026T8.catalystSurfaceDensityHigh_tight",
+      "IChO2026T8.envelope_consistent_with_report"
+    ],
+    "assumptions": [
+      "\u03c9_cat = 3.8 % printed in question 8.5 is the mass fraction of catalyst in the composite 'C3N4 loaded with 1'; on a 1 g basis of support it contributes 0.038 g of catalyst (the intensive density is basis-independent).",
+      "The specific surface area 17.8 m\u00b2 g\u207b\u00b9 is per gram of the support C3N4 (cf. question 8.7 'per gram of C3N4 loaded with 1').",
+      "The Avogadro constant N_A = 6.022\u00d710\u00b2\u00b3 mol\u207b\u00b9 printed on the official constants sheet (page G1-3 of the problem PDF) is used exactly as printed; using the 2022 SI exact value changes the result by 2 parts in 10^5 and not the reported 3 s.f. value.",
+      "1 nm\u00b2 = 10\u207b\u00b9\u2078 m\u00b2 (definition of the SI prefix).",
+      "The 3 significant-figure display with tie-away-from-zero rounding and no intermediate rounding follows the project reporting contract (IChO2026Chem.Reporting; task reporting_policy)."
+    ],
+    "source_gaps": [
+      "The blank answer sheet A8-5 contains only 'N_cat = ____' and adds no constraints; the question does not state a rounding rule, so the project default of 3 significant figures is applied (recorded in TASK.json reporting_policy).",
+      "Monotonicity of rho in (\u03c9, N_A) and against (M, SSA) is used to justify that the extremal corners bound the measurement envelope; it is elementary on the positive orthant and is documented in the Lean module, but only the corner certificates are formalized as theorems \u2014 the envelope theorem itself uses the proved corner certificates only."
+    ],
+    "verification_commands": [
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t8_a5.lean   # exit 0, no errors/warnings",
+      "cat IChO2026Problems/problem_icho_2026_t8_a5.lean + #print axioms lines > /tmp/axcheck2.lean && lake env lean /tmp/axcheck2.lean   # all final theorems depend only on [propext, Classical.choice, Quot.sound]",
+      "grep -n \"sorry\\|admit\\|axiom \" IChO2026Problems/problem_icho_2026_t8_a5.lean   # no hits",
+      "python3 -c 'print(0.038*6.022e23/(557.21*17.8*1e18))'   # 2.3072010653397776, agrees with the certified interval"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

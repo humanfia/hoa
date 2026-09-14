@@ -1,0 +1,14 @@
+{
+  "status": "review_batch_finished",
+  "pid": 783642,
+  "unfinished": 0,
+  "transport_blocked": [],
+  "active": [],
+  "concurrency": 2,
+  "reviewed": 65,
+  "errors": 3,
+  "accepted": 30,
+  "model": "nvidia/moonshotai/kimi-k3",
+  "feedback_to_solver": false,
+  "updated": 1789398271.1095483
+}

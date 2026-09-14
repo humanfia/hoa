@@ -1,0 +1,57 @@
+{
+  "target": "icho_2026_t4_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789360849.4592257,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "a36634c9a62812271f4b1f2a515429d80d1896277261d8e17d163fbc86ee612d",
+    "IChO2026Problems/problem_icho_2026_t4_a2.lean": "166df750f9e81c3874f47f4109c7acf0c7ea18d9728a1527014da598bca3a626",
+    "answer.md": "befaf52c3cf3094ddf2a75381cc2f8fe25af0c34ee6f28421a6a635e291dbf7d",
+    "verification.md": "ac36d669c012435bb8f936efd16b6efb2d43ef0c585edfb14f09178b32ccfd3c",
+    "result.json": "cb43d88262a21c7b43983c466eeeff837c3e9a2871ef548cef485254b7a9d667"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a2",
+    "status": "completed",
+    "answer_summary": "4.2 nuclear reaction equations: (a) 11_5B + 4_2He -> 14_7N + 1_0n; (b) 2_1D + gamma -> 1_1H + 1_0n (photodisintegration of the deuteron); (c) 9_4Be + 4_2He -> 12_6C + 1_0n. Each is forced uniquely by conservation of mass number A and atomic number Z together with the problem's stipulation that each channel produces a neutron.",
+    "theorem_names": [
+      "IChO2026T4.reaction_a_balanced",
+      "IChO2026T4.reaction_b_balanced",
+      "IChO2026T4.reaction_c_balanced",
+      "IChO2026T4.reaction_a_residual_forced",
+      "IChO2026T4.reaction_b_residual_forced",
+      "IChO2026T4.reaction_c_residual_forced"
+    ],
+    "assumptions": [
+      "trusted_general_law: conservation of mass number A and atomic number Z in nuclear reactions",
+      "problem_text: reactants are (a) 11B + alpha, (b) gamma + 2D, (c) 9Be + alpha",
+      "problem_text (surrounding prose of T4): each channel produces neutrons, so a single 1_0n is among the products"
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t4_a2.lean  # exit 0, no errors/warnings",
+      "lake env lean /tmp/axcheck_t4/check.lean  # final file + six '#print axioms' lines; output lists only [propext, Classical.choice, Quot.sound] for balanced theorems and [propext, Quot.sound] for residual_forced theorems"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t4_a2.lean": {
+      "sorry": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

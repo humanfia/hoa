@@ -1,0 +1,78 @@
+{
+  "target": "icho_2026_t7_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789364814.4205782,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t7_a1.lean": "3df026a75396830fed83a374959a470df398ad8d394df865db9422d5d0da40c5",
+    "answer.md": "be24c0c68889f2912856fd03341d5e86577e67723a0d0f4c286018880a6371ac",
+    "verification.md": "74ce6ebafbb1d7901286f9fa3bf53b303e0be006bbe6abcc1b7278be455d9719",
+    "result.json": "e32e71ce5c864cddfa6294cf8d31172199a060b53722009e363a461294f6c809"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t7_a1",
+    "status": "completed",
+    "answer_summary": {
+      "gases_m1": [
+        "N2",
+        "CO",
+        "H2"
+      ],
+      "gases_m2": [
+        "N2",
+        "H2",
+        "NH3"
+      ],
+      "xy_relation": "x > y"
+    },
+    "theorem_names": [
+      "IChO2026T7A1.composition_M1",
+      "IChO2026T7A1.M1_mem_N2",
+      "IChO2026T7A1.M1_mem_CO",
+      "IChO2026T7A1.M1_mem_H2",
+      "IChO2026T7A1.M1_complete",
+      "IChO2026T7A1.composition_M2",
+      "IChO2026T7A1.M2_mem_N2",
+      "IChO2026T7A1.M2_mem_H2",
+      "IChO2026T7A1.M2_mem_NH3",
+      "IChO2026T7A1.M2_complete",
+      "IChO2026T7A1.xy_relation_from_balances",
+      "IChO2026T7A1.xy_relation"
+    ],
+    "assumptions": [
+      "Problem figure Fig.1 (T7_page-1.png, printed page 1, source page 63 of theory_problem.pdf): reactions (I) CH4+H2O->CO+3H2, (II) 2CH4+O2->2CO+4H2, (III) CO+H2O->CO2+H2; air feed 4N2+1O2; stipulation that all reactions except NH3 formation are quantitative.",
+      "Trusted general law: conservation of chemical elements (C/H/O/N balances).",
+      "Reading of the single printed feed line xCH4 + yH2O as x = (reformed CH4 + POX CH4) and y = (steam for the reformed part, 1:1 with reformed CH4)."
+    ],
+    "source_gaps": [
+      "The problem page does not print the candidate list of x-y relations to tick and the provided theory_problem.pdf contains no separate T7 answer-sheet page; the strict identity 2x = 3y is not derivable from the T7-A1 problem inputs alone \u2014 only the order relation x > y is forced (proved).",
+      "Compositions of M1 and M2 are fully determined by the problem figure and are not a gap."
+    ],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t7_a1.lean  (exit 0, no errors/warnings)",
+      "#print axioms on all listed theorems -> only [propext, Classical.choice, Quot.sound]; no sorryAx, no custom axiom"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t7_a1.lean": {
+      "sorry": 1,
+      "admit": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

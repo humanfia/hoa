@@ -1,0 +1,35 @@
+{
+  "target_id": "icho_2026_t8_a10",
+  "status": "completed",
+  "answer_summary": "Q8.10 (2.0 pt, single tick applying to both states per the blank answer sheet p. A8-7): b) decreases. In the Stern-Volmer lifetime picture (same quenching model as Q8.9), tau([Red]) = tau0 / (1 + kq*tau0*[Red]). With the printed constants K_S = k_S*tau0(S1) = 7.83 M^-1 > 0 and K_T = k_T*tau0(T1) = 1.26e4 M^-1 > 0, the emission lifetimes of both S1 and T1 are strictly decreasing functions of [Red] on [0, infinity). Requested outputs: lifetime_s1 = decreases; lifetime_t1 = decreases.",
+  "theorem_names": [
+    "IChO2026Problems.sternVolmerLifetime_strictAntiOn",
+    "IChO2026Problems.emissionLifetime_eq_sternVolmer",
+    "IChO2026Problems.tauS1_strictAntiOn",
+    "IChO2026Problems.tauT1_strictAntiOn",
+    "IChO2026Problems.lifetime_s1",
+    "IChO2026Problems.lifetime_t1",
+    "IChO2026Problems.answer_T8_A10",
+    "IChO2026Problems.icho_2026_t8_a10_answer",
+    "IChO2026Problems.KS_val",
+    "IChO2026Problems.KT_val",
+    "IChO2026Problems.not_lifetimeIncreases_of_lifetimeDecreases"
+  ],
+  "assumptions": [
+    "Stern-Volmer lifetime form tau = tau0 / (1 + kq*tau0*[Q]) (trusted general photophysical law), grounded in the problem by the printed quenching rate constants k_S, k_T and the tau0 definitions, and consistent with the Q8.9 quenching formalism eta_q = 1 - tau/tau0.",
+    "Concentration domain [0, infinity) for [Red].",
+    "Printed constants taken exactly as given: k_S = 2.7e9 M^-1 s^-1, k_T = 1.5e8 M^-1 s^-1, tau0(S1) = 2.9 ns, tau0(T1) = 84 us.",
+    "Lean theorems use standard logical axioms only: propext, Classical.choice, Quot.sound."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake build IChO2026Chem",
+      "result": "success: Build completed successfully (8561 jobs)"
+    },
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t8_a10.lean",
+      "result": "exit 0, no errors or warnings; #print axioms for answer_T8_A10, lifetime_s1, lifetime_t1, sternVolmerLifetime_strictAntiOn each report [propext, Classical.choice, Quot.sound] only (no sorryAx, no custom axioms)"
+    }
+  ]
+}

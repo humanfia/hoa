@@ -1,0 +1,79 @@
+{
+  "target": "icho_2026_t3_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789363793.0575984,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t3_a1.lean": "ccdf693e08637d338a05388c7ff7987f2d7df50343ab282cfae37d824bbc7fca",
+    "answer.md": "8c7b326af08efc2cbbc6461874952481aed4145033375777de3c63f6e88c9ba7",
+    "verification.md": "5fb5d35a7bdc029630bed3780f74c5a1c3fd053eb3d8b313229b457be77b9f76",
+    "result.json": "413909ffb62950d33c8c65ff17d332412151265bd84dc569c1bca238ad9e7f41"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t3_a1",
+    "status": "completed",
+    "answer_summary": {
+      "cof1_empirical_formula": "C9H4BO2",
+      "cof1_carbon_mass_percent": {
+        "raw": "900750/12911 = 69.766090930...%",
+        "reported": "69.77",
+        "unit": "%",
+        "reporting": "two decimal places, half-away-from-zero (exact value lies strictly inside [69.765, 69.775))"
+      },
+      "derivation": "B3 = hexahydroxytriphenylene C18H12O6 (honeycomb vertex), A2 = benzene-1,4-diboronic acid C6H8B2O4 (honeycomb edge); 2 B3 + 3 A2 per hexagon, 12 boronate-ester condensations eliminating 12 H2O, giving raw counts C54 H24 B6 O12 per hexagon; gcd = 6 gives empirical formula C9H4BO2. Carbon mass percentage with printed IChO 2026 periodic-table masses (12.01, 1.008, 10.81, 16.00): (9*12.01)/154.932*100 = 69.76609...% -> 69.77%."
+    },
+    "theorem_names": [
+      "IChO2026T3A1.answer_icho_2026_t3_a1",
+      "IChO2026T3A1.hexagon_composition",
+      "IChO2026T3A1.empirical_counts",
+      "IChO2026T3A1.gcd_is_six",
+      "IChO2026T3A1.molar_mass_empirical_unit",
+      "IChO2026T3A1.carbon_mass_empirical_unit",
+      "IChO2026T3A1.carbon_percent_value",
+      "IChO2026T3A1.carbon_percent_rounding_window",
+      "IChO2026T3A1.carbon_percent_reports_to_6977",
+      "IChO2026T3A1.carbon_percent_nonneg",
+      "IChO2026T3A1.carbon_percent_four_figure_masses"
+    ],
+    "assumptions": [
+      "Atomic masses are taken from the periodic table printed in the problem bundle (G1-5): A(H)=1.008, A(B)=10.81, A(C)=12.01, A(O)=16.00; a sensitivity theorem confirms four-figure masses (12.011/15.999) give the same two-decimal answer 69.77%.",
+      "Triphenylene hydrocarbon skeleton C18H12 (standard general-chemistry knowledge, consistent with the printed fused four-ring nucleus); six aromatic H are replaced by OH to give the printed B3 hexaol C18H12O6.",
+      "The printed '-H2O' on the B3+A2 arrow and the drawn B-O-B-O-C-C boronate-ester rings ground complete condensation (12 H2O per hexagon).",
+      "Honeycomb graph counting: each vertex (B3) shared by 3 hexagons, each edge (A2) shared by 2 hexagons, per the printed infinite honeycomb topology."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t3_a1.lean",
+        "workdir": "/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t3_a1/campaign/workspace",
+        "result": "exit 0, no errors/warnings/sorries"
+      },
+      {
+        "command": "lake env lean --root=. <copy of file with appended #print axioms commands for all 11 theorems>",
+        "workdir": "/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t3_a1/campaign/workspace",
+        "result": "all theorems depend only on [propext, Classical.choice, Quot.sound]"
+      },
+      {
+        "command": "grep -n 'sorry\\|admit\\|axiom \\|unsafe' IChO2026Problems/problem_icho_2026_t3_a1.lean",
+        "result": "no matches"
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

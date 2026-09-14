@@ -1,0 +1,110 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Determine the ring size, \ud835\udc5f\ud835\udc60, of macrocycle X. Give the number of stereocentres, \ud835\udc60\ud835\udc50, in X.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t9_a3",
+  "image": "T9_page-2.png",
+  "images": [
+    "T9_page-2.png",
+    "T9_page-1.png"
+  ],
+  "index": "icho_2026_t9_a3",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T9",
+  "part_id": "T9-A3",
+  "phase": "solve",
+  "points": 8.0,
+  "previous_parts": [
+    {
+      "dependency_policy": "derive_in_answer_blind_run_or_use_problem_stated_fallback",
+      "part_id": "T9-A2",
+      "question": "Tick the favorable chair conformation and draw the structure of K by completing the CD template. Show stereochemistry unambiguously.",
+      "source_id": "icho_2026_t9_a2"
+    }
+  ],
+  "printed_page": 2,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T9_page-2.png",
+      "printed_page": 2,
+      "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f",
+      "source_page": 85
+    },
+    {
+      "kind": "problem_page",
+      "path": "T9_page-1.png",
+      "printed_page": 2,
+      "sha256": "c7f5114e9bb5d3e821a3df76d40c4ab86006fdb550992aa8013bc50b68a90608",
+      "source_page": 85
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 85
+    }
+  ],
+  "problem_id": "icho_2026_t9",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT9. Cyclodextrin Chemistry 7% Cyclodextrins (CD) are a family of cyclic oligosaccharides, consisting of glucose subunits joined by \u03b11,4-glycosidic bonds. The three most common cyclodextrins (\u03b1-, \u03b2-, \u03b3-cyclodextrin) contain 6, 7, and 8 \u03b1-D-glucopyranoside units, respectively. 9.1 Calculate the molar mass of \u03b2-CD. Assume M\ud835\udc64(glucose) = 180.16 g mol\u22121. CDs combine macrocyclic properties with glucose chemistry, which was demonstrated in the synthesis of X. Primary and secondary hydroxy groups show different reactivity due to being a part of CDs. Stoddart et al. synthesised compound K, where only one OH group remained free per glucopyranoside unit. equiv.= equivalent 9.2 Tick the favorable chair conformation and draw the structure of K by completing the CD template. Show stereochemistry unambiguously.\n\n## Current subquestion T9-A3\nDetermine the ring size, \ud835\udc5f\ud835\udc60, of macrocycle X. Give the number of stereocentres, \ud835\udc60\ud835\udc50, in X.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "macrocycle_ring_size",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "ring size of macrocycle X",
+      "unit": ""
+    },
+    {
+      "id": "macrocycle_stereocentres",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "number of stereocentres in X",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T9. Cyclodextrin Chemistry 7% Cyclodextrins (CD) are a family of cyclic oligosaccharides, consisting of glucose subunits joined by \u03b11,4-glycosidic bonds. The three most common cyclodextrins (\u03b1-, \u03b2-, \u03b3-cyclodextrin) contain 6, 7, and 8 \u03b1-D-glucopyranoside units, respectively. 9.1 Calculate the molar mass of \u03b2-CD. Assume M\ud835\udc64(glucose) = 180.16 g mol\u22121. CDs combine macrocyclic properties with glucose chemistry, which was demonstrated in the synthesis of X. Primary and secondary hydroxy groups show different reactivity due to being a part of CDs. Stoddart et al. synthesised compound K, where only one OH group remained free per glucopyranoside unit. equiv.= equivalent 9.2 Tick the favorable chair conformation and draw the structure of K by completing the CD template. Show stereochemistry unambiguously.",
+  "source_index": "T9-A3",
+  "source_page": 85,
+  "source_pdf": "theory_problem.pdf"
+}

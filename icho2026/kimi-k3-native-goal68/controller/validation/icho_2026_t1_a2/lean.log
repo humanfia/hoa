@@ -1,0 +1,6 @@
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a2/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a2.lean:152:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'IChO2026Problems.T1A2.Certificates.Z_chloride_ms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T1A2.B_structure_is_naphthalene' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T1A2.answer' depends on axioms: [propext, Classical.choice, Quot.sound]

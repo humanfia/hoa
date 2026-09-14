@@ -1,0 +1,83 @@
+{
+  "target": "icho_2026_t6_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789362681.87514,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t6_a2.lean": "e03c5a8782e80507f7b695e4ef23517cb179cb576254b644f452eeee86d8514e",
+    "IChO2026Problems/All.lean": "1d8a563e987ed0ad556ee831071f6baf85b9d4bb50565218dc77846df593e44c",
+    "answer.md": "9c326f7ae8c880daf65c7b60188c202450598b2268d021f2dc78b300f7e11083",
+    "verification.md": "031f3ed5517dddf403ba677387b09e4dcccbabd0b98f3cce4a3c5e523b5d275b",
+    "result.json": "1b75740eba0f06bbda1b80bdd0837ddaf68db71d3ae008560c3251ddfa14429c"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t6_a2",
+    "status": "completed",
+    "answer_summary": "Structures for the AFM synthesis of cyclo[14]carbon (question 6.2). From printed arrow stoichiometry on Q6-1 (C14Cl10; A -2Cl\u00b7, B -5Cl\u00b7 from A, C -2Cl\u00b7 from B, D -3Cl\u00b7 from A, -1Cl\u00b7 to C14): B = C14Cl3, intact anthracene skeleton, chlorine remaining on {lt, lbl, rl}, two unpaired electrons retained on the meso carbons cu\u00b7 and cl\u00b7 (the 9,10-dehydroanthracene diradical). C = C14Cl1, single chlorine on lt, central ring opened by the retro-Bergman mechanism drawn in scheme (1): exactly bonds jb-cl and cl-jrB broken (the 1,4-diradical junction pair carrying the alkyne arm), the two unpaired electrons now on junctions jb\u00b7 and jrB\u00b7. D = C14Cl5 (from A, -3Cl\u00b7), intact skeleton, chlorine on {lt, ltu, lb, lbl, rl}, three unpaired electrons (meso cu\u00b7, cl\u00b7 plus rt\u00b7). Verified: 10-2-5-2-1 = 0, A->D 8->5.",
+    "theorem_names": [
+      "clCount_SM",
+      "clCount_A",
+      "clCount_B",
+      "clCount_C",
+      "clCount_D",
+      "radTotal_A",
+      "radTotal_B",
+      "radTotal_C",
+      "radTotal_D",
+      "skeletonIntact_A",
+      "skeletonIntact_B",
+      "skeletonIntact_D",
+      "opened_C_broken",
+      "opened_C_intact_elsewhere",
+      "opened_C_count",
+      "matchesGivenA",
+      "step_SM_A",
+      "step_A_B",
+      "step_B_C",
+      "step_A_D",
+      "chain_total",
+      "carbon_conserved"
+    ],
+    "assumptions": [
+      "Anthracene skeleton: 14 carbons, 16 sigma bonds, three linearly fused six-membered rings (jt jb jrT jrB = junctions; cu, cl = meso carbons)",
+      "Peripheral (degree-2) carbons {cu, cl, lt, ltu, lb, lbl, rt, rr, rb, rl} carry exactly one substituent (Cl or H); junctions never carry Cl (as drawn on the sheet)",
+      "Each AFM Cl\u00b7 abstraction removes exactly one chlorine and leaves one unpaired electron on the abstraction site (the note in 6.2)",
+      "Retro-Bergman step is the ring opening shown in scheme (1): two central-ring sigma bonds adjacent to the 1,4-diradical junction pair are broken, converting the opened path to an alkyne arm",
+      "Positional choices among symmetry-inequivalent peripheral chlorines where the AFM images are not decisive: B keeps Cl on {lt, lbl, rl}; D's third radical is on rt (minimal-changes reading of the printed A drawing)"
+    ],
+    "source_gaps": [
+      "The grey-scale AFM frames do not uniquely identify which of the (symmetry-equivalent under the page's own drawing) peripheral chlorines survive in B or which arc is dechlorinated in D; only formulas, radical counts, intact-vs-opened state, and the identity of the opened bond pair are forced by the problem data alone. All forced data are fixed and proved."
+    ],
+    "verification_commands": [
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t6_a2.lean",
+        "result": "exit 0, no errors and no warnings"
+      },
+      {
+        "command": "lake build IChO2026Problems",
+        "result": "Build completed successfully (8564 jobs)"
+      },
+      {
+        "command": "lake env lean Axcheck_tmp.lean  (import problem module; #print axioms for all final theorems; scratch file deleted after use)",
+        "result": "every theorem depends only on [propext, Classical.choice, Quot.sound]; no custom axioms"
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

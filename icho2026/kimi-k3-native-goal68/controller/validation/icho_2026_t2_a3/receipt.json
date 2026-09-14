@@ -1,0 +1,77 @@
+{
+  "target": "icho_2026_t2_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789370462.3543687,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t2_a3.lean": "07621c623ac386ff79b8ce71d97e9fc7eb871f986756addf4097d5806a63284c",
+    "answer.md": "b206429d1a2f4683d9418231b8539ffb28fd45ca95b657f34734fd6de1467ef5",
+    "verification.md": "5c6082bc5ac83387ef45dc1d33be0c743906124ca0d8c6d912f49767b53efd33",
+    "result.json": "aa9d7dc92a058db1a9024d4dc78bf86c5eea2534f9d30443c4ec880fd7dcf212"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a3",
+    "status": "completed",
+    "answer_summary": "[Br-]critical = k1*[BrO3-]0/k4 = (1.0e4)(0.06)/(2.0e9) = 3.0e-7 mol dm^-3 (3 s.f. 3.00e-7 = 0.30 micromol dm^-3). The switchover criterion r1=r4 cancels the common factor [HBrO2]*[H+]0, so the threshold depends only on the printed rate constants and the buffered bromate concentration.",
+    "theorem_names": [
+      "IChO2026T2A3.answer_bromideCritical",
+      "IChO2026T2A3.BZData.bromideCritical",
+      "IChO2026T2A3.BZData.bromide_critical_value",
+      "IChO2026T2A3.BZData.bromide_critical_value_umol",
+      "IChO2026T2A3.BZData.bromide_critical_reported",
+      "IChO2026T2A3.BZData.bromide_critical_above_fallback",
+      "IChO2026T2A3.BZData.bromideCritical_rate_identity",
+      "IChO2026T2A3.BZData.bromide_critical_switch",
+      "IChO2026T2A3.BZData.hbrO2_A_steadyState",
+      "IChO2026T2A3.BZData.hbrO2A_value",
+      "IChO2026T2A3.BZData.hbrO2_B_steadyState",
+      "IChO2026T2A3.BZData.hbrO2B_value",
+      "IChO2026T2A3.BZData.hbrO2A_pos",
+      "IChO2026T2A3.BZData.hbrO2B_pos"
+    ],
+    "assumptions": [
+      "problem text: switchover criterion r4 = r1 at [Br-]critical",
+      "printed rate constants k1=1.0e4, k3=4.0e7, k4=2.0e9, k5=2.1",
+      "buffered concentrations [BrO3-]0=0.06 M, [H+]0=0.80 M held constant",
+      "elementary mass-action kinetics and the steady-state approximation (invoked by the problem)"
+    ],
+    "source_gaps": [
+      "The exact closed form of the Process-B steady-state quadratic for [HBrO2]B is a modelling convention of the standard Field-Koros-Noyes elimination of intermediate [Br-]; it is derived here but is NOT needed for the requested [Br-]critical (whose value is independent of [HBrO2]B)."
+    ],
+    "verification_commands": [
+      "time lake env lean IChO2026Problems/problem_icho_2026_t2_a3.lean",
+      "grep -nE 'sorry|admit|axiom|unsafe' IChO2026Problems/problem_icho_2026_t2_a3.lean",
+      "timeout 240 lake env lean --root=. /tmp/axrun.lean   # (temp copy appending #print axioms of final theorems)"
+    ],
+    "verification_result": {
+      "lean_compile": "exit 0, no errors/warnings",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "sorry_admit_axiom_grep": "only a doc-comment mention; no tactic/term usage"
+    }
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t2_a3.lean": {
+      "sorry": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

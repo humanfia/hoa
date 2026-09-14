@@ -1,0 +1,37 @@
+{
+  "target_id": "icho_2026_t9_a4",
+  "status": "completed",
+  "answer_summary": "Y = hexakis(6-O-tert-butyldimethylsilyl)-2,3-anhydro-alpha-cyclodextrin: per unit, C6 carries CH2-O-Si(CH3)2C(CH3)3 (TBS on the primary OH; six Si total), the 2- and 3-OH are fused into a 2,3-epoxide with inversion at BOTH C2 and C3 (allo configuration, both new C-O bonds on the up face of the chair template), the alpha configuration at C1 is retained, the C6 arm is up at C5, and no free OH remains; all bonds single. The explicit 102-vertex molecular graph is proved equal to the printed formula C72H132O24Si6.",
+  "theorem_names": [
+    "icho_2026_t9_a4_structure_of_Y",
+    "y_structure_matches_printed_formula",
+    "y_formula_decomposes",
+    "y_inversion_at_C2_C3",
+    "y_alpha_link_face",
+    "y_epoxide_bridge",
+    "y_no_free_OH",
+    "y_silicon_count6",
+    "y_tbs_group",
+    "y_glycosidic_bonds",
+    "y_bondOrder_one",
+    "y_vertex_count",
+    "yUnitFullFormula_eq",
+    "y_stereocentre_C2",
+    "y_stereocentre_C3",
+    "y_total_c",
+    "y_total_h",
+    "y_total_o",
+    "y_total_si"
+  ],
+  "assumptions": [
+    "problem-stated hint: primary and secondary hydroxy groups of CDs show different reactivity, and TBSCl is used at exactly 6 equivalents -> silylation of the six primary 6-OH only",
+    "trusted_general_law: NaH deprotonates secondary OH and TsCl converts an OH into a good leaving group; the Sinay-type intramolecular SN2 closure of a 2-alkoxide onto 3-OTs affords the 2,3-anhydro (epoxide) sugar with inversion at both C2 and C3",
+    "trusted_general_law: Fuerst-Plattner trans-diaxial epoxide opening, consistent with the printed alpha-cycloaltrin product that follows Y in the scheme"
+  ],
+  "source_gaps": [
+    "The reaction scheme alone does not logically exclude hypothetical direct mono-inversion products; the printed formula C72H132O24Si6 (Q9-2 and answer sheet A9-2) and the pictured final alpha-cycloaltrin jointly force the per-unit 2,3-anhydro structure proved here."
+  ],
+  "verification_commands": [
+    "timeout 580 lake env lean IChO2026Problems/problem_icho_2026_t9_a4.lean  # exit 0; #print axioms: only [propext, Classical.choice, Quot.sound]"
+  ]
+}

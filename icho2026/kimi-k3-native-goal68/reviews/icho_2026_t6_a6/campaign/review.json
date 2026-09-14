@@ -1,0 +1,77 @@
+All checks are complete. Summary of my independent review:
+
+**Source inspection:** I read the original page image `T6_page-4.png` directly (and zoomed crops of the reaction scheme, the P6 building block, the template star, and the belt product). The scheme runs toluene → M (t-BuCl 2 equiv., AlCl₃) → N (NBS/(BzO)₂; HMTA; HCl/H₂O) → O (dipyrromethane/CF₃COOH; DDQ; Zn(OAc)₂) → Q (NBS) → R (Pd⁰/PPh₃/CuI, (C₆H₁₃)₃Si–C≡CH; then n-Bu₄NF), then R + hexakis[4-(pyridin-4-yl)phenyl]benzene template → belt of six P6 units. P6 shows trans-meso Ar groups and ethynyl groups at the outer β-carbons of the two rings between the Ar-bearing meso edges; the belt shows all 8 β positions of those rings consumed in butadiyne edges — consistent with Q being β-tetrabromo and R retaining two β-Br (positions flanking the meso-10/20 CHs) plus two terminal alkynes.
+
+**Key finding:** The task requests structures of **M–R**, i.e. six outputs M, N, O, **P**, Q, R, and TASK.json explicitly lists `structure_p`. The letter **P does not appear anywhere in the source scheme** (the intermediates are M, N, O, Q, R; "P6" is a building-block label, not an unknown), so P is genuinely underdetermined. The candidate silently skips P everywhere — answer.md, result.json, and the Lean file never define or discuss a structure P, and `icho_2026_t6_a6_structures` contains no conjunct for it. Per the isolation policy, an underdetermined output must be explicitly reported; silence is not a report.
+
+For the five covered structures: the chemistry is sound (para-tert-butyltoluene matching the four-proton-type hint; Sommelet aldehyde; trans-5,15-diaryl Zn porphyrin; β-tetrabromination at the rings between the Ar-bearing meso edges; bis-ethynyl dibromo R consistent with the P6/belt pixels). The Lean file compiles cleanly (exit 0), uses only `decide` over explicit finite structural models, and `#print axioms` reports only `propext` — no sorry/admit/axiom/native_decide anywhere in the dependency chain. However, the theorems only verify properties of self-constructed model structures rather than deriving them from problem constraints, so even the covered outputs are conditional at best under the stated semantic requirements.
+
+```json
+{
+  "target_id": "icho_2026_t6_a6",
+  "semantic_status": "failed",
+  "proof_status": "failed",
+  "reason": "The task and source scheme require six structures M-R. The candidate covers only five (M, N, O, Q, R); requested output P (structure_p) has no model, no theorem, no prose, and no underdetermination report anywhere in answer.md, result.json, or the Lean file, violating the isolation policy that an underdetermined result must be reported. P appears nowhere in the source scheme (intermediates are M, N, O, Q, R; 'P6' is a building-block label), so P is underdetermined from source material, but silence rather than an explicit report leaves output structure_p entirely unaddressed. For the five covered structures the chemistry is consistent with the inspected problem pixels (para-FC product matching the four-proton-type hint; Sommelet aldehyde; trans-5,15-diaryl Zn porphyrin; beta-tetrabromo Q on the rings between the Ar-bearing meso edges; R with two terminal alkynes and two residual beta-Br flanking the meso-10/20 CHs, matching the P6/belt drawings). However, the Lean theorems are not derivations: they define the answer structures as literal Lean data and then prove, by decide, numeric equalities and connectivity facts about those self-constructed definitions. No premise encodes the problem's graphical constraints and no theorem states that the answers follow from them, so the proofs amount to answer-shaped definitions discharged by computation. Since a passed decision requires substantive coverage of all requested outputs, the missing/unreported P forces failed status.",
+  "coverage": [
+    {
+      "output_id": "structure_m",
+      "status": "conditional",
+      "theorem": "IChO2026T6A6.M_formula_counts, M_para, M_four_proton_types (via icho_2026_t6_a6_structures conjunct 1)",
+      "evidence": "M = 1-methyl-4-tert-butylbenzene: 6-ring aromatic carbons, methyl at m1, tert-butyl para at m4 (C count 11; mB implicit H = 0; mMe = 3). Chemistry consistent with the thermodynamic-product/four-proton-types hint printed in the source. But the M model is defined literally and only self-checked by decide; no derivation from the FC-alkylation constraint is formalised, and coverage of the full requested set is broken by missing P."
+    },
+    {
+      "output_id": "structure_n",
+      "status": "conditional",
+      "theorem": "IChO2026T6A6.N_formula_counts, N_aldehyde (conjunct 2)",
+      "evidence": "N = 4-tert-butylbenzaldehyde: one O, C=O double bond on mMe, one aldehydic implicit H, para tBu retained. Consistent with Wohl-Ziegler bromination + Sommelet oxidation in the printed sequence. Same caveat: answer-shaped definition verified by decide rather than derived; part of an incomplete output set."
+    },
+    {
+      "output_id": "structure_o",
+      "status": "conditional",
+      "theorem": "IChO2026T6A6.O_counts, O_trans_meso (conjunct 3)",
+      "evidence": "O = trans-5,15-bis(4-tert-butylphenyl)porphyrinato Zn(II): 40 C, 4 N, 1 Zn, Ar groups at me5/me15, meso-10/20 retain H, Zn coordinated to all four pyrrole N. Matches the Ar placement in the P6 drawing and the MacDonald 2+2 condensation shown. Encoding uses aromatic bond order 1.5 for the porphyrin (a declared convention); verified computationally over the constructed model only."
+    },
+    {
+      "output_id": "structure_p",
+      "status": "failed",
+      "theorem": "none",
+      "evidence": "No definition, theorem, conjunct, or prose for P anywhere in the submission (grep for P/structure_p in the Lean and prose files returns nothing relevant; 'P6' refers to the drawn building block, not an answer). P does not appear in the source scheme, so the output is underdetermined; the isolation manifest demands explicit reporting of underdetermined results, which was not done. This output has zero coverage."
+    },
+    {
+      "output_id": "structure_q",
+      "status": "conditional",
+      "theorem": "IChO2026T6A6.Q_counts, Q_beta_pattern (conjunct 4)",
+      "evidence": "Q = beta-tetrabromo-O: 4 Br at bB1/bB2/bD1/bD2 (the four beta positions of the rings between the Ar-bearing meso edges), consistent with NBS bromination of the two rings bearing the meso-10/20 Hs and with the belt drawing where all four beta positions of those rings join butadiyne edges. Self-constructed model verified by decide; Q_beta_pattern includes only one token negative check."
+    },
+    {
+      "output_id": "structure_r",
+      "status": "conditional",
+      "theorem": "IChO2026T6A6.R_counts, R_terminal_alkynes (conjunct 5)",
+      "evidence": "R = bis(terminal-ethynyl) dibromo Zn porphyrin: C count 44, 2 Br at bB1/bD1, terminal alkynes at bB2/bD2 (tB1 = tB2 and tD1 = tD2 triple bonds, outer carbons carry 1 H each, no Si). Matches the P6 ethynyl axes and the requirement that residual Br (flanking meso-10/20) close the belt's butadiyne edges; the choice of which Br pair is replaced is justified from the figure as disclosed in result.json. Again answer-shaped and computationally self-checked, not derived."
+    }
+  ],
+  "unsupported_assumptions": [
+    "The structural models M, N, O, Q, R and the template are introduced as literal Lean definitions with no premise linking them to the problem's graphical constraints; the theorems verify properties of assumed target structures rather than deriving them.",
+    "Skeletal-drawing implicit-hydrogen convention (valence topped to 8, aromatic bond order 1.5) is embedded in Mol.implicitH/doubleValenceSum; disclosed in result.json but hard-coded rather than justified in the formalisation.",
+    "Porphyrin labelling convention (meso me5/me10/me15/me20; beta bX1/bX2) is adopted by fiat; consistency with the P6 drawing is asserted in comments, not formally tied to pixels (acceptable as transcription but requires trust in the coding).",
+    "For R, the identity of which two of the four beta-Br are replaced by ethynyls (bB2/bD2 vs bB1/bD1) is fixed from the P6/belt figure; this reading is plausible and disclosed but is an interpretation choice baked into the model.",
+    "Requested output P (structure_p) is silently omitted: the submission neither defines it nor reports it as underdetermined-in-source, contrary to the protocol requirement that underdetermined results must be reported."
+  ],
+  "source_checks": [
+    "Read TASK.json: requested outputs are exactly structure_m, structure_n, structure_o, structure_p, structure_q, structure_r (six structures M-R).",
+    "Inspected original page image T6_page-4.png directly at full resolution plus zoomed crops of the reaction sequence, the P6 building block, the template star, and the macrocycle product: scheme runs toluene -> M (t-BuCl, AlCl3) -> N (NBS/(BzO)2; HMTA; HCl/H2O) -> O (dipyrromethane/CF3COOH; DDQ; Zn(OAc)2) -> Q (NBS) -> R (Pd0/PPh3/CuI, (C6H13)3Si-CCH; n-Bu4NF) -> belt with hexakis[4-(pyridin-4-yl)phenyl]benzene template; hint 'M is the thermodynamic product and has four types of protons' confirmed.",
+    "P6 pixels confirm: trans-meso Ar groups, ethynyl substituents at the outer beta carbons of the two rings between the Ar-bearing meso edges (3,17-type), no Br drawn; the belt shows all 8 beta positions of those rings consumed in -CC-CC- edges, supporting Q = beta-tetrabromo and R = 2 Br + 2 terminal ethynyls, consistent with the candidate's structural reading.",
+    "Template pixels confirm hexakis[4-(pyridin-4-yl)phenyl]benzene: six arms, pyridine N para to the biaryl bond, six Zn-N(pyridine) coordinations in the belt; candidate's template model (72 C, 6 N, para-pyridine arms) matches.",
+    "Confirmed the letter P never labels an unknown intermediate in the source scheme (only M, N, O, Q, R); the visible porphyrin label reads P6, a building-block name, so structure_p is underdetermined from source material.",
+    "Reagent insets (HMTA cage, DDQ = dichlorodicyanobenzoquinone, NBS = N-bromosuccinimide, (BzO)2 = benzoyl peroxide) and the dipyrromethane drawing match candidate descriptions."
+  ],
+  "proof_checks": [
+    "Compiled IChO2026Problems/problem_icho_2026_t6_a6.lean with the pinned toolchain (leanprover/lean4:v4.31.0): exit 0, clean compile.",
+    "grep over the problem file and helper sources (IChO2026Chem/Core, Reporting, IChO2026Run/Basic, Dependencies): no sorry, admit, native_decide, or axiom declarations; only decide-based proofs.",
+    "#print axioms output reproduced independently: icho_2026_t6_a6_structures and all helper theorems depend only on [propext], a standard Lean logical axiom permitted by the rules.",
+    "Final theorem icho_2026_t6_a6_structures contains conjuncts for M, N, O, Q, R and the template only; there is no conjunct, definition, or theorem for structure P, and auxiliary theorems (ar_ten_carbons, template_arm1_para, template_six_binding_sites) do not address it.",
+    "All proofs are of the form decide over candidate-defined literal structures: the 'answers' are constructed as data first and then self-verified (counts, bond existence, implicit-H tallies manufactured via the candidate's own valence convention); no theorem takes the printed problem constraints as hypotheses, so the requested 'derive from problem constraints' semantic requirement is not met by the formal content.",
+    "Coverage asymmetries noted: M_para and Q_beta_pattern include only single token negative-bond checks; N and R models contain no explicit negative constraints at all; decide discharges everything computationally with no unsupported axioms, so a clean compile is genuine but substantively shallow."
+  ]
+}
+```

@@ -1,0 +1,84 @@
+{
+  "target": "icho_2026_t1_a6",
+  "goal_status": "goal_blocked",
+  "checked_at": 1789367637.9028347,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "axiom_check.lean": "6e4cd0c9d4b277731617270e8f3a2657d7ef7451147ad7a5f6fefab985b2e5ad",
+    "scratch11.lean": "e14a6a4111cd5f5ad7b8e986ebf3d16f763ad1f8d7fb3d2880121d1a3fea22ff",
+    "scratch9.lean": "8d77200d551d1d613456969ee6c3676555cfcfbf07989a9ac1726e9a9c61396e",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "scratch8.lean": "3c86401806c6ee74db6f2ce696925674bc4af011870cf44ef355b64d7230f61c",
+    "scratch13.lean": "86cc83505eaaf8557da3797a1b63bbf7359cd583a80fbae035e71182c562ddab",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "24b3899321e75699a37a1611a613b29d6c947cce2ef924d11f7be93beee73434",
+    "IChO2026Problems/problem_icho_2026_t1_a6.lean": "4b33bd6eb70801869e7ca5c39ab6e2b98ed220bec3b8b51422b6fc92b11a6a19",
+    "answer.md": "8f4eb3500d2a1c273467d6ffdf9b7bf80d6adbee49e0052d87f22a5bfbcb12d7",
+    "verification.md": "cd6266c09678d5f0dffeb5b0d23afd055b5f4d07392cd30adee2f662d4a35265",
+    "result.json": "3194c14ef10007f821a1e15f894fd0f779732ded48589a5a8bfb07a09624c6d6"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t1_a6",
+    "status": "blocked",
+    "answer_summary": "Stone: Al2(C12O6)\u00b7xH2O (aluminium mellitate hydrate) with x \u2248 22 forced by the first TG plateau (required interval [22.03, 22.15] - non-integral), nearest candidate Al2(C12O6)\u00b722H2O; H: Al2O3 (corundum), forced as the only aluminium compound stable in open air above 400 C, with the final-residue datum pinning x \u2248 21.41 (also non-integral). Proved in Lean: the printed TG data (10.00 g -> 5.75 g @ 200 C -> 1.50 g residue) are arithmetically inconsistent with the unique compound class the problem's own 1.4/1.5 clues force (Q = Al via cryolite Na3AlF6 32.85/12.85%; mellitate anion via mellitic acid C12H6O12 -> C12O9 49.98% O): no stoichiometric aluminium-mellitate hydrate reproduces both plateaus within the displayed half-quantum measurement windows.",
+    "theorem_names": [
+      "IChO2026T1A6.cryolite_sodium_fraction",
+      "IChO2026T1A6.cryolite_aluminium_fraction",
+      "IChO2026T1A6.aluminium_fluoride_trihydrate_water_fraction",
+      "IChO2026T1A6.cyclononacarbon_oxygen_fraction",
+      "IChO2026T1A6.stone_x12_first_plateau_fails",
+      "IChO2026T1A6.stone_x22_first_plateau_fails",
+      "IChO2026T1A6.stone_x21_second_plateau_fails",
+      "IChO2026T1A6.tg_system_inconsistent"
+    ],
+    "assumptions": [
+      "problem_text: T1 page Q1-4 text as printed (10.00 g, 5.75 g @ 200 C, 1.50 g final residue)",
+      "problem_text: 1.4 clue chain (D: 32.85% Na, 12.85% Q; C.xH2O: 39.16% H2O) forces Q = Al, D = Na3AlF6, C.xH2O = AlF3.3H2O",
+      "problem_text: 1.5 clue chain (G: 49.98% O, 3-fold axis, F + P2O5) forces F = mellitic acid C12H6O12, anion mellitate C12O6(6-)",
+      "trusted_general_law: stoichiometric charge neutrality forces anhydrous core Al2(C12O6)",
+      "trusted_general_law: the residue stable in open air above 400 C from an aluminium salt is corundum Al2O3",
+      "trusted_general_law: standard atomic masses H 1.008, C 12.011, O 15.999, Al 26.982, Na 22.990, F 18.998 g/mol",
+      "measurement_policy: displayed masses/percentages interpreted with half-last-digit windows"
+    ],
+    "source_gaps": [
+      "The printed TG data as captured in the bundle (1.50 g final residue, 5.75 g first plateau on a 10.00 g sample) admit no stoichiometric Al2(C12O6).xH2O within displayed tolerances: plateau 1 requires x in [22.03, 22.15] (non-integral; nearest integer x = 22 leaves 4.26 g, not 5.75 g) while plateau 2 with H = Al2O3 requires x in [21.29, 21.54] (non-integral; nearest integer x = 21 leaves 1.52 g, not 1.50 g). The two plateaus are mutually inconsistent for any single integer x. This is proved by tg_system_inconsistent in IChO2026Problems/problem_icho_2026_t1_a6.lean. No answer-blind reconstruction of the intended numbers was possible from the problem text alone without contradicting one of the displayed measurements."
+    ],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t1_a6.lean  # exit 0; all 8 theorems prove with axioms [propext, Classical.choice, Quot.sound] only",
+      "lake build IChO2026Problems  # Build completed successfully (8564 jobs)"
+    ],
+    "notes": "No sorry/admit; native_decide deliberately unused (would add trusted-compiler axioms). answer.md contains the full derivation; verification.md records commands and the #print axioms output. Lean index file IChO2026Problems/All.lean created to import this target (required by the pre-existing generic root IChO2026Problems.lean). status=blocked because the problem's own data, as printed, has no internally consistent exact answer: formalizing 'the formulae' unconditionally would require contradicting one of the displayed measurements.",
+    "raw_results": {
+      "stone_family": "Al2(C12O6).xH2O, M(x) = 294.090 + 18.015 x g/mol",
+      "plateau1_required_x": 22.086,
+      "plateau2_required_x": 21.407,
+      "x22_first_plateau_residue_g": 4.2596,
+      "x12_first_plateau_residue_g": 5.7634,
+      "x21_final_residue_g_with_Al2O3": 1.5164
+    }
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "scratch11.lean": {
+      "native_decide": 3,
+      "sorry": 1
+    },
+    "IChO2026Problems/problem_icho_2026_t1_a6.lean": {
+      "native_decide": 2,
+      "sorry": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

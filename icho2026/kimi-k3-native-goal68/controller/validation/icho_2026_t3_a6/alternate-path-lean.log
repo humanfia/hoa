@@ -1,0 +1,5 @@
+'IChO2026T3A6.stacking_energy_aa' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T3A6.stacking_energy_ab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T3A6.stacking_energy_ab_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T3A6.requested_outputs_summary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T3A6.aa_prime_datum_ordering' depends on axioms: [propext, Classical.choice, Quot.sound]

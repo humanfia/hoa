@@ -1,0 +1,76 @@
+{
+  "target": "icho_2026_t3_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789366886.7417572,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    ".scratch/t1.lean": "195bf8d851dd6c9c6b55ce5b20e6af82a09136d26475b6862044e0e656eeae6f",
+    ".scratch/probe.lean": "e0d596b2ef81aaf7f24a9e354c4def84eab5ecf4ab14767ca06655c8d84823bb",
+    ".scratch/t3.lean": "77fde953dcc961b42e3b3c1ee80e8df9e33942cdf9ce23ac13708d90557bb9cd",
+    ".scratch/probe4.lean": "2acafc57d9a234be5ae9e1f67510eb9211379d98e499b12266fe5d9305d0f8dd",
+    ".scratch/t2.lean": "0c90f570a748aa6b145d44bb59e7c36d05320177e3ba3a24ea98952b6ec65dda",
+    ".scratch/probe2.lean": "f180764d93e4b114b5f0280e04bf54a0f82f9131181b475ea72ec2ffeca7e546",
+    ".scratch/probe3.lean": "5dc13710e3fe22374a30b006abe515f9de2d197587272eccfa5c3ff61d05d1dc",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t3_a3.lean": "5e8ccf49d7e29e3606aaf8dd2bf660c2964c380c7d33a9ad6fd08b002ede0e7b",
+    "answer.md": "2ec2f19d1db9972144a28d082889b5e3db21d7181e8f2666ecea38e32957e932",
+    "verification.md": "618921f3a44e3c949cb05c1677f71eed941d97aaeee000573d854a1686d12451",
+    "result.json": "a1556dd2cbb0aaf82b0611382633fc12e9b3f9dca435e039fef63f5778f0c89c"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t3_a3",
+    "status": "completed",
+    "answer_summary": "Completed reticular-design table. Tetragonal1: A3+B2 / XXX; Tetragonal2: C3+D4 / XXX; Hexagonal1: A1+B2 / C1+D2 (no XXX; a fourth realiser E1+D4 exists); Hexagonal2: A1+B3 / XXX; Trigonal: C1+D1 / XXX; Kagome: B1+A2 / XXX; Tetrahedral: A4+B2 / C1+D3. Every pair is unique across the table and realises its column's net under boronate-ester/imine/C=C condensation; all XXX cells are backed by kernel-checked exhaustive enumeration of admissible pairs.",
+    "theorem_names": [
+      "supplied_hexagonal1",
+      "supplied_hexagonal2",
+      "supplied_kagome",
+      "square_net_exhaustive",
+      "hexagonal1_net_exhaustive",
+      "hexagonal2_net_exhaustive",
+      "trigonal_net_exhaustive",
+      "tetrahedral_net_exhaustive",
+      "kagome_net_exhaustive",
+      "filled_entries_realise",
+      "table_fill_correct"
+    ],
+    "assumptions": [
+      "Monomer connectivities counted from the printed Q3-3 structures: A1=3,A2=2,A3=4,A4=4,B1=4,B2=2,B3=3,C1=2,C2=4,C3=4,D1=6,D2=3,D3=4,D4=2,E1=3.",
+      "A4 (Si) and D3 (sp3 C) are tetrahedral 3-D centres; all other monomers planar.",
+      "Allowed linkages restricted to boronate-ester (A x B), imine (C x D), and C=C/Knoevenagel (E x D) condensations per the Q3-3 banner; complementary class pairing only.",
+      "Hexagonal 2 read as the staggered (3,3) honeycomb, forced by its printed (3-connecting + 3-connecting) example E1+D2; Hexagonal 1 is the (3,2) honeycomb (A2+B3)."
+    ],
+    "source_gaps": [
+      "The two hexagonal figures are the same skeleton; the Hexagonal 1 vs Hexagonal 2 distinction is inferred from the printed examples' connectivities (3,2 vs 3,3) rather than stated textually. Declared in answer.md; no marking scheme consulted."
+    ],
+    "verification_commands": [
+      "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t3_a3/campaign/workspace",
+      "lake env lean IChO2026Problems/problem_icho_2026_t3_a3.lean   # exit 0",
+      "grep -n \"sorry\\|native_decide\\|admit\\b\\|axiom \" IChO2026Problems/problem_icho_2026_t3_a3.lean   # only a doc-comment word 'admit'",
+      "#print axioms for all final theorems: only [propext, Classical.choice, Quot.sound]"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    ".scratch/probe2.lean": {
+      "native_decide": 1
+    },
+    "IChO2026Problems/problem_icho_2026_t3_a3.lean": {
+      "admit": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

@@ -1,0 +1,43 @@
+{
+  "target_id": "icho_2026_t1_a2",
+  "status": "completed",
+  "answer_summary": "Z is compound 7 of the problem's Chamomilla row, 4-ethyl-1,7-dimethylazulene (C14H16); A is azulene (C10H8, fused [5.7] bicyclic framework with exactly two perpendicular planes of symmetry); B is naphthalene (C10H8, aromatic, three mutually perpendicular planes of symmetry, the thermal isomerisation product of azulene). The chlorine-isotope 3:1 pair at m/z 218/220 is certified as 12*14+15+35=218 and 12*14+15+37=220 for the monochloride C14H15Cl.",
+  "theorem_names": [
+    "IChO2026Problems.T1A2.answer",
+    "IChO2026Problems.T1A2.A_structure_is_azulene",
+    "IChO2026Problems.T1A2.B_structure_is_naphthalene",
+    "IChO2026Problems.T1A2.Z_is_compound_seven",
+    "IChO2026Problems.T1A2.blue_unique",
+    "IChO2026Problems.T1A2.Certificates.A_formula",
+    "IChO2026Problems.T1A2.Certificates.BA_same_formula",
+    "IChO2026Problems.T1A2.Certificates.A_two_perpendicular_planes",
+    "IChO2026Problems.T1A2.Certificates.B_three_perpendicular_planes",
+    "IChO2026Problems.T1A2.Certificates.Z_structure",
+    "IChO2026Problems.T1A2.Certificates.Z_chloride_ms",
+    "IChO2026Problems.T1A2.Z_ms_consistent",
+    "IChO2026Chem.Skeletons.Certificates.zSkeleton_is_azulene_derivative",
+    "IChO2026Chem.Skeletons.Certificates.zSkeleton_substituent_bonds",
+    "IChO2026Chem.Skeletons.Certificates.azulene_has_two_perpendicular_planes",
+    "IChO2026Chem.Skeletons.Certificates.naphthalene_has_three_perpendicular_planes",
+    "IChO2026Chem.Skeletons.Certificates.azulene_is_isomer_of_naphthalene",
+    "IChO2026Chem.Skeletons.Certificates.z_monochloride_nominal_mass",
+    "IChO2026Chem.Skeletons.Certificates.z_monochloride_heavy_isotopologue_mass"
+  ],
+  "assumptions": [
+    "Trusted general law: natural chlorine isotope abundance 35Cl : 37Cl ≈ 3 : 1, so a molecular-ion doublet at m/z M and M+2 with intensity ratio 3:1 signals exactly one chlorine atom.",
+    "Integer nominal masses as standard for mass spectra: C = 12, H = 1, 35Cl = 35, 37Cl = 37.",
+    "Standard general chemistry: azulene is a well-known deep-blue planar hydrocarbon; it thermally isomerises to aromatic naphthalene; monochlorination replaces one H by one Cl.",
+    "Planes of symmetry are formalised at the level of the atomic framework (connectivity-preserving involutions): the molecular plane of a planar molecule acts trivially on the skeleton and is counted separately, so 'two perpendicular planes' and 'three mutually perpendicular planes' are packaged as one / two nontrivial skeletal mirror planes respectively. Kekulé double bonds are a resonance convention and are not required to be reflection-invariant.",
+    "Laboratory predicates (blue colour, chlorination, heating isomerisation) are asserted by the problem's shared context and are therefore represented as schematic relations, discharged only in ways the context licenses."
+  ],
+  "source_gaps": [
+    "The blank student answer sheets (answer-template boxes for 'draw the structures') are not present among the authorised assets in isolation_manifest.json, which lists only the problem page images and theory_problem.pdf; structures are therefore drawn as complete connectivity/Kekulé descriptions in answer.md and as explicit Lean bond tables.",
+    "theory_problem.pdf has no machine-readable text layer for the T1 pages on this toolchain (streams unpack to garbage); the page images T1_page-2.png and T1_page-3.png are the authoritative source and were read directly."
+  ],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake build IChO2026Problems",
+    "lake env lean IChO2026Chem/Molecule.lean",
+    "lake env lean IChO2026Problems/problem_icho_2026_t1_a2.lean"
+  ]
+}

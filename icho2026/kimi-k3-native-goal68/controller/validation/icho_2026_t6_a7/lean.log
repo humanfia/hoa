@@ -1,0 +1,4 @@
+'IChO2026T6A7.minimum_electrons_removed' depends on axioms: [propext, Quot.sound]
+'IChO2026T6A7.global_pi_electron_count' depends on axioms: [propext, Quot.sound]
+'IChO2026T6A7.p6_neutral_not_globally_aromatic' depends on axioms: [propext, Quot.sound]
+'IChO2026T6A7.huckelLabel_aromatic_disjoint_antiaromatic' depends on axioms: [propext, Quot.sound]

@@ -13,6 +13,7 @@ We build with open source, and build for open source. We **release everything** 
 
 * the [complete GPT full-theory formalization: 68 subquestions](gpt-5.6-sol-full68-formalization/), including the latest T8-A8 contest-model proof and its 12 checked lemmas;
 * the [GPT-5.6 Sol native Codex `/goal` baseline](gpt-5.6-sol-native-goal68/): 68/68 compiled, **32/68 (47.06%)** independently accepted;
+* the [Kimi-K3 native Codex `/goal` baseline](kimi-k3-native-goal68/): fresh 68-target run, **31/68 (45.59%)** independently accepted; 2 review-format errors disclosed;
 * the [Kimi-K3 remaining 36 formalizations](kimi-k3-nl-36-formalization/), which together with the [earlier 32 answer-blind targets](kimi-k3-answer-blind/) cover all 68 theory subquestions;
 * the final answer-blind Lean 4 statements and proofs [Kimi-K3](./kimi-k3-answer-blind) and [GPT-5.6 Sol](./gpt-5.6-sol-answer-blind);
 * the final worked solutions [Kimi-K3](./kimi-k3-max/solutions) and [GPT-5.6 Sol](./gpt-5.6-sol-max/solutions);
@@ -29,6 +30,13 @@ Notably, humanize enables **open source models like Kimi-K3** to achieve **68/68
 | Experiment | Scope | Lean compilation | Semantic review | Combined acceptance | Official-answer score |
 |---|---:|---:|---:|---:|---|
 | [GPT-5.6 Sol native `/goal`](gpt-5.6-sol-native-goal68/) | 68 subquestions, peak 32 concurrent | 68/68 | 45/68 | **32/68 (47.06%)** | **415/437 (94.97%); 57.875/60 (96.46%)** |
+| [Kimi-K3 native `/goal`](kimi-k3-native-goal68/) | 68 subquestions, peak 32 concurrent | 66 canonical + 2 alternate-path | 46/68 | **31/68 (45.59%)** | Not performed |
+
+The Kimi native run has 67 completed goals and one final failure (T1-A6).
+Independent review produced 66 structured verdicts and 2 format errors;
+proof review passed 44/68. It is separate from the historical Kimi 32+36 run.
+Its acceptance percentage is not an official-answer score. See the
+[Kimi protocol and full results](kimi-k3-native-goal68/).
 
 This fresh answer-blind baseline uses native persisted goals, **not the Humanize
 review/redraft solver loop**. Independent post-run reviews did not feed back into

@@ -1,0 +1,94 @@
+{
+  "target": "icho_2026_t1_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789388898.1809583,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "e7d5676bc3ff42c10f798ef0f9c1022ae3905dcd1231b2d6e8db6f71c636463f",
+    "IChO2026Problems/problem_icho_2026_t1_a4.lean": "0be57b8da96b7a9590b5c668bfe160c27d7627cfaeff6869bdaab1756b5e915f",
+    "answer.md": "fd752877bde4fc25c6a8cf4b39ebfe2b89709c58d5a56167e75d39ae746b3abc",
+    "verification.md": "35721650a66c8df557b7c8f37a04518aa3ec23cae973fa56bff43d8c14df6bba",
+    "result.json": "09682ecab35b130378d59da8fa47311ae4aa438333294e47b3f1965d7868e1f1"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t1_a4",
+    "status": "completed",
+    "answer_summary": "Q = aluminium (Al, Z = 13, Ar = 26.98); C\u00b7xH2O = AlF3\u00b73H2O (x = 3); D = Na3AlF6 (cryolite). All three printed percentages reproduce inside their displayed half-quantum windows: w(H2O) = 54.048/138.028 = 39.1577\u2026% (printed 39.16%), w(Na) = 68.97/209.94 = 32.8523\u2026% (printed 32.85%), w(Q) = 26.98/209.94 = 12.8513\u2026% (printed 12.85%). Uniqueness proved: the v = 2 family forces 17.9725 < Ar < 17.997, contradicted by the periodic table (O 16.00, F 19.00); the v = 3 family forces 26.945 < Ar < 26.9943, matching exactly one printed element, aluminium 26.98; at the tightened aluminium mass the hydration and sodium data force x = 3 and n = 3.",
+    "theorem_names": [
+      "answer_aluminium",
+      "printed_value_2698_is_element_13",
+      "industrial_use_consistent",
+      "MH_pos",
+      "MD_pos",
+      "cleared_hydration",
+      "cleared_sodium",
+      "cleared_metal",
+      "hyd_hi_rearr",
+      "x_bound",
+      "n_bound",
+      "cleared_hydration_strong",
+      "envelope_v2_c1_10",
+      "envelope_v2_c11_20",
+      "envelope_v2_c21_30",
+      "envelope_v2_c31_37",
+      "envelope_v2",
+      "envelope_v3_c1_10",
+      "envelope_v3_c11_20",
+      "envelope_v3_c21_30",
+      "envelope_v3_c31_37",
+      "envelope_v3",
+      "table_no_match_v2",
+      "table_match_v3",
+      "stoichiometry_at_aluminium",
+      "main_answer",
+      "theAnswer_correct"
+    ],
+    "namespace": "IChO2026Problems.T1A4",
+    "assumptions": [
+      "M-A4-1: C = QF_v with v in {2,3} (common metal-fluoride stoichiometries), hydrate QF_v\u00b7xH2O, x \u2265 1",
+      "M-A4-2: D = C adduct n NaF = Na_n Q F_{v+n}, n \u2265 1 (as cryolite Na3AlF6 = AlF3 \u2b1d 3 NaF)",
+      "M-A4-3: 0 < Ar(Q) \u2264 294 (heaviest element oganesson)",
+      "M-A4-4: after identification the true Ar(Q) lies within half a displayed quantum (\u00b10.005) of the matched printed periodic-table value (printed masses are measurements at half-quantum precision)"
+    ],
+    "source_gaps": [
+      "The problem text does not print the valence restriction v \u2208 {2,3}; it is chemically standard. Widening to v \u2264 5 admits one spurious numerically self-similar candidate (v,x,n) = (5,5,5) near scandium's printed Ar 44.96, but ScF5 does not exist (Sc is exclusively +3), so the chemical answer is unchanged; the restriction is declared as assumption M-A4-1 rather than derived.",
+      "The exact structural class D = Na_n Q F_{v+n} (fluoride adduct of C with NaF) is a standard chemical reading of 'C reacts with excess NaF to yield D' containing both Na and Q; it is declared as M-A4-2.",
+      "Interpreting the printed periodic-table masses as half-quantum measurements (M-A4-4) follows the task measurement policy but is not spelled out in the problem text itself."
+    ],
+    "verification_commands": [
+      "cd <workspace> && lake env lean IChO2026Problems/problem_icho_2026_t1_a4.lean  # exit 0, no errors (log /tmp/leantest/full10.log)",
+      "cd <workspace> && lake build  # Build completed successfully (8581 jobs), exit 0",
+      "cd <workspace> && lake env lean /tmp/leantest/axioms.lean  # #print axioms on main_answer, answer_aluminium, theAnswer_correct, stoichiometry_at_aluminium, x_bound, n_bound, envelope_v2, envelope_v3, table_no_match_v2, table_match_v3: each depends only on [propext, Classical.choice, Quot.sound]",
+      "grep -n \"sorry\\|admit\\|axiom\\|native_decide\\|unsafe\" IChO2026Problems/problem_icho_2026_t1_a4.lean  # only the doc-comment disclaimer; no shortcuts present"
+    ],
+    "axioms_used": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "custom_axioms": false,
+    "sorries": 0
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t1_a4.lean": {
+      "sorry": 1,
+      "admit": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

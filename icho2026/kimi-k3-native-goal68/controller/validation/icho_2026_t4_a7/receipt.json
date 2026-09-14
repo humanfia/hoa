@@ -1,0 +1,54 @@
+{
+  "target": "icho_2026_t4_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789362771.9217043,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t4_a7.lean": "8881f29249afdbbd74f546cce21e23b2fbe2fbbe0e107aace67c3d00ab73b613",
+    "answer.md": "1867bb5655715403bab4d45fa117d8dd0cd39bb8402e32b9a172101f88e39ab0",
+    "verification.md": "2c1b3809894378a6e7e34f1eec2345423e9b4640f39ae013723e424b90fb8d03",
+    "result.json": "0467b6f61534471d48e0f0d44e78fec36bba2e811cfcba0352d456320d62ebe1"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a7",
+    "status": "completed",
+    "answer_summary": "\u0394rH2000 = -782 kJ mol^-1 (raw exact value -781.876 kJ mol^-1) for CH4(g) + 2 O2(g) -> CO2(g) + 2 H2O(g) at 2000 K. Derived via Hess's law at 298 K (\u0394rH\u00b0298 = -802.3 kJ mol^-1, from the problem's enthalpies of formation) and Kirchhoff's law with the problem's constant heat capacities (\u0394Cp = 37 + 2*34 - 35 - 2*29 = 12 J mol^-1 K^-1): \u0394H2000 = -802.3 + 0.012*(2000-298) = -781.876 kJ mol^-1, reported to 3 significant figures as -782 kJ mol^-1.",
+    "theorem_names": [
+      "IChO2026Problems.Icho2026T4A7.CombustionStoichiometry.unique",
+      "IChO2026Problems.Icho2026T4A7.reaction_enthalpy_298",
+      "IChO2026Problems.Icho2026T4A7.reaction_heat_capacity",
+      "IChO2026Problems.Icho2026T4A7.reaction_enthalpy_2000_exact",
+      "IChO2026Problems.Icho2026T4A7.rawAnswer2000_eq",
+      "IChO2026Problems.Icho2026T4A7.reported_at_2000",
+      "IChO2026Problems.Icho2026T4A7.final_submission_valid"
+    ],
+    "assumptions": [
+      "Heat capacities are temperature independent over 298-2000 K (the problem stipulates a single Cp value per species and no temperature dependence).",
+      "\u0394fH\u00b0298(O2(g)) = 0 (element in its standard state; trusted general law).",
+      "Hess's law and Kirchhoff's law (trusted general thermochemistry laws).",
+      "The conditional fallback values printed in the problem (\u0394H298 = -750, \u0394H2000 = -700 kJ mol^-1) were not used because the data fully determine the answers."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t4_a7.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

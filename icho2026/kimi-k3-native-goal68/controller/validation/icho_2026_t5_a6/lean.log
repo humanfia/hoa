@@ -1,0 +1,17 @@
+'IChO2026.Problems.T5.A6.bondTotal_pl1' depends on axioms: [bondTotal_pl1._native.native_decide.ax_1_1]
+'IChO2026.Problems.T5.A6.bondTotal_pl2' depends on axioms: [bondTotal_pl2._native.native_decide.ax_1_1]
+'IChO2026.Problems.T5.A6.z_h2_inert' depends on axioms: [z_h2_inert._native.native_decide.ax_1_1]
+'IChO2026.Problems.T5.A6.pl2_wingSwap_is_automorphism' depends on axioms: [propext,
+ pl2_wingSwap_is_automorphism._native.native_decide.ax_1_1]
+'IChO2026.Problems.T5.A6.pl1_forces_swap_absent' depends on axioms: [propext,
+ pl1_forces_swap_absent._native.native_decide.ax_1_1]
+'IChO2026.Problems.T5.A6.pl2_meso_RS_achiral' depends on axioms: [propext,
+ pl2_meso_RS_achiral._native.native_decide.ax_1_1,
+ pl2_meso_RS_achiral._native.native_decide.ax_1_4,
+ pl2_meso_RS_achiral._native.native_decide.ax_1_5]
+'IChO2026.Problems.T5.A6.pl2_RR_not_meso' depends on axioms: [propext, Quot.sound]
+'IChO2026.Problems.T5.A6.pl3_phys_netCharge' depends on axioms: [pl3_phys_netCharge._native.native_decide.ax_1_1]
+'IChO2026.Problems.T5.A6.pl3_pair_of_enantiomers' depends on axioms: [propext,
+ pl3_pair_of_enantiomers._native.native_decide.ax_1_1]
+'IChO2026.Problems.T5.A6.pl3_hydrolysis_waters' depends on axioms: [propext,
+ pl3_hydrolysis_waters._native.native_decide.ax_1_1]

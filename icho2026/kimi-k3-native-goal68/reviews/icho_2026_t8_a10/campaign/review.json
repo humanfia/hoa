@@ -1,0 +1,44 @@
+All checks are complete. The source page (Q8-5, PDF p.76) confirms the printed constants (k_S = 2.7×10⁹ M⁻¹s⁻¹, k_T = 1.5×10⁸ M⁻¹s⁻¹, τ₀(S1) = 2.9 ns, τ₀(T1) = 84 µs) and the exact 8.10 question text with options a/b/c. The blank answer sheet (A8-7, PDF p.83) confirms a single shared tick row for 8.10; TASK.json nonetheless splits the output into per-state ids, both of which are answered identically ("decreases"). The Lean file compiles cleanly, `#print axioms` shows only the three standard logical axioms, no sorry/admit/native_decide/unsafe/custom axioms anywhere in the project, and the final theorems prove strict antitonicity of the Stern–Volmer lifetime on [0,∞) instantiated with the printed constants before classifying to option b. The Stern–Volmer lifetime quenching law is a disclosed, standard general photophysical law grounded by the problem's own Q8.9 quenching formalism and printed rate data — within the allowed `trusted_general_law` source policy.
+
+```json
+{
+  "target_id": "icho_2026_t8_a10",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "Answer-blind review of IChO 2026 T8-A10 (Q8.10). Source-first inspection of theory_problem.pdf p.76 (Q8-5) and T8_page-5.png confirms the question text ('How do the emission lifetimes of S1 and T1 states change when [Red] increases? a) increases b) decreases c) doesn't change') and all givens: k_S = 2.7e9 M^-1 s^-1, k_T = 1.5e8 M^-1 s^-1, tau0(S1) = 2.9 ns, tau0(T1) = 84 us defined as emission lifetimes in the absence of quencher, plus the reductive-quenching channels shown in the Jablonski diagram. The blank answer sheet (A8-7, PDF p.83) has one shared a/b/c tick row for 8.10, consistent with both states receiving the same answer. The submission answers b) decreases for both states, via the standard Stern-Volmer lifetime relation tau = tau0/(1 + kq*tau0*[Red]), which is the same parallel-decay quenching kinetics underpinning Q8.9 (eta_q = 1 - tau/tau0) and is a trusted general photophysical law grounded by the printed rate constants; it is explicitly disclosed in answer.md/result.json assumptions. The physical claim (more quencher => additional decay channel => shorter observed lifetime) is the definitional meaning of dynamic quenching. Numerical ties KS = kS*tau0S1 = 7.83 M^-1 and KT = kT*tau0T1 = 12600 M^-1 are checked by norm_num theorems against the printed values. The Lean formalization proves genuine monotonicity theorems (StrictAntiOn of tau0/(1+K*q) on Ici 0 for tau0>0, K>0) and only then classifies the result via if_pos, so the 'decreases' classification is established, not assumed; the if/else classifier's constitutionality gap is irrelevant because both final theorems discharge the positive anti-monotonicity branch. Rebuilt IChO2026Chem (8561 jobs, success) and ran lake env lean on the problem file: exit 0, no errors/warnings; #print axioms for answer_T8_A10, lifetime_s1, lifetime_t1, sternVolmerLifetime_strictAntiOn all report exactly [propext, Classical.choice, Quot.sound]; project-wide scan finds no sorry/admit/native_decide/unsafe/extern/custom axioms. Both requested outputs (lifetime_s1, lifetime_t1) are covered by substantive theorems expressing precisely the requested trend classification. No unsupported scientific assumptions beyond the disclosed, problem-grounded quenching model and the physical concentration domain [0, infinity).",
+  "coverage": [
+    {
+      "output_id": "lifetime_s1",
+      "status": "passed",
+      "theorem": "IChO2026Problems.lifetime_s1",
+      "evidence": "Prove classifyLifetimeTrend (sternVolmerLifetime tau0S1 KS) = LifetimeTrend.decreases via if_pos tauS1_strictAntiOn, where tauS1_strictAntiOn instantiates sternVolmerLifetime_strictAntiOn with tau0S1 = 2.9e-9 s and KS = kS*tau0S1 = 2.7e9*2.9e-9 = 7.83 M^-1 (KS_val checked by norm_num), matching the constants printed on PDF p.76/Q8-5. Compiles with axiom set [propext, Classical.choice, Quot.sound] only. Conclusion equals box b 'decreases', the correct trend for observed S1 emission lifetime under reductive quenching."
+    },
+    {
+      "output_id": "lifetime_t1",
+      "status": "passed",
+      "theorem": "IChO2026Problems.lifetime_t1",
+      "evidence": "Prove classifyLifetimeTrend (sternVolmerLifetime tau0T1 KT) = LifetimeTrend.decreases via if_pos tauT1_strictAntiOn, instantiated with tau0T1 = 84e-6 s and KT = kT*tau0T1 = 1.5e8*84e-6 = 12600 M^-1 (KT_val checked by norm_num), all values verified against the printed Q8-5 page. Same core theorem and axiom profile as lifetime_s1. Conclusion is box b 'decreases', matching the single shared tick row on the A8-7 blank answer sheet and the physical expectation for T1 quenching."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Read theory_problem.pdf PDF page 76 (printed Q8-5) via text extraction: question 8.10 text and options a/b/c match TASK.json verbatim; quenching equations PS(S1)+Red -> PS(radical anion)+Red(radical cation) with k_S = 2.7 x 10^9 M^-1 s^-1 and k_T = 1.5 x 10^8 M^-1 s^-1 confirmed.",
+    "Confirmed tau0(S1) = 2.9 ns and tau0(T1) = 84 us on the same page, defined as 'the emission lifetime in the absence of the quencher', matching the Lean defs tau0S1 = 2.9e-9, tau0T1 = 84e-6.",
+    "Visually inspected T8_page-5.png: Jablonski diagram shows S1, T1, S0 levels with k_F, k_IC, k_P, k_N intrinsic decays, k_S and k_T quenching channels to Red(radical cation), and k_ISC/k_RISC between S1 and T1; consistent with the quadratic Stern-Volmer parallel-decay model adopted from Q8.9 (note k_F >> k_ISC printed on the page).",
+    "Inspected blank student answer sheet (PDF page 83, A8-7): 8.10 (2.0 pt) has exactly one tick row with three boxes a/b/c, i.e. a single answer applying to both S1 and T1; both states genuinely have the same trend, so the split requested outputs are both 'decreases'.",
+    "Verified arithmetic ties: 2.7e9 x 2.9e-9 = 7.83 M^-1 (S1 Stern-Volmer constant) and 1.5e8 x 84e-6 = 1.26e4 M^-1 (T1), both > 0 as required for strict antitonicity.",
+    "No official solutions, rubrics, answer repositories, or previous experiment answers were consulted; only the authorized problem PDF, page images and blank answer sheet."
+  ],
+  "proof_checks": [
+    "Rebuilt shared library: 'lake build IChO2026Chem' completed successfully (8561 jobs).",
+    "Ran 'lake env lean IChO2026Problems/problem_icho_2026_t8_a10.lean': exit 0, no errors or warnings.",
+    "Axiom audit output: answer_T8_A10, lifetime_s1, lifetime_t1, and sternVolmerLifetime_strictAntiOn each depend only on [propext, Classical.choice, Quot.sound]; no sorryAx and no custom axioms.",
+    "Project-wide grep over IChO2026Problems, IChO2026Chem, IChO2026Run found no sorry/admit/native_decide/unsafe/implemented_by/extern/custom axiom declarations (only a comment mentioning their absence).",
+    "Statement audit: sternVolmerLifetime_strictAntiOn states genuine StrictAntiOn of q |- tau0/(1+K*q) on Ici 0 for tau0>0, K>0 and is proved by cross-multiplication of positive denominators (div_lt_div_iff), a real monotonicity proof rather than a precomputed table or tautology.",
+    "emissionLifetime_eq_sternVolmer is properly conditioned on tau0>0 and nonzero denominator; decayRate_pos supplies the positivity on the physical domain, so the final instantiations are non-vacuous.",
+    "Classifier honesty: lifetime_s1/lifetime_t1 use if_pos with the proved StrictAntiOn facts; not_lifetimeIncreases_of_lifetimeDecreases proves options a and b mutually exclusive on Ici 0, so the classification is justified, not defaulted.",
+    "Constants kS=2.7e9, kT=1.5e8, tau0S1=2.9e-9, tau0T1=84e-6 are declared as given-input defs and tied to the printed page values; KS_val and KT_val numerically validate 7.83 and 12600 by norm_num.",
+    "The requested classification outputs are exact symbolic trends, so no display-quantum or rounding policy applies."
+  ]
+}
+```
