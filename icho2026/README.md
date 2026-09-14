@@ -51,21 +51,20 @@ Lean checks deductions from the encoded inputs; it does not itself certify
 that every encoding matches the official chemical answer. Post-run answer
 scoring is separate and is not represented by **68/68**. The historical
 selected-set scores in their own section belong to different experiments.
-The historical Kimi 417.5/437 natural-language score must not be reused for
-these formalized artifacts.
-
 ### Full68 answer scoring — generous, non-official
 
 | Run | Raw points | Raw accuracy | Weighted theory score | Weighted accuracy |
 |---|---:|---:|---:|---:|
 | [GPT-5.6 Sol full68](gpt-5.6-sol-full68-formalization/grading/GRADING.md) | **424.5/437** | **97.14%** | **58.736/60** | **97.89%** |
+| [Kimi-K3](kimi-k3-max/GRADING.md) | **417.5/437** | **95.54%** | **58.209/60** | **97.02%** |
 
 This user-requested generous grading accepts equivalent representations,
 reasonable rounding and justified partial credit, without erasing substantive
-chemical errors. It is **not an official IChO jury score**. The remaining
-deductions are T3-A3 (15/23) and T8-A4 (24.5/29); see the linked item-level
-report and grading-method disclosure. Formalization **68/68** and answer-score
-**97.89% weighted** measure different things.
+chemical errors. It is **not an official IChO jury score**. GPT's remaining
+deductions are T3-A3 (15/23) and T8-A4 (24.5/29). Kimi's published score is the
+independent official-key regrade of the nine natural-language solutions; the
+32+36 Lean artifacts were not given a second generous marking. Formalization
+**68/68** and these answer scores measure different things.
 
 ### Historical selected-set answer-blind Lean results
 
