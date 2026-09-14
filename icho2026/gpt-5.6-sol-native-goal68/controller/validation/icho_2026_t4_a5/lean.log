@@ -1,0 +1,1 @@
+'IChO2026Problems.T4A5.icho_2026_t4_a5_answer' depends on axioms: [propext, Classical.choice, Quot.sound]

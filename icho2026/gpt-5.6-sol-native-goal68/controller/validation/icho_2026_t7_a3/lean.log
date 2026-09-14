@@ -1,0 +1,2 @@
+'IChO2026Problems.T7A3.nitrogen_after_58_cycles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T7A3.cycles_for_97_percent' depends on axioms: [propext, Classical.choice, Quot.sound]

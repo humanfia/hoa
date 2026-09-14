@@ -1,0 +1,7 @@
+'IChO2026Problems.T8A6.co_half_reaction_balanced' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T8A6.electron_coefficient_from_charge_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T8A6.co_quantum_yield_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T8A6.co_quantum_yield_reported' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T8A6.co_quantum_yield_final' depends on axioms: [propext, Classical.choice, Quot.sound]

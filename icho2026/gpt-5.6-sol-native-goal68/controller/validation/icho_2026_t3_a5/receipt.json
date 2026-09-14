@@ -1,0 +1,70 @@
+{
+  "target": "icho_2026_t3_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302073.2884896,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "83252102b5c02eba32d6218565aa282ad734689a726527377fd4d73fcea04eb5",
+    "IChO2026Problems/problem_icho_2026_t3_a5.lean": "e1d5d1cb8569a7c78ff463ad8a4051926e582b17c8cd432d132fdc1657fee9aa",
+    "answer.md": "c7472eced9d1467047a8e18e81bea4d52a0420e55ba29b355d2e944e34323948",
+    "verification.md": "686c3565233bd0bb0a35476b05b17bd6466591f7bd3a6d9c95a9e0f4bc5636a4",
+    "result.json": "24e2797988dff40e07978fa61ddf6d43115c6d5a21b90b5806f5e108c5d56655"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t3_a5",
+    "status": "completed",
+    "answer_summary": "X is the neutral, closed-shell, aldehyde-functionalized fluorinated hexagonal polyamide excised from a COF-7 hexagonal pore. Its smallest repeat is one C2 half plus one D4-derived tetrafluoroterephthaloyl linker, C27H14F4N2O3; six repeats close the ring to give C162H84F24N12O18.",
+    "theorem_names": [
+      "IChO2026Problems.T3A5.pipeline_state",
+      "IChO2026Problems.T3A5.kagome_hexagon_boundary_is_cycle",
+      "IChO2026Problems.T3A5.kagome_hexagon_boundary_degree_two",
+      "IChO2026Problems.T3A5.repeatUnit_explicit_atom_count",
+      "IChO2026Problems.T3A5.macrocycleX_explicit_atom_count",
+      "IChO2026Problems.T3A5.macrocycleX_repeat_formula",
+      "IChO2026Problems.T3A5.macrocycleX_formula",
+      "IChO2026Problems.T3A5.macrocycleX_formula_derived_from_reagents",
+      "IChO2026Problems.T3A5.macrocycleX_bonds_are_undirected",
+      "IChO2026Problems.T3A5.macrocycleX_has_no_self_bonds",
+      "IChO2026Problems.T3A5.macrocycleX_carbonyl_bond_orders",
+      "IChO2026Problems.T3A5.macrocycleX_local_amide_bond",
+      "IChO2026Problems.T3A5.macrocycleX_intercell_amide_bond",
+      "IChO2026Problems.T3A5.macrocycleX_fluorine_substitution",
+      "IChO2026Problems.T3A5.macrocycleX_is_neutral_closed_shell_achiral",
+      "IChO2026Problems.T3A5.no_identical_integral_repeat_count_exceeds_six",
+      "IChO2026Problems.T3A5.macrocycleX_smallest_repeat_unit"
+    ],
+    "assumptions": [
+      "Problem input: C2 is the pictured tetratopic tetraamine with one central stilbene olefin; D4 is the pictured 2,3,5,6-tetrafluoroterephthaldehyde.",
+      "Problem input: AcOH condensation gives the depicted Kagome imine COF-7, whose selected hexagonal boundary contains six C2 halves, six D4 linkers, and twelve condensation links.",
+      "Trusted general chemistry law: buffered NaClO2/NaH2PO4 oxidation converts Ar-N=CH-Ar imines to Ar-NH-C(=O)-Ar amides while preserving the scaffold.",
+      "Trusted general chemistry law: reductive ozonolysis with O3 then Me2S cleaves Ar-CH=CH-Ar to two Ar-CHO termini.",
+      "Structural convention: bonds in benzene rings are represented by the aromatic bond-order constructor rather than one arbitrary Kekule resonance form."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T3_page-5.png icho_2026_source/image/T3_page-4.png icho_2026_source/raw/theory_problem.pdf",
+      "/usr/bin/time -f 'elapsed=%E exit=%x' lake env lean IChO2026Problems/problem_icho_2026_t3_a5.lean",
+      "lake build IChO2026Problems",
+      "grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t3_a5.lean || true",
+      "grep -n 'native_decide\\|axiom ' IChO2026Problems/problem_icho_2026_t3_a5.lean || true",
+      "python3 -c \"import json, xml.etree.ElementTree as ET; json.load(open('result.json')); ET.parse('macrocycle_X_repeat_unit.svg'); print('valid')\""
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

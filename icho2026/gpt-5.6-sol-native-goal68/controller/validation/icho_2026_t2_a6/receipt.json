@@ -1,0 +1,60 @@
+{
+  "target": "icho_2026_t2_a6",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300994.1982446,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t2_a6.lean": "97512932b55921598925c012c30c077439d75db7b4565184e2b6078dc5418b07",
+    "answer.md": "36dc007ec7177b2223fc59e2a3d3e702c03f4a76f161d5480a0ea2c9f80ed7d8",
+    "verification.md": "f745fdd381a91fe3419d1305206ae27545de935f0aa1ea3eb463da61f777a8f2",
+    "result.json": "85bf4c30686a8ab09f35751c33c5fcb3d27571330c5b9b02cf45a9a39d687d4b"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a6",
+    "status": "completed",
+    "answer_summary": "Intended qualitative choices: 1-c (A switches to B), 2-d (B switches to A), 3-b (Process B is prolonged), 4-e (oscillations stop). The Lean development derives [Br-]_critical = 3/10000000 M from the printed step-(1)/step-(4) rates and proves mechanistic certificates for all four choices. Pulse-threshold and feed-invariance qualifications are stated explicitly because their magnitudes are not printed.",
+    "theorem_names": [
+      "IChO2026Problems.T2A6.critical_bromide_eq_three_e_neg_seven",
+      "IChO2026Problems.T2A6.step4_exceeds_step1_iff_bromide_above_critical",
+      "IChO2026Problems.T2A6.action_1_answer",
+      "IChO2026Problems.T2A6.action_2_answer",
+      "IChO2026Problems.T2A6.action_3_answer",
+      "IChO2026Problems.T2A6.action_4_answer",
+      "IChO2026Problems.T2A6.all_requested_outputs"
+    ],
+    "assumptions": [
+      "Positive HBrO2 and H+ concentrations permit cancellation of their common factors in the printed elementary rate laws.",
+      "The printed elementary reactions obey their mass-action rate laws; this is also the rate comparison explicitly requested by the problem.",
+      "As a trusted general chemistry law, added Ag+ removes dissolved Br- through AgBr(s) precipitation.",
+      "For action 3, the remaining time to the critical boundary is strictly increasing with the starting Br- concentration along the stated monotone Process-B segment; no constant-speed assumption is used.",
+      "For the intended action-4 response, continuous Br- input maintains Br- above its critical concentration."
+    ],
+    "source_gaps": [
+      "The phrase 'small amount' gives no Ce4+ or Ag+ dose. Immediate choices c and d require a threshold-crossing perturbation; a smaller pulse only advances the eventual switch.",
+      "The continuous Br- feed rate is not specified. Choice e requires input sufficient to prevent Br- from falling to the critical value; an insufficient feed need not stop oscillations."
+    ],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T2_page-2.png icho_2026_source/image/T2_page-3.png icho_2026_source/image/T2_page-4.png icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t2_a6.lean",
+      "if grep -nE '^[[:space:]]*(axiom|unsafe|sorry|admit)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t2_a6.lean; then echo 'Forbidden Lean declaration or proof shortcut found.'; exit 1; else echo 'No forbidden Lean declarations or proof shortcuts found.'; fi",
+      "python3 -m json.tool result.json >/dev/null && echo 'result.json: valid JSON'"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

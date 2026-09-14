@@ -1,0 +1,157 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Draw the structures of 3-7.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t8_a2",
+  "image": "T8_page-1.png",
+  "images": [
+    "T8_page-1.png"
+  ],
+  "index": "icho_2026_t8_a2",
+  "kind": "structure-drawing",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T8",
+  "part_id": "T8-A2",
+  "phase": "solve",
+  "points": 16.0,
+  "previous_parts": [
+    {
+      "dependency_policy": "derive_in_answer_blind_run_or_use_problem_stated_fallback",
+      "part_id": "T8-A1",
+      "question": "Write the half equation for the reduction of CO2 to CO in an acidic medium.",
+      "source_id": "icho_2026_t8_a1"
+    }
+  ],
+  "printed_page": 1,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T8_page-1.png",
+      "printed_page": 1,
+      "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843",
+      "source_page": 72
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 72
+    }
+  ],
+  "problem_id": "icho_2026_t8",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT8. Recycling of Carbon Dioxide 7% Removing CO2 gas from the atmosphere is key to combat climate change. One promising solution is the photocatalytic reduction of CO2 to CO using molecular catalyst 1. 8.1 Write the half equation for the reduction of CO2 to CO in an acidic medium. The conjugate oxidation reaction occurs with sacrificial reductant 2 in aqueous solution with the following mechanism: Species 3, 4, and 5 are short-lived ionic and radical intermediates. 7 yields a silver mirror with the [Ag(NH3)2]OH test.\n\n## Current subquestion T8-A2\nDraw the structures of 3-7.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "structure_3",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "semantic_requirements": [
+        "Bind every atom, bond order, substituent, charge, radical and requested stereocentre to the problem figures.",
+        "Represent connectivity and requested stereochemistry explicitly in Lean; a string equality or assumed target is insufficient.",
+        "Derive the requested structure from problem constraints and justified general chemistry rules; do not assume the output."
+      ],
+      "source_requirement": "complete structure of 3, including all requested stereochemistry and template fields",
+      "unit": ""
+    },
+    {
+      "id": "structure_4",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "semantic_requirements": [
+        "Bind every atom, bond order, substituent, charge, radical and requested stereocentre to the problem figures.",
+        "Represent connectivity and requested stereochemistry explicitly in Lean; a string equality or assumed target is insufficient.",
+        "Derive the requested structure from problem constraints and justified general chemistry rules; do not assume the output."
+      ],
+      "source_requirement": "complete structure of 4, including all requested stereochemistry and template fields",
+      "unit": ""
+    },
+    {
+      "id": "structure_5",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "semantic_requirements": [
+        "Bind every atom, bond order, substituent, charge, radical and requested stereocentre to the problem figures.",
+        "Represent connectivity and requested stereochemistry explicitly in Lean; a string equality or assumed target is insufficient.",
+        "Derive the requested structure from problem constraints and justified general chemistry rules; do not assume the output."
+      ],
+      "source_requirement": "complete structure of 5, including all requested stereochemistry and template fields",
+      "unit": ""
+    },
+    {
+      "id": "structure_6",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "semantic_requirements": [
+        "Bind every atom, bond order, substituent, charge, radical and requested stereocentre to the problem figures.",
+        "Represent connectivity and requested stereochemistry explicitly in Lean; a string equality or assumed target is insufficient.",
+        "Derive the requested structure from problem constraints and justified general chemistry rules; do not assume the output."
+      ],
+      "source_requirement": "complete structure of 6, including all requested stereochemistry and template fields",
+      "unit": ""
+    },
+    {
+      "id": "structure_7",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "semantic_requirements": [
+        "Bind every atom, bond order, substituent, charge, radical and requested stereocentre to the problem figures.",
+        "Represent connectivity and requested stereochemistry explicitly in Lean; a string equality or assumed target is insufficient.",
+        "Derive the requested structure from problem constraints and justified general chemistry rules; do not assume the output."
+      ],
+      "source_requirement": "complete structure of 7, including all requested stereochemistry and template fields",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T8. Recycling of Carbon Dioxide 7% Removing CO2 gas from the atmosphere is key to combat climate change. One promising solution is the photocatalytic reduction of CO2 to CO using molecular catalyst 1. 8.1 Write the half equation for the reduction of CO2 to CO in an acidic medium. The conjugate oxidation reaction occurs with sacrificial reductant 2 in aqueous solution with the following mechanism: Species 3, 4, and 5 are short-lived ionic and radical intermediates. 7 yields a silver mirror with the [Ag(NH3)2]OH test.",
+  "source_index": "T8-A2",
+  "source_page": 72,
+  "source_pdf": "theory_problem.pdf"
+}

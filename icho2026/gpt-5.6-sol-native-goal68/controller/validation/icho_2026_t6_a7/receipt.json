@@ -1,0 +1,56 @@
+{
+  "target": "icho_2026_t6_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301793.745569,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t6_a7.lean": "15e1fa3604a95b8a64730f476d8e1574e609bba786e4395ada11c46fecc0aeb6",
+    "answer.md": "5b1bb1479f66c2149e87f908427bfbbf03be0764d41340ee11758504b82c5381",
+    "verification.md": "67080f9931367b76d8174931b2cfbf162ca3f324756f0d8881e1e6bea560d3dc",
+    "result.json": "0f4dd039342347c18a20bd3690808bf83f407445828b4d8208990b8da78ab771"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t6_a7",
+    "status": "completed",
+    "answer_summary": "P6 has 6 x 14 = 84 pi electrons in its global circuit. The least positive removal producing a Huckel 4k+2 count is 2, leaving 82 = 4 x 20 + 2 pi electrons. Therefore n(e) = 2 and n(t) = 82.",
+    "theorem_names": [
+      "IChO2026Problems.ProblemIcho2026T6A7.pi_electrons_per_unit_eq_fourteen",
+      "IChO2026Problems.ProblemIcho2026T6A7.neutral_global_pi_electrons_eq_eighty_four",
+      "IChO2026Problems.ProblemIcho2026T6A7.minimum_electrons_removed",
+      "IChO2026Problems.ProblemIcho2026T6A7.global_pi_electron_count",
+      "IChO2026Problems.ProblemIcho2026T6A7.requested_outputs",
+      "IChO2026Problems.ProblemIcho2026T6A7.requested_outputs_unique"
+    ],
+    "assumptions": [
+      "Source-image encoding: P6 contains six porphyrin--butadiyne repeat units.",
+      "Source-image electron count: one continuous global route contributes five pi-electron pairs through the porphyrin and two through the butadiyne linker, i.e. 14 pi electrons per repeat.",
+      "Huckel aromaticity is represented exactly as a natural-number electron count of the form 4k+2.",
+      "An oxidative removal is a positive natural number no greater than the neutral global-circuit electron count."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T6_page-2.png icho_2026_source/image/T6_page-3.png icho_2026_source/image/T6_page-4.png icho_2026_source/image/T6_page-5.png",
+      "lake env lean IChO2026Problems/problem_icho_2026_t6_a7.lean",
+      "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t6_a7.lean; then echo 'prohibited proof shortcut found'; exit 1; else echo 'no sorry/admit/unsafe tokens found'; fi",
+      "if grep -nE '^[[:space:]]*(axiom|constant)[[:space:]]' IChO2026Problems/problem_icho_2026_t6_a7.lean; then echo 'custom unchecked declaration found'; exit 1; else echo 'no custom axiom/constant declarations found'; fi",
+      "python3 -m json.tool result.json >/dev/null && echo 'result.json is valid JSON'"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

@@ -1,0 +1,27 @@
+{
+  "target_id": "icho_2026_t4_a5",
+  "status": "completed",
+  "answer_summary": "Using n_c * xi = ln(E_initial/E_final), the exact raw expression is ln((2*10^6)/(12/1000))/(948/1000) = 19.969943425863... collisions, which reports as 20.0 collisions to three significant figures.",
+  "theorem_names": [
+    "IChO2026Problems.T4A5.averageCollisionCount_formula",
+    "IChO2026Problems.T4A5.averageCollisionCount_satisfies",
+    "IChO2026Problems.T4A5.averageCollisionCount_unique",
+    "IChO2026Problems.T4A5.totalLogDecrement_bounds",
+    "IChO2026Problems.T4A5.averageCollisionCount_rounding_interval",
+    "IChO2026Problems.T4A5.answerSubmission_valid",
+    "IChO2026Problems.T4A5.icho_2026_t4_a5_answer"
+  ],
+  "assumptions": [
+    "Problem-stated initial neutron energy: 2 MeV.",
+    "Problem-stated final neutron energy: 0.012 eV.",
+    "Problem-stated constant logarithmic energy decrement for water: xi = 0.948 per collision.",
+    "Standard SI prefix conversion: 1 MeV = 10^6 eV.",
+    "Successive constant average logarithmic decrements add, giving n_c * xi = ln(E_initial/E_final); this is derived directly from the problem's definition of xi and its statement that xi is material-constant."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem.Reporting",
+    "lake build IChO2026Problems.problem_icho_2026_t4_a5",
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a5.lean"
+  ]
+}

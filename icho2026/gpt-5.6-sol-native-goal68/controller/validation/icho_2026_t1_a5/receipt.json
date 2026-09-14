@@ -1,0 +1,64 @@
+{
+  "target": "icho_2026_t1_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300855.480664,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t1_a5.lean": "60fd88c482e4bafde472845c1c6c376c29ff4e93cb433c8b7d41aa5ad8eaf73c",
+    "answer.md": "3dbca0cc07755c2354ea866224c161a5eefe7c2a714fd55b8147583b3a0f1620",
+    "verification.md": "c109a63a5342d7c1f646cd808dc546ea51e4f28dc0dc97dc42a4d76048cdd289",
+    "result.json": "524e422dad872b15e3024b240c3095645da9115cb26daf959baa5eea855b98c0"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t1_a5",
+    "status": "completed",
+    "answer_summary": "E is hexamethylbenzene, C6(CH3)6; F is mellitic acid, C6(COOH)6; G is mellitic trianhydride, C12O9, with three adjacent cyclic-anhydride bridges.",
+    "theorem_names": [
+      "IChO2026Problems.T1A5.hydrogen_percentage_selects_methyl",
+      "IChO2026Problems.T1A5.oxygen_percentage_selects_three_waters",
+      "IChO2026Problems.T1A5.structure_e_from_problem",
+      "IChO2026Problems.T1A5.structure_f_from_problem",
+      "IChO2026Problems.T1A5.structure_g_from_problem",
+      "IChO2026Problems.T1A5.structure_e_connectivity",
+      "IChO2026Problems.T1A5.structure_f_connectivity",
+      "IChO2026Problems.T1A5.structure_g_connectivity",
+      "IChO2026Problems.T1A5.structure_e_has_sixfold_axis",
+      "IChO2026Problems.T1A5.structure_f_has_sixfold_axis",
+      "IChO2026Problems.T1A5.structure_g_has_threefold_axis",
+      "IChO2026Problems.T1A5.triple_dehydration_formula_balance",
+      "IChO2026Problems.T1A5.identified_structures"
+    ],
+    "assumptions": [
+      "Trusted standard atomic masses C = 12.010 u, H = 1.008 u, and O = 15.999 u, encoded exactly in 0.001 u units.",
+      "A printed percentage to two decimal places denotes the half-last-place interval around the display.",
+      "The sixfold precursor is interpreted in the unbounded C6-symmetric peralkylbenzene homologous family motivated by the symmetry and benzylic-oxidation clues.",
+      "Acidic permanganate exhaustively oxidizes each benzylic alkyl substituent having benzylic hydrogen to a carboxylic-acid group.",
+      "P2O5 effects complete pairwise dehydration of six adjacent carboxylic-acid groups to three cyclic anhydrides."
+    ],
+    "source_gaps": [
+      "The printed statement supplies neither a closed universe of all molecular graphs nor a molar mass for E or G. Absolute uniqueness over every conceivable molecule is therefore not a purely logical consequence of the numerical clues alone; the formal uniqueness claim is explicitly scoped to the chemically motivated unbounded C6-symmetric peralkylbenzene homologous family."
+    ],
+    "verification_commands": [
+      "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T1_page-2.png icho_2026_source/image/T1_page-3.png",
+      "lake env lean IChO2026Problems/problem_icho_2026_t1_a5.lean",
+      "grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe|axiom|native_decide)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t1_a5.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

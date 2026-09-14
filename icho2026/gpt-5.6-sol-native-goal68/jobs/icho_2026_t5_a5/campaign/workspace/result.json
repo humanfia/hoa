@@ -1,0 +1,21 @@
+{
+  "target_id": "icho_2026_t5_a5",
+  "status": "completed",
+  "answer_summary": "Tick (d): fully protonated PL1 forms the inverse hexagonal (H_II) phase. Protonation removes anionic head-group repulsion, reduces effective head area, and changes lamellar balanced packing to negative-curvature inverted packing.",
+  "theorem_names": [
+    "IChO2026Problems.T5A5.protonatedPL1_phase_is_inverseHexagonal",
+    "IChO2026Problems.T5A5.icho_2026_t5_a5"
+  ],
+  "assumptions": [
+    "Problem input: physiological PL1 is the dianion and forms a lamellar phase.",
+    "Trusted general packing law: deprotonation adds a strictly positive electrostatic contribution to effective polar-head area; full protonation removes that contribution.",
+    "Qualitative phase geometry: balanced head/hydrophobic cross-sections correspond to zero-curvature lamellae, while a smaller head cross-section corresponds to negative curvature; among the printed choices only inverse hexagonal has negative curvature."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t5_a5.lean",
+    "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t5_a5.lean",
+    "sha256sum icho_2026_source/image/T5_page-3.png icho_2026_source/image/T5_page-2.png icho_2026_source/raw/theory_problem.pdf"
+  ]
+}
+

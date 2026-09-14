@@ -1,0 +1,56 @@
+{
+  "target": "icho_2026_t4_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301304.0576007,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t4_a1.lean": "3bfbc5524340ee4874f40efa06a3185ccc5d82383f7dc2004685138b7f29ffa9",
+    "answer.md": "446cc7b1ebba4342ec51de5602e357c5e1becd483728842cae0a95c7f2fcb4db",
+    "verification.md": "6cf55d9c5f2bf81ec3f41d8fa41471da3f7fb525d8ea629908e1cf4ce5b176ce",
+    "result.json": "d155a05e1922dc1706c75dcbad627fa8602fefc10acd8c9140d3c1864da78e2f"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a1",
+    "status": "completed",
+    "answer_summary": "Using the PDF periodic-table value 238.03 a.u. and the two printed isotope masses, the unique uranium-235 atomic fraction is 2/301. The exact raw abundance is 200/301 percent = 0.664451827... percent, reported to three significant figures as 0.664 percent.",
+    "theorem_names": [
+      "IChO2026Problems.T4A1.uranium235_atomic_fraction_characterization",
+      "IChO2026Problems.T4A1.uranium235_abundance_percent_characterization",
+      "IChO2026Problems.T4A1.uranium235_raw_percent_satisfies_balance",
+      "IChO2026Problems.T4A1.uranium235_atomic_fraction_is_physical",
+      "IChO2026Problems.T4A1.uranium235_reported_percent_correct",
+      "IChO2026Problems.T4A1.uranium235_submission_valid",
+      "IChO2026Problems.T4A1.uranium235_abundance_output"
+    ],
+    "assumptions": [
+      "Natural uranium is modeled as containing only uranium-235 and uranium-238, as stipulated by T4-A1.",
+      "The isotope masses 235.04 a.u. and 238.05 a.u. from Q4-1 and the natural-uranium atomic mass 238.03 a.u. from the supplied G1-5 periodic table are treated exactly as printed, following TASK.json.",
+      "Average atomic mass is the atomic-fraction-weighted mean of isotope masses.",
+      "The final display follows TASK.json's three-significant-figure, half-away-from-zero reporting policy; no tie occurs."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T4_page-1.png icho_2026_source/raw/theory_problem.pdf",
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t4_a1.lean",
+      "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t4_a1.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

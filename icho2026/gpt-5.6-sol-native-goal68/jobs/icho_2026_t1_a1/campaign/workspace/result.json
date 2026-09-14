@@ -1,0 +1,27 @@
+{
+  "target_id": "icho_2026_t1_a1",
+  "status": "completed",
+  "answer_summary": "X is compound 6 (alpha-terpineol), and Y is compound 3 (1,8-cineole/eucalyptol).",
+  "theorem_names": [
+    "IChO2026Problems.T1A1.identity_x",
+    "IChO2026Problems.T1A1.identity_y",
+    "IChO2026Problems.T1A1.identify_X_and_Y",
+    "IChO2026Problems.T1A1.candidate3_has_plane_of_symmetry",
+    "IChO2026Problems.T1A1.candidate3_formula_from_graph",
+    "IChO2026Problems.T1A1.problem_observation_is_consistent",
+    "IChO2026Problems.T1A1.candidate6_to_candidate3_acid_cyclization"
+  ],
+  "assumptions": [
+    "X and Y are distinct selections from structures 1-10, as grounded by the problem statement and blank A1-1 answer sheet.",
+    "The molecular formulae and structural descriptors are faithful transcriptions of Q1-2.",
+    "The trusted general chemical rule is acid protonation of the suitably tethered alpha-terpineol alkene followed by intramolecular oxygen attack and deprotonation to a cineole ether; isomerisation preserves C10H18O."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T1_page-1.png icho_2026_source/image/T1_page-2.png",
+    "lake env lean IChO2026Problems/problem_icho_2026_t1_a1.lean",
+    "grep -nE '^[[:space:]]*(axiom|unsafe)[[:space:]]|\\b(sorry|admit)\\b' IChO2026Problems/problem_icho_2026_t1_a1.lean",
+    "python3 -m json.tool result.json >/dev/null",
+    "test -s answer.md -a -s verification.md -a -s result.json -a -s IChO2026Problems/problem_icho_2026_t1_a1.lean"
+  ]
+}

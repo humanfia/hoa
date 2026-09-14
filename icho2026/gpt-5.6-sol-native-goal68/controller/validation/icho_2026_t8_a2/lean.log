@@ -1,0 +1,5 @@
+'IChO2026T8A2.structure_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T8A2.structure_4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T8A2.structure_5' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T8A2.structure_6' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T8A2.structure_7' depends on axioms: [propext, Classical.choice, Quot.sound]

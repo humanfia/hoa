@@ -1,0 +1,22 @@
+'IChO2026Problems.T8A4.all_fragment_graphs_wellFormed' depends on axioms: [propext]
+'IChO2026Problems.T8A4.ligand8_has_four_nitrogen_donors' does not depend on any axioms
+'IChO2026Problems.T8A4.labile_sites_are_cis' does not depend on any axioms
+'IChO2026Problems.T8A4.reconstructed_structures_wellFormed' depends on axioms: [propext]
+'IChO2026Problems.T8A4.structure_9' does not depend on any axioms
+'IChO2026Problems.T8A4.structure_10' does not depend on any axioms
+'IChO2026Problems.T8A4.structure_11' does not depend on any axioms
+'IChO2026Problems.T8A4.structure_12' does not depend on any axioms
+'IChO2026Problems.T8A4.structure_13' does not depend on any axioms
+'IChO2026Problems.T8A4.structure_14' does not depend on any axioms
+'IChO2026Problems.T8A4.structure_15' does not depend on any axioms
+'IChO2026Problems.T8A4.complex_9_outputs' depends on axioms: [propext]
+'IChO2026Problems.T8A4.complex_10_outputs' depends on axioms: [propext]
+'IChO2026Problems.T8A4.complex_11_outputs' depends on axioms: [propext]
+'IChO2026Problems.T8A4.complex_12_outputs' depends on axioms: [propext]
+'IChO2026Problems.T8A4.complex_13_outputs' depends on axioms: [propext]
+'IChO2026Problems.T8A4.complex_14_outputs' depends on axioms: [propext]
+'IChO2026Problems.T8A4.complex_15_outputs' depends on axioms: [propext]
+'IChO2026Problems.T8A4.radical_parities' depends on axioms: [propext]
+'IChO2026Problems.T8A4.supplied_answer_sheet_fields_match' depends on axioms: [propext]
+'IChO2026Problems.T8A4.catalytic_cycle_closes' does not depend on any axioms
+'IChO2026Problems.T8A4.catalytic_cycle_net_reaction' does not depend on any axioms

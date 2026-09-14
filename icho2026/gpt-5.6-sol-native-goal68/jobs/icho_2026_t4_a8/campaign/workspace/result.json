@@ -1,0 +1,37 @@
+{
+  "target_id": "icho_2026_t4_a8",
+  "status": "completed",
+  "answer_summary": "Derived ΔrH298 = -802.3 kJ mol^-1 and ΔrH2000 = -781.876 kJ mol^-1, then used PV = nRT to obtain the exact raw energy 4357297213500000000/619393 J for the printed methane volume. Under the intended one-day flow basis this is 7.03478601388779e12 J day^-1 and reports to 7.03e12 J day^-1 at three significant figures. The printed flow unit omits its time denominator, so the numerical daily value is explicitly conditional rather than claimed unconditionally.",
+  "theorem_names": [
+    "IChO2026Problems.T4A8.reactionEnthalpy298_value",
+    "IChO2026Problems.T4A8.reactionHeatCapacity_value",
+    "IChO2026Problems.T4A8.reactionEnthalpy2000_value",
+    "IChO2026Problems.T4A8.reactionEnthalpy2000_is_exothermic",
+    "IChO2026Problems.T4A8.methaneMolesForPrintedVolume_value",
+    "IChO2026Problems.T4A8.intendedDailyEnergyRaw_value",
+    "IChO2026Problems.T4A8.intendedDailyEnergyRaw_positive",
+    "IChO2026Problems.T4A8.dailyEnergySubmission_valid",
+    "IChO2026Problems.T4A8.dailyEnergy_reported_value",
+    "IChO2026Problems.T4A8.dailyEnergy_if_interval_is_one_day",
+    "IChO2026Problems.T4A8.missing_time_basis_changes_daily_energy"
+  ],
+  "assumptions": [
+    "Complete gaseous methane combustion has stoichiometry CH4 + 2 O2 -> CO2 + 2 H2O(g).",
+    "The standard formation enthalpy of O2 in its elemental standard state is zero.",
+    "The printed heat capacities are treated as constant from 298 K to 2000 K, as required by the supplied constant-ΔrCp enthalpy equation.",
+    "For the boxed numeric candidate only, the printed 2.2e5 m^3 is interpreted as the methane volume delivered in one day.",
+    "Energy released is reported as the positive magnitude of the negative combustion enthalpy."
+  ],
+  "source_gaps": [
+    "On T4 question page 3 / PDF page 39 the volumetric-flow datum Q = 2.2e5 is printed with unit m^3 and no time denominator. The requested J day^-1 value is therefore not uniquely determined literally. For an interval of tau days, the daily energy is 7.03478601388779e12/tau J day^-1; the displayed numeric answer uses tau = 1."
+  ],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a8.lean",
+    "lake build IChO2026Problems",
+    "lake build IChO2026Run",
+    "lake env lean IChO2026Run.lean",
+    "! grep -R -n -E '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t4_a8.lean",
+    "python3 -m json.tool result.json >/dev/null"
+  ]
+}

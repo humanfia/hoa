@@ -1,0 +1,50 @@
+{
+  "target": "icho_2026_t3_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301092.5342777,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t3_a3.lean": "c625db153ef667edbbcdda3e47ee5f2d292ec1c195bb8e93ab3c260a24246438",
+    "answer.md": "9ff824bde3495530350f11ea17a9700d7cef50e222514bf1ddc4c4f304648a65",
+    "verification.md": "238fda6dbb93b088837479c81a35c0bc2f8819cd648a850cb1906abedca482bb",
+    "result.json": "5f89c16599b6a2b0056f9dc58998b00e98a34901d5fe58c2f0b80fecc27f0908"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t3_a3",
+    "status": "completed",
+    "answer_summary": "Two answer rows: Tetragonal 1 = A2+B1, C3+D4; Tetragonal 2 = A3+B1, XXX; Hexagonal 1 = A1+B2, C1+D2; Hexagonal 2 = A1+B3, XXX; Trigonal = C1+D1, XXX; Kagome = A3+B2, XXX; Tetrahedral = A4+B2, C1+D3. E1+D4 is an unused alternative for Hexagonal 1.",
+    "theorem_names": [
+      "IChO2026Problems.T3A3.fits_iff_mem_allSolutions",
+      "IChO2026Problems.T3A3.topology_table_valid",
+      "IChO2026Problems.T3A3.topology_table_entries"
+    ],
+    "assumptions": [
+      "The displayed functional groups and the problem's condensation restriction make A+B, C+D, and E+D the complete admissible reaction-class pairings.",
+      "Reactive-end counts and geometries are transcribed from Q3-3: A2/B2/C1/D4 linear-two; A1/B3/D2/E1 trigonal-three; B1/C3 square-planar-four; A3/C2 rhombic-four; D1 hexagonal-six; A4/D3 tetrahedral-four.",
+      "The red/black topology schematics specify the corresponding unordered pairs of building-block roles encoded by requiredRoles."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t3_a3.lean",
+      "grep -nE '(^|[^[:alpha:]])(sorry|admit|unsafe|axiom)[[:space:]]' IChO2026Problems/problem_icho_2026_t3_a3.lean",
+      "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T3_page-3.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T3_page-4.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

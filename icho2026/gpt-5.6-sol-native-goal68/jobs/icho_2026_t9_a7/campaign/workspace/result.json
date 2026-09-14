@@ -1,0 +1,26 @@
+{
+  "target_id": "icho_2026_t9_a7",
+  "status": "completed",
+  "answer_summary": "The two [M+Na]+ degradation-product peaks are m/z 1299 and 1731. The neutral fragments are C78H84O16 and C105H112O21, obtained from one C22H25O4 enose end, one C2H3O2 acetoxy end, and respectively two or three C27H28O5 intact residues.",
+  "theorem_names": [
+    "IChO2026Problems.T9A7.degradation_arc_counts",
+    "IChO2026Problems.T9A7.first_fragment_formula",
+    "IChO2026Problems.T9A7.second_fragment_formula",
+    "IChO2026Problems.T9A7.first_fragment_mz",
+    "IChO2026Problems.T9A7.second_fragment_mz",
+    "IChO2026Problems.T9A7.t9_a7_answer"
+  ],
+  "assumptions": [
+    "The requested integer atomic masses are C=12, H=1, O=16, and Na=23.",
+    "The conventional structural abbreviation AcO denotes the attached acetoxy group CH3COO, with formula C2H3O2.",
+    "The [M+Na]+ ion has charge magnitude one, so its nominal m/z equals its nominal ion mass."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T9_page-3.png icho_2026_source/image/T9_page-4.png icho_2026_source/raw/theory_problem.pdf",
+    "python3 -c \"import pymupdf; pdf=pymupdf.open('icho_2026_source/raw/theory_problem.pdf'); print('page_count:', pdf.page_count); [print(f'page {n}:', ' '.join(pdf[n-1].get_text('text').split())[:300]) for n in (86,87,91)]\"",
+    "lake env lean IChO2026Problems/problem_icho_2026_t9_a7.lean",
+    "if grep -nE '(^|[[:space:]])(sorry|admit|unsafe|axiom)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t9_a7.lean; then exit 1; else echo 'No prohibited declarations found.'; fi",
+    "python3 -m json.tool result.json >/dev/null"
+  ]
+}

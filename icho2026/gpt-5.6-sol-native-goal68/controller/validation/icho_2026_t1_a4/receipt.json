@@ -1,0 +1,60 @@
+{
+  "target": "icho_2026_t1_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300828.2800055,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t1_a4.lean": "6bfb9a697f00c77f06db692e57d153aa4b0ac63330d3edbea5958db64bcfc958",
+    "answer.md": "5d8e5ae88afb98c70c3025d53ac1c46bf850b7ddb3b0bbbf893e8c76536a2bcc",
+    "verification.md": "3ad0dc92a094bc098cdd5542f7f960390735d3a331c9ac685e7164bdf3813bf8",
+    "result.json": "9d43911b99f39f6b5ef51c18bd786e57c87a2a3238f0dfc6f826368442515f42"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t1_a4",
+    "status": "completed",
+    "answer_summary": "Q is Al; C\u00b7xH2O is AlF3\u00b73H2O (C = AlF3, x = 3); D is Na3AlF6 (cryolite). The proposed formulas reproduce 39.16% water, 32.85% Na, and 12.85% Al at the printed precision and satisfy AlF3 + 3 NaF -> Na3AlF6.",
+    "theorem_names": [
+      "IChO2026Problems.T1A4.metal_q_identity",
+      "IChO2026Problems.T1A4.hydrated_c_formula",
+      "IChO2026Problems.T1A4.compound_d_formula",
+      "IChO2026Problems.T1A4.identify_metal_C_and_D",
+      "IChO2026Problems.T1A4.hydration_number_eq_three",
+      "IChO2026Problems.T1A4.identified_answer_satisfies_problem_data",
+      "IChO2026Problems.T1A4.bare_arithmetic_does_not_identify_C"
+    ],
+    "assumptions": [
+      "Atomic masses H = 1.008, O = 16.00, F = 19.00, Na = 22.99, and Al = 26.98 are taken exactly as printed on PDF source page 5.",
+      "A displayed percentage with two decimal places denotes the closed half-quantum interval around that value, so the quantum is 0.01 percentage point.",
+      "The ordinary-chemistry Hall-Heroult classification is represented explicitly: cryolite Na3AlF6 is the fluoride medium used in industrial aluminium production.",
+      "The pH-controlled precipitate C is interpreted as the sodium-free metal fluoride precursor, and the schematic C + NaF -> D is modeled as atom-conserving uptake of an integral number of NaF formula units with no additional product."
+    ],
+    "source_gaps": [
+      "The problem text does not itself define cryolite or state its formula/industrial role; this allowed ordinary-chemistry fact is separated as IndustrialFluoridePair and grounded in USGS and PubChem references in answer.md.",
+      "The problem text does not explicitly say that C is sodium-free. Bare formula arithmetic also permits the formal countermodel Na2AlF5\u00b76H2O, which has the same rounded water percentage and converts to Na3AlF6 with one NaF. The standard answer therefore depends on phase-identity chemistry at pH about 4; Lean exposes this condition rather than claiming unconditional numerical uniqueness."
+    ],
+    "verification_commands": [
+      "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T1_page-2.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T1_page-3.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf",
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t1_a4.lean",
+      "if grep -RInE '(^|[[:space:]])(sorry|admit|unsafe|axiom)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t1_a4.lean; then exit 1; else exit 0; fi",
+      "jq empty TASK.json result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

@@ -1,0 +1,32 @@
+{
+  "target_id": "icho_2026_t1_a3",
+  "status": "completed",
+  "answer_summary": "The binomial carbon-isotope ratio gives the raw estimate 989/99 = 9.989898..., and the task's display interval proves the unique positive integral count n = 10. The ferric-ion phenol response narrows the printed table to compounds 1 and 5; the carbon count excludes C11 compound 1, so W is compound 5, eugenol (C10H12O2).",
+  "theorem_names": [
+    "IChO2026T1A3.carbon_abundances_sum_to_one",
+    "IChO2026T1A3.theoreticalPeakRatio_cross_mul",
+    "IChO2026T1A3.raw_carbon_estimate",
+    "IChO2026T1A3.raw_carbon_estimate_nearest_integer",
+    "IChO2026T1A3.ten_carbons_peak_ratio",
+    "IChO2026T1A3.ten_carbons_matches_displayed_ratio",
+    "IChO2026T1A3.carbon_atom_count",
+    "IChO2026T1A3.phenolic_candidates_are_one_or_five",
+    "IChO2026T1A3.compound_identity",
+    "IChO2026T1A3.eugenol_matches_table_evidence",
+    "IChO2026T1A3.solve_t1_a3"
+  ],
+  "assumptions": [
+    "W is one of the ten compounds in the problem's candidate table, as established by the shared problem context and confirmed by the answer-sheet choices.",
+    "With carbon limited to 12C and 13C and every other element monoisotopic, molecular-ion isotope intensities follow the binomial abundance weights p^n and n*q*p^(n-1); common non-carbon factors cancel.",
+    "The displayed 9:1 first-component ratio has half-width 0.5 under TASK.json's measured-display convention.",
+    "Within the printed candidate domain, the characteristic aqueous Fe3+ colour response is interpreted by the standard qualitative phenol test; inspection of the structures shows phenolic OH only in compounds 1 and 5.",
+    "The structure drawn for compound 5 is 4-allyl-2-methoxyphenol (eugenol), and its printed formula is C10H12O2."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum TASK.json icho_2026_source/image/T1_page-2.png icho_2026_source/image/T1_page-3.png icho_2026_source/raw/theory_problem.pdf",
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t1_a3.lean",
+    "if grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t1_a3.lean; then exit 1; else echo 'No forbidden proof shortcuts or custom axiom declarations found.'; fi"
+  ]
+}

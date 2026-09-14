@@ -1,0 +1,6 @@
+'IChO2026Problems.T2A2.processA_rate_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A2.hbro2_process_a_stationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A2.hbro2_process_b_stationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A2.hbro2_process_a_submission_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A2.hbro2_process_b_submission_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A2.icho_2026_t2_a2' depends on axioms: [propext, Classical.choice, Quot.sound]

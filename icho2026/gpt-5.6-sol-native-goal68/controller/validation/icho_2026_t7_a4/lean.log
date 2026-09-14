@@ -1,0 +1,3 @@
+'IChO2026Problems.T7A4.mdea_atom_counts' depends on axioms: [propext]
+'IChO2026Problems.T7A4.reaction_conserved_totals' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T7A4.t7_a4_reaction_equation' depends on axioms: [propext, Quot.sound]

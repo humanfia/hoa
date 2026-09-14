@@ -1,0 +1,62 @@
+{
+  "target": "icho_2026_t8_a6",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302796.5349042,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t8_a6.lean": "dcf144c948eaec8ac83df2c0e8dce61798884f5b34101b1642d0f98b181831b9",
+    "answer.md": "e1fabd61fdbb9ee9b0937389ebaa638969613e1da088fb74e047c876aa46145d",
+    "verification.md": "a8e4dc1b4ce2b1a1a4fb21b3c7ca91f91fa1e51b9902274df371ced308e93e35",
+    "result.json": "c73b74748b8fe0e164e1a4e8a9fbac39c61db871757036fbc7bbdddcdbdd7bf2"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a6",
+    "status": "completed",
+    "answer_summary": "The exact raw CO quantum yield is 18940872892793693114789369/10186495312500000000000000 percent = 1.8594101613683624924... percent, which reports to 1.86 percent at three significant figures.",
+    "theorem_names": [
+      "IChO2026Problems.T8A6.co_half_reaction_balanced",
+      "IChO2026Problems.T8A6.electron_coefficient_from_charge_balance",
+      "IChO2026Problems.T8A6.catalyst_amount_exact",
+      "IChO2026Problems.T8A6.catalyst_molecule_count_exact",
+      "IChO2026Problems.T8A6.co_molecule_rate_exact",
+      "IChO2026Problems.T8A6.reacted_electron_rate_exact",
+      "IChO2026Problems.T8A6.photon_energy_exact",
+      "IChO2026Problems.T8A6.incident_photon_rate_exact",
+      "IChO2026Problems.T8A6.co_quantum_yield_raw",
+      "IChO2026Problems.T8A6.co_quantum_yield_reported",
+      "IChO2026Problems.T8A6.co_quantum_yield_final"
+    ],
+    "assumptions": [
+      "The numerical quantities stipulated by the problem are treated as exact as printed, in accordance with TASK.json; the statement does not label them as uncertain measurements.",
+      "The printed 3.8 percent catalyst mass fraction is applied directly to the stated 10 mg loaded batch, so its catalyst mass is 0.038 times 10 mg.",
+      "The TOF stated for that loaded sample is applied to the catalyst-molecule population determined from the same loading; the source specifies no separate inactive fraction.",
+      "The acidic CO2-to-CO half-reaction is balanced by atom and charge conservation and therefore consumes two electrons per CO.",
+      "The standard photon relation E = h*c/lambda and the exact 2019-SI values of the Avogadro constant, Planck constant, and speed of light are used."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t8_a6.lean",
+      "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe|axiom)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t8_a6.lean; then exit 1; fi",
+      "python3 exact-arithmetic Fraction check recorded verbatim in verification.md",
+      "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T8_page-1.png icho_2026_source/image/T8_page-2.png"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

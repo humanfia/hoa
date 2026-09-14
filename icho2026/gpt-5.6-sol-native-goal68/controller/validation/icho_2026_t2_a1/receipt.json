@@ -1,0 +1,52 @@
+{
+  "target": "icho_2026_t2_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789299880.5604684,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t2_a1.lean": "73274db96bfaa5484dfeba7c45bbe7f190d59f96df6c3509604209201e3d0f85",
+    "answer.md": "b86ee8b8700cc0f9eb729bb0045fa88f164c81b5981910c9bd0412f3aec05da1",
+    "verification.md": "a94efbacaed85f56d3f7d3c24946dc438d87a3b23e5dbedb6b432f56896d181b",
+    "result.json": "78a55fe4c6092f85146551bd063fda80bb49134f7cc011e7b6677d43882e7432"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a1",
+    "status": "completed",
+    "answer_summary": "3 CH2(COOH)2 + 4 BrO3^- -> 9 CO2 + 4 Br^- + 6 H2O, with Ce(IV) as a zero-net-consumption catalyst; equivalently 4 KBrO3 gives 4 KBr in the molecular form.",
+    "theorem_names": [
+      "IChO2026Problems.icho_2026_t2_a1.balanced_bz_equation",
+      "IChO2026Problems.icho_2026_t2_a1.balanced_overall_shape_classification",
+      "IChO2026Problems.icho_2026_t2_a1.least_positive_balanced_coefficients",
+      "IChO2026Problems.icho_2026_t2_a1.bz_coefficients_are_the_minimum"
+    ],
+    "assumptions": [
+      "The printed formula CH2(COOH)2 is parsed as C3H4O4.",
+      "Chemical equations conserve each element and total electric charge.",
+      "A catalyst has zero net stoichiometric consumption in an overall reaction."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t2_a1.lean",
+      "/usr/bin/grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)|^[[:space:]]*axiom[[:space:]]' IChO2026Problems/problem_icho_2026_t2_a1.lean",
+      "sha256sum icho_2026_source/image/T2_page-1.png icho_2026_source/raw/theory_problem.pdf",
+      "python3 -m json.tool result.json >/dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

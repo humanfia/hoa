@@ -1,0 +1,13 @@
+'IChO2026Problems.T2A7.stepGibbsRate_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A7.gibbs_tends_to_infimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A7.stepGibbsRate_tends_to_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A7.closed_oscillatory_rate_constraints' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A7.gibbsDerivative_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A7.continuous_gibbs_rate_constraints' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A7.satisfies_constraints_iff_bottomRight' depends on axioms: [propext]
+'IChO2026Problems.T2A7.gibbs_rate_graph_answer' depends on axioms: [propext]
+'IChO2026Problems.T2A7.closed_oscillatory_system_selects_bottomRight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T2A7.continuous_system_selects_bottomRight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A7.selectedGraph_eq_bottomRight' does not depend on any axioms

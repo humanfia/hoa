@@ -1,0 +1,27 @@
+{
+  "target_id": "icho_2026_t6_a4",
+  "status": "completed",
+  "answer_summary": "m/z 783 is [C48 + 3E + 3H]^3+; m/z 879 is [C48 + 2E + 2H]^2+; m/z 1174 is [C48 + 3E + 2H]^2+, where E = C40H34N2O3. Their exact charged formulas are C168H105N6O9^3+, C128H70N4O6^2+, and C168H104N6O9^2+.",
+  "theorem_names": [
+    "IChO2026Problems.T6A4.macrocycleE_integerMass",
+    "IChO2026Problems.T6A4.cyclo48Carbon_integerMass",
+    "IChO2026Problems.T6A4.worked_example_591",
+    "IChO2026Problems.T6A4.ion_783_identity",
+    "IChO2026Problems.T6A4.ion_879_identity",
+    "IChO2026Problems.T6A4.ion_1174_identity",
+    "IChO2026Problems.T6A4.requested_ion_identities"
+  ],
+  "assumptions": [
+    "Integer nominal atomic masses C = 12, H = 1, N = 14, and O = 16 are used as requested by the problem.",
+    "The suggested ions contain intact C48 and E components and acquire positive charge by the displayed added protons, following the problem's no-fragmentation instruction and its worked [E + H]+ example."
+  ],
+  "source_gaps": [
+    "The prompt requests suggested identities but does not specify an exhaustive domain of possible adducts, charge carriers, or aggregate sizes; accordingly, uniqueness over every conceivable positive ion is neither claimed nor needed for the requested suggestions."
+  ],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T6_page-1.png icho_2026_source/image/T6_page-2.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t6_a4.lean",
+    "grep -RInE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t6_a4.lean",
+    "python3 -m json.tool result.json"
+  ]
+}

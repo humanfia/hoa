@@ -1,0 +1,103 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Determine the number of carbon atoms (\ud835\udc5b) from the mass spec data and identify W. Show your calculations.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t1_a3",
+  "image": "T1_page-3.png",
+  "images": [
+    "T1_page-3.png",
+    "T1_page-2.png"
+  ],
+  "index": "icho_2026_t1_a3",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T1",
+  "part_id": "T1-A3",
+  "phase": "solve",
+  "points": 3.0,
+  "previous_parts": [],
+  "printed_page": 3,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T1_page-3.png",
+      "printed_page": 3,
+      "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17",
+      "source_page": 8
+    },
+    {
+      "kind": "problem_page",
+      "path": "T1_page-2.png",
+      "printed_page": 3,
+      "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb",
+      "source_page": 8
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 8
+    }
+  ],
+  "problem_id": "icho_2026_t1",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT1. A journey through time: The secrets of Avicenna 7% A chemist found herself in the 11 th Century, where she met the renowned physician Avicenna. In Avicenna's laboratory, she discovered a blue elixir and a yellow mysterious stone. She brought them back to 2026. Determined to uncover their composition, she began her research. Part 1. The blue elixir At first, the chemist compiled a table listing the names of the only four plants which she saw in Avicenna\u2019s lab that could have been used to prepare the elixir, and the compounds that can be extracted from these plants. Plants Compounds that can be extracted Zingiber 1 (C11H14O3) 2 (C10H18O) 3 (C10H18O) Hypericum 4 (C6H12O) 5 (C10H12O2) 6 (C10H18O) Chamomilla 7 (C14H16) 8 (C15H24) 3 (C10H18O) Artemisia 9 (C10H16O) 10 (C10H18O) 3 (C10H18O) Using chromatography, she determined that the elixir consists of four different substances (X, Y, Z and W). The chemist then discovered that X can isomerise into Y in an acidic medium and that Y has a plane of symmetry. 1.1 Identify X and Y. Chromatography also revealed it was substance Z that gave the elixir its blue colour. Z is a derivative of the well-known substance A, which has two perpendicular planes of symmetry. When heated, A isomerises into aromatic compound B, which has three mutually perpendicular planes of symmetry. When substance Z is chlorinated, a pair of peaks with an intensity ratio of 3:1 is observed in the mass spectrum at m/z 218 and 220, respectively. 1.2 Identify Z and draw the structures of substances A and B. The chemist extracted W from the elixir. When W was added to an aqueous Fe3+ solution, a characteristic colour change was observed. Mass spectrometric analysis of W revealed the intensity ratio of [M]+ \u2236[M + 1]+= 9:1, where M is the molecular ion. Assume carbon consists exclusively of 12C and 13C, the natural isotopic abundance of 12C is 98.9%, and all other elements are monoisotopic.\n\n## Current subquestion T1-A3\nDetermine the number of carbon atoms (\ud835\udc5b) from the mass spec data and identify W. Show your calculations.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "carbon_atom_count",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "number of carbon atoms n",
+      "unit": ""
+    },
+    {
+      "id": "compound_identity",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "identity of W",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T1. A journey through time: The secrets of Avicenna 7% A chemist found herself in the 11 th Century, where she met the renowned physician Avicenna. In Avicenna's laboratory, she discovered a blue elixir and a yellow mysterious stone. She brought them back to 2026. Determined to uncover their composition, she began her research. Part 1. The blue elixir At first, the chemist compiled a table listing the names of the only four plants which she saw in Avicenna\u2019s lab that could have been used to prepare the elixir, and the compounds that can be extracted from these plants. Plants Compounds that can be extracted Zingiber 1 (C11H14O3) 2 (C10H18O) 3 (C10H18O) Hypericum 4 (C6H12O) 5 (C10H12O2) 6 (C10H18O) Chamomilla 7 (C14H16) 8 (C15H24) 3 (C10H18O) Artemisia 9 (C10H16O) 10 (C10H18O) 3 (C10H18O) Using chromatography, she determined that the elixir consists of four different substances (X, Y, Z and W). The chemist then discovered that X can isomerise into Y in an acidic medium and that Y has a plane of symmetry. 1.1 Identify X and Y. Chromatography also revealed it was substance Z that gave the elixir its blue colour. Z is a derivative of the well-known substance A, which has two perpendicular planes of symmetry. When heated, A isomerises into aromatic compound B, which has three mutually perpendicular planes of symmetry. When substance Z is chlorinated, a pair of peaks with an intensity ratio of 3:1 is observed in the mass spectrum at m/z 218 and 220, respectively. 1.2 Identify Z and draw the structures of substances A and B. The chemist extracted W from the elixir. When W was added to an aqueous Fe3+ solution, a characteristic colour change was observed. Mass spectrometric analysis of W revealed the intensity ratio of [M]+ \u2236[M + 1]+= 9:1, where M is the molecular ion. Assume carbon consists exclusively of 12C and 13C, the natural isotopic abundance of 12C is 98.9%, and all other elements are monoisotopic.",
+  "source_index": "T1-A3",
+  "source_page": 8,
+  "source_pdf": "theory_problem.pdf"
+}

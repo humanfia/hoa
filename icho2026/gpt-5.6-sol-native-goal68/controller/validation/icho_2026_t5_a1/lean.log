@@ -1,0 +1,5 @@
+'IChO2026Problems.IChO2026T5A1.Derived.completeAssembly_forces_odd' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.IChO2026T5A1.Derived.parityStatement_correct_iff' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.IChO2026T5A1.Derived.connectedAcyclicAssembly_forces_n_eq_one' depends on axioms: [propext,
+ Quot.sound]
+'IChO2026Problems.IChO2026T5A1.Derived.fragment_parity_statement' depends on axioms: [propext, Quot.sound]

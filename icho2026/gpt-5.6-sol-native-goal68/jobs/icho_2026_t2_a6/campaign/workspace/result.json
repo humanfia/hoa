@@ -1,0 +1,31 @@
+{
+  "target_id": "icho_2026_t2_a6",
+  "status": "completed",
+  "answer_summary": "Intended qualitative choices: 1-c (A switches to B), 2-d (B switches to A), 3-b (Process B is prolonged), 4-e (oscillations stop). The Lean development derives [Br-]_critical = 3/10000000 M from the printed step-(1)/step-(4) rates and proves mechanistic certificates for all four choices. Pulse-threshold and feed-invariance qualifications are stated explicitly because their magnitudes are not printed.",
+  "theorem_names": [
+    "IChO2026Problems.T2A6.critical_bromide_eq_three_e_neg_seven",
+    "IChO2026Problems.T2A6.step4_exceeds_step1_iff_bromide_above_critical",
+    "IChO2026Problems.T2A6.action_1_answer",
+    "IChO2026Problems.T2A6.action_2_answer",
+    "IChO2026Problems.T2A6.action_3_answer",
+    "IChO2026Problems.T2A6.action_4_answer",
+    "IChO2026Problems.T2A6.all_requested_outputs"
+  ],
+  "assumptions": [
+    "Positive HBrO2 and H+ concentrations permit cancellation of their common factors in the printed elementary rate laws.",
+    "The printed elementary reactions obey their mass-action rate laws; this is also the rate comparison explicitly requested by the problem.",
+    "As a trusted general chemistry law, added Ag+ removes dissolved Br- through AgBr(s) precipitation.",
+    "For action 3, the remaining time to the critical boundary is strictly increasing with the starting Br- concentration along the stated monotone Process-B segment; no constant-speed assumption is used.",
+    "For the intended action-4 response, continuous Br- input maintains Br- above its critical concentration."
+  ],
+  "source_gaps": [
+    "The phrase 'small amount' gives no Ce4+ or Ag+ dose. Immediate choices c and d require a threshold-crossing perturbation; a smaller pulse only advances the eventual switch.",
+    "The continuous Br- feed rate is not specified. Choice e requires input sufficient to prevent Br- from falling to the critical value; an insufficient feed need not stop oscillations."
+  ],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T2_page-2.png icho_2026_source/image/T2_page-3.png icho_2026_source/image/T2_page-4.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t2_a6.lean",
+    "if grep -nE '^[[:space:]]*(axiom|unsafe|sorry|admit)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t2_a6.lean; then echo 'Forbidden Lean declaration or proof shortcut found.'; exit 1; else echo 'No forbidden Lean declarations or proof shortcuts found.'; fi",
+    "python3 -m json.tool result.json >/dev/null && echo 'result.json: valid JSON'"
+  ]
+}

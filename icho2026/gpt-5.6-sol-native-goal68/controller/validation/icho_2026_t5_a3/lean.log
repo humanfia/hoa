@@ -1,0 +1,3 @@
+'IChO2026Problems.T5A3.determine_fatty_acid_counts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T5A3.fatty_acid_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T5A3.fatty_acid_answer_satisfies_data' depends on axioms: [propext, Classical.choice, Quot.sound]

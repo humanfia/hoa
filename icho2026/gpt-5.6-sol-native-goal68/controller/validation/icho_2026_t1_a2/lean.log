@@ -1,0 +1,8 @@
+'IChO2026T1A2.identify_Z_from_mass_spectrum' depends on axioms: [propext]
+'IChO2026T1A2.chamazulene_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A2.azulene_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A2.naphthalene_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A2.azulene_two_perpendicular_planes' depends on axioms: [propext, Quot.sound]
+'IChO2026T1A2.naphthalene_three_mutually_perpendicular_planes' depends on axioms: [propext, Quot.sound]
+'IChO2026T1A2.azulene_isomerizes_structurally_to_naphthalene' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A2.icho_2026_t1_a2' depends on axioms: [propext, Classical.choice, Quot.sound]

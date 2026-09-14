@@ -1,0 +1,7 @@
+'IChO2026Problems.T4A8.reactionEnthalpy2000_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T4A8.methaneMolesForPrintedVolume_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T4A8.intendedDailyEnergyRaw_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T4A8.dailyEnergySubmission_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T4A8.missing_time_basis_changes_daily_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,30 @@
+{
+  "target_id": "icho_2026_t5_a3",
+  "status": "completed",
+  "answer_summary": "The fatty acid is C18H32O2. Three distinct equimolar ozonolysis products give two carbon-skeleton cleavages; atom and sigma/pi-bond bookkeeping for neutral PL1 then uniquely gives 18 carbons, two C=C bonds, no C-triple-C bonds, and 32 hydrogens.",
+  "theorem_names": [
+    "IChO2026Problems.T5A3.pl1_fragment_atom_balance",
+    "IChO2026Problems.T5A3.pl1_sigma_bond_count",
+    "IChO2026Problems.T5A3.pl1_pi_bond_count",
+    "IChO2026Problems.T5A3.pl1_sigma_pi_bond_count",
+    "IChO2026Problems.T5A3.acyclic_fatty_acid_hydrogen_balance",
+    "IChO2026Problems.T5A3.ozonolysis_forces_two_cleavages",
+    "IChO2026Problems.T5A3.determine_fatty_acid_counts",
+    "IChO2026Problems.T5A3.fatty_acid_formula",
+    "IChO2026Problems.T5A3.fatty_acid_answer_satisfies_data"
+  ],
+  "assumptions": [
+    "Problem input: neutral PL1 has 255 sigma and pi bonds in total.",
+    "Problem input: reductive ozonolysis gives three different organic products in equimolar amounts.",
+    "Problem structure: PL1 is connected and acyclic and contains four identical fatty-acyl, three glycerol, and two phosphate residues.",
+    "Trusted general law: cleaving all carbon-carbon multiple-bond positions of an acyclic skeleton gives one more connected fragment than cleavage positions; distinct equimolar products make product-species count equal fragment count here.",
+    "Trusted general laws: the acyclic monocarboxylic-acid hydrogen-deficiency formula and a connected acyclic molecular graph's sigma-bond count N-1.",
+    "Printed structural convention: each C=C and C=O has one pi bond, each C-triple-C has two, and the displayed neutral phosphate fragments each contain P=O."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum GOAL.txt TASK.json icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T5_page-1.png icho_2026_source/image/T5_page-2.png icho_2026_source/image/T5_page-3.png icho_2026_source/image/T5_page-4.png",
+    "lake env lean IChO2026Problems/problem_icho_2026_t5_a3.lean",
+    "if grep -nE '(^|[[:space:]])(sorry|admit|unsafe|axiom)[[:space:]]' IChO2026Problems/problem_icho_2026_t5_a3.lean; then exit 1; else echo 'PASS: no sorry/admit/unsafe/custom axiom declarations'; fi"
+  ]
+}

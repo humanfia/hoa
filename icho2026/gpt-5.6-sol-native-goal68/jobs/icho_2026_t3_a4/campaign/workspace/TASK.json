@@ -1,0 +1,150 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Draw the repeat units for COFs 3\u20136. Indicate the edges of each repeat unit with a dashed line as shown for COF-1 below.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t3_a4",
+  "image": "T3_page-4.png",
+  "images": [
+    "T3_page-4.png",
+    "T3_page-3.png"
+  ],
+  "index": "icho_2026_t3_a4",
+  "kind": "structure-drawing",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T3",
+  "part_id": "T3-A4",
+  "phase": "solve",
+  "points": 12.0,
+  "previous_parts": [
+    {
+      "dependency_policy": "derive_in_answer_blind_run_or_use_problem_stated_fallback",
+      "part_id": "T3-A3",
+      "question": "Fill all the table cells with either new examples of monomer combinations that give the topologies shown above or with \u201cXXX\u201d if you are certain that no additional combinations satisfy that topology. Both the combinations and the \u201cXXX\u201d entries will be graded. Incorrect answers (both combinations and \u201cXXX\u201d entries) will be penalised. Blank table cells will not be graded. Tetragonal 1 Tetragonal 2 Hexagonal 1 Hexagonal 2 Trigonal Kagome Tetrahedral A2 + B3 E1 + D2 C2 + D4",
+      "source_id": "icho_2026_t3_a3"
+    }
+  ],
+  "printed_page": 4,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T3_page-4.png",
+      "printed_page": 4,
+      "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19",
+      "source_page": 28
+    },
+    {
+      "kind": "problem_page",
+      "path": "T3_page-3.png",
+      "printed_page": 4,
+      "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71",
+      "source_page": 28
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 28
+    }
+  ],
+  "problem_id": "icho_2026_t3",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT3. Into Reticular Chemistry 7% Covalent organic frameworks (COFs) are a class of polymers that form two- or three-dimensional structures through reactions between organic precursors, resulting in covalent bonds to afford porous, crystalline materials. Two examples of honeycomb type 2D-COFs formed by boronate ester and boroxine rings (repeat units indicated using dashed lines) are shown in the figure below. The black and red bold lines represent different building blocks in all COF topology figures. 3.1 Determine the empirical formula of COF-1 and calculate the mass percentage (%, to two decimal places) of carbon in COF-1. 3.2 Calculate the internal diameter, d, in \u00c5, of the honeycomb for COF-2, with the following assumptions: \u2022 C\u2013C/C=C (arenes) = 1.39 \u00c5 \u2022 C\u2013B = 1.56 \u00c5 \u2022 B\u2013O = 1.38 \u00c5 \u2022 Note, the diameter of a circle, \ud835\udc51, inscribed inside a hexagon, is given by \ud835\udc51= \u221a3\ud835\udc4e, where \ud835\udc4eis the side length of the hexagon. \u2022 Neglect the width of the linkers. The structures shown below can form 2D and 3D COFs. For this question consider only formation of COFs with boronate esters, imines, and C=C bonds through condensation reactions. A\u2013D represent compound classes with different functional groups. Tetragonal means Tetragonal, Hexagonal means Hexagonal, Trigonal means Trigonal, Kagome means Kagome, Tetrahedral means Tetrahedral. 3.3 Fill all the table cells with either new examples of monomer combinations that give the topologies shown above or with \u201cXXX\u201d if you are certain that no additional combinations satisfy that topology. Both the combinations and the \u201cXXX\u201d entries will be graded. Incorrect answers (both combinations and \u201cXXX\u201d entries) will be penalised. Blank table cells will not be graded. Tetragonal 1 Tetragonal 2 Hexagonal 1 Hexagonal 2 Trigonal Kagome Tetrahedral A2 + B3 E1 + D2 C2 + D4 Whilst imine-based COFs are easily synthesised, they are also vulnerable to hydrolysis under acidic and basic conditions. The addition of hydroxy groups to the aldehyde or amine monomers can overcome this. IR spectrum of COF-3 contained stretches corresponding to the imine functional group, but COF-4 did not. COF-4 contains a different type of C=N bonds, and elemental analysis revealed a loss of six additional hydrogen atoms per repeat unit relative to COF-3 as the only change. COF-5 irreversibly isomerises to COF-6, which did not contain imine stretches in its IR spectrum.\n\n## Current subquestion T3-A4\nDraw the repeat units for COFs 3\u20136. Indicate the edges of each repeat unit with a dashed line as shown for COF-1 below.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "cof_3",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "semantic_requirements": [
+        "Bind every atom, bond order, substituent, charge, radical and requested stereocentre to the problem figures.",
+        "Represent connectivity and requested stereochemistry explicitly in Lean; a string equality or assumed target is insufficient.",
+        "Derive the requested structure from problem constraints and justified general chemistry rules; do not assume the output."
+      ],
+      "source_requirement": "repeat unit and all dashed boundary edges of COF 3",
+      "unit": ""
+    },
+    {
+      "id": "cof_4",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "semantic_requirements": [
+        "Bind every atom, bond order, substituent, charge, radical and requested stereocentre to the problem figures.",
+        "Represent connectivity and requested stereochemistry explicitly in Lean; a string equality or assumed target is insufficient.",
+        "Derive the requested structure from problem constraints and justified general chemistry rules; do not assume the output."
+      ],
+      "source_requirement": "repeat unit and all dashed boundary edges of COF 4",
+      "unit": ""
+    },
+    {
+      "id": "cof_5",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "semantic_requirements": [
+        "Bind every atom, bond order, substituent, charge, radical and requested stereocentre to the problem figures.",
+        "Represent connectivity and requested stereochemistry explicitly in Lean; a string equality or assumed target is insufficient.",
+        "Derive the requested structure from problem constraints and justified general chemistry rules; do not assume the output."
+      ],
+      "source_requirement": "repeat unit and all dashed boundary edges of COF 5",
+      "unit": ""
+    },
+    {
+      "id": "cof_6",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "semantic_requirements": [
+        "Bind every atom, bond order, substituent, charge, radical and requested stereocentre to the problem figures.",
+        "Represent connectivity and requested stereochemistry explicitly in Lean; a string equality or assumed target is insufficient.",
+        "Derive the requested structure from problem constraints and justified general chemistry rules; do not assume the output."
+      ],
+      "source_requirement": "repeat unit and all dashed boundary edges of COF 6",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T3. Into Reticular Chemistry 7% Covalent organic frameworks (COFs) are a class of polymers that form two- or three-dimensional structures through reactions between organic precursors, resulting in covalent bonds to afford porous, crystalline materials. Two examples of honeycomb type 2D-COFs formed by boronate ester and boroxine rings (repeat units indicated using dashed lines) are shown in the figure below. The black and red bold lines represent different building blocks in all COF topology figures. 3.1 Determine the empirical formula of COF-1 and calculate the mass percentage (%, to two decimal places) of carbon in COF-1. 3.2 Calculate the internal diameter, d, in \u00c5, of the honeycomb for COF-2, with the following assumptions: \u2022 C\u2013C/C=C (arenes) = 1.39 \u00c5 \u2022 C\u2013B = 1.56 \u00c5 \u2022 B\u2013O = 1.38 \u00c5 \u2022 Note, the diameter of a circle, \ud835\udc51, inscribed inside a hexagon, is given by \ud835\udc51= \u221a3\ud835\udc4e, where \ud835\udc4eis the side length of the hexagon. \u2022 Neglect the width of the linkers. The structures shown below can form 2D and 3D COFs. For this question consider only formation of COFs with boronate esters, imines, and C=C bonds through condensation reactions. A\u2013D represent compound classes with different functional groups. Tetragonal means Tetragonal, Hexagonal means Hexagonal, Trigonal means Trigonal, Kagome means Kagome, Tetrahedral means Tetrahedral. 3.3 Fill all the table cells with either new examples of monomer combinations that give the topologies shown above or with \u201cXXX\u201d if you are certain that no additional combinations satisfy that topology. Both the combinations and the \u201cXXX\u201d entries will be graded. Incorrect answers (both combinations and \u201cXXX\u201d entries) will be penalised. Blank table cells will not be graded. Tetragonal 1 Tetragonal 2 Hexagonal 1 Hexagonal 2 Trigonal Kagome Tetrahedral A2 + B3 E1 + D2 C2 + D4 Whilst imine-based COFs are easily synthesised, they are also vulnerable to hydrolysis under acidic and basic conditions. The addition of hydroxy groups to the aldehyde or amine monomers can overcome this. IR spectrum of COF-3 contained stretches corresponding to the imine functional group, but COF-4 did not. COF-4 contains a different type of C=N bonds, and elemental analysis revealed a loss of six additional hydrogen atoms per repeat unit relative to COF-3 as the only change. COF-5 irreversibly isomerises to COF-6, which did not contain imine stretches in its IR spectrum.",
+  "source_index": "T3-A4",
+  "source_page": 28,
+  "source_pdf": "theory_problem.pdf"
+}

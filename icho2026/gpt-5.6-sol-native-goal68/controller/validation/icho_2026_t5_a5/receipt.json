@@ -1,0 +1,49 @@
+{
+  "target": "icho_2026_t5_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301639.782422,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t5_a5.lean": "bcacc06b3efc1f1cb5ed540fa02d4900b46c8e1c337e3ee7020434e6a1520594",
+    "answer.md": "50468b8c7a2e7397032ec5d61c1f27531ac9909cbdcd4451a490454107c50de8",
+    "verification.md": "f2c10081f857bb3370f8d2eaca5e381c2e116e9c02c6d0a15c552b9902495204",
+    "result.json": "6489adebbe73a375b26151f1acf11ac9b6fe031cba5b29199e28ef8249473da1"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t5_a5",
+    "status": "completed",
+    "answer_summary": "Tick (d): fully protonated PL1 forms the inverse hexagonal (H_II) phase. Protonation removes anionic head-group repulsion, reduces effective head area, and changes lamellar balanced packing to negative-curvature inverted packing.",
+    "theorem_names": [
+      "IChO2026Problems.T5A5.protonatedPL1_phase_is_inverseHexagonal",
+      "IChO2026Problems.T5A5.icho_2026_t5_a5"
+    ],
+    "assumptions": [
+      "Problem input: physiological PL1 is the dianion and forms a lamellar phase.",
+      "Trusted general packing law: deprotonation adds a strictly positive electrostatic contribution to effective polar-head area; full protonation removes that contribution.",
+      "Qualitative phase geometry: balanced head/hydrophobic cross-sections correspond to zero-curvature lamellae, while a smaller head cross-section corresponds to negative curvature; among the printed choices only inverse hexagonal has negative curvature."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t5_a5.lean",
+      "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t5_a5.lean",
+      "sha256sum icho_2026_source/image/T5_page-3.png icho_2026_source/image/T5_page-2.png icho_2026_source/raw/theory_problem.pdf"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

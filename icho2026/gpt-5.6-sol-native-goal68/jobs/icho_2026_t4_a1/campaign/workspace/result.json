@@ -1,0 +1,27 @@
+{
+  "target_id": "icho_2026_t4_a1",
+  "status": "completed",
+  "answer_summary": "Using the PDF periodic-table value 238.03 a.u. and the two printed isotope masses, the unique uranium-235 atomic fraction is 2/301. The exact raw abundance is 200/301 percent = 0.664451827... percent, reported to three significant figures as 0.664 percent.",
+  "theorem_names": [
+    "IChO2026Problems.T4A1.uranium235_atomic_fraction_characterization",
+    "IChO2026Problems.T4A1.uranium235_abundance_percent_characterization",
+    "IChO2026Problems.T4A1.uranium235_raw_percent_satisfies_balance",
+    "IChO2026Problems.T4A1.uranium235_atomic_fraction_is_physical",
+    "IChO2026Problems.T4A1.uranium235_reported_percent_correct",
+    "IChO2026Problems.T4A1.uranium235_submission_valid",
+    "IChO2026Problems.T4A1.uranium235_abundance_output"
+  ],
+  "assumptions": [
+    "Natural uranium is modeled as containing only uranium-235 and uranium-238, as stipulated by T4-A1.",
+    "The isotope masses 235.04 a.u. and 238.05 a.u. from Q4-1 and the natural-uranium atomic mass 238.03 a.u. from the supplied G1-5 periodic table are treated exactly as printed, following TASK.json.",
+    "Average atomic mass is the atomic-fraction-weighted mean of isotope masses.",
+    "The final display follows TASK.json's three-significant-figure, half-away-from-zero reporting policy; no tie occurs."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T4_page-1.png icho_2026_source/raw/theory_problem.pdf",
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a1.lean",
+    "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t4_a1.lean"
+  ]
+}

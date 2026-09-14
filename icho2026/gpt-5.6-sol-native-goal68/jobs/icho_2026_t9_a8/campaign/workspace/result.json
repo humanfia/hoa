@@ -1,0 +1,31 @@
+{
+  "target_id": "icho_2026_t9_a8",
+  "status": "completed",
+  "answer_summary": "O is 1-vinyl; P is 1-vinyl/2-azido; Q joins unit-2 CH2NH and unit-5 CH2O with an N/O methallyl bridge; R protects that nitrogen with Boc and installs CH2N3 at unit 6; S replaces N-Boc by N-Bn. Units 3 and 4, plus every otherwise unmodified primary site, retain CH2OBn, and all twelve secondary sites retain OBn.",
+  "theorem_names": [
+    "IChO2026Problems.T9A8.structure_o",
+    "IChO2026Problems.T9A8.structure_p",
+    "IChO2026Problems.T9A8.structure_q",
+    "IChO2026Problems.T9A8.structure_r",
+    "IChO2026Problems.T9A8.structure_s",
+    "IChO2026Problems.T9A8.structure_q_bridge_connectivity",
+    "IChO2026Problems.T9A8.all_requested_structures_fully_specified",
+    "IChO2026Problems.T9A8.requested_outputs"
+  ],
+  "assumptions": [
+    "Problem-stated source facts: alpha-CD has six alpha-D-glucopyranoside residues; 1,2 selection is clockwise; 1,3 selection is counterclockwise; protic directing groups dominate alkenes; an NH/OH director selects the opposite unit and falls back to the 1,3 unit if the opposite site is unavailable.",
+    "Trusted general reaction laws specialized and checked as partial Lean functions: Swern oxidation followed by methylene Wittig olefination converts CH2OH to CH=CH2; alkene-directed DIBAL-H removes the selected primary O-benzyl group; MsCl/NaN3 converts CH2OH to CH2N3; DIBAL-H reduces CH2N3 to CH2NH2 while effecting the directed debenzylation; NaH with ClCH2-C(=CH2)-CH2Cl makes the N/O bridge; Boc2O and CF3COOH protect/deprotect the bridge nitrogen; NaH/BnI N-benzylates it.",
+    "Hydrogens omitted by the skeletal source drawing are represented by valence-implied attached-hydrogen counts in Lean. The azide is represented by the charge-explicit resonance form CH2-N=N(+)=N(-).",
+    "No supplementary user-model assumptions, custom axioms, official solutions, marking schemes, answer repositories, or prior competition answers are used."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum TASK.json icho_2026_source/image/T9_page-3.png icho_2026_source/image/T9_page-4.png icho_2026_source/raw/theory_problem.pdf",
+    "python3 (PyMuPDF page-count/text-label inspection of PDF pages 87, 92, and 93; exact script recorded in verification.md)",
+    "if grep -RInE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t9_a8.lean; then exit 1; else echo 'No forbidden Lean placeholders or custom axiom declarations found.'; fi",
+    "lake env lean IChO2026Problems/problem_icho_2026_t9_a8.lean",
+    "python3 -m json.tool result.json >/dev/null",
+    "if grep -nE '^(<<<<<<<|=======|>>>>>>>)|[[:blank:]]$' answer.md verification.md result.json IChO2026Problems/problem_icho_2026_t9_a8.lean; then exit 1; else echo 'No conflict markers or trailing whitespace found.'; fi",
+    "python3 (SHA-256 comparison of every lake_skeleton_files entry against isolation_manifest.json; exact script recorded in verification.md)"
+  ]
+}

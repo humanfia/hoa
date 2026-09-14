@@ -1,0 +1,56 @@
+{
+  "target": "icho_2026_t3_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300006.1478066,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t3_a2.lean": "86cfff91541b7bc22031e4baf49ea44d401894b88062d7d13f08fc9dd5c37c1f",
+    "answer.md": "9653da051f9494c382d6dee9bd74c05555345a337bfef8c455b19c65dd56813a",
+    "verification.md": "d1fc8bca5b93e341e2deb3c6824ba767895a82c34b27f3f138d73be71cdbf3f2",
+    "result.json": "84ad106ff60da4e5b49aa6c26fb98fdc127ee6c762a2457ae42ebb9b7461f14a"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t3_a2",
+    "status": "completed",
+    "answer_summary": "One idealized COF-2 honeycomb side contains 8 arene C-C increments, 2 C-B increments, and 2 B-O increments, so a = 17.00 angstrom and d = 17*sqrt(3) angstrom = 29.4448637... angstrom, reported as 29.4 angstrom to three significant figures.",
+    "theorem_names": [
+      "IChO2026Problems.problem_icho_2026_t3_a2.cof2_side_bond_counts",
+      "IChO2026Problems.problem_icho_2026_t3_a2.cof2_side_length_exact",
+      "IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_exact",
+      "IChO2026Problems.problem_icho_2026_t3_a2.sqrt_three_reporting_bounds",
+      "IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_rounding_interval",
+      "IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_submission_valid",
+      "IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_reported"
+    ],
+    "assumptions": [
+      "The printed bond lengths C-C/C=C = 1.39 angstrom, C-B = 1.56 angstrom, and B-O = 1.38 angstrom are exact stipulated constants.",
+      "As instructed by the problem, linker width is neglected when tracing the idealized centre-to-centre honeycomb side.",
+      "The COF-2 drawing yields a side walk with 8 arene C-C, 2 C-B, and 2 B-O length increments.",
+      "The final display uses TASK.json's answer-blind default of three significant figures because the printed question and blank answer sheet specify no precision."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t3_a2.lean",
+      "if grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t3_a2.lean; then exit 1; else printf 'No forbidden proof shortcuts found.\\n'; fi",
+      "python3 -m json.tool result.json >/dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

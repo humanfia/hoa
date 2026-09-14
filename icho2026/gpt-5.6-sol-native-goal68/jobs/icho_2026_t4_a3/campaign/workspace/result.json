@@ -1,0 +1,28 @@
+{
+  "target_id": "icho_2026_t4_a3",
+  "status": "completed",
+  "answer_summary": "235U + n -> 93Rb + 140Cs + 3 n, with full isotope and atomic-number notation; the two product masses match the graph maxima, mass number and nuclear charge are conserved, and Rb/Cs are both group-1 elements.",
+  "theorem_names": [
+    "IChO2026Problems.T4A3.source_mass_number_balance",
+    "IChO2026Problems.T4A3.emitted_neutron_count_forced",
+    "IChO2026Problems.T4A3.rubidium_caesium_same_group",
+    "IChO2026Problems.T4A3.partner_atomic_number_forced",
+    "IChO2026Problems.T4A3.mostCommonFission_uses_yield_peaks",
+    "IChO2026Problems.T4A3.mostCommonFission_conserves_mass_number",
+    "IChO2026Problems.T4A3.mostCommonFission_conserves_atomic_number",
+    "IChO2026Problems.T4A3.mostCommonFission_products_same_group",
+    "IChO2026Problems.T4A3.requested_fission_equation"
+  ],
+  "assumptions": [
+    "Problem-source observation: the fission-yield graph maxima are read at integer mass numbers 93 and 140.",
+    "Problem statement: uranium-235 absorbs one neutron and three neutrons are emitted.",
+    "Supplied periodic-table data: Rb has atomic number 37, Cs has atomic number 55, and both are in group 1.",
+    "Standard nuclear bookkeeping: a valid nuclear equation conserves mass number and atomic number."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a3.lean",
+    "if grep -RInE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t4_a3.lean; then exit 1; else echo 'no forbidden proof shortcuts or custom axiom declarations'; fi",
+    "python3 -m json.tool result.json >/dev/null"
+  ]
+}

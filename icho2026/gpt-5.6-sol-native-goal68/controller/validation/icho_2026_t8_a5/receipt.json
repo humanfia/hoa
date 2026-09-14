@@ -1,0 +1,55 @@
+{
+  "target": "icho_2026_t8_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302754.7267032,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t8_a5.lean": "39ea8353718d2dcb5db7fa43dd2e030d28cd0908d6281b3f791b15abf6c2584e",
+    "answer.md": "0f2f22f4a65cf2fdbc213c10a8cd8fa3f0268d6908d0554f5bf9d51553948bfd",
+    "verification.md": "557ac9a83d06094b5c3fa509b2718193eb5a4710c583cb59754eda058639ca2f",
+    "result.json": "6cee11fdc8314590a7c0314fe89a56840ccb7b2fba8f6536421c28e8129e9e1c"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a5",
+    "status": "completed",
+    "answer_summary": "Using catalyst mass fraction relative to total loaded material, a 1 g basis contains 0.038 g catalyst and 0.962 g C3N4. The booklet values give an exact raw density of 5720900000/2385360289 = 2.3983379057586... molecules nm^-2, reported as 2.40 molecules nm^-2 to three significant figures.",
+    "theorem_names": [
+      "IChO2026Problems.T8A5.squareNanometre_conversion",
+      "IChO2026Problems.T8A5.oneGram_support_mass",
+      "IChO2026Problems.T8A5.surfaceDensity_independent_of_sample_mass",
+      "IChO2026Problems.T8A5.catalyst_surface_density_exact",
+      "IChO2026Problems.T8A5.catalyst_surface_density_rounding_bounds",
+      "IChO2026Problems.T8A5.catalyst_surface_density_reported"
+    ],
+    "assumptions": [
+      "The printed phrase 'mass fraction of catalyst' has its standard definition: catalyst mass divided by total loaded-material mass.",
+      "The printed specific surface area is area per gram of C3N4 support, as indicated by its unit and wording.",
+      "The requested value is an average molecular surface density; molecule count and support area therefore divide directly.",
+      "Displayed problem data are evaluated directly, with no intermediate rounding; only the final result is reported to three significant figures."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T8_page-2.png icho_2026_source/image/T8_page-1.png icho_2026_source/raw/theory_problem.pdf",
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t8_a5.lean",
+      "grep -nE '^[[:space:]]*(axiom|unsafe)[[:space:]]|\\bsorry\\b|\\badmit\\b' IChO2026Problems/problem_icho_2026_t8_a5.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

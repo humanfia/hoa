@@ -1,0 +1,3 @@
+'IChO2026Problems.T9A3.macrocycle_X_ring_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T9A3.macrocycle_X_stereocentres' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T9A3.macrocycle_X_requested_outputs' depends on axioms: [propext, Classical.choice, Quot.sound]

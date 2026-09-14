@@ -1,0 +1,26 @@
+{
+  "target_id": "icho_2026_t8_a2",
+  "status": "completed",
+  "answer_summary": "3 is the N-centred triethanolamine radical cation [(HOCH2CH2)3N]radical+, 4 is the neutral alpha-amino carbon radical (HOCH2CH2)2N-C(radical)H-CH2OH, 5 is the iminium ion [(HOCH2CH2)2N+=CH-CH2OH], 6 is diethanolamine HN(CH2CH2OH)2, and 7 is glycolaldehyde HOCH2-CHO.",
+  "theorem_names": [
+    "IChO2026T8A2.structure_3",
+    "IChO2026T8A2.structure_4",
+    "IChO2026T8A2.structure_5",
+    "IChO2026T8A2.structure_6",
+    "IChO2026T8A2.structure_7",
+    "IChO2026T8A2.intermediate_arrow_accounting",
+    "IChO2026T8A2.hydrolysis_arrow_accounting"
+  ],
+  "assumptions": [
+    "Problem input: species 2 is the triethanolamine molecular graph shown on Q8-1, and the four arrows have the printed electron/proton/water labels.",
+    "Trusted general chemistry: tertiary-amine one-electron oxidation gives an aminium radical cation; alpha deprotonation gives an alpha-amino radical; its oxidation gives an iminium ion; aqueous iminium hydrolysis gives a secondary amine plus an aldehyde.",
+    "Trusted general chemistry: the stated silver-mirror response identifies the aldehyde-containing hydrolysis product as species 7.",
+    "Conventional skeletal-formula hydrogens are represented in Lean as exact hydrogen counts attached to heavy-atom vertices."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum TASK.json icho_2026_source/image/T8_page-1.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a2.lean",
+    "grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t8_a2.lean"
+  ]
+}

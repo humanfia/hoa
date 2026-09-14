@@ -1,0 +1,108 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Calculate based on the data the period of oscillations, \ud835\udf0f, of the BZ reaction, in seconds.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t2_a5",
+  "image": "T2_page-3.png",
+  "images": [
+    "T2_page-3.png",
+    "T2_page-2.png"
+  ],
+  "index": "icho_2026_t2_a5",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T2",
+  "part_id": "T2-A5",
+  "phase": "solve",
+  "points": 9.0,
+  "previous_parts": [
+    {
+      "dependency_policy": "derive_in_answer_blind_run_or_use_problem_stated_fallback",
+      "part_id": "T2-A2",
+      "question": "Using the steady-state approximation, calculate the stationary molar concentrations of HBrO2 in Processes A and B, [HBrO2]A and [HBrO2]B.",
+      "source_id": "icho_2026_t2_a2"
+    },
+    {
+      "dependency_policy": "derive_in_answer_blind_run_or_use_problem_stated_fallback",
+      "part_id": "T2-A3",
+      "question": "Calculate [Br\u2212]critical.",
+      "source_id": "icho_2026_t2_a3"
+    }
+  ],
+  "printed_page": 3,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T2_page-3.png",
+      "printed_page": 3,
+      "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260",
+      "source_page": 17
+    },
+    {
+      "kind": "problem_page",
+      "path": "T2_page-2.png",
+      "printed_page": 3,
+      "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b",
+      "source_page": 17
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 17
+    }
+  ],
+  "problem_id": "icho_2026_t2",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT2. Kinetics of the Belousov-Zhabotinsky reaction 6% When the chemicals KBrO3, CH2(COOH)2 (malonic acid, \u2013 MA), Ce(SO4)2, and H2SO4 are mixed, the concentration, \ud835\udc36, of Ce species and the colour of the solution oscillates between yellow (due to Ce4+) and colourless (due to Ce3+). A schematic picture is given below: 2.1 Write the overall balanced reaction equation of the Belousov-Zhabotinsky reaction (BZ reaction). Note: in this reaction, MA is oxidised to CO2, BrO\u2212 3 is reduced to Br\u2212, and Ce(IV) is a catalyst. The mechanism of the BZ reaction is shown below (BMA \u2212CHBr(COOH)2): Process A \u23a7 \u23aa \u23aa \u23a8 \u23aa \u23aa \u23a9 (1) HBrO2 + BrO\u2212 3 + H+ \ud835\udc581 \u2212\u2212\u21922BrO\u22c5 2 + H2O (2) BrO\u22c5 2 + Ce3+ + H+ \ud835\udc582 \u2212\u2212\u2192HBrO2 + Ce4+ (3) 2HBrO2 \ud835\udc583 \u2212\u2212\u2192BrO\u2212 3 + HBrO + H+ \ud835\udc581 = 1.0 \u00d7 104 M\u22122 s\u22121 \ud835\udc582 = 6.2 \u00d7 104 M\u22122 s\u22121 \ud835\udc583 = 4.0 \u00d7 107 M\u22121 s\u22121 Process B \u23a7 \u23aa \u23aa \u23a8 \u23aa \u23aa \u23a9 (4) HBrO2 + Br\u2212+ H+ \ud835\udc584 \u2212\u2212\u21922HBrO (5) BrO\u2212 3 + Br\u2212+ 2H+ \ud835\udc585 \u2212\u2212\u2192HBrO + HBrO2 (6) HBrO + MA \ud835\udc586 \u2212\u2212\u2192BMA + H2O \ud835\udc584 = 2.0 \u00d7 109 M\u22122 s\u22121 \ud835\udc585 = 2.1 M\u22123 s\u22121 \ud835\udc586 = 8.2 M\u22121 s\u22121 Process C {(7) Ce4+ + BMA \ud835\udc587 \u2212\u2212\u2192Ce3+ + Br\u2212+ other products \ud835\udc587 = 1.0 \u00d7 102 M\u22121 s\u22121 In the BZ reaction, Process C occurs continuously, while Processes A and B alternate with each other. Assume that: - when Process A occurs the solution is yellow and Process B practically does not occur; - when Process B occurs the solution is colourless and Process A practically does not occur; - [BrO3\u2212]0 = 0.06 M, [MA]0 = 0.1 M, [H+]0 = 0.8 M, [Ce4+]0 = 0.001 M; - the concentrations of the reactants (except Ce4+) and pH are maintained constant throughout the BZ reaction. 2.2 Using the steady-state approximation, calculate the stationary molar concentrations of HBrO2 in Processes A and B, [HBrO2]A and [HBrO2]B. If you could not calculate [HBrO2]A and [HBrO2]B, you can use the values [HBrO2]A = 1 \u00d7 10\u22125 M and [HBrO2]B = 1 \u00d7 10\u221210 M for the following calculations. During the BZ reaction, the concentrations of HBrO2 and Br\u2212oscillate strictly in relation to each other, and this is sketched in the phase portrait of [HBrO2] vs [Br\u2212]: Here [Br\u2212]max is the maximum concentration and [Br\u2212]critical is the critical concentration of Br\u2212at which there is a switch over in processes from A to B or from B to A. To switch Process A to Process B, the reaction rate of the elementary step (4) must exceed that of the elementary step (1) and vice versa. 2.3 Calculate [Br\u2212]critical. If you could not calculate [Br\u2212]critical, use [Br\u2212]critical = 1 \u00d7 10\u22127 M for the following calculations. 2.4 In which direction in the phase portrait of [HBrO2] vs [Br\u2212] will the concentrations of [HBrO2] and [Br\u2212] change over time? Tick the correct box. The system does not traverse the phase portrait of [HBrO2] vs [Br\u2212] at a constant velocity, that is the concentration of [Br\u2212] slowly decreases from [Br\u2212]max = 7.0 \u00d7 10\u22124 M to [Br\u2212]critical, and then almost immediately reaches [Br\u2212]max again.\n\n## Current subquestion T2-A5\nCalculate based on the data the period of oscillations, \ud835\udf0f, of the BZ reaction, in seconds.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "digits": 3,
+      "kind": "significant_figures",
+      "source": "uniform_blind_evaluation_default"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "oscillation_period",
+      "kind": "numeric",
+      "reporting_policy": {
+        "digits": 3,
+        "kind": "significant_figures",
+        "source": "uniform_blind_evaluation_default"
+      },
+      "source_requirement": "period of oscillations tau",
+      "unit": "s"
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T2. Kinetics of the Belousov-Zhabotinsky reaction 6% When the chemicals KBrO3, CH2(COOH)2 (malonic acid, \u2013 MA), Ce(SO4)2, and H2SO4 are mixed, the concentration, \ud835\udc36, of Ce species and the colour of the solution oscillates between yellow (due to Ce4+) and colourless (due to Ce3+). A schematic picture is given below: 2.1 Write the overall balanced reaction equation of the Belousov-Zhabotinsky reaction (BZ reaction). Note: in this reaction, MA is oxidised to CO2, BrO\u2212 3 is reduced to Br\u2212, and Ce(IV) is a catalyst. The mechanism of the BZ reaction is shown below (BMA \u2212CHBr(COOH)2): Process A \u23a7 \u23aa \u23aa \u23a8 \u23aa \u23aa \u23a9 (1) HBrO2 + BrO\u2212 3 + H+ \ud835\udc581 \u2212\u2212\u21922BrO\u22c5 2 + H2O (2) BrO\u22c5 2 + Ce3+ + H+ \ud835\udc582 \u2212\u2212\u2192HBrO2 + Ce4+ (3) 2HBrO2 \ud835\udc583 \u2212\u2212\u2192BrO\u2212 3 + HBrO + H+ \ud835\udc581 = 1.0 \u00d7 104 M\u22122 s\u22121 \ud835\udc582 = 6.2 \u00d7 104 M\u22122 s\u22121 \ud835\udc583 = 4.0 \u00d7 107 M\u22121 s\u22121 Process B \u23a7 \u23aa \u23aa \u23a8 \u23aa \u23aa \u23a9 (4) HBrO2 + Br\u2212+ H+ \ud835\udc584 \u2212\u2212\u21922HBrO (5) BrO\u2212 3 + Br\u2212+ 2H+ \ud835\udc585 \u2212\u2212\u2192HBrO + HBrO2 (6) HBrO + MA \ud835\udc586 \u2212\u2212\u2192BMA + H2O \ud835\udc584 = 2.0 \u00d7 109 M\u22122 s\u22121 \ud835\udc585 = 2.1 M\u22123 s\u22121 \ud835\udc586 = 8.2 M\u22121 s\u22121 Process C {(7) Ce4+ + BMA \ud835\udc587 \u2212\u2212\u2192Ce3+ + Br\u2212+ other products \ud835\udc587 = 1.0 \u00d7 102 M\u22121 s\u22121 In the BZ reaction, Process C occurs continuously, while Processes A and B alternate with each other. Assume that: - when Process A occurs the solution is yellow and Process B practically does not occur; - when Process B occurs the solution is colourless and Process A practically does not occur; - [BrO3\u2212]0 = 0.06 M, [MA]0 = 0.1 M, [H+]0 = 0.8 M, [Ce4+]0 = 0.001 M; - the concentrations of the reactants (except Ce4+) and pH are maintained constant throughout the BZ reaction. 2.2 Using the steady-state approximation, calculate the stationary molar concentrations of HBrO2 in Processes A and B, [HBrO2]A and [HBrO2]B. If you could not calculate [HBrO2]A and [HBrO2]B, you can use the values [HBrO2]A = 1 \u00d7 10\u22125 M and [HBrO2]B = 1 \u00d7 10\u221210 M for the following calculations. During the BZ reaction, the concentrations of HBrO2 and Br\u2212oscillate strictly in relation to each other, and this is sketched in the phase portrait of [HBrO2] vs [Br\u2212]: Here [Br\u2212]max is the maximum concentration and [Br\u2212]critical is the critical concentration of Br\u2212at which there is a switch over in processes from A to B or from B to A. To switch Process A to Process B, the reaction rate of the elementary step (4) must exceed that of the elementary step (1) and vice versa. 2.3 Calculate [Br\u2212]critical. If you could not calculate [Br\u2212]critical, use [Br\u2212]critical = 1 \u00d7 10\u22127 M for the following calculations. 2.4 In which direction in the phase portrait of [HBrO2] vs [Br\u2212] will the concentrations of [HBrO2] and [Br\u2212] change over time? Tick the correct box. The system does not traverse the phase portrait of [HBrO2] vs [Br\u2212] at a constant velocity, that is the concentration of [Br\u2212] slowly decreases from [Br\u2212]max = 7.0 \u00d7 10\u22124 M to [Br\u2212]critical, and then almost immediately reaches [Br\u2212]max again.",
+  "source_index": "T2-A5",
+  "source_page": 17,
+  "source_pdf": "theory_problem.pdf"
+}

@@ -1,0 +1,28 @@
+{
+  "target_id": "icho_2026_t3_a1",
+  "status": "completed",
+  "answer_summary": "COF-1 has empirical formula C3H2BO. Using the printed atomic weights gives the exact carbon mass percentage 450375/8107 = 55.553842358...%, which rounds to 55.55% at two decimal places.",
+  "theorem_names": [
+    "IChO2026Problems.T3A1.balanced_cell_multiplicities",
+    "IChO2026Problems.T3A1.balanced_cell_formula",
+    "IChO2026Problems.T3A1.cof1_empirical_formula_is_primitive",
+    "IChO2026Problems.T3A1.cof1_empirical_formula",
+    "IChO2026Problems.T3A1.cof1_formula_mass",
+    "IChO2026Problems.T3A1.cof1_carbon_mass_percent_exact",
+    "IChO2026Problems.T3A1.cof1_carbon_mass_percent_reported",
+    "IChO2026Problems.T3A1.cof1_carbon_mass_percent_two_decimal_places",
+    "IChO2026Problems.T3A1.icho_2026_t3_a1"
+  ],
+  "assumptions": [
+    "The COF-1 line-angle drawing is interpreted by the standard convention: each doubly substituted phenylene linker is C6H4 and has two attachment ends.",
+    "Each boroxine ring shown in the problem is the alternating B3O3 ring with three phenyl attachment sites.",
+    "The periodic-table values printed in the problem are used exactly: C = 12.01, H = 1.008, B = 10.81, O = 16.00."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T3_page-1.png icho_2026_source/raw/theory_problem.pdf",
+    "lake build IChO2026Chem.Reporting",
+    "lake env lean IChO2026Problems/problem_icho_2026_t3_a1.lean",
+    "grep -nE '(^|[[:space:]])(sorry|admit|axiom|unsafe)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t3_a1.lean"
+  ]
+}

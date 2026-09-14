@@ -1,0 +1,51 @@
+{
+  "target": "icho_2026_t7_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301848.5008438,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t7_a4.lean": "c6a7a008252c0375a98f590bbdd9fbdce5290c3d7da1ce2b86ca503966d3c058",
+    "answer.md": "9c428bf48713d44b829c264da28bc410e71c0a56f0b5fe9c6e44e18ec326811c",
+    "verification.md": "63b2bf741e5f633a26772f2d763adc686549e351250cbf7622b2fbaa3b7e711b",
+    "result.json": "8d793b403d05a397d631b0d32d97464f8ddceb15f2718a2a021f188dac08e51d"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t7_a4",
+    "status": "completed",
+    "answer_summary": "Compound 3 is N-methyldiethanolamine (MDEA). The balanced aqueous CO2-scrubbing equation is CH3N(CH2CH2OH)2 + CO2 + H2O <=> [CH3NH(CH2CH2OH)2]+ + HCO3-, with every coefficient equal to one.",
+    "theorem_names": [
+      "IChO2026Problems.T7A4.mdea_atom_counts",
+      "IChO2026Problems.T7A4.reaction_conserved_totals",
+      "IChO2026Problems.T7A4.t7_a4_reaction_equation"
+    ],
+    "assumptions": [
+      "The structure drawn as compound 3 on the official problem page is read as CH3N(CH2CH2OH)2, N-methyldiethanolamine (MDEA).",
+      "Trusted general chemical law: in water, a tertiary amine captures CO2 by base-assisted hydration, giving the protonated amine and bicarbonate; this product-selection premise is documented by primary literature in answer.md and is not introduced as a Lean axiom."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T7_page-1.png icho_2026_source/image/T7_page-2.png",
+      "lake env lean IChO2026Problems/problem_icho_2026_t7_a4.lean",
+      "grep -nE '\\bsorry\\b|\\badmit\\b|\\bunsafe\\b|^[[:space:]]*axiom\\b' IChO2026Problems/problem_icho_2026_t7_a4.lean",
+      "python3 -m json.tool result.json >/dev/null",
+      "test -s answer.md -a -s verification.md -a -s result.json -a -s IChO2026Problems/problem_icho_2026_t7_a4.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

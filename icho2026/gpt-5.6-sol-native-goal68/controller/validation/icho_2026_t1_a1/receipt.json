@@ -1,0 +1,60 @@
+{
+  "target": "icho_2026_t1_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300772.7309794,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t1_a1.lean": "453c4da5a11c87ff02064cf53da8f483f8df28c109e487763059dc23f67fd525",
+    "answer.md": "7f980271b889bdeb8d07fc2ae78fcbdae2ccf69807ea479dcaf9b9e117acea97",
+    "verification.md": "3311c9be608f0c6b1da55c4aafbdcb13042820dd2bc0eb5345c90b3cb209f530",
+    "result.json": "566fda564ec70fe83b13b454ba258f20a928baa143776fde3f14a536c6ed5647"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t1_a1",
+    "status": "completed",
+    "answer_summary": "X is compound 6 (alpha-terpineol), and Y is compound 3 (1,8-cineole/eucalyptol).",
+    "theorem_names": [
+      "IChO2026Problems.T1A1.identity_x",
+      "IChO2026Problems.T1A1.identity_y",
+      "IChO2026Problems.T1A1.identify_X_and_Y",
+      "IChO2026Problems.T1A1.candidate3_has_plane_of_symmetry",
+      "IChO2026Problems.T1A1.candidate3_formula_from_graph",
+      "IChO2026Problems.T1A1.problem_observation_is_consistent",
+      "IChO2026Problems.T1A1.candidate6_to_candidate3_acid_cyclization"
+    ],
+    "assumptions": [
+      "X and Y are distinct selections from structures 1-10, as grounded by the problem statement and blank A1-1 answer sheet.",
+      "The molecular formulae and structural descriptors are faithful transcriptions of Q1-2.",
+      "The trusted general chemical rule is acid protonation of the suitably tethered alpha-terpineol alkene followed by intramolecular oxygen attack and deprotonation to a cineole ether; isomerisation preserves C10H18O."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T1_page-1.png icho_2026_source/image/T1_page-2.png",
+      "lake env lean IChO2026Problems/problem_icho_2026_t1_a1.lean",
+      "grep -nE '^[[:space:]]*(axiom|unsafe)[[:space:]]|\\b(sorry|admit)\\b' IChO2026Problems/problem_icho_2026_t1_a1.lean",
+      "python3 -m json.tool result.json >/dev/null",
+      "test -s answer.md -a -s verification.md -a -s result.json -a -s IChO2026Problems/problem_icho_2026_t1_a1.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t1_a1.lean": {
+      "axiom": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

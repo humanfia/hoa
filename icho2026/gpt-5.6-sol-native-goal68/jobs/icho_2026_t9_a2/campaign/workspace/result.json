@@ -1,0 +1,27 @@
+{
+  "target_id": "icho_2026_t9_a2",
+  "status": "completed",
+  "answer_summary": "Tick the right-hand 1C4 chair. K is neutral, closed-shell heptakis(3,6-anhydro)-beta-cyclodextrin: each of seven alpha-(1->4)-linked alpha-D-gluco repeats has a C3-O-C6 bridge and C2-OH as its only free hydroxyl, with all carbon configurations retained (formula C42H56O28).",
+  "theorem_names": [
+    "IChO2026Problems.Icho2026T9A2.chair_conformation",
+    "IChO2026Problems.Icho2026T9A2.structure_K",
+    "IChO2026Problems.Icho2026T9A2.k_connectivity_is_exact",
+    "IChO2026Problems.Icho2026T9A2.k_stereo_predicate_is_exact",
+    "IChO2026Problems.Icho2026T9A2.k_formula"
+  ],
+  "assumptions": [
+    "Problem input: beta-cyclodextrin consists of seven alpha-D-glucopyranosyl units joined by alpha-(1->4) glycosidic bonds.",
+    "Problem input: the reaction uses TsCl (7 equivalents) in pyridine, then aqueous NaOH at 60 degrees C, and K has one free OH per glucopyranosyl unit.",
+    "Trusted general chemistry: one equivalent of TsCl per beta-CD repeat gives per-6-O-tosylation under the printed pyridine conditions.",
+    "Trusted general chemistry: warm aqueous hydroxide converts each C3-OH/C6-OTs pair into a C3-O-C6 intramolecular ether and that bridge constrains the glucopyranosyl unit to the 1C4 chair.",
+    "Lean logical dependencies reported by #print axioms are limited to propext, Classical.choice, and Quot.sound for structure_K; chair_conformation has no axioms."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t9_a2.lean",
+    "! grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t9_a2.lean",
+    "python3 -m json.tool result.json >/dev/null",
+    "! grep -nE '[[:blank:]]+$|^(<<<<<<<|=======|>>>>>>>)' answer.md verification.md result.json IChO2026Problems/problem_icho_2026_t9_a2.lean"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "target": "icho_2026_t9_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789303206.4915612,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a7.lean": "982525b6e6be1c53a4edd77bfcb54cef1ecf5237cd10a711ced9768f9247b23f",
+    "answer.md": "b0402ce4cf2dce973cb9a9c0e6247c2b6deec814869dc9ca5691ac40d2bd7c4b",
+    "verification.md": "a4e61ac6d2ceb6acfbdead22492e5513396c757fe4b588e8b13836f1f4dfbf6f",
+    "result.json": "d7dbfa7a3f81de1686bac8fd3fe9226b88bb6fc30737821c7cf5b00dd81a2f66"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a7",
+    "status": "completed",
+    "answer_summary": "The two [M+Na]+ degradation-product peaks are m/z 1299 and 1731. The neutral fragments are C78H84O16 and C105H112O21, obtained from one C22H25O4 enose end, one C2H3O2 acetoxy end, and respectively two or three C27H28O5 intact residues.",
+    "theorem_names": [
+      "IChO2026Problems.T9A7.degradation_arc_counts",
+      "IChO2026Problems.T9A7.first_fragment_formula",
+      "IChO2026Problems.T9A7.second_fragment_formula",
+      "IChO2026Problems.T9A7.first_fragment_mz",
+      "IChO2026Problems.T9A7.second_fragment_mz",
+      "IChO2026Problems.T9A7.t9_a7_answer"
+    ],
+    "assumptions": [
+      "The requested integer atomic masses are C=12, H=1, O=16, and Na=23.",
+      "The conventional structural abbreviation AcO denotes the attached acetoxy group CH3COO, with formula C2H3O2.",
+      "The [M+Na]+ ion has charge magnitude one, so its nominal m/z equals its nominal ion mass."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T9_page-3.png icho_2026_source/image/T9_page-4.png icho_2026_source/raw/theory_problem.pdf",
+      "python3 -c \"import pymupdf; pdf=pymupdf.open('icho_2026_source/raw/theory_problem.pdf'); print('page_count:', pdf.page_count); [print(f'page {n}:', ' '.join(pdf[n-1].get_text('text').split())[:300]) for n in (86,87,91)]\"",
+      "lake env lean IChO2026Problems/problem_icho_2026_t9_a7.lean",
+      "if grep -nE '(^|[[:space:]])(sorry|admit|unsafe|axiom)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t9_a7.lean; then exit 1; else echo 'No prohibited declarations found.'; fi",
+      "python3 -m json.tool result.json >/dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

@@ -1,0 +1,40 @@
+{
+  "target_id": "icho_2026_t3_a5",
+  "status": "completed",
+  "answer_summary": "X is the neutral, closed-shell, aldehyde-functionalized fluorinated hexagonal polyamide excised from a COF-7 hexagonal pore. Its smallest repeat is one C2 half plus one D4-derived tetrafluoroterephthaloyl linker, C27H14F4N2O3; six repeats close the ring to give C162H84F24N12O18.",
+  "theorem_names": [
+    "IChO2026Problems.T3A5.pipeline_state",
+    "IChO2026Problems.T3A5.kagome_hexagon_boundary_is_cycle",
+    "IChO2026Problems.T3A5.kagome_hexagon_boundary_degree_two",
+    "IChO2026Problems.T3A5.repeatUnit_explicit_atom_count",
+    "IChO2026Problems.T3A5.macrocycleX_explicit_atom_count",
+    "IChO2026Problems.T3A5.macrocycleX_repeat_formula",
+    "IChO2026Problems.T3A5.macrocycleX_formula",
+    "IChO2026Problems.T3A5.macrocycleX_formula_derived_from_reagents",
+    "IChO2026Problems.T3A5.macrocycleX_bonds_are_undirected",
+    "IChO2026Problems.T3A5.macrocycleX_has_no_self_bonds",
+    "IChO2026Problems.T3A5.macrocycleX_carbonyl_bond_orders",
+    "IChO2026Problems.T3A5.macrocycleX_local_amide_bond",
+    "IChO2026Problems.T3A5.macrocycleX_intercell_amide_bond",
+    "IChO2026Problems.T3A5.macrocycleX_fluorine_substitution",
+    "IChO2026Problems.T3A5.macrocycleX_is_neutral_closed_shell_achiral",
+    "IChO2026Problems.T3A5.no_identical_integral_repeat_count_exceeds_six",
+    "IChO2026Problems.T3A5.macrocycleX_smallest_repeat_unit"
+  ],
+  "assumptions": [
+    "Problem input: C2 is the pictured tetratopic tetraamine with one central stilbene olefin; D4 is the pictured 2,3,5,6-tetrafluoroterephthaldehyde.",
+    "Problem input: AcOH condensation gives the depicted Kagome imine COF-7, whose selected hexagonal boundary contains six C2 halves, six D4 linkers, and twelve condensation links.",
+    "Trusted general chemistry law: buffered NaClO2/NaH2PO4 oxidation converts Ar-N=CH-Ar imines to Ar-NH-C(=O)-Ar amides while preserving the scaffold.",
+    "Trusted general chemistry law: reductive ozonolysis with O3 then Me2S cleaves Ar-CH=CH-Ar to two Ar-CHO termini.",
+    "Structural convention: bonds in benzene rings are represented by the aromatic bond-order constructor rather than one arbitrary Kekule resonance form."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T3_page-5.png icho_2026_source/image/T3_page-4.png icho_2026_source/raw/theory_problem.pdf",
+    "/usr/bin/time -f 'elapsed=%E exit=%x' lake env lean IChO2026Problems/problem_icho_2026_t3_a5.lean",
+    "lake build IChO2026Problems",
+    "grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t3_a5.lean || true",
+    "grep -n 'native_decide\\|axiom ' IChO2026Problems/problem_icho_2026_t3_a5.lean || true",
+    "python3 -c \"import json, xml.etree.ElementTree as ET; json.load(open('result.json')); ET.parse('macrocycle_X_repeat_unit.svg'); print('valid')\""
+  ]
+}

@@ -12,6 +12,7 @@ The earlier GPT selected-set experiment remains **32/32 answer-blind**. The proj
 We build with open source, and build for open source. We **release everything** including:
 
 * the [complete GPT full-theory formalization: 68 subquestions](gpt-5.6-sol-full68-formalization/), including the latest T8-A8 contest-model proof and its 12 checked lemmas;
+* the [GPT-5.6 Sol native Codex `/goal` baseline](gpt-5.6-sol-native-goal68/): 68/68 compiled, **32/68 (47.06%)** independently accepted;
 * the [Kimi-K3 remaining 36 formalizations](kimi-k3-nl-36-formalization/), which together with the [earlier 32 answer-blind targets](kimi-k3-answer-blind/) cover all 68 theory subquestions;
 * the final answer-blind Lean 4 statements and proofs [Kimi-K3](./kimi-k3-answer-blind) and [GPT-5.6 Sol](./gpt-5.6-sol-answer-blind);
 * the final worked solutions [Kimi-K3](./kimi-k3-max/solutions) and [GPT-5.6 Sol](./gpt-5.6-sol-max/solutions);
@@ -22,6 +23,18 @@ Notably, humanize enables **open source models like Kimi-K3** to achieve **68/68
 
 
 ## Results
+
+### Separate native Codex `/goal` baseline
+
+| Experiment | Scope | Lean compilation | Semantic review | Combined acceptance | Official-answer score |
+|---|---:|---:|---:|---:|---|
+| [GPT-5.6 Sol native `/goal`](gpt-5.6-sol-native-goal68/) | 68 subquestions, peak 32 concurrent | 68/68 | 45/68 | **32/68 (47.06%)** | Incomplete; no aggregate score claimed |
+
+This fresh answer-blind baseline uses native persisted goals, **not the Humanize
+review/redraft solver loop**. Independent post-run reviews did not feed back into
+the solvers. All 68 original outputs, including rejected and conditional results,
+are preserved. The 47.06% figure is formalization acceptance, not official-answer
+accuracy. See the [protocol, scoring limitations and per-target evidence](gpt-5.6-sol-native-goal68/).
 
 ### Full theory formalization: 68/68 targets accepted
 
@@ -51,6 +64,7 @@ Lean checks deductions from the encoded inputs; it does not itself certify
 that every encoding matches the official chemical answer. Post-run answer
 scoring is separate and is not represented by **68/68**. The historical
 selected-set scores in their own section belong to different experiments.
+
 ### Full68 answer scoring — generous, non-official
 
 | Run | Raw points | Raw accuracy | Weighted theory score | Weighted accuracy |
@@ -111,7 +125,7 @@ Clone the repository and verify the released files:
 git clone https://github.com/humanfia/icho2026.git
 cd icho2026
 
-for run in gpt-5.6-sol-answer-blind kimi-k3-answer-blind kimi-k3-nl-36-formalization; do
+for run in gpt-5.6-sol-answer-blind kimi-k3-answer-blind kimi-k3-nl-36-formalization gpt-5.6-sol-native-goal68; do
   (cd "$run" && sha256sum -c CHECKSUMS.sha256)
 done
 ```
@@ -134,6 +148,8 @@ under the toolchain pinned inside each project.
 For the complete 68-question GPT project and its separate 13-module T8 audit,
 follow the [full68 reproduction instructions](gpt-5.6-sol-full68-formalization/#reproduce).
 The Kimi remaining-36 project has its own [reproduction notes](kimi-k3-nl-36-formalization/#reproduce).
+The native `/goal` baseline is separate per-target Lean projects; see its
+[verification notes](gpt-5.6-sol-native-goal68/#released-files-and-local-verification).
 
 ## Released artifacts
 
@@ -147,6 +163,8 @@ The Kimi remaining-36 project has its own [reproduction notes](kimi-k3-nl-36-for
   remaining 36-target Kimi Lean project; together with
   [`kimi-k3-answer-blind`](kimi-k3-answer-blind/) it covers all 68 theory
   subquestions.
+- [`gpt-5.6-sol-native-goal68`](gpt-5.6-sol-native-goal68/) is the separate
+  native Codex `/goal` baseline over all 68 theory subquestions.
 - [`FIRST_TURN_ABLATION.md`](kimi-k3-max/FIRST_TURN_ABLATION.md) compares the
   nine unreviewed Kimi round-0 outputs with the final Humanize result under the
   same grading convention.

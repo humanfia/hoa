@@ -1,0 +1,114 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Determine the molecular formula of the fatty acid (RCOOH), if the non-ionised form of PL1 contains 255 \ud835\udf0eand \ud835\udf0bbonds between atoms in total. Support your answer with calculations. If you were unable to find the structural formula of PL1, you can use a-d fragments from 5.1.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t5_a3",
+  "image": "T5_page-3.png",
+  "images": [
+    "T5_page-3.png",
+    "T5_page-2.png",
+    "T5_page-1.png"
+  ],
+  "index": "icho_2026_t5_a3",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T5",
+  "part_id": "T5-A3",
+  "phase": "solve",
+  "points": 4.0,
+  "previous_parts": [
+    {
+      "dependency_policy": "derive_in_answer_blind_run_or_use_problem_stated_fallback",
+      "part_id": "T5-A1",
+      "question": "Tick one correct statement regarding the value of n (number of type a fragments). (a) n is an even number, (b) n is an odd number, (c) n can be either an odd or an even number.",
+      "source_id": "icho_2026_t5_a1"
+    },
+    {
+      "dependency_policy": "derive_in_answer_blind_run_or_use_problem_stated_fallback",
+      "part_id": "T5-A2",
+      "question": "Draw the structure of one enantiomer of PL1. Draw the structure of Y in a way that shows the stabilisation that explains the difference between \ud835\udc5d\ud835\udc3e\ud835\udc4e1 and \ud835\udc5d\ud835\udc3e\ud835\udc4e2. Use the abbreviation R for the fatty acid residues.",
+      "source_id": "icho_2026_t5_a2"
+    }
+  ],
+  "printed_page": 3,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T5_page-3.png",
+      "printed_page": 3,
+      "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7",
+      "source_page": 46
+    },
+    {
+      "kind": "problem_page",
+      "path": "T5_page-2.png",
+      "printed_page": 3,
+      "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96",
+      "source_page": 46
+    },
+    {
+      "kind": "problem_page",
+      "path": "T5_page-1.png",
+      "printed_page": 3,
+      "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347",
+      "source_page": 46
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 46
+    }
+  ],
+  "problem_id": "icho_2026_t5",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT5. Cardiolipins 6% In this problem you are asked to be creative and build molecules from fragments. For instance, if you are required to draw a chiral phospholipid such as W using fragments a-e, it can be assembled as shown below. Cardiolipins are a family of acyclic phospholipids differing in fatty acid residues. They are essential for energy production and membrane stability. Defects can lead to certain diseases. PL1 belongs to this family. Using only the structural elements a-d in the quantities stated below, it is possible to assemble the non-ionised form of PL1. R is a hydrocarbon substituent in the fatty acid structure. PL1 does not contain any peroxide bonds. 5.1 Tick one correct statement regarding the value of n (number of type a fragments). (a) n is an even number, (b) n is an odd number, (c) n can be either an odd or an even number. Some cardiolipins are chiral molecules, even if they contain four identical fatty acid residues, as in the case of PL1. One enantiomer of PL1 is found in prokaryotes and eukaryotes, and the other only in archaea. All other diastereomers of PL1 are achiral molecules, since they have a plane of symmetry. Do not consider the chirality of phosphorus atoms as stereocentres. PL1 is a diprotic acid with the same acidic groups. Its second deprotonation is less favourable (\ud835\udc5d\ud835\udc3e\ud835\udc4e2 \u226b\ud835\udc5d\ud835\udc3e\ud835\udc4e1) due to the special, stable structure of monoanion Y. 5.2 Draw the structure of one enantiomer of PL1. Draw the structure of Y in a way that shows the stabilisation that explains the difference between \ud835\udc5d\ud835\udc3e\ud835\udc4e1 and \ud835\udc5d\ud835\udc3e\ud835\udc4e2. Use the abbreviation R for the fatty acid residues. A series of experiments was conducted to identify the fatty acid (RCOOH) in PL1 found predominantly in mammalian hearts. During reductive ozonolysis, RCOOH forms three different organic products in equimolar amounts.\n\n## Current subquestion T5-A3\nDetermine the molecular formula of the fatty acid (RCOOH), if the non-ionised form of PL1 contains 255 \ud835\udf0eand \ud835\udf0bbonds between atoms in total. Support your answer with calculations. If you were unable to find the structural formula of PL1, you can use a-d fragments from 5.1.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "fatty_acid_formula",
+      "kind": "formula",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "molecular formula of the fatty acid",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T5. Cardiolipins 6% In this problem you are asked to be creative and build molecules from fragments. For instance, if you are required to draw a chiral phospholipid such as W using fragments a-e, it can be assembled as shown below. Cardiolipins are a family of acyclic phospholipids differing in fatty acid residues. They are essential for energy production and membrane stability. Defects can lead to certain diseases. PL1 belongs to this family. Using only the structural elements a-d in the quantities stated below, it is possible to assemble the non-ionised form of PL1. R is a hydrocarbon substituent in the fatty acid structure. PL1 does not contain any peroxide bonds. 5.1 Tick one correct statement regarding the value of n (number of type a fragments). (a) n is an even number, (b) n is an odd number, (c) n can be either an odd or an even number. Some cardiolipins are chiral molecules, even if they contain four identical fatty acid residues, as in the case of PL1. One enantiomer of PL1 is found in prokaryotes and eukaryotes, and the other only in archaea. All other diastereomers of PL1 are achiral molecules, since they have a plane of symmetry. Do not consider the chirality of phosphorus atoms as stereocentres. PL1 is a diprotic acid with the same acidic groups. Its second deprotonation is less favourable (\ud835\udc5d\ud835\udc3e\ud835\udc4e2 \u226b\ud835\udc5d\ud835\udc3e\ud835\udc4e1) due to the special, stable structure of monoanion Y. 5.2 Draw the structure of one enantiomer of PL1. Draw the structure of Y in a way that shows the stabilisation that explains the difference between \ud835\udc5d\ud835\udc3e\ud835\udc4e1 and \ud835\udc5d\ud835\udc3e\ud835\udc4e2. Use the abbreviation R for the fatty acid residues. A series of experiments was conducted to identify the fatty acid (RCOOH) in PL1 found predominantly in mammalian hearts. During reductive ozonolysis, RCOOH forms three different organic products in equimolar amounts.",
+  "source_index": "T5-A3",
+  "source_page": 46,
+  "source_pdf": "theory_problem.pdf"
+}

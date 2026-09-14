@@ -1,0 +1,12 @@
+'IChO2026Problems.Icho2026T4A7.methane_combustion_enthalpy_2000_raw' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.Icho2026T4A7.methane_combustion_enthalpy_2000_of_constantCp_model' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.Icho2026T4A7.methane_combustion_enthalpy_2000_reports_three_sig_figures' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.Icho2026T4A7.methane_combustion_enthalpy_2000_submission_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

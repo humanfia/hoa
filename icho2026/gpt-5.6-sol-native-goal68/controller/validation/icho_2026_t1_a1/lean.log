@@ -1,0 +1,7 @@
+'IChO2026Problems.T1A1.identity_x' depends on axioms: [propext]
+'IChO2026Problems.T1A1.identity_y' depends on axioms: [propext]
+'IChO2026Problems.T1A1.identify_X_and_Y' depends on axioms: [propext]
+'IChO2026Problems.T1A1.candidate3_has_plane_of_symmetry' depends on axioms: [propext]
+'IChO2026Problems.T1A1.candidate3_formula_from_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T1A1.problem_observation_is_consistent' depends on axioms: [propext]
+'IChO2026Problems.T1A1.candidate6_to_candidate3_acid_cyclization' depends on axioms: [propext]

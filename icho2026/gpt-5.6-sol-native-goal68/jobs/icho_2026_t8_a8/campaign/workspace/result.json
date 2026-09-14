@@ -1,0 +1,28 @@
+{
+  "target_id": "icho_2026_t8_a8",
+  "status": "completed",
+  "answer_summary": "a = N (no irradiation), b = B (blue), c = G (green), d = R (red).",
+  "theorem_names": [
+    "IChO2026Problems.T8A8.answer_valid",
+    "IChO2026Problems.T8A8.correspondence_unique",
+    "IChO2026Problems.T8A8.condition_a",
+    "IChO2026Problems.T8A8.condition_b",
+    "IChO2026Problems.T8A8.condition_c",
+    "IChO2026Problems.T8A8.condition_d"
+  ],
+  "assumptions": [
+    "The four diagram bars correspond bijectively to the four conditions N, R, G, and B, as requested by the question and represented by the blank tick table.",
+    "The sole zero-output bar is the no-irradiation control for the stated photocatalytic system.",
+    "The supplied Gibbs-energy profiles make H2 formation the more energy-demanding competing branch, so the H2 product share orders with incident photon energy across the illuminated cases.",
+    "The trusted photon relation E = hc/lambda and the visible-light wavelength ordering imply red < green < blue in photon energy."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T8_page-4.png icho_2026_source/image/T8_page-3.png",
+    "python3 -c \"import pymupdf; pdf=pymupdf.open('icho_2026_source/raw/theory_problem.pdf'); keys=('Q8-3','Q8-4','A8-6','8.8','N','R','G','B'); [print(f'page {n}: {[s for s in keys if s in pdf[n-1].get_text(\\\"text\\\")]}') for n in (74,75,82)]\"",
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a8.lean",
+    "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t8_a8.lean",
+    "! grep -nE '[[:blank:]]+$|^(<<<<<<<|=======|>>>>>>>)' answer.md verification.md result.json IChO2026Problems/problem_icho_2026_t8_a8.lean",
+    "python3 -m json.tool result.json >/dev/null"
+  ]
+}

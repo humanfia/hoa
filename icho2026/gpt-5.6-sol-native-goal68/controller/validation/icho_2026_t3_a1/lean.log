@@ -1,0 +1,6 @@
+'IChO2026Problems.T3A1.cof1_empirical_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A1.cof1_carbon_mass_percent_reported' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A1.cof1_carbon_mass_percent_two_decimal_places' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T3A1.icho_2026_t3_a1' depends on axioms: [propext, Classical.choice, Quot.sound]

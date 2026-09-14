@@ -1,0 +1,2 @@
+'IChO2026Problems.T7A2.fig1_methane_ammonia_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T7A2.annual_methane_mass_required' depends on axioms: [propext, Classical.choice, Quot.sound]
