@@ -28,13 +28,14 @@ Notably, humanize enables **open source models like Kimi-K3** to achieve **68/68
 
 | Experiment | Scope | Lean compilation | Semantic review | Combined acceptance | Official-answer score |
 |---|---:|---:|---:|---:|---|
-| [GPT-5.6 Sol native `/goal`](gpt-5.6-sol-native-goal68/) | 68 subquestions, peak 32 concurrent | 68/68 | 45/68 | **32/68 (47.06%)** | Incomplete; no aggregate score claimed |
+| [GPT-5.6 Sol native `/goal`](gpt-5.6-sol-native-goal68/) | 68 subquestions, peak 32 concurrent | 68/68 | 45/68 | **32/68 (47.06%)** | **415/437 (94.97%); 57.875/60 (96.46%)** |
 
 This fresh answer-blind baseline uses native persisted goals, **not the Humanize
 review/redraft solver loop**. Independent post-run reviews did not feed back into
 the solvers. All 68 original outputs, including rejected and conditional results,
-are preserved. The 47.06% figure is formalization acceptance, not official-answer
-accuracy. See the [protocol, scoring limitations and per-target evidence](gpt-5.6-sol-native-goal68/).
+are preserved. The 47.06% figure is formalization acceptance; the chemistry score
+is a separate official-rubric comparison. See the
+[protocol, item-level grade and per-target evidence](gpt-5.6-sol-native-goal68/).
 
 ### Full theory formalization: 68/68 targets accepted
 
@@ -70,15 +71,19 @@ selected-set scores in their own section belong to different experiments.
 | Run | Raw points | Raw accuracy | Weighted theory score | Weighted accuracy |
 |---|---:|---:|---:|---:|
 | [GPT-5.6 Sol full68](gpt-5.6-sol-full68-formalization/grading/GRADING.md) | **424.5/437** | **97.14%** | **58.736/60** | **97.89%** |
+| [GPT-5.6 Sol native `/goal`](gpt-5.6-sol-native-goal68/grading/GRADING.md) | **415/437** | **94.97%** | **57.875/60** | **96.46%** |
 | [Kimi-K3](kimi-k3-max/GRADING.md) | **417.5/437** | **95.54%** | **58.209/60** | **97.02%** |
 
 This user-requested generous grading accepts equivalent representations,
 reasonable rounding and justified partial credit, without erasing substantive
-chemical errors. It is **not an official IChO jury score**. GPT's remaining
-deductions are T3-A3 (15/23) and T8-A4 (24.5/29). Kimi's published score is the
-independent official-key regrade of the nine natural-language solutions; the
-32+36 Lean artifacts were not given a second generous marking. Formalization
-**68/68** and these answer scores measure different things.
+chemical errors. It is **not an official IChO jury score**. GPT full68's
+remaining deductions are T3-A3 (15/23) and T8-A4 (24.5/29). The native `/goal`
+score is a separate official-rubric comparison of those frozen answers; its
+main deductions are T3-A1/A2, T3-A3 (21/23), T8-A4 (20/29), T8-A6 (6/10) and
+T9-A8 (16/18). Kimi's published score is the independent official-key regrade
+of the nine natural-language solutions; the 32+36 Lean artifacts were not given
+a second generous marking. Formalization **68/68** and these answer scores
+measure different things.
 
 ### Historical selected-set answer-blind Lean results
 

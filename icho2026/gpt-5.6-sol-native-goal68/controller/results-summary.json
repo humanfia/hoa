@@ -24,7 +24,7 @@
     "reviewed": 68
   },
   "reported_goal_tokens": 8502158,
-  "official_answer_comparison": "not_performed",
+  "official_answer_comparison": "graded",
   "feedback_to_solver": false,
   "targets": [
     {
@@ -1115,5 +1115,7 @@
       "review_hashes_fresh": true,
       "accepted": true
     }
-  ]
+  ],
+  "official_raw": "415.0",
+  "official_weighted": "57.87473794549266247379454927"
 }

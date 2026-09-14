@@ -12,7 +12,7 @@ the Humanize review/redraft solver loop and is not the earlier selected 32-task 
 | Semantic review passed | 45/68 |
 | Proof review passed | 32/68 |
 | Combined independent acceptance | **32/68 (47.06%)** |
-| Official-answer rubric score | **Incomplete; no aggregate score claimed** |
+| Official-answer rubric score | **415/437 (94.97%); 57.875/60 (96.46%)** |
 
 Semantic outcomes: 45 passed, 15 conditional, 8 failed. Proof outcomes:
 32 passed, 13 conditional, 23 failed. Compilation is necessary but does not
@@ -20,8 +20,9 @@ establish that a theorem faithfully proves the chemistry question.
 Independent reviews are model assessments, not infallible judgments.
 
 See [all 68 results and reviewer explanations](controller/RESULTS.md),
-[machine-readable outcomes](controller/results-summary.json), and
-[completion audit](controller/COMPLETION.md).
+[machine-readable outcomes](controller/results-summary.json),
+[completion audit](controller/COMPLETION.md), and the
+[official-answer grade](grading/GRADING.md).
 
 ## Protocol and scope
 
@@ -41,13 +42,14 @@ See [all 68 results and reviewer explanations](controller/RESULTS.md),
 
 ## Official-answer scoring status
 
-A separate post-run official-rubric scoring attempt was made. Q3, Q5, Q7 and Q8
-finished initial grading and an independent audit. Q1/Q6 initial grading and
-Q4/Q9 audits exceeded their 30-minute stage limits. Q2 was rejected by the
-tool-free-session validator after a disabled-tool error/tool event.
-Consequently **no raw /437 or weighted /60 total is published**. The 47.06%
-above is formalization acceptance, not chemistry answer accuracy. No partial
-grading result was sent back to the frozen solvers.
+Post-run official-rubric comparison of the frozen answers is now complete:
+**415/437 raw (94.97%)**, **57.875/60 weighted (96.46%)**. Q1 and Q3–Q9 were
+graded by isolated GPT-5.6 Sol sessions with a second audit. Q2 timed out in
+that pipeline and was finished by direct official-page comparison; it scores
+35/35. Remaining deductions include T3-A1 (0/2), T3-A2 (0/3), T3-A3 (21/23),
+T8-A4 (20/29), T8-A6 (6/10) and T9-A8 (16/18). The 47.06% figure above is
+formalization acceptance, not this chemistry score. No grading result was sent
+back to the frozen solvers. See [GRADING.md](grading/GRADING.md).
 
 ## Released files and local verification
 

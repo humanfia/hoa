@@ -24,9 +24,9 @@ that all submitted formalizations were accepted.
 - Native goals complete: 68/68. Lean compilation passed: 68/68.
 - Semantic review: 45 passed, 15 conditional, 8 failed.
 - Proof review: 32 passed, 13 conditional, 23 failed.
-- Combined independent acceptance: 32/68 (47.06%). This is not an official-answer
-  score; official-answer comparison was not performed. Reviews are model
-  assessments, not infallible judgments.
+- Combined independent acceptance: 32/68 (47.06%). Official-answer comparison
+  of the frozen outputs is **415/437 (94.97%) raw**, **57.875/60 (96.46%)
+  weighted**. Reviews are model assessments, not infallible judgments.
 - Reported native-goal tokens: 8,502,158; this is not a monetary cost estimate.
 - Environment amendment: PyMuPDF was added during the run to read the already
   provided original PDF; see `pdf-dependency-amendment.json`.

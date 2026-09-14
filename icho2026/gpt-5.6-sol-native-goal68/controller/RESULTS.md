@@ -9,7 +9,7 @@ Independently accepted: **32/68**. Goal termination and clean Lean compilation a
 Native goal outcomes: `{'goal_complete': 68}`. Independent Lean checks: `{'passed': 68}`.
 Review completion: `{'reviewed': 68}`. Semantic outcomes: `{'failed': 8, 'passed': 45, 'conditional': 15}`. Proof outcomes: `{'failed': 23, 'passed': 32, 'conditional': 13}`.
 
-Official-answer comparison: **incomplete**. A separate post-run scoring attempt did not finish; no aggregate rubric score is claimed. These are formalization/verification outcomes, not official rubric scores.
+Official-answer comparison: **415/437 (94.97%) raw**, **57.875/60 (96.46%) weighted**. See [GRADING.md](../grading/GRADING.md). These formalization/verification outcomes remain separate from that chemistry score.
 
 Environment amendment: PyMuPDF 1.28.2 was added after startup to support reading the already-supplied original PDF; see `pdf-dependency-amendment.json`. No scientific input or solver objective was changed.
 
