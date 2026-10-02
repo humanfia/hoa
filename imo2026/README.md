@@ -11,7 +11,7 @@ We build with open source, and build for open source. We **release everything** 
 * the [scripts](./scripts) and harness used for problem solving -- which most other partipants do not
 
 Notably, humanize enables **open source models like Kimi-K3** to achieve a **full score at IMO 2026** as well, with half of the token costs! As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), We all love _open models X open harness_ 🎉 and the combination achieves full score at every competiton: 
-* [IMO2026](https://github.com/humanfia/imo2026) / [IOI2026](https://github.com/humanfia/ioi2026) / [IPhO2026](https://github.com/humanfia/ipho2026) / [ICho2026](https://github.com/humanfia/icho2026) / [IBO2024](https://github.com/humanfia/icho2024)
+* [IMO2026](https://github.com/humanfia/imo2026) / [IOI2026](https://github.com/humanfia/ioi2026) / [IPhO2026](https://github.com/humanfia/ipho2026) / [ICho2026](https://github.com/humanfia/icho2026) / [IBO2024](https://github.com/humanfia/ibo2024)
 
 
 ## Results
