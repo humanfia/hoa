@@ -1,0 +1,91 @@
+HOA (humanfia/hoa-qed)
+Copyright 2026 Humanfia
+
+Code and Lean proofs in this repository are licensed under the Apache License,
+Version 2.0 (LICENSE). Natural-language solutions, write-ups and grading
+reports are licensed under Creative Commons Attribution 4.0 International
+(LICENSE-CC-BY-4.0). Directories that ship their own LICENSE file are covered
+by that file.
+
+This repository also contains, or is derived from, the third-party material
+listed below. That material is not relicensed: it remains under its owner's
+terms, and the inclusion of a file here grants no rights beyond those terms.
+
+
+Olympiad problems and packages
+------------------------------
+
+imo2026/base/IMO2026/
+  Formal Lean 4 statements of the IMO 2026 problems, from
+  https://github.com/AxiomMath/IMO2026 (MIT License, AxiomMath). The problems
+  themselves belong to the International Mathematical Olympiad.
+
+ioi2026/problems/
+  Official IOI 2026 statements, contestant attachments, graders, headers and
+  public examples, copied unchanged from the official IOI 2026 release and
+  the official IOI task archive. They belong to the International Olympiad in
+  Informatics and are distributed under its terms.
+
+icho2026/*/inputs/ and other copies of the IChO 2026 theory paper
+  The official IChO 2026 theoretical problems (PDF and page images) and any
+  official solutions or marking schemes quoted for post-run grading. They
+  belong to the International Chemistry Olympiad organisers and are
+  distributed under their terms.
+
+ipho2026/
+  Problem statements and official solutions or marking schemes of the 56th
+  International Physics Olympiad (IPhO 2026) referred to or quoted in the
+  solutions and grading reports belong to the IPhO organisers.
+
+ibo2024/
+  The answer patterns in official-answers.tsv and any quoted question text
+  are derived from the official IBO 2024 Theoretical Exam papers, which belong
+  to the International Biology Olympiad. The papers are not redistributed here.
+
+
+Benchmarks and datasets
+-----------------------
+
+putnambench/inputs/putnam_bench.jsonl
+  Formal statements from PutnamBench, https://github.com/trishullab/PutnamBench
+  (Lean 4 statements under the Apache License, Version 2.0). The Putnam
+  problems themselves belong to the Mathematical Association of America.
+
+lean-qit-qlg/QIT/
+  Source statements from https://github.com/QuAIR/Lean-QIT-Bench
+  (Apache License, Version 2.0, Copyright 2026 QuAIR; see
+  lean-qit-qlg/QIT/LICENSE).
+
+lean-qit-qlg/QAlg/
+  Source statements from https://github.com/QudeLeap/Lean-QuantumAlg-Bench
+  (Apache License, Version 2.0, Copyright 2026 QudeLeap; see
+  lean-qit-qlg/QAlg/LICENSE).
+
+
+Libraries and tools
+-------------------
+
+chemlib/ and the Lake projects under icho2026/
+  Apache License, Version 2.0, Copyright 2026 FrenzyMath (see the LICENSE
+  file in each directory). AFPS2017 formalizes claims from Mijalis et al.
+  (2017), "A fully automated flow-based approach for accelerated peptide
+  synthesis", Nature Chemical Biology 13, 464-466.
+
+imo2026/tools/lean4export/
+  A copy of https://github.com/leanprover/lean4export (Apache License,
+  Version 2.0; see imo2026/tools/lean4export/LICENSE).
+
+putnambench/humanize/
+  A snapshot of https://github.com/PolyArch/humanize, vendored unchanged so the
+  PutnamBench run can be reproduced exactly. It is distributed under that
+  project's terms.
+
+Lean dependencies
+  The Lake projects fetch, but do not include, Lean 4
+  (https://github.com/leanprover/lean4), Mathlib
+  (https://github.com/leanprover-community/mathlib4), Physlib
+  (https://github.com/leanprover-community/physlib), PhysLean
+  (https://github.com/HEPLean/PhysLean), CSLib
+  (https://github.com/leanprover/cslib), Comparator
+  (https://github.com/leanprover/comparator) and Landrun
+  (https://github.com/Zouuup/landrun). Each is under its own license.

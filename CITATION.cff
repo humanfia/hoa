@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+type: software
+title: "HOA: Humanfia Olympiad Agents"
+abstract: >-
+  Olympiad and benchmark problems solved by agents running on Humanize, with
+  the answers machine-checked in Lean 4 wherever the subject allows it:
+  PutnamBench, IMO 2026, IOI 2026, IPhO 2026, IChO 2026, IBO 2024, quantum
+  information theory and quantum algorithms, and the Chemlib library.
+authors:
+  - name: Humanfia
+    website: "https://humanfia.ai/"
+repository-code: "https://github.com/humanfia/hoa-qed"
+url: "https://humanfia.ai/projects/hoa"
+license: Apache-2.0
+keywords:
+  - lean4
+  - mathlib
+  - formal-verification
+  - olympiad
+  - ai-agents
+  - putnambench

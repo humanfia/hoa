@@ -1,0 +1,58 @@
+name: Check
+
+# Fast checks that need no Lean toolchain and no model calls: relative
+# Markdown links, the integrity manifests each subproject ships, and the
+# subprojects' own offline verifiers.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  links:
+    name: Relative links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Check relative Markdown links
+        run: python3 .github/scripts/check-relative-links.py
+
+  manifests:
+    name: Manifests and offline verifiers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: PutnamBench package integrity
+        working-directory: putnambench
+        run: ./reproduce.sh check
+
+      - name: IOI 2026 bundle
+        working-directory: ioi2026
+        run: ./verify.sh
+
+      - name: IChO 2026 run checksums
+        working-directory: icho2026
+        run: |
+          for checksums in */CHECKSUMS.sha256; do
+            echo "Checking $checksums"
+            (cd "$(dirname "$checksums")" && sha256sum --check --quiet CHECKSUMS.sha256)
+          done
+
+      - name: IBO 2024 reviewed solutions and generated documents
+        working-directory: ibo2024
+        run: |
+          sha256sum --check --quiet reviewed-solutions.sha256
+          python3 scripts/build.py --check
