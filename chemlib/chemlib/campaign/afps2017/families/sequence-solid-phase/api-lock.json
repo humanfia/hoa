@@ -1,0 +1,62 @@
+{
+  "capabilities": {
+    "afps2017.sequence.repeated_successful_assembly": {
+      "spec_hash": "bc993c7cf599fab36f7f51b1b56ae06adc3432e7848f94b0a43a904c5ae9b125"
+    },
+    "afps2017.sequence.residue_specification": {
+      "spec_hash": "f258d8f10374db37db37da20222572882e3bf560dce5b10c193feb9debb1f083"
+    },
+    "afps2017.sequence.stoichiometry_adapter": {
+      "spec_hash": "ba520291f26559b99c3029e5b3970a5547759d77408d7553baceff11bebdb34e"
+    },
+    "afps2017.sequence.target_n_to_c": {
+      "spec_hash": "8e0bca40288ef207f96b8f8c09b1a1b7fbbcf65c65149ce960348b6cf350e9aa"
+    },
+    "afps2017.solid_phase.conditional_coupling": {
+      "spec_hash": "15838831608e15a019c9840d1915947716fa768b98c99c34a02db46e0ae10e49"
+    },
+    "afps2017.solid_phase.deprotection_transition": {
+      "spec_hash": "b7eeb0e6c7ad7b2fe76909e473d821615949d58073ada89d3b0e576ade478952"
+    },
+    "afps2017.solid_phase.full_cycle": {
+      "spec_hash": "5ece2fc414a521aa51e4170e026bddb7e876ea473ac8993b9ee91329daf07c3f"
+    },
+    "afps2017.solid_phase.resin_state": {
+      "spec_hash": "1398a0e5acb85616104588fe49f795b0e45799252687cdcbe65557ba0acb48e9"
+    },
+    "afps2017.solid_phase.wash_transition": {
+      "spec_hash": "d367ecd60e56308343012f71bd1188f20c6fea6c15aabbaa9f5145e049640d5d"
+    }
+  },
+  "modules": {
+    "AFPS2017/Sequence/Assembly.lean": {
+      "api_hash": "406f3ad6bf86f642e54a185ac25e26245de73ff3c21e89d691e60aa4f8255186"
+    },
+    "AFPS2017/Sequence/Coupling.lean": {
+      "api_hash": "ca3c4c8c46963a7ba37555405f4c4884484502528fbaa9ed7f3d3e55c36cab01"
+    },
+    "AFPS2017/Sequence/Cycle.lean": {
+      "api_hash": "ea06ccb56f1dde55f00f8407d3892cd581422131849b1b64494abde818a6df95"
+    },
+    "AFPS2017/Sequence/Deprotection.lean": {
+      "api_hash": "8b0fcd767821b194d1e81e96c37c11ad9ecf678d47921b5eb1ff6301fa575e49"
+    },
+    "AFPS2017/Sequence/Residue.lean": {
+      "api_hash": "21c8e764474e3d9336c82e77e02ea23ae853940f0397ff96ddcddbf87301fe05"
+    },
+    "AFPS2017/Sequence/State.lean": {
+      "api_hash": "ab2e254eec80f47e94034fbcccbc3d429b0054399c5560c0d3f9f85490f3ee92"
+    },
+    "AFPS2017/Sequence/StoichiometryAdapter.lean": {
+      "api_hash": "2d40e3a3f8a9fff07f347e10f4fd766a3836c9aa314503fa94998195544ee77c"
+    },
+    "AFPS2017/Sequence/Target.lean": {
+      "api_hash": "ce46f57558402bce772e0c332f603fd26747d2b4bd74e71f29e37267b6fcc7bb"
+    },
+    "AFPS2017/Sequence/Wash.lean": {
+      "api_hash": "a452baaa40785ab8165428385b244f7a112808e7ddc4586ffdaa84e15ca84f5e"
+    }
+  },
+  "plan_hash": "be67aa408f356e084c73d5ffd93f1b5f8d88b276e61a38730c2aa745dda50c48",
+  "version": 1
+}

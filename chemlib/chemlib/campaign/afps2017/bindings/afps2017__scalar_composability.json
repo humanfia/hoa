@@ -1,0 +1,83 @@
+{
+  "binding_hash": "ad490303b5259b1630db07596d3847e909dbd58bb0ddd4315ec7cd53a061d874",
+  "campaign_id": "pentelute.afps2017.formal_benchmark.v1.afps2017.scalar_composability.r1c43e040cd82",
+  "capabilities": [
+    "afps2017.flow.scalar_composability"
+  ],
+  "capability_contracts": [
+    {
+      "capability_id": "afps2017.flow.scalar_composability",
+      "owner_module": "AFPS2017/Flow/ScalarComposability.lean",
+      "spec_hash": "53e89efe898ea65b988eacb7699a510bc04d3a2c532c10d4dde8092c17cd9869"
+    }
+  ],
+  "clean_room_audit_hash": "7129ef41bbb24ffba9d797b69f200f4cf943faa433048ce471f9060dc5759823",
+  "entrypoint": {
+    "direct_imports": [
+      "AFPS2017.Analytics.ConotoxinTable",
+      "AFPS2017.Analytics.MassAgreement",
+      "AFPS2017.Analytics.MassObservation",
+      "AFPS2017.Analytics.Provenance",
+      "AFPS2017.Analytics.SignalObservation",
+      "AFPS2017.Flow.ChemistryAdapters",
+      "AFPS2017.Flow.ContinuityAdapter",
+      "AFPS2017.Flow.Protocol",
+      "AFPS2017.Flow.Quantity",
+      "AFPS2017.Flow.ScalarComposability",
+      "AFPS2017.Flow.SourceLint",
+      "AFPS2017.Sequence.Assembly",
+      "AFPS2017.Sequence.Coupling",
+      "AFPS2017.Sequence.Cycle",
+      "AFPS2017.Sequence.Deprotection",
+      "AFPS2017.Sequence.Residue",
+      "AFPS2017.Sequence.State",
+      "AFPS2017.Sequence.StoichiometryAdapter",
+      "AFPS2017.Sequence.Target",
+      "AFPS2017.Sequence.Wash",
+      "AFPS2017.Yield.StepYield",
+      "AFPS2017.Yield.Throughput"
+    ],
+    "module_paths": [
+      "AFPS2017/Analytics/ConotoxinTable.lean",
+      "AFPS2017/Analytics/MassAgreement.lean",
+      "AFPS2017/Analytics/MassObservation.lean",
+      "AFPS2017/Analytics/Provenance.lean",
+      "AFPS2017/Analytics/SignalObservation.lean",
+      "AFPS2017/Flow/ChemistryAdapters.lean",
+      "AFPS2017/Flow/ContinuityAdapter.lean",
+      "AFPS2017/Flow/Protocol.lean",
+      "AFPS2017/Flow/Quantity.lean",
+      "AFPS2017/Flow/ScalarComposability.lean",
+      "AFPS2017/Flow/SourceLint.lean",
+      "AFPS2017/Sequence/Assembly.lean",
+      "AFPS2017/Sequence/Coupling.lean",
+      "AFPS2017/Sequence/Cycle.lean",
+      "AFPS2017/Sequence/Deprotection.lean",
+      "AFPS2017/Sequence/Residue.lean",
+      "AFPS2017/Sequence/State.lean",
+      "AFPS2017/Sequence/StoichiometryAdapter.lean",
+      "AFPS2017/Sequence/Target.lean",
+      "AFPS2017/Sequence/Wash.lean",
+      "AFPS2017/Yield/StepYield.lean",
+      "AFPS2017/Yield/Throughput.lean"
+    ],
+    "path": "AFPS2017.lean",
+    "schema_version": 1,
+    "source_sha256": "299b329b41864b67e0cf3c0827e139feb9153b652e23824656ed7c390b0773c7"
+  },
+  "family_id": "afps2017.scalar_composability",
+  "goal_id": "pentelute.afps2017.formal_benchmark.v1",
+  "goal_spec_hash": "aaf1261e7a195a9e27b4e6e335ed13e66a22ca11a18ad21cadf14add174f794b",
+  "modules": [
+    {
+      "api_hash": "c197a6321ad8d0a6892a26036f19256bdb5fac86bb4729a028d2ebb3fde7afd7",
+      "module_path": "AFPS2017/Flow/ScalarComposability.lean",
+      "verified_sha256": "b438324e41821f7ad5de4164a8c08fa1d426980dad780107184a9c5701ba4281"
+    }
+  ],
+  "plan_hash": "1c43e040cd821f7f400e28e283a17d332c3bdbf16c12b4a06768dadd50a8201e",
+  "release_certificate_hash": "3f755e9c8f3adf3f143ee1bc3c8365caa5046332c69b3c0ed001ac95bc7a6a6a",
+  "symbol_dag_hash": "5dd0e80d1fe6b63c84c1fc4e2f786bff7a936429b04eff319fb5452cc66ef4d9",
+  "verified_at": "2026-08-15T04:28:13.138014+00:00",
+  "version": 1
+}

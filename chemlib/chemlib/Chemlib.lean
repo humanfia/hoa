@@ -1,0 +1,84 @@
+import Chemlib.Foundations.Stoichiometry
+import Chemlib.Units.ChemicalDimension
+import Chemlib.Units.Quantity
+import Chemlib.Foundations.Amount
+import Chemlib.Foundations.Concentration
+import Chemlib.Foundations.ReactionProgress
+import Chemlib.ReactionNetwork.Basic
+import Chemlib.ReactionNetwork.Graph
+import Chemlib.ReactionNetwork.Incidence
+import Chemlib.ReactionNetwork.Stoichiometry
+import Chemlib.ReactionNetwork.MassAction
+import Chemlib.ReactionNetwork.Laplacian
+import Chemlib.ReactionNetwork.Balance
+import Chemlib.ReactionNetwork.LinkageClass
+import Chemlib.ReactionNetwork.DeficiencyRank
+import Chemlib.ReactionNetwork.Deficiency
+import Chemlib.ReactionNetwork.IncidenceRank
+import Chemlib.ReactionNetwork.UnconditionalDeficiency
+import Chemlib.ReactionNetwork.DeficiencyKernel
+import Chemlib.ReactionNetwork.IntegerHyperflow
+import Chemlib.ReactionNetwork.TerminalComponent
+import Chemlib.ReactionNetwork.TerminalKernelGenerator
+import Chemlib.ReactionNetwork.TerminalKernelBasis
+import Chemlib.ReactionNetwork.TerminalKernelDimension
+import Chemlib.ReactionNetwork.PseudoHelmholtz
+import Chemlib.ReactionNetwork.ComplexBalanceDissipation
+import Chemlib.ReactionNetwork.DeficiencyZeroBridge
+import Chemlib.ReactionNetwork.PositiveCompatibilityGeometry
+import Chemlib.ReactionNetwork.CompatibilityClass
+import Chemlib.ReactionNetwork.DeficiencyZeroComplexBalance
+import Chemlib.Autocatalysis.Criteria
+import Chemlib.Autocatalysis.DualCertificate
+import Chemlib.Autocatalysis.MiloNghe
+import Chemlib.Autocatalysis.SealedFrontier
+import Chemlib.Autocatalysis.StoichiometricAdapters
+import Chemlib.Dynamics.OscillationCertificate
+import Chemlib.Thermodynamics.TemperatureAdapters
+import Chemlib.Thermodynamics.EquilibriumAdapters
+import Chemlib.Thermodynamics.OpenNetworks.Partition
+import Chemlib.Thermodynamics.OpenNetworks.RateEquation
+import Chemlib.Thermodynamics.OpenNetworks.Affinity
+import Chemlib.Thermodynamics.OpenNetworks.Conservation
+import Chemlib.Thermodynamics.OpenNetworks.EmergentCycleRank
+import Chemlib.Thermodynamics.OpenNetworks.EntropyProduction
+import Chemlib.Thermodynamics.OpenNetworks.Balances
+import Chemlib.Thermodynamics.OpenNetworks.RelativeEntropy
+import Chemlib.Thermodynamics.OpenNetworks.NonequilibriumGibbs
+import Chemlib.Thermodynamics.OpenNetworks.WorkInequality
+import Chemlib.Thermochemistry.ReactionEnthalpy
+import Chemlib.Thermochemistry.TemperatureCorrection
+import Chemlib.Kinetics.RateLaw
+import Chemlib.Kinetics.ClosedForm
+import Chemlib.Kinetics.SteadyState
+import Chemlib.Calculations.Adsorption
+import Chemlib.Calculations.CombustionEnergy
+import Chemlib.Process.ProductionYield
+import Chemlib.Process.Recycle
+import Chemlib.Models.SBML.Records
+import Chemlib.Models.SBML.Compile
+import Chemlib.Models.Oregonator.Data
+import Chemlib.Models.Oregonator.ODE
+import Chemlib.Models.Oregonator.Certificates
+import Chemlib.Models.Oregonator.Jacobian
+import Chemlib.Stochastic.CountState
+import Chemlib.Stochastic.ClosedClassProduct
+import Chemlib.Stochastic.ComplexBalanceProductForm
+import Chemlib.Stochastic.DeficiencyZeroProductForm
+import Chemlib.Stochastic.FiniteGenerator
+import Chemlib.Stochastic.OrderCoupling
+import Chemlib.Stochastic.PoissonProduct
+import Chemlib.Stochastic.Propensity
+import Chemlib.Stochastic.ReactionGenerator
+import Chemlib.Stochastic.Stationary
+import Chemlib.Photochemistry.AbsorbedPhoton
+import Chemlib.Photochemistry.QuantumAdapters
+import Chemlib.Photochemistry.QuantumYield
+
+/-!
+# Chemlib
+
+A source-grounded Lean library for finite chemical reaction systems.  This
+barrel exposes the cumulative API-locked dependency cone; later chemistry
+capabilities are added through explicit Archon campaign revisions.
+-/
