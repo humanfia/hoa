@@ -1,0 +1,895 @@
+{
+  "version": 2,
+  "max_iterations": 3,
+  "last_review_iter": 87,
+  "updated_at": "2026-07-28T16:40:47.761733Z",
+  "targets": {
+    "QAlgFormalized/problem_qalg_Circuits_BitOracleUnitaryHermitian.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The source gives an explicit multi-bit XOR permutation oracle; the Lean contract preserves its universally quantified basis action and exact unitary and Hermitian conclusions, and the proofs derive all claims from the permutation construction without placeholders or escape hatches.",
+      "evidence": "Deterministic preflight passed with compiles=true, returncode=0, sorry_count=0, and no diagnostics. bitOraclePerm maps (x,y) to (x,y ^^^ f x) and proves both inverse laws by XOR cancellation; bitOracle_apply_ket proves the requested action for every n,m,f,x,y using Gate.ofPerm_apply_ket; bitOracle_unitary_and_hermitian obtains unitary-group membership from the explicitly constructed Gate.ofPerm and proves U†=U via Matrix.conjTranspose_permMatrix plus definitional self-inverseness. The trace records clean Lean diagnostics, successful direct compilation, and source/axiom scans with only propext, Classical.choice, and Quot.sound; the newest matching task result reports the same proof and verification.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The source gives an explicit multi-bit XOR permutation oracle; the Lean contract preserves its universally quantified basis action and exact unitary and Hermitian conclusions, and the proofs derive all claims from the permutation construction without placeholders or escape hatches.",
+          "evidence": "Deterministic preflight passed with compiles=true, returncode=0, sorry_count=0, and no diagnostics. bitOraclePerm maps (x,y) to (x,y ^^^ f x) and proves both inverse laws by XOR cancellation; bitOracle_apply_ket proves the requested action for every n,m,f,x,y using Gate.ofPerm_apply_ket; bitOracle_unitary_and_hermitian obtains unitary-group membership from the explicitly constructed Gate.ofPerm and proves U†=U via Matrix.conjTranspose_permMatrix plus definitional self-inverseness. The trace records clean Lean diagnostics, successful direct compilation, and source/axiom scans with only propext, Classical.choice, and Quot.sound; the newest matching task result reports the same proof and verification.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.207352Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.207396Z"
+    },
+    "QAlgFormalized/problem_qalg_Circuits_ControlledPhaseFromCNOTHadamards.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The unchanged theorem states and kernel-checks the exact CZ = (I tensor H) CNOT (I tensor H) circuit identity with the source's control-first, target-second convention; the proof is substantive and contains no escape hatch.",
+      "evidence": "Contract goal: Gate.controlled Gate.Z = ((1 : Gate (Qubits 1)).tensor Gate.H * Gate.CNOT) * (1 : Gate (Qubits 1)).tensor Gate.H. The proof establishes H*X*H=Z entrywise, transports H*H=I and H*X*H=Z to raw operators, expands controlledOp into control-projector blocks, and rewrites CNOT via Gate.controlled_X. Deterministic preflight passed direct compilation with return code 0 and sorry_count 0; the trace additionally records no final LSP diagnostics, a clean source scan, and only propext, Classical.choice, and Quot.sound in axiom verification.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The unchanged theorem states and kernel-checks the exact CZ = (I tensor H) CNOT (I tensor H) circuit identity with the source's control-first, target-second convention; the proof is substantive and contains no escape hatch.",
+          "evidence": "Contract goal: Gate.controlled Gate.Z = ((1 : Gate (Qubits 1)).tensor Gate.H * Gate.CNOT) * (1 : Gate (Qubits 1)).tensor Gate.H. The proof establishes H*X*H=Z entrywise, transports H*H=I and H*X*H=Z to raw operators, expands controlledOp into control-projector blocks, and rewrites CNOT via Gate.controlled_X. Deterministic preflight passed direct compilation with return code 0 and sorry_count 0; the trace additionally records no final LSP diagnostics, a clean source scan, and only propext, Classical.choice, and Quot.sound in axiom verification.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.207761Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.207777Z"
+    },
+    "QAlgFormalized/problem_qalg_Circuits_ControlledRYTwoCNOTSynthesis.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The exact controlled-RY two-CNOT identity is stated faithfully and proved by kernel-checked gate and operator equalities with no escape hatch or modeling defect.",
+      "evidence": "The supplied deterministic preflight passes (return code 0, zero sorries, no diagnostics). The theorem quantifies θ : ℝ and concludes Gate.controlled (rotY θ) = (I ⊗ rotY (θ/2)) * CNOT * (I ⊗ rotY (-(θ/2))) * CNOT exactly as the blueprint. The proof establishes rotY composition and X-conjugation, reduces the controlled circuit to its proj0/proj1 blocks, and closes by Gate.ext; the trace's lean_verify reports only propext, Classical.choice, and Quot.sound.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The exact controlled-RY two-CNOT identity is stated faithfully and proved by kernel-checked gate and operator equalities with no escape hatch or modeling defect.",
+          "evidence": "The supplied deterministic preflight passes (return code 0, zero sorries, no diagnostics). The theorem quantifies θ : ℝ and concludes Gate.controlled (rotY θ) = (I ⊗ rotY (θ/2)) * CNOT * (I ⊗ rotY (-(θ/2))) * CNOT exactly as the blueprint. The proof establishes rotY composition and X-conjugation, reduces the controlled circuit to its proj0/proj1 blocks, and closes by Gate.ext; the trace's lean_verify reports only propext, Classical.choice, and Quot.sound.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.208119Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.208132Z"
+    },
+    "QAlgFormalized/problem_qalg_Circuits_ControlledUnitaryInvariantSubspaces.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The frozen theorem contract is preserved and faithfully formalizes the requested controlled-unitary invariant eigenspaces; the proof derives the eigenvector equation from the spectral decomposition and proves dimension, invariance, and the exact diagonal coordinate action without escape hatches.",
+      "evidence": "The original theorem header captured before the prover edit is byte-for-byte identical to the current header. Deterministic preflight passed with return code 0, no diagnostics, and sorry_count 0. The conclusion explicitly gives finrank 2, MapsTo under Gate.controlled U, and for every coordinate vector c the action controlledEigenCoordinates ψ ((controlledEigenBlock x).mulVec c), where controlledEigenBlock is diag(1, exp(i x)). The trace records clean file diagnostics, a successful direct Lean run, and lean_verify with no warnings and only propext, Classical.choice, and Quot.sound; the newest task result reports the same proof and verification.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The frozen theorem contract is preserved and faithfully formalizes the requested controlled-unitary invariant eigenspaces; the proof derives the eigenvector equation from the spectral decomposition and proves dimension, invariance, and the exact diagonal coordinate action without escape hatches.",
+          "evidence": "The original theorem header captured before the prover edit is byte-for-byte identical to the current header. Deterministic preflight passed with return code 0, no diagnostics, and sorry_count 0. The conclusion explicitly gives finrank 2, MapsTo under Gate.controlled U, and for every coordinate vector c the action controlledEigenCoordinates ψ ((controlledEigenBlock x).mulVec c), where controlledEigenBlock is diag(1, exp(i x)). The trace records clean file diagnostics, a successful direct Lean run, and lean_verify with no warnings and only propext, Classical.choice, and Quot.sound; the newest task result reports the same proof and verification.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.208451Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.208471Z"
+    },
+    "QAlgFormalized/problem_qalg_Circuits_ExactQROMFactorization.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 87,
+      "reason": "All five checks pass: the file is kernel-accepted without active escape hatches, the contract retains every requested QROM object and conclusion, and the iter-86 redraft's explicit MSB-first tensor construction is now proved equal to the XOR-permutation implementation rather than assumed.",
+      "evidence": "Deterministic preflight reports compiles=true, returncode=0, and sorry_count=0. Lean lines 65-98 define the ordered Pauli-X tensor and XOR gate separately; lines 208-257 prove orderedPauliXTensor_eq_dataXPower and dataXTensor_eq_dataXPower; lines 289-300 rewrite the controlled factor to the source tensor expression. Theorems at lines 351-354, 357-447, 495-506, 520-542, 545-565, and 568-615 respectively establish factor unitarity, the selected-address basis action, ideal QROM action, pairwise commutation, permutation-invariance of schedule order, and exact canonical factorization. The current trace records clean LSP diagnostics, lake env lean exit 0, an escape-hatch scan with no matches, and lean_verify warnings=[] with only propext, Classical.choice, and Quot.sound; the newest matching task result reports the same proof and checks.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "needs_redraft",
+          "resulting_status": "needs_redraft",
+          "top_level_status": "blocked",
+          "attempt": 1,
+          "reason": "The kernel proofs close the written Lean declarations, but the contract omits the source's defining bridge X^{D(k)} = ⨂_{j=1}^m X^{D_j(k)}: dataXPower is defined directly as an XOR permutation, and neither dataBit nor pauliXPower participates in any tensor-product construction or equality theorem.",
+          "evidence": "Deterministic preflight reports compiles=true and sorry_count=0; the prover trace records lake env lean exit 0 and lean_verify warnings=[] with only propext, Classical.choice, and Quot.sound. However, Lean lines 30-32 define dataBit and lines 56-57 define pauliXPower, while lines 61-62 define dataXPower solely as Gate.ofPerm (bitwiseXorPerm d); dataXPower_apply_basis proves only XOR basis action. Thus factorOperator and the final factorization concern the XOR-defined substitute without a formal equality to the requested ordered tensor product.",
+          "redraft_kind": "missing_foundational_bridge",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.208812Z"
+        },
+        {
+          "iter": 86,
+          "event": "formalization_redraft_passed",
+          "prior_attempts": 1,
+          "reviewed_at": "2026-07-28T14:34:57.808142Z"
+        },
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_Circuits_ExactQROMFactorization.lean:proof:1",
+          "iter": 87,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "All five checks pass: the file is kernel-accepted without active escape hatches, the contract retains every requested QROM object and conclusion, and the iter-86 redraft's explicit MSB-first tensor construction is now proved equal to the XOR-permutation implementation rather than assumed.",
+          "evidence": "Deterministic preflight reports compiles=true, returncode=0, and sorry_count=0. Lean lines 65-98 define the ordered Pauli-X tensor and XOR gate separately; lines 208-257 prove orderedPauliXTensor_eq_dataXPower and dataXTensor_eq_dataXPower; lines 289-300 rewrite the controlled factor to the source tensor expression. Theorems at lines 351-354, 357-447, 495-506, 520-542, 545-565, and 568-615 respectively establish factor unitarity, the selected-address basis action, ideal QROM action, pairwise commutation, permutation-invariance of schedule order, and exact canonical factorization. The current trace records clean LSP diagnostics, lake env lean exit 0, an escape-hatch scan with no matches, and lean_verify warnings=[] with only propext, Classical.choice, and Quot.sound; the newest matching task result reports the same proof and checks.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T16:40:47.720214Z"
+        }
+      ],
+      "updated_at": "2026-07-28T16:40:47.720224Z",
+      "redraft_resolved_iter": 86
+    },
+    "QAlgFormalized/problem_qalg_Circuits_PhaseKickbackControlledEigenunitary.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "No proof or modeling defect found: the three declarations faithfully formalize and prove the controlled-eigenunitary identity, separability, and explicit phase transfer without changing their contracts.",
+      "evidence": "Deterministic preflight passed exact-file compilation with return code 0 and sorry_count 0. The source contains no sorry/admit/axiom/native_decide escape hatch; the identity derives the generic tensor action from finite product sums, rewrites with the supplied eigenvector equation, and computes both projector branches. The two corollaries construct the normalized phase-kicked control using hcontrol and prove the requested product decomposition and amplitudes. U : Gate T supplies unitarity, psi : PureState T supplies normalization, htheta preserves theta in [0,2pi), and the fact that htheta and hcontrol are algebraically unnecessary for the raw identity is a legitimate strengthening rather than a weakened contract. The prover trace ends with clean diagnostics apart from those two unused-variable warnings, successful exact-file/build checks, and standard-only axiom verification; the newest matching task result reports the same proof and checks.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "No proof or modeling defect found: the three declarations faithfully formalize and prove the controlled-eigenunitary identity, separability, and explicit phase transfer without changing their contracts.",
+          "evidence": "Deterministic preflight passed exact-file compilation with return code 0 and sorry_count 0. The source contains no sorry/admit/axiom/native_decide escape hatch; the identity derives the generic tensor action from finite product sums, rewrites with the supplied eigenvector equation, and computes both projector branches. The two corollaries construct the normalized phase-kicked control using hcontrol and prove the requested product decomposition and amplitudes. U : Gate T supplies unitarity, psi : PureState T supplies normalization, htheta preserves theta in [0,2pi), and the fact that htheta and hcontrol are algebraically unnecessary for the raw identity is a legitimate strengthening rather than a weakened contract. The prover trace ends with clean diagnostics apart from those two unused-variable warnings, successful exact-file/build checks, and standard-only axiom verification; the newest matching task result reports the same proof and checks.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.209153Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.209167Z"
+    },
+    "QAlgFormalized/problem_qalg_Circuits_VanishingPauliYExpectationRealCircuits.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "No proof or modeling defect found: the unchanged substantive contract is kernel-checked, semantically faithful, and proved without escape hatches.",
+      "evidence": "Deterministic preflight reports compiles=true, returncode=0, sorry_count=0, and no diagnostics. The trace's initial sorry skeleton and current source have identical definitions and all ten public theorem signatures. The final theorem proves ∀ k : Fin n, complexExpectation (U|0^n⟩) (Y at k) = 0 from entrywise reality of the unitary Gate; the generic theorem proves zero complex expectation for a real PureState and a purely imaginary skew-symmetric operator, with observability derived separately. Trace lean_verify reports only propext, Classical.choice, and Quot.sound and no warnings; the newest matching task result agrees.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "No proof or modeling defect found: the unchanged substantive contract is kernel-checked, semantically faithful, and proved without escape hatches.",
+          "evidence": "Deterministic preflight reports compiles=true, returncode=0, sorry_count=0, and no diagnostics. The trace's initial sorry skeleton and current source have identical definitions and all ten public theorem signatures. The final theorem proves ∀ k : Fin n, complexExpectation (U|0^n⟩) (Y at k) = 0 from entrywise reality of the unitary Gate; the generic theorem proves zero complex expectation for a real PureState and a purely imaginary skew-symmetric operator, with observability derived separately. Trace lean_verify reports only propext, Classical.choice, and Quot.sound and no warnings; the newest matching task result agrees.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.209486Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.209499Z"
+    },
+    "QAlgFormalized/problem_qalg_Circuits_WalshHadamardBooleanCharacter.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The source preserves the faithful exact Walsh–Hadamard Boolean-character contract and supplies an honest kernel-checked tensor-induction proof with no unresolved or semantic gap.",
+      "evidence": "The reviewed conclusion is `(walshHadamard n).apply (booleanCharacterState s) = PureState.ket s` for every `n : ℕ` and `s : Fin (2 ^ n)`. `booleanDot` is the coordinatewise bit product summed modulo 2, `booleanCharacterVec` has coefficient `PureState.invSqrt2 ^ n * (-1)^(booleanDot s y)`, and `walshHadamard` is the zero-fold identity followed recursively by tensoring `Gate.H`. Supplied preflight: compiles=true, returncode=0, sorry_count=0, diagnostics empty. The trace ends with a clean exact-file compile and `lean_verify` finding only propext/Classical.choice/Quot.sound; the newest task result reports the same proof and verification.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The source preserves the faithful exact Walsh–Hadamard Boolean-character contract and supplies an honest kernel-checked tensor-induction proof with no unresolved or semantic gap.",
+          "evidence": "The reviewed conclusion is `(walshHadamard n).apply (booleanCharacterState s) = PureState.ket s` for every `n : ℕ` and `s : Fin (2 ^ n)`. `booleanDot` is the coordinatewise bit product summed modulo 2, `booleanCharacterVec` has coefficient `PureState.invSqrt2 ^ n * (-1)^(booleanDot s y)`, and `walshHadamard` is the zero-fold identity followed recursively by tensoring `Gate.H`. Supplied preflight: compiles=true, returncode=0, sorry_count=0, diagnostics empty. The trace ends with a clean exact-file compile and `lean_verify` finding only propext/Classical.choice/Quot.sound; the newest task result reports the same proof and verification.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.209834Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.209848Z"
+    },
+    "QAlgFormalized/problem_qalg_Fourier_EigenvectorsModularMultiplicationShor.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The preserved theorem contract faithfully formalizes the Shor modular-multiplication Fourier eigenvector claim, and its complete proof compiles without escape hatches.",
+      "evidence": "Deterministic preflight reports compiles=true and sorry_count=0. The source retains x,N>0, x<N, Nat.Coprime x N, r=orderOf (ZMod.unitOfCoprime x hcoprime), and s:Fin r; it defines the Fin N register, U_x|y>=|xy mod N>, the normalized exp(-2*pi*i*s*k/r) Fourier sum, and concludes both nonzeroness and U_x psi_s=exp(2*pi*i*s/r) psi_s. The proof uses order-of injectivity for distinct orbit kets, evaluates the k=0 coordinate for nonzeroness, proves the coefficient recurrence and x^r=1 wraparound, and reindexes the finite sum. Prover lean_verify reports only propext, Classical.choice, and Quot.sound; the newest matching task result agrees with the trace and preflight.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The preserved theorem contract faithfully formalizes the Shor modular-multiplication Fourier eigenvector claim, and its complete proof compiles without escape hatches.",
+          "evidence": "Deterministic preflight reports compiles=true and sorry_count=0. The source retains x,N>0, x<N, Nat.Coprime x N, r=orderOf (ZMod.unitOfCoprime x hcoprime), and s:Fin r; it defines the Fin N register, U_x|y>=|xy mod N>, the normalized exp(-2*pi*i*s*k/r) Fourier sum, and concludes both nonzeroness and U_x psi_s=exp(2*pi*i*s/r) psi_s. The proof uses order-of injectivity for distinct orbit kets, evaluates the k=0 coordinate for nonzeroness, proves the coefficient recurrence and x^r=1 wraparound, and reindexes the finite sum. Prover lean_verify reports only propext, Classical.choice, and Quot.sound; the newest matching task result agrees with the trace and preflight.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.210166Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.210180Z"
+    },
+    "QAlgFormalized/problem_qalg_Fourier_FiniteQFTUnitarity.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The unchanged finite-QFT contract is faithfully modeled and proved by a kernel-checked roots-of-unity orthogonality argument; compilation, placeholder checks, semantic checks, and iteration evidence all pass.",
+      "evidence": "The pre-edit trace and current source have identical definitions/signatures: qftMatrix y x = (sqrt M)^-1 * omega_M^(x*y), qftMatrix_apply_ket states the advertised basis action, and qftMatrix_mem_unitaryGroup assumes exactly hM : 0 < M and concludes qftMatrix M ∈ Matrix.unitaryGroup (Fin M) ℂ. Deterministic preflight reports compiles=true, returncode=0, sorry_count=0, and no diagnostics. The final prover trace has direct Lean exit 0, an empty sorry/admit/axiom/native_decide scan, and lean_verify warnings=[] with only propext, Classical.choice, and Quot.sound; the newest task result agrees.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The unchanged finite-QFT contract is faithfully modeled and proved by a kernel-checked roots-of-unity orthogonality argument; compilation, placeholder checks, semantic checks, and iteration evidence all pass.",
+          "evidence": "The pre-edit trace and current source have identical definitions/signatures: qftMatrix y x = (sqrt M)^-1 * omega_M^(x*y), qftMatrix_apply_ket states the advertised basis action, and qftMatrix_mem_unitaryGroup assumes exactly hM : 0 < M and concludes qftMatrix M ∈ Matrix.unitaryGroup (Fin M) ℂ. Deterministic preflight reports compiles=true, returncode=0, sorry_count=0, and no diagnostics. The final prover trace has direct Lean exit 0, an empty sorry/admit/axiom/native_decide scan, and lean_verify warnings=[] with only propext, Classical.choice, and Quot.sound; the newest task result agrees.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.210502Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.210516Z"
+    },
+    "QAlgFormalized/problem_qalg_Fourier_ProductStateFactorizationQFT8Ket3.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "No defect found: the exact QFT_8 |3⟩ product-factorization contract is faithfully stated and proved by kernel-checked normalization, phase-periodicity, and exhaustive coordinate arguments.",
+      "evidence": "Deterministic preflight reports compiles=true, returncode=0, sorry_count=0, diagnostics=\"\". The source contains no sorry/admit/axiom/native_decide/sorryAx or elaboration escape hatch; the trace's final lean_verify reports only propext, Classical.choice, and Quot.sound with no warnings. The theorem exactly equates the defined normalized eight-point QFT ket at x=3 with nested tensor factors ordered (qubit 2, qubit 1, qubit 0) and phases 1/2, 3/4, 3/8, matching the blueprint.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "No defect found: the exact QFT_8 |3⟩ product-factorization contract is faithfully stated and proved by kernel-checked normalization, phase-periodicity, and exhaustive coordinate arguments.",
+          "evidence": "Deterministic preflight reports compiles=true, returncode=0, sorry_count=0, diagnostics=\"\". The source contains no sorry/admit/axiom/native_decide/sorryAx or elaboration escape hatch; the trace's final lean_verify reports only propext, Classical.choice, and Quot.sound with no warnings. The theorem exactly equates the defined normalized eight-point QFT ket at x=3 with nested tensor factors ordered (qubit 2, qubit 1, qubit 0) and phases 1/2, 3/4, 3/8, matching the blueprint.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.210883Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.210898Z"
+    },
+    "QAlgFormalized/problem_qalg_Fourier_QPESuperpositionExactEigenvectors.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The preserved exact-QPE contract is proved by a substantive kernel-checked finite Fourier calculation with no proof escape hatch or semantic weakening.",
+      "evidence": "Deterministic preflight reports compilation success (return code 0) and sorry_count 0. The source proves powered eigenvector equations from h_eigen₁/h_eigen₂, proves the inverse-Fourier character sum is if y = k then 1 else 0 from h_exact₁/h_exact₂, applies h_target and linearity, and concludes exactly α • |k₁⟩⊗u₁ + β • |k₂⟩⊗u₂. The trace independently records exact-file compilation exit 0 and lean_verify lists only propext, Classical.choice, and Quot.sound.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The preserved exact-QPE contract is proved by a substantive kernel-checked finite Fourier calculation with no proof escape hatch or semantic weakening.",
+          "evidence": "Deterministic preflight reports compilation success (return code 0) and sorry_count 0. The source proves powered eigenvector equations from h_eigen₁/h_eigen₂, proves the inverse-Fourier character sum is if y = k then 1 else 0 from h_exact₁/h_exact₂, applies h_target and linearity, and concludes exactly α • |k₁⟩⊗u₁ + β • |k₂⟩⊗u₂. The trace independently records exact-file compilation exit 0 and lean_verify lists only propext, Classical.choice, and Quot.sound.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.211230Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.211248Z"
+    },
+    "QAlgFormalized/problem_qalg_HSPRepresentation_FidelityBoundHiddenSubgroupCosetStates.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The kernel-checked proof preserves the accepted theorem signature and faithfully derives the requested hidden-subgroup coset-state fidelity bound from exactly the three assumptions stated in the blueprint.",
+      "evidence": "Deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. The original theorem header recorded in prover-trace event 11 is identical to the current header: finite group G, subgroups H and H', the squared-fidelity support-overlap upper bound, the exact coset-overlap identity, the product-cardinality identity, and conclusion F(rho_H,rho_H') <= sqrt(|H inf H'|/|H|). The proof expands tr(Pi_H rho_H') into the overlap double sum, proves nonempty coset intersections have cardinality |H inf H'|, counts them through |G|*|HH'|, rewrites with hProductCard, proves fidelity nonnegative, and applies Real.le_sqrt. Trace lean_verify reports only propext, Classical.choice, and Quot.sound; the matching newest task result reports the same successful compilation and clean source scan.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The kernel-checked proof preserves the accepted theorem signature and faithfully derives the requested hidden-subgroup coset-state fidelity bound from exactly the three assumptions stated in the blueprint.",
+          "evidence": "Deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. The original theorem header recorded in prover-trace event 11 is identical to the current header: finite group G, subgroups H and H', the squared-fidelity support-overlap upper bound, the exact coset-overlap identity, the product-cardinality identity, and conclusion F(rho_H,rho_H') <= sqrt(|H inf H'|/|H|). The proof expands tr(Pi_H rho_H') into the overlap double sum, proves nonempty coset intersections have cardinality |H inf H'|, counts them through |G|*|HH'|, rewrites with hProductCard, proves fidelity nonnegative, and applies Real.le_sqrt. Trace lean_verify reports only propext, Classical.choice, and Quot.sound; the matching newest task result reports the same successful compilation and clean source scan.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.211571Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.211584Z"
+    },
+    "QAlgFormalized/problem_qalg_HSPRepresentation_RankStrongFourierSamplingConditionalState.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The frozen theorem contract is faithful to the blueprint and the completed proof establishes every conjunct without placeholders, laundering, weakening, or answer-bearing assumptions.",
+      "evidence": "Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The trace's pre-edit header at its initial source read matches the current signature exactly and had only a `sorry` body. The proof identifies subgroup averaging with Representation.averageMap, proves the exact invariant range, idempotence, and self-adjointness, derives trace=rank and both ordinary/conjugated character formulas, then uses h_conditional to obtain nonzero rank and rank preservation of the normalized entrywise-conjugated state. Trace lean_verify reports only propext, Classical.choice, and Quot.sound; final diagnostics contain no errors.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The frozen theorem contract is faithful to the blueprint and the completed proof establishes every conjunct without placeholders, laundering, weakening, or answer-bearing assumptions.",
+          "evidence": "Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The trace's pre-edit header at its initial source read matches the current signature exactly and had only a `sorry` body. The proof identifies subgroup averaging with Representation.averageMap, proves the exact invariant range, idempotence, and self-adjointness, derives trace=rank and both ordinary/conjugated character formulas, then uses h_conditional to obtain nonzero rank and rank preservation of the normalized entrywise-conjugated state. Trace lean_verify reports only propext, Classical.choice, and Quot.sound; final diagnostics contain no errors.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.211942Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.211956Z"
+    },
+    "QAlgFormalized/problem_qalg_HSPRepresentation_WeakFourierSamplingTranspositionSn.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "All five review checks pass: the frozen contract is preserved, the file compiles without placeholders or non-foundational axioms, and the proofs establish the exact conjugacy count, both TV bounds, the pointwise sample lower bound, and the requested asymptotic Omega(n) conclusion.",
+      "evidence": "Deterministic preflight reports compiles=true, returncode=0, and sorry_count=0. The pre-edit source embedded in the iteration-85 trace has the same declaration signatures as the reviewed file; only proof bodies and Mathlib.GroupTheory.Perm.Centralizer were added. The trace records successful standalone compilation, an empty escape-hatch scan, and lean_verify results containing only propext, Classical.choice, and Quot.sound. Contractually, TranspositionConjugacyClass is the IsConj subtype of swap(0,1), its Nat.card is proved n*(n-1)/2, hconj is converted to 1/sqrt(2*n*(n-1)), iidPower is the finite product law, totalVariation_iidPower_le proves the m-fold bound, and eventual constant TV advantage yields IsBigO atTop (fun n => n) (fun n => sampleCount n). The newest matching task result reports the same seven completed proofs and verification outcomes.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "All five review checks pass: the frozen contract is preserved, the file compiles without placeholders or non-foundational axioms, and the proofs establish the exact conjugacy count, both TV bounds, the pointwise sample lower bound, and the requested asymptotic Omega(n) conclusion.",
+          "evidence": "Deterministic preflight reports compiles=true, returncode=0, and sorry_count=0. The pre-edit source embedded in the iteration-85 trace has the same declaration signatures as the reviewed file; only proof bodies and Mathlib.GroupTheory.Perm.Centralizer were added. The trace records successful standalone compilation, an empty escape-hatch scan, and lean_verify results containing only propext, Classical.choice, and Quot.sound. Contractually, TranspositionConjugacyClass is the IsConj subtype of swap(0,1), its Nat.card is proved n*(n-1)/2, hconj is converted to 1/sqrt(2*n*(n-1)), iidPower is the finite product law, totalVariation_iidPower_le proves the m-fold bound, and eventual constant TV advantage yields IsBigO atTop (fun n => n) (fun n => sampleCount n). The newest matching task result reports the same seven completed proofs and verification outcomes.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.212281Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.212294Z"
+    },
+    "QAlgFormalized/problem_qalg_HamiltonianSimulation_AccumulationProductFormulaErrorsManySmallTerms.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The source compiles with no placeholders or laundering, preserves the full product-formula contract, and proves both the explicit accumulated-error estimate and its fixed-parameter Big-O corollary by a genuine prefix induction.",
+      "evidence": "Deterministic preflight reports compiles=true, returncode=0, sorry_count=0. ProductFormulaData retains H, F, E, Hermiticity, 0<γ<1, R>0, C≥0, term bounds, Mγ≤R, every local remainder equality/bound, and the exact definition of E. The proof establishes ‖partialSum H k‖≤kγ, the exact noncommutative prefix-error recurrence, and ‖P k-exp(S_k)‖≤(C/2)k(k-1)γ² exp(kγ), then uses error_eq and Mγ≤R; error_norm_isBigO applies this pointwise with constant C exp(R)/2. The current trace ends with successful direct Lean compilation, a successful full build, source scans with no escape hatch, and lean_verify listing only propext, Classical.choice, and Quot.sound; the newest task result reports the same proof and verification.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The source compiles with no placeholders or laundering, preserves the full product-formula contract, and proves both the explicit accumulated-error estimate and its fixed-parameter Big-O corollary by a genuine prefix induction.",
+          "evidence": "Deterministic preflight reports compiles=true, returncode=0, sorry_count=0. ProductFormulaData retains H, F, E, Hermiticity, 0<γ<1, R>0, C≥0, term bounds, Mγ≤R, every local remainder equality/bound, and the exact definition of E. The proof establishes ‖partialSum H k‖≤kγ, the exact noncommutative prefix-error recurrence, and ‖P k-exp(S_k)‖≤(C/2)k(k-1)γ² exp(kγ), then uses error_eq and Mγ≤R; error_norm_isBigO applies this pointwise with constant C exp(R)/2. The current trace ends with successful direct Lean compilation, a successful full build, source scans with no escape hatch, and lean_verify listing only propext, Classical.choice, and Quot.sound; the newest task result reports the same proof and verification.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.212616Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.212645Z"
+    },
+    "QAlgFormalized/problem_qalg_HamiltonianSimulation_FirstOrderLieTrotterGlobalErrorScaling.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "All five review checks pass: the frozen contract is faithful and nontrivial, all three public conclusions have kernel-checked proofs, and no proof escape hatch or answer-as-assumption is present.",
+      "evidence": "Deterministic exact-file preflight passed (return code 0, no diagnostics, sorry_count 0). The source proves the universal pointwise bound globalError ≤ K·globalErrorScale under νt/m ≤ c and its IsBigO atTop form, constructs positive integer steps with the local condition, error ≤ ε, and m ≤ 1 + Kν²t²/ε, and packages literal StepCountIsBigO for ν>0. The current trace records successful compilation and lean_verify for all three public theorems with only propext, Classical.choice, and Quot.sound; the newest matching task result reports the same proof and verification.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "All five review checks pass: the frozen contract is faithful and nontrivial, all three public conclusions have kernel-checked proofs, and no proof escape hatch or answer-as-assumption is present.",
+          "evidence": "Deterministic exact-file preflight passed (return code 0, no diagnostics, sorry_count 0). The source proves the universal pointwise bound globalError ≤ K·globalErrorScale under νt/m ≤ c and its IsBigO atTop form, constructs positive integer steps with the local condition, error ≤ ε, and m ≤ 1 + Kν²t²/ε, and packages literal StepCountIsBigO for ν>0. The current trace records successful compilation and lean_verify for all three public theorems with only propext, Classical.choice, and Quot.sound; the newest matching task result reports the same proof and verification.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.212965Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.212979Z"
+    },
+    "QAlgFormalized/problem_qalg_HamiltonianSimulation_LeadingCommutatorTermTwoTermExponentialProduct.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The theorem compiles without placeholders or proof escapes, preserves the full universal cubic operator-norm error contract, and is proved by a genuine dimension-independent Taylor-tail and noncommutative cancellation argument.",
+      "evidence": "Deterministic preflight passed with return code 0, empty diagnostics, and sorry_count 0. The Lean declaration quantifies C before n, H₁, H₂, and γ; assumes both operator-norm bounds and γ < 1; defines E₁₂ as exp H₁ * exp H₂ - exp (H₁ + H₂); and concludes ‖E₁₂ - (1/2) • [H₁,H₂]‖ ≤ C * γ^3. The source hash aa94a460d434b9aec5911e81632c725cfc19b37ad84c5bf062004d8f17832923 matches the prover trace, whose direct Lean check, empty LSP diagnostics, and axiom scan (only propext, Classical.choice, Quot.sound) support the current proof; the newest matching task result reports the same constant and argument.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The theorem compiles without placeholders or proof escapes, preserves the full universal cubic operator-norm error contract, and is proved by a genuine dimension-independent Taylor-tail and noncommutative cancellation argument.",
+          "evidence": "Deterministic preflight passed with return code 0, empty diagnostics, and sorry_count 0. The Lean declaration quantifies C before n, H₁, H₂, and γ; assumes both operator-norm bounds and γ < 1; defines E₁₂ as exp H₁ * exp H₂ - exp (H₁ + H₂); and concludes ‖E₁₂ - (1/2) • [H₁,H₂]‖ ≤ C * γ^3. The source hash aa94a460d434b9aec5911e81632c725cfc19b37ad84c5bf062004d8f17832923 matches the prover trace, whose direct Lean check, empty LSP diagnostics, and axiom scan (only propext, Classical.choice, Quot.sound) support the current proof; the newest matching task result reports the same constant and argument.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.213298Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.213311Z"
+    },
+    "QAlgFormalized/problem_qalg_LCUBlockQSVT_CoefficientOneNormTruncatedTaylorSimulation.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "All three preserved theorem contracts compile with genuine proofs and faithfully formalize the requested truncated-Taylor LCU representation, coefficient one-norm exponential bound, and raw-LCU segment-count asymptotic.",
+      "evidence": "Deterministic preflight passed (return code 0, sorry_count 0) with only the unused-hP linter warning. The trace's initial snapshot shows the same three declaration headers with sorry bodies, while the final source proves: existence of Gate-valued phase-absorbed ordered products and exact truncatedTaylor equality; taylorCoefficientOneNorm t beta K <= Real.exp (t * sum beta); and IsBigO atTop for Nat.ceil (max 0 (t * sum beta)). Trace lean_verify reports only propext, Classical.choice, and Quot.sound for each theorem, and the newest task result reports the same successful compiler and proof structure.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "All three preserved theorem contracts compile with genuine proofs and faithfully formalize the requested truncated-Taylor LCU representation, coefficient one-norm exponential bound, and raw-LCU segment-count asymptotic.",
+          "evidence": "Deterministic preflight passed (return code 0, sorry_count 0) with only the unused-hP linter warning. The trace's initial snapshot shows the same three declaration headers with sorry bodies, while the final source proves: existence of Gate-valued phase-absorbed ordered products and exact truncatedTaylor equality; taylorCoefficientOneNorm t beta K <= Real.exp (t * sum beta); and IsBigO atTop for Nat.ceil (max 0 (t * sum beta)). Trace lean_verify reports only propext, Classical.choice, and Quot.sound for each theorem, and the newest task result reports the same successful compiler and proof structure.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.213652Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.213664Z"
+    },
+    "QAlgFormalized/problem_qalg_LCUBlockQSVT_LCUBlockEncodingPrepareSelect.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The unchanged contract is faithfully modeled and all four supporting proof obligations are kernel-checked without escape hatches; the exact projected block is then packaged as the requested zero-error scaled block encoding.",
+      "evidence": "Deterministic preflight reports compiles=true, returncode=0, and sorry_count=0. The prover trace's initial source snapshot has the same declaration headers with four sorry bodies, while the reviewed source supplies genuine proofs: SELECT is shown block-diagonal and unitary from each Gate.unitary; coefficient positivity gives alpha>0; hprepare is evaluated at each basisIndex ell to derive the ancilla weight coeff ell/alpha; projectedBlock_lcuWalk proves projectedBlock W = (alpha:C)^-1 • A; and lcuWalk_isBlockEncoding uses that equality and alpha>0 to conclude BlockEncoding alpha a n 0 W A. Trace lean_verify scans list only propext, Classical.choice, and Quot.sound, and the newest task result agrees with the trace and current file.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The unchanged contract is faithfully modeled and all four supporting proof obligations are kernel-checked without escape hatches; the exact projected block is then packaged as the requested zero-error scaled block encoding.",
+          "evidence": "Deterministic preflight reports compiles=true, returncode=0, and sorry_count=0. The prover trace's initial source snapshot has the same declaration headers with four sorry bodies, while the reviewed source supplies genuine proofs: SELECT is shown block-diagonal and unitary from each Gate.unitary; coefficient positivity gives alpha>0; hprepare is evaluated at each basisIndex ell to derive the ancilla weight coeff ell/alpha; projectedBlock_lcuWalk proves projectedBlock W = (alpha:C)^-1 • A; and lcuWalk_isBlockEncoding uses that equality and alpha>0 to conclude BlockEncoding alpha a n 0 W A. Trace lean_verify scans list only propext, Classical.choice, and Quot.sound, and the newest task result agrees with the trace and current file.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.213990Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.214003Z"
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_CommonStabilizerFullRankStates.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The frozen contract is faithful and both requested conclusions are established by kernel-checked matrix and orthonormal-basis arguments without any proof escape hatch.",
+      "evidence": "Deterministic preflight reports direct compilation success, return code 0, zero diagnostics, and sorry_count 0. The source derives commutation from unitary conjugation, uses both simple spectra to diagonalize W in the two eigenbases, uses every nonzero cross-overlap to identify the phases, obtains a unit-modulus scalar from unitarity, and proves the reverse set inclusion for scalar phases. The trace additionally records exact-file compilation and lean_verify results containing only propext, Classical.choice, and Quot.sound.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The frozen contract is faithful and both requested conclusions are established by kernel-checked matrix and orthonormal-basis arguments without any proof escape hatch.",
+          "evidence": "Deterministic preflight reports direct compilation success, return code 0, zero diagnostics, and sorry_count 0. The source derives commutation from unitary conjugation, uses both simple spectra to diagonalize W in the two eigenbases, uses every nonzero cross-overlap to identify the phases, obtains a unit-modulus scalar from unitarity, and proves the reverse set inclusion for scalar phases. The trace additionally records exact-file compilation and lean_verify results containing only propext, Classical.choice, and Quot.sound.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.214322Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.214335Z"
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_FidelityHammingWeightTruncatedPhaseState.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The frozen contract is faithfully implemented and all four original proof obligations are closed by constructive finite counting, norm/inner-product calculations, and a finite Chebyshev argument; deterministic preflight compiles with zero sorry and the trace axiom scans report only standard Mathlib foundations.",
+      "evidence": "Preflight: compiles=true, returncode=0, sorry_count=0, with only the unused-hr linter warning. The source retains the original definitions and theorem headers: phase amplitudes are 1/sqrt(2^n) times the F2 parity sign, truncation uses Hamming weight <= r and R_{n,r}=sum_{i=0}^r choose(n,i), fidelity is exactly R_{n,r}/2^n for every x under hr:r<=n, and for every eta in (0,1) a positive c_eta gives Filter.liminf atTop >= 1-eta at floor(n/2+c_eta*sqrt(n)). The proof derives Hamming-weight counts and the exact centered second moment before applying Chebyshev; it does not assume either requested conclusion.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The frozen contract is faithfully implemented and all four original proof obligations are closed by constructive finite counting, norm/inner-product calculations, and a finite Chebyshev argument; deterministic preflight compiles with zero sorry and the trace axiom scans report only standard Mathlib foundations.",
+          "evidence": "Preflight: compiles=true, returncode=0, sorry_count=0, with only the unused-hr linter warning. The source retains the original definitions and theorem headers: phase amplitudes are 1/sqrt(2^n) times the F2 parity sign, truncation uses Hamming weight <= r and R_{n,r}=sum_{i=0}^r choose(n,i), fidelity is exactly R_{n,r}/2^n for every x under hr:r<=n, and for every eta in (0,1) a positive c_eta gives Filter.liminf atTop >= 1-eta at floor(n/2+c_eta*sqrt(n)). The proof derives Hamming-weight counts and the exact centered second moment before applying Chebyshev; it does not assume either requested conclusion.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.214671Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.214690Z"
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_HilbertSchmidtTranspositionInvariance.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "Both declarations faithfully formalize the blueprint's Hilbert--Schmidt inner-product and induced distance invariance under transpose, and their proofs close by standard matrix transpose and trace identities with no weakened conclusion or proof escape hatch.",
+      "evidence": "Deterministic preflight reports direct compilation passed, return code 0, zero active sorry, and no diagnostics. The first proof rewrites (U.transpose).conjTranspose, cyclically commutes the two trace factors, identifies their product with (U.conjTranspose * V).transpose, and applies trace_transpose. The second rewrites U.transpose - V.transpose as (U - V).transpose and applies the first theorem after unfolding the norm. The prover trace records successful direct Lean checking and lean_verify with only propext, Classical.choice, and Quot.sound; the newest matching task result reports the same proof and verification outcome.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "Both declarations faithfully formalize the blueprint's Hilbert--Schmidt inner-product and induced distance invariance under transpose, and their proofs close by standard matrix transpose and trace identities with no weakened conclusion or proof escape hatch.",
+          "evidence": "Deterministic preflight reports direct compilation passed, return code 0, zero active sorry, and no diagnostics. The first proof rewrites (U.transpose).conjTranspose, cyclically commutes the two trace factors, identifies their product with (U.conjTranspose * V).transpose, and applies trace_transpose. The second rewrites U.transpose - V.transpose as (U - V).transpose and applies the first theorem after unfolding the norm. The prover trace records successful direct Lean checking and lean_verify with only propext, Classical.choice, and Quot.sound; the newest matching task result reports the same proof and verification outcome.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.215036Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.215049Z"
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_LinearDependenceRvsFtwo.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "All three frozen theorem contracts are faithful to the source and are closed by direct kernel-checked algebraic proofs with no active sorry, admit, added axiom, or statement weakening.",
+      "evidence": "Deterministic preflight reports compiles=true, returncode=0, sorry_count=0, and empty diagnostics. The Lean source defines the six vectors with exactly the stated coordinates, proves real family independence from the three coordinate equations, witnesses F2 dependence by the nonzero all-ones coefficient family, and proves the full F2 span equals {0, v1F2, v2F2, v3F2} by two inclusions. The prover trace records an exact-file compile, clean LSP diagnostics, and warning-free source/axiom scans (only propext, Classical.choice, and Quot.sound); the newest matching task result reports the same final proofs and verification.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "All three frozen theorem contracts are faithful to the source and are closed by direct kernel-checked algebraic proofs with no active sorry, admit, added axiom, or statement weakening.",
+          "evidence": "Deterministic preflight reports compiles=true, returncode=0, sorry_count=0, and empty diagnostics. The Lean source defines the six vectors with exactly the stated coordinates, proves real family independence from the three coordinate equations, witnesses F2 dependence by the nonzero all-ones coefficient family, and proves the full F2 span equals {0, v1F2, v2F2, v3F2} by two inclusions. The prover trace records an exact-file compile, clean LSP diagnostics, and warning-free source/axiom scans (only propext, Classical.choice, and Quot.sound); the newest matching task result reports the same final proofs and verification.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.215367Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.215380Z"
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_LocalMarginalUnreadProjectiveMeasurement.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "All three theorem bodies prove the unchanged, faithful matrix contracts directly; the supplied deterministic preflight compiles with zero sorry, and the current trace reports only standard Lean axioms.",
+      "evidence": "Preflight: compiles=true, returncode=0, sorry_count=0, with only the unused-hρ linter at line 79. The source defines the canonical blocks blockA ρ b b', Π_b = I_A ⊗ |b><b|, the unread channel ∑ b, Π_b ρ Π_b, and the basis contraction partialTraceB; the proved conclusions are respectively the full block expansion, deletion of exactly the off-diagonal B blocks, and partialTraceB (unreadMeasurementB ρ) = partialTraceB ρ. The trace records exact Lake compilation exit 0 and lean_verify for all three declarations with only propext, Classical.choice, and Quot.sound; the newest task result agrees.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "All three theorem bodies prove the unchanged, faithful matrix contracts directly; the supplied deterministic preflight compiles with zero sorry, and the current trace reports only standard Lean axioms.",
+          "evidence": "Preflight: compiles=true, returncode=0, sorry_count=0, with only the unused-hρ linter at line 79. The source defines the canonical blocks blockA ρ b b', Π_b = I_A ⊗ |b><b|, the unread channel ∑ b, Π_b ρ Π_b, and the basis contraction partialTraceB; the proved conclusions are respectively the full block expansion, deletion of exactly the off-diagonal B blocks, and partialTraceB (unreadMeasurementB ρ) = partialTraceB ρ. The trace records exact Lake compilation exit 0 and lean_verify for all three declarations with only propext, Classical.choice, and Quot.sound; the newest task result agrees.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.215714Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.215727Z"
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_OrthonormalityCoherentMarkovChainRows.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "No defect found: the theorem faithfully formalizes the coherent row states and proves their orthonormality by an explicit inner-product calculation.",
+      "evidence": "Deterministic preflight passed direct compilation with sorry_count 0. The contract quantifies a real d-by-d matrix, assumes entrywise nonnegativity and each finite row sum equals 1, defines amplitudes sqrt(P i j) on the product basis (i,j), and concludes Orthonormal over C. The proof reduces inner products to Kronecker deltas; unequal first indices give 0, while equal indices reduce via Real.mul_self_sqrt and h_row_sum to 1. The trace additionally records clean final LSP diagnostics, successful direct compilation/source scan, and lean_verify with only propext, Classical.choice, and Quot.sound; the newest task result agrees.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "No defect found: the theorem faithfully formalizes the coherent row states and proves their orthonormality by an explicit inner-product calculation.",
+          "evidence": "Deterministic preflight passed direct compilation with sorry_count 0. The contract quantifies a real d-by-d matrix, assumes entrywise nonnegativity and each finite row sum equals 1, defines amplitudes sqrt(P i j) on the product basis (i,j), and concludes Orthonormal over C. The proof reduces inner products to Kronecker deltas; unequal first indices give 0, while equal indices reduce via Real.mul_self_sqrt and h_row_sum to 1. The trace additionally records clean final LSP diagnostics, successful direct compilation/source scan, and lean_verify with only propext, Classical.choice, and Quot.sound; the newest task result agrees.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.216066Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.216079Z"
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_PostMeasurementStateObservedQubit.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The kernel-checked proof preserves and proves the faithful measurement contract with no semantic or proof defect.",
+      "evidence": "Deterministic preflight passed (return code 0, no diagnostics, sorry_count 0). The unchanged contract assumes a normalized PureState ψ with vector decomposition |0⟩⊗α₀ + |1⟩⊗α₁, concludes the exact Born marginal at outcome 1, and under the exact p₁>0 side condition constructs a PureState whose vector is (sqrt p₁)⁻¹ • (|1⟩⊗α₁). The proof derives the coordinate sum as ‖α₁‖², uses hψ and the outcome-1 tensor lemma, then proves unit norm before PureState.ofVec. The prover trace records empty LSP diagnostics, successful direct compilation, no placeholder/axiom-source warning, and only standard propext/Classical.choice/Quot.sound dependencies; the newest matching task result reports the same proof and checks.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The kernel-checked proof preserves and proves the faithful measurement contract with no semantic or proof defect.",
+          "evidence": "Deterministic preflight passed (return code 0, no diagnostics, sorry_count 0). The unchanged contract assumes a normalized PureState ψ with vector decomposition |0⟩⊗α₀ + |1⟩⊗α₁, concludes the exact Born marginal at outcome 1, and under the exact p₁>0 side condition constructs a PureState whose vector is (sqrt p₁)⁻¹ • (|1⟩⊗α₁). The proof derives the coordinate sum as ‖α₁‖², uses hψ and the outcome-1 tensor lemma, then proves unit norm before PureState.ofVec. The prover trace records empty LSP diagnostics, successful direct compilation, no placeholder/axiom-source warning, and only standard propext/Classical.choice/Quot.sound dependencies; the newest matching task result reports the same proof and checks.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.216395Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.216407Z"
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_SpectralProjectorsBooleanPhaseOracle.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 85,
+      "reason": "The frozen contracts faithfully encode both requested spectral-projector identities/eigenspaces and the exact trace formula, and the supplied preflight plus prover evidence confirm complete kernel-checked proofs without escape hatches.",
+      "evidence": "Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The first proof rewrites O_f, (I+O_f)/2, and (I-O_f)/2 as diagonal matrices with entries respectively ±1, 1_{f=false}, and 1_{f=true}; it explicitly proves self-adjointness, idempotence, and both universally quantified fixed-space/eigenspace equivalences. The second proof computes Matrix.trace as the sum of phases and proves sum_x(1-2·1_{f x=true}) = 2^n-2·|f^{-1}(1)|. The trace records successful direct compilation, full build, source scan, and lean_verify results containing only propext, Classical.choice, and Quot.sound; the newest matching task result agrees.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "iter": 85,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The frozen contracts faithfully encode both requested spectral-projector identities/eigenspaces and the exact trace formula, and the supplied preflight plus prover evidence confirm complete kernel-checked proofs without escape hatches.",
+          "evidence": "Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The first proof rewrites O_f, (I+O_f)/2, and (I-O_f)/2 as diagonal matrices with entries respectively ±1, 1_{f=false}, and 1_{f=true}; it explicitly proves self-adjointness, idempotence, and both universally quantified fixed-space/eigenspace equivalences. The second proof computes Matrix.trace as the sum of phases and proves sum_x(1-2·1_{f x=true}) = 2^n-2·|f^{-1}(1)|. The trace records successful direct compilation, full build, source scan, and lean_verify results containing only propext, Classical.choice, and Quot.sound; the newest matching task result agrees.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T14:14:37.216739Z"
+        }
+      ],
+      "updated_at": "2026-07-28T14:14:37.216752Z"
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_UnitaryExtensionMarkovChainIsometry.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 87,
+      "reason": "The frozen, faithful unitary-extension contract has a direct kernel-checked proof, and all five proof-review checks pass.",
+      "evidence": "Deterministic preflight reports compiles=true, returncode=0, sorry_count=0, and no diagnostics. The source assumes d>0 and explicit row-stochasticity, then concludes existence of one standard Matrix.unitaryGroup member satisfying both U|i,0⟩=|ψ_i⟩ and the full prescribed-column formula. The proof uses nonnegativity and row sums to prove orthonormality, extends the (i,0) columns to an orthonormal basis, and converts that basis to a unitary matrix. The current trace records exact-file compilation exit 0 and lean_verify reports only propext, Classical.choice, and Quot.sound, with no warnings; the newest task result agrees.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_LinearAlgebra_UnitaryExtensionMarkovChainIsometry.lean:proof:1",
+          "iter": 87,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The frozen, faithful unitary-extension contract has a direct kernel-checked proof, and all five proof-review checks pass.",
+          "evidence": "Deterministic preflight reports compiles=true, returncode=0, sorry_count=0, and no diagnostics. The source assumes d>0 and explicit row-stochasticity, then concludes existence of one standard Matrix.unitaryGroup member satisfying both U|i,0⟩=|ψ_i⟩ and the full prescribed-column formula. The proof uses nonnegativity and row sums to prove orthonormality, extends the (i,0) columns to an orthonormal basis, and converts that basis to a unitary matrix. The current trace records exact-file compilation exit 0 and lean_verify reports only propext, Classical.choice, and Quot.sound, with no warnings; the newest task result agrees.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T16:40:47.717692Z"
+        }
+      ],
+      "updated_at": "2026-07-28T16:40:47.717714Z"
+    },
+    "QAlgFormalized/problem_qalg_QSPParameterTrace_ThirdMomentTwoControlledSWAPTests.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 87,
+      "reason": "The frozen theorem contract is faithful and the explicit matrix proof closes it without escape hatches; the unused density hypothesis is legitimate because the controlled-permutation trace identity proved is stronger and holds for every square complex matrix.",
+      "evidence": "The closed Lean goal is `Matrix.trace (xxObservable * sigmaOut ρ) = Matrix.trace (ρ ^ 3)`. Deterministic preflight reports compiles=true, returncode=0, and sorry_count=0, with only the unused-`hρ` linter warning. The source defines the ordered A1,A2,B1,B2,B3 register, |+><+| inputs, A1-controlled S12, A2-controlled S13, `U2 * U1 * sigmaIn ρ * U1† * U2†`, and `X ⊗ X ⊗ I` exactly as in the blueprint. The proof expands all four controlled branches, evaluates the ancilla X traces, proves both swap products give the three-cycle trace `tr(ρ^3)`, and combines the four surviving terms. The prover trace records successful compilation, a theorem verification containing only `propext`, `Classical.choice`, and `Quot.sound`, and a clean escape-hatch scan; the newest matching task result reports the same proof and verification.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_QSPParameterTrace_ThirdMomentTwoControlledSWAPTests.lean:proof:1",
+          "iter": 87,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The frozen theorem contract is faithful and the explicit matrix proof closes it without escape hatches; the unused density hypothesis is legitimate because the controlled-permutation trace identity proved is stronger and holds for every square complex matrix.",
+          "evidence": "The closed Lean goal is `Matrix.trace (xxObservable * sigmaOut ρ) = Matrix.trace (ρ ^ 3)`. Deterministic preflight reports compiles=true, returncode=0, and sorry_count=0, with only the unused-`hρ` linter warning. The source defines the ordered A1,A2,B1,B2,B3 register, |+><+| inputs, A1-controlled S12, A2-controlled S13, `U2 * U1 * sigmaIn ρ * U1† * U2†`, and `X ⊗ X ⊗ I` exactly as in the blueprint. The proof expands all four controlled branches, evaluates the ancilla X traces, proves both swap products give the three-cycle trace `tr(ρ^3)`, and combines the four surviving terms. The prover trace records successful compilation, a theorem verification containing only `propext`, `Classical.choice`, and `Quot.sound`, and a clean escape-hatch scan; the newest matching task result reports the same proof and verification.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T16:40:47.722400Z"
+        }
+      ],
+      "updated_at": "2026-07-28T16:40:47.722410Z"
+    },
+    "QAlgFormalized/problem_qalg_QSPParameterTrace_PostselectedSpectralTransformationTrigonometricQSP.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 87,
+      "reason": "The preserved theorem contract has a direct kernel-checked proof: spectral decomposition gives the eigenphase action, alternating controlled signals reproduce the one-qubit QSP sequence with cancelling half-phases, and basis extensionality yields both the projected-block and Laurent-operator equalities.",
+      "evidence": "Deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. The source contains no sorry/admit, axiom declaration, native_decide, or metaprogramming escape; its proof derives hblock from hspectral and hamplitude and hlaurent from the same eigenbasis action, then rewrites controlZeroBranch by hblock. The prover trace records target compilation exit 0, an escape-hatch scan, lean_verify axioms only [propext, Classical.choice, Quot.sound] with no warnings, and error diagnostics empty; the newest matching task result reports the same proof and verification. The original signature in the trace agrees with the current declaration. hphase and hbounded are faithfully retained source assumptions but are logically redundant for these exact identities once hspectral and hamplitude hold; likewise the nonzero postselection premise is retained even though the branch equality proved is stronger.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_QSPParameterTrace_PostselectedSpectralTransformationTrigonometricQSP.lean:proof:1",
+          "iter": 87,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The preserved theorem contract has a direct kernel-checked proof: spectral decomposition gives the eigenphase action, alternating controlled signals reproduce the one-qubit QSP sequence with cancelling half-phases, and basis extensionality yields both the projected-block and Laurent-operator equalities.",
+          "evidence": "Deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. The source contains no sorry/admit, axiom declaration, native_decide, or metaprogramming escape; its proof derives hblock from hspectral and hamplitude and hlaurent from the same eigenbasis action, then rewrites controlZeroBranch by hblock. The prover trace records target compilation exit 0, an escape-hatch scan, lean_verify axioms only [propext, Classical.choice, Quot.sound] with no warnings, and error diagnostics empty; the newest matching task result reports the same proof and verification. The original signature in the trace agrees with the current declaration. hphase and hbounded are faithfully retained source assumptions but are logically redundant for these exact identities once hspectral and hamplitude hold; likewise the nonzero postselection premise is retained even though the branch equality proved is stronger.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T16:40:47.724642Z"
+        }
+      ],
+      "updated_at": "2026-07-28T16:40:47.724651Z"
+    },
+    "QAlgFormalized/problem_qalg_QSPParameterTrace_SharedParameterShiftRuleRXTensorRZ.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 87,
+      "reason": "The preserved theorem contract is faithful to the blueprint and the proof derives the exact four-evaluation shared-parameter shift rule by an explicit matrix/trigonometric calculation, with no proof escape hatch.",
+      "evidence": "Deterministic preflight reports compiles=true, returncode=0, and sorry_count=0. The source defines the requested two-qubit-plus-spectator register, RX/RZ closed forms, shared tensor rotation, trace loss, and punctured-neighborhood real derivative, and concludes the blueprint's exact coefficients and four shifts. The prover trace records the original theorem header with only `by sorry`, the same final header, successful exact compilation, and lean_verify with only propext, Classical.choice, and Quot.sound; the newest matching task result agrees. The proof decomposes RX(theta) tensor RZ(theta) into constant/cos/sin components, expands the loss into a degree-two trigonometric polynomial, proves its derivative and exact shift interpolation, and converts Mathlib HasDerivAt to the stated derivative. hρ and hO are unused because the identity is valid for arbitrary matrices, which is a genuine strengthening and not assumption laundering or trivialization.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_QSPParameterTrace_SharedParameterShiftRuleRXTensorRZ.lean:proof:1",
+          "iter": 87,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The preserved theorem contract is faithful to the blueprint and the proof derives the exact four-evaluation shared-parameter shift rule by an explicit matrix/trigonometric calculation, with no proof escape hatch.",
+          "evidence": "Deterministic preflight reports compiles=true, returncode=0, and sorry_count=0. The source defines the requested two-qubit-plus-spectator register, RX/RZ closed forms, shared tensor rotation, trace loss, and punctured-neighborhood real derivative, and concludes the blueprint's exact coefficients and four shifts. The prover trace records the original theorem header with only `by sorry`, the same final header, successful exact compilation, and lean_verify with only propext, Classical.choice, and Quot.sound; the newest matching task result agrees. The proof decomposes RX(theta) tensor RZ(theta) into constant/cos/sin components, expands the loss into a degree-two trigonometric polynomial, proves its derivative and exact shift interpolation, and converts Mathlib HasDerivAt to the stated derivative. hρ and hO are unused because the identity is valid for arbitrary matrices, which is a genuine strengthening and not assumption laundering or trivialization.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T16:40:47.726894Z"
+        }
+      ],
+      "updated_at": "2026-07-28T16:40:47.726903Z"
+    },
+    "QAlgFormalized/problem_qalg_LinearAlgebra_WeylAverageShiftOperator.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 87,
+      "reason": "No proof or modeling defect was found: all six source claims retain their reviewed signatures, are proved without escape hatches, and faithfully formalize the stated source-ordered Weyl average.",
+      "evidence": "Deterministic preflight passed (Lean return code 0, compiles=true, sorry_count=0, no diagnostics). The current source proves ZX = ω XZ, evaluates the exact ordered sum Z^j X^k X (Z^j)⁻¹ (X^k)⁻¹ to d • X and hence T(X)=X, proves Xᵀ=X⁻¹=X^(d-1), and for d>2 refutes ∀U, T(U)=Uᵀ at U=X by the (1,0) entry. Initial signatures recovered from the trace exactly match the current signatures. The trace's final uncached kernel prints list only propext, Classical.choice, and Quot.sound for every public theorem; its earlier sorryAx readings are explicitly identified as stale LSP cache results. The newest matching task result agrees with that final trace state.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_LinearAlgebra_WeylAverageShiftOperator.lean:proof:1",
+          "iter": 87,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "No proof or modeling defect was found: all six source claims retain their reviewed signatures, are proved without escape hatches, and faithfully formalize the stated source-ordered Weyl average.",
+          "evidence": "Deterministic preflight passed (Lean return code 0, compiles=true, sorry_count=0, no diagnostics). The current source proves ZX = ω XZ, evaluates the exact ordered sum Z^j X^k X (Z^j)⁻¹ (X^k)⁻¹ to d • X and hence T(X)=X, proves Xᵀ=X⁻¹=X^(d-1), and for d>2 refutes ∀U, T(U)=Uᵀ at U=X by the (1,0) entry. Initial signatures recovered from the trace exactly match the current signatures. The trace's final uncached kernel prints list only propext, Classical.choice, and Quot.sound for every public theorem; its earlier sorryAx readings are explicitly identified as stale LSP cache results. The newest matching task result agrees with that final trace state.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T16:40:47.729205Z"
+        }
+      ],
+      "updated_at": "2026-07-28T16:40:47.729214Z"
+    },
+    "QAlgFormalized/problem_qalg_PQCLieTrainability_ApproximateTwoDesignDepthHaarLossFluctuations.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 87,
+      "reason": "The redrafted contract faithfully connects the declared parametrized circuit and parameter ensemble to the restricted second-moment distance, derives the Haar first moment from exact SU invariance, and uses the purity bridge for the assumed two-copy identity; every requested depth, variance, and exponential-fluctuation conclusion is kernel-checked.",
+      "evidence": "The supplied deterministic preflight reports compiles=true, returncode=0, and sorry_count=0. In the source, circuitSecondMomentOperator evaluates twoCopyConjugation on parametrizedCircuit H (ensemble.parameters omega), circuitToHaarSecondMomentDistance restricts its comparison with haarSecondMomentOperator to nontrivialTwoCopySubspace, and approximateTwoDesign_of_depth proves that exact distance is <= epsilon from hcontraction and hdepth. inversePolynomialAccuracy_depth_isBigO supplies both the eventual n^(-c) design conclusion and IsBigO depth bound. haarLoss_mean_zero derives the first moment using explicit determinant-one phase and signed-swap matrices plus Haar left invariance; haarLoss_variance rewrites with hrhoPure before applying hHaarSecondMoment and proves the exact formula and 1/(N+1) bound; haarLoss_exponential_fluctuation proves the 2^(-n) variance and 2^(-n/2) RMS bounds. The final trace records standalone Lean exit 0 and lean_verify for all five requested theorems with only propext, Classical.choice, and Quot.sound; the newest task result reports the same checks. The unused fixed-depth hH/hiH/hLie/polynomial/gap premises are source-context assumptions rendered logically redundant by the stronger circuit-specific contraction hypothesis, not disconnected scalar surrogates or a weakened conclusion.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_PQCLieTrainability_ApproximateTwoDesignDepthHaarLossFluctuations.lean:proof:1",
+          "iter": 87,
+          "route": "needs_redraft",
+          "resulting_status": "needs_redraft",
+          "top_level_status": "blocked",
+          "attempt": 1,
+          "reason": "The kernel proofs are closed, but the formal contract weakens the requested quantum claims to disconnected scalar/moment assumptions: the approximate-design predicate is only a free real inequality unrelated to the declared circuit or any parameter ensemble, and HaarExpectation.first_moment supplies the essential Haar-twirl bridge used to prove the requested zero mean.",
+          "evidence": "Deterministic preflight reports compiles=true and sorry_count=0; the trace records successful exact compilation and lean_verify with only propext, Classical.choice, and Quot.sound, and the newest task result agrees. Semantically, approximateTwoDesign_of_depth concludes nontrivialTwoCopyDistance ≤ epsilon solely from hcontraction and the logarithmic bounds: theta, hH, hiH, hLie, hpPolynomial, hpPositive, hgap, and hdistanceNonnegative are unused, so no Lean term ties that scalar to parametrizedCircuit H theta or an L-layer ensemble. Likewise haarLoss_mean_zero uses HaarExpectation.first_moment while normalized/left_invariant/right_invariant do not establish it, and hrhoPure is unused in haarLoss_variance. These are confirmed by the supplied linter diagnostics and violate the blueprint's requirement to preserve the circuit/ensemble semantics and honestly carry every hypothesis.",
+          "redraft_kind": "wrong_or_weakened_target",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T16:40:47.731593Z"
+        },
+        {
+          "iter": 87,
+          "event": "formalization_redraft_passed",
+          "prior_attempts": 1,
+          "reviewed_at": "2026-07-28T16:40:47.757913Z"
+        },
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_PQCLieTrainability_ApproximateTwoDesignDepthHaarLossFluctuations.lean:proof:2",
+          "iter": 87,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "The redrafted contract faithfully connects the declared parametrized circuit and parameter ensemble to the restricted second-moment distance, derives the Haar first moment from exact SU invariance, and uses the purity bridge for the assumed two-copy identity; every requested depth, variance, and exponential-fluctuation conclusion is kernel-checked.",
+          "evidence": "The supplied deterministic preflight reports compiles=true, returncode=0, and sorry_count=0. In the source, circuitSecondMomentOperator evaluates twoCopyConjugation on parametrizedCircuit H (ensemble.parameters omega), circuitToHaarSecondMomentDistance restricts its comparison with haarSecondMomentOperator to nontrivialTwoCopySubspace, and approximateTwoDesign_of_depth proves that exact distance is <= epsilon from hcontraction and hdepth. inversePolynomialAccuracy_depth_isBigO supplies both the eventual n^(-c) design conclusion and IsBigO depth bound. haarLoss_mean_zero derives the first moment using explicit determinant-one phase and signed-swap matrices plus Haar left invariance; haarLoss_variance rewrites with hrhoPure before applying hHaarSecondMoment and proves the exact formula and 1/(N+1) bound; haarLoss_exponential_fluctuation proves the 2^(-n) variance and 2^(-n/2) RMS bounds. The final trace records standalone Lean exit 0 and lean_verify for all five requested theorems with only propext, Classical.choice, and Quot.sound; the newest task result reports the same checks. The unused fixed-depth hH/hiH/hLie/polynomial/gap premises are source-context assumptions rendered logically redundant by the stronger circuit-specific contraction hypothesis, not disconnected scalar surrogates or a weakened conclusion.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T16:40:47.761712Z"
+        }
+      ],
+      "updated_at": "2026-07-28T16:40:47.761725Z",
+      "redraft_resolved_iter": 87
+    },
+    "QAlgFormalized/problem_qalg_QSPParameterTrace_ParityMaximumFejerKernelQSPResponse.lean": {
+      "status": "solved",
+      "attempts": 1,
+      "last_review_iter": 87,
+      "reason": "No defect found: the five kernel-checked proofs preserve the original theorem signatures and faithfully discharge every QSP-polynomial, parity, Fejer identity, unit-interval, and endpoint claim.",
+      "evidence": "Deterministic preflight passed with compiles=true, returncode=0, sorry_count=0, and no diagnostics. The iteration snapshot has exactly the same five public theorem headers and public definitions. The source proves the QSP claims by a degree/parity induction using sq_sqrt_one_sub_sq, and the Fejer claims by exact pair-difference fiber counting, normSq, and a triangle bound. The trace records a clean exact-file compile, source scans for all five theorems with only propext/Classical.choice/Quot.sound, and successful builds; the newest matching task result reports the same proof architecture and verification.",
+      "redraft_kind": "not_applicable",
+      "proof_review_schema_version": 1,
+      "history": [
+        {
+          "event_id": "pipeline:87:QAlgFormalized/problem_qalg_QSPParameterTrace_ParityMaximumFejerKernelQSPResponse.lean:proof:1",
+          "iter": 87,
+          "route": "solved",
+          "resulting_status": "solved",
+          "top_level_status": "solved",
+          "attempt": 1,
+          "reason": "No defect found: the five kernel-checked proofs preserve the original theorem signatures and faithfully discharge every QSP-polynomial, parity, Fejer identity, unit-interval, and endpoint claim.",
+          "evidence": "Deterministic preflight passed with compiles=true, returncode=0, sorry_count=0, and no diagnostics. The iteration snapshot has exactly the same five public theorem headers and public definitions. The source proves the QSP claims by a degree/parity induction using sq_sqrt_one_sub_sq, and the Fejer claims by exact pair-difference fiber counting, normSq, and a triangle bound. The trace records a clean exact-file compile, source scans for all five theorems with only propext/Classical.choice/Quot.sound, and successful builds; the newest matching task result reports the same proof architecture and verification.",
+          "redraft_kind": "not_applicable",
+          "explicit_route": true,
+          "reviewed_at": "2026-07-28T16:40:47.738393Z"
+        }
+      ],
+      "updated_at": "2026-07-28T16:40:47.738402Z"
+    }
+  }
+}

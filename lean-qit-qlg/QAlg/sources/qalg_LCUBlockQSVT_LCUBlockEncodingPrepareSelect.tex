@@ -1,0 +1,24 @@
+Let $L$ be a finite index set, let $\alpha_\ell>0$, and let $U_\ell$ be unitary operators on a system Hilbert space $\mathcal H_S$.  Define
+$$
+    A=\sum_{\ell\in L}\alpha_\ell U_\ell,
+    \qquad
+    \alpha=\sum_{\ell\in L}\alpha_\ell.
+$$
+Let an ancilla Hilbert space have computational basis states $\ket\ell$ for $\ell\in L$, and suppose a unitary $P$ satisfies
+$$
+    P\ket0=\frac1{\sqrt\alpha}\sum_{\ell\in L}\sqrt{\alpha_\ell}\ket\ell.
+$$
+Define
+$$
+    \operatorname{SELECT}
+    =
+    \sum_{\ell\in L}\ketbra{\ell}{\ell}\otimes U_\ell
+$$
+and
+$$
+    W=(P^\dagger\otimes I_S)\operatorname{SELECT}(P\otimes I_S).
+$$
+Prove that $W$ is a perfect $(\alpha,a,0)$-block encoding of $A$, where $a$ is the number of ancilla qubits, by showing
+$$
+    (\bra0\otimes I_S)W(\ket0\otimes I_S)=\frac{A}{\alpha}.
+$$

@@ -1,0 +1,34 @@
+\Section{Achievability of Entanglement Concentration}
+Let
+$$
+\lvert \psi\rangle_{AB}=\sum_{x\in\mathcal{X}}\sqrt{p(x)}\lvert x\rangle_A\lvert x\rangle_B
+$$
+be a bipartite pure state with Schmidt coefficients $\{p(x)\}_{x\in\mathcal{X}}$.  Its entanglement entropy is
+$$
+E(\psi)=S(\psi_A)=-\sum_{x\in\mathcal{X}}p(x)\log_2p(x).
+$$
+Let
+$$
+\lvert \Phi_M\rangle_{AB}=\frac{1}{\sqrt M}\sum_{j=1}^{M}\lvert j\rangle_A\lvert j\rangle_B
+$$
+be the standard maximally entangled state of Schmidt rank $M$.
+Prove that for every rate
+$$
+0\le R<E(\psi),
+$$
+there exists a sequence of LOCC channels $\{\Lambda_n\}_{n\ge1}$ and positive integers
+$$
+M_n=\lfloor 2^{nR}\rfloor
+$$
+such that
+$$
+\lim_{n\to\infty}F\!\left(
+\Lambda_n\!\left(\lvert \psi\rangle\!\langle \psi\rvert_{AB}^{\otimes n}\right),
+\lvert \Phi_{M_n}\rangle\!\langle \Phi_{M_n}\rvert
+\right)=1.
+$$
+Here
+$$
+F(\rho,\sigma)=\left\lVert \sqrt\rho\sqrt\sigma\right\rVert_1
+$$
+denotes the quantum fidelity.

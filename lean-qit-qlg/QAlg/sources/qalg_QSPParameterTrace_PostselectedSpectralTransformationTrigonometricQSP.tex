@@ -1,0 +1,47 @@
+Let $U$ be a unitary with spectral decomposition
+$$
+    U=\sum_j e^{\ii x_j}\ketbra{\psi_j}{\psi_j},
+    \qquad x_j\in[-\pi,\pi).
+$$
+Let
+$$
+    P(x)=\sum_{m=-L}^{L}c_m e^{\ii mx}
+$$
+be a trigonometric polynomial with $|P(x)|\leq1$, and use
+$$
+    Y=\begin{pmatrix}0&-\ii\\ \ii&0\end{pmatrix},
+    \qquad
+    Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix},
+    \qquad
+    R_y(\alpha)=e^{-\ii\alpha Y/2},
+    \qquad
+    R_z(\alpha)=e^{-\ii\alpha Z/2}.
+$$
+Suppose a one-qubit trigonometric-QSP sequence with gates $A_\ell=R_y(\theta_\ell)R_z(\phi_\ell)$ has amplitude
+$$
+    \bra0 W(x)\ket0=P(x),
+$$
+where $W(x)$ is obtained by applying, in order, the gates
+$$
+    A_{2L},\,R_z(x),\,A_{2L-1},\,R_z(x),\,\ldots,\,
+    A_2,\,R_z(x),\,A_1,\,R_z(x),\,A_0 .
+$$
+Number the $2L$ occurrences of $R_z(x)$ from left to right.  Define the controlled spectral circuit $\mathcal W_U$ by replacing each odd-numbered occurrence of $R_z(x)$ by
+$$
+    C_1(U)=\ketbra{0}{0}\otimes I+\ketbra{1}{1}\otimes U
+$$
+and each even-numbered occurrence by
+$$
+    C_0(U^\dagger)=\ketbra{0}{0}\otimes U^\dagger+\ketbra{1}{1}\otimes I,
+$$
+with the same one-qubit rotations $A_\ell$ on the control qubit.  Prove that
+$$
+    (\bra0\otimes I)\mathcal W_U(\ket0\otimes I)=P(U),
+    \qquad
+    P(U)=\sum_{m=-L}^{L}c_m U^m .
+$$
+Here $U^m=(U^\dagger)^{-m}$ for $m<0$.
+Consequently, for every input state $\ket\psi$ with $P(U)\ket\psi\neq0$, postselecting the control qubit on outcome $0$ prepares
+$$
+    \frac{P(U)\ket\psi}{\norm{P(U)\ket\psi}_2} .
+$$

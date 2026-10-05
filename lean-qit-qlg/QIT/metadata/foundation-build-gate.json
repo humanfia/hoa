@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "max_iterations": 6,
+  "targets": {
+    "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean": {
+      "status": "materialized",
+      "attempts": 6,
+      "initial_target_sha256": "42f52eee21f26f25f501aae0a9886a657d44783102cc6bc3ae890294f86ce10c",
+      "foundation_file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+      "reason": "foundation compiled with zero open sorries; target hand-off compiled",
+      "certificate": {
+        "schema_version": 1,
+        "route": "needs_redraft",
+        "reason": "The source-required unconditional concavity of quantum conditional entropy still lacks the noncommutative finite-dimensional Lieb three-matrix/strong-subadditivity bridge; the proved subsingleton, constant-marginal, and commuting positive-definite branches do not cover arbitrary ensembles.",
+        "evidence": "Deterministic preflight passed with return code 0 and compiles=true but reported sorry_count=1 and `declaration uses sorry` at theorem line 3358; the sole literal placeholder is source line 3399. Its exact residual context has arbitrary finite C, tau : State ((A × B) × C), htau : tau.matrix.PosDef, and hcomm negating the two sufficient commutation conditions, with goal `(Matrix.trace (NormedSpace.exp (strongSubadditivityHamiltonian tau))).re ≤ 1`. The target-scoped source scan finds exactly this `sorry` and no `admit`, declared `axiom`, `native_decide`, `sorryAx`, macro, or elaborator. The public contract remains faithful: finite density states, nonnegative normalized ensemble weights, exact average-matrix equality, concrete joint and marginal spectral entropies, the mutual-information identity, binary coefficient bounds and exact mixture equality, and exhaustive subsingleton/nontrivial curvature branches are retained. The final curvature classification is kernel-checked by explicit diagonal counterexamples, but it does not discharge the separately requested conditional-entropy concavity justification. The final iteration-106 trace session ends with this same goal and placeholder, and the newest matching nested task result (mtime 1785337111936290641) agrees; the two older artifacts describe earlier reductions of the same gap.",
+        "redraft_kind": "missing_foundational_bridge",
+        "source_proof_event_id": "pipeline:106:QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:proof:6"
+      },
+      "target_sha256": "7b7ae9cb99039bea16319e2db9311939ee27f20a3346f2702a125f44268c6f0e",
+      "foundation_sha256": "23ee7f03b045442796a18c375ba79c39df9267b8ae1b1e3b9399f2a4854a09ed",
+      "last_iter": 106,
+      "last_event_id": "pipeline:106:QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:foundation:6",
+      "history": [
+        {
+          "event_id": "pipeline:106:QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:foundation:1",
+          "iter": 106,
+          "attempt": 1,
+          "status": "materialized",
+          "reason": "foundation compiled with zero open sorries; target hand-off compiled",
+          "result": {
+            "iteration": 106,
+            "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+            "foundation_file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+            "cycle": 1,
+            "attempt": 1,
+            "status": "materialized",
+            "runner_ok": true,
+            "target_changed": true,
+            "attempt_target_changed": true,
+            "target_sha256": "6e2d8430bba8031368978e601d5c1cad14acfcad0c2f4c87beb24db6ce332353",
+            "baseline_target_sha256": "42f52eee21f26f25f501aae0a9886a657d44783102cc6bc3ae890294f86ce10c",
+            "initial_target_sha256": "42f52eee21f26f25f501aae0a9886a657d44783102cc6bc3ae890294f86ce10c",
+            "foundation_changed": true,
+            "foundation_sha256": "d4a555f36f1c52da5fb4f90449a0a43b3958fb5986d2f8b52d33aa76e4946ed3",
+            "foundation_sorry_count": 0,
+            "forbidden_declarations": [],
+            "task_result_updated": true,
+            "target_preflight": {
+              "compiles": true,
+              "sorry_count": 0,
+              "recovered_after_interrupt": true
+            },
+            "foundation_preflight": {
+              "compiles": true,
+              "sorry_count": 0,
+              "recovered_after_interrupt": true
+            },
+            "error": "",
+            "recovered_after_interrupted_worker": true
+          },
+          "recorded_at": "2026-07-29T10:03:58.456064Z"
+        },
+        {
+          "event_id": "pipeline:106:QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:foundation:2",
+          "iter": 106,
+          "attempt": 2,
+          "status": "materialized",
+          "reason": "foundation compiled with zero open sorries; target hand-off compiled",
+          "result": {
+            "iteration": 106,
+            "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+            "foundation_file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+            "cycle": 3,
+            "attempt": 2,
+            "status": "materialized",
+            "runner_ok": true,
+            "target_changed": true,
+            "attempt_target_changed": true,
+            "target_sha256": "853aa143316e7720e76955c14d0ae4efd5cfdadd099682eb80dedd9a1a70bfdb",
+            "baseline_target_sha256": "f7474fbd4ec219c35da2eb366b19b636356ab742812dcd50d610aa796863da26",
+            "initial_target_sha256": "42f52eee21f26f25f501aae0a9886a657d44783102cc6bc3ae890294f86ce10c",
+            "foundation_changed": true,
+            "foundation_sha256": "8d6152e6fa5158331645ecdc982c1525989fff9e3f0e29cac7b307273cf3c9f7",
+            "foundation_sorry_count": 0,
+            "forbidden_declarations": [],
+            "task_result_updated": true,
+            "target_preflight": {
+              "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 1,
+              "duration_secs": 8.085,
+              "diagnostics": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:1286:8: warning: declaration uses `sorry`"
+            },
+            "foundation_preflight": {
+              "file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 0,
+              "duration_secs": 6.356,
+              "diagnostics": ""
+            },
+            "error": ""
+          },
+          "recorded_at": "2026-07-29T11:03:09.843100Z"
+        },
+        {
+          "event_id": "pipeline:106:QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:foundation:3",
+          "iter": 106,
+          "attempt": 3,
+          "status": "materialized",
+          "reason": "foundation compiled with zero open sorries; target hand-off compiled",
+          "result": {
+            "iteration": 106,
+            "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+            "foundation_file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+            "cycle": 4,
+            "attempt": 3,
+            "status": "materialized",
+            "runner_ok": true,
+            "target_changed": true,
+            "attempt_target_changed": false,
+            "target_sha256": "0a1468c36665bc7888ebd5a820b93ce96813186b08f097589b2d833531224802",
+            "baseline_target_sha256": "0a1468c36665bc7888ebd5a820b93ce96813186b08f097589b2d833531224802",
+            "initial_target_sha256": "42f52eee21f26f25f501aae0a9886a657d44783102cc6bc3ae890294f86ce10c",
+            "foundation_changed": true,
+            "foundation_sha256": "5c2b36bd4477236411b0caf18e7b6d3b5aed31b57802a7190abdc4cbf374ce5c",
+            "foundation_sorry_count": 0,
+            "forbidden_declarations": [],
+            "task_result_updated": true,
+            "target_preflight": {
+              "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 1,
+              "duration_secs": 8.575,
+              "diagnostics": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:1472:8: warning: declaration uses `sorry`"
+            },
+            "foundation_preflight": {
+              "file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 0,
+              "duration_secs": 8.466,
+              "diagnostics": ""
+            },
+            "error": ""
+          },
+          "recorded_at": "2026-07-29T12:02:03.254162Z"
+        },
+        {
+          "event_id": "pipeline:106:QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:foundation:4",
+          "iter": 106,
+          "attempt": 4,
+          "status": "materialized",
+          "reason": "foundation compiled with zero open sorries; target hand-off compiled",
+          "result": {
+            "iteration": 106,
+            "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+            "foundation_file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+            "cycle": 5,
+            "attempt": 4,
+            "status": "materialized",
+            "runner_ok": true,
+            "target_changed": true,
+            "attempt_target_changed": false,
+            "target_sha256": "3c6a088ed4d7f335bb1c535b2862ccae0cf5e5c9333dcaf1850cb2437435e241",
+            "baseline_target_sha256": "3c6a088ed4d7f335bb1c535b2862ccae0cf5e5c9333dcaf1850cb2437435e241",
+            "initial_target_sha256": "42f52eee21f26f25f501aae0a9886a657d44783102cc6bc3ae890294f86ce10c",
+            "foundation_changed": true,
+            "foundation_sha256": "9f7c3ead6648fe7be63897c60e2982ed22479bf2c2d1d180cbdcf12bc7fa23c4",
+            "foundation_sorry_count": 0,
+            "forbidden_declarations": [],
+            "task_result_updated": true,
+            "target_preflight": {
+              "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 1,
+              "duration_secs": 10.122,
+              "diagnostics": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:205:4: warning: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:604:0: warning: automatically included section variable(s) unused in theorem `QITBench.ConvexityQuantumMutualInformation.partialTraceA_real_smul`:\n  [DecidableEq A]\n  [Fintype B]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq A] [Fintype B] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:612:0: warning: automatically included section variable(s) unused in theorem `QITBench.ConvexityQuantumMutualInformation.partialTraceB_real_smul`:\n  [Fintype A]\n  [DecidableEq A]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype A] [DecidableEq A] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:620:0: warning: automatically included section variable(s) unused in theorem `QITBench.ConvexityQuantumMutualInformation.partialTraceA_posDef`:\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:649:0: warning: automatically included section variable(s) unused in theorem `QITBench.ConvexityQuantumMutualInformation.partialTraceB_posDef`:\n  [DecidableEq A]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq A] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:948:46: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:2144:8: warning: declaration uses `sorry`"
+            },
+            "foundation_preflight": {
+              "file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 0,
+              "duration_secs": 8.627,
+              "diagnostics": ""
+            },
+            "error": ""
+          },
+          "recorded_at": "2026-07-29T13:13:54.293136Z"
+        },
+        {
+          "event_id": "pipeline:106:QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:foundation:5",
+          "iter": 106,
+          "attempt": 5,
+          "status": "materialized",
+          "reason": "foundation compiled with zero open sorries; target hand-off compiled",
+          "result": {
+            "iteration": 106,
+            "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+            "foundation_file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+            "cycle": 6,
+            "attempt": 5,
+            "status": "materialized",
+            "runner_ok": true,
+            "target_changed": true,
+            "attempt_target_changed": true,
+            "target_sha256": "cbd6d914af40532c6eedaae961ccfc7b6f834843ddb44c4a7dbe8fdd5e5e289e",
+            "baseline_target_sha256": "782fd9b783504c0bd389507693e4882b0bae97044b7ec05cd6a311dafa9b31bd",
+            "initial_target_sha256": "42f52eee21f26f25f501aae0a9886a657d44783102cc6bc3ae890294f86ce10c",
+            "foundation_changed": true,
+            "foundation_sha256": "2be90c3c097e00c34ad23962a378034117d098c8cb308d49d14106a5d6ec5022",
+            "foundation_sorry_count": 0,
+            "forbidden_declarations": [],
+            "task_result_updated": true,
+            "target_preflight": {
+              "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 1,
+              "duration_secs": 12.497,
+              "diagnostics": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:87:8: warning: automatically included section variable(s) unused in theorem `_private.QITFormalized.problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.0.QITBench.ConvexityQuantumMutualInformation.ssaLiftABMatrix_isHermitian`:\n  [Fintype A]\n  [DecidableEq A]\n  [Fintype B]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype A] [DecidableEq A] [Fintype B] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:101:8: warning: automatically included section variable(s) unused in theorem `_private.QITFormalized.problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.0.QITBench.ConvexityQuantumMutualInformation.ssaLiftBCMatrix_isHermitian`:\n  [Fintype A]\n  [Fintype B]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype A] [Fintype B] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:117:8: warning: automatically included section variable(s) unused in theorem `_private.QITFormalized.problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.0.QITBench.ConvexityQuantumMutualInformation.ssaLiftBMatrix_isHermitian`:\n  [Fintype A]\n  [Fintype B]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype A] [Fintype B] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:438:4: warning: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:837:0: warning: automatically included section variable(s) unused in theorem `QITBench.ConvexityQuantumMutualInformation.partialTraceA_real_smul`:\n  [DecidableEq A]\n  [Fintype B]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq A] [Fintype B] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:845:0: warning: automatically included section variable(s) unused in theorem `QITBench.ConvexityQuantumMutualInformation.partialTraceB_real_smul`:\n  [Fintype A]\n  [DecidableEq A]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype A] [DecidableEq A] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:853:0: warning: automatically included section variable(s) unused in theorem `QITBench.ConvexityQuantumMutualInformation.partialTraceA_posDef`:\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_Co\n... [truncated]"
+            },
+            "foundation_preflight": {
+              "file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 0,
+              "duration_secs": 9.483,
+              "diagnostics": ""
+            },
+            "error": ""
+          },
+          "recorded_at": "2026-07-29T14:28:31.504792Z"
+        },
+        {
+          "event_id": "pipeline:106:QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:foundation:6",
+          "iter": 106,
+          "attempt": 6,
+          "status": "materialized",
+          "reason": "foundation compiled with zero open sorries; target hand-off compiled",
+          "result": {
+            "iteration": 106,
+            "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+            "foundation_file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+            "cycle": 7,
+            "attempt": 6,
+            "status": "materialized",
+            "runner_ok": true,
+            "target_changed": true,
+            "attempt_target_changed": true,
+            "target_sha256": "7b7ae9cb99039bea16319e2db9311939ee27f20a3346f2702a125f44268c6f0e",
+            "baseline_target_sha256": "04ab527df0f66d10086efaedd0e456fca23d0882ae5a67859b79509d864096b7",
+            "initial_target_sha256": "42f52eee21f26f25f501aae0a9886a657d44783102cc6bc3ae890294f86ce10c",
+            "foundation_changed": true,
+            "foundation_sha256": "23ee7f03b045442796a18c375ba79c39df9267b8ae1b1e3b9399f2a4854a09ed",
+            "foundation_sorry_count": 0,
+            "forbidden_declarations": [],
+            "task_result_updated": true,
+            "target_preflight": {
+              "file": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 1,
+              "duration_secs": 14.626,
+              "diagnostics": "QITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:87:8: warning: automatically included section variable(s) unused in theorem `_private.QITFormalized.problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.0.QITBench.ConvexityQuantumMutualInformation.ssaLiftABMatrix_isHermitian`:\n  [Fintype A]\n  [DecidableEq A]\n  [Fintype B]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype A] [DecidableEq A] [Fintype B] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:101:8: warning: automatically included section variable(s) unused in theorem `_private.QITFormalized.problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.0.QITBench.ConvexityQuantumMutualInformation.ssaLiftBCMatrix_isHermitian`:\n  [Fintype A]\n  [Fintype B]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype A] [Fintype B] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:117:8: warning: automatically included section variable(s) unused in theorem `_private.QITFormalized.problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.0.QITBench.ConvexityQuantumMutualInformation.ssaLiftBMatrix_isHermitian`:\n  [Fintype A]\n  [Fintype B]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype A] [Fintype B] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:240:8: warning: automatically included section variable(s) unused in theorem `_private.QITFormalized.problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.0.QITBench.ConvexityQuantumMutualInformation.ssaLiftBCMatrix_eq_reindex_one_kronecker`:\n  [Fintype A]\n  [Fintype B]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype A] [Fintype B] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:261:8: warning: automatically included section variable(s) unused in theorem `_private.QITFormalized.problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.0.QITBench.ConvexityQuantumMutualInformation.ssaLiftBMatrix_eq_kronecker_one_kronecker`:\n  [Fintype A]\n  [Fintype B]\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype A] [Fintype B] [DecidableEq B] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nQITFormalized/problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.lean:378:8: warning: automatically included section variable(s) unused in theorem `_private.QITFormalized.problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation.0.QITBench.ConvexityQuantumMutualInformation.trace_ssaLiftAB_mul_ssaLiftBC_mul_ssaLiftB`:\n  [DecidableEq B]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq B] in theorem ...\n\nNote: This\n... [truncated]"
+            },
+            "foundation_preflight": {
+              "file": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 0,
+              "duration_secs": 9.803,
+              "diagnostics": "QITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean:1499:27: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean:1500:16: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean:1500:38: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean:1529:27: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean:1530:16: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQITFoundations/QITFormalized_problem_qit_EntropyCodingAndInformationInequalities_ConvexityQuantumMutualInformation_Foundation.lean:1530:38: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`"
+            },
+            "error": ""
+          },
+          "recorded_at": "2026-07-29T15:26:01.793561Z"
+        }
+      ],
+      "updated_at": "2026-07-29T15:26:01.793583Z"
+    },
+    "QITFormalized/problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration.lean": {
+      "status": "materialized",
+      "attempts": 2,
+      "initial_target_sha256": "6504de31c6a948ce4c5fa7f6faf5c9c673d43286a3b39938cdefc6bc7228dff5",
+      "foundation_file": "QITFoundations/QITFormalized_problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration_Foundation.lean",
+      "reason": "foundation compiled with zero open sorries; target hand-off compiled",
+      "certificate": {
+        "schema_version": 1,
+        "route": "needs_redraft",
+        "reason": "The theorem contract remains faithful and nontrivial, but the available foundations still lack the operational one-shot bridge from the reduced-state spectral truncation and concrete product-Kraus finite-round LOCC semantics to the required maximally-entangled fidelity bound; the main proof therefore ends in an active `sorry`.",
+        "evidence": "Deterministic preflight returns 0 and compiles, but reports sorry_count=1 and `QITFormalized/problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration.lean:1068:8: warning: declaration uses sorry`; the sole hole is source line 1156. Immediately before it the pointwise goal is `quantumFidelity (ρ n).matrix (maximallyEntangledDensity (M n)) ≤ iidSpectralConverseEnvelope p R T n`, with `hnRate : concentrationRate M n > R`, `hsupportRatio : card(iidLowInformationSupport p T n) / M n < 2^(-n(R-T))`, an extracted `P : LOCCProtocol ...`, and `hOutputMatrix` expanding `ρ n` into its rank-one product-Kraus branches. The signature still encodes a normalized bipartite pure state, positive target ranks, dependent finite-round LOCC channels, exact output states, fidelity convergence to one, and the eventual-upper-bound form of the requested limsup conclusion. The iteration-106 trace and newest matching task result both report this same single unresolved one-shot inequality and no closing proof.",
+        "redraft_kind": "missing_foundational_bridge",
+        "source_proof_event_id": "pipeline:106:QITFormalized/problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration.lean:proof:2"
+      },
+      "target_sha256": "ff5551288a3a4c42aa9aa34dcf2a5028b046807fc19cefc0cb38ccd7c113c038",
+      "foundation_sha256": "37820c5cab3cef227c40a4c5baca982555be1eef5b57396f148422068bde2bb7",
+      "last_iter": 106,
+      "last_event_id": "pipeline:106:QITFormalized/problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration.lean:foundation:2",
+      "history": [
+        {
+          "event_id": "pipeline:106:QITFormalized/problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration.lean:foundation:1",
+          "iter": 106,
+          "attempt": 1,
+          "status": "materialized",
+          "reason": "foundation compiled with zero open sorries; target hand-off compiled",
+          "result": {
+            "iteration": 106,
+            "file": "QITFormalized/problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration.lean",
+            "foundation_file": "QITFoundations/QITFormalized_problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration_Foundation.lean",
+            "cycle": 1,
+            "attempt": 1,
+            "status": "materialized",
+            "runner_ok": true,
+            "target_changed": true,
+            "attempt_target_changed": true,
+            "target_sha256": "d288cbb7a453dc7b4653b35ef45fda1a653819b2775590aacac56bd8711b620b",
+            "baseline_target_sha256": "6504de31c6a948ce4c5fa7f6faf5c9c673d43286a3b39938cdefc6bc7228dff5",
+            "initial_target_sha256": "6504de31c6a948ce4c5fa7f6faf5c9c673d43286a3b39938cdefc6bc7228dff5",
+            "foundation_changed": true,
+            "foundation_sha256": "45e18439ca39e98875af42b6511e6b2854a4b9145344ee52246a96d091b32f6c",
+            "foundation_sorry_count": 0,
+            "forbidden_declarations": [],
+            "task_result_updated": true,
+            "target_preflight": {
+              "compiles": true,
+              "sorry_count": 1,
+              "recovered_after_interrupt": true
+            },
+            "foundation_preflight": {
+              "compiles": true,
+              "sorry_count": 0,
+              "recovered_after_interrupt": true
+            },
+            "error": "",
+            "recovered_after_interrupted_worker": true
+          },
+          "recorded_at": "2026-07-29T10:05:53.743363Z"
+        },
+        {
+          "event_id": "pipeline:106:QITFormalized/problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration.lean:foundation:2",
+          "iter": 106,
+          "attempt": 2,
+          "status": "materialized",
+          "reason": "foundation compiled with zero open sorries; target hand-off compiled",
+          "result": {
+            "iteration": 106,
+            "file": "QITFormalized/problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration.lean",
+            "foundation_file": "QITFoundations/QITFormalized_problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration_Foundation.lean",
+            "cycle": 2,
+            "attempt": 2,
+            "status": "materialized",
+            "runner_ok": true,
+            "target_changed": true,
+            "attempt_target_changed": true,
+            "target_sha256": "ff5551288a3a4c42aa9aa34dcf2a5028b046807fc19cefc0cb38ccd7c113c038",
+            "baseline_target_sha256": "73417fb74c699e88af80292b325c12bd23d147da09dd379f94a572c4224a2c1f",
+            "initial_target_sha256": "6504de31c6a948ce4c5fa7f6faf5c9c673d43286a3b39938cdefc6bc7228dff5",
+            "foundation_changed": true,
+            "foundation_sha256": "37820c5cab3cef227c40a4c5baca982555be1eef5b57396f148422068bde2bb7",
+            "foundation_sorry_count": 0,
+            "forbidden_declarations": [],
+            "task_result_updated": true,
+            "target_preflight": {
+              "file": "QITFormalized/problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 1,
+              "duration_secs": 6.667,
+              "diagnostics": "QITFormalized/problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration.lean:1068:8: warning: declaration uses `sorry`"
+            },
+            "foundation_preflight": {
+              "file": "QITFoundations/QITFormalized_problem_qit_OneShotEntropiesAndHypothesisTesting_ConverseEntanglementConcentration_Foundation.lean",
+              "status": "passed",
+              "compiles": true,
+              "returncode": 0,
+              "sorry_count": 0,
+              "duration_secs": 8.801,
+              "diagnostics": ""
+            },
+            "error": ""
+          },
+          "recorded_at": "2026-07-29T11:59:30.472994Z"
+        }
+      ],
+      "updated_at": "2026-07-29T11:59:30.473013Z"
+    }
+  },
+  "updated_at": "2026-07-29T15:26:01.793592Z"
+}

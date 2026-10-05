@@ -1,0 +1,23 @@
+Let $\mathcal H$ be a finite $d$-dimensional Hilbert space.  Let $\rho$ and $\sigma$ be full-rank density operators on $\mathcal H$, both with simple spectra:
+$$
+    \rho=\sum_{i=1}^d r_i\ketbra{r_i}{r_i},
+    \qquad
+    \sigma=\sum_{j=1}^d s_j\ketbra{s_j}{s_j},
+$$
+where $r_i\neq r_{i'}$ for $i\neq i'$ and $s_j\neq s_{j'}$ for $j\neq j'$.  Assume the two eigenbases have no zero cross-overlaps:
+$$
+    \braket{r_i}{s_j}\neq0
+    \qquad
+    \text{for all }i,j\in\{1,\dots,d\}.
+$$
+Let $W$ be a unitary satisfying
+$$
+    W\rho W^\dagger=\rho,
+    \qquad
+    W\sigma W^\dagger=\sigma.
+$$
+Prove that $W$ must be a scalar unitary:
+$$
+    W=e^{\ii\theta}I
+$$
+for some $\theta\in\R$.  Equivalently, prove that the common unitary stabilizer of $\rho$ and $\sigma$ is exactly $U(1)I$.

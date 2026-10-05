@@ -1,0 +1,9 @@
+Let $x,N\in\N^+$, with $x<N$ and $\gcd(x,N)=1$.  Let $r$ be the multiplicative order of $x$ modulo $N$.  Define
+$$
+    U_x\ket{y}=\ket{xy\bmod N}
+$$
+on the span of $\ket0,\dots,\ket{N-1}$.  For $s\in\{0,\dots,r-1\}$, define
+$$
+    \ket{\psi_s}=\frac1{\sqrt r}\sum_{k=0}^{r-1}e^{-2\pi\ii sk/r}\ket{x^k\bmod N}.
+$$
+Prove that $\ket{\psi_s}$ is an eigenvector of $U_x$ with eigenvalue $e^{2\pi\ii s/r}$.

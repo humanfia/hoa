@@ -1,0 +1,47 @@
+Let $N=2^n$.  Consider an $n$-qubit parametrized circuit
+$$
+    U(\boldsymbol\theta)
+    =
+    \prod_{\ell=1}^L e^{\ii\theta_\ell H_\ell},
+$$
+where each $H_\ell$ is Hermitian and $\ii H_\ell\in\mathfrak u(N)$.  Let
+$$
+    \mathfrak g=\operatorname{Lie}\langle \ii H_1,\dots,\ii H_L\rangle
+$$
+be the dynamical Lie algebra, and assume $\mathfrak g=\mathfrak{su}(N)$.
+
+Assume that the distance of the $L$-layer second-moment operator from the Haar second-moment operator, restricted to the nontrivial two-copy subspace, is at most $(1-\gamma)^L$, where
+$$
+    \gamma\geq \frac1{p(n)}
+$$
+for some polynomial $p$.  Call the $L$-layer ensemble an $\epsilon$-approximate unitary $2$-design whenever this distance is at most $\epsilon$.  Prove that it is sufficient that
+$$
+    L
+    \geq
+    \frac{\log(1/\epsilon)}
+    {\log(1/(1-\gamma))}.
+$$
+Prove that for $\epsilon=n^{-c}$, where $c>0$ is fixed, it is sufficient to take
+$$
+    L=O(p(n)\log n).
+$$
+
+Now assume exact Haar randomness on $SU(N)$.  Let $O$ be a traceless Hermitian observable with $\tr(O^2)\leq N$, and define
+$$
+    f_U(\rho,O)=\tr(U\rho U^\dagger O).
+$$
+Prove that $\mathbb E_U f_U(\rho,O)=0$ for every density operator $\rho$.  Under the additional assumption that $\rho=\proj{\psi}$ is pure, let $\mathbb S$ be the swap operator on $\C^N\otimes\C^N$, and assume the Haar identity
+$$
+    \mathbb E_U\bigl[(U\rho U^\dagger)^{\otimes2}\bigr]
+    =
+    \frac{I+\mathbb S}{N(N+1)}
+$$
+to prove
+$$
+    \operatorname{Var}_U(f_U(\rho,O))
+    =
+    \frac{\tr(O^2)}{N(N+1)}
+    \leq
+    \frac1{N+1}.
+$$
+State the resulting exponential-in-$n$ fluctuation bound under these assumptions.

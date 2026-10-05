@@ -1,0 +1,29 @@
+Let $\rho$ be a density matrix and $O$ an observable on $\C^2\otimes\C^2\otimes\mathcal K$, where $\mathcal K$ is an arbitrary finite-dimensional spectator space.  Define
+$$
+    \begin{aligned}
+    X&=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+    &
+    Z&=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\\
+    V(\theta)&=\bigl(R_X(\theta)\otimes R_Z(\theta)\bigr)\otimes I_{\mathcal K},
+    &
+    \mathcal L(\theta)&=\tr\!\left[O\,V(\theta)\rho V(\theta)^\dagger\right],
+    \end{aligned}
+$$
+where $R_P(\theta)=e^{-\ii P\theta/2}$ for $P\in\{X,Z\}$.  Prove the parameter-shift identity
+$$
+    \frac{d}{d\theta}\mathcal L(\theta)
+    =
+    \frac{2+\sqrt2}{4}
+    \left[
+        \mathcal L\!\left(\theta+\frac\pi4\right)
+        -
+        \mathcal L\!\left(\theta-\frac\pi4\right)
+    \right]
+    +
+    \frac{2-\sqrt2}{4}
+    \left[
+        \mathcal L\!\left(\theta-\frac{3\pi}{4}\right)
+        -
+        \mathcal L\!\left(\theta+\frac{3\pi}{4}\right)
+    \right].
+$$

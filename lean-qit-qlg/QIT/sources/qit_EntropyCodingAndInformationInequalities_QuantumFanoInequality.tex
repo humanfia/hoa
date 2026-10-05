@@ -1,0 +1,51 @@
+Let $\rho_A\in \cS(\cH_A)$ be a density operator on a $d$-dimensional system $A$. Let
+$$
+\ket{\psi}_{RA}\in \cH_R\otimes \cH_A
+$$
+be a purification of $\rho_A$, where $\cH_R\cong \cH_A$. Let
+$$
+\cE_{A\to B}:\cL(\cH_A)\to \cL(\cH_B)
+$$
+be a quantum channel with $\cH_B\cong \cH_A$. Define
+$$
+\rho_{RB}
+=
+(\id_R\otimes \cE_{A\to B})
+\left(
+\ket{\psi}\bra{\psi}_{RA}
+\right).
+$$
+The exchange entropy is
+$$
+S(R,B)=S(\rho_{RB}),
+$$
+and the entanglement fidelity is
+$$
+F_e
+=
+\bra{\psi}\rho_{RB}\ket{\psi}.
+$$
+
+Let
+$$
+P=\ket{\psi}\bra{\psi},
+\qquad
+Q=\Id-P.
+$$
+By considering the binary partition $\{P,Q\}$ on the joint system $RB$, prove the Quantum Fano Inequality
+$$
+S(\rho_{RB})
+\leq
+H(F_e)
++
+(1-F_e)\log_2(d^2-1),
+$$
+where
+$$
+H(F_e)
+=
+-F_e\log_2 F_e
+-
+(1-F_e)\log_2(1-F_e)
+$$
+is the binary entropy.

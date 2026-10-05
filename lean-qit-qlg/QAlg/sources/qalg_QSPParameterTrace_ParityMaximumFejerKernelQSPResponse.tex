@@ -1,0 +1,50 @@
+In single-qubit quantum signal processing, define for $a\in[-1,1]$
+$$
+    W_x(a)
+    =
+    \begin{pmatrix}
+        a & \ii\sqrt{1-a^2}\\
+        \ii\sqrt{1-a^2} & a
+    \end{pmatrix}.
+$$
+For a phase sequence
+$$
+    \vec\phi=(\phi_0,\phi_1,\dots,\phi_k)\in\R^{k+1},
+$$
+let
+$$
+    Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix},
+$$
+and define
+$$
+    U_{\vec\phi}(a)
+    =
+    e^{\ii\phi_0 Z}
+    \prod_{j=1}^k
+    W_x(a)e^{\ii\phi_jZ},
+    \qquad
+    A(a)=\bra{0}U_{\vec\phi}(a)\ket{0}.
+$$
+Prove that $A(a)$ is a complex polynomial in $a$ of degree at most $k$, and that its parity agrees with the parity of $k$:
+$$
+    A(-a)=(-1)^kA(a).
+$$
+
+Independently, let
+$$
+    P(a)
+    =
+    \sum_{\ell=-k}^{k}
+    \frac{k-|\ell|+1}{(k+1)^2}
+    e^{2\ii\ell\arccos(a)}.
+$$
+Set $\theta=2\arccos(a)$.  Prove that
+$$
+    P(a)
+    =
+    \frac1{(k+1)^2}
+    \left|
+        \sum_{m=0}^{k}e^{\ii m\theta}
+    \right|^2.
+$$
+Prove that $0\leq P(a)\leq1$ for all $a\in[-1,1]$, and that $P(1)=1$.

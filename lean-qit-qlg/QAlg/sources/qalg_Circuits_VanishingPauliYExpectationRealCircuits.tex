@@ -1,0 +1,19 @@
+Let $\mathcal H=(\C^2)^{\otimes n}$ with the computational basis.  Suppose a quantum circuit $U$ is constructed only from gates whose matrices are real in this basis, such as $R_y$-rotations and CNOT gates.  Thus $U=U^*$, and since $U$ is unitary it is also orthogonal:
+$$
+    U^T=U^\dagger.
+$$
+Let
+$$
+    \ket{\psi}=U\ket{0^n}.
+$$
+For $k\in\{1,\dots,n\}$, define
+$$
+    Y_k=I^{\otimes(k-1)}\otimes Y\otimes I^{\otimes(n-k)},
+    \qquad
+    Y=\begin{pmatrix}0&-\ii\\ \ii&0\end{pmatrix}.
+$$
+Prove that
+$$
+    \bra{\psi}Y_k\ket{\psi}=0
+$$
+for every $k$.  More generally, prove that every purely imaginary skew-symmetric observable has zero expectation value on any real normalized quantum state.

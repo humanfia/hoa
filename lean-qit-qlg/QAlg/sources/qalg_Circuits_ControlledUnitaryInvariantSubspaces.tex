@@ -1,0 +1,16 @@
+Let $U$ be an $n$-qubit unitary with spectral decomposition
+$$
+    U=\sum_j e^{\ii x_j}\ketbra{\psi_j}{\psi_j}.
+$$
+Define the controlled unitary
+$$
+    C(U)=\ketbra{0}{0}\otimes I+\ketbra{1}{1}\otimes U.
+$$
+Prove that each two-dimensional subspace
+$$
+    \operatorname{span}\{\ket{0}\ket{\psi_j},\ket{1}\ket{\psi_j}\}
+$$
+is invariant under $C(U)$, and that the matrix of $C(U)$ on this subspace is
+$$
+    \begin{pmatrix}1&0\\0&e^{\ii x_j}\end{pmatrix}.
+$$
