@@ -1,0 +1,23 @@
+name = "ipho-2026-gpt56sol-blind"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["Ipho2026Gpt56solBlind"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.32.0"
+
+[[require]]
+name = "PhysLean"
+git = "https://github.com/HEPLean/PhysLean"
+rev = "master"
+
+[[lean_lib]]
+name = "Ipho2026Gpt56solBlind"
