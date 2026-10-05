@@ -103,7 +103,9 @@ jobs:
         run: |
           case "$PROJECT" in
             chemlib) dir=chemlib/chemlib ;;
-            imo2026) dir=imo2026/base ;;
+            # imo2026/base has no MathFlowBench.lean root; the run harness
+            # writes one per workspace. Build the cache-warming module instead.
+            imo2026) dir=imo2026/base; build_args=MathFlowBench.CacheWarm ;;
             ipho2026-gpt) dir=ipho2026 ;;
             ipho2026-kimi) dir=ipho2026/Kimi ;;
             icho2026-gpt-answer-blind) dir=icho2026/gpt-5.6-sol-answer-blind ;;
@@ -115,6 +117,7 @@ jobs:
             *) echo "unknown project: $PROJECT" >&2; exit 1 ;;
           esac
           echo "dir=$dir" >> "$GITHUB_OUTPUT"
+          echo "build-args=${build_args:-}" >> "$GITHUB_OUTPUT"
 
       # ipho2026/Kimi ships no lake-manifest.json; its README resolves one with
       # `lake update`, so do the same here before lean-action runs.
@@ -129,6 +132,7 @@ jobs:
         uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
         with:
           lake-package-directory: ${{ steps.package.outputs.dir }}
+          build-args: ${{ steps.package.outputs.build-args }}
           auto-config: false
           build: true
           test: false
