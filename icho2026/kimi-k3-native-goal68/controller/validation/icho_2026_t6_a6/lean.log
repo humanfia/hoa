@@ -1,0 +1,8 @@
+'IChO2026T6A6.icho_2026_t6_a6_structures' depends on axioms: [propext]
+'IChO2026T6A6.M_formula_counts' depends on axioms: [propext]
+'IChO2026T6A6.M_four_proton_types' depends on axioms: [propext]
+'IChO2026T6A6.N_aldehyde' depends on axioms: [propext]
+'IChO2026T6A6.O_trans_meso' depends on axioms: [propext]
+'IChO2026T6A6.Q_beta_pattern' depends on axioms: [propext]
+'IChO2026T6A6.R_terminal_alkynes' depends on axioms: [propext]
+'IChO2026T6A6.template_six_arms' depends on axioms: [propext]

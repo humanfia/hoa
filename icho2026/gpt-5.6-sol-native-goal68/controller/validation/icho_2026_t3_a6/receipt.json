@@ -1,0 +1,60 @@
+{
+  "target": "icho_2026_t3_a6",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301231.6493084,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t3_a6.lean": "af82005dbedca7f27da25fa4aa736491a170ff03764918ca0889c55505434ad6",
+    "answer.md": "6ddeee83a6e2771201470480a73f075e57ddf60b46ea4bde876bbdc8494b773d",
+    "verification.md": "0b4b59faa425fd74957a6677ea472c816b6d2f50be15f04a358d6224a311a622",
+    "result.json": "56ea78e8ec8f843fd71f136a909b73bb2de9a812494e7a389f31cbc525d486ff"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t3_a6",
+    "status": "completed",
+    "answer_summary": {
+      "stacking_energy_aa_kJ_mol^-1": -38.3,
+      "stacking_energy_ab_kJ_mol^-1": -49.8,
+      "stacking_energy_ab_prime_kJ_mol^-1": -55.6
+    },
+    "theorem_names": [
+      "IChO2026Problems.T3A6.stacking_energy_aa",
+      "IChO2026Problems.T3A6.stacking_energy_ab",
+      "IChO2026Problems.T3A6.stacking_energy_ab_prime",
+      "IChO2026Problems.T3A6.aa_submission_valid",
+      "IChO2026Problems.T3A6.ab_submission_valid",
+      "IChO2026Problems.T3A6.ab_prime_submission_valid"
+    ],
+    "assumptions": [
+      "The problem's tabulated pair energies add over the aromatic overlaps in one repeat area.",
+      "The AA and AB labels select the centred table geometry; the corresponding prime labels select the slightly shifted/slipped geometry, as explicitly described for AA-prime.",
+      "The displayed E1 + D2 repeat unit contains one E1 benzene, three D2 phenylene rings, and one D2 triazine.",
+      "The displayed AB translation gives one benzene-triazine aromatic overlap per repeat area; all other sites lie over non-aromatic regions or pores."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t3_a6.lean",
+      "lake build IChO2026Problems.problem_icho_2026_t3_a6",
+      "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t3_a6.lean",
+      "python3 -m json.tool result.json >/dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

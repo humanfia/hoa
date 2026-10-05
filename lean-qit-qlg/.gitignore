@@ -1,0 +1,6 @@
+# Lean/Lake build products and editor-local files
+**/.lake/
+**/.elan/
+.direnv/
+.env
+.DS_Store

@@ -1,0 +1,59 @@
+{
+  "target": "icho_2026_t7_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302361.3403277,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t7_a2.lean": "99c6531c48cfae720d1aae2b64a1c56f4fb33aa441db9245b8a84e035b66adf5",
+    "answer.md": "999fb0816ec7b6e3502c2109ecb69c54626b639ff3ce9a92a4c512550792870c",
+    "verification.md": "a3aca14e9ba9158f747ae463983ea5ca08b932d2cce9fe491ded6f428e5cb6cc",
+    "result.json": "bfc284828d7a665d6321ad8c5f89aa65161ccf8d8e655f1e16ddf882e19eb720"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t7_a2",
+    "status": "completed",
+    "answer_summary": "Fig. 1 gives a derived mole ratio n(CH4):n(NH3,theoretical) = 7:16. With the printed molar masses and 97.0% overall yield, the exact raw requirement is 77202125000/275383 = 280344.556490... tons CH4 per year, reported to three significant figures as 2.80e5 tons.",
+    "theorem_names": [
+      "IChO2026Problems.T7A2.fig1_feed_relation",
+      "IChO2026Problems.T7A2.fig1_methane_ammonia_relation",
+      "IChO2026Problems.T7A2.fig1_labeled_air_unique",
+      "IChO2026Problems.T7A2.fig1_labeled_air_basis",
+      "IChO2026Problems.T7A2.fig1_methane_per_theoretical_ammonia",
+      "IChO2026Problems.T7A2.printed_molar_masses",
+      "IChO2026Problems.T7A2.yield_mass_balance",
+      "IChO2026Problems.T7A2.annual_methane_mass_exact",
+      "IChO2026Problems.T7A2.annual_methane_submission_valid",
+      "IChO2026Problems.T7A2.annual_methane_mass_required"
+    ],
+    "assumptions": [
+      "All Fig. 1 reactions other than NH3 formation are quantitative, exactly as stipulated by the problem.",
+      "The air stream has the displayed 4 mol N2 per 1 mol O2, and the synthesis/recycle loop uses the displayed N2 + 3 H2 stoichiometry.",
+      "The stated 97.0% overall yield means actual ammonia output equals 0.970 times theoretical ammonia output.",
+      "The printed periodic-table atomic masses H = 1.008, C = 12.01, and N = 14.01 are exact stipulated inputs under TASK.json's measurement policy.",
+      "The final display follows TASK.json's three-significant-figure, half-away-from-zero reporting policy without intermediate rounding."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem  # exit 0: Build completed successfully (8561 jobs)",
+      "lake env lean IChO2026Problems/problem_icho_2026_t7_a2.lean  # exit 0; only propext, Classical.choice, Quot.sound reported by #print axioms",
+      "grep -nE '\\b(sorry|admit)\\b|unsafe' IChO2026Problems/problem_icho_2026_t7_a2.lean  # exit 1 with no output (no matches)"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

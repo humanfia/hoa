@@ -1,0 +1,5 @@
+'IChO2026Problems.Icho2026T4A9.Derived.total_fissions_output' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.Icho2026T4A9.Derived.enriched_uranium_mass_output' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.Icho2026T4A9.Derived.requested_outputs' depends on axioms: [propext, Classical.choice, Quot.sound]

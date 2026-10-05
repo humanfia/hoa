@@ -1,0 +1,52 @@
+All checks are complete. Here is my final review.
+
+```json
+{
+  "target_id": "icho_2026_t3_a6",
+  "semantic_status": "conditional",
+  "proof_status": "conditional",
+  "reason": "I independently inspected the source PDF (theory_problem.pdf p.30), page images T3_page-5/6.png, and the blank answer sheet A3-4. The problem's numeric inputs are exactly as the candidate used them: b-b = -7.9 (eclipsed) / -12.6 (slipped), b-t = -49.8 / -55.6, t-t = -6.7 / -16.7 kJ/mol, with column-schematic geometries (first = eclipsed face-to-face, second = slipped), the AA' datum -67.1 kJ/mol, and COF-8 built from D2 (2,4,6-tris(4-formylphenyl)-1,3,5-triazine) + E1 (benzene-1,3,5-triacetonitrile) through C=C linkages. Figure (c) confirms AB = honeycomb layers offset so the blue layer's vertices sit over the red layer's hexagon-hole centres (AB' is the complementary registry). From the printed repeat unit I independently counted 1 triazine ring and 10 benzene rings per layer per repeat unit (3 phenylene arms per triazine vertex; each edge = D2 [4 phenylene] + E1 [1 benzene] shared by the 2 vertices it joins, giving 6 edges x 5/2 = 15; total 3+15=18 rings across 2 vertices per repeat unit, i.e. 9+1 per vertex; arm phenylenes shared by 2 edges). The candidate's contact multiplicities (AA: 1 t-t eclipsed + 10 b-b eclipsed; AB: 6 slipped b-b; AB': 6 slipped b-t, with the hole-centred triazines stacking over the empty hexagon interior) are geometrically consistent with the figures and with the problem's stated approximation, giving -85.7, -75.6, -333.6 kJ/mol at 3 s.f. The arithmetic is exactly correct and the formalisation elaborates cleanly with only standard Lean axioms ([propext, Classical.choice, Quot.sound]); no sorry/admit/axiom/native_decide/unsafe/implemented_by anywhere. However, the requested energies rest on modelling choices only pictorially supported by the problem: the definitive choice of slipped vs eclipsed table column for the AB/AB' contacts (the slipped column schematic does not unambiguously show centroid-offset-onto-gap vs merely centroid-to-face-offset), the assumption that out-of-registry vertices/edges stack with nothing, and that AB' faces benzene rings onto triazine rings (b-t = -55.6 slipped) rather than b-b. These conventions are exactly read off the printed figures, but they are result-shaping assumptions the Lean file asserts as definitions (the candidate itself discloses this in result.json source_gaps and verification.md), and the contact multiplicities are not proved from any formal honeycomb model. Per the review rule that model conventions beyond what the source text unambiguously fixes cannot receive unconditional passed status, this is conditional throughout: the outputs are correctly computed and faithfully formalised, but the semantic chain 'figure -> multiplicities' is asserted, not formally established, and rests on a (well-supported but extra-textual) reading of the slipped geometry.",
+  "coverage": [
+    {
+      "output_id": "stacking_energy_aa",
+      "status": "conditional",
+      "theorem": "IChO2026T3A6.stacking_energy_aa",
+      "evidence": "Theorem states E_AA = -85.7 with E_AA := 1*E_tt_ecl + 10*E_bb_ecl; norm_num proves it from printed values -6.7 and -7.9 (verified against PDF p.30 table). #print axioms = [propext, Classical.choice, Quot.sound] (re-run independently, exit 0). 1 t-t + 10 b-b eclipsed contacts matches independent ring count from the printed COF-8 repeat unit (1 triazine + 10 benzene per layer per repeat unit, fully eclipsed AA per figure (a)). Conditional because the multiplicity 10 and the eclipsed assignment are asserted definitions distilled from the figure, not formally derived."
+    },
+    {
+      "output_id": "stacking_energy_ab",
+      "status": "conditional",
+      "theorem": "IChO2026T3A6.stacking_energy_ab",
+      "evidence": "Theorem states E_AB = -75.6 with E_AB := 6*E_bb_slp; norm_num proves it from printed -12.6 (slipped b-b column, verified against PDF table). AB registry (blue vertices over red hexagon-hole centres) confirmed by direct inspection of figure (c) in T3_page-6.png. Conditional because the count of 6 slipped b-b contacts, the choice of the slipped column over the eclipsed column, and the assumption that hole-centred triazines stack with nothing are geometry readings asserted as definitions, not theorems."
+    },
+    {
+      "output_id": "stacking_energy_ab_prime",
+      "status": "conditional",
+      "theorem": "IChO2026T3A6.stacking_energy_ab_prime",
+      "evidence": "Theorem states E_AB' = -333.6 with E_AB' := 6*E_bt_slp; norm_num proves it from printed -55.6 (slipped b-t column, verified against PDF table). AB' = complementary hole-centred registry is a defensible reading of the AB/AB' dichotomy; the associated arithmetic inequivalence fact (centroids_distinct) is genuinely proved by linarith. Conditional because the assignment of all 6 edge contacts as slipped b-t (i.e. benzene rings facing triazine rings) is an asserted modelling reading of the figure, neither explicit in text nor formally established."
+    }
+  ],
+  "unsupported_assumptions": [
+    "AB/AB' contacts are modelled with the slipped (-12.6 / -55.6) rather than eclipsed (-7.9 / -49.8) table columns; the table's second-column schematic is only pictorial, so the column assignment is a figure-derived modelling convention.",
+    "Ring-contact multiplicities (10 b-b in AA; 6 b-b in AB; 6 b-t in AB') are asserted as Lean definitions rather than proved from a formal honeycomb/repeat-unit model (disclosed honestly in result.json source_gaps).",
+    "In AB/AB', honeycomb vertices and edges that do not align are assumed to contribute zero pi-pi energy ('stacking with nothing' inside the hexagon holes), an approximation implicit in, but not verbatim stated by, the problem.",
+    "In AB', the 6 contacted pairs face benzene onto triazine (b-t) rather than benzene onto benzene (b-b); this registry-specific reading comes only from the candidate's interpretation of the stacking figures."
+  ],
+  "source_checks": [
+    "pdftotext-equivalent extraction of theory_problem.pdf p.30 confirmed the verbatim question ('Calculate the pi-pi stacking energy ... for the AA, AB and AB' arrangements. Assume pi-pi stacking happens only between aromatic units.') and the exact table entries -7.9/-12.6, -49.8/-55.6, -6.7/-16.7 kJ/mol.",
+    "Rendered p.30 at 300 dpi and inspected the interaction-geometry column schematics (first column = eclipsed face-to-face rings with coincident centroids; second = slipped/offset rings), the stacking-mode figure ((a) AA eclipsed red-on-red; (b) AA' slightly shifted; (c) AB with blue honeycomb vertices over red hexagon-hole centres), and the full COF-8 structure with D2/E1 monomers.",
+    "Independently counted aromatic rings per COF-8 layer per repeat unit from the printed structure: 1 triazine ring and 10 benzene/phenylene rings (3 arm phenylenes + 6 edges x (4 D2-phenylene + 1 E1-benzene)/2 sharing), matching the candidate's count; vinyl C=C and nitrile carbons correctly excluded per the problem's assumption.",
+    "Confirmed D2 = 2,4,6-tris(4-formylphenyl)-1,3,5-triazine and E1 = benzene-1,3,5-triacetonitrile, and that COF-8 edges are formed via C=C condensation (consistent with 'C=C bonds' shared context).",
+    "Inspected blank answer sheet A3-4 (PDF p.35): AA', AB, AB' columns with -67.1 pre-filled under AA' and the AA/AB/AB' cells empty, confirming the three requested outputs and the given datum.",
+    "Cross-checked candidate outputs for internal consistency: -85.7 < -67.1 (AA') < 0 ordering, -75.6 = 6x-12.6, -333.6 = 6x-55.6; all arithmetic exact; 3 s.f. display matches printed table precision."
+  ],
+  "proof_checks": [
+    "Re-ran lake env lean IChO2026Problems/ProblemIcho2026T3A6.lean independently: exit 0; #print axioms for stacking_energy_aa, stacking_energy_ab, stacking_energy_ab_prime, requested_outputs_summary and aa_prime_datum_ordering all report exactly [propext, Classical.choice, Quot.sound] - no sorryAx or custom axioms.",
+    "Grepped all project Lean sources for sorry/admit/axiom/native_decide/unsafe/opaque/implemented_by: only the '#print axioms' commands themselves matched; no forbidden constructs present.",
+    "Verified the final theorems state the requested quantities as concrete real-number equalities over ℝ (E_AA = -85.7 etc.) defined as contact-sum expressions from the printed table constants - not tautologies, unsupported constructors, or answer-tables.",
+    "Each proof is norm_num over the definition and printed decimal constants; arithmetic (1*-6.7 + 10*-7.9 = -85.7; 6*-12.6 = -75.6; 6*-55.6 = -333.6) independently reproduced exactly.",
+    "requested_outputs_summary bundles exactly the three requested outputs; centroids_distinct (linarith) genuinely proves the stated inequality rather than encoding the answer; aa_prime_datum_ordering is an honestly-labelled consistency check not used in the outputs.",
+    "The scientific gap is structural, not logical: E_AA/E_AB/E_AB' ring-contact multiplicities are introduced as definitions (assertions distilled from figures), so the formal proof covers arithmetic from modelled inputs, not derivation of the model from formalised geometry - hence conditional rather than passed."
+  ]
+}
+```

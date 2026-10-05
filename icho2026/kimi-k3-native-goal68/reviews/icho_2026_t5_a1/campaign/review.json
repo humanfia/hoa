@@ -1,0 +1,49 @@
+All checks are complete. I independently verified the source page pixels, recompiled the Lean file, and re-ran the axiom inspection myself. Here is my assessment.
+
+Source findings (T5 page 1, verified at high zoom):
+
+- Fragment b is drawn as P with a **dashed** (=fixed, internal) P=O, **one** explicit P–OH, and **two** star valences — i.e. the fragment carries exactly one acidic proton, not two as the candidate's answer.md table claims.
+- The worked example W assembles a–e with **exact atom conservation**: every star–star join preserves all atoms; fragment e's 〰–OH lands as the intact glycerol hydroxyl (H–O, with the H planted by the a-cap where e planted OH on the same star), and the d–c join is a plain ether/ester linkage with **no water eliminated**. There is no basis anywhere on the page for the candidate's law "every inter-fragment bond eliminates H₂O consuming one transferable hydrogen" — its pixels contradict it.
+- The candidate's Lean model defines `transferableH := 2a + n`, counting the capping star–H fragments as "transferable", which no condensation grammar supports — a star–star join conserves atoms, so the cap stays put.
+
+The decisive point: with the correct valence pairing 2k = 2a+3b+c+n = 13+n, the candidate's hydrogen-balance hypothesis k = 2a+n is algebraically **equivalent to n = 9 itself** — it is a result-shaped assumption that adds no independent physical content, then presented as an independent balance. The honest derivation (valence handshake alone ⇒ n ≡ 3b+c ≡ 13 ≡ 1 mod 2, using the problem's stated existence of an assembly) proves the tick without that premise. The final tick (b, n odd) is nevertheless the correct answer to the problem, and it matches my independent derivation.
+
+Lean findings: file recompiles cleanly under the pinned toolchain; no sorry/admit/custom axioms/native_decide; my own `#print axioms` run reproduces the reported standard-axioms-only result ([propext, Classical.choice, Quot.sound]); proofs are not vacuous (witness at n=9 included); final theorems do express the requested classification. The defect is semantic: the `Recipe.Feasible.hH` premise is a source-contradicted, result-shaped condition.
+
+```json
+{
+  "target_id": "icho_2026_t5_a1",
+  "semantic_status": "conditional",
+  "proof_status": "passed",
+  "reason": "The ticked answer (b) - n is odd - is correct and matches my independent source-first derivation, and the Lean development compiles cleanly with only standard axioms, no sorry/admit/native_decide/custom axioms, and non-vacuous, correctly phrased final theorems (oddness, exclusion of options a and c, existence witness). However, the supporting scientific model is not source-faithful: (1) fragment b is drawn on T5 page 1 with a fixed (internal) P=O, one explicit P-OH and exactly two star valences, so it carries only one acidic proton, not the '2 transferable P-OH protons' the candidate claims; (2) the worked example W on the same page demonstrates exact atom conservation at every star-star join (the d-c ether/ester linkage and the e-OH landing intact as the glycerol hydroxyl show no water is eliminated; the a-cap plants precisely the hydrogen that e's OH would have placed), so the candidate's law 'every inter-fragment bond eliminates H2O and consumes one transferable hydrogen' is contradicted by the problem page's own pixels; (3) the Formalized hydrogen-balance hypothesis k = 2a+n, given the valence handshake 2k = 2a+3b+c+n = 13+n, is algebraically equivalent to the answer n = 9 itself, i.e. a result-shaped assumption rather than an independent balance. The correct justification - valence pairing alone forces n ≡ 3b+c ≡ 1 (mod 2) for any assembly, combined with the problem's stated guarantee that an assembly exists - is never made. Because the final answer is correct and proved but rests on unsupported, source-contradicted model conditions, this warrants conditional, not passed, status.",
+  "coverage": [
+    {
+      "output_id": "fragment_parity_statement",
+      "status": "conditional",
+      "theorem": "IChO2026T5A1.t5_a1_answer (backed by answer_b_n_is_odd, answer_a_n_even_impossible, answer_c_parity_not_free, n_mod_two_eq_one, n_eq_nine, pl1_feasible_at_nine)",
+      "evidence": "t5_a1_answer proves every Feasible PL1 assembly has Odd n, uniquely n = 9, and exhibits a feasible witness at n = 9 - exactly the required tick-one-statement classification (b), excluding (a) and (c). Independently recompiled with lake env lean (exit 0) and re-ran #print axioms myself: only [propext, Classical.choice, Quot.sound], witness axiom-free. Conditional because the decisive premise Recipe.Feasible.hH (bonds = 2*phosphates + n caps, presented as a condensation/hydrogen-conservation law) is not grounded in the source: the worked example W shows atom-conserving star-star joins with no water elimination, fragment b carries one (not two) acidic protons, and n capping hydrogens are not transferable; with the valence pairing 2k = 13+n, hH is equivalent to the conclusion n = 9, so the proof leans on a result-shaped, source-contradicted assumption instead of the honest parity argument (n ≡ 3b+c mod 2 from valence counting plus the problem's existence guarantee), which would by itself prove the same correct answer."
+    }
+  ],
+  "unsupported_assumptions": [
+    "Condensation stoichiometry law ('every inter-fragment bond eliminates H2O and consumes exactly one transferable hydrogen'): contradicted by the worked example W on T5 page 1, where star-star joins conserve atoms exactly (d-c ether/ester linkage with no eliminated atoms; e's intact OH landing as the glycerol hydroxyl).",
+    "Fragment b read as carrying 2 transferable (P-OH) protons: the drawing shows a fixed dashed P=O, one explicit P-OH and two star valences - one acidic proton per phosphate fragment.",
+    "Counting the n star-H capping fragments as 'transferable hydrogens' (transferableH := 2a + n): the a-cap plants a hydrogen at the capped star and it stays in the molecule; no grammar on the page treats it as consumable.",
+    "The hydrogen-balance premise k = 2a + n is result-shaped: combined with the valence pairing 2k = 2a+3b+c+n it is logically equivalent to the answer n = 9, so it adds no independent physical content beyond the valence count whose honest consequence (n odd) was the actual question."
+  ],
+  "source_checks": [
+    "Read TASK.json first: single requested output fragment_parity_statement (classification, tick one of a/b/c) for T5.1; evaluation answer-blind; printed page source_page 44.",
+    "Inspected T5_page-1.png directly at high zoom: fragment quantities for PL1 confirmed as n x a (star-H), 2 x b, 3 x c (glycerol with three O-star valences), 4 x d (acyl C(=O)-R with one star); question 5.1 options (a) even, (b) odd, (c) either, 1.0 pt confirmed verbatim.",
+    "Zoomed fragment b (both rows): P with fixed dashed P=O, one explicit P-OH, two star valences - contradicts the candidate's claim of 2 transferable P-OH protons per phosphate fragment.",
+    "Zoomed worked example W: assembly conserves atoms exactly; a-cap H and e-OH plant the same glycerol hydroxyl hydrogen; d-c join is a plain ester/ether with no water elimination - no support on the page for a per-bond H2O-elimination law.",
+    "Independently derived the answer from the source grammar: attachment-point handshake gives n + 13 even, hence n odd for any assembly, and the problem states an assembly exists; PL1 = cardiolipin pattern (3 glycerols, 2 phosphate bridges, 4 acyls, 13 bonds) is consistent with n = 9. Ticked choice (b) is semantically correct.",
+    "No official solutions, rubrics, answer repositories, or prior experiment answers were consulted; no Humanize/Archon used; no candidate or input files modified (scratch axiom-check file was created and removed; workspace files verified untouched)."
+  ],
+  "proof_checks": [
+    "Recompiled independently: lake env lean IChO2026Problems/problem_icho_2026_t5_a1.lean exits 0; lake build of the IChO2026Problems module completes (style-linter warnings only).",
+    "grep over the target file finds no sorry/admit/axiom/native_decide; only kernel-checked decide is used for the n = 9 arithmetic witness.",
+    "Re-ran #print axioms myself via a temporary in-tree scratch file (removed after use): t5_a1_answer, answer_b_n_is_odd, answer_a_n_even_impossible, answer_c_parity_not_free depend only on [propext, Classical.choice, Quot.sound]; n_mod_two_eq_one and n_eq_nine on [propext, Quot.sound]; pl1_feasible_at_nine is axiom-free.",
+    "Final theorem statements faithfully express the requested classification: forall n, Feasible (PL1 n) -> Odd n, uniqueness n = 9, and a satisfiability witness - non-vacuous, correctly excluding options (a) and (c).",
+    "Proof architecture check: Recipe.Feasible.hH (transferableH = bonds with transferableH := 2a+n) is an assumed model premise, not a derived fact; given hP (attachPoints = 2*bonds) and PL1 quantities it is algebraically equivalent to n = 9, i.e. result-shaped; the parity lemma n_parity is correctly proved from n_eq by omega, but its force for the problem depends entirely on the unsupported hH premise."
+  ]
+}
+```

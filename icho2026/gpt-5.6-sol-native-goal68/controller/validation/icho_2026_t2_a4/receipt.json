@@ -1,0 +1,49 @@
+{
+  "target": "icho_2026_t2_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789299926.8632915,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t2_a4.lean": "70e6618441b664040a8140ae168bb4483ecf6615ce1a34fdb71f78a394c2a791",
+    "answer.md": "c6630890b0c54441af0406c28414601208cd3d82d5e87f9b2ae9543d79ec1427",
+    "verification.md": "6a0c8800227b459e88fe9b85c8a7de44f5d03f712a48094c0651b56210d11d1a",
+    "result.json": "a51d726bbd82eaa774f902c96b38737faf31b1a8858f491fcfb186550e1aeda9"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a4",
+    "status": "completed",
+    "answer_summary": "Tick the upper-right answer-sheet box: the phase portrait is traversed clockwise.",
+    "theorem_names": [
+      "IChO2026Problems.T2A4.icho_2026_t2_a4_phase_direction",
+      "IChO2026Problems.T2A4.icho_2026_t2_a4_unique_phase_direction"
+    ],
+    "assumptions": [
+      "The four answer diagrams are transcribed from the blank A2-3 student answer sheet in the supplied theory_problem.pdf.",
+      "The problem's closed phase portrait and statement that the concentrations oscillate strictly in relation to each other require a coherent directed cycle.",
+      "The lower branch is the [HBrO2]_B branch, and the problem explicitly states that [Br-] decreases from [Br-]_max to [Br-]_critical there."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t2_a4.lean",
+      "grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t2_a4.lean",
+      "python3 -m json.tool result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

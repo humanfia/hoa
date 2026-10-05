@@ -1,0 +1,27 @@
+{
+  "target_id": "icho_2026_t3_a2",
+  "status": "completed",
+  "answer_summary": "One idealized COF-2 honeycomb side contains 8 arene C-C increments, 2 C-B increments, and 2 B-O increments, so a = 17.00 angstrom and d = 17*sqrt(3) angstrom = 29.4448637... angstrom, reported as 29.4 angstrom to three significant figures.",
+  "theorem_names": [
+    "IChO2026Problems.problem_icho_2026_t3_a2.cof2_side_bond_counts",
+    "IChO2026Problems.problem_icho_2026_t3_a2.cof2_side_length_exact",
+    "IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_exact",
+    "IChO2026Problems.problem_icho_2026_t3_a2.sqrt_three_reporting_bounds",
+    "IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_rounding_interval",
+    "IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_submission_valid",
+    "IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_reported"
+  ],
+  "assumptions": [
+    "The printed bond lengths C-C/C=C = 1.39 angstrom, C-B = 1.56 angstrom, and B-O = 1.38 angstrom are exact stipulated constants.",
+    "As instructed by the problem, linker width is neglected when tracing the idealized centre-to-centre honeycomb side.",
+    "The COF-2 drawing yields a side walk with 8 arene C-C, 2 C-B, and 2 B-O length increments.",
+    "The final display uses TASK.json's answer-blind default of three significant figures because the printed question and blank answer sheet specify no precision."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t3_a2.lean",
+    "if grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t3_a2.lean; then exit 1; else printf 'No forbidden proof shortcuts found.\\n'; fi",
+    "python3 -m json.tool result.json >/dev/null"
+  ]
+}

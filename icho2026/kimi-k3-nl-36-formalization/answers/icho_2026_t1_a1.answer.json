@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t1_a1",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "gpt_corrected_kimi_draft: compound 6, linalool",
+      "id": "identity_x",
+      "kind": "classification",
+      "raw_value": "compound 6; linalool; 3,7-dimethylocta-1,6-dien-3-ol; C10H18O; C=CC(C)(O)CCC=C(C)C",
+      "unit": ""
+    },
+    {
+      "display_value": "gpt_corrected_kimi_draft: compound 3, 1,8-cineole (eucalyptol); corrected SMILES CC12CCC(CC1)C(C)(C)O2",
+      "id": "identity_y",
+      "kind": "classification",
+      "raw_value": "compound 3; 1,8-cineole (eucalyptol); 1,3,3-trimethyl-2-oxabicyclo[2.2.2]octane; C10H18O; corrected connectivity CC12CCC(CC1)C(C)(C)O2",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

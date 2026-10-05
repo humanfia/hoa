@@ -1,0 +1,32 @@
+{
+   "target_id": "icho_2026_t6_a6",
+  "status": "completed",
+  "answer_summary": "M is 3,5-di-tert-butyltoluene; N is 3,5-di-tert-butylbenzaldehyde; O is zinc(II) 5,15-bis(3,5-di-tert-butylphenyl)porphyrin with meso-H at 10,20; Q is its 10,20-dibromo derivative; R is its 10,20-diethynyl derivative. Six R units undergo template-directed oxidative coupling to the already displayed, template-free butadiyne-linked cyclic hexamer P6. The source contains no standalone P intermediate or P answer box.",
+  "theorem_names": [
+    "IChO2026Problems.ProblemIChO2026T6A6.leastCrowded_sites_unique",
+    "IChO2026Problems.ProblemIChO2026T6A6.m_has_four_proton_environments",
+    "IChO2026Problems.ProblemIChO2026T6A6.structure_M",
+    "IChO2026Problems.ProblemIChO2026T6A6.structure_N",
+    "IChO2026Problems.ProblemIChO2026T6A6.structure_O",
+    "IChO2026Problems.ProblemIChO2026T6A6.structure_P",
+    "IChO2026Problems.ProblemIChO2026T6A6.structure_P_source_gap",
+    "IChO2026Problems.ProblemIChO2026T6A6.structure_Q",
+    "IChO2026Problems.ProblemIChO2026T6A6.structure_R",
+    "IChO2026Problems.ProblemIChO2026T6A6.structure_P6"
+  ],
+  "assumptions": [
+    "The problem's thermodynamic-product hint is combined with the standard steric rule that reversible Friedel-Crafts tert-butylation selects the least crowded arrangement of the three bulky ring substituents.",
+    "Standard reaction identities are used: peroxide-initiated NBS benzylic bromination; Sommelet aldehyde formation with HMTA/acid; acid-catalysed dipyrromethane-aldehyde porphyrin condensation followed by DDQ oxidation and Zn(II) insertion; NBS meso bromination; Sonogashira ethynylation followed by fluoride desilylation; and Pd/Cu/benzoquinone oxidative terminal-alkyne coupling.",
+    "Skeletal hydrogens are represented by an explicit implicitHydrogens count on each heavy-atom vertex. Aromatic/delocalized bonds are represented with the aromatic bond-order constructor.",
+    "The neutral Zn porphyrin is represented by Zn formal charge +2 and two opposite porphyrin nitrogens of formal charge -1, one valid resonance/formal-charge representation of the porphyrin dianion.",
+    "No supplementary candidate-selection bounds or final-answer assumptions are introduced."
+  ],
+  "source_gaps": [
+    "TASK.json mechanically requests structure_p because the wording says M-R, but Q6-4 labels unknowns only M, N, O, Q and R; blank sheets A6-5/A6-6 have only those five boxes. P6 is already displayed in the question. The Lean theorem structure_P proves this label mismatch, and structure_P6 formalizes the displayed product instead of inventing an unsupported standalone P."
+  ],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T6_page-4.png icho_2026_source/image/T6_page-3.png icho_2026_source/image/T6_page-2.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t6_a6.lean",
+    "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t6_a6.lean || true"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t9_a4",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "Y = the sixfold 6-O-TBS-2,3-anhydro derivative of α-CD (upper-face epoxide), C72H132O24Si6",
+      "id": "structure_y",
+      "kind": "classification",
+      "raw_value": "Six identical α-(1→4)-linked residues; each has a C2-O-C3 epoxide with C2-O up (C2 inverted) and C3-O up (retained), C6-OTBS up, C1-O(glycosidic) down, and C4-O(glycosidic) down; all atoms are neutral closed-shell and the whole-product formula is C72H132O24Si6",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

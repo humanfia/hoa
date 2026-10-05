@@ -1,0 +1,24 @@
+{
+  "target_id": "icho_2026_t8_a7",
+  "status": "completed",
+  "answer_summary": "Tick a) increases. The overall CO rate per gram is proportional to catalyst loading times TOF; the displayed rate index rises from 0.1*62 = 6.2 to 3.8*8 = 30.4 and the endpoint inequality remains strict under half-last-digit intervals.",
+  "theorem_names": [
+    "IChO2026Problems.T8A7.displayed_rate_indices",
+    "IChO2026Problems.T8A7.co_rate_trend",
+    "IChO2026Problems.T8A7.endpoint_rate_increase_under_rounding",
+    "IChO2026Problems.T8A7.physical_rate_increase_under_rounding",
+    "IChO2026Problems.T8A7.co_rate_trend_under_display_rounding"
+  ],
+  "assumptions": [
+    "The seven loading and TOF labels are transcribed from the problem graph.",
+    "By the problem's TOF definition, total product rate equals catalyst-molecule count times TOF; per gram of support, catalyst-molecule count is loading times a fixed positive conversion factor.",
+    "For the robustness theorem, displayed graph readings use the task-prescribed half-last-displayed-quantum intervals: 0.05 percentage point for endpoint loadings and 0.5 h^-1 for integer TOFs."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T8_page-2.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T8_page-3.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a7.lean",
+    "! grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t8_a7.lean",
+    "python3 -m json.tool result.json >/dev/null"
+  ]
+}

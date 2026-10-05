@@ -1,0 +1,87 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Calculate the atomic abundance of 235U in natural uranium, assuming it consists only of isotopes 235U (235.04 a.u.) and 238U (238.05 a.u.).",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t4_a1",
+  "image": "T4_page-1.png",
+  "images": [
+    "T4_page-1.png"
+  ],
+  "index": "icho_2026_t4_a1",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T4",
+  "part_id": "T4-A1",
+  "phase": "solve",
+  "points": 2.0,
+  "previous_parts": [],
+  "printed_page": 1,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T4_page-1.png",
+      "printed_page": 1,
+      "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf",
+      "source_page": 37
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 37
+    }
+  ],
+  "problem_id": "icho_2026_t4",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT4. The nuclear past of Uzbekistan 6% Natural uranium consists primarily of two isotopes, 235U and 238U . 235U is responsible for sustaining nuclear fission reactions.\n\n## Current subquestion T4-A1\nCalculate the atomic abundance of 235U in natural uranium, assuming it consists only of isotopes 235U (235.04 a.u.) and 238U (238.05 a.u.).\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "digits": 3,
+      "kind": "significant_figures",
+      "source": "uniform_blind_evaluation_default"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "uranium235_abundance",
+      "kind": "numeric",
+      "reporting_policy": {
+        "digits": 3,
+        "kind": "significant_figures",
+        "source": "uniform_blind_evaluation_default"
+      },
+      "source_requirement": "atomic abundance of uranium-235",
+      "unit": "%"
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T4. The nuclear past of Uzbekistan 6% Natural uranium consists primarily of two isotopes, 235U and 238U . 235U is responsible for sustaining nuclear fission reactions.",
+  "source_index": "T4-A1",
+  "source_page": 37,
+  "source_pdf": "theory_problem.pdf"
+}

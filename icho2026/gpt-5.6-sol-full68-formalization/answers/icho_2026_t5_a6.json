@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t5_a6",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "R-C(=O)-O-CH2-CH(O-C(=O)-R)-CH2-O-P(=O)(OH)-O-CH2-CH2-CH2-O-P(=O)(OH)-O-CH2-CH(O-C(=O)-R)-CH2-O-C(=O)-R; the two outer glycerol CH stereocentres have equal ordered-ligand parity, and simultaneous inversion gives the mirror enantiomer",
+      "id": "structure_pl2",
+      "kind": "classification",
+      "raw_value": "PL2 is the bis(1,2-diacylglycerophosphate) ester of propane-1,3-diol; its explicit graph is IChO2026Problems.T5A6.pl2Graph and its two outer glycerol stereocentres have equal tetrahedral parity",
+      "unit": ""
+    },
+    {
+      "display_value": "R-C(=O)-O-CH2-CH(O-C(=O)-R)-CH2-O-P(=O)(O^-)-O-CH2-CH3 at physiological pH; the two ordered-ligand parities at the glycerol CH form the enantiomeric pair",
+      "id": "structure_pl3",
+      "kind": "classification",
+      "raw_value": "PL3 is the physiological monoanion of the 1,2-diacylglycerol phosphate diester with ethanol; its explicit enantiomeric graphs are IChO2026Problems.T5A6.pl3Graph true clockwise and counterclockwise",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

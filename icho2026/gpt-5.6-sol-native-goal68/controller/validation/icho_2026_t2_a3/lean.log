@@ -1,0 +1,7 @@
+'IChO2026Problems.T2A3.switchBoundary_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A3.printedRates_equal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A3.step4_exceeds_step1_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A3.step1_exceeds_step4_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A3.fallbackHBrO2_levels_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A3.bromide_critical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A3.bromide_critical_reported' depends on axioms: [propext, Classical.choice, Quot.sound]

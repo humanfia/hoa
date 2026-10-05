@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t1_a4",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "Al",
+      "id": "metal_q_identity",
+      "kind": "classification",
+      "raw_value": "Al, checked in Na3AlF6 by 26.982/(3*22.990+26.982+6*18.998)=4497/34990 in [0.12845,0.12855] and the source-scoped cryolite industrial-use compatibility",
+      "unit": ""
+    },
+    {
+      "display_value": "AlF3·3H2O",
+      "id": "hydrated_c_formula",
+      "kind": "formula",
+      "raw_value": "AlF3·3H2O, with (3*18.015)/(26.982+3*18.998+3*18.015)=18015/46007 in [0.39155,0.39165]",
+      "unit": ""
+    },
+    {
+      "display_value": "Na3AlF6",
+      "id": "compound_d_formula",
+      "kind": "formula",
+      "raw_value": "Na3AlF6, with total molar mass 3*22.990+26.982+6*18.998=209.940 and sodium fraction 2299/6998 in [0.32845,0.32855]",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

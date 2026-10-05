@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t9_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "L = 6A,6D-diol of perbenzyl-beta-CD; (OBn)14 on the secondary rim; primary boxes 1-7: CH2OH, CH2OBn, CH2OBn, CH2OH, CH2OBn, CH2OBn, CH2OBn",
+      "id": "structure_l",
+      "kind": "classification",
+      "raw_value": "seven 4C1 alpha-D-glucopyranoside units with alpha-(1->4) cyclic connectivity; O2=OBn and O3=OBn at every unit; C6 substituents clockwise [CH2OH, CH2OBn, CH2OBn, CH2OH, CH2OBn, CH2OBn, CH2OBn]; 19 O-benzyl groups; neutral closed-shell formula C175H184O35",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

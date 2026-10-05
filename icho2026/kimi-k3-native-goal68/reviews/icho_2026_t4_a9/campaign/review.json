@@ -1,0 +1,48 @@
+All checks are complete. Compiling my final review.
+
+**Source verification:** I inspected T4_page-1/2/3.png directly. Q4-3 confirms the 30-kiloton TNT yield, 4.184 GJ/ton, 90% mass enrichment, 33% fissioned fraction, and the ΔE = 200 MeV fallback clause. Q4-2 confirms part 4.4's BE(²³⁵U) = 7.59 and BE(fis.) = 8.45 MeV/nucleon with free-neutron binding neglected. Q4-1 confirms 235.04 a.u. for ²³⁵U and the 1-neutron-in/3-neutrons-out chain reaction (which legitimizes the ×235 nucleon-count derivation of 4.4). The candidate's transcription matches the pixels everywhere.
+
+**Semantic verification:** The model TN = E/ΔE and m = (TN·M(²³⁵U)/N_A)/(0.33·0.90) is exactly what 4.9 asks. ΔE = 202.1 MeV is re-derived answer-blind from the printed 4.4 data; the fallback is correctly not used (fallback would give 3.92×10²⁴ and 5.15 kg — the candidate's numbers are the derived-value ones). My own exact-rational recomputation gives TN = 3.8764681…×10²⁴ → 3.88×10²⁴ and m = 5.0941373… → 5.09 kg at 3 s.f., agreeing to every digit. The two non-printed constants (1 eV = 1.602176634×10⁻¹⁹ J, N_A = 6.02214076×10²³) are exact SI definitions, disclosed in answer.md/result.json as trusted_general_law — permitted by the domain policy and accurately scoped.
+
+**Proof verification:** lake build succeeded (8581 jobs); the target file compiles standalone with exit 0; grep finds no sorry/admit/axiom/native_decide anywhere in candidate Lean sources; my own `#print axioms` probe (written to /tmp, then deleted) against the actually-built theorems shows all six final theorems depend only on [propext, Classical.choice, Quot.sound]. Theorems are not result-shaped assumptions: `deltaE_MeV_value` and `explosionEnergy_value` are `norm_num` proofs from separately named inputs, the bound theorems unfold the exact real expressions and prove tight half-quantum intervals, and the `ValidNumericSubmission` theorems force the reported rounded values to be the nearest quantum multiples of the unrounded raw expressions. No vacuous premises, no precomputed answer tables.
+
+```json
+{
+  "target_id": "icho_2026_t4_a9",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The submission answers IChO 2026 T4-4.9 with TN = 3.88e24 fissions (raw 3.8764681...e24) and m = 5.09 kg (raw 5.0941373...). I verified every input against the source pages: Q4-3 prints 30-kiloton TNT, 4.184 GJ/ton, 90% mass enrichment, 33% fissioned, and the 200 MeV fallback; Q4-2 prints BE(235U)=7.59 and BE(fis.)=8.45 MeV/nucleon with free-neutron binding neglected; Q4-1 prints 235.04 a.u. and the 1-neutron-in/3-neutrons-out fission scheme. The 4.4 value DeltaE = (8.45-7.59)*235 = 202.1 MeV is re-derived inline from problem-only data, so the fallback is correctly unused. My independent exact-rational recomputation reproduces both reported values at every digit and confirms they round to 3.88e24 (quantum 1e22) and 5.09 kg (quantum 0.01) at three significant figures. The two constants not printed in the problem (eV-to-J factor and Avogadro constant) are exact post-2019 SI definitions, explicitly disclosed as trusted_general_law assumptions, which the candidate_domain_policy permits. The Lean formalization encodes each input as a named definition tied to its source, encodes the relations TN=E/DeltaE and m=TN*M/(N_A*0.33*0.90) structurally, proves tight half-quantum bounds with norm_num on exact rational unfoldings, and ties the reported values to the raw expressions via the project ValidNumericSubmission rounding contract (half away from zero, no intermediate rounding). Build passes, no sorry/admit/axiom/native_decide, and my own axiom audit on the built theorems shows only the three standard Lean logical axioms.",
+  "coverage": [
+    {
+      "output_id": "total_fissions",
+      "status": "passed",
+      "theorem": "IChO2026T4A9.totalFissions_reported (with totalFissions_bounds and explosionEnergy_value)",
+      "evidence": "Theorem proves ValidNumericSubmission for the exact real expression explosionEnergy_J/(deltaE_MeV*1e6*joulesPerEV) with reported value 3.88e24 at quantum 1e22. totalFissions_bounds proves 3.875e24 <= TN < 3.885e24 by norm_num after unfolding all definitions. My independent Fraction-based recomputation from the printed givens (30000 t x 4.184 GJ/t; DeltaE = 0.86*235 MeV; 1 eV = 1.602176634e-19 J) yields TN = 3.8764681792...e24, inside the proved interval. Axioms: [propext, Classical.choice, Quot.sound] only, verified with my own #print axioms probe against the built oleans."
+    },
+    {
+      "output_id": "enriched_uranium_mass",
+      "status": "passed",
+      "theorem": "IChO2026T4A9.enrichedUraniumMass_reported (with enrichedUraniumMass_bounds)",
+      "evidence": "Theorem proves ValidNumericSubmission for totalFissions*0.23504/avogadro/(0.33*0.90) with reported value 5.09 at quantum 0.01 kg. enrichedUraniumMass_bounds proves 5.085 <= m < 5.095 by norm_num on exact unfoldings. My recomputation gives m = 5.0941373462... kg, matching the interval and the 3 s.f. rounding. Molar mass 0.23504 kg/mol traces to the 235.04 a.u. printed in part 4.1 (verified on the Q4-1 page image); enrichment 0.90 and fission fraction 0.33 are verbatim from the 4.9 text on Q4-3. Axioms: [propext, Classical.choice, Quot.sound] only."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Viewed T4_page-3.png (Q4-3): confirmed verbatim the 30-kiloton TNT equivalent explosion, 1 ton TNT = 4.184 GJ, enriched uranium 90% by mass 235U, 33% of 235U underwent fission, and the red fallback clause 'use DeltaE = 200 MeV'.",
+    "Viewed T4_page-2.png (Q4-2): confirmed part 4.4 givens BE(235U) = 7.59 MeV/nucleon, average BE(fis.) = 8.45 MeV/nucleon, 'Neglect the binding energy of free neutrons' — the basis for DeltaE = (8.45-7.59)*235 = 202.1 MeV.",
+    "Viewed T4_page-1.png (Q4-1): confirmed isotope masses 235.04 a.u. (used as molar mass 0.23504 kg/mol) and 238.05 a.u., and the chain-reaction description '1 neutron absorbed, 3 additional neutrons produced', which justifies multiplying by exactly 235 bound nucleons in the 4.4 derivation.",
+    "Verified the fallback was correctly not used: recomputation with DeltaE = 200 MeV would give TN = 3.92e24 and m = 5.15 kg, clearly distinct from the submitted 3.88e24 / 5.09 kg, which follow from the problem-derived 202.1 MeV as 4.9 requires.",
+    "Non-printed constants check: 1 eV = 1.602176634e-19 J and N_A = 6.02214076e23 mol^-1 are exact SI definitions since 2019; disclosed as trusted_general_law in answer.md and result.json source_gaps, accurately scoped, and permitted by the candidate_domain_policy; no other non-printed inputs were used.",
+    "Point value 4.0 in TASK.json matches the 4.0 pt shown for 4.9 on Q4-3; no blank answer-sheet content is relevant to this theory subpart."
+  ],
+  "proof_checks": [
+    "lake build completed successfully (8581 jobs) on the pinned toolchain leanprover/lean4:v4.31.0.",
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a9.lean exited 0 after building local oleans; no errors or warnings on the target file.",
+    "grep for sorry|admit|axiom|native_decide over IChO2026Problems/, IChO2026Chem/ and IChO2026Run/ returned nothing; only norm_num/positivity/rw/refine proof steps are used.",
+    "My own axiom probe (temporary file in /tmp, importing the actual built problem module) printed for all six final theorems: depends on axioms [propext, Classical.choice, Quot.sound]; no custom or unchecked axioms.",
+    "Inspected theorem statements semantically: deltaE_MeV_value and explosionEnergy_value are kernel-checked arithmetic facts (202.1 MeV, 1.2552e14 J) from individually named problem inputs, not result-shaped assumptions; totalFissions/enrichedUraniumMass definitions encode the physically required relations TN = E/DeltaE and m = TN*M/(N_A*fis*enr); bound theorems are genuine norm_num interval proofs on the exact unfolded rationals, ruling out precomputed answer tables.",
+    "Reporting theorems use IChO2026Chem.Reporting.ValidNumericSubmission: they prove rawValue equals the exact derived expression (rfl) and that the reported value is the unique quantum multiple whose half-quantum interval contains the exact value, with the tie rule half away from zero matching TASK.json reporting_policy; no intermediate rounding occurs because all proofs operate on the fully unfolded exact expressions.",
+    "Independent exact-rational cross-check (Python fractions) reproduced TN = 3.8764681792...e24 in [3.875,3.885)e24 and m = 5.0941373462... kg in [5.085,5.095), confirming the Lean bound claims at all displayed digits."
+  ]
+}
+```

@@ -1,0 +1,38 @@
+{
+  "target_id": "icho_2026_t9_a6",
+  "status": "completed",
+  "answer_summary": "2 constitutional linkage isomers of the beta-CD dimer are formed in the Sinay synthesis: the in-line dimer (linker between the directing units of the two rings, separation 0) and the crossed dimer (linker between the directing unit of one ring and unit 4 of the other, separation +/-3). Reason: DIBAL-H (2 equiv.) partial debenzylation guided by the Sinay directing rule (free protic group at unit 1 directs the next debenzylation to unit 4) gives intermediate L with free primary OH groups on a unit pair at cyclic distance 3; the single symmetric hydrocarbon linker (alkenylation/Grubbs-I metathesis/H2,PtO2) can therefore connect the two rings only with directed separations 0, 3 or 4 in Fin 7, which under the constitution symmetries (C7 x C7 re-charts, ring exchange, mirror) fall into exactly two classes {0} and {3,4}.",
+  "answer_value": 2,
+  "theorem_names": [
+    "IChO2026T9A6.sameConstitution_equivalence",
+    "IChO2026T9A6.representatives_distinct",
+    "IChO2026T9A6.attainable_eq_linkSame_or_linkCross",
+    "IChO2026T9A6.linkSame_attainable",
+    "IChO2026T9A6.linkCross_attainable",
+    "IChO2026T9A6.nonattainable_not_formed",
+    "IChO2026T9A6.attainable_partition_of_linkSame",
+    "IChO2026T9A6.attainable_partition_of_linkCross",
+    "IChO2026T9A6.attainable_card",
+    "IChO2026T9A6.site_labelled_total",
+    "IChO2026T9A6.dimer_quot_classes",
+    "IChO2026T9A6.dimer_isomer_count",
+    "IChO2026T9A6.dimer_isomer_count_attainable_classes"
+  ],
+  "assumptions": [
+    "beta-CD has 7 alpha-D-glucopyranose units (T9 preamble, official English problem text).",
+    "Sinay et al. directing rule as stated verbatim on problem sheet Q9-3: a free protic group at unit 1 directs the next reductive debenzylation of a primary OH to unit 4 (3 steps further around the ring), or to unit 3 if unit 4 is unavailable; for perbenzylated beta-CD with 2 equiv. DIBAL-H the unit-4 site is always available, so L has free primary OH groups at cyclic distance 3 (units 1 and 4).",
+    "The dimer contains one symmetric hydrocarbon linker joining one primary face oxygen of each ring (as drawn on Q9-3: per ring 5 CH2OBn + 1 CH2OH + 1 CH2O-linker).",
+    "Constitutional linkage isomer = connectivity class: two site-labelled dimers are the same isomer iff their directed attachment separations are equal or opposite mod 7 (symmetries: C7 re-charts of each ring, exchange of the two rings, mirror of the 7-cycle); the problem itself calls the products constitutional linkage isomers, so E/Z-type or other stereochemical distinctions are outside the requested count.",
+    "The Lean formalization models site labels as Fin 7 x Fin 7 and separation as (linkB - linkA) mod 7; native_decide is used only for finite enumeration of the 49 label pairs; extra axioms are limited to standard propext/Classical.choice/Quot.sound plus Lean.ofReduceBool from native_decide."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t9_a6.lean   # exit 0; only #print axioms diagnostics",
+    "lake build   # Build completed successfully (8581 jobs)",
+    "grep -n \"sorry\\|admit\" IChO2026Problems/problem_icho_2026_t9_a6.lean   # no matches (exit 1)",
+    "#print axioms IChO2026T9A6.dimer_isomer_count  ->  [propext, Quot.sound]",
+    "#print axioms IChO2026T9A6.dimer_isomer_count_attainable_classes  ->  [propext, Classical.choice, Quot.sound, native_decide reduce axiom]"
+  ],
+  "official_answer_seen": false,
+  "notes": "Answer derived solely from the official English problem sheets T9_page-1.png..T9_page-3.png bundled with theory_problem.pdf; no external solutions consulted. Verification transcript in verification.md."
+}

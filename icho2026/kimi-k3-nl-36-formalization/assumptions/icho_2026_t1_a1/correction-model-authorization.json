@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "record_id": "icho_2026_t1_a1",
+  "source_bundle_sha256": "50478ca78d2a975d9fa9c9886b6a382afcfb1eb2262fa89b97b63585d01d5e09",
+  "draft_sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+  "recorded_at": "2026-09-13T11:05:27Z",
+  "user_reply": "\u5355\u72ec\u91cd\u8dd1\u8fd9\u4e24\u9898",
+  "scope": "Preserve the source-supported compound numbers and identities. Correct only the inconsistent auxiliary Y SMILES/connectivity to match the depicted molecule and the original Kimi chemical name; keep the original string and exact graph discrepancy in the report. Independently verify the corrected representation.",
+  "evaluation_basis": "gpt_corrected_kimi_draft",
+  "preserve_original": true,
+  "scientific_model_assumptions_authorized": false
+}

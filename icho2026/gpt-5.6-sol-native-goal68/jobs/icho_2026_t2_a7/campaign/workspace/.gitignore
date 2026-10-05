@@ -1,0 +1,9 @@
+# Lake build artifacts
+.lake/
+
+# Archon runtime state.  Keep the directory-level rule expected by
+# `archon init`, then reopen it only to track the portable chemistry config.
+.archon/
+!.archon/
+.archon/*
+!.archon/config.json

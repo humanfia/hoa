@@ -1,0 +1,35 @@
+{
+  "target_id": "icho_2026_t1_a2",
+  "status": "completed",
+  "answer_summary": "Z is compound 7, chamazulene (7-ethyl-1,4-dimethylazulene); A is azulene; B is naphthalene. The 218/220 3:1 monochloro cluster uniquely selects the printed C14H16 candidate, whose azulene core has the stated two mirror planes and rearranges to the three-plane naphthalene graph.",
+  "theorem_names": [
+    "IChO2026T1A2.one_chlorine_has_two_peaks_and_ratio_three_to_one",
+    "IChO2026T1A2.identify_Z_from_mass_spectrum",
+    "IChO2026T1A2.candidate7_is_unique_mass_match",
+    "IChO2026T1A2.candidate7_formula_is_chamazulene_formula",
+    "IChO2026T1A2.chamazulene_complete",
+    "IChO2026T1A2.chamazulene_has_azulene_core",
+    "IChO2026T1A2.chamazulene_substitution_bonds",
+    "IChO2026T1A2.azulene_complete",
+    "IChO2026T1A2.azulene_two_perpendicular_planes",
+    "IChO2026T1A2.azulene_isomerizes_structurally_to_naphthalene",
+    "IChO2026T1A2.azulene_and_naphthalene_are_distinct_isomers",
+    "IChO2026T1A2.naphthalene_complete",
+    "IChO2026T1A2.naphthalene_three_mutually_perpendicular_planes",
+    "IChO2026T1A2.icho_2026_t1_a2"
+  ],
+  "assumptions": [
+    "The problem's 218/220 pair is interpreted in the standard way as the molecular-ion isotope cluster of a monochlorinated product formed by replacement of one hydrogen by chlorine.",
+    "Nominal integer masses are 12 for carbon-12, 1 for hydrogen-1, 16 for oxygen-16, 35 for chlorine-35, and 37 for chlorine-37.",
+    "The approximately 3:1 natural chlorine isotope abundance identifies a one-chlorine cluster; the blank answer sheet confirms that Z is selected from printed compounds 1 through 10.",
+    "The problem supplies the experimental thermal-isomerization premise. Lean verifies the exact azulene-to-naphthalene molecular graph rewrite rather than attempting to derive reaction kinetics from first principles.",
+    "The ordinary chemical names attached to the explicit graphs were checked against PubChem/NIST and primary literature, none of which is a competition answer source."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t1_a2.lean",
+    "grep -En '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t1_a2.lean",
+    "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T1_page-2.png icho_2026_source/image/T1_page-3.png",
+    "python3 -m json.tool result.json"
+  ]
+}

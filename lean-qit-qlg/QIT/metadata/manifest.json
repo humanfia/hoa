@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "qit",
+  "display_name": "quantum information",
+  "source_repository": "https://github.com/QuAIR/Lean-QIT-Bench",
+  "source_commit": "e4f0230e14c35da9c658b58c8663b3e6825e6663",
+  "task_count": 40,
+  "lean_toolchain": "leanprover/lean4:v4.30.0",
+  "allowed_inputs": [
+    "references/QITBench-TeX/**/statement.tex",
+    "QITBench.lean",
+    "QITBench/Init.lean",
+    "QITBench/Base.lean",
+    "QITBench/Base/**"
+  ],
+  "forbidden_inputs": [
+    "official per-task Definitions.lean",
+    "official per-task Statement.lean",
+    "official per-task Hints.lean",
+    "official solutions or answer keys"
+  ],
+  "project_index": {
+    "package": "QITBench",
+    "declaration_count": 211,
+    "source_files": 12
+  },
+  "max_parallel": 28,
+  "lean_explore_port": 8768
+}

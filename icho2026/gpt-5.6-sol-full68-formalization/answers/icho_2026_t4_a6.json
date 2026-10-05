@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t4_a6",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "-8.02e2",
+      "id": "combustion_enthalpy_298",
+      "kind": "numeric",
+      "raw_value": "((-3935/10) + 2*(-2418/10)) - ((-748/10) + 2*0)",
+      "unit": "kJ mol^-1"
+    }
+  ],
+  "schema_version": 1
+}

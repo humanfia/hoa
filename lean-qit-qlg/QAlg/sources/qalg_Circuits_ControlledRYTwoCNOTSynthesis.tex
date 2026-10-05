@@ -1,0 +1,32 @@
+Let
+$$
+    \begin{aligned}
+    X&=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+    &
+    Y&=\begin{pmatrix}0&-\ii\\ \ii&0\end{pmatrix},\\
+    R_y(\theta)&=\exp\!\left(-\ii\frac{\theta}{2}Y\right),
+    &
+    \operatorname{CNOT}_{C\to T}
+    &=
+    \ketbra{0}{0}_C\otimes I_T
+    +
+    \ketbra{1}{1}_C\otimes X_T .
+    \end{aligned}
+$$
+Define
+$$
+    C(R_y(\theta))
+    =
+    \ketbra{0}{0}_C\otimes I_T
+    +
+    \ketbra{1}{1}_C\otimes R_y(\theta)_T .
+$$
+Operator products in the displayed circuit are composed right-to-left.  Prove the exact identity
+$$
+    C(R_y(\theta))
+    =
+    \left(I_C\otimes R_y\!\left(\frac{\theta}{2}\right)_T\right)
+    \operatorname{CNOT}_{C\to T}
+    \left(I_C\otimes R_y\!\left(-\frac{\theta}{2}\right)_T\right)
+    \operatorname{CNOT}_{C\to T}.
+$$

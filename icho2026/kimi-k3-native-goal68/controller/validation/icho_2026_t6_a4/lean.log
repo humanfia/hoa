@@ -1,0 +1,13 @@
+'IChO2026T6A4.massE_value' does not depend on any axioms
+'IChO2026T6A4.massC48_value' does not depend on any axioms
+'IChO2026T6A4.ion591_example_matches' depends on axioms: [propext]
+'IChO2026T6A4.ion783_total_mass' depends on axioms: [propext]
+'IChO2026T6A4.ion783_mz' depends on axioms: [propext]
+'IChO2026T6A4.ion783_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T6A4.ion879_total_mass' depends on axioms: [propext]
+'IChO2026T6A4.ion879_mz' depends on axioms: [propext]
+'IChO2026T6A4.ion879_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T6A4.ion1174_total_mass' depends on axioms: [propext]
+'IChO2026T6A4.ion1174_mz' depends on axioms: [propext]
+'IChO2026T6A4.ion1174_unique_at_charge_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T6A4.catenane_octaprotonated_mz' depends on axioms: [propext]

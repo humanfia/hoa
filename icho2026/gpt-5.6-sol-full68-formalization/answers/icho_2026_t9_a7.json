@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t9_a7",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "1299",
+      "id": "first_fragment_mz",
+      "kind": "integer",
+      "raw_value": "((2*(27*12+28*1+5*16))+(22*12+25*1+4*16)+(2*12+3*1+2*16)+23)/1",
+      "unit": "m/z"
+    },
+    {
+      "display_value": "1731",
+      "id": "second_fragment_mz",
+      "kind": "integer",
+      "raw_value": "((3*(27*12+28*1+5*16))+(22*12+25*1+4*16)+(2*12+3*1+2*16)+23)/1",
+      "unit": "m/z"
+    }
+  ],
+  "schema_version": 1
+}

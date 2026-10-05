@@ -1,0 +1,10 @@
+.humanize/
+.codex-runtime/
+.build/
+runtime/
+__pycache__/
+*.o
+*.a
+*.so
+*.pyc
+*.log

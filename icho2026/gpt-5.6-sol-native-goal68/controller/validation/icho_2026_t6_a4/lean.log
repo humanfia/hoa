@@ -1,0 +1,4 @@
+'IChO2026Problems.T6A4.ion_783_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A4.ion_879_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A4.ion_1174_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A4.requested_ion_identities' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,5 @@
+'IChO2026T2A4.icho_2026_t2_a4_answer' does not depend on any axioms
+'IChO2026T2A4.icho_2026_t2_a4_phase_direction_checks' does not depend on any axioms
+'IChO2026T2A4.icho_2026_t2_a4_unique_direction' does not depend on any axioms
+'IChO2026T2A4.icho_2026_t2_a4_supports_choice' does not depend on any axioms
+'IChO2026T2A4.counterclockwise_traversal' depends on axioms: [propext, Classical.choice, Quot.sound]

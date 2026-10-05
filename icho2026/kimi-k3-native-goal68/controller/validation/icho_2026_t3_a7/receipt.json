@@ -1,0 +1,71 @@
+{
+  "target": "icho_2026_t3_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789364574.0276093,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t3_a7.lean": "f2c700e43d140412b753c8dda679dcd370ac52ceff50fc19a514bcbcfb0ab97a",
+    "IChO2026Problems/All.lean": "3424a173018d24f627b22164d2e4cbbe319ee684aae7ab2e6ac7781b6bdc7497",
+    "answer.md": "22d86c2e5ad0eaa851e21c6d7065cf2649bd62df214b1df574f99717972a5bee",
+    "verification.md": "174a14f0ade819a187c81e07d8d3adc815685455ecf1012109680d58e9feb1e5",
+    "result.json": "8d2150f4ea015b8270b634432f9955c54c240b5307fe9739ff49f0988fb27b75"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t3_a7",
+    "status": "completed",
+    "answer_summary": {
+      "equilibrium_absorption_capacity": {
+        "raw": "427 mg g^-1 (exact: (19.90 - 9.225) * 0.2000 / 0.005000)",
+        "reported_3sf": "427 mg g^-1"
+      },
+      "uranyl_ions_per_pore": {
+        "raw": "427 * 633.672 / (1000 * 270.02691) = 33822243/33753363.75 \u2248 1.0020",
+        "reported_3sf": "1.00 UO2^2+ ions per pore",
+        "note": "conclusion is essentially one uranyl ion per pore; with integer school-book atomic masses the value is 1.020 -> 1.02 at 3 s.f."
+      }
+    },
+    "theorem_names": [
+      "IChO2026T3A7.qe_raw_value",
+      "IChO2026T3A7.qe_reports_at_427",
+      "IChO2026T3A7.equilibrium_absorption_capacity",
+      "IChO2026T3A7.poreMass_codata",
+      "IChO2026T3A7.mUO2_codata",
+      "IChO2026T3A7.ions_per_pore_eq",
+      "IChO2026T3A7.ions_per_pore_raw",
+      "IChO2026T3A7.ions_per_pore_codata",
+      "IChO2026T3A7.uranyl_ions_per_pore_reports",
+      "IChO2026T3A7.uranyl_ions_per_pore_pos",
+      "icho_2026_t3_a7_equilibrium_absorption_capacity",
+      "icho_2026_t3_a7_uranyl_ions_per_pore"
+    ],
+    "assumptions": [
+      "Tabulated relative atomic masses are not printed in the problem materials; CODATA 2022 standard values used (C 12.011, H 1.008, N 14.007, O 15.999, U 238.02891) as trusted general-law constants. Result robust: 1.00 (CODATA) vs 1.02 (integer school-book masses) at 3 s.f.",
+      "A 'pore' is one hexagonal opening of the honeycomb (hcb) layer; one pore corresponds to one two-vertex cell of framework with COF-9 repeat formula C36H27N9O3 (= E1 + D2 - 3 H2O + 3 NH3O), derived from the printed Q3-6/Q3-7 structures. One pore per two vertices follows from Euler's formula for any 3-connected periodic net (proved/justified in answer.md).",
+      "Avogadro constant cancels exactly; the Lean proof quantifies over arbitrary NA \u2260 0."
+    ],
+    "source_gaps": [
+      "No atomic-mass table or Avogadro constant is printed anywhere in the supplied Q3 materials; Output 2 numerically depends on these standard external constants. The problem itself only asks to 'indicate' the number per pore, which is 1.00 (essentially one) under either standard mass table."
+    ],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t3_a7.lean   # exit 0; #print axioms lists [propext, Classical.choice, Quot.sound] for both final theorems",
+      "lake build IChO2026Problems                                    # full library build including the target"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

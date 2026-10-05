@@ -1,0 +1,11 @@
+{
+  "at": 1789365014.7744322,
+  "old_waiter_pid": 2433848,
+  "new_waiter_pid": 2719292,
+  "solver_restarted": false,
+  "model": "nvidia/moonshotai/kimi-k3",
+  "change": "Prompt schema with host jsonschema validation, replacing forced output-schema after tool-free placeholder responses in two toy probes",
+  "preflight": "review-preflight-03/host-verification.json",
+  "semantic_rubric_unchanged": true,
+  "feedback_to_solver": false
+}

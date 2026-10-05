@@ -1,0 +1,7 @@
+'IChO2026Problems.icho_2026_t2_a1.balanced_bz_equation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.icho_2026_t2_a1.balanced_overall_shape_classification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.icho_2026_t2_a1.bz_coefficients_are_the_minimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

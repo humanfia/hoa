@@ -1,0 +1,8 @@
+'IChO2026T9A3.icho_2026_t9_a3_ring_size' depends on axioms: [propext, Quot.sound]
+'IChO2026T9A3.icho_2026_t9_a3_stereocentres' does not depend on any axioms
+'IChO2026T9A3.icho_2026_t9_a3_answer' depends on axioms: [propext, Quot.sound]
+'IChO2026T9A3.x_ring_is_cycle' depends on axioms: [propext, Quot.sound]
+'IChO2026T9A3.x_bond_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T9A3.x_backbone_mem_ring' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T9A3.ringList_isWalk' depends on axioms: [propext, Quot.sound]
+'IChO2026T9A3.ringList_closes' depends on axioms: [propext, Quot.sound]

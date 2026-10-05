@@ -1,0 +1,30 @@
+{
+  "target_id": "icho_2026_t8_a3",
+  "status": "completed",
+  "answer_summary": "Correct geometry of complex 1 is the trans-dichlorido octahedron [Fe(8)Cl2]: the linear tetradentate N4 polypyridyl ligand 8 supplies four equatorial pyridine N donors and the two chlorides (from FeCl2, corroborated by the '+2 H2O, -2 Cl-' activation step) occupy the two axial sites (trans Cl-Fe-Cl). This corresponds to answer-sheet A8-2 tick option (vii) (bottom-right).",
+  "theorem_names": [
+    "IChO2026.T8_A3.complex1_CN",
+    "IChO2026.T8_A3.equatorial_card",
+    "IChO2026.T8_A3.axial_card",
+    "IChO2026.T8_A3.axial_disjoint_equatorial",
+    "IChO2026.T8_A3.valid_geometry_has_trans_chlorides",
+    "IChO2026.T8_A3.valid_geometry_chlorides_not_cis",
+    "IChO2026.T8_A3.correct_geometry_1_is_trans_dichloro",
+    "IChO2026.T8_A3.option_vii_isCorrect",
+    "IChO2026.T8_A3.no_other_option_is_correct",
+    "IChO2026.T8_A3.geometry_1_is_correct",
+    "IChO2026.T8_A3.geometry_1_chlorides_trans"
+  ],
+  "assumptions": [
+    "[ProblemInput] Ligand 8 is a linear tetradentate N4 polypyridyl supplying exactly four pyridine N donors (printed structure and four-N cartoon on Q8-1).",
+    "[ProblemInput] Complex 1 is formed from ligand 8 + FeCl2 and is a dichlorido complex, corroborated by the mechanism step 1 -> 9 with '+2 H2O, -2 Cl-' on Q8-2.",
+    "[ProblemInput] Complex 1 is six-coordinate at one Fe (4 N + 2 Cl); six-coordinate Fe entries appear on the 8.4 answer sheets.",
+    "[TrustedLaw] Standard coordination geometry: a linear tetradentate N4 polypyridyl binds a single octahedral metal through the equatorial plane and cannot span to axial sites; hence the remaining two ligands (the two Cl-) are forced into the trans axial sites."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Problems  # Build completed successfully (8564 jobs), exit 0",
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a3.lean  # no errors/warnings, exit 0",
+    "lake env lean /tmp/axcheck.lean  # #print axioms on all final theorems: only propext, Classical.choice, Quot.sound"
+  ]
+}

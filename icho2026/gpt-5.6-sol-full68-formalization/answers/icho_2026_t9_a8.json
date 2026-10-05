@@ -1,0 +1,42 @@
+{
+  "id": "icho_2026_t9_a8",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "alpha-CD-(2,3-OBn)12 retaining all source alpha-D tetrahedral frames; primary rim u1 = CH=CH2 and u2-u6 = CH2OBn",
+      "id": "structure_o",
+      "kind": "classification",
+      "raw_value": "O = oxidizeThenMethylenate(N,u1): alpha-CD-(2,3-OBn)12 with [u1:CH=CH2; u2,u3,u4,u5,u6:CH2OBn], retaining ordered-neighbour alpha-D faces C1/C2/C4 lower and C3/C5 upper on every unit",
+      "unit": ""
+    },
+    {
+      "display_value": "alpha-CD-(2,3-OBn)12 retaining all source alpha-D tetrahedral frames; primary rim u1 = CH=CH2, u2 = CH2N3, and u3-u6 = CH2OBn",
+      "id": "structure_p",
+      "kind": "classification",
+      "raw_value": "P = alkeneDirectedAzidation(O,u1) clockwise: alpha-CD-(2,3-OBn)12 with [u1:CH=CH2; u2:CH2-N=N(+)=N(-); u3,u4,u5,u6:CH2OBn], retaining ordered-neighbour alpha-D faces C1/C2/C4 lower and C3/C5 upper on every unit",
+      "unit": ""
+    },
+    {
+      "display_value": "alpha-CD-(2,3-OBn)12 retaining all source alpha-D tetrahedral frames; u1 = CH=CH2; u2 and u5 are joined by C5(u2)-CH2-NH-CH2-C(=CH2)-CH2-O-CH2-C5(u5); u3, u4, and u6 = CH2OBn",
+      "id": "structure_q",
+      "kind": "classification",
+      "raw_value": "Q = methallylBridge(tandemAzideReductionOppositeDeprotection(P,u2),u2,u5,NH): alpha-CD-(2,3-OBn)12 with [u1:CH=CH2; C5(u2)-CH2-NH-CH2-C(=CH2)-CH2-O-CH2-C5(u5); u3,u4,u6:CH2OBn], retaining ordered-neighbour alpha-D faces C1/C2/C4 lower and C3/C5 upper on every unit",
+      "unit": ""
+    },
+    {
+      "display_value": "alpha-CD-(2,3-OBn)12 retaining all source alpha-D tetrahedral frames; u1 = CH=CH2; u2 and u5 are joined by C5(u2)-CH2-N(Boc)-CH2-C(=CH2)-CH2-O-CH2-C5(u5); u6 = CH2N3; u3 and u4 = CH2OBn",
+      "id": "structure_r",
+      "kind": "classification",
+      "raw_value": "R = bridgeDirectedAzidation(Q): alpha-CD-(2,3-OBn)12 with [u1:CH=CH2; C5(u2)-CH2-N(Boc)-CH2-C(=CH2)-CH2-O-CH2-C5(u5); u3,u4:CH2OBn; u6:CH2-N=N(+)=N(-)], retaining ordered-neighbour alpha-D faces C1/C2/C4 lower and C3/C5 upper on every unit",
+      "unit": ""
+    },
+    {
+      "display_value": "alpha-CD-(2,3-OBn)12 retaining all source alpha-D tetrahedral frames; u1 = CH=CH2; u2 and u5 are joined by C5(u2)-CH2-N(Bn)-CH2-C(=CH2)-CH2-O-CH2-C5(u5); u3 = CH2OH; u4 = CH2OBn; u6 = CH2NH2",
+      "id": "structure_s",
+      "kind": "classification",
+      "raw_value": "S = tandemAzideReductionOppositeDeprotection(N-benzylated R,u6): alpha-CD-(2,3-OBn)12 with [u1:CH=CH2; C5(u2)-CH2-N(Bn)-CH2-C(=CH2)-CH2-O-CH2-C5(u5); u3:CH2OH; u4:CH2OBn; u6:CH2NH2], retaining ordered-neighbour alpha-D faces C1/C2/C4 lower and C3/C5 upper on every unit",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

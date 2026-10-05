@@ -1,0 +1,7 @@
+'IChO2026T3A2.cof2HexagonSide_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T3A2.cof2InternalDiameter_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T3A2.cof2InternalDiameter_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T3A2.cof2InternalDiameter_rounding_uniqueness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T3A2.cof2InternalDiameter_three_sf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T3A2.cof2InternalDiameter_reported' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T3A2.cof2Submission_valid' depends on axioms: [propext, Classical.choice, Quot.sound]

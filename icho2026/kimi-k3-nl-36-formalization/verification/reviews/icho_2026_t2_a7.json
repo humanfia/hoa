@@ -1,0 +1,763 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The source-visible six-panel classification, bound submission, and Lean statements agree: the closed-system Gibbs-rate trace is nonpositive, periodically modulated, and tends to zero, selecting the lower-right panel without placing that panel in a premise.",
+    "updated_at": "2026-09-13T08:39:38Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "fcf4279c05afc6cc8b6ee4e1326d09466f5293dcea8244a07a4d1af031eae7ef",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The current question asks for one box among six visible dG/dt-versus-time panels. GibbsRateGraphPanel and panelRate encode those panels in source order; DampedDissipativeOscillation retains exactly the decisive sign, limiting, and oscillatory-shape features."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "For the fixed-temperature, fixed-pressure Gibbs criterion, gibbsRate = -T\u00b7entropyProduction with T>0 and nonnegative entropy production gives dG/dt\u22640; vanishing entropy production gives the zero limit; the stated oscillatory behavior supplies repeated modulation. The uniform six-panel theorem then derives the reported selection."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "The model exposes the actual Gibbs derivative relation, boundary closedness, temperature positivity, entropy-production sign and equilibrium limit, oscillatory period, all six graph representatives, and raw/reported result propositions. These distinguish every displayed alternative."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The requested output is an exact qualitative panel classification; no measured value, tolerance, or rounding can change it."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The image axes are t to the right and dG/dt vertically; the selected source-visible trace stays below zero, oscillates with decreasing excursion, and approaches zero to the right. The Lean bottomRight representative has the same orientation."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Within the source-visible six-panel domain, the other five representatives each fail at least one outcome-decisive condition: nonpositivity, convergence to zero, or repeated modulation. No free label permutation or answer-shaped singleton is used."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "A closed isothermal-isobaric reacting system has nonpositive Gibbs-energy rate under nonnegative entropy production.",
+          "carrier": "IChO2026Problems.T2A7.ClosedIsothermalIsobaricEvolution.gibbsEntropyProductionIdentity; IChO2026Problems.T2A7.ClosedIsothermalIsobaricEvolution.entropyProductionNonnegative; IChO2026Problems.T2A7.closedSystem_gibbsRate_nonpositive",
+          "status": "covered",
+          "evidence": "This is the ordinary fixed-T,p Gibbs form of the second law, applied only to the closed-system graph requested by current_question; positivity of temperature and the identity are explicit rather than the desired sign being assumed."
+        },
+        {
+          "claim": "As the finite closed reaction approaches equilibrium, its Gibbs-energy rate tends to zero.",
+          "carrier": "IChO2026Problems.T2A7.ClosedOscillatoryReactionEvolution.entropyProductionVanishesAtEquilibrium; IChO2026Problems.T2A7.closedOscillatorySystem_gibbsRate_tendsto_zero",
+          "status": "covered",
+          "evidence": "The equilibrium dissipation limit and its transfer through dG/dt=-T\u03c3 are explicit, separating this ordinary thermodynamic bridge from the panel choice."
+        },
+        {
+          "claim": "The oscillatory reaction produces repeated modulation of the dissipation rate.",
+          "carrier": "IChO2026Problems.T2A7.ClosedOscillatoryReactionEvolution.dissipationTracksKineticPeriod; IChO2026Problems.T2A7.ModulatedAtPeriod",
+          "status": "covered",
+          "evidence": "The source phrase 'oscillatory reaction occurs' is represented by a positive kinetic period and repeated down/up samples tied to gibbsRate, rather than by a free Boolean or a chosen panel label."
+        },
+        {
+          "claim": "The six pictured graph classes are represented in source order and only the lower-right class has all required features.",
+          "carrier": "IChO2026Problems.T2A7.GibbsRateGraphPanel; IChO2026Problems.T2A7.panelRate; IChO2026Problems.T2A7.panelRate_satisfies_requiredShape_iff",
+          "status": "covered",
+          "evidence": "Direct inspection of the bound answer-sheet image confirms the six constructors and their sign/trend/modulation classes; the iff audits every constructor uniformly."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t2_a7.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t2_a7",
+        "source_record_sha256": "1cd823ca3126df4f96b6ee2fc5421004b5155eee05a568184df5f3e01ec551b8",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a7.answer.json",
+        "answer_submission_sha256": "e004d42aa6cf765c1fb8ee0dd32789efd50df882b941fe02b2c0ff997b70e921",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t2_a7.source.json",
+        "source_report_sha256": "4926bfd6154639bb385fc544ba94357ada1d69430cad2f0251fd19e8d46cb9c7",
+        "candidate": "IChO2026Problems/problem_icho_2026_t2_a7.lean",
+        "preflight_sha256": "9045ae6a5e363e6e57a99754567238be2b0fcc365561927fc8fdf4cf8e40efa7",
+        "candidate_sha256": "fcf4279c05afc6cc8b6ee4e1326d09466f5293dcea8244a07a4d1af031eae7ef",
+        "question_sha256": "164dd259cf0899aa7754f4ddf98270958f4424a45f5a77b6315e7bd3f59d09a5",
+        "shared_context_sha256": "c4a8d6b5f7d2d88be71f6c69562749110a1902592d35afcc0097ee89178ab3c3",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "607a07bcbec3ea5313040d1d6ff483a0d7146cd332eb0c0d6a39383e7db06305",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T2_page-4.png",
+            "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47"
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-3.png",
+            "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+          },
+          {
+            "path": ".archon/student_problem_pages/icho_2026_t2_a7-page-24.png",
+            "sha256": "a85a4195fc55555c3bc1b895e26a001d498d03d8210fe87663341c29775d7623"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "22337a9db10956c91faa2c5ccc593b7923de99ace3dc7039a5e8681b4096bb17",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "gibbs_rate_graph"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t2_a7",
+          "path": ".archon/provided_answer_drafts/Q2.md",
+          "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t2_a7.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t2_a7",
+          "source_record_sha256": "1cd823ca3126df4f96b6ee2fc5421004b5155eee05a568184df5f3e01ec551b8",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a7.answer.json",
+          "answer_submission_sha256": "e004d42aa6cf765c1fb8ee0dd32789efd50df882b941fe02b2c0ff997b70e921",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t2_a7.source.json",
+          "source_report_sha256": "4926bfd6154639bb385fc544ba94357ada1d69430cad2f0251fd19e8d46cb9c7",
+          "candidate": "IChO2026Problems/problem_icho_2026_t2_a7.lean",
+          "preflight_sha256": "9045ae6a5e363e6e57a99754567238be2b0fcc365561927fc8fdf4cf8e40efa7",
+          "candidate_sha256": "fcf4279c05afc6cc8b6ee4e1326d09466f5293dcea8244a07a4d1af031eae7ef",
+          "question_sha256": "164dd259cf0899aa7754f4ddf98270958f4424a45f5a77b6315e7bd3f59d09a5",
+          "shared_context_sha256": "c4a8d6b5f7d2d88be71f6c69562749110a1902592d35afcc0097ee89178ab3c3",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "607a07bcbec3ea5313040d1d6ff483a0d7146cd332eb0c0d6a39383e7db06305",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T2_page-4.png",
+              "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47"
+            },
+            {
+              "path": "icho_2026_source/image/T2_page-3.png",
+              "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+            },
+            {
+              "path": ".archon/student_problem_pages/icho_2026_t2_a7-page-24.png",
+              "sha256": "a85a4195fc55555c3bc1b895e26a001d498d03d8210fe87663341c29775d7623"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "22337a9db10956c91faa2c5ccc593b7923de99ace3dc7039a5e8681b4096bb17",
+            "node_count": 5,
+            "edge_count": 4,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "gibbs_rate_graph"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t2_a7",
+            "path": ".archon/provided_answer_drafts/Q2.md",
+            "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The requested quantifier, no-ledger determination, thermodynamic shape, and six-panel visual comparison were frozen from the inline problem evidence and all three bound images before the generated submission, Lean candidate, or process metadata were inspected; the sealed Kimi draft was used afterward only for fidelity comparison."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The symbolic chain dG/dt=-T\u03c3\u22640, \u03c3\u21920 at equilibrium, and oscillatory modulation was compared against every pictured panel; GibbsRateGraphRawResult and gibbsRateGraphRawDerivation carry the resulting finite choice without rounding."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy specifies exact_symbolic for a classification, so the source-visible panel position is reported directly and the global numeric rule is inactive."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance, measurement interval, displayed quantum, or numerical rounding is used or claimed for this classification."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The only decisive domain is the six boxes visibly printed in .archon/student_problem_pages/icho_2026_t2_a7-page-24.png; GibbsRateGraphPanel has exactly six constructors in the same reading order. No open chemical candidate universe is asserted."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=fcf4279c05afc6cc8b6ee4e1326d09466f5293dcea8244a07a4d1af031eae7ef; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=8. Nontrivial result carriers are GibbsRateGraphRawResult, panelRate_satisfies_requiredShape_iff, GibbsRateGraphReportedResult, gibbsRateGraphRawDerivation, and gibbsRateGraphReportedDerivation in IChO2026Problems.T2A7."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The candidate answers only T2-A7's qualitative closed-system dG/dt graph choice and limits uniqueness to the six source-visible panels."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "Closedness and oscillation come from current_question; fixed-T,p Gibbs dissipation, nonnegative entropy production, and relaxation to equilibrium are the ordinary thermodynamic conditions needed for using G. The model exposes each condition separately and assumes no panel identity."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The bound submission's sole raw/display classification and the Lean reported-result theorem agree with the independently selected source-visible panel, with empty unit and no operational placeholder."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Named carriers cover closed-system Gibbs dissipation, equilibrium limit, kinetic modulation, image-panel encoding, uniform alternative elimination, and raw/reported output binding; no prior-part or staged-reaction bridge is used."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "select and justify the dG/dt graph for the closed oscillatory system",
+            "lean_carrier": "IChO2026Problems.T2A7.gibbsRateGraphReportedDerivation",
+            "status": "covered",
+            "evidence": "The submission schema has exactly one output in bundle order with the required id, classification kind, empty unit, and an exact-symbolic raw/display classification matching the independent audit; the named theorem carries that result.",
+            "output_id": "gibbs_rate_graph",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T2_page-4.png",
+            "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47",
+            "inspected": true,
+            "evidence": "The page states T2.7's closed-system, oscillatory-reaction, dG/dt graph-selection instruction; it contains no numerical datum or hidden dependency for this output."
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-3.png",
+            "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260",
+            "inspected": true,
+            "evidence": "The preceding page shows the BZ phase portrait and parts 2.3-2.5. No value or result from those parts flows into the generic T2.7 Gibbs-rate classification."
+          },
+          {
+            "path": ".archon/student_problem_pages/icho_2026_t2_a7-page-24.png",
+            "sha256": "a85a4195fc55555c3bc1b895e26a001d498d03d8210fe87663341c29775d7623",
+            "inspected": true,
+            "evidence": "The answer panel contains six boxes read left-to-right, top-to-bottom: decreasing line; sign-crossing undamped oscillation; negative monotone relaxation; negative downward oscillatory trend; sign-crossing growing oscillation; and negative damped oscillation approaching zero. Axes and checkboxes are legible."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The formalization separates the fixed-T,p second-law sign, equilibrium relaxation, and kinetic modulation and uses them only for the qualitative Gibbs-rate choice."
+          },
+          "staged_species_domain": {
+            "status": "not_applicable",
+            "evidence": "not_staged_transformation: no depicted or stated reaction arrow, material stage, species ledger, yield, residue, or transformation balance is used to derive gibbs_rate_graph."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No chemical formula, molar mass, composition, or mass fraction is requested or used."
+          },
+          "conservation_laws": {
+            "status": "not_applicable",
+            "evidence": "No species, atom, charge, mass, phase, recycle, fresh-feed, or inventory conservation ledger is outcome-decisive for this qualitative thermodynamic graph."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "The source requests a qualitative graph classification with empty output unit. panelRate uses scale-free canonical representatives solely for sign, limit, and modulation, and does not claim numerical dG/dt magnitudes."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "The exact-symbolic classification has no raw arithmetic, significant figures, rounding, or tolerance."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No molecular structure or stereochemical claim occurs in the requested output."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The singular box-selection task is resolved only within the explicitly pictured six-panel set; the candidate audits all six and makes no global chemical-universe uniqueness claim."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The chosen constructor appears only in the conclusion. The source supplies the six-member panel domain, panelRate transparently models every visible curve, and panelRate_satisfies_requiredShape_iff applies the same independent shape predicate uniformly rather than injecting a singleton or free flag."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [],
+            "evidence": "Source-first thermodynamic and visual derivation agrees with the answer card and all named Lean contracts.",
+            "id": "gibbs_rate_graph",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T2A7.GibbsRateGraphPanel",
+                "IChO2026Problems.T2A7.ClosedOscillatoryReactionEvolution"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T2A7.GibbsRateGraphRawResult",
+                "IChO2026Problems.T2A7.gibbsRateGraphRawDerivation"
+              ],
+              "relations": [
+                "IChO2026Problems.T2A7.DampedDissipativeOscillation",
+                "IChO2026Problems.T2A7.closedOscillatorySystem_requiredShape",
+                "IChO2026Problems.T2A7.panelRate_satisfies_requiredShape_iff"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T2A7.GibbsRateGraphReportedResult",
+                "IChO2026Problems.T2A7.gibbsRateGraphReportedDerivation"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The Lean input, shape, finite-panel iff, raw uniqueness, and reported-selection carriers match the source-first classification.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "instantaneous Gibbs-energy rate followed over the lifetime of the stated closed oscillatory reaction",
+              "kind": "instantaneous"
+            },
+            "quantity_definition": "the source-visible graph class of instantaneous dG/dt versus time that obeys closed-system dissipation, oscillatory modulation, and relaxation to equilibrium",
+            "raw_result": {
+              "derivation": "At fixed T and p, dG/dt=-T\u03c3\u22640 for a closed system; \u03c3 tends to zero at equilibrium, while oscillatory kinetics modulate the rate. Comparing all six depicted traces leaves the bottom-right panel.",
+              "exact_unrounded": true,
+              "value_or_expression": "bottomRight"
+            },
+            "reporting": {
+              "application": "Return the exact source-visible panel classification; no numerical rounding applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The card has one classification output, no unit or numeric basis, and the exact-symbolic policy required by the source-first audit.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": ".archon/student_problem_pages/icho_2026_t2_a7-page-24.png#six-panel-dgdt-choices"
+              }
+            ],
+            "source_requirement": "select and justify the dG/dt graph for the closed oscillatory system",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "fcf4279c05afc6cc8b6ee4e1326d09466f5293dcea8244a07a4d1af031eae7ef"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a7.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The source-visible six-panel classification, bound submission, and Lean statements agree: the closed-system Gibbs-rate trace is nonpositive, periodically modulated, and tends to zero, selecting the lower-right panel without placing that panel in a premise.",
+        "reviewed_at": "2026-09-13T08:39:38Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "fcf4279c05afc6cc8b6ee4e1326d09466f5293dcea8244a07a4d1af031eae7ef",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a7.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 8,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The bound submission, six-panel image classification, sealed Kimi subpart 2.7, and the nontrivial Lean raw/reported carriers agree; the recorded deterministic preflight compiles with zero sorry, and no answer is assumed in a hypothesis.",
+    "evidence": "Independent audit gives the standard fixed-temperature, fixed-pressure closed-system chain dG/dt = -T*sigma <= 0, vanishing dissipation at equilibrium, and modulation from oscillatory kinetics. The answer-sheet audit shows that exactly one of its six panels has all three features, and panelRate_satisfies_requiredShape_iff proves the corresponding exhaustive finite classification. Draft fidelity: frozen draft SHA-256 4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51, relevant Kimi subpart 2.7, original answer 'tick the graph in which dG/dt is negative at all times: below the time axis, periodically modulated, approaching 0, and never positive'; the submission and Lean result preserve this answer with no discrepancy.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "093a1c14bcdceec239ea241e63632facf3dcddc3df4bbd0bff64416c2845b2fc",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t2_a7.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t2_a7",
+      "source_record_sha256": "1cd823ca3126df4f96b6ee2fc5421004b5155eee05a568184df5f3e01ec551b8",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a7.answer.json",
+      "answer_submission_sha256": "e004d42aa6cf765c1fb8ee0dd32789efd50df882b941fe02b2c0ff997b70e921",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t2_a7.source.json",
+      "source_report_sha256": "4926bfd6154639bb385fc544ba94357ada1d69430cad2f0251fd19e8d46cb9c7",
+      "candidate": "IChO2026Problems/problem_icho_2026_t2_a7.lean",
+      "preflight_sha256": "1d5dcfc30c0e6e2b58f7c7668a2947d4b1c7a2358ebd85023f8088b2238d3499",
+      "candidate_sha256": "093a1c14bcdceec239ea241e63632facf3dcddc3df4bbd0bff64416c2845b2fc",
+      "question_sha256": "164dd259cf0899aa7754f4ddf98270958f4424a45f5a77b6315e7bd3f59d09a5",
+      "shared_context_sha256": "c4a8d6b5f7d2d88be71f6c69562749110a1902592d35afcc0097ee89178ab3c3",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "607a07bcbec3ea5313040d1d6ff483a0d7146cd332eb0c0d6a39383e7db06305",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T2_page-4.png",
+          "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47"
+        },
+        {
+          "path": "icho_2026_source/image/T2_page-3.png",
+          "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+        },
+        {
+          "path": ".archon/student_problem_pages/icho_2026_t2_a7-page-24.png",
+          "sha256": "a85a4195fc55555c3bc1b895e26a001d498d03d8210fe87663341c29775d7623"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "22337a9db10956c91faa2c5ccc593b7923de99ace3dc7039a5e8681b4096bb17",
+        "node_count": 5,
+        "edge_count": 4,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "gibbs_rate_graph"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t2_a7",
+        "path": ".archon/provided_answer_drafts/Q2.md",
+        "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t2_a7.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t2_a7",
+        "source_record_sha256": "1cd823ca3126df4f96b6ee2fc5421004b5155eee05a568184df5f3e01ec551b8",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a7.answer.json",
+        "answer_submission_sha256": "e004d42aa6cf765c1fb8ee0dd32789efd50df882b941fe02b2c0ff997b70e921",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t2_a7.source.json",
+        "source_report_sha256": "4926bfd6154639bb385fc544ba94357ada1d69430cad2f0251fd19e8d46cb9c7",
+        "candidate": "IChO2026Problems/problem_icho_2026_t2_a7.lean",
+        "preflight_sha256": "1d5dcfc30c0e6e2b58f7c7668a2947d4b1c7a2358ebd85023f8088b2238d3499",
+        "candidate_sha256": "093a1c14bcdceec239ea241e63632facf3dcddc3df4bbd0bff64416c2845b2fc",
+        "question_sha256": "164dd259cf0899aa7754f4ddf98270958f4424a45f5a77b6315e7bd3f59d09a5",
+        "shared_context_sha256": "c4a8d6b5f7d2d88be71f6c69562749110a1902592d35afcc0097ee89178ab3c3",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "607a07bcbec3ea5313040d1d6ff483a0d7146cd332eb0c0d6a39383e7db06305",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T2_page-4.png",
+            "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47"
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-3.png",
+            "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+          },
+          {
+            "path": ".archon/student_problem_pages/icho_2026_t2_a7-page-24.png",
+            "sha256": "a85a4195fc55555c3bc1b895e26a001d498d03d8210fe87663341c29775d7623"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "22337a9db10956c91faa2c5ccc593b7923de99ace3dc7039a5e8681b4096bb17",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "gibbs_rate_graph"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t2_a7",
+          "path": ".archon/provided_answer_drafts/Q2.md",
+          "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The result was independently rederived from the inline problem wording, ordinary scoped thermodynamics, and all three bound images; the sealed Kimi draft was used only for the separately recorded fidelity check, and generated files were treated only as objects of audit."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "closedSystem_gibbsRate_nonpositive derives the sign from the entropy-production identity, positive temperature, and nonnegative entropy production; closedOscillatorySystem_gibbsRate_tendsto_zero derives the equilibrium limit; closedOscillatorySystem_requiredShape adds the source-indicated kinetic modulation; panelRate_satisfies_requiredShape_iff performs the exhaustive six-panel classification."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The requested output is a tick-box classification and its bound policy is exact_symbolic; no decimal formatting or significant-figure rule applies."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No numerical tolerance, measurement interval, or rounding threshold is used for this exact qualitative classification."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "GibbsRateGraphPanel has exactly the six boxes visible in the bound A2-6 image, ordered left-to-right and top-to-bottom; panelRate transparently represents each visible qualitative curve, rather than using an answer-shaped singleton domain."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=093a1c14bcdceec239ea241e63632facf3dcddc3df4bbd0bff64416c2845b2fc; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result carriers are IChO2026Problems.T2A7.gibbsRateGraphRawDerivation, IChO2026Problems.T2A7.gibbsRateGraphReportedDerivation, and IChO2026Problems.T2A7.panelRate_satisfies_requiredShape_iff."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The reviewed declaration reports one exact classification over the finite six-panel domain and makes no numerical, mechanistic, or open-world claim beyond the question."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The reported theorem has no answer-bearing hypotheses. Supporting physical assumptions are separated transparently: closed boundary, fixed-temperature/fixed-pressure Gibbs criterion, positive temperature, nonnegative entropy production, equilibrium dissipation limit, and kinetic-period modulation corresponding to the source's closed oscillatory-reaction description."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The raw unique-choice carrier and reported carrier select the same source-visible panel, matching the sole requested output and the independently audited submission."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The candidate exposes the thermodynamic identity, second-law sign, approach-to-equilibrium limit, oscillatory modulation, six panel representatives, and an exhaustive iff classification; no local opaque identity predicate or unproved answer equality supplies the conclusion."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "select and justify the dG/dt graph for the closed oscillatory system",
+          "lean_carrier": "IChO2026Problems.T2A7.gibbsRateGraphReportedDerivation (with raw carrier IChO2026Problems.T2A7.gibbsRateGraphRawDerivation)",
+          "status": "covered",
+          "evidence": "The one-entry submission schema and classification agree with the independently derived unique-panel result; the output uses the required empty unit and exact-symbolic reporting mode.",
+          "output_id": "gibbs_rate_graph",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T2_page-4.png",
+          "sha256": "b5e103f6fca031d7080e03073c4dad882142bd4e53cc0690f4140eaa4f6dea47",
+          "inspected": true,
+          "evidence": "The page states subquestion 2.7 as a closed-system oscillatory-reaction Gibbs-rate graph choice; it contains the prompt but not the six-box panel."
+        },
+        {
+          "path": "icho_2026_source/image/T2_page-3.png",
+          "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260",
+          "inspected": true,
+          "evidence": "The page supplies preceding BZ phase-portrait context and no additional condition or alternative answer for subquestion 2.7."
+        },
+        {
+          "path": ".archon/student_problem_pages/icho_2026_t2_a7-page-24.png",
+          "sha256": "a85a4195fc55555c3bc1b895e26a001d498d03d8210fe87663341c29775d7623",
+          "inspected": true,
+          "evidence": "The complete unmarked choice panel has six curves: monotone decrease, undamped zero-crossing oscillation, monotone negative relaxation, modulated decrease away from zero, growing zero-crossing oscillation, and a negative damped modulation tending to zero. The Lean constructor order and representatives match these six visible classes."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Within the standard fixed-temperature, fixed-pressure scope explicitly represented by ClosedIsothermalIsobaricEvolution, dG/dt=-T*sigma and sigma>=0 give nonpositive Gibbs-rate; closed-system equilibration gives a zero limit, while oscillatory kinetics give repeated modulation. These are exactly the decisive qualitative features."
+        },
+        "staged_species_domain": {
+          "status": "not_applicable",
+          "evidence": "not_staged_transformation: the requested output classifies a thermodynamic time trace and does not use any depicted or stated staged material transformation, yield, residue, stream, or material ledger."
+        },
+        "formula_mass_consistency": {
+          "status": "not_applicable",
+          "evidence": "No formula, molar mass, composition, or material quantity is requested or used."
+        },
+        "conservation_laws": {
+          "status": "not_applicable",
+          "evidence": "No atom, charge, mass, phase, or staged material balance is outcome-decisive for this graph classification."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "The output unit is empty and the graph is qualitative; panelRate uses scale-free representative curves and asserts no numerical dimensional equality."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The classification is exact symbolic, with no arithmetic, precision, rounding, or tolerance to audit."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "No molecular structure or stereochemical assignment is requested."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "panelRate_satisfies_requiredShape_iff exhaustively checks all six source-visible constructors and proves exactly one satisfies the three independently specified qualitative constraints."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The candidate domain contains all six visible options, DampedDissipativeOscillation does not name a panel, each panel has a transparent analytic representative, and the selected constructor appears only in the proved witness/conclusion rather than in a premise or singleton domain."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a7.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The bound submission, six-panel image classification, sealed Kimi subpart 2.7, and the nontrivial Lean raw/reported carriers agree; the recorded deterministic preflight compiles with zero sorry, and no answer is assumed in a hypothesis.",
+        "evidence": "Independent audit gives the standard fixed-temperature, fixed-pressure closed-system chain dG/dt = -T*sigma <= 0, vanishing dissipation at equilibrium, and modulation from oscillatory kinetics. The answer-sheet audit shows that exactly one of its six panels has all three features, and panelRate_satisfies_requiredShape_iff proves the corresponding exhaustive finite classification. Draft fidelity: frozen draft SHA-256 4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51, relevant Kimi subpart 2.7, original answer 'tick the graph in which dG/dt is negative at all times: below the time axis, periodically modulated, approaching 0, and never positive'; the submission and Lean result preserve this answer with no discrepancy.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:03:46.321478Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "093a1c14bcdceec239ea241e63632facf3dcddc3df4bbd0bff64416c2845b2fc",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a7.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:03:46.321519Z",
+    "repair_handoff": {}
+  }
+}

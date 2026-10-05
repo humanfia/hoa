@@ -1,0 +1,60 @@
+{
+  "target": "icho_2026_t7_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302542.803624,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t7_a7.lean": "ef378fb689fe6e5435db7007f7bf0e92ae2dc3d780f752a7bcafc4ea29fe5aa4",
+    "answer.md": "02eaba73d11d0e7d97e9b689ee122e05f30328e4625f4ce6061211702e6655cc",
+    "verification.md": "9b2db04b390dc8a7f85515fac97cef2f7d6b8a0f1b60ef8366c670d78ab7bb0c",
+    "result.json": "99b623e5fd5dce3bad7f2a8358af3caa240b0006e8af7ceadd4260c22780e3d2"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t7_a7",
+    "status": "completed",
+    "answer_summary": "7 = LaN; 8 = Ca3N2; 9 = Si3N4; 10 = La5Ca9O2[SiO3N][Si12N24] = La5Ca9Si13N25O5; S = O2-; T = [SiO3N]5-.",
+    "theorem_names": [
+      "IChO2026Problems.T7A7.candidate_molar_masses",
+      "IChO2026Problems.T7A7.nitride_percentages_match_source",
+      "IChO2026Problems.T7A7.stoichiometric_mass_ratios_match_source",
+      "IChO2026Problems.T7A7.synthesis_atom_balance",
+      "IChO2026Problems.T7A7.formula10_is_primitive",
+      "IChO2026Problems.T7A7.nitride_charge_neutrality",
+      "IChO2026Problems.T7A7.formula10_ionic_decomposition",
+      "IChO2026Problems.T7A7.ionic_charge_certificate",
+      "IChO2026Problems.T7A7.anion_compositions_forced",
+      "IChO2026Problems.T7A7.icho_2026_t7_a7"
+    ],
+    "assumptions": [
+      "The relative atomic masses printed on PDF page G1-5 are used exactly as stipulated constants: La 138.9, Ca 40.08, Si 28.09, N 14.01, O 16.00.",
+      "Each displayed percentage and mass-ratio entry denotes the closed half-last-displayed-quantum interval required by TASK.json.",
+      "The question's quantitative single-product statement permits conservation of every input atom in compound 10.",
+      "Formal oxidation states are La(III), Ca(II), Si(IV), N(-III), and O(-II); La, Ca, and Si are in their highest ordinary oxidation states in these compounds.",
+      "The compositional consequence of the stated tetrahedral configuration is one central Si with four O/N ligands."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t7_a7.lean",
+      "grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t7_a7.lean",
+      "python3 -m json.tool result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

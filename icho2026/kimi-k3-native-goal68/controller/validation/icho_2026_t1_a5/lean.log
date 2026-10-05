@@ -1,0 +1,133 @@
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:87:14: warning: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Note: The updated constant has a different type:
+  {α : Sort u} → (α → α → Prop) → Prop
+instead of
+  {α : Sort u_1} → (α → α → Prop) → Prop
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:88:16: warning: `Irreflexive` has been deprecated: Use `Std.Irrefl` instead
+
+Note: The updated constant has a different type:
+  {α : Sort u} → (α → α → Prop) → Prop
+instead of
+  {α : Sort u_1} → (α → α → Prop) → Prop
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:163:29: warning: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Note: The updated constant has a different type:
+  {α : Sort u} → (α → α → Prop) → Prop
+instead of
+  {α : Sort u_1} → (α → α → Prop) → Prop
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:165:31: warning: `Irreflexive` has been deprecated: Use `Std.Irrefl` instead
+
+Note: The updated constant has a different type:
+  {α : Sort u} → (α → α → Prop) → Prop
+instead of
+  {α : Sort u_1} → (α → α → Prop) → Prop
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:218:26: warning: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Note: The updated constant has a different type:
+  {α : Sort u} → (α → α → Prop) → Prop
+instead of
+  {α : Sort u_1} → (α → α → Prop) → Prop
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:237:28: warning: `Irreflexive` has been deprecated: Use `Std.Irrefl` instead
+
+Note: The updated constant has a different type:
+  {α : Sort u} → (α → α → Prop) → Prop
+instead of
+  {α : Sort u_1} → (α → α → Prop) → Prop
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:308:26: warning: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Note: The updated constant has a different type:
+  {α : Sort u} → (α → α → Prop) → Prop
+instead of
+  {α : Sort u_1} → (α → α → Prop) → Prop
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:339:28: warning: `Irreflexive` has been deprecated: Use `Std.Irrefl` instead
+
+Note: The updated constant has a different type:
+  {α : Sort u} → (α → α → Prop) → Prop
+instead of
+  {α : Sort u_1} → (α → α → Prop) → Prop
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:413:26: warning: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Note: The updated constant has a different type:
+  {α : Sort u} → (α → α → Prop) → Prop
+instead of
+  {α : Sort u_1} → (α → α → Prop) → Prop
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:438:28: warning: `Irreflexive` has been deprecated: Use `Std.Irrefl` instead
+
+Note: The updated constant has a different type:
+  {α : Sort u} → (α → α → Prop) → Prop
+instead of
+  {α : Sort u_1} → (α → α → Prop) → Prop
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:519:70: warning: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵a̵p̵p̵l̵y̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:520:71: warning: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵a̵p̵p̵l̵y̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:625:73: warning: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵a̵p̵p̵l̵y̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:626:74: warning: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵a̵p̵p̵l̵y̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:790:69: warning: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵a̵p̵p̵l̵y̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:791:70: warning: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵a̵p̵p̵l̵y̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:1031:56: warning: This simp argument is unused:
+  ZMod.natCast_val
+
+Hint: Omit it from the simp argument list.
+  simp only [zero_add, ZMod.val_zero, ZMod.val_mul, Z̵M̵o̵d̵.̵n̵a̵t̵C̵a̵s̵t̵_̵v̵a̵l̵,̵ ̵ZMod.val_natCast] at hval
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:1328:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a5.lean:1365:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+'IChO2026T1A5.structures_EFG' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A5.empirical_formula_E' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A5.empirical_formula_G' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A5.empirical_ratio_E' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A5.empirical_ratio_G' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A5.hexamethylbenzene_axis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A5.melliticAcid_axis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A5.melliticTrianhydride_axis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A5.E_hydrogen_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A5.G_oxygen_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]

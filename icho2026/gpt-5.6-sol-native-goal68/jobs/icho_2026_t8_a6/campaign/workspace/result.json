@@ -1,0 +1,33 @@
+{
+  "target_id": "icho_2026_t8_a6",
+  "status": "completed",
+  "answer_summary": "The exact raw CO quantum yield is 18940872892793693114789369/10186495312500000000000000 percent = 1.8594101613683624924... percent, which reports to 1.86 percent at three significant figures.",
+  "theorem_names": [
+    "IChO2026Problems.T8A6.co_half_reaction_balanced",
+    "IChO2026Problems.T8A6.electron_coefficient_from_charge_balance",
+    "IChO2026Problems.T8A6.catalyst_amount_exact",
+    "IChO2026Problems.T8A6.catalyst_molecule_count_exact",
+    "IChO2026Problems.T8A6.co_molecule_rate_exact",
+    "IChO2026Problems.T8A6.reacted_electron_rate_exact",
+    "IChO2026Problems.T8A6.photon_energy_exact",
+    "IChO2026Problems.T8A6.incident_photon_rate_exact",
+    "IChO2026Problems.T8A6.co_quantum_yield_raw",
+    "IChO2026Problems.T8A6.co_quantum_yield_reported",
+    "IChO2026Problems.T8A6.co_quantum_yield_final"
+  ],
+  "assumptions": [
+    "The numerical quantities stipulated by the problem are treated as exact as printed, in accordance with TASK.json; the statement does not label them as uncertain measurements.",
+    "The printed 3.8 percent catalyst mass fraction is applied directly to the stated 10 mg loaded batch, so its catalyst mass is 0.038 times 10 mg.",
+    "The TOF stated for that loaded sample is applied to the catalyst-molecule population determined from the same loading; the source specifies no separate inactive fraction.",
+    "The acidic CO2-to-CO half-reaction is balanced by atom and charge conservation and therefore consumes two electrons per CO.",
+    "The standard photon relation E = h*c/lambda and the exact 2019-SI values of the Avogadro constant, Planck constant, and speed of light are used."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a6.lean",
+    "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe|axiom)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t8_a6.lean; then exit 1; fi",
+    "python3 exact-arithmetic Fraction check recorded verbatim in verification.md",
+    "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T8_page-1.png icho_2026_source/image/T8_page-2.png"
+  ]
+}

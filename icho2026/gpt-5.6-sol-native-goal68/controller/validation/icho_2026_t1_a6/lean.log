@@ -1,0 +1,4 @@
+'IChO2026Problems.T1A6.icho_2026_t1_a6_formulae' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T1A6.hydration_number_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T1A6.combustion_product_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T1A6.aluminaFraction_in_measurement_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,84 @@
+{
+  "target": "icho_2026_t4_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789360098.573542,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "39ef6ca8ab089c51027d1f982e880d2db907fca483986a19d2f8919a63050d30",
+    "IChO2026Problems/problem_icho_2026_t4_a3.lean": "69f589877cdfb7f32a7f7871a1439083f825e999c1d9a70c2400c1ea65dd2f3b",
+    "answer.md": "566398c73a2a86f799b33db20c90f66350864a43dd55f1076b289de94f6d0e3c",
+    "verification.md": "5b4a25203ea20a7acb8ed0d45914e062b6a65499505d8488f6bacce5f65e9ad4",
+    "result.json": "75315597c0c5dea437491071cd719c1802f757460efdeb301866462a4423115f"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a3",
+    "status": "completed",
+    "answer_summary": "235_92U + 1_0n -> 72_30Zn + 161_62Sm + 3 1_0n. Charge conservation Z1+Z2=92 with the problem's same-group clause plus the fission-yield graph force the unique group-12 light fragment Zn (Z=30) with heavy partner Sm (Z=62); mass conservation with the problem's stated 3 emitted neutrons forces A1+A2=233, resolved to 72+161 within the plotted high-yield humps.",
+    "theorem_names": [
+      "IChO2026T4A3.fission_mass_balance",
+      "IChO2026T4A3.fission_charge_balance",
+      "IChO2026T4A3.three_neutrons",
+      "IChO2026T4A3.zinc_group",
+      "IChO2026T4A3.group_functional_main_rows",
+      "IChO2026T4A3.unique_sameGroup_split",
+      "IChO2026T4A3.answer_split_balanced",
+      "IChO2026T4A3.fragment_mass_partition",
+      "IChO2026T4A3.heavy_mass_forced",
+      "IChO2026T4A3.light_fragment_in_yield_region",
+      "IChO2026T4A3.heavy_fragment_in_yield_region",
+      "IChO2026T4A3.icho_2026_t4_a3_answer"
+    ],
+    "assumptions": [
+      "Problem template (Q4-1 text): fission of 235U after neutron absorption emits exactly 3 additional neutrons; conservation of mass number A and atomic number Z.",
+      "IUPAC periodic table data (atomic numbers and group numbers) encoded as the iupacGroup function; ordinary scientific reference, not a competition answer.",
+      "Yield-graph reading: the P(A) graph on Q4-1 shows nonzero yield approximately over A in [70,104] and A in [128,166]; bounds recorded conservatively since the graph is a raster image without machine-readable values.",
+      "Same-group pairing: the unique balanced charge split with the light partner in IUPAC group 12 is {30,62}; proved exhaustively. The corresponding nuclides 72Zn and 161Sm are known 235U fission products (ordinary nuclear-data reference)."
+    ],
+    "source_gaps": [
+      "Strictly literal reading in which BOTH fragments carry the same numeric IUPAC group label admits no balanced split consistent with the plotted fission yields (group-2 splits pair with noble gases; {12,80} would require masses far outside the yield range). The answer uses the unique group-12 light-partner split {Zn,Sm}, which is the only equation satisfying all problem-stated constraints.",
+      "Exact pixel-level values of the P(A) yield graph are not machine-readable; yield-region bounds are a conservative image reading."
+    ],
+    "verification_commands": [
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t4_a3.lean",
+        "result": "exit 0; output: 'IChO2026T4A3.icho_2026_t4_a3_answer' depends on axioms: [propext, Quot.sound]"
+      },
+      {
+        "command": "lake build IChO2026Problems",
+        "result": "Build completed successfully (8564 jobs); only a style lint in protected umbrella header IChO2026Problems.lean"
+      }
+    ],
+    "axioms_final_theorem": [
+      "propext",
+      "Quot.sound"
+    ],
+    "no_sorry_no_admit_no_native_decide": true,
+    "points": 3.0,
+    "files": {
+      "lean": "IChO2026Problems/problem_icho_2026_t4_a3.lean",
+      "answer": "answer.md",
+      "verification": "verification.md"
+    }
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t4_a3.lean": {
+      "sorry": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

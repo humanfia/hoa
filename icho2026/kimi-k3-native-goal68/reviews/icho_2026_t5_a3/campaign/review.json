@@ -1,0 +1,17 @@
+pdftotext isn't available, but the page images fully cover pages 1–4 of T5 and I've inspected all of them directly, which suffices for semantic checking. Let me verify the scientific content independently.
+
+**Independent scientific check of the derivation chain:**
+
+1. **Fragment inventory (page 1 pixels):** a = ⤳H (n×), b = HO–P(=O)⤝⤝ (2×), c = ⤳O–CH₂–CH(O⤳)–CH₂–O⤝ (3×), d = O=C⤳–R (4×). Atoms: a: H1; b: H1O2P1; c: C3H5O3; d: C1O1 + R = C_{cR}H_{2cR−1−2u}O. Totals: C = 9+4cR, H = n+15+8cR−2−8u = 13+n+8cR−8u, O = 17, P = 2. Matches `pl1Atoms`. ✓
+
+2. **Page 4 hydrolysis bridge:** 4·C(cR)H(2cR−2u)O₂ + 7H₂O → C(4cR+9,H..): H = 8cR−8u + 24 + 6 − 16 = 8cR−8u+14; O = 8+8+9−8 = 17; P = 2. Matches `pl1Atoms 1 cR u` exactly (proved by `hydrolysis_consistency`, `inventory_bridge`). This fixes n = 1 from problem text only, without relying on the informal chirality argument. ✓
+
+3. **Handshake/valence sum:** (4C + H + 2O + 5P)/2 with P(V)=5 as drawn in fragment b — appropriate trusted_general_law, disclosed. 255 = (93+n+24cR−8u)/2 at n=1 → 3cR − u = 52. ✓
+
+4. **Ozonolysis → u = 2:** page 3 states "three different organic products in equimolar amounts". For chain acid with u C=C: products' stoichiometry differs from fragment count unless u=1 or 2. Only u=2 yields three distinct products with equal total stoichiometric ratio (1:1:1). The Lean premise `u + 1 = 3` is exactly the u=2 case — a scoped, correct formalization; solution candidates with other u are excluded by it. This is a modeling condition transcribing the (somewhat ambiguous) problem sentence; verification.md and answer.md disclose it. ✓
+
+5. **Result:** u=2, cR=18 → C₁₈H₃₂O₂ = linoleic acid formula; consistent with the 5.4 iodine datum (181.0 g I₂ per 100 g): 100/280.45 × 2 × 253.8 ≈ 181.0 ✓; PL1 = C81H142O17P2 ✓ (tetralinoleoyl cardiolipin — matches mammalian-heart predominant cardiolipin known from general reference knowledge).
+
+**Proof audit:** the file compiles with exit 0 (my run, 43 s), `#print axioms` reports only `[propext, Quot.sound]`, grep confirms no sorry/admit/axiom/unsafe/native_decide/decide. The final theorem `fatty_acid_molecular_formula` concludes `fattyAcidFormula cR u = (18, 32, 2)` from premises encoding the 255-bond inventory equation and the ozonolysis constraint; derivation is by `omega`/`ring`/`norm_num` — genuine inference, not result-shaped constants. The premises are *conditional* encodings (hbonds, hozon) rather than floating axioms, which is the correct pattern for an arithmetic formalization; the chemistry-to-arithmetic transcription is documented and source-checked.
+
+Residual concerns: (a) n=1 is asserted via `pl1AFragCount` with only an informal prose justification from chirality — but the page-4 hydrolysis bridge proves the same inventory independently, so the substantive claim is problem-grounded; (b) the ozonolysis sentence's formalization as u+1=3 silently excludes a genuine alternative reading (u=1 with two identical fragments). These make the result conditioned on stated model assumptions rather than fully unconditional.

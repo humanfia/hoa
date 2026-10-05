@@ -1,0 +1,60 @@
+{
+  "target": "icho_2026_t7_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302400.1372397,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t7_a3.lean": "70ecc54cfeeda1c3c20743ce5a2dd8697fb1c505727e00ee418bba21b05e05e3",
+    "answer.md": "4dab5a9dd30a6abe55c9ec6edc902a1a4f2fa29332cd25e80278c832551b689a",
+    "verification.md": "5c74a742c29b5a8dbcd65cf3f165a1475c12dc2ea7363cc8edc26090294c0721",
+    "result.json": "8d08b18fb38ad16fbb63600c6182556eb101c8966bbda73589282e003e67ee44"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t7_a3",
+    "status": "completed",
+    "answer_summary": "The fresh 4 mol N2:H2 = 1:3 portion contains 1 mol N2, and the retained fraction per cycle is 0.850. Thus f_k = (17/3)(1-(17/20)^k), giving f_58 = 5.6662099726... mol and the required report 5.6662 mol. The cumulative overall yield is 1-f_k/k; cycle 188 is below 97.0% and cycle 189 reaches it, so the least cycle count is 189.",
+    "theorem_names": [
+      "IChO2026Problems.T7A3.nitrogenAfter_source_balance",
+      "IChO2026Problems.T7A3.nitrogenAfter_closedForm",
+      "IChO2026Problems.T7A3.nitrogen_after_58_cycles",
+      "IChO2026Problems.T7A3.overallYield_eq_conversion_ratio",
+      "IChO2026Problems.T7A3.overallYield_one",
+      "IChO2026Problems.T7A3.overallYield_mono_of_pos",
+      "IChO2026Problems.T7A3.overallYield_188_lt",
+      "IChO2026Problems.T7A3.overallYield_189_ge",
+      "IChO2026Problems.T7A3.cycles_for_97_percent"
+    ],
+    "assumptions": [
+      "Each fresh portion contains exactly 4 mol total at the problem-stated N2:H2 = 1:3 stoichiometric ratio, hence exactly 1 mol N2.",
+      "The problem-stated per-cycle yield is exactly 0.150, so 0.850 of the available stoichiometric reactants remains after each cycle.",
+      "Ammonia is completely separated and all unreacted gases are returned, exactly as stipulated by the problem's idealized cycle model.",
+      "Overall yield means cumulative nitrogen converted divided by cumulative fresh nitrogen supplied; this reproduces the problem's 15.0% yield after the first cycle."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem.Reporting",
+      "lake env lean IChO2026Problems/problem_icho_2026_t7_a3.lean",
+      "! grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t7_a3.lean",
+      "python3 -m json.tool result.json",
+      "sha256sum icho_2026_source/image/T7_page-1.png icho_2026_source/image/T7_page-2.png icho_2026_source/raw/theory_problem.pdf",
+      "! grep -n '[[:blank:]]$' answer.md verification.md result.json IChO2026Problems/problem_icho_2026_t7_a3.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

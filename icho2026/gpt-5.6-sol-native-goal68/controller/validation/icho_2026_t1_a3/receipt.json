@@ -1,0 +1,61 @@
+{
+  "target": "icho_2026_t1_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300266.1322296,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t1_a3.lean": "0d2da6fe68a03b7917a7f7959bf03fc7ee13d6302312698eb334bc7428764055",
+    "answer.md": "121848843c679fd94226e6f762545c190e6f1451ba12749ab0dd28f295d6773f",
+    "verification.md": "4bb7bb3b7328438bf0b576ba70fcd5309e4fd4fa3121d5f7d6af95d5ae62f135",
+    "result.json": "1c10e66307bb486743603f76a0b6486084d096474c853ba10ed014c6ed0073b1"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t1_a3",
+    "status": "completed",
+    "answer_summary": "The binomial carbon-isotope ratio gives the raw estimate 989/99 = 9.989898..., and the task's display interval proves the unique positive integral count n = 10. The ferric-ion phenol response narrows the printed table to compounds 1 and 5; the carbon count excludes C11 compound 1, so W is compound 5, eugenol (C10H12O2).",
+    "theorem_names": [
+      "IChO2026T1A3.carbon_abundances_sum_to_one",
+      "IChO2026T1A3.theoreticalPeakRatio_cross_mul",
+      "IChO2026T1A3.raw_carbon_estimate",
+      "IChO2026T1A3.raw_carbon_estimate_nearest_integer",
+      "IChO2026T1A3.ten_carbons_peak_ratio",
+      "IChO2026T1A3.ten_carbons_matches_displayed_ratio",
+      "IChO2026T1A3.carbon_atom_count",
+      "IChO2026T1A3.phenolic_candidates_are_one_or_five",
+      "IChO2026T1A3.compound_identity",
+      "IChO2026T1A3.eugenol_matches_table_evidence",
+      "IChO2026T1A3.solve_t1_a3"
+    ],
+    "assumptions": [
+      "W is one of the ten compounds in the problem's candidate table, as established by the shared problem context and confirmed by the answer-sheet choices.",
+      "With carbon limited to 12C and 13C and every other element monoisotopic, molecular-ion isotope intensities follow the binomial abundance weights p^n and n*q*p^(n-1); common non-carbon factors cancel.",
+      "The displayed 9:1 first-component ratio has half-width 0.5 under TASK.json's measured-display convention.",
+      "Within the printed candidate domain, the characteristic aqueous Fe3+ colour response is interpreted by the standard qualitative phenol test; inspection of the structures shows phenolic OH only in compounds 1 and 5.",
+      "The structure drawn for compound 5 is 4-allyl-2-methoxyphenol (eugenol), and its printed formula is C10H12O2."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum TASK.json icho_2026_source/image/T1_page-2.png icho_2026_source/image/T1_page-3.png icho_2026_source/raw/theory_problem.pdf",
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t1_a3.lean",
+      "if grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t1_a3.lean; then exit 1; else echo 'No forbidden proof shortcuts or custom axiom declarations found.'; fi"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

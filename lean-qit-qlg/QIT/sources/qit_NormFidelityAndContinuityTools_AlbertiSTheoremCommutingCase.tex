@@ -1,0 +1,47 @@
+A variational characterization of the quantum fidelity between two density operators $\rho$ and $\sigma$ is given by Alberti's theorem:
+$$
+F(\rho,\sigma)^2
+=
+\inf_{P>0}
+\Tr(\rho P)\Tr(\sigma P^{-1}),
+$$
+where the infimum is taken over all invertible positive-definite operators $P$.
+
+Assume that $\rho$ and $\sigma$ commute. Hence, there exists an orthonormal basis $\{\ket{i}\}$ such that
+$$
+\rho=\sum_i \lambda_i \ket{i}\bra{i},
+\qquad
+\sigma=\sum_i \mu_i \ket{i}\bra{i},
+$$
+where $\lambda_i,\mu_i\geq 0$ and
+$$
+\sum_i\lambda_i=\sum_i\mu_i=1.
+$$
+
+Restrict $P$ to be diagonal in the common eigenbasis,
+$$
+P=\sum_i p_i \ket{i}\bra{i},
+\qquad
+p_i>0.
+$$
+Using the Cauchy--Schwarz inequality, solve the resulting optimization problem and prove that
+$$
+\inf_{\{p_i>0\}}
+\left(
+\sum_i \lambda_i p_i
+\right)
+\left(
+\sum_i \mu_i p_i^{-1}
+\right)
+=
+\left(
+\sum_i \sqrt{\lambda_i\mu_i}
+\right)^2.
+$$
+Conclude that, in the commuting case,
+$$
+F(\rho,\sigma)
+=
+\sum_i \sqrt{\lambda_i\mu_i},
+$$
+which is the classical fidelity, also known as the Bhattacharyya coefficient.

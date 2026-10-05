@@ -1,0 +1,11 @@
+'IChO2026Problems.T3A7.pore_stoichiometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A7.cof9_formula_per_pore' does not depend on any axioms
+'IChO2026Problems.T3A7.equilibrium_capacity_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A7.uranyl_ions_per_pore_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A7.equilibrium_capacity_three_significant_figures' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T3A7.uranyl_ions_per_pore_three_significant_figures' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T3A7.t3_a7_requested_outputs' depends on axioms: [propext, Classical.choice, Quot.sound]

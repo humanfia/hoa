@@ -1,0 +1,20 @@
+Let $G=S_n$, let $\pi=(1\,2)$, and let $H_\pi=\{1,\pi\}$.  Let $P_{\mathrm{triv}}$ and $P_\pi$ be the weak Fourier-sampling distributions on $\widehat{S_n}$ for the hidden subgroups $\{1\}$ and $H_\pi$, respectively.  For probability distributions $P,Q$ on $\widehat{S_n}$, define
+$$
+    \TV(P,Q)=\frac12\sum_{\sigma\in\widehat{S_n}}|P(\sigma)-Q(\sigma)|.
+$$
+Assume the bound
+$$
+    \TV(P_{\mathrm{triv}},P_\pi)
+    \leq \frac{1}{2\sqrt{|\operatorname{Conj}(\pi)|}}.
+$$
+Compute $|\operatorname{Conj}(\pi)|$ exactly and prove that
+$$
+    \TV(P_{\mathrm{triv}},P_\pi)
+    \leq \frac1{\sqrt{2n(n-1)}}.
+$$
+Also prove that for $m$ independent weak Fourier samples,
+$$
+    \TV(P_{\mathrm{triv}}^{\otimes m},P_\pi^{\otimes m})
+    \leq m\,\TV(P_{\mathrm{triv}},P_\pi),
+$$
+and prove that this total-variation bound alone implies an $\Omega(n)$ necessary sample count for constant distinguishing advantage.

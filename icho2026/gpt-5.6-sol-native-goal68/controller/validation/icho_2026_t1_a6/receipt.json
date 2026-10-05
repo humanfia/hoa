@@ -1,0 +1,58 @@
+{
+  "target": "icho_2026_t1_a6",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300314.4027915,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t1_a6.lean": "c224ab0f61d2c126340b42db912b372963167aa44c0b1c09d9ed730fcb92bf89",
+    "answer.md": "98897888c399068491b622b53458cafdb163ac9011887fdb4dffbf10bff28df1",
+    "verification.md": "69d3b409a577e47a198495fb2974251d3df317bc74fd1ef49d815d975d9fc5b6",
+    "result.json": "601a7166bd8c2dde62f32976c9a2437b2f170312f5621c6030a023366a140c97"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t1_a6",
+    "status": "completed",
+    "answer_summary": "The stone is aluminium mellitate hexadecahydrate, Al2[C6(COO)6].16H2O (Al2C12O12.16H2O), and compound H is Al2O3.",
+    "theorem_names": [
+      "IChO2026Problems.T1A6.icho_2026_t1_a6_formulae",
+      "IChO2026Problems.T1A6.hydration_number_unique",
+      "IChO2026Problems.T1A6.combustion_product_unique",
+      "IChO2026Problems.T1A6.aluminaFraction_in_measurement_bounds",
+      "IChO2026Problems.T1A6.aluminumFluorideTrihydrate_water_percent",
+      "IChO2026Problems.T1A6.cryolite_sodium_percent",
+      "IChO2026Problems.T1A6.cryolite_aluminum_percent",
+      "IChO2026Problems.T1A6.hexamethylbenzene_hydrogen_percent",
+      "IChO2026Problems.T1A6.melliticAnhydride_oxygen_percent"
+    ],
+    "assumptions": [
+      "Atomic weights are the exact values printed on supplied PDF page G1-5.",
+      "The A4 and A5 qualitative analyses identify Al(III) and mellitate(6-) as the salt ions; charge neutrality fixes Al2[mellitate].",
+      "The approximately 100-200 C mass loss is hydrate water, so the dry-to-initial mass ratio is the anhydrous-to-hydrated molar-mass ratio.",
+      "Complete heating in open air converts the mellitate carbon and hydrogen to volatile CO2 and H2O, leaving stable aluminium oxide as the nonvolatile product."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T1_page-3.png icho_2026_source/image/T1_page-4.png icho_2026_source/raw/theory_problem.pdf",
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t1_a6.lean",
+      "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe|axiom)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t1_a6.lean; then exit 1; else echo 'no forbidden proof shortcuts'; fi"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

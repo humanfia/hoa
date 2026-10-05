@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t6_a3",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "{I}",
+      "id": "possible_halogens",
+      "kind": "finite_set",
+      "raw_value": "{X in {F, Cl, Br, I} | BDE(C-X) <= (5/2)*(1602176634/10^28)*(602214076*10^15)/1000 kJ mol^-1} = {I}",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

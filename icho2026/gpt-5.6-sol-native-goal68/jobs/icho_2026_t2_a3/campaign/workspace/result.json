@@ -1,0 +1,26 @@
+{
+  "target_id": "icho_2026_t2_a3",
+  "status": "completed",
+  "answer_summary": "Equating the elementary mass-action rates of steps (1) and (4) and cancelling their common positive [HBrO2] and [H+] factors gives [Br-]_critical = (k1/k4)[BrO3-] = 3/10^7 M, reported as 3.00e-7 mol dm^-3.",
+  "theorem_names": [
+    "IChO2026Problems.T2A3.switchBoundary_formula",
+    "IChO2026Problems.T2A3.printedRates_equal_iff",
+    "IChO2026Problems.T2A3.step4_exceeds_step1_iff",
+    "IChO2026Problems.T2A3.step1_exceeds_step4_iff",
+    "IChO2026Problems.T2A3.fallbackHBrO2_levels_positive",
+    "IChO2026Problems.T2A3.bromide_critical",
+    "IChO2026Problems.T2A3.bromide_critical_reported"
+  ],
+  "assumptions": [
+    "For each reaction explicitly identified as an elementary step, its rate obeys the standard mass-action rate law.",
+    "The common [HBrO2] and [H+] factors are positive at the switching comparison; the problem gives [H+] = 0.8 M and positive fallback [HBrO2] levels for both processes."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T2_page-2.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T2_page-3.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean --version",
+    "lake build IChO2026Chem.Reporting",
+    "lake env lean IChO2026Problems/problem_icho_2026_t2_a3.lean",
+    "if grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t2_a3.lean; then exit 1; else echo 'No prohibited proof shortcuts or custom axioms found.'; fi"
+  ]
+}

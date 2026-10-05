@@ -1,0 +1,24 @@
+{
+  "target_id": "icho_2026_t7_a1",
+  "status": "completed",
+  "answer_summary": "M1 contains exactly CO, H2, and N2; M2 contains exactly H2, N2, and NH3; and x > y.",
+  "theorem_names": [
+    "IChO2026Problems.Icho2026T7A1.gases_m1",
+    "IChO2026Problems.Icho2026T7A1.gases_m2",
+    "IChO2026Problems.Icho2026T7A1.xy_relation"
+  ],
+  "assumptions": [
+    "The diagram's comma-separated stream labels are interpreted as the exact positive-support sets of the corresponding streams.",
+    "The problem's word 'quantitative' is represented by complete conversion in each displayed non-ammonia reaction, carrying nonreacting gas species through unchanged.",
+    "The quantities x and y are nonnegative real molar amounts; a quantitative 1:1 steam-reforming step has extent min(x,y).",
+    "For M2, the diagram's explicit N2/H2 recycle and NH3 cooler outlet ground the presence of unreacted N2 and H2 together with formed NH3 before cooling."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t7_a1.lean",
+    "if grep -nE '\\b(sorry|admit|axiom|unsafe)\\b' IChO2026Problems/problem_icho_2026_t7_a1.lean; then echo 'Forbidden proof shortcut token found'; exit 1; else echo 'No sorry/admit/axiom/unsafe tokens found.'; fi",
+    "python -m json.tool result.json >/dev/null && echo 'result.json: valid JSON'",
+    "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T7_page-1.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf"
+  ]
+}
+

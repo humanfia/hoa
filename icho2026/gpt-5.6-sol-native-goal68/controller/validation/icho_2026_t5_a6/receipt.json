@@ -1,0 +1,60 @@
+{
+  "target": "icho_2026_t5_a6",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302192.782896,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t5_a6.lean": "d453003ee99b9ffa597ca4b602802c05b7a572c978e17781cc83f62f42c049b7",
+    "answer.md": "6de1990afeabc11be870c70826ec2cad3b92abcf5c85b92aa097e9c683bf50ec",
+    "verification.md": "f20e4c55dd1e24beadfa333623ab59e1739638263670aee9775b8eae034a8b24",
+    "result.json": "31d354ec686ade6fb7d629e8224d034e7760f38df13ebfe09f8a024f57dc8a47"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t5_a6",
+    "status": "completed",
+    "answer_summary": "A valid PL2 is the neutral bis(phosphatidyl) phosphate diester of symmetric 1,3-propanediol, with the two diacylglycerol stereocentres having the same handedness; its mirror has both handednesses reversed. PL3 is the physiological monoanion RCOO-CH2-CH(OCOR)-CH2-O-P(=O)(O-)-O-CH2CH3, together with its mirror enantiomer. The PL2 count is 255 - 13 + 12 = 254, and PL3 has hydrolysis coefficient m = 4.",
+    "theorem_names": [
+      "IChO2026Problems.ProblemIcho2026T5A6.fatty_acid_counts_derived",
+      "IChO2026Problems.ProblemIcho2026T5A6.pl2_has_254_total_bond_orders",
+      "IChO2026Problems.ProblemIcho2026T5A6.pl2_hydrolysis_formula_balance",
+      "IChO2026Problems.ProblemIcho2026T5A6.pl3_water_coefficient_is_four",
+      "IChO2026Problems.ProblemIcho2026T5A6.pl2_enantiomeric_pair",
+      "IChO2026Problems.ProblemIcho2026T5A6.pl3_enantiomeric_pair",
+      "IChO2026Problems.ProblemIcho2026T5A6.structure_pl2",
+      "IChO2026Problems.ProblemIcho2026T5A6.structure_pl3",
+      "IChO2026Problems.ProblemIcho2026T5A6.requested_structures"
+    ],
+    "assumptions": [
+      "Standard closed-shell valences C=4, H=1, O=2, and phosphate P=5 are used to count sigma-plus-pi bond order.",
+      "The source's three equimolar reductive-ozonolysis pieces correspond to two C=C bonds in the acyclic fatty acid dependency.",
+      "Complete hydrolysis reverses the four carboxylate-ester and relevant phosphate-ester condensations shown by the constructed graphs.",
+      "Conventional skeletal-formula hydrogens are implicit, and each R pseudoatom denotes the common hydrocarbon residue requested by the prompt."
+    ],
+    "source_gaps": [
+      "The prompt asks for a creative construction and gives no uniqueness criterion; the result proves a satisfying witness, not uniqueness.",
+      "The comparative phrase 'more symmetrical' is not assigned a point-group metric in the source. The formalization proves the concrete nontrivial involutive side exchange of the proposed PL2 instead of inventing such a metric."
+    ],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t5_a6.lean",
+      "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t5_a6.lean; then exit 1; else echo 'No forbidden proof shortcuts found.'; fi",
+      "python3 -m json.tool result.json >/dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

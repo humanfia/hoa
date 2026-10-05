@@ -1,0 +1,53 @@
+{
+  "target": "icho_2026_t8_a10",
+  "goal_status": "goal_complete",
+  "checked_at": 1789303100.4882393,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t8_a10.lean": "cf84d9284bdf32beab23508419b252cb73bb496d59614bd72e5d7cf93a4ee24a",
+    "answer.md": "95786e2e70b90c895554d978ea3dd5847b7b5e46a5fca944fd1ca0103e4fef6c",
+    "verification.md": "f65ee52dea4bde77b83db6c6db2887ca35ddfa1107446141a5310187f0aea53a",
+    "result.json": "0dd66b2261a1db6218dbd88a1a28cb8271c9e65e7a2a34821269e6393b31053c"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a10",
+    "status": "completed",
+    "answer_summary": "Tick option (b): increasing [Red] decreases the emission lifetimes of both S1 and T1. Dynamic quenching adds k_q[Red] to the excited-state decay rate, so tau([Red]) = tau0/(1 + k_q tau0 [Red]), which is strictly decreasing because both printed quenching constants and unquenched lifetimes are positive.",
+    "theorem_names": [
+      "IChO2026Problems.ProblemIChO2026T8A10.quenchedLifetime_zero",
+      "IChO2026Problems.ProblemIChO2026T8A10.quenchedLifetime_strictAntiOn",
+      "IChO2026Problems.ProblemIChO2026T8A10.lifetime_s1",
+      "IChO2026Problems.ProblemIChO2026T8A10.lifetime_t1",
+      "IChO2026Problems.ProblemIChO2026T8A10.icho_2026_t8_a10"
+    ],
+    "assumptions": [
+      "Standard dynamic bimolecular-quenching kinetics: at fixed reductant concentration c, the quenching channel contributes the pseudo-first-order loss rate k_q c, so independent loss rates add.",
+      "Reductant concentrations are nonnegative and all non-quenching decay conditions remain fixed while [Red] is varied.",
+      "The printed k_S, k_T, tau0(S1), and tau0(T1) are treated as exact stipulated values for this qualitative classification."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T8_page-4.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T8_page-5.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t8_a10.lean",
+      "if grep -nE '(^|[[:space:]])(sorry|admit|unsafe|axiom)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t8_a10.lean; then exit 1; else echo 'PASS: no sorry/admit/unsafe/custom-axiom declarations'; fi",
+      "python3 -m json.tool result.json >/dev/null && echo 'PASS: result.json is valid JSON'"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

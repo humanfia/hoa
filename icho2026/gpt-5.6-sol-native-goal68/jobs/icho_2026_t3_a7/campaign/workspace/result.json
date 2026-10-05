@@ -1,0 +1,33 @@
+{
+  "target_id": "icho_2026_t3_a7",
+  "status": "completed",
+  "answer_summary": "The equilibrium mass balance gives q_e = 427 mg g^-1. Atom counting and pore sharing give COF-9 = C36H27N9O3 per pore (M = 633.666 g mol^-1), so the exact nominal uptake is 45095897/45005000 = 1.0020197089... uranyl ions per pore, reported as 1.00 ions per pore.",
+  "theorem_names": [
+    "IChO2026Problems.T3A7.pore_stoichiometry",
+    "IChO2026Problems.T3A7.cof8_formula_per_pore",
+    "IChO2026Problems.T3A7.cof9_formula_per_pore",
+    "IChO2026Problems.T3A7.cof9_molar_mass",
+    "IChO2026Problems.T3A7.uranyl_molar_mass",
+    "IChO2026Problems.T3A7.absorbed_uranyl_mass",
+    "IChO2026Problems.T3A7.equilibrium_capacity_raw",
+    "IChO2026Problems.T3A7.uranyl_ions_per_pore_raw",
+    "IChO2026Problems.T3A7.equilibrium_capacity_three_significant_figures",
+    "IChO2026Problems.T3A7.uranyl_ions_per_pore_three_significant_figures",
+    "IChO2026Problems.T3A7.t3_a7_requested_outputs"
+  ],
+  "assumptions": [
+    "The printed experimental decimals are used as exact nominal values; no uncertainty interval is asserted.",
+    "The standard adsorption mass balance q_e = (c_0 - c_e)V/m is used.",
+    "The displayed honeycomb topology is counted with each tritopic vertex shared among three pores and each edge among two pores.",
+    "The displayed conversion of each nitrile to an amidoxime adds one NH2OH, and all three pictured nitriles per pore formula unit are converted.",
+    "The molar mass of UO2^2+ is calculated from the printed U and O atomic masses; ionic electron-mass differences are ignored by standard chemical molar-mass convention."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T3_page-6.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T3_page-7.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf",
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t3_a7.lean",
+    "! grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t3_a7.lean",
+    "python3 -m json.tool result.json"
+  ]
+}

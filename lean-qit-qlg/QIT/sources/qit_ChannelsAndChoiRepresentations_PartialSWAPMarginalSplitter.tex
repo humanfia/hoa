@@ -1,0 +1,17 @@
+Let $A$ and $B$ be qubit systems with fixed computational bases. Determine whether there exists a global unitary $V_{AB}$ on $\cH_A\otimes\cH_B$ such that, for every qubit density operator $\rho$, the input state
+$$
+\omega_{AB}=\frac{\Id_A}{2}\otimes\rho_B
+$$
+is transformed into a state whose two marginals satisfy
+$$
+\Tr_A\!\left[V_{AB}\omega_{AB}V_{AB}^\dagger\right]
+=
+\frac{\rho_B}{2}+\frac{\Id_B}{4}
+$$
+and
+$$
+\Tr_B\!\left[V_{AB}\omega_{AB}V_{AB}^\dagger\right]
+=
+\frac{\rho_A}{2}+\frac{\Id_A}{4}.
+$$
+Here $\rho_A$ denotes the operator on $A$ with the same matrix representation as $\rho_B$ in the chosen computational bases.

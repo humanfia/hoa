@@ -1,0 +1,29 @@
+{
+  "target_id": "icho_2026_t7_a4",
+  "status": "completed",
+  "answer_summary": "R Equation for CO₂ scrubbing by the aqueous solution of compound 3 (N-methyldiethanolamine, MDEA, a tertiary amine, so carbonation goes to bicarbonate, not carbamate): CH3N(CH2CH2OH)2 + CO2 + H2O -> [CH3NH(CH2CH2OH)2]+ + HCO3-, i.e. C5H13NO2 + CO2 + H2O -> [C5H14NO2]+ + [HCO3]-. All stoichiometric coefficients are 1; the equation is element-balanced (C:6=6, H:15=15, N:1=1, O:5=5) and charge-balanced (0 = +1 + -1).",
+  "theorem_names": [
+    "IChO2026.mdeaCO2Reaction_stoichiometry",
+    "IChO2026.mdeaCO2Reaction_nontrivial",
+    "IChO2026.mdeaCO2Reaction_element_balance_C",
+    "IChO2026.mdeaCO2Reaction_element_balance_H",
+    "IChO2026.mdeaCO2Reaction_element_balance_N",
+    "IChO2026.mdeaCO2Reaction_element_balance_O",
+    "IChO2026.mdeaCO2Reaction_charge_balance",
+    "IChO2026.mdeaCO2Reaction_answer"
+  ],
+  "assumptions": [
+    "Compound 3 is N-methyldiethanolamine MeN(CH2CH2OH)2 (C5H13NO2), read directly off the structure printed on official page Q7-2.",
+    "The reaction asked for is the CO2-scrubbing reaction: problem text 'An aqueous solution of 3 is being used to remove CO2 from the mixture.' (Q7-2, immediately above box 7.4; box Z is labeled 'CO2 scrubber' in Fig. 1 on Q7-1).",
+    "Trusted general law (allowed by the candidate domain policy): a tertiary amine such as MDEA has no N-H proton and therefore absorbs CO2 in water as the ammonium hydrogen-carbonate pair R3NH+ HCO3- rather than as a carbamate.",
+    "Formalization level: species are modeled by molecular formulas (strings) with their elemental compositions (C,H,N,O) and net charges; the CRNT Reaction structure models the chemical equation. No molecular-graph model is required for a requested output of kind 'chemical-equation'."
+  ],
+  "source_gaps": [
+    "None material to the answer. The printed image must be consulted for the structure of 3 (the JSONL text only says 'aqueous solution of 3'); the structure was read from T7_page-2.png. The elementary chemistry (tertiary amine + CO2 + H2O -> ammonium bicarbonate) is a trusted general law, not a problem-stated premise, and is declared as such above."
+  ],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t7_a4.lean   # exit 0, no warnings; prints: 'IChO2026.mdeaCO2Reaction_answer' depends on axioms: [propext]",
+    "cp IChO2026Problems/problem_icho_2026_t7_a4.lean /tmp/t7a4_axcheck.lean && cat >> /tmp/t7a4_axcheck.lean ( #print axioms for each exported theorem ) && lake env lean /tmp/t7a4_axcheck.lean   # all theorems depend on no axioms or only [propext]",
+    "grep -n 'sorry\\|admit\\|unsafe' IChO2026Problems/problem_icho_2026_t7_a4.lean   # no matches"
+  ]
+}

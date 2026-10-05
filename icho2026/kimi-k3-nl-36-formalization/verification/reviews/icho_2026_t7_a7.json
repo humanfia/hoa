@@ -1,0 +1,1633 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "All six concrete formula identifications follow from the bound composition data, pinned constants, complete single-product atom/charge ledger, and tetrahedral carrier. Sealed Kimi draft subpart 7.7 (SHA-256 7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd) is preserved without substitution or discrepancy; no global uniqueness is claimed.",
+    "updated_at": "2026-09-13T08:49:12Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "c629626ba595ba1d0a33dcfdabbb0f238b9d3cd63855072277a0dc43217c698e",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "Page 4 supplies the nitrogen fractions, Q_alpha R_beta S2 T[Si12N24] pattern, cation/anion structural constraints, and reagent mass ratio. Every fact used is represented by named Lean data or relations, and all six outputs match the source-first reconstruction."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Verified weights give fraction residuals -1.29e-6, -3.29e-5, and -7.34e-6 inside \u00b10.00005. The 10:6:7:5 batch gives ratio residuals 0.000192, 0.000864, -0.001252, 0 inside \u00b10.005; (10,18,26,50,10)=2(5,9,13,25,5) and 33-4-5-24=0."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "Atom counts, empirical GCD, component-over-total mass fractions, oxidation charges, four-vertex tetrahedral topology, grouped assembly, and complete input/output ledgers are explicit. Earlier subparts are not premises of any requested carrier."
+        },
+        "uncertainty_propagation": {
+          "status": "passed",
+          "evidence": "Percentages use fraction quantum 0.0001/half-width 0.00005 and reagent ratios use quantum 0.01/half-width 0.005 through ConsistentMeasurement. Outputs are exact formulas; registry nominal weights are conventional inputs and no source uncertainty claims another interval."
+        },
+        "branch_orientation": {
+          "status": "not_applicable",
+          "evidence": "No alternative branch is requested. The relevant direction is explicit in the text: 7, 8, 9 and SiO2 are inputs and 10 is the sole product; Lean uses that input/output orientation."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Identify requests concrete supported witnesses, not open-world uniqueness. Each witness is checked by mass-fraction, charge, empiricality, structured-composition, and full material-ledger constraints; no result occurs as a premise and no source-grounded countermodel invalidates the witnesses."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "Pinned nominal atomic weights for N, La, Ca, Si, and O.",
+          "carrier": "IChO2026Problems.T7A7.atomicWeight",
+          "status": "covered",
+          "evidence": "Offline lookups matched dataset SHA-256 11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5 and records N=5ca62d438a6594458420ed7f5d2072a583a9ae8c71a29d75b561edb28b6f065c, La=4d9b606ac4eacd2ca6092ec11247aa516a76617f79a70b617546a2b549bc3945, Ca=bd22853925586733318528c448b154bd9aef6c4c52cacc7ad392f32735f22fc1, Si=7b5414d31d44fa35cebc56dc0420d66babfb6868cdec7c4df84d09a1266cb566, O=d55ad5591b6aebea80363701cf500c7e0a46a5f46fd4fcfef16cc331efcc0588."
+        },
+        {
+          "claim": "Binary nitride witnesses use N(-III), neutral primitive formulas, and nitrogen mass over total formula mass.",
+          "carrier": "IChO2026Problems.T7A7.BinaryNitrideSpec; nitride7Candidate; nitride8Candidate; nitride9Candidate",
+          "status": "covered",
+          "evidence": "The source states binary nitrides containing N3- and three w(N) values. The carrier checks two-element support, positive counter-element/oxidation count, neutrality, gcd-one empiricality, and component-over-total mass."
+        },
+        {
+          "claim": "Displayed fractions and reagent ratios use the bound half-last-quantum rule.",
+          "carrier": "IChO2026Chem.Reporting.ConsistentMeasurement; IChO2026Problems.T7A7.nitrogenFractionQuantum; QuantitativeSingleProductFormationSpec",
+          "status": "covered",
+          "evidence": "Quantum 0.0001 is used for fractions printed to 0.01%, and 0.01 for ratios printed to 0.01; all independent values lie within the corresponding half-width cells."
+        },
+        {
+          "claim": "La(III)/Ca(II) are the named highest-state cations; Si(+IV), N(-III), and O(-II) support charge bookkeeping.",
+          "carrier": "IChO2026Problems.T7A7.ledgerHighestMetalOxidationState; IChO2026Problems.T7A7.oxidationContribution",
+          "status": "covered",
+          "evidence": "The source supplies highest-state and N3- constraints. Generic check: Royal Society of Chemistry Periodic Table, Common oxidation states rows, https://periodic-table.rsc.org/element/57/lanthanum (3), /20/calcium (2), /14/silicon (4,-4), /7/nitrogen (includes -3), /8/oxygen (includes -2); applied only to formal accounting for these named components."
+        },
+        {
+          "claim": "Quantitative formation uses the four named inputs, sole product 10, and complete La/Ca/Si/N/O conservation.",
+          "carrier": "IChO2026Problems.T7A7.FormationCandidate.inputAtomLedger; FormationCandidate.outputAtomLedger; QuantitativeSingleProductFormationSpec",
+          "status": "covered",
+          "evidence": "Page 4 states the inputs, single product, and quantitative formation. The carrier has no catch-all stream and checks positive coefficients, exact atom/mass conservation, and all four relative masses."
+        },
+        {
+          "claim": "S is monoatomic O2- and T is a one-centre/four-ligand SiO3N5- tetrahedron in the neutral grouped unit.",
+          "carrier": "IChO2026Problems.T7A7.sCandidate; tCandidate; TetrahedralAnion.formula; compound10Candidate; StructuredCompoundSpec",
+          "status": "covered",
+          "evidence": "Source multiplicities and topology combine with residual Si1N1O5. Carriers assign O2 to S2 and Si1O3N1 to T, then check charges -2, -5, -24, +33 and net zero."
+        },
+        {
+          "claim": "All six exact formulas are exported by nontrivial theorems and collected without rounding.",
+          "carrier": "IChO2026Problems.T7A7.formula7_output; formula8_output; formula9_output; formula10_output; formulaS_output; formulaT_output; raw_result; reported_result",
+          "status": "covered",
+          "evidence": "Each theorem proves a source-checking Prop; RawResult covers all six and ReportedResult is exact. Named values occur as checked conclusions, not hypotheses."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t7_a7.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t7_a7",
+        "source_record_sha256": "27269c0761241fcd16102a9877416a3b4bea8853972ca3859e0486fb45dd0c07",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t7_a7.answer.json",
+        "answer_submission_sha256": "1ca9790daa56beae6453a562af412e73e3dd0f7441becf1fc7fd52d106e3e293",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t7_a7.source.json",
+        "source_report_sha256": "8cfb55e7bdf45bb84a112dfc36e1ae8ffc503e6cd1090e5a9b5d4e1419dd15f2",
+        "candidate": "IChO2026Problems/problem_icho_2026_t7_a7.lean",
+        "preflight_sha256": "8e543b6ec56484ee6741d35112e36f66a89f80bfbbb1d97b3e89a0411798ca3b",
+        "candidate_sha256": "c629626ba595ba1d0a33dcfdabbb0f238b9d3cd63855072277a0dc43217c698e",
+        "question_sha256": "0b86412c700530bd2ea2c8b6d0fe0bf218d2bdac8d59ede8c2a88fcaa2eed29e",
+        "shared_context_sha256": "75728d5ffb411079098e5e4846db2052c4a2ab422cf2617b3ea363edd51274c6",
+        "previous_parts_sha256": "d8be0443503899d1886abf068608e03398a749d0446469afa8f57650d01568fd",
+        "requested_outputs_sha256": "90bce26ce3b673cbfedca272142c121507af373029ea2df9789b1d98f32f09c4",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T7_page-4.png",
+            "sha256": "7c6a69f04e438a75d16afb5e92c9d91a1f5c289faffbfc4f93d4f19e2ad8e626"
+          },
+          {
+            "path": "icho_2026_source/image/T7_page-3.png",
+            "sha256": "9bc386ab33010a7f8e999035212268ecbeb2ff73ca3a8a108dca96b364e5d47c"
+          },
+          {
+            "path": "icho_2026_source/image/T7_page-2.png",
+            "sha256": "010bf0d38d5f34a4edd184c97a2a3f0f9375e0e6f1326e7d0fbd336d319b97ba"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "bee6b78cd3afd9880db221330d79a9443a02b5f3c83669c58dcfce880974ad37",
+          "node_count": 17,
+          "edge_count": 36,
+          "node_kind_counts": {
+            "derivation_obligation": 6,
+            "previous_part_prerequisite": 2,
+            "requested_output": 6,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "formula_7",
+            "formula_8",
+            "formula_9",
+            "formula_10",
+            "formula_s",
+            "formula_t"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t7_a5",
+            "icho_2026_t7_a6"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t7_a7",
+          "path": ".archon/provided_answer_drafts/Q7.md",
+          "sha256": "7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t7_a7.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t7_a7",
+          "source_record_sha256": "27269c0761241fcd16102a9877416a3b4bea8853972ca3859e0486fb45dd0c07",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t7_a7.answer.json",
+          "answer_submission_sha256": "1ca9790daa56beae6453a562af412e73e3dd0f7441becf1fc7fd52d106e3e293",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t7_a7.source.json",
+          "source_report_sha256": "8cfb55e7bdf45bb84a112dfc36e1ae8ffc503e6cd1090e5a9b5d4e1419dd15f2",
+          "candidate": "IChO2026Problems/problem_icho_2026_t7_a7.lean",
+          "preflight_sha256": "8e543b6ec56484ee6741d35112e36f66a89f80bfbbb1d97b3e89a0411798ca3b",
+          "candidate_sha256": "c629626ba595ba1d0a33dcfdabbb0f238b9d3cd63855072277a0dc43217c698e",
+          "question_sha256": "0b86412c700530bd2ea2c8b6d0fe0bf218d2bdac8d59ede8c2a88fcaa2eed29e",
+          "shared_context_sha256": "75728d5ffb411079098e5e4846db2052c4a2ab422cf2617b3ea363edd51274c6",
+          "previous_parts_sha256": "d8be0443503899d1886abf068608e03398a749d0446469afa8f57650d01568fd",
+          "requested_outputs_sha256": "90bce26ce3b673cbfedca272142c121507af373029ea2df9789b1d98f32f09c4",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T7_page-4.png",
+              "sha256": "7c6a69f04e438a75d16afb5e92c9d91a1f5c289faffbfc4f93d4f19e2ad8e626"
+            },
+            {
+              "path": "icho_2026_source/image/T7_page-3.png",
+              "sha256": "9bc386ab33010a7f8e999035212268ecbeb2ff73ca3a8a108dca96b364e5d47c"
+            },
+            {
+              "path": "icho_2026_source/image/T7_page-2.png",
+              "sha256": "010bf0d38d5f34a4edd184c97a2a3f0f9375e0e6f1326e7d0fbd336d319b97ba"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "bee6b78cd3afd9880db221330d79a9443a02b5f3c83669c58dcfce880974ad37",
+            "node_count": 17,
+            "edge_count": 36,
+            "node_kind_counts": {
+              "derivation_obligation": 6,
+              "previous_part_prerequisite": 2,
+              "requested_output": 6,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "formula_7",
+              "formula_8",
+              "formula_9",
+              "formula_10",
+              "formula_s",
+              "formula_t"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t7_a5",
+              "icho_2026_t7_a6"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t7_a7",
+            "path": ".archon/provided_answer_drafts/Q7.md",
+            "sha256": "7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "Quantifier scope, all images, fraction calculations, molar ratio, atom/charge ledgers, and recycle-context ledger were fixed from bound problem evidence and verified registry constants before opening the sidecar or Lean file. The sealed draft was then used only for fidelity."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "Exact fraction carriers are 14007/152917, 28014/148248, and 56028/140283; the supported batch is 10:6:7:5 with (10,18,26,50,10)=2(5,9,13,25,5), followed by structured residual and charge ledgers."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "All outputs use the exact_symbolic formula policy. Source measurements use the bound half-last-quantum rule once; no intermediate rounded value proves an output."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "Only \u00b10.00005 for fraction quantum 0.0001 and \u00b10.005 for ratio quantum 0.01 are used, exactly one half of the last displayed quantum; no post-hoc tolerance is present."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No finite domain proves global uniqueness. LedgerElement records the five elements of the checked witness and quantitative ledger; Identify requires a concrete witness, and every formula is tested rather than injected into a premise."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=c629626ba595ba1d0a33dcfdabbb0f238b9d3cd63855072277a0dc43217c698e; preflight status=passed, compiles=true, returncode=0, sorry_count=10, duration_bucket=under_1m. Carriers: formula7_output, formula8_output, formula9_output, formula10_output, formulaS_output, formulaT_output, raw_result, reported_result in IChO2026Problems.T7A7."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "Six concrete exact formula witnesses are supplied with no global-uniqueness, exhaustive-classification, yield, purity, mechanism, or phase claim."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "Result theorems are closed: no identity, coefficient, exclusion flag, opaque chemistry predicate, prior answer, or requested result is assumed. Definitions are transparently checked by source-bound relations."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "Answer JSON schema_version is 1 and has exactly six entries in bundle order; ids, formula kinds, empty units, raw/display notations, and exact results all match."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Named bridges cover weights, nitride charge/fraction, display cells, oxidation accounting, formation ledger, structured topology/charge, and every output theorem. Parts 7.5 and 7.6 do not feed 7.7."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "empirical formula/composition of 7",
+            "lean_carrier": "IChO2026Problems.T7A7.formula7_output",
+            "status": "covered",
+            "evidence": "The bound sidecar entry has the required order, formula kind, and empty unit; raw/display notation matches the independent exact result and this nontrivial theorem.",
+            "output_id": "formula_7",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "empirical formula/composition of 8",
+            "lean_carrier": "IChO2026Problems.T7A7.formula8_output",
+            "status": "covered",
+            "evidence": "The bound sidecar entry has the required order, formula kind, and empty unit; raw/display notation matches the independent exact result and this nontrivial theorem.",
+            "output_id": "formula_8",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "empirical formula/composition of 9",
+            "lean_carrier": "IChO2026Problems.T7A7.formula9_output",
+            "status": "covered",
+            "evidence": "The bound sidecar entry has the required order, formula kind, and empty unit; raw/display notation matches the independent exact result and this nontrivial theorem.",
+            "output_id": "formula_9",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "empirical formula/composition of 10",
+            "lean_carrier": "IChO2026Problems.T7A7.formula10_output",
+            "status": "covered",
+            "evidence": "The bound sidecar entry has the required order, formula kind, and empty unit; raw/display notation matches the independent exact result and this nontrivial theorem.",
+            "output_id": "formula_10",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "empirical formula/composition of S",
+            "lean_carrier": "IChO2026Problems.T7A7.formulaS_output",
+            "status": "covered",
+            "evidence": "The bound sidecar entry has the required order, formula kind, and empty unit; raw/display notation matches the independent exact result and this nontrivial theorem.",
+            "output_id": "formula_s",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "empirical formula/composition of T",
+            "lean_carrier": "IChO2026Problems.T7A7.formulaT_output",
+            "status": "covered",
+            "evidence": "The bound sidecar entry has the required order, formula kind, and empty unit; raw/display notation matches the independent exact result and this nontrivial theorem.",
+            "output_id": "formula_t",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T7_page-4.png",
+            "sha256": "7c6a69f04e438a75d16afb5e92c9d91a1f5c289faffbfc4f93d4f19e2ad8e626",
+            "inspected": true,
+            "evidence": "Entire 7.7 panel is visible: N3-, three percentages, single-product heating with SiO2, Q_alpha R_beta S2 T[Si12N24], highest-state/monoatomic/tetrahedral constraints, and mass ratio. No drawing, legend, repeat boundary, cap, connector, or cross-page bond exists; textual multiplicities are alpha, beta, 2, 1, and one framework."
+          },
+          {
+            "path": "icho_2026_source/image/T7_page-3.png",
+            "sha256": "9bc386ab33010a7f8e999035212268ecbeb2ff73ca3a8a108dca96b364e5d47c",
+            "inspected": true,
+            "evidence": "Only 7.5/7.6 instruction and calibration panels appear. Their reductant/additive drawings have no component or cross-boundary bond continuing into 7.7 and do not feed a requested formula."
+          },
+          {
+            "path": "icho_2026_source/image/T7_page-2.png",
+            "sha256": "010bf0d38d5f34a4edd184c97a2a3f0f9375e0e6f1326e7d0fbd336d319b97ba",
+            "inspected": true,
+            "evidence": "Recycle, amine 3, and precursor-4 scheme belong to earlier parts. No depicted node, ligand boundary, arrow connector, or product fragment crosses into 7.7; none enters the current ledger."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "All identities satisfy binary-nitride, empiricality, fraction, source-template, oxidation-state, monoatomic/tetrahedral, atom-balance, and neutrality constraints. Formula 10 is both grouped and ungrouped."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "quantitative_material_stage: tail inputs={7,8,9,SiO2}, direction=heated together to form, head output={10}; page 4 states quantitative single-product formation. FormationCandidate input/output atom ledgers, batchMass, relativeToSilica, and its Spec cover the used La/Ca/Si/N/O atom and mass dimensions with no anonymous stream."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "Verified molar masses 152.917, 148.248, 140.283, and 60.083 g mol^-1 reproduce the three fractions and four relative batch masses within display cells."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "Input and output both have La10Ca18Si26N50O10. Per product, +33 balances S2=-4, T=-5, framework=-24; full formula gcd is one."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "Fractions and ratios are dimensionless and g mol^-1 factors cancel. Requested formula units are empty."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "No output is numerical. Observations are checked unrounded against half-last-quantum cells; formula strings are exact."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "TetrahedralAnion has one centre and exactly Fin 4 ligand vertices; tCandidate gives O3N. No stereochemical assignment is requested."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "Identify requires concrete supported witnesses, not exhaustive open-world coverage. No uniqueness claim is made, and each witness satisfies every decisive condition."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "Named witnesses and coefficients are tested by nontrivial fraction, charge, empiricality, structured assembly, ratio, and full-ledger predicates. No answer-shaped hypothesis, singleton search premise, free Bool/Prop, opaque flag, or reflexive theorem is used."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "molar mass of one complete binary-nitride formula unit",
+              "mass_or_composition_basis": "nitrogen component mass divided by total formula-unit mass",
+              "numerator": "one nitrogen atom(s) times the pinned nominal atomic weight of nitrogen",
+              "status": "applicable"
+            },
+            "branch_conditions": [],
+            "constants": [
+              {
+                "name": "shown nitrogen mass fraction",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "0.0916"
+              },
+              {
+                "name": "display quantum for the shown percentage",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "measurement_policy.measured_display_half_width"
+                },
+                "unit": "dimensionless",
+                "value": "0.0001"
+              },
+              {
+                "name": "nitride nitrogen oxidation number",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "-3"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "component-over-total mass fraction",
+                "relation": "w(N)=mass of nitrogen atoms divided by mass of the whole formula unit",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "printed formula_7 nitrogen fraction",
+                "relation": "candidate fraction lies in the printed display cell",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                }
+              }
+            ],
+            "evidence": "The charge-balanced primitive candidate reproduces its printed nitrogen percentage within the display cell and is linked to the complete formation ledger.",
+            "id": "formula_7",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T7A7.atomicWeight",
+                "IChO2026Problems.T7A7.shownNitrogenFraction7",
+                "IChO2026Problems.T7A7.nitrogenFractionQuantum",
+                "IChO2026Problems.T7A7.nitride7Candidate",
+                "IChO2026Problems.T7A7.formationCandidate"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T7A7.Formula7Output"
+              ],
+              "relations": [
+                "IChO2026Problems.T7A7.BinaryNitrideSpec",
+                "IChO2026Problems.T7A7.QuantitativeSingleProductFormationSpec"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T7A7.formula7_output"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named witness, source checks, raw carrier, and proved result theorem agree with the source-first reconstruction.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "not_applicable",
+              "description": "Static empirical-formula identification; no time or cycle scope."
+            },
+            "quantity_definition": "Empirical formula of binary nitride 7 as a concrete identification witness.",
+            "raw_result": {
+              "derivation": "Charge balance +3+(-3)=0 gives the primitive 1:1 formula; 14007/152917=0.0915987104..., within 0.0916 \u00b1 0.00005.",
+              "exact_unrounded": true,
+              "value_or_expression": "LaN; exact nominal-weight fraction 14007/152917"
+            },
+            "reporting": {
+              "application": "Use source display cells only for input checks; report the final formula exactly with no numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Submission id, formula kind, empty unit, exact-symbolic policy, and source requirement all match.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T7_page-4.png#q7.7"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "measurement_policy.measured_display_half_width"
+              }
+            ],
+            "source_requirement": "empirical formula/composition of 7",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "molar mass of one complete binary-nitride formula unit",
+              "mass_or_composition_basis": "nitrogen component mass divided by total formula-unit mass",
+              "numerator": "two nitrogen atom(s) times the pinned nominal atomic weight of nitrogen",
+              "status": "applicable"
+            },
+            "branch_conditions": [],
+            "constants": [
+              {
+                "name": "shown nitrogen mass fraction",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "0.1890"
+              },
+              {
+                "name": "display quantum for the shown percentage",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "measurement_policy.measured_display_half_width"
+                },
+                "unit": "dimensionless",
+                "value": "0.0001"
+              },
+              {
+                "name": "nitride nitrogen oxidation number",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "-3"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "component-over-total mass fraction",
+                "relation": "w(N)=mass of nitrogen atoms divided by mass of the whole formula unit",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "printed formula_8 nitrogen fraction",
+                "relation": "candidate fraction lies in the printed display cell",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                }
+              }
+            ],
+            "evidence": "The charge-balanced primitive candidate reproduces its printed nitrogen percentage within the display cell and is linked to the complete formation ledger.",
+            "id": "formula_8",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T7A7.atomicWeight",
+                "IChO2026Problems.T7A7.shownNitrogenFraction8",
+                "IChO2026Problems.T7A7.nitrogenFractionQuantum",
+                "IChO2026Problems.T7A7.nitride8Candidate",
+                "IChO2026Problems.T7A7.formationCandidate"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T7A7.Formula8Output"
+              ],
+              "relations": [
+                "IChO2026Problems.T7A7.BinaryNitrideSpec",
+                "IChO2026Problems.T7A7.QuantitativeSingleProductFormationSpec"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T7A7.formula8_output"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named witness, source checks, raw carrier, and proved result theorem agree with the source-first reconstruction.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "not_applicable",
+              "description": "Static empirical-formula identification; no time or cycle scope."
+            },
+            "quantity_definition": "Empirical formula of binary nitride 8 as a concrete identification witness.",
+            "raw_result": {
+              "derivation": "Charge balance 3(+2)+2(-3)=0 gives the primitive 3:2 formula; 28014/148248=0.188967136..., within 0.1890 \u00b1 0.00005.",
+              "exact_unrounded": true,
+              "value_or_expression": "Ca3N2; exact nominal-weight fraction 28014/148248"
+            },
+            "reporting": {
+              "application": "Use source display cells only for input checks; report the final formula exactly with no numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Submission id, formula kind, empty unit, exact-symbolic policy, and source requirement all match.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T7_page-4.png#q7.7"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "measurement_policy.measured_display_half_width"
+              }
+            ],
+            "source_requirement": "empirical formula/composition of 8",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "molar mass of one complete binary-nitride formula unit",
+              "mass_or_composition_basis": "nitrogen component mass divided by total formula-unit mass",
+              "numerator": "four nitrogen atom(s) times the pinned nominal atomic weight of nitrogen",
+              "status": "applicable"
+            },
+            "branch_conditions": [],
+            "constants": [
+              {
+                "name": "shown nitrogen mass fraction",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "0.3994"
+              },
+              {
+                "name": "display quantum for the shown percentage",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "measurement_policy.measured_display_half_width"
+                },
+                "unit": "dimensionless",
+                "value": "0.0001"
+              },
+              {
+                "name": "nitride nitrogen oxidation number",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "-3"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "component-over-total mass fraction",
+                "relation": "w(N)=mass of nitrogen atoms divided by mass of the whole formula unit",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "printed formula_9 nitrogen fraction",
+                "relation": "candidate fraction lies in the printed display cell",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                }
+              }
+            ],
+            "evidence": "The charge-balanced primitive candidate reproduces its printed nitrogen percentage within the display cell and is linked to the complete formation ledger.",
+            "id": "formula_9",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T7A7.atomicWeight",
+                "IChO2026Problems.T7A7.shownNitrogenFraction9",
+                "IChO2026Problems.T7A7.nitrogenFractionQuantum",
+                "IChO2026Problems.T7A7.nitride9Candidate",
+                "IChO2026Problems.T7A7.formationCandidate"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T7A7.Formula9Output"
+              ],
+              "relations": [
+                "IChO2026Problems.T7A7.BinaryNitrideSpec",
+                "IChO2026Problems.T7A7.QuantitativeSingleProductFormationSpec"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T7A7.formula9_output"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named witness, source checks, raw carrier, and proved result theorem agree with the source-first reconstruction.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "not_applicable",
+              "description": "Static empirical-formula identification; no time or cycle scope."
+            },
+            "quantity_definition": "Empirical formula of binary nitride 9 as a concrete identification witness.",
+            "raw_result": {
+              "derivation": "Charge balance 3(+4)+4(-3)=0 gives the primitive 3:4 formula; 56028/140283=0.399392656..., within 0.3994 \u00b1 0.00005.",
+              "exact_unrounded": true,
+              "value_or_expression": "Si3N4; exact nominal-weight fraction 56028/140283"
+            },
+            "reporting": {
+              "application": "Use source display cells only for input checks; report the final formula exactly with no numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Submission id, formula kind, empty unit, exact-symbolic policy, and source requirement all match.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T7_page-4.png#q7.7"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "measurement_policy.measured_display_half_width"
+              }
+            ],
+            "source_requirement": "empirical formula/composition of 9",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "two formula units of the sole product in the primitive balanced batch",
+              "mass_or_composition_basis": "complete La/Ca/Si/N/O inventory of all four input reagents",
+              "numerator": "input atom vector (La,Ca,Si,N,O)=(10,18,26,50,10)",
+              "status": "applicable"
+            },
+            "branch_conditions": [],
+            "constants": [
+              {
+                "name": "printed reagent mass ratio 7:8:9:SiO2",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "5.09:2.96:3.27:1.00"
+              },
+              {
+                "name": "structured formula pattern",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "Q_alpha R_beta S2 T[Si12N24]"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "formula_7",
+                "relation": "reagent-7 formula enters the batch ledger",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "requested_outputs[0].source_requirement"
+                }
+              },
+              {
+                "kind": "requested_output",
+                "reference": "formula_8",
+                "relation": "reagent-8 formula enters the batch ledger",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "requested_outputs[1].source_requirement"
+                }
+              },
+              {
+                "kind": "requested_output",
+                "reference": "formula_9",
+                "relation": "reagent-9 formula enters the batch ledger",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "requested_outputs[2].source_requirement"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "single-product atom conservation",
+                "relation": "coefficient-scaled input formulas equal the coefficient-scaled product formula",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                }
+              }
+            ],
+            "evidence": "Molar conversion supports coefficients 10:6:7:5; the complete input ledger equals two primitive product units, and the grouped assembly is neutral.",
+            "id": "formula_10",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T7A7.formationCandidate",
+                "IChO2026Problems.T7A7.compound10Candidate",
+                "IChO2026Problems.T7A7.ungroupedCompound10Formula"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T7A7.Formula10Output"
+              ],
+              "relations": [
+                "IChO2026Problems.T7A7.FormationCandidate.inputAtomLedger",
+                "IChO2026Problems.T7A7.FormationCandidate.outputAtomLedger",
+                "IChO2026Problems.T7A7.QuantitativeSingleProductFormationSpec",
+                "IChO2026Problems.T7A7.StructuredCompoundSpec",
+                "IChO2026Problems.T7A7.StructuredCompound.assembledFormula"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T7A7.formula10_output"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named witness, source checks, raw carrier, and proved result theorem agree with the source-first reconstruction.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "overall",
+              "description": "Overall composition of one formula unit reconstructed from the quantitative single-product batch."
+            },
+            "quantity_definition": "Empirical and grouped structural formula of compound 10.",
+            "raw_result": {
+              "derivation": "For coefficients 10:6:7:5, (10,18,26,50,10)=2(5,9,13,25,5); removing one Si12N24 framework per unit leaves the source-pattern S2 and T components, and the full count gcd is 1.",
+              "exact_unrounded": true,
+              "value_or_expression": "La5Ca9O2[SiO3N][Si12N24], ungrouped La5Ca9Si13N25O5"
+            },
+            "reporting": {
+              "application": "Use source display cells only for input checks; report the final formula exactly with no numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Submission id, formula kind, empty unit, exact-symbolic policy, and source requirement all match.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T7_page-4.png#q7.7"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "measurement_policy.measured_display_half_width"
+              }
+            ],
+            "source_requirement": "empirical formula/composition of 10",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "one structured product unit containing two identical S sites",
+              "mass_or_composition_basis": "residual atom and charge ledger after cations, T, and framework",
+              "numerator": "two residual oxygen atoms assigned one to each monoatomic S site",
+              "status": "applicable"
+            },
+            "branch_conditions": [],
+            "constants": [
+              {
+                "name": "S multiplicity",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "2"
+              },
+              {
+                "name": "S structural condition",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "monoatomic anion"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "formula_10",
+                "relation": "whole-product inventory supplies residual composition",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "requested_outputs[3].source_requirement"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "formal-charge conservation",
+                "relation": "cations, S2, T, and framework sum to zero",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                }
+              }
+            ],
+            "evidence": "Two oxygen atoms remain outside T and the framework; each S site is one oxygen with charge -2 and is integrated into the neutral structure.",
+            "id": "formula_s",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T7A7.sCandidate",
+                "IChO2026Problems.T7A7.compound10Candidate",
+                "IChO2026Problems.T7A7.formationCandidate"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T7A7.FormulaSOutput"
+              ],
+              "relations": [
+                "IChO2026Problems.T7A7.MonoatomicAnion.formula",
+                "IChO2026Problems.T7A7.StructuredCompoundSpec",
+                "IChO2026Problems.T7A7.QuantitativeSingleProductFormationSpec"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T7A7.formulaS_output"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named witness, source checks, raw carrier, and proved result theorem agree with the source-first reconstruction.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "overall",
+              "description": "Component composition within one structured product unit."
+            },
+            "quantity_definition": "Composition and charge of monoatomic anion S.",
+            "raw_result": {
+              "derivation": "Per product unit the residual beyond cations and Si12N24 is Si1N1O5; tetrahedral SiO3N uses Si1N1O3, leaving O2 for the two S sites, each O with charge -2.",
+              "exact_unrounded": true,
+              "value_or_expression": "O^2-"
+            },
+            "reporting": {
+              "application": "Use source display cells only for input checks; report the final formula exactly with no numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Submission id, formula kind, empty unit, exact-symbolic policy, and source requirement all match.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T7_page-4.png#q7.7"
+              }
+            ],
+            "source_requirement": "empirical formula/composition of S",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "one structured product unit containing one T site",
+              "mass_or_composition_basis": "residual atom and charge ledger after cations, two S anions, and framework",
+              "numerator": "one silicon centre with three oxygen and one nitrogen ligand vertices",
+              "status": "applicable"
+            },
+            "branch_conditions": [],
+            "constants": [
+              {
+                "name": "T multiplicity",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "1"
+              },
+              {
+                "name": "T structural condition",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                },
+                "unit": "dimensionless",
+                "value": "tetrahedral anion"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "formula_10",
+                "relation": "whole-product inventory supplies residual composition",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "requested_outputs[3].source_requirement"
+                }
+              },
+              {
+                "kind": "requested_output",
+                "reference": "formula_s",
+                "relation": "two monoatomic oxygen sites are removed from the residual",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "requested_outputs[4].source_requirement"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "four-vertex topology and formal charge",
+                "relation": "central Si plus four ligand vertices has residual Si1O3N composition and charge -5",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "question"
+                }
+              }
+            ],
+            "evidence": "The carrier records one silicon centre and exactly four ligand vertices (three O and one N), computes charge -5, and integrates T into the neutral product.",
+            "id": "formula_t",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T7A7.tCandidate",
+                "IChO2026Problems.T7A7.compound10Candidate",
+                "IChO2026Problems.T7A7.formationCandidate"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T7A7.FormulaTOutput"
+              ],
+              "relations": [
+                "IChO2026Problems.T7A7.TetrahedralAnion.formula",
+                "IChO2026Problems.T7A7.StructuredCompoundSpec",
+                "IChO2026Problems.T7A7.QuantitativeSingleProductFormationSpec"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T7A7.formulaT_output"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named witness, source checks, raw carrier, and proved result theorem agree with the source-first reconstruction.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "kind": "overall",
+              "description": "Component composition and four-vertex topology within one structured product unit."
+            },
+            "quantity_definition": "Composition, charge, and tetrahedral vertex count of anion T.",
+            "raw_result": {
+              "derivation": "After S2 takes two residual O atoms, T has Si1O3N1; +4+3(-2)+(-3)=-5, and O3N supplies exactly four ligand vertices.",
+              "exact_unrounded": true,
+              "value_or_expression": "[SiO3N]^5-"
+            },
+            "reporting": {
+              "application": "Use source display cells only for input checks; report the final formula exactly with no numerical rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "Submission id, formula kind, empty unit, exact-symbolic policy, and source requirement all match.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T7_page-4.png#q7.7"
+              }
+            ],
+            "source_requirement": "empirical formula/composition of T",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "c629626ba595ba1d0a33dcfdabbb0f238b9d3cd63855072277a0dc43217c698e"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t7_a7.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "All six concrete formula identifications follow from the bound composition data, pinned constants, complete single-product atom/charge ledger, and tetrahedral carrier. Sealed Kimi draft subpart 7.7 (SHA-256 7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd) is preserved without substitution or discrepancy; no global uniqueness is claimed.",
+        "reviewed_at": "2026-09-13T08:49:12Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "c629626ba595ba1d0a33dcfdabbb0f238b9d3cd63855072277a0dc43217c698e",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t7_a7.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 10,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The hash-bound candidate and submission satisfy all six exact-symbolic outputs; the Lean proof checks the printed nitrogen-fraction cells, quantitative reagent-ratio cells, complete atom and charge ledgers, empirical minimality, and the stipulated anion structures without hypotheses, axioms, sorry, or answer-shaped premises.",
+    "evidence": "Deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. The complete answer JSON has schema_version 1 and exactly six outputs in the controller-prescribed order, ids, kinds, and units. The nontrivial theorem IChO2026Problems.T7A7.reported_result reduces through raw_result to formula7_output, formula8_output, formula9_output, formula10_output, formulaS_output, and formulaT_output.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "ab8f834880d35a579f16f70afbc4f4618589edcf7e2049e8f39c2f9aef22a7c8",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t7_a7.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t7_a7",
+      "source_record_sha256": "27269c0761241fcd16102a9877416a3b4bea8853972ca3859e0486fb45dd0c07",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t7_a7.answer.json",
+      "answer_submission_sha256": "1ca9790daa56beae6453a562af412e73e3dd0f7441becf1fc7fd52d106e3e293",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t7_a7.source.json",
+      "source_report_sha256": "8cfb55e7bdf45bb84a112dfc36e1ae8ffc503e6cd1090e5a9b5d4e1419dd15f2",
+      "candidate": "IChO2026Problems/problem_icho_2026_t7_a7.lean",
+      "preflight_sha256": "f647443c1c197b50b77861e0ce474018841b9b80d2715c1850c128cdd397b74e",
+      "candidate_sha256": "ab8f834880d35a579f16f70afbc4f4618589edcf7e2049e8f39c2f9aef22a7c8",
+      "question_sha256": "0b86412c700530bd2ea2c8b6d0fe0bf218d2bdac8d59ede8c2a88fcaa2eed29e",
+      "shared_context_sha256": "75728d5ffb411079098e5e4846db2052c4a2ab422cf2617b3ea363edd51274c6",
+      "previous_parts_sha256": "d8be0443503899d1886abf068608e03398a749d0446469afa8f57650d01568fd",
+      "requested_outputs_sha256": "90bce26ce3b673cbfedca272142c121507af373029ea2df9789b1d98f32f09c4",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T7_page-4.png",
+          "sha256": "7c6a69f04e438a75d16afb5e92c9d91a1f5c289faffbfc4f93d4f19e2ad8e626"
+        },
+        {
+          "path": "icho_2026_source/image/T7_page-3.png",
+          "sha256": "9bc386ab33010a7f8e999035212268ecbeb2ff73ca3a8a108dca96b364e5d47c"
+        },
+        {
+          "path": "icho_2026_source/image/T7_page-2.png",
+          "sha256": "010bf0d38d5f34a4edd184c97a2a3f0f9375e0e6f1326e7d0fbd336d319b97ba"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "bee6b78cd3afd9880db221330d79a9443a02b5f3c83669c58dcfce880974ad37",
+        "node_count": 17,
+        "edge_count": 36,
+        "node_kind_counts": {
+          "derivation_obligation": 6,
+          "previous_part_prerequisite": 2,
+          "requested_output": 6,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "formula_7",
+          "formula_8",
+          "formula_9",
+          "formula_10",
+          "formula_s",
+          "formula_t"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t7_a5",
+          "icho_2026_t7_a6"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t7_a7",
+        "path": ".archon/provided_answer_drafts/Q7.md",
+        "sha256": "7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t7_a7.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t7_a7",
+        "source_record_sha256": "27269c0761241fcd16102a9877416a3b4bea8853972ca3859e0486fb45dd0c07",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t7_a7.answer.json",
+        "answer_submission_sha256": "1ca9790daa56beae6453a562af412e73e3dd0f7441becf1fc7fd52d106e3e293",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t7_a7.source.json",
+        "source_report_sha256": "8cfb55e7bdf45bb84a112dfc36e1ae8ffc503e6cd1090e5a9b5d4e1419dd15f2",
+        "candidate": "IChO2026Problems/problem_icho_2026_t7_a7.lean",
+        "preflight_sha256": "f647443c1c197b50b77861e0ce474018841b9b80d2715c1850c128cdd397b74e",
+        "candidate_sha256": "ab8f834880d35a579f16f70afbc4f4618589edcf7e2049e8f39c2f9aef22a7c8",
+        "question_sha256": "0b86412c700530bd2ea2c8b6d0fe0bf218d2bdac8d59ede8c2a88fcaa2eed29e",
+        "shared_context_sha256": "75728d5ffb411079098e5e4846db2052c4a2ab422cf2617b3ea363edd51274c6",
+        "previous_parts_sha256": "d8be0443503899d1886abf068608e03398a749d0446469afa8f57650d01568fd",
+        "requested_outputs_sha256": "90bce26ce3b673cbfedca272142c121507af373029ea2df9789b1d98f32f09c4",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T7_page-4.png",
+            "sha256": "7c6a69f04e438a75d16afb5e92c9d91a1f5c289faffbfc4f93d4f19e2ad8e626"
+          },
+          {
+            "path": "icho_2026_source/image/T7_page-3.png",
+            "sha256": "9bc386ab33010a7f8e999035212268ecbeb2ff73ca3a8a108dca96b364e5d47c"
+          },
+          {
+            "path": "icho_2026_source/image/T7_page-2.png",
+            "sha256": "010bf0d38d5f34a4edd184c97a2a3f0f9375e0e6f1326e7d0fbd336d319b97ba"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "bee6b78cd3afd9880db221330d79a9443a02b5f3c83669c58dcfce880974ad37",
+          "node_count": 17,
+          "edge_count": 36,
+          "node_kind_counts": {
+            "derivation_obligation": 6,
+            "previous_part_prerequisite": 2,
+            "requested_output": 6,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "formula_7",
+            "formula_8",
+            "formula_9",
+            "formula_10",
+            "formula_s",
+            "formula_t"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t7_a5",
+            "icho_2026_t7_a6"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t7_a7",
+          "path": ".archon/provided_answer_drafts/Q7.md",
+          "sha256": "7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The audit used only the inline problem evidence, all three bound images, the bound generated outputs, and exact allowed offline atomic-weight lookups. The sealed Kimi subpart 7.7 was used only for required fidelity comparison, never as a scientific premise; prior parts 7.5 and 7.6 were checked from their bound panels and are not assumptions of reported_result."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "BinaryNitrideSpec recomputes each nitrogen fraction from explicit atom counts, formal charge, empirical gcd, and pinned weights. QuantitativeSingleProductFormationSpec proves every displayed reagent-ratio cell plus inputAtomLedger = outputAtomLedger and exact batch-mass conservation. StructuredCompoundSpec proves assembly, component and framework formal charges, neutrality, tetrahedral composition, and empirical minimality; raw_result conjoins all six carriers."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "All requested outputs have problem-declared kind formula and exact_symbolic reporting. ReportedResult is definitionally RawResult, so no numerical rounding or alternate display convention enters the Lean conclusion."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "The two-decimal-percent nitrogen data induce fraction quantum 0.0001 and half-width 0.00005; the two-decimal reagent-ratio data induce quantum 0.01 and half-width 0.005. The candidate supplies those quanta to the trusted ConsistentMeasurement carrier, and independent central-value recomputation places every checked value inside its corresponding cell. No output tolerance is used because the six outputs are exact symbolic formulas."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The question asks to identify concrete formulas, not to prove an open-world exhaustive classification. Each named candidate is therefore a direct conclusion witness subjected uniformly to all decisive checks. The quantitative stage domain is exactly the source-named species 7, 8, 9, silica, and sole product 10; LedgerElement records the elements of the independently checked witness compositions and is not used as an exhaustive candidate-search premise."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=ab8f834880d35a579f16f70afbc4f4618589edcf7e2049e8f39c2f9aef22a7c8; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Result declarations: IChO2026Problems.T7A7.formula7_output, formula8_output, formula9_output, formula10_output, formulaS_output, formulaT_output, raw_result, and reported_result; prerequisite checks: previousPart5_derived and previousPart6_derived."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The contract exposes one named proposition and proved theorem for each of the six requested outputs, including empirical/minimal formula checks, the grouped structural template, both anion charges/compositions, and T's four-coordinate tetrahedral carrier. It adds no unsupported yield, phase, or mechanism claim."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The result theorems have no hypotheses. Printed fractions, mass ratios, single-product status, structured template, N(\u2212III), and anion-shape constraints enter transparent specifications; atomic weights are reproduced by the permitted pinned registry; remaining oxidation-number bookkeeping is ordinary general chemistry. The separately proved prior-part carriers are not premises of any part-7.7 output."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The answer submission has exactly the six required ids in exact order and each raw/display pair denotes the same exact symbolic object carried by its corresponding Lean theorem. The results preserve Kimi draft subpart 7.7 at frozen hash 7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd, with no correction or discrepancy."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The source-to-Lean chain includes composition, nitride charge, pinned mass calculation, displayed-cell consistency, complete named-species atom and mass ledgers, structured assembly, cation/anion/framework charge balance, tetrahedral arity, and empirical gcd. Repeated atomic_weight lookups matched dataset hash 11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5 with record hashes N 5ca62d438a6594458420ed7f5d2072a583a9ae8c71a29d75b561edb28b6f065c, La 4d9b606ac4eacd2ca6092ec11247aa516a76617f79a70b617546a2b549bc3945, Ca bd22853925586733318528c448b154bd9aef6c4c52cacc7ad392f32735f22fc1, Si 7b5414d31d44fa35cebc56dc0420d66babfb6868cdec7c4df84d09a1266cb566, and O d55ad5591b6aebea80363701cf500c7e0a46a5f46fd4fcfef16cc331efcc0588."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "empirical formula/composition of 7",
+          "lean_carrier": "IChO2026Problems.T7A7.formula7_output : Formula7Output",
+          "status": "covered",
+          "evidence": "The raw/display pair is an exact-symbolic formula with empty unit, and the carrier proves binary composition, N(\u2212III) charge balance, empirical gcd, the printed nitrogen-fraction cell, reagent identity in the quantitative stage, and the full formation specification.",
+          "output_id": "formula_7",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "empirical formula/composition of 8",
+          "lean_carrier": "IChO2026Problems.T7A7.formula8_output : Formula8Output",
+          "status": "covered",
+          "evidence": "The raw/display pair is an exact-symbolic formula with empty unit, and the carrier proves binary composition, N(\u2212III) charge balance, empirical gcd, the printed nitrogen-fraction cell, reagent identity in the quantitative stage, and the full formation specification.",
+          "output_id": "formula_8",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "empirical formula/composition of 9",
+          "lean_carrier": "IChO2026Problems.T7A7.formula9_output : Formula9Output",
+          "status": "covered",
+          "evidence": "The raw/display pair is an exact-symbolic formula with empty unit, and the carrier proves binary composition, N(\u2212III) charge balance, empirical gcd, the printed nitrogen-fraction cell, reagent identity in the quantitative stage, and the full formation specification.",
+          "output_id": "formula_9",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "empirical formula/composition of 10",
+          "lean_carrier": "IChO2026Problems.T7A7.formula10_output : Formula10Output",
+          "status": "covered",
+          "evidence": "The raw/display pair is an exact-symbolic grouped formula with empty unit, and the carrier proves the source template's cations, multiplicities, two S units, tetrahedral T, fixed framework, ungrouped empirical composition, neutrality, assembly equality, and full quantitative formation specification.",
+          "output_id": "formula_10",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "empirical formula/composition of S",
+          "lean_carrier": "IChO2026Problems.T7A7.formulaS_output : FormulaSOutput",
+          "status": "covered",
+          "evidence": "The raw/display pair is an exact-symbolic charged monoatomic formula with empty unit, and the carrier proves its one-atom composition, charge, identity as compound 10's S field, structured-compound specification, and full formation ledger.",
+          "output_id": "formula_s",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "empirical formula/composition of T",
+          "lean_carrier": "IChO2026Problems.T7A7.formulaT_output : FormulaTOutput",
+          "status": "covered",
+          "evidence": "The raw/display pair is an exact-symbolic charged formula with empty unit, and the carrier proves one central atom plus four ligand vertices, exact composition and charge, identity as compound 10's T field, structured-compound specification, and full formation ledger.",
+          "output_id": "formula_t",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T7_page-4.png",
+          "sha256": "7c6a69f04e438a75d16afb5e92c9d91a1f5c289faffbfc4f93d4f19e2ad8e626",
+          "inspected": true,
+          "evidence": "The page visibly supplies the current 7.7 request, the three nitrogen percentages, the Q/R highest-oxidation-state condition, monoatomic S, tetrahedral T, the fixed structured framework, quantitative heating with silica to a single product, and the four-part reagent mass ratio. It is an unmarked problem page."
+        },
+        {
+          "path": "icho_2026_source/image/T7_page-3.png",
+          "sha256": "9bc386ab33010a7f8e999035212268ecbeb2ff73ca3a8a108dca96b364e5d47c",
+          "inspected": true,
+          "evidence": "The page visibly contains the complete 7.5 uptake statement and 7.6 reference/candidate Red-Ad panels used only to check the declared prior-part carriers; it contains no marked answer and no additional 7.7 constituent or connector."
+        },
+        {
+          "path": "icho_2026_source/image/T7_page-2.png",
+          "sha256": "010bf0d38d5f34a4edd184c97a2a3f0f9375e0e6f1326e7d0fbd336d319b97ba",
+          "inspected": true,
+          "evidence": "The page visibly contains the cyclic reactor, amine, precursor-4 scheme, printed molar mass, gas uptake conditions, and simplified PNP ligand drawing. These are prior-part context only; no 7.7 product fragment crosses onto this page."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "All six identities satisfy the source's binary-nitride, N(\u2212III), mass-fraction, source-template, highest ordinary cation oxidation-state, monoatomic-anion, tetrahedral-anion, empirical-minimality, and single-product quantitative constraints. Ordinary valence bookkeeping supplies La(III), Ca(II), Si(IV), O(\u2212II), while the problem stipulates nitride N(\u2212III)."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "quantitative_material_stage: the outcome-decisive stage is the page-4 heating of source-named species 7, 8, 9, and SiO2 to the explicitly quantitative single product 10. FormationCandidate names exactly those four inputs and one output; inputAtomLedger/outputAtomLedger, batchMass, relativeToSilica, and QuantitativeSingleProductFormationSpec provide the used atom, mass, and interval ledgers with no catch-all stream. Charge feasibility is supplied by BinaryNitrideSpec and StructuredCompoundSpec. The earlier statement that the binary nitrides were obtained from pure elements is qualitative_named_transform_only and is used only for binary-composition compatibility, not for yield, absence, coefficients, or an omitted-stream claim."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Independent use of the five allowed atomic_weight operations reproduced the candidate's nominal values and the controller-bound dataset version/hash. All three candidate nitrogen fractions lie within the corresponding two-decimal-percent half-quantum cells, and all four candidate batch ratios lie within the corresponding two-decimal ratio half-quantum cells."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "FormationCandidate.inputAtomLedger = outputAtomLedger checks every admitted element across the four named reagents and sole named product, and exact batch-mass equality follows in the same carrier. BinaryNitrideSpec checks each nitride's formal charge; StructuredCompound.netCharge and component/framework formalCharge checks close the product charge ledger."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "NitrogenMassFraction and relativeToSilica are dimensionless ratios; printed percentages are converted to fractions and batch-mass units cancel. The six requested formula outputs correctly have empty units."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "Input displays are audited with one-half of their last displayed quantum and no staged rounding. The requested outputs are exact symbolic formulas, and RawResult/ReportedResult introduce no numeric rounding."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "MonoatomicAnion explicitly carries one atom. TetrahedralAnion carries one central atom and a Fin 4 ligand function, and formulaT_output checks its complete composition and charge. No stereochemical designation is requested or implied by the source."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source asks for concrete identifications but does not request a proof over all chemically imaginable compounds. Each direct witness passes every decisive source constraint. Within the complete product atom ledger, the two identical monoatomic S positions force the only residual element with multiplicity at least two, and the remaining central-plus-four-ligand composition supplies T; no source-grounded competing witness survives those ledgers."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "Named candidates occur as transparent conclusion witnesses, not hypotheses. Their specifications contain nontrivial mass-fraction, charge, empirical-gcd, assembly, tetrahedral-arity, measured-cell, atom-ledger, and mass-ledger checks. LedgerElement is not asserted exhaustive for candidate selection; there is no candidate singleton premise, opaque predicate, free Bool/Prop field, local axiom, reflexive identity-only theorem, sorry, or prior sibling result used by reported_result."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t7_a7.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The hash-bound candidate and submission satisfy all six exact-symbolic outputs; the Lean proof checks the printed nitrogen-fraction cells, quantitative reagent-ratio cells, complete atom and charge ledgers, empirical minimality, and the stipulated anion structures without hypotheses, axioms, sorry, or answer-shaped premises.",
+        "evidence": "Deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. The complete answer JSON has schema_version 1 and exactly six outputs in the controller-prescribed order, ids, kinds, and units. The nontrivial theorem IChO2026Problems.T7A7.reported_result reduces through raw_result to formula7_output, formula8_output, formula9_output, formula10_output, formulaS_output, and formulaT_output.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:20:03.824963Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "ab8f834880d35a579f16f70afbc4f4618589edcf7e2049e8f39c2f9aef22a7c8",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t7_a7.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:20:03.824998Z",
+    "repair_handoff": {}
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t1_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "Z = chamazulene (compound 7; 7-ethyl-1,4-dimethylazulene)",
+      "id": "identity_z",
+      "kind": "classification",
+      "raw_value": "compound7|chamazulene|C14H16|CCC1=CC2=C(C=CC2=C(C=C1)C)C",
+      "unit": ""
+    },
+    {
+      "display_value": "A = azulene, C1=CC=C2C=CC=C2C=C1",
+      "id": "structure_a",
+      "kind": "classification",
+      "raw_value": "azulene|C10H8|fused-5,7|C1=CC=C2C=CC=C2C=C1",
+      "unit": ""
+    },
+    {
+      "display_value": "B = naphthalene, C1=CC=C2C=CC=CC2=C1",
+      "id": "structure_b",
+      "kind": "classification",
+      "raw_value": "naphthalene|C10H8|fused-6,6|C1=CC=C2C=CC=CC2=C1",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

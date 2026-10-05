@@ -1,0 +1,8 @@
+.humanize/
+runtime/
+__pycache__/
+*.pyc
+source/*.pdf
+source/*.txt
+source/rendered/
+*.tmp

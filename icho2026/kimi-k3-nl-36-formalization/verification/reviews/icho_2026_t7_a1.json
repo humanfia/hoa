@@ -1,0 +1,964 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The three exact-symbolic requested outputs are independently forced by the source-labeled Fig. 1 stream cuts and transparent componentwise reaction ledgers. The submission and Lean carriers match the source-first derivation, and Kimi draft subpart 7.1 is preserved without discrepancy.",
+    "updated_at": "2026-09-13T08:41:07Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "ccc3c699729732b2ed5efe0bafbc0aa79b34b37a161d6c1ad2f2e6819317df9d",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The model follows the single Fig. 1 topology: steam reforming, secondary oxidation to M1, water-gas shift, CO2 scrubbing, ammonia formation to M2, cooling, product withdrawal, and N2/H2 recycle. It treats the tick request as exact finite stream composition plus one comparison, without adding a uniqueness claim. The recycle audit is inapplicable because no cumulative feed, output, inventory, yield denominator, or cycle horizon is requested; M1 and M2 are instantaneous stream cuts."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "PlantModel.steam_ledger and steam_outlet_label force steamExtent = y and x-y > 0; oxidation_ledger plus shifted_outlet_label force oxidationExtent = 1 and x-y = 2. The resulting m1AmountLedger fixes every gas component. shift_ledger, scrubber_ledger, ammonia_ledger, cooler_split, and the two cooler labels similarly force every M2 component and its positivity set."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "Gas enumerates exactly the eight molecular gases named in the figure; Amounts, Nonnegative, ReactsBy, ScrubsCarbonDioxide, HasExactlyGases, and the stage ledgers expose all outcome-decisive component balances. presentGases equality covers the complete finite sets, and XYRelation.Holds gives the mathematical meaning of the selected comparison."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "All requested outputs are exact symbolic sets or an exact inequality; the source supplies no measured quantity, tolerance, or rounding-sensitive datum for this subquestion."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The internal reaction arrowheads are read left-to-right: CH4+H2O to CO+3H2, 2CH4+O2 to 2CO+4H2, CO+H2O to CO2+H2, and N2+3H2 reversibly to 2NH3. Physical stream arrows place M1 after secondary oxidation and M2 after ammonia formation but before CLR; XYRelation.Holds .xGreaterThanY is x > y, not its converse."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Within the source-stated eight-gas contest model, a changed M1 set would violate m1AmountLedger or nonnegativity, a changed M2 set would violate m2AmountLedger together with the positive labeled CLR outlets, and any non-greater x/y branch contradicts xyDifferenceLedger. No free Bool/Prop exclusion flag, answer-shaped premise, or anonymous material stream is used."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "Fig. 1 supplies the finite gas domain and exhaustive neighboring-stream labels used to determine M1 and M2.",
+          "carrier": "IChO2026Problems.T7A1.Gas; IChO2026Problems.T7A1.HasExactlyGases; IChO2026Problems.T7A1.PlantModel.steam_outlet_label; IChO2026Problems.T7A1.PlantModel.shifted_outlet_label; IChO2026Problems.T7A1.PlantModel.ammonia_product_label; IChO2026Problems.T7A1.PlantModel.recycle_label",
+          "status": "covered",
+          "evidence": "The figure names CH4, H2O, CO, H2, N2, O2, CO2, and NH3 and labels the relevant upstream, downstream, product, and recycle streams; none of the requested result sets is a PlantModel field."
+        },
+        {
+          "claim": "The three source-declared quantitative reaction stages obey the displayed component stoichiometries and conserve unaffected species.",
+          "carrier": "IChO2026Problems.T7A1.steamReforming; IChO2026Problems.T7A1.partialOxidation; IChO2026Problems.T7A1.waterGasShift; IChO2026Problems.T7A1.ReactsBy; IChO2026Problems.T7A1.PlantModel.steam_ledger; IChO2026Problems.T7A1.PlantModel.oxidation_ledger; IChO2026Problems.T7A1.PlantModel.shift_ledger; IChO2026Problems.T7A1.m1AmountLedger; IChO2026Problems.T7A1.xyDifferenceLedger",
+          "status": "covered",
+          "evidence": "Each displayed reaction is a transparent CRNT stoichiometric vector applied componentwise at a nonnegative extent; this is exactly the material-stage meaning needed for M1 and x-y."
+        },
+        {
+          "claim": "The depicted CO2 scrubber removes CO2 while passing the other components into the N2/H2 synthesis feed.",
+          "carrier": "IChO2026Problems.T7A1.ScrubsCarbonDioxide; IChO2026Problems.T7A1.PlantModel.scrubber_ledger; IChO2026Problems.T7A1.synthesisFeedAmountLedger",
+          "status": "covered",
+          "evidence": "Fig. 1 identifies Z as the CO2 scrubber, labels its inlet N2/CO2/H2 and outlet N2/H2, and the transparent carrier encodes exactly that depicted separation."
+        },
+        {
+          "claim": "M2 is the ammonia-reactor outlet before CLR and is exactly the material split into a positive NH3 product and positive N2/H2 recycle.",
+          "carrier": "IChO2026Problems.T7A1.ammoniaFormation; IChO2026Problems.T7A1.PlantModel.ammonia_ledger; IChO2026Problems.T7A1.PlantModel.cooler_split; IChO2026Problems.T7A1.PlantModel.ammonia_product_label; IChO2026Problems.T7A1.PlantModel.recycle_label; IChO2026Problems.T7A1.m2AmountLedger",
+          "status": "covered",
+          "evidence": "The reversible ammonia arrow is correctly left non-quantitative via an extent, while the source-drawn CLR outlets establish the three positive M2 constituents without assuming M2's requested set."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t7_a1.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t7_a1",
+        "source_record_sha256": "b239857d8e909406aed4fef4e721c61f471f945503a7dc81f2b4dee03c9aaa30",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t7_a1.answer.json",
+        "answer_submission_sha256": "292065d5ad45ca6c6d9003c67d5d398afb1f576aa3812a3897ffdcaeae62d395",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t7_a1.source.json",
+        "source_report_sha256": "2e9441671369b130c0edd4e7897a4b727eeefd08bce5f583c7caf14803253adf",
+        "candidate": "IChO2026Problems/problem_icho_2026_t7_a1.lean",
+        "preflight_sha256": "11117e0c67ce877678904737395f286280ea39048d85b1f107e680576a8b45c5",
+        "candidate_sha256": "ccc3c699729732b2ed5efe0bafbc0aa79b34b37a161d6c1ad2f2e6819317df9d",
+        "question_sha256": "bb491edda65ff535c7803fed94a688a094adde83a518847003934b66b6755c75",
+        "shared_context_sha256": "df5af3c2b2c8db3f58b190145b1bf49d8cb2c93ba9ffa7b6546e60a8289a3680",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "65b737fe4eb3981100db05e2a44aac9eefed2fa783a81de915e7c4e01fa93c71",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T7_page-1.png",
+            "sha256": "ee7fe1adff7ac3aae8701bf684981bd2b1e21b28f1c9e4b21dd9c38c3bdb79ad"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "74c69f51c7aeb85e90dd300e8c2dfa384a54fbe0d2a7ec91f881367840a26279",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "gases_m1",
+            "gases_m2",
+            "xy_relation"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t7_a1",
+          "path": ".archon/provided_answer_drafts/Q7.md",
+          "sha256": "7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t7_a1.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t7_a1",
+          "source_record_sha256": "b239857d8e909406aed4fef4e721c61f471f945503a7dc81f2b4dee03c9aaa30",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t7_a1.answer.json",
+          "answer_submission_sha256": "292065d5ad45ca6c6d9003c67d5d398afb1f576aa3812a3897ffdcaeae62d395",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t7_a1.source.json",
+          "source_report_sha256": "2e9441671369b130c0edd4e7897a4b727eeefd08bce5f583c7caf14803253adf",
+          "candidate": "IChO2026Problems/problem_icho_2026_t7_a1.lean",
+          "preflight_sha256": "11117e0c67ce877678904737395f286280ea39048d85b1f107e680576a8b45c5",
+          "candidate_sha256": "ccc3c699729732b2ed5efe0bafbc0aa79b34b37a161d6c1ad2f2e6819317df9d",
+          "question_sha256": "bb491edda65ff535c7803fed94a688a094adde83a518847003934b66b6755c75",
+          "shared_context_sha256": "df5af3c2b2c8db3f58b190145b1bf49d8cb2c93ba9ffa7b6546e60a8289a3680",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "65b737fe4eb3981100db05e2a44aac9eefed2fa783a81de915e7c4e01fa93c71",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T7_page-1.png",
+              "sha256": "ee7fe1adff7ac3aae8701bf684981bd2b1e21b28f1c9e4b21dd9c38c3bdb79ad"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "74c69f51c7aeb85e90dd300e8c2dfa384a54fbe0d2a7ec91f881367840a26279",
+            "node_count": 9,
+            "edge_count": 12,
+            "node_kind_counts": {
+              "derivation_obligation": 3,
+              "requested_output": 3,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "gases_m1",
+              "gases_m2",
+              "xy_relation"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t7_a1",
+            "path": ".archon/provided_answer_drafts/Q7.md",
+            "sha256": "7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, instantaneous process scope, complete Fig. 1 topology, eight-gas domain, arrow directions, and component balances were frozen from the bound image and inline problem evidence before opening either generated artifact. The authorized Kimi draft was used only afterward for fidelity comparison, not as a source axiom."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The end-to-end exact derivations are carried by m1AmountLedger, synthesisFeedAmountLedger, m2AmountLedger, and xyDifferenceLedger, then mapped to GasesM1Result, GasesM2Result, and XYRelationResult. No intermediate rounding occurs."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "All three requested-output rows specify exact_symbolic reporting from problem_output_type; RawResult and ReportedResult preserve the same symbolic propositions."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or needed: the problem requests gas ticks and a relation class, and each bound per-output reporting policy is exact_symbolic."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The output-decisive finite domain is exactly the eight gases explicitly named across Fig. 1: CH4, H2O, CO, H2, N2, O2, CO2, and NH3. The model does not introduce an open-world species list, candidate singleton, or extra exclusion flag."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=ccc3c699729732b2ed5efe0bafbc0aa79b34b37a161d6c1ad2f2e6819317df9d; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=9. Nontrivial requested-result declarations are IChO2026Problems.T7A1.gases_m1, gases_m2, xy_relation, RawResult, raw_result, ReportedResult, and reported_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The candidate states exactly two complete finite gas sets and one x/y comparison for Fig. 1. It does not claim numerical x and y values, process yield, temporal recycle behavior, or open-world chemical uniqueness."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "Every outcome-decisive PlantModel field is either a nonnegativity/material-conservation condition, a displayed feed/reaction, or an exact stream/separator label from Fig. 1. The requested M1 set, M2 set, and comparison are absent from the hypotheses."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The answer JSON has schema_version 1 and exactly three outputs in bundle order with matching ids, kinds, and empty units; each raw/display pair matches the independently derived requested output and the corresponding Lean theorem."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive chemistry bridges are named above: displayed stoichiometries, quantitative extent semantics, stream labels, CO2 scrubbing, and CLR material splitting. Transparent component ledgers connect each bridge to every requested-output theorem."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "complete set of gases in M1",
+            "lean_carrier": "IChO2026Problems.T7A1.gases_m1",
+            "status": "covered",
+            "evidence": "The submission's exact finite-set raw/display fields and the theorem's presentGases equality both match the independent M1 component ledger.",
+            "output_id": "gases_m1",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete set of gases in M2",
+            "lean_carrier": "IChO2026Problems.T7A1.gases_m2",
+            "status": "covered",
+            "evidence": "The submission's exact finite-set raw/display fields and the theorem's presentGases equality both match the independent M2 reactor/cooler ledger.",
+            "output_id": "gases_m2",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "relationship between x and y",
+            "lean_carrier": "IChO2026Problems.T7A1.xy_relation",
+            "status": "covered",
+            "evidence": "The submission's exact raw relation/display class and the theorem's XYRelation.Holds proposition both match the independent positive-difference derivation.",
+            "output_id": "xy_relation",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T7_page-1.png",
+            "sha256": "ee7fe1adff7ac3aae8701bf684981bd2b1e21b28f1c9e4b21dd9c38c3bdb79ad",
+            "inspected": true,
+            "evidence": "Source-only recount of the single Fig. 1 process panel: xCH4+yH2O enters the steam-reforming node; its CH4/CO/H2 outlet enters secondary oxidation with 4N2+1O2; the downward outlet is M1. M1 and a right-side H2O feed enter shift; the N2/CO2/H2 outlet goes left through Z, whose N2/H2 outlet enters ammonia synthesis; the rightward reactor outlet is M2 and enters CLR, which sends NH3 right and N2/H2 through the bottom recycle. Internal arrowheads give CH4+H2O\u2192CO+3H2, 2CH4+O2\u21922CO+4H2, CO+H2O\u2192CO2+H2, and reversible N2+3H2\u21cc2NH3. Motifs track C from CH4 through CO/CO2, N2 unchanged to synthesis and partly into NH3, and H into H2/NH3. There are no structural repeat units, caps, brackets, or cross-boundary bonds in this process schematic."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "M1 is correctly located after the two reformers, M2 before the cooler, Z as the CO2 scrubber, and CLR as the NH3-removal/recycle split. Quantitative completion is applied only to the three reactions covered by the source statement; ammonia formation remains a nonnegative partial extent."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "quantitative_material_stage. Source-derived domain: Gas's eight Fig. 1 species. Stages: methaneSteamFeed through steam_ledger; addAmounts airFeed through oxidation_ledger to M1; shiftWaterFeed through shift_ledger; scrubber_ledger to synthesisFeed; ammonia_ledger to M2; cooler_split to labeled product/recycle. Outcome-decisive carriers are ReactsBy, ScrubsCarbonDioxide, HasExactlyGases, m1AmountLedger, synthesisFeedAmountLedger, m2AmountLedger, and xyDifferenceLedger. Component conservation is the only needed ledger dimension; no anonymous stream is admitted."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No formula mass, mass fraction, or mass-based identification is requested or used in T7.1."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "The displayed stoichiometries balance atoms: CH4+H2O/CO+3H2 gives C1 H6 O1; 2CH4+O2/2CO+4H2 gives C2 H8 O2; CO+H2O/CO2+H2 gives C1 H2 O2; N2+3H2/2NH3 gives N2 H6. ReactsBy and cooler_split enforce componentwise material accounting on the dimensions used."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "Amounts are molar amounts on the single displayed stoichiometric basis; reaction extents and feed coefficients combine consistently. The requested finite sets and comparison correctly carry the empty unit from the bundle."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "The outputs are exact symbolic values. The submission performs no rounding, and RawResult and ReportedResult are identical exact contracts, consistent with all three per-output policies."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No molecular structure, connectivity drawing, stereochemical assignment, abbreviation expansion, or attachment boundary is requested in T7.1."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "\u201cTick the gases contained\u201d requires the complete selection within the source-derived figure species, which presentGases equality supplies; \u201ctick the correct relationship\u201d requires one trichotomy class. The source does not request global uniqueness or enumeration of an open chemical universe."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "expectedM1Gases, expectedM2Gases, and xGreaterThanY are named output carriers, not assumptions. PlantModel contains only source inputs, transparent ledgers, nonnegativity, and labels on streams other than the requested M1/M2 results; gases_m1, gases_m2, and xy_relation are nontrivial consequences."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "Fig. 1 primary and secondary reformer component balances",
+                "relation": "The displayed steam-reforming and partial-oxidation stoichiometries are quantitative; the shift stage leaves CH4 and O2 unchanged.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T7_page-1.png#fig1_primary_secondary_shift"
+                }
+              }
+            ],
+            "evidence": "The source-first exact component recount agrees with the finite-set submission and with GasesM1Result/gases_m1.",
+            "id": "gases_m1",
+            "kind": "finite_set",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T7A1.PlantModel.steam_ledger",
+                "IChO2026Problems.T7A1.PlantModel.steam_outlet_label",
+                "IChO2026Problems.T7A1.PlantModel.oxidation_ledger",
+                "IChO2026Problems.T7A1.PlantModel.shift_ledger",
+                "IChO2026Problems.T7A1.PlantModel.shifted_outlet_label"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T7A1.GasesM1Result",
+                "IChO2026Problems.T7A1.gases_m1"
+              ],
+              "relations": [
+                "IChO2026Problems.T7A1.ReactsBy",
+                "IChO2026Problems.T7A1.m1AmountLedger"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T7A1.expectedM1Gases",
+                "IChO2026Problems.T7A1.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "m1AmountLedger gives the same zero and positive components, and gases_m1 exposes their exact presentGases equality.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "instantaneous M1 stream cut after secondary oxidation and before the shift converter",
+              "kind": "instantaneous"
+            },
+            "quantity_definition": "the complete finite set of gas species having strictly positive molar amount in M1",
+            "raw_result": {
+              "derivation": "The steam outlet label and steam ledger give steamExtent=y and y>0. The shifted label, oxidation ledger, and unchanged O2/CH4 through shift give oxidationExtent=1 and zero residual CH4/O2. Thus the M1 vector is CH4=0, H2O=0, CO=y+2, H2=3y+4, N2=4, O2=0, CO2=0, NH3=0; y>0 leaves exactly the stated three positive entries.",
+              "exact_unrounded": true,
+              "value_or_expression": "{N2, CO, H2}"
+            },
+            "reporting": {
+              "application": "Report the exact finite set once; no rounding or tolerance applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission has the required id, finite_set kind, empty unit, exact symbolic raw/display agreement, and complete source-derived set.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T7_page-1.png#fig1_primary_secondary_m1"
+              }
+            ],
+            "source_requirement": "complete set of gases in M1",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "Fig. 1 shift, scrubber, synthesis, and cooler component balances",
+                "relation": "Quantitative shift and the depicted CO2 scrubber form the synthesis feed; nonquantitative ammonia formation feeds CLR, whose labeled product and recycle streams determine positive constituents.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T7_page-1.png#fig1_shift_scrubber_synthesis_clr"
+                }
+              }
+            ],
+            "evidence": "The source-first exact component recount agrees with the finite-set submission and with GasesM2Result/gases_m2.",
+            "id": "gases_m2",
+            "kind": "finite_set",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T7A1.PlantModel.shift_ledger",
+                "IChO2026Problems.T7A1.PlantModel.shifted_outlet_label",
+                "IChO2026Problems.T7A1.PlantModel.scrubber_ledger",
+                "IChO2026Problems.T7A1.PlantModel.ammonia_ledger",
+                "IChO2026Problems.T7A1.PlantModel.cooler_split",
+                "IChO2026Problems.T7A1.PlantModel.ammonia_product_label",
+                "IChO2026Problems.T7A1.PlantModel.recycle_label"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T7A1.GasesM2Result",
+                "IChO2026Problems.T7A1.gases_m2"
+              ],
+              "relations": [
+                "IChO2026Problems.T7A1.ScrubsCarbonDioxide",
+                "IChO2026Problems.T7A1.synthesisFeedAmountLedger",
+                "IChO2026Problems.T7A1.m2AmountLedger"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T7A1.expectedM2Gases",
+                "IChO2026Problems.T7A1.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "m2AmountLedger fixes all eight component expressions, while cooler_split and exact positive outlet labels give the same three-member presentGases set proved by gases_m2.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "instantaneous M2 stream cut after ammonia formation and before the CLR separation",
+              "kind": "instantaneous"
+            },
+            "quantity_definition": "the complete finite set of gas species having strictly positive molar amount in M2",
+            "raw_result": {
+              "derivation": "Shift completion and the shifted-stream label give a feed containing only N2=4 and H2=4y+6 after CO2 scrubbing. With ammonia extent a, M2 has N2=4-a, H2=4y+6-3a, NH3=2a, and zero for the other five gases. CLR splits M2 into a positive NH3 outlet and a positive N2/H2 recycle, so exactly those three M2 entries are positive.",
+              "exact_unrounded": true,
+              "value_or_expression": "{N2, H2, NH3}"
+            },
+            "reporting": {
+              "application": "Report the exact finite set once; no rounding or tolerance applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission has the required id, finite_set kind, empty unit, exact symbolic raw/display agreement, and complete source-derived set.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T7_page-1.png#fig1_shift_scrubber_synthesis_clr_m2"
+              }
+            ],
+            "source_requirement": "complete set of gases in M2",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "Fig. 1 feed and first two reformer balances",
+                "relation": "The steam outlet contains residual CH4, while one O2 reacts with two CH4 in the quantitative secondary stage and no CH4/O2 survives downstream.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T7_page-1.png#fig1_feed_and_reformers"
+                }
+              }
+            ],
+            "evidence": "The source-first exact difference and strict comparison agree with the classification submission and with XYRelationResult/xy_relation.",
+            "id": "xy_relation",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T7A1.PlantModel.steam_ledger",
+                "IChO2026Problems.T7A1.PlantModel.steam_outlet_label",
+                "IChO2026Problems.T7A1.PlantModel.oxidation_ledger",
+                "IChO2026Problems.T7A1.PlantModel.shift_ledger",
+                "IChO2026Problems.T7A1.PlantModel.shifted_outlet_label"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T7A1.XYRelationResult",
+                "IChO2026Problems.T7A1.xy_relation"
+              ],
+              "relations": [
+                "IChO2026Problems.T7A1.xyDifferenceLedger",
+                "IChO2026Problems.T7A1.XYRelation.Holds"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T7A1.XYRelation.xGreaterThanY",
+                "IChO2026Problems.T7A1.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "xyDifferenceLedger proves the exact positive difference, and XYRelation.Holds maps xGreaterThanY to the correctly oriented strict inequality.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "relation between the two fresh-feed coefficients on the single displayed process basis",
+              "kind": "overall"
+            },
+            "quantity_definition": "the correct strict-order classification of the methane and water feed coefficients x and y",
+            "raw_result": {
+              "derivation": "The quantitative steam ledger and absence of water from its labeled outlet give steamExtent=y. One displayed O2 is fully consumed at oxidationExtent=1, consuming two residual CH4; the downstream label excludes unchanged CH4. Hence x-y=2, so the strict greater-than branch follows.",
+              "exact_unrounded": true,
+              "value_or_expression": "x - y = 2, hence x > y"
+            },
+            "reporting": {
+              "application": "Report the exact comparison class once; no rounding or tolerance applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission has the required id, classification kind, empty unit, an exact raw relation, and the matching exact-symbolic display classification.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T7_page-1.png#fig1_feed_and_reformers"
+              }
+            ],
+            "source_requirement": "relationship between x and y",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "ccc3c699729732b2ed5efe0bafbc0aa79b34b37a161d6c1ad2f2e6819317df9d"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t7_a1.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The three exact-symbolic requested outputs are independently forced by the source-labeled Fig. 1 stream cuts and transparent componentwise reaction ledgers. The submission and Lean carriers match the source-first derivation, and Kimi draft subpart 7.1 is preserved without discrepancy.",
+        "reviewed_at": "2026-09-13T08:41:07Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "ccc3c699729732b2ed5efe0bafbc0aa79b34b37a161d6c1ad2f2e6819317df9d",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t7_a1.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 9,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "All three exact-symbolic requested outputs are independently derived from the source-visible stream labels and transparent component ledgers; the submission and sealed Kimi 7.1 draft agree with those derivations, and the bound candidate passes the deterministic zero-sorry preflight.",
+    "evidence": "The aggregate declaration reported_result (p : PlantModel) : ReportedResult p is proved from gases_m1, gases_m2, and xy_relation. Their supporting lemmas m1AmountLedger, m2AmountLedger, and xyDifferenceLedger reduce the printed reactions, scrubber, and cooler split componentwise over the complete finite Gas domain. Candidate SHA-256 and answer-submission SHA-256 match their controller bindings; preflight status=passed, compiles=true, returncode=0, sorry_count=0.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "2d1b85d5106aea14fde5bb00fd28a596021f6ff1b40b6eb107fc7fe98058395a",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t7_a1.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t7_a1",
+      "source_record_sha256": "b239857d8e909406aed4fef4e721c61f471f945503a7dc81f2b4dee03c9aaa30",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t7_a1.answer.json",
+      "answer_submission_sha256": "292065d5ad45ca6c6d9003c67d5d398afb1f576aa3812a3897ffdcaeae62d395",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t7_a1.source.json",
+      "source_report_sha256": "2e9441671369b130c0edd4e7897a4b727eeefd08bce5f583c7caf14803253adf",
+      "candidate": "IChO2026Problems/problem_icho_2026_t7_a1.lean",
+      "preflight_sha256": "81d37e967109d9eecfef75ee55361eac97b145b8a7d2bbf438ca35f402454c15",
+      "candidate_sha256": "2d1b85d5106aea14fde5bb00fd28a596021f6ff1b40b6eb107fc7fe98058395a",
+      "question_sha256": "bb491edda65ff535c7803fed94a688a094adde83a518847003934b66b6755c75",
+      "shared_context_sha256": "df5af3c2b2c8db3f58b190145b1bf49d8cb2c93ba9ffa7b6546e60a8289a3680",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "65b737fe4eb3981100db05e2a44aac9eefed2fa783a81de915e7c4e01fa93c71",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T7_page-1.png",
+          "sha256": "ee7fe1adff7ac3aae8701bf684981bd2b1e21b28f1c9e4b21dd9c38c3bdb79ad"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "74c69f51c7aeb85e90dd300e8c2dfa384a54fbe0d2a7ec91f881367840a26279",
+        "node_count": 9,
+        "edge_count": 12,
+        "node_kind_counts": {
+          "derivation_obligation": 3,
+          "requested_output": 3,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "gases_m1",
+          "gases_m2",
+          "xy_relation"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t7_a1",
+        "path": ".archon/provided_answer_drafts/Q7.md",
+        "sha256": "7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t7_a1.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t7_a1",
+        "source_record_sha256": "b239857d8e909406aed4fef4e721c61f471f945503a7dc81f2b4dee03c9aaa30",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t7_a1.answer.json",
+        "answer_submission_sha256": "292065d5ad45ca6c6d9003c67d5d398afb1f576aa3812a3897ffdcaeae62d395",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t7_a1.source.json",
+        "source_report_sha256": "2e9441671369b130c0edd4e7897a4b727eeefd08bce5f583c7caf14803253adf",
+        "candidate": "IChO2026Problems/problem_icho_2026_t7_a1.lean",
+        "preflight_sha256": "81d37e967109d9eecfef75ee55361eac97b145b8a7d2bbf438ca35f402454c15",
+        "candidate_sha256": "2d1b85d5106aea14fde5bb00fd28a596021f6ff1b40b6eb107fc7fe98058395a",
+        "question_sha256": "bb491edda65ff535c7803fed94a688a094adde83a518847003934b66b6755c75",
+        "shared_context_sha256": "df5af3c2b2c8db3f58b190145b1bf49d8cb2c93ba9ffa7b6546e60a8289a3680",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "65b737fe4eb3981100db05e2a44aac9eefed2fa783a81de915e7c4e01fa93c71",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T7_page-1.png",
+            "sha256": "ee7fe1adff7ac3aae8701bf684981bd2b1e21b28f1c9e4b21dd9c38c3bdb79ad"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "74c69f51c7aeb85e90dd300e8c2dfa384a54fbe0d2a7ec91f881367840a26279",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "gases_m1",
+            "gases_m2",
+            "xy_relation"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t7_a1",
+          "path": ".archon/provided_answer_drafts/Q7.md",
+          "sha256": "7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "Only the inline problem evidence and the digest-verified bound image were used as scientific premises. The answer submission and expressly authorized sealed draft were treated as untrusted comparison objects after an independent stream-by-stream derivation; no other project artifact or historical answer was opened."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "m1AmountLedger and m2AmountLedger enumerate all eight component amounts without rounding, while xyDifferenceLedger supplies the exact algebraic relation used by xy_relation; raw_result combines the three nontrivial carriers."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "Every requested output is exact_symbolic by the controller-bound requested-output policies. RawResult and ReportedResult therefore coincide, with no discretionary formatting or staged rounding."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No tolerance is applicable to finite-set or exact classification outputs; equality and strict positivity are proved exactly over real-valued amount ledgers."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The Gas inductive has exactly the eight molecular species explicitly named in Fig. 1 across feeds, reactions, interstage labels, and product/recycle labels. No open-world species list or answer-shaped singleton is used."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=2d1b85d5106aea14fde5bb00fd28a596021f6ff1b40b6eb107fc7fe98058395a; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result declarations are gases_m1 : GasesM1Result, gases_m2 : GasesM2Result, xy_relation : XYRelationResult, with aggregate raw_result and reported_result."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "ReportedResult universally covers every PlantModel satisfying the source-derived plant contract and contains exactly one conjunct for each of the three requested outputs; it does not claim unrequested numerical values or global chemistry facts."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "PlantModel records the four printed reaction equations, nonnegative physical amounts, the visible upstream/intermediate/product/recycle labels, the named CO2 scrubber, and the two-outlet cooler conservation split. None of gases_m1, gases_m2, or the x/y comparison is a structure field or hypothesis."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The answer JSON has schema_version 1, the expected top-level fields, and exactly three outputs in controller order with matching ids, kinds, and empty units. Each raw/display entry agrees with its independently derived Lean carrier and with Kimi subpart 7.1; the classification raw entry gives a valid stronger exact derivation of its displayed class."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "ReactsBy exposes every reaction as a componentwise stoichiometric extent ledger; ScrubsCarbonDioxide and cooler_split expose the nonreactive unit operations; exact stream labels are represented by HasExactlyGases. The proof traverses every outcome-decisive stage and establishes both presence and absence for each domain species."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "complete set of gases in M1",
+          "lean_carrier": "IChO2026Problems.T7A1.gases_m1 : \u2200 p : PlantModel, GasesM1Result p",
+          "status": "covered",
+          "evidence": "Submission finite-set schema and exact-symbolic presentation match the independently enumerated positivity/zero ledger proved by m1AmountLedger and gases_m1.",
+          "output_id": "gases_m1",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete set of gases in M2",
+          "lean_carrier": "IChO2026Problems.T7A1.gases_m2 : \u2200 p : PlantModel, GasesM2Result p",
+          "status": "covered",
+          "evidence": "Submission finite-set schema and exact-symbolic presentation match the ammonia-stage ledger plus the source-visible cooler product/recycle split proved by m2AmountLedger and gases_m2.",
+          "output_id": "gases_m2",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "relationship between x and y",
+          "lean_carrier": "IChO2026Problems.T7A1.xy_relation : \u2200 p : PlantModel, XYRelationResult p",
+          "status": "covered",
+          "evidence": "Submission classification and its exact raw justification match xyDifferenceLedger and the strict comparison established by xy_relation.",
+          "output_id": "xy_relation",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T7_page-1.png",
+          "sha256": "ee7fe1adff7ac3aae8701bf684981bd2b1e21b28f1c9e4b21dd9c38c3bdb79ad",
+          "inspected": true,
+          "evidence": "The readable figure shows the methane/steam feed; steam-reforming, partial-oxidation, shift, and ammonia equations; the 4 N2 + 1 O2 air feed and added shift water; the labeled first interstage and shifted streams; Z as the CO2 scrubber; M1 and M2 positions; and CLR outlets labeled ammonia and recycled nitrogen/hydrogen. These are exactly the source facts modeled by PlantModel."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Independent flow tracing agrees with the candidate: quantitative upstream conversions and visible exact stream labels eliminate absent components, the scrubber removes carbon dioxide, and incomplete ammonia formation followed by cooling accounts for every M2 component. The reaction vectors faithfully encode the printed equations."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "quantitative_material_stage: exhaustive gas-set conclusions require presence/absence accounting. The finite domain is Gas (all eight figure-named species); stages are methane/steam reforming, air-fed partial oxidation to M1, water-gas shift, CO2 scrubbing, nonquantitative ammonia formation to M2, and CLR separation. Outcome-decisive carriers are steam_ledger, oxidation_ledger, shift_ledger, scrubber_ledger, ammonia_ledger, cooler_split, m1AmountLedger, synthesisFeedAmountLedger, and m2AmountLedger; there are no anonymous streams."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "No molar-mass calculation is requested. The four source reaction definitions reproduce the printed molecular formulas and stoichiometric coefficients without formula mismatch."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "Each printed reaction is atom-balanced, ReactsBy enforces componentwise extent accounting, the scrubber preserves each non-carbon-dioxide component, and cooler_split conserves every component across the two displayed outlets. These are the only conservation dimensions needed for exhaustive gas membership."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "Amounts are consistently molar amounts on the figure's batch basis; reaction extents and stoichiometric coefficients are dimensionally compatible, and all three requested output units are correctly empty."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The outputs are exact finite sets/classification, so no numerical rounding, measurement interval, significant-figure decision, or tolerance is involved."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "This subquestion requests stream species and an algebraic comparison, not a molecular drawing, connectivity assignment, or stereochemical result."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "Finset.ext checks every constructor of the source-derived finite Gas domain; zero-versus-positive component lemmas therefore establish exhaustive coverage rather than a preselected witness-only match."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The expected result sets and XY option occur only in conclusion-side definitions. PlantModel contains no requested-output field; its exact labels belong to distinct source-labeled streams/outlets, and all transfers to M1/M2 are proved through transparent ledgers rather than an opaque chemistry predicate."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t7_a1.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "All three exact-symbolic requested outputs are independently derived from the source-visible stream labels and transparent component ledgers; the submission and sealed Kimi 7.1 draft agree with those derivations, and the bound candidate passes the deterministic zero-sorry preflight.",
+        "evidence": "The aggregate declaration reported_result (p : PlantModel) : ReportedResult p is proved from gases_m1, gases_m2, and xy_relation. Their supporting lemmas m1AmountLedger, m2AmountLedger, and xyDifferenceLedger reduce the printed reactions, scrubber, and cooler split componentwise over the complete finite Gas domain. Candidate SHA-256 and answer-submission SHA-256 match their controller bindings; preflight status=passed, compiles=true, returncode=0, sorry_count=0.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T08:58:14.254487Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "2d1b85d5106aea14fde5bb00fd28a596021f6ff1b40b6eb107fc7fe98058395a",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t7_a1.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T08:58:14.254527Z",
+    "repair_handoff": {}
+  }
+}

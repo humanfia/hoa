@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t1_a4",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "Al",
+      "id": "metal_q_identity",
+      "kind": "classification",
+      "raw_value": "Al",
+      "unit": ""
+    },
+    {
+      "display_value": "AlF3·3H2O",
+      "id": "hydrated_c_formula",
+      "kind": "formula",
+      "raw_value": "AlF3·3H2O",
+      "unit": ""
+    },
+    {
+      "display_value": "Na3AlF6",
+      "id": "compound_d_formula",
+      "kind": "formula",
+      "raw_value": "Na3AlF6",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

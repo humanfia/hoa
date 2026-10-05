@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "record_id": "icho_2026_t7_a6",
+  "scope": "this Kimi-NL GPT formalization campaign, T7-A6 only",
+  "source_bundle_sha256": "4319bb1f490436734c16df38a84d1ad7a570b7d13da479c6cf6fb106a09f4d73",
+  "draft_sha256": "7cf6fe096ccaf24299aecc5e73e64c371cf921a0c0cba54526914f01515889fd",
+  "user_reply": "\u660e\u786e\u6388\u6743\u201c\u4ec5\u672c\u9898\u9002\u7528\u201d\u7684\u6a21\u578b\u5047\u8bbe\uff0c\u518d\u505a\u6761\u4ef6\u8bc1\u660e, \u786e\u4fdd\u5047\u8bbe\u4e0d\u76f4\u63a5\u7f16\u7801\u7b54\u6848\u7136\u540e\u91cd\u542f\u8fd9\u9053\u9898",
+  "recorded_at": "2026-09-13T10:00:36Z",
+  "assumptions": {
+    "M701": "Only over the eight entries on Q7-3, use the potential of the printed zero-yield reference as an idealized activity cutoff: an entry at or above that reference potential has zero ammonia yield; an entry below it with the same triflate counterion as that reference has strictly positive yield. Extract the reference potential and counterion from the source calibration. The sharp cutoff and its transfer to unmeasured entries are authorized modeling assumptions, not consequences of one observed zero yield.",
+    "M702": "Only over the eight Q7-3 entries: the direction of the pKa/yield change observed in the matched positive-yield calibration pair transfers strictly to any pair of active entries sharing reductant identity, potential and counterion. Formulate the transferred sign using the actual calibration pair differences, and prove their sign from the printed calibration values. This is a finite comparative idealization, not a universal acid/yield law."
+  },
+  "evaluation_basis": "conditional_contest_model",
+  "proved_from_figures": false,
+  "final_answer_axioms_allowed": false
+}

@@ -1,0 +1,85 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Tick one correct statement regarding the value of n (number of type a fragments). (a) n is an even number, (b) n is an odd number, (c) n can be either an odd or an even number.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t5_a1",
+  "image": "T5_page-1.png",
+  "images": [
+    "T5_page-1.png"
+  ],
+  "index": "icho_2026_t5_a1",
+  "kind": "classification",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T5",
+  "part_id": "T5-A1",
+  "phase": "solve",
+  "points": 1.0,
+  "previous_parts": [],
+  "printed_page": 1,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T5_page-1.png",
+      "printed_page": 1,
+      "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347",
+      "source_page": 44
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 44
+    }
+  ],
+  "problem_id": "icho_2026_t5",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT5. Cardiolipins 6% In this problem you are asked to be creative and build molecules from fragments. For instance, if you are required to draw a chiral phospholipid such as W using fragments a-e, it can be assembled as shown below. Cardiolipins are a family of acyclic phospholipids differing in fatty acid residues. They are essential for energy production and membrane stability. Defects can lead to certain diseases. PL1 belongs to this family. Using only the structural elements a-d in the quantities stated below, it is possible to assemble the non-ionised form of PL1. R is a hydrocarbon substituent in the fatty acid structure. PL1 does not contain any peroxide bonds.\n\n## Current subquestion T5-A1\nTick one correct statement regarding the value of n (number of type a fragments). (a) n is an even number, (b) n is an odd number, (c) n can be either an odd or an even number.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "fragment_parity_statement",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "correct parity statement for n",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T5. Cardiolipins 6% In this problem you are asked to be creative and build molecules from fragments. For instance, if you are required to draw a chiral phospholipid such as W using fragments a-e, it can be assembled as shown below. Cardiolipins are a family of acyclic phospholipids differing in fatty acid residues. They are essential for energy production and membrane stability. Defects can lead to certain diseases. PL1 belongs to this family. Using only the structural elements a-d in the quantities stated below, it is possible to assemble the non-ionised form of PL1. R is a hydrocarbon substituent in the fatty acid structure. PL1 does not contain any peroxide bonds.",
+  "source_index": "T5-A1",
+  "source_page": 44,
+  "source_pdf": "theory_problem.pdf"
+}

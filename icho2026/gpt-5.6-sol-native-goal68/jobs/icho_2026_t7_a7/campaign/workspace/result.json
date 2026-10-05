@@ -1,0 +1,31 @@
+{
+  "target_id": "icho_2026_t7_a7",
+  "status": "completed",
+  "answer_summary": "7 = LaN; 8 = Ca3N2; 9 = Si3N4; 10 = La5Ca9O2[SiO3N][Si12N24] = La5Ca9Si13N25O5; S = O2-; T = [SiO3N]5-.",
+  "theorem_names": [
+    "IChO2026Problems.T7A7.candidate_molar_masses",
+    "IChO2026Problems.T7A7.nitride_percentages_match_source",
+    "IChO2026Problems.T7A7.stoichiometric_mass_ratios_match_source",
+    "IChO2026Problems.T7A7.synthesis_atom_balance",
+    "IChO2026Problems.T7A7.formula10_is_primitive",
+    "IChO2026Problems.T7A7.nitride_charge_neutrality",
+    "IChO2026Problems.T7A7.formula10_ionic_decomposition",
+    "IChO2026Problems.T7A7.ionic_charge_certificate",
+    "IChO2026Problems.T7A7.anion_compositions_forced",
+    "IChO2026Problems.T7A7.icho_2026_t7_a7"
+  ],
+  "assumptions": [
+    "The relative atomic masses printed on PDF page G1-5 are used exactly as stipulated constants: La 138.9, Ca 40.08, Si 28.09, N 14.01, O 16.00.",
+    "Each displayed percentage and mass-ratio entry denotes the closed half-last-displayed-quantum interval required by TASK.json.",
+    "The question's quantitative single-product statement permits conservation of every input atom in compound 10.",
+    "Formal oxidation states are La(III), Ca(II), Si(IV), N(-III), and O(-II); La, Ca, and Si are in their highest ordinary oxidation states in these compounds.",
+    "The compositional consequence of the stated tetrahedral configuration is one central Si with four O/N ligands."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t7_a7.lean",
+    "grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t7_a7.lean",
+    "python3 -m json.tool result.json"
+  ]
+}

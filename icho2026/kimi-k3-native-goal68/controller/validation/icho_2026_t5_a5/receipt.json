@@ -1,0 +1,60 @@
+{
+  "target": "icho_2026_t5_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789364033.5340478,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "d85f68ad1d3586d3cea02bc3f14dcbd257dfc3d933bfdad51ad0fdcb158984e4",
+    "IChO2026Problems/problem_icho_2026_t5_a5.lean": "2d1c8be2c5b59d976031866ba056a9ac19e75879e3b6563be0c7dfd18af979ff",
+    "answer.md": "cb3aeff41f6f0307f46b0448ed38beb15d5ad4f56bc2bc0dce41f4dc950eea8c",
+    "verification.md": "a7cd4dc0c5473409db0a283998d2e2ab4fce2084297bfcf47d4f4d599e8da4d2",
+    "result.json": "68f99ceaf114dc110a243d0395bb03e8c816e2fb42ee4d4dba421d241aa9c520"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t5_a5",
+    "status": "completed",
+    "answer_summary": "Option (c) hexagonal. Fully protonating PL1 neutralizes its two identical phosphoric acid head groups; the neutral heads are less hydrated and no longer repel electrostatically, so the effective head-group area shrinks relative to the unchanged fatty-acid tail cross-section. The problem states the dianion forms a lamellar phase; moving strictly up the standard lyotropic mesophase order (micellar < lamellar < hexagonal < inverse hexagonal) from that anchor selects the hexagonal phase for the fully protonated form.",
+    "theorem_names": [
+      "IChO2026T5A5.t5_a5_answer_is_hexagonal",
+      "IChO2026T5A5.icho_2026_t5_a5_lipid_phase",
+      "IChO2026T5A5.t5_a5_anchor_and_exclusive_gap",
+      "IChO2026T5A5.t5_a5_single_correct_answer"
+    ],
+    "assumptions": [
+      "Problem-stated anchor (problem input, not a derived result): in physiological conditions PL1 is a dianion and forms a lamellar phase.",
+      "Trusted general law: the four offered lipid mesophases fall in the standard lyotropic order of increasing effective tail-to-head cross-section ratio (micellar < lamellar < hexagonal < inverse hexagonal), encoded as PhaseOrder.",
+      "Trusted general law: protonating a charged phospholipid head group strictly decreases its effective (hydrated, electrostatically repelling) cross-section while leaving the hydrophobic tail cross-section unchanged, so the fully protonated state's phase lies strictly above the dianion's lamellar phase in that order.",
+      "IChO 'tick the correct answer' convention that exactly one listed option is correct (IsSingleCorrectAnswer); used only for the exhaustiveness corollary t5_a5_single_correct_answer, not for the classification theorem."
+    ],
+    "source_gaps": [
+      "The printed problem does not explicitly state that the single-answer tick convention guarantees uniqueness of the correct option; this exclusivity is recorded as a separate explicit premise (IsSingleCorrectAnswer) and is not relied upon in deriving the classified phase.",
+      "The standard lyotropic mesophase order and the effect of head-group charge on effective head area are physico-chemical background knowledge (trusted_general_law) rather than verbatim problem text; they are the smallest standard premises needed and are flagged accordingly."
+    ],
+    "verification_commands": [
+      "export PATH=\"$HOME/.elan/bin:$PATH\"",
+      "lake --version",
+      "lake env lean IChO2026Problems/problem_icho_2026_t5_a5.lean"
+    ],
+    "verification_results": [
+      "lake --version \u2192 Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)",
+      "lake env lean IChO2026Problems/problem_icho_2026_t5_a5.lean \u2192 exit 0; #print axioms reports 'does not depend on any axioms' for t5_a5_answer_is_hexagonal and icho_2026_t5_a5_lipid_phase"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

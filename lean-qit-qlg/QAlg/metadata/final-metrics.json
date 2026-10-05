@@ -1,0 +1,14 @@
+{
+  "benchmark": "qalg",
+  "external_human_blind_audit": false,
+  "formalization_compiles": 36,
+  "formalization_semantic_review_passed": 36,
+  "full_lake_build": "passed",
+  "kernel_closed_proofs": 36,
+  "proof_review_certificate_coverage": 0.9722222222222222,
+  "proof_review_certificates": 35,
+  "proof_review_solved": 35,
+  "semantic_review_scope": "final automated reviewer result after repair",
+  "sorry_or_admit_free": 36,
+  "tasks": 36
+}

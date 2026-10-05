@@ -1,0 +1,30 @@
+{
+  "target_id": "icho_2026_t9_a5",
+  "status": "completed",
+  "answer_summary": "L is the 1,4-diol of otherwise fully O-benzylated beta-cyclodextrin: clockwise units 1-7 are CH2OH, CH2OBn, CH2OBn, CH2OH, CH2OBn, CH2OBn, CH2OBn, and the fourteen secondary sites are (OBn)14.",
+  "theorem_names": [
+    "IChO2026Problems.T9A5.L_primary_alcohol_iff",
+    "IChO2026Problems.T9A5.L_primary_benzyl_iff",
+    "IChO2026Problems.T9A5.structure_L_primary_boxes",
+    "IChO2026Problems.T9A5.structure_L_secondary_boxes",
+    "IChO2026Problems.T9A5.requested_structure_L",
+    "IChO2026Problems.T9A5.L_primary_has_benzyl_iff",
+    "IChO2026Problems.T9A5.L_primary_has_hydrogen_iff",
+    "IChO2026Problems.T9A5.L_secondary_has_benzyl",
+    "IChO2026Problems.T9A5.structure_L_formula",
+    "IChO2026Problems.T9A5.requested_structure_L_graph"
+  ],
+  "assumptions": [
+    "The problem statement defines beta-CD as seven alpha-D-glucopyranoside units, and the Q9-3 starting template displays seven primary CH2OH groups plus fourteen secondary OH groups.",
+    "The displayed 30 equivalents each of NaH and BnCl are interpreted by the standard Williamson O-benzylation rule as exhaustive benzylation of all 21 hydroxyl groups.",
+    "The displayed two-equivalent DIBAL-H operation is interpreted as the two sequential primary reductive debenzylations discussed by the paragraph immediately above the scheme.",
+    "The first exposed position is named unit 1 using the cyclic symmetry of fully benzylated beta-CD; the problem-stated directing rule then selects available unit 4 for the next primary debenzylation.",
+    "The displayed O-benzylation and primary O-debenzylation steps do not break bonds at the alpha-D-glucopyranoside stereocentres."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T9_page-3.png icho_2026_source/image/T9_page-2.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t9_a5.lean",
+    "if grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t9_a5.lean; then echo 'FAIL: forbidden proof shortcut found'; exit 1; else echo 'PASS: no sorry, admit, or unsafe tokens'; fi"
+  ]
+}

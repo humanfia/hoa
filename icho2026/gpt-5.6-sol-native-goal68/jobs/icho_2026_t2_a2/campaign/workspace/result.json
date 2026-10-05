@@ -1,0 +1,28 @@
+{
+  "target_id": "icho_2026_t2_a2",
+  "status": "completed",
+  "answer_summary": "[HBrO2]_A = 6.00e-6 mol dm^-3 and [HBrO2]_B = 5.04e-11 mol dm^-3 (three significant figures); exact raw values are 6/1000000 and 504/10000000000000 M.",
+  "theorem_names": [
+    "IChO2026Problems.T2A2.processA_rate_relation",
+    "IChO2026Problems.T2A2.hbro2_process_a_stationary",
+    "IChO2026Problems.T2A2.hbro2_process_b_stationary",
+    "IChO2026Problems.T2A2.hbro2_process_a_submission_valid",
+    "IChO2026Problems.T2A2.hbro2_process_b_submission_valid",
+    "IChO2026Problems.T2A2.icho_2026_t2_a2"
+  ],
+  "assumptions": [
+    "Mass-action rate laws apply to the elementary steps printed in the problem.",
+    "The steady-state approximation sets the BrO2 radical and HBrO2 balances to zero in Process A and the HBrO2 balance to zero in Process B.",
+    "The requested occurring Process-A state is the positive HBrO2 branch, excluding the inactive all-zero-rate algebraic root.",
+    "Bromide is positive while Process B is active, excluding the zero-bromide degeneracy; the problem states that Process C continuously produces bromide and that Process B occurs."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t2_a2.lean",
+    "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T2_page-1.png icho_2026_source/image/T2_page-2.png",
+    "if grep -nE '(^|[[:space:]])(sorry|admit|unsafe)([[:space:]]|$)|^[[:space:]]*axiom[[:space:]]' IChO2026Problems/problem_icho_2026_t2_a2.lean; then exit 1; else echo 'No sorry/admit/unsafe/custom axiom declarations found.'; fi",
+    "if grep -nE '[[:blank:]]+$|^(<<<<<<<|=======|>>>>>>>)' answer.md verification.md result.json IChO2026Problems/problem_icho_2026_t2_a2.lean; then exit 1; else echo 'No trailing whitespace or conflict markers found.'; fi",
+    "python3 -m json.tool result.json >/dev/null"
+  ]
+}

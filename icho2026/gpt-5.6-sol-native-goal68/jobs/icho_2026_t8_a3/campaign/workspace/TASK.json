@@ -1,0 +1,85 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Tick the correct geometry for the structure of 1.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t8_a3",
+  "image": "T8_page-1.png",
+  "images": [
+    "T8_page-1.png"
+  ],
+  "index": "icho_2026_t8_a3",
+  "kind": "classification",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T8",
+  "part_id": "T8-A3",
+  "phase": "solve",
+  "points": 2.0,
+  "previous_parts": [],
+  "printed_page": 1,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T8_page-1.png",
+      "printed_page": 1,
+      "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843",
+      "source_page": 72
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 72
+    }
+  ],
+  "problem_id": "icho_2026_t8",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT8. Recycling of Carbon Dioxide 7% Removing CO2 gas from the atmosphere is key to combat climate change. One promising solution is the photocatalytic reduction of CO2 to CO using molecular catalyst 1. 8.1 Write the half equation for the reduction of CO2 to CO in an acidic medium. The conjugate oxidation reaction occurs with sacrificial reductant 2 in aqueous solution with the following mechanism: Species 3, 4, and 5 are short-lived ionic and radical intermediates. 7 yields a silver mirror with the [Ag(NH3)2]OH test. 8.2 Draw the structures of 3-7. Catalyst 1 can be synthesised with the following reaction.\n\n## Current subquestion T8-A3\nTick the correct geometry for the structure of 1.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "geometry_1",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "geometry of structure 1 from the supplied choices",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T8. Recycling of Carbon Dioxide 7% Removing CO2 gas from the atmosphere is key to combat climate change. One promising solution is the photocatalytic reduction of CO2 to CO using molecular catalyst 1. 8.1 Write the half equation for the reduction of CO2 to CO in an acidic medium. The conjugate oxidation reaction occurs with sacrificial reductant 2 in aqueous solution with the following mechanism: Species 3, 4, and 5 are short-lived ionic and radical intermediates. 7 yields a silver mirror with the [Ag(NH3)2]OH test. 8.2 Draw the structures of 3-7. Catalyst 1 can be synthesised with the following reaction.",
+  "source_index": "T8-A3",
+  "source_page": 72,
+  "source_pdf": "theory_problem.pdf"
+}

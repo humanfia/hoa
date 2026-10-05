@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+task="tiling"
+
+if [ $# != 1 ] ; then
+	echo >&2 "Usage $0 <source-file>"
+	exit 1
+fi
+
+exec ioisubmit "${task}" "$1"

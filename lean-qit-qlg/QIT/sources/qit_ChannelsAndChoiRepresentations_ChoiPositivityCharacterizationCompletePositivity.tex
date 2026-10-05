@@ -1,0 +1,26 @@
+Let
+$$
+\Phi:\cL(\cH_A)\to\cL(\cH_B)
+$$
+be a linear map, with $d_A=\dim\cH_A$. Fix an orthonormal computational basis
+$\{\ket{i}\}_{i=1}^{d_A}$ for $\cH_A$, let $A'\cong A$, and define
+$$
+\ket{\Gamma}_{AA'}=\sum_{i=1}^{d_A}\ket{i}_A\ket{i}_{A'}.
+$$
+The unnormalized Choi matrix of $\Phi$ is
+$$
+J_{\Phi}
+=
+(\id_A\otimes\Phi_{A'\to B})
+(\ket{\Gamma}\bra{\Gamma}_{AA'}).
+$$
+The map $\Phi$ is completely positive if
+$$
+\id_R\otimes\Phi
+$$
+is positive on $\cL(\cH_R\otimes\cH_A)$ for every finite-dimensional Hilbert space $\cH_R$.
+
+Prove that $\Phi$ is completely positive if and only if
+$$
+J_{\Phi}\in\Pos(\cH_A\otimes\cH_B).
+$$

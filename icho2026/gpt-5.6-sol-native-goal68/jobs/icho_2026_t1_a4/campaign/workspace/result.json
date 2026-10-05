@@ -1,0 +1,31 @@
+{
+  "target_id": "icho_2026_t1_a4",
+  "status": "completed",
+  "answer_summary": "Q is Al; C·xH2O is AlF3·3H2O (C = AlF3, x = 3); D is Na3AlF6 (cryolite). The proposed formulas reproduce 39.16% water, 32.85% Na, and 12.85% Al at the printed precision and satisfy AlF3 + 3 NaF -> Na3AlF6.",
+  "theorem_names": [
+    "IChO2026Problems.T1A4.metal_q_identity",
+    "IChO2026Problems.T1A4.hydrated_c_formula",
+    "IChO2026Problems.T1A4.compound_d_formula",
+    "IChO2026Problems.T1A4.identify_metal_C_and_D",
+    "IChO2026Problems.T1A4.hydration_number_eq_three",
+    "IChO2026Problems.T1A4.identified_answer_satisfies_problem_data",
+    "IChO2026Problems.T1A4.bare_arithmetic_does_not_identify_C"
+  ],
+  "assumptions": [
+    "Atomic masses H = 1.008, O = 16.00, F = 19.00, Na = 22.99, and Al = 26.98 are taken exactly as printed on PDF source page 5.",
+    "A displayed percentage with two decimal places denotes the closed half-quantum interval around that value, so the quantum is 0.01 percentage point.",
+    "The ordinary-chemistry Hall-Heroult classification is represented explicitly: cryolite Na3AlF6 is the fluoride medium used in industrial aluminium production.",
+    "The pH-controlled precipitate C is interpreted as the sodium-free metal fluoride precursor, and the schematic C + NaF -> D is modeled as atom-conserving uptake of an integral number of NaF formula units with no additional product."
+  ],
+  "source_gaps": [
+    "The problem text does not itself define cryolite or state its formula/industrial role; this allowed ordinary-chemistry fact is separated as IndustrialFluoridePair and grounded in USGS and PubChem references in answer.md.",
+    "The problem text does not explicitly say that C is sodium-free. Bare formula arithmetic also permits the formal countermodel Na2AlF5·6H2O, which has the same rounded water percentage and converts to Na3AlF6 with one NaF. The standard answer therefore depends on phase-identity chemistry at pH about 4; Lean exposes this condition rather than claiming unconditional numerical uniqueness."
+  ],
+  "verification_commands": [
+    "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T1_page-2.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T1_page-3.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf",
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t1_a4.lean",
+    "if grep -RInE '(^|[[:space:]])(sorry|admit|unsafe|axiom)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t1_a4.lean; then exit 1; else exit 0; fi",
+    "jq empty TASK.json result.json"
+  ]
+}

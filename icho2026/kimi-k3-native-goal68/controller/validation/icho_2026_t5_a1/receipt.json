@@ -1,0 +1,59 @@
+{
+  "target": "icho_2026_t5_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789360819.455136,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "af9520b56b770b99c2f23ad32a17c0bf89dc0b228affa46a4b1ae2e2cc41eb4f",
+    "IChO2026Problems/problem_icho_2026_t5_a1.lean": "0b33930b91fe5ee7db86999ced125e7f32241266956c83a5ab8c5fb9893f29db",
+    "answer.md": "1e40fa3bc0737fabdc5d56b9253c354dee1a9cdc6df32b667590a865d4173ede",
+    "verification.md": "3728d17f39f7c343c142ffcd7629b629d7c2a682a41c886e9e69c44b69e03208",
+    "result.json": "bd8e398080dfda10087a100e127f4b09080b2c0c73540577e4298dd53e4c6515"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t5_a1",
+    "status": "completed",
+    "answer_summary": "T5 question 5.1: tick (b) \u2014 n is an odd number. Nitrogen-free double counting of fragment valences and transferable (acidic) hydrogens over the stipulated quantities (2 phosphoric acid, 3 glycerol, 4 fatty acyl, n hydrogen fragments for non-ionised cardiolipin PL1) gives 2\u00b7(2a+n) = 2a+3b+c+n, hence n + 2a = 3b + c, so n \u2261 3b + c (mod 2). With a=2, b=3, c=4 this forces n = 9, in particular n is odd; (a) and (c) are excluded. Only the two condensation/valence balance equations (each grounded in the fragment drawings and the worked W example on the problem page) are assumed; no connectivity, chirality or peroxide information is needed.",
+    "theorem_names": [
+      "IChO2026T5A1.t5_a1_answer",
+      "IChO2026T5A1.answer_b_n_is_odd",
+      "IChO2026T5A1.answer_a_n_even_impossible",
+      "IChO2026T5A1.answer_c_parity_not_free",
+      "IChO2026T5A1.n_mod_two_eq_one",
+      "IChO2026T5A1.n_eq_nine",
+      "IChO2026T5A1.Recipe.Feasible.n_parity",
+      "IChO2026T5A1.Recipe.Feasible.n_eq",
+      "IChO2026T5A1.Recipe.Feasible.hydrogen_balance",
+      "IChO2026T5A1.pl1_feasible_at_nine"
+    ],
+    "assumptions": [
+      "Fragment readings from T5 page 1 figure: phosphate fragment carries 2 free valences and 2 acidic (P-OH) protons; glycerol 3 valences; fatty acyl 1 valence; hydrogen fragment caps 1 valence and supplies no acidic proton.",
+      "Condensation stoichiometry: every inter-fragment bond is formed by elimination of H2O, consuming exactly 1 transferable hydrogen and exactly 2 free valences (grounded in the worked assembly example W on the same page).",
+      "Stipulated quantities for PL1 assembly: 2 phosphate, 3 glycerol, 4 fatty acyl, n hydrogen fragments (from the figure under 'Using only the structural elements a-d in the quantities stated below').",
+      "Standard Lean logical axioms only: propext, Classical.choice, Quot.sound."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t5_a1.lean",
+      "lake build IChO2026Problems",
+      "lake env lean <scratch importing module with #print axioms t5_a1_answer, answer_b_n_is_odd, answer_a_n_even_impossible, answer_c_parity_not_free, n_mod_two_eq_one, n_eq_nine, Recipe.Feasible.n_parity, pl1_feasible_at_nine> \u2014 output: only [propext, Classical.choice, Quot.sound] (pl1_feasible_at_nine: no axioms)"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

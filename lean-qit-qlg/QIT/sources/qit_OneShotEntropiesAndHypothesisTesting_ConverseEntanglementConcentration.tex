@@ -1,0 +1,25 @@
+\Section{Converse for Entanglement Concentration}
+Let $\lvert \psi\rangle_{AB}\in\mathcal{H}_A\otimes\mathcal{H}_B$ be a bipartite pure state, and let
+$$
+E(\psi)=S(\psi_A),
+\qquad
+\psi_A=\operatorname{Tr}_B(\lvert \psi\rangle\!\langle \psi\rvert_{AB}).
+$$
+For each $n$, let $\lvert \Phi_{M_n}\rangle$ denote the standard maximally entangled state of Schmidt rank
+$M_n$:
+$$
+\lvert \Phi_{M_n}\rangle=\frac{1}{\sqrt{M_n}}\sum_{j=1}^{M_n}\lvert j\rangle_A\lvert j\rangle_B.
+$$
+Suppose there exist a sequence of positive integers $\{M_n\}_{n\ge1}$ and a sequence of LOCC
+channels $\{\Lambda_n\}_{n\ge1}$ such that
+$$
+\rho_n=\Lambda_n\!\left(\lvert \psi\rangle\!\langle \psi\rvert_{AB}^{\otimes n}\right)
+$$
+satisfies
+$$
+\lim_{n\to\infty}F(\rho_n,\lvert \Phi_{M_n}\rangle\!\langle \Phi_{M_n}\rvert)=1.
+$$
+Prove the converse bound
+$$
+\limsup_{n\to\infty}\frac1n\log_2M_n\le E(\psi).
+$$

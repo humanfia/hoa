@@ -1,0 +1,6 @@
+'IChO2026Problems.T8A8.answer_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T8A8.correspondence_unique' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T8A8.condition_a' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T8A8.condition_b' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T8A8.condition_c' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T8A8.condition_d' depends on axioms: [propext, Quot.sound]

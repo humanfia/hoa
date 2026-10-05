@@ -1,0 +1,40 @@
+{
+  "target_id": "icho_2026_t2_a3",
+  "status": "completed",
+  "answer_summary": "[Br-]critical = k1*[BrO3-]0/k4 = (1.0e4)(0.06)/(2.0e9) = 3.0e-7 mol dm^-3 (3 s.f. 3.00e-7 = 0.30 micromol dm^-3). The switchover criterion r1=r4 cancels the common factor [HBrO2]*[H+]0, so the threshold depends only on the printed rate constants and the buffered bromate concentration.",
+  "theorem_names": [
+    "IChO2026T2A3.answer_bromideCritical",
+    "IChO2026T2A3.BZData.bromideCritical",
+    "IChO2026T2A3.BZData.bromide_critical_value",
+    "IChO2026T2A3.BZData.bromide_critical_value_umol",
+    "IChO2026T2A3.BZData.bromide_critical_reported",
+    "IChO2026T2A3.BZData.bromide_critical_above_fallback",
+    "IChO2026T2A3.BZData.bromideCritical_rate_identity",
+    "IChO2026T2A3.BZData.bromide_critical_switch",
+    "IChO2026T2A3.BZData.hbrO2_A_steadyState",
+    "IChO2026T2A3.BZData.hbrO2A_value",
+    "IChO2026T2A3.BZData.hbrO2_B_steadyState",
+    "IChO2026T2A3.BZData.hbrO2B_value",
+    "IChO2026T2A3.BZData.hbrO2A_pos",
+    "IChO2026T2A3.BZData.hbrO2B_pos"
+  ],
+  "assumptions": [
+    "problem text: switchover criterion r4 = r1 at [Br-]critical",
+    "printed rate constants k1=1.0e4, k3=4.0e7, k4=2.0e9, k5=2.1",
+    "buffered concentrations [BrO3-]0=0.06 M, [H+]0=0.80 M held constant",
+    "elementary mass-action kinetics and the steady-state approximation (invoked by the problem)"
+  ],
+  "source_gaps": [
+    "The exact closed form of the Process-B steady-state quadratic for [HBrO2]B is a modelling convention of the standard Field-Koros-Noyes elimination of intermediate [Br-]; it is derived here but is NOT needed for the requested [Br-]critical (whose value is independent of [HBrO2]B)."
+  ],
+  "verification_commands": [
+    "time lake env lean IChO2026Problems/problem_icho_2026_t2_a3.lean",
+    "grep -nE 'sorry|admit|axiom|unsafe' IChO2026Problems/problem_icho_2026_t2_a3.lean",
+    "timeout 240 lake env lean --root=. /tmp/axrun.lean   # (temp copy appending #print axioms of final theorems)"
+  ],
+  "verification_result": {
+    "lean_compile": "exit 0, no errors/warnings",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"],
+    "sorry_admit_axiom_grep": "only a doc-comment mention; no tactic/term usage"
+  }
+}

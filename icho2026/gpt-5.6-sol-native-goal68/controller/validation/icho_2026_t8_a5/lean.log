@@ -1,0 +1,5 @@
+'IChO2026Problems.T8A5.surfaceDensity_independent_of_sample_mass' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T8A5.catalyst_surface_density_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T8A5.catalyst_surface_density_reported' depends on axioms: [propext, Classical.choice, Quot.sound]

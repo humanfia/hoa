@@ -1,0 +1,42 @@
+All checks are complete and reproduced independently. The numeric arithmetic, source data, kinetic model, reporting proofs (including adversarial negative cases), and axiom audits all hold up.
+
+```json
+{
+  "target_id": "icho_2026_t8_a9",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The submission computes the Stern–Volmer quenching percentage ηq = kQ[Red]·τ0/(1 + kQ[Red]·τ0) × 100% independently for S1 and T1, giving exact rationals 78300/1783 % = 43.9147…% → 43.9% and 126000/1261 % = 99.9207…% → 99.9%. All inputs (kS = 2.7×10⁹ M⁻¹s⁻¹, kT = 1.5×10⁸ M⁻¹s⁻¹, τ0(S1) = 2.9 ns, τ0(T1) = 84 μs, [Red] = 0.1 M, note kF >> kISC) were verified pixel-by-pixel against the official page T8_page-5.png rendering of Q8-5, including the Jablonski diagram labels (kF, kIC, kISC, kRISC, kP, kN, kS, kT) and the printed definition of τ0 as the emission lifetime in the absence of the quencher, which licenses k0 = 1/τ0. The independent-population treatment of S1 and T1 is licensed by the problem's own printed note kF >> kISC (negligible ISC feeding of T1), so it is an authorized problem-given condition, not an unsupported extra assumption. Both raw values and both 3-sf displays satisfy the reporting contract; adversarial checks confirmed the reports are not interchangeable and zero is not reported as 0.1. Lean proofs compile cleanly on the pinned toolchain v4.31.0 (verified independently), the kinetic formula is genuinely derived via the improper integral of the monoexponential decay (FTC-2 on (0,∞), not asserted), and #print axioms for all five final theorems lists only [propext, Classical.choice, Quot.sound]; no sorry/admit/unsafe/native_decide/custom axioms.",
+  "coverage": [
+    {
+      "output_id": "s1_quenching",
+      "status": "passed",
+      "theorem": "IChO2026.ProbT8A9.quenchingPercentage_S1 (with IChO2026.ProbT8A9.fractionQuenched_of_competingChannels and IChO2026.ProbT8A9.validSubmission_S1)",
+      "evidence": "Exact theorem `quenchingPercentage kS τ0S1 = 78300/1783` (kS·0.1 = 2.7e8 s⁻¹, 1/τ0S1 = 1e10/29 s⁻¹; ratio 0.783/1.783). k_S, [Red], τ0(S1) match T8_page-5.png pixels. `reportsAt_S1`/`validSubmission_S1` prove display 43.9 at quantum 0.1 under the Reporting contract; reviewer re-ran `lake env lean` (exit 0) and confirmed axioms [propext, Classical.choice, Quot.sound]."
+    },
+    {
+      "output_id": "t1_quenching",
+      "status": "passed",
+      "theorem": "IChO2026.ProbT8A9.quenchingPercentage_T1 (with IChO2026.ProbT8A9.fractionQuenched_of_competingChannels and IChO2026.ProbT8A9.validSubmission_T1)",
+      "evidence": "Exact theorem `quenchingPercentage kT τ0T1 = 126000/1261` (kT·0.1 = 1.5e7 s⁻¹, 1/τ0T1 = 250000/21 s⁻¹; ratio 1260/1261). k_T, [Red], τ0(T1) match T8_page-5.png pixels. `reportsAt_T1`/`validSubmission_T1` prove display 99.9 at quantum 0.1; reviewer-compiled negative check confirms 43.9 is NOT a valid report of the T1 raw value and 99.9 is the nearest 0.1-multiple with ties away from zero. Axioms standard only."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Viewed T8_page-5.png (Q8-5, sha256 2e6c47… per problem_assets) directly: verified k_S = 2.7×10⁹ M⁻¹ s⁻¹, k_T = 1.5×10⁸ M⁻¹ s⁻¹, τ0(S1) = 2.9 ns, τ0(T1) = 84 μs, definition of τ0 as emission lifetime in absence of quencher, requested [Red] = 0.1 M, and the printed note kF >> kISC.",
+    "Inspected the Jablonski diagram pixels: S1 channels kF (fluorescence), kIC (internal conversion), kISC to T1; T1 channels kP (phosphorescence), kN (non-radiative), kRISC; quenching arrows kS and kT to Red. Candidate's channel inventory matches the pixels.",
+    "Viewed T8_page-4.png (Q8-4, subquestion 8.8 diagram) confirming preceding context is independent; TASK.json lists previous_parts: [] and no earlier-part result is consumed as input.",
+    "Cross-checked TASK.json shared_context/question text against the page images — identical values; no answer-sheet data required for 8.9.",
+    "Arithmetic verified independently: 2.7e9×0.1×2.9e-9 = 0.783 → ηq(S1) = 0.783/1.783 = 783/1783 ≈ 43.9147%; 1.5e8×0.1×84e-6 = 1260 → ηq(T1) = 1260/1261 ≈ 99.9207%; rounding at 0.1%-quantum gives 43.9 and 99.9 with ties half away from zero.",
+    "Measurement policy respected: all printed givens treated as exact stipulated constants; no intermediate rounding (exact rational evaluation up to the reporting boundary)."
+  ],
+  "proof_checks": [
+    "Reproduced `lake build IChO2026Chem` (8561 jobs, success) and `lake env lean IChO2026Problems/problem_icho_2026_t8_a9.lean` (exit 0) on pinned toolchain leanprover/lean4:v4.31.0 in the candidate workspace without modification.",
+    "#print axioms for quenchingPercentage_S1, quenchingPercentage_T1, fractionQuenched_of_competingChannels, validSubmission_S1, validSubmission_T1 all report only [propext, Classical.choice, Quot.sound] — reproduced independently.",
+    "Grep of all candidate Lean sources found no sorry/admit/unsafe/native_decide/axiom declarations; the only diagnostic is a cosmetic unusedVariable linter warning on the explicit model hypothesis hpop (definitionally the population law, used by simp_rw).",
+    "fractionQuenched_of_competingChannels genuinely derives ηq = kq/(k0+kq) from N(t) = N0·exp(−(k0+kq)t) via FTC-2 on (0,∞), differentiability, limit 0 at ∞ and integrability (Mathlib integral_Ioi_of_hasDerivAt_of_tendsto'); the formula is not assumed as an axiom or result-shaped hypothesis.",
+    "Instantiation theorems kq_S1, k0_S1, kq_T1, k0_T1, competitionRatio_S1/T1 reduce the printed data to exact rational rates by norm_num; no unjustified search bounds or precomputed tables.",
+    "Reporting contract (IChO2026Chem.Reporting.ReportsAtQuantum: positive quantum, multiple-of-quantum, half-quantum containment interval with tie-halves per sign) inspected line-by-line; reviewer-compiled adversarial checks confirmed 0 is not reported as 0.1 and 43.9 is not a valid 0.1-quantum report of the T1 raw value, showing the interval logic is sound and the candidate's proofs stand on a non-trivial predicate.",
+    "Ordering sanity theorems (ηq(S1) < 100, ηq(T1) > 99, ηq(T1) > ηq(S1)) verified as proved consistency checks matching the chemistry of the problem."
+  ]
+}
+```

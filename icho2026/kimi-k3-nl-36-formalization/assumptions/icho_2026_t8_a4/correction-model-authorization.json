@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "record_id": "icho_2026_t8_a4",
+  "source_bundle_sha256": "77d62f8f79b70cf40492837467e0a16f9742edc9f05746bc5bea2644255fe005",
+  "draft_sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+  "recorded_at": "2026-09-13T11:05:29Z",
+  "user_reply": "\u5355\u72ec\u91cd\u8dd1\u8fd9\u4e24\u9898",
+  "scope": "Use both previously omitted student answer sheets (original problem PDF pages 79 and 80), including their printed givens. Correct only Kimi structures and OS/CN/VE/charge values contradicted by or requiring revision under these complete problem inputs, deriving all downstream consequences. Preserve all original values and identify every changed output. No scientific model assumptions are newly authorized.",
+  "evaluation_basis": "gpt_corrected_kimi_draft",
+  "preserve_original": true,
+  "scientific_model_assumptions_authorized": false
+}

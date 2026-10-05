@@ -1,0 +1,36 @@
+All checks complete. One issue of note: my independent `lake env lean` re-verification revealed the direct file-compilation command in `verification.md` was stale relative to the on-disk `IChO2026Problems/All.lean`, though `lake build` (the primary command) compiles everything recent and `lake env lean` succeeds after it — the artifacts are consistent. The numeric value, model, reporting, and axioms all check out.
+
+```json
+{
+  "target_id": "icho_2026_t4_a5",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The candidate computes n_c = ln(E0/E_target)/ξ = ln(2e6/0.012)/0.948 = 19.97 collisions, reported as 20.0 at the 3-significant-figure default. I confirmed every input directly from the source pixel images (printed page Q4-2: E=2 MeV, 0.012 eV, ξ(water)=0.948, plus the printed per-collision definition ξ = ln(E_initial/E_final) with ξ energy-independent in the shared T4 context). The Lean development models the slowing-down law by iterating the printed per-collision decrement (logEnergyAfter_eq, proved by induction), defines ncRaw as the unique solution of ξ·n = log(E0/E_target) (averageCollisions_spec/unique), and certifies 19.96 ≤ ncRaw < 19.98 with exact rational artanh-series bounds via genuine Mathlib series lemmas (Real.sum_range_le_log_div, Real.log_div_le_sum_range_add, verified in the pinned Mathlib source). The reporting contract (ValidNumericSubmission, quantum 0.1, value 20.0) is honestly discharged since 19.96 ≤ ncRaw < 19.98 lies strictly inside [19.95, 20.05), so no tie arises. lake build succeeds and #print axioms shows only the three standard Lean axioms; no sorry/admit/native_decide/custom axioms anywhere in the candidate code. My independent Python check reproduces 19.96994… and the certified bound endpoints.",
+  "coverage": [
+    {
+      "output_id": "average_collision_count",
+      "status": "passed",
+      "theorem": "IChO2026.T4_A5.ncRaw_bounds (with ncRaw_spec, ncRaw_eq, logEnergyAfter_eq, submission_valid)",
+      "evidence": "Source page Q4-2 image verified: inputs E0=2 MeV (shared context), E_target=0.012 eV, ξ(water)=0.948, and the per-collision model ξ=ln(E_i/E_f), ξ constant. ncRaw defined as log(Einitial/Etarget)/ξWater with Einitial=2·10^6 eV, Etarget=0.012 eV (1 MeV = 10^6 eV, standard unit definition). ncRaw_eq is rfl over this definition; ncRaw_spec proves ξWater·ncRaw = log(Einitial/Etarget) via averageCollisions_spec; averageCollisions_unique proves this is the unique count. logEnergyAfter_eq derives the model by induction from the printed per-collision law. Certified interval arithmetic via artanh series (8-term bounds for log 2, log(5/2), log(5/3)) gives 19.96 ≤ ncRaw < 19.98; independent Python check gives 19.96994…, inside. submission_valid reports 20.0 at quantum 0.1 per the 3-significant-figure default, strictly inside the half-quantum cell, tie rule not invoked. Axioms limited to propext, Classical.choice, Quot.sound (independently re-run)."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Inspected T4_page-1.png and T4_page-2.png directly: part 4.5 reads 'Determine the average number of collisions required, n_c, to slow a neutron from 2 MeV to 0.012 eV, using water as the moderator. ξ(water)=0.948' — matches TASK.json and the candidate exactly.",
+    "Shared T4 context verified on the same page: fission neutrons produced at average energy 2 MeV; ξ = ln(E_initial/E_final) is the per-collision definition; 'ξ is a constant for each type of material and does not depend on the initial neutron energy' — the only physical law used, transcribed accurately.",
+    "No preceding-part dependencies: T4-A5 depends only on printed givens and the shared context, all confirmed against the page images; no graphical/diagram inputs needed for this part.",
+    "isolation_manifest.json entries for T4_page-1.png/T4_page-2.png/theory_problem.pdf match TASK.json asset hashes.",
+    "answer.md/result.json/verification.md transcriptions of the problem text match the pixels; the fission-product graph and parts 4.1–4.4 on the pages are not needed for 4.5 and were checked only for context consistency."
+  ],
+  "proof_checks": [
+    "Independently ran lake build IChO2026Problems: success (8564 jobs); only a pre-existing long-line lint warning in the umbrella file.",
+    "Independently ran lake env lean IChO2026Run/AxiomCheck.lean: all six final theorems (ncRaw_lower, ncRaw_upper, ncRaw_bounds, ncRaw_spec, submission_valid, logEnergyAfter_eq) depend only on [propext, Classical.choice, Quot.sound].",
+    "Grep over all candidate Lean sources: no sorry, admit, axiom declarations, unsafe, or native_decide.",
+    "Verified the candidate's artanh_lower/artanh_upper wrappers exactly match Mathlib's Real.sum_range_le_log_div and Real.log_div_le_sum_range_add statements in the pinned Mathlib v4.31.0 checkout (Mathlib/Analysis/SpecialFunctions/Log/Deriv.lean lines 322 and 344); series substitutions (1+x)/(1-x) = 2, 5/2, 5/3 at x = 1/3, 3/7, 1/4 are exact rational identities discharged by norm_num.",
+    "Recomputed independently in Python: ln(2·10^6/0.012) = 18.9315063677, n_c = 19.96994; candidate's certified endpoints 18.93150572 (lower) and 18.93151689 (upper) bracket it, and 18.92208 ≤ lower < upper < 18.94104 implies 19.96 ≤ n_c < 19.98, strictly inside the 3-s.f. cell [19.95, 20.05) of 20.0 at quantum 0.1.",
+    "ncRaw is not result-shaped: ncRaw_eq is definitionally rfl, ncRaw_spec proves the log-energy balance from ξWater ≠ 0, and uniqueness (averageCollisions_unique) shows any valid count equals ncRaw; logEnergyAfter_eq derives the model from the printed per-collision law rather than assuming it.",
+    "Minor note: verification.md's direct 'lake env lean IChO2026Problems/problem_icho_2026_t4_a5.lean' claim is stale relative to the on-disk IChO2026Problems/All.lean rewrite (it fails pre-build, succeeds post-build); the lake build artifact graph is consistent and the mathematical content is unaffected, so this does not impact the decision.",
+    "The iteration ofξ across collisions relies only on the explicitly printed premises (ξ constant, energy-independent, average per-collision log-decrement), so no undisclosed model conditions were added; reporting conventions (exact raw value, 3-s.f. default quantum 0.1) follow TASK.json's reporting policy."
+  ]
+}
+```

@@ -1,0 +1,21 @@
+{
+    "id": "icho_2026_t1_a3",
+    "official_answer_seen": false,
+    "outputs": [
+        {
+            "display_value": "10",
+            "id": "carbon_atom_count",
+            "kind": "integer",
+            "raw_value": 10,
+            "unit": ""
+        },
+        {
+            "display_value": "compound 5 (4-allyl-2-methoxyphenol, C10H12O2)",
+            "id": "compound_identity",
+            "kind": "classification",
+            "raw_value": "compound 5 (4-allyl-2-methoxyphenol, C10H12O2)",
+            "unit": ""
+        }
+    ],
+    "schema_version": 1
+}

@@ -1,0 +1,26 @@
+{
+  "target_id": "icho_2026_t4_a6",
+  "status": "completed",
+  "answer_summary": "For CH4(g) + 2 O2(g) -> CO2(g) + 2 H2O(g), Hess's law gives the exact raw result -802.3 kJ mol^-1 and the required three-significant-figure output -802 kJ mol^-1.",
+  "theorem_names": [
+    "IChO2026Problems.T4A6.methane_combustion_is_balanced",
+    "IChO2026Problems.T4A6.methane_combustion_hess_expansion",
+    "IChO2026Problems.T4A6.combustion_enthalpy_298_raw",
+    "IChO2026Problems.T4A6.combustion_enthalpy_298_reporting_scale",
+    "IChO2026Problems.T4A6.combustion_enthalpy_298_reported",
+    "IChO2026Problems.T4A6.combustion_enthalpy_298_answer"
+  ],
+  "assumptions": [
+    "Complete methane combustion is CH4(g) + 2 O2(g) -> CO2(g) + 2 H2O(g), as selected by the stated gaseous-species condition and the supplied CO2 and H2O(g) formation enthalpies.",
+    "Hess's law computes the reaction enthalpy as the stoichiometric sum of product standard formation enthalpies minus that of reactants.",
+    "The standard formation enthalpy of O2(g), elemental oxygen in its standard reference state at 298 K, is zero by definition.",
+    "The printed thermodynamic values are treated as exact stipulated inputs, in accordance with TASK.json."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a6.lean",
+    "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe|axiom)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t4_a6.lean; then exit 1; else echo 'No forbidden proof shortcuts found.'; fi",
+    "python3 -m json.tool result.json"
+  ]
+}

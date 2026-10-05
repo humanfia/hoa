@@ -1,0 +1,7 @@
+'IChO2026Problems.T9A9.labelledLinearArrangement_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T9A9.rotateReading_injective' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T9A9.rotationalReadings_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T9A9.cyclic_orbit_arithmetic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T9A9.anchored_factorial_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T9A9.arrangement_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T9A9.anchored_count_eq_cyclic_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]

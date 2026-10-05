@@ -1,0 +1,767 @@
+{
+  "capabilities": [
+    {
+      "capability_id": "afps2017.analytics.provenance",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [],
+      "description": "Immutable source-addressed data records that never become experimental truth by coercion.",
+      "empirical_inputs": [],
+      "laws": [
+        "No arbitrary transformation API preserves provenance without a separate proof.",
+        "ReportedDatum stores a source and payload but has no Coe or CoeSort instance to its payload or Prop.",
+        "SourceRef stores DOI, locator, URL, and content hash."
+      ],
+      "semantic_tags": [
+        "evidence-boundary",
+        "provenance",
+        "reported-data"
+      ],
+      "source_refs": [
+        "afps2017.analytics.contract:question",
+        "afps2017.evidence.boundary:question"
+      ]
+    },
+    {
+      "capability_id": "afps2017.analytics.mass_observation",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.analytics.provenance"
+      ],
+      "description": "Dimension-indexed, narrowly interpreted expected/observed mass records with faithful display precision.",
+      "empirical_inputs": [],
+      "laws": [
+        "Expected and observed displayed decimal precision are recorded independently.",
+        "Mass readings reuse ChemistryLib Quantity at the Physlib mass dimension.",
+        "Mass residual is only the absolute difference of the two displayed dalton values and is nonnegative.",
+        "Product form is metadata and may explicitly be unspecified; a mass observation carries no identity or purity proposition."
+      ],
+      "semantic_tags": [
+        "ChemistryLib",
+        "Physlib-dimension",
+        "dalton",
+        "mass",
+        "precision"
+      ],
+      "source_refs": [
+        "afps2017.analytics.contract:question"
+      ]
+    },
+    {
+      "capability_id": "afps2017.analytics.signal_observation",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.analytics.provenance"
+      ],
+      "description": "Narrow analytical observation types and one exact reported-intensity ratio, without optical or chemical overinterpretation.",
+      "empirical_inputs": [
+        "2.5 percent piperazine and 7.5 percent relative M-18 intensity",
+        "20 percent piperidine and 45 percent relative M-18 intensity",
+        "90 C"
+      ],
+      "laws": [
+        "At the recorded 90 C conditions, the two reported M-18 relative peak intensities satisfy the exact arithmetic 45 / 7.5 = 6.",
+        "No theorem derives yield, purity, identity, coupling success, or statistical comparability from UV or relative-peak records.",
+        "RelativePeakIntensity and CrudeYieldObservation are distinct Lean structures with no coercion between them.",
+        "UVFeature stores only nonnegative area, full width at half maximum, and height fields."
+      ],
+      "semantic_tags": [
+        "LC-MS",
+        "UV-feature",
+        "crude-yield",
+        "relative-peak-intensity",
+        "type-separation"
+      ],
+      "source_refs": [
+        "afps2017.analytics.contract:question",
+        "afps2017.supplement:Supplementary-Figure-19",
+        "afps2017.supplement:sha256-f7baa2cd59141ec38d95c9980e60117b596a9a78a9f4cbd4ae4e2cd4a2c8044e"
+      ]
+    },
+    {
+      "capability_id": "afps2017.analytics.mass_agreement",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.analytics.mass_observation"
+      ],
+      "description": "Mass-agreement certificates expose exactly the arithmetic proved and no molecular conclusion.",
+      "empirical_inputs": [
+        "ALFALFA-CONH2 expected 750.43 Da",
+        "ALFALFA-CONH2 observed 750.43 Da",
+        "reported conotoxin maximum residual 0.193 Da"
+      ],
+      "laws": [
+        "A checked 0.193 Da maximum entails a 0.2 Da row bound.",
+        "A table maximum becomes deductive only after every row is bounded and some row attains it; the reported 0.193 value alone is not such a proof.",
+        "ALFALFA-CONH2's transcribed 750.43/750.43 fields have residual zero.",
+        "MassAgreementCert has an explicit nonnegative tolerance and proves only residual boundedness."
+      ],
+      "semantic_tags": [
+        "certificate",
+        "deductive-arithmetic",
+        "mass-agreement"
+      ],
+      "source_refs": [
+        "afps2017.analytics.contract:question",
+        "afps2017.supplement:Supplementary-Figure-1A",
+        "afps2017.supplement:sha256-f7baa2cd59141ec38d95c9980e60117b596a9a78a9f4cbd4ae4e2cd4a2c8044e"
+      ]
+    },
+    {
+      "capability_id": "afps2017.analytics.conotoxin_table",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.analytics.mass_agreement"
+      ],
+      "description": "A fully transcribed, provenance-addressed 25-row table and closed maximum-residual certificate.",
+      "empirical_inputs": [
+        "25 expected/observed mass rows enumerated in family3-source-data.json"
+      ],
+      "laws": [
+        "Every row carries a SourceRef locator, expected and observed masses, independent displayed precisions, and an explicitly unstated product form.",
+        "Exactly 25 Supplementary Figure 8 rows are indexed by Fin 25.",
+        "Lean independently checks every absolute residual, proves entry 14 attains 0.193 Da, and proves all rows are within 0.2 Da."
+      ],
+      "semantic_tags": [
+        "Fin-25",
+        "conotoxin",
+        "mass-table",
+        "source-transcription"
+      ],
+      "source_refs": [
+        "afps2017.supplement:Supplementary-Figure-8",
+        "afps2017.supplement:sha256-f7baa2cd59141ec38d95c9980e60117b596a9a78a9f4cbd4ae4e2cd4a2c8044e"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "capabilities": [
+        "afps2017.analytics.provenance"
+      ],
+      "depends_on": [],
+      "layer": 0,
+      "module_path": "AFPS2017/Analytics/Provenance.lean",
+      "public_api": [
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.ReportedDatum",
+          "signature": "(α : Type u) → Type u"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.ReportedDatum.source",
+          "signature": "{α : Type u} → AFPS2017.Analytics.ReportedDatum α → AFPS2017.Analytics.SourceRef"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.ReportedDatum.value",
+          "signature": "{α : Type u} → AFPS2017.Analytics.ReportedDatum α → α"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.SourceRef",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.SourceRef.contentHash",
+          "signature": "AFPS2017.Analytics.SourceRef → String"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.SourceRef.doi",
+          "signature": "AFPS2017.Analytics.SourceRef → String"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.SourceRef.locator",
+          "signature": "AFPS2017.Analytics.SourceRef → String"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.SourceRef.url",
+          "signature": "AFPS2017.Analytics.SourceRef → String"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.afps2017Supplement",
+          "signature": "String → AFPS2017.Analytics.SourceRef"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.analytics.mass_observation"
+      ],
+      "depends_on": [
+        "AFPS2017/Analytics/Provenance.lean"
+      ],
+      "layer": 1,
+      "module_path": "AFPS2017/Analytics/MassObservation.lean",
+      "public_api": [
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.DisplayedPrecision",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.DisplayedPrecision.expectedDecimalPlaces",
+          "signature": "AFPS2017.Analytics.DisplayedPrecision → Nat"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.DisplayedPrecision.observedDecimalPlaces",
+          "signature": "AFPS2017.Analytics.DisplayedPrecision → Nat"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.MassObservation",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.MassObservation.displayedPrecision",
+          "signature": "AFPS2017.Analytics.MassObservation → AFPS2017.Analytics.DisplayedPrecision"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.MassObservation.expectedMass",
+          "signature": "AFPS2017.Analytics.MassObservation → AFPS2017.Analytics.MassQuantity"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.MassObservation.observedMass",
+          "signature": "AFPS2017.Analytics.MassObservation → AFPS2017.Analytics.MassQuantity"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.MassObservation.productForm",
+          "signature": "AFPS2017.Analytics.MassObservation → AFPS2017.Analytics.ProductForm"
+        },
+        {
+          "kind": "abbrev",
+          "name": "AFPS2017.Analytics.MassQuantity",
+          "signature": "Type"
+        },
+        {
+          "kind": "inductive",
+          "name": "AFPS2017.Analytics.ProductForm",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.massDimension",
+          "signature": "ChemistryLib.Units.ChemicalDimension"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.massResidualDaltons",
+          "signature": "AFPS2017.Analytics.MassObservation → ℝ"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.massResidualDaltons_nonnegative",
+          "signature": "(observation : AFPS2017.Analytics.MassObservation) → 0 ≤ AFPS2017.Analytics.massResidualDaltons observation"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.ofDaltons",
+          "signature": "(value : ℝ) → 0 ≤ value → AFPS2017.Analytics.MassQuantity"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.analytics.signal_observation"
+      ],
+      "depends_on": [
+        "AFPS2017/Analytics/Provenance.lean"
+      ],
+      "layer": 1,
+      "module_path": "AFPS2017/Analytics/SignalObservation.lean",
+      "public_api": [
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.CrudeYieldObservation",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.CrudeYieldObservation.percent",
+          "signature": "AFPS2017.Analytics.CrudeYieldObservation → AFPS2017.Analytics.Percent"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.DeprotectionCondition",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.DeprotectionCondition.reagent",
+          "signature": "AFPS2017.Analytics.DeprotectionCondition → String"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.DeprotectionCondition.reagentPercent",
+          "signature": "AFPS2017.Analytics.DeprotectionCondition → AFPS2017.Analytics.Percent"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.DeprotectionCondition.temperatureCelsius",
+          "signature": "AFPS2017.Analytics.DeprotectionCondition → ℝ"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.Percent",
+          "signature": "Type"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.Percent.atMostHundred",
+          "signature": "(percent : AFPS2017.Analytics.Percent) → percent.value ≤ 100"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.Percent.nonnegative",
+          "signature": "(percent : AFPS2017.Analytics.Percent) → 0 ≤ percent.value"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.Percent.value",
+          "signature": "AFPS2017.Analytics.Percent → ℝ"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.RelativePeakIntensity",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.RelativePeakIntensity.percent",
+          "signature": "AFPS2017.Analytics.RelativePeakIntensity → AFPS2017.Analytics.Percent"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.RelativePeakIntensityObservation",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.RelativePeakIntensityObservation.condition",
+          "signature": "AFPS2017.Analytics.RelativePeakIntensityObservation → AFPS2017.Analytics.DeprotectionCondition"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.RelativePeakIntensityObservation.intensity",
+          "signature": "AFPS2017.Analytics.RelativePeakIntensityObservation → AFPS2017.Analytics.RelativePeakIntensity"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.UVFeature",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.UVFeature.area",
+          "signature": "AFPS2017.Analytics.UVFeature → ℝ"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.UVFeature.area_nonnegative",
+          "signature": "(feature : AFPS2017.Analytics.UVFeature) → 0 ≤ feature.area"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.UVFeature.fullWidthAtHalfMaximum",
+          "signature": "AFPS2017.Analytics.UVFeature → ℝ"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.UVFeature.fullWidthAtHalfMaximum_nonnegative",
+          "signature": "(feature : AFPS2017.Analytics.UVFeature) → 0 ≤ feature.fullWidthAtHalfMaximum"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.UVFeature.height",
+          "signature": "AFPS2017.Analytics.UVFeature → ℝ"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.UVFeature.height_nonnegative",
+          "signature": "(feature : AFPS2017.Analytics.UVFeature) → 0 ≤ feature.height"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.m18PiperazineIntensity",
+          "signature": "AFPS2017.Analytics.ReportedDatum AFPS2017.Analytics.RelativePeakIntensityObservation"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.m18PiperidineIntensity",
+          "signature": "AFPS2017.Analytics.ReportedDatum AFPS2017.Analytics.RelativePeakIntensityObservation"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.m18_relativePeakIntensity_ratio_eq_six",
+          "signature": "AFPS2017.Analytics.m18PiperidineIntensity.value.intensity.percent.value / AFPS2017.Analytics.m18PiperazineIntensity.value.intensity.percent.value = 6"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.analytics.mass_agreement"
+      ],
+      "depends_on": [
+        "AFPS2017/Analytics/MassObservation.lean"
+      ],
+      "layer": 2,
+      "module_path": "AFPS2017/Analytics/MassAgreement.lean",
+      "public_api": [
+        {
+          "kind": "abbrev",
+          "name": "AFPS2017.Analytics.CheckedConotoxinTable",
+          "signature": "Type"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.CheckedMassTable",
+          "signature": "Nat → Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.CheckedMassTable.agreementAt",
+          "signature": "{n : Nat} → (table : AFPS2017.Analytics.CheckedMassTable n) → (i : Fin n) → AFPS2017.Analytics.MassAgreementCert (table.rows i)"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.CheckedMassTable.maximumResidualDaltons",
+          "signature": "{n : Nat} → AFPS2017.Analytics.CheckedMassTable n → ℝ"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.CheckedMassTable.maximum_attained",
+          "signature": "{n : Nat} → (table : AFPS2017.Analytics.CheckedMassTable n) → ∃ i, AFPS2017.Analytics.massResidualDaltons (table.rows i).value = table.maximumResidualDaltons"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.CheckedMassTable.maximum_nonnegative",
+          "signature": "{n : Nat} → (table : AFPS2017.Analytics.CheckedMassTable n) → 0 ≤ table.maximumResidualDaltons"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.CheckedMassTable.residual_le_maximum",
+          "signature": "{n : Nat} → (table : AFPS2017.Analytics.CheckedMassTable n) → (i : Fin n) → AFPS2017.Analytics.massResidualDaltons (table.rows i).value ≤ table.maximumResidualDaltons"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.CheckedMassTable.rows",
+          "signature": "{n : Nat} → AFPS2017.Analytics.CheckedMassTable n → Fin n → AFPS2017.Analytics.ReportedDatum AFPS2017.Analytics.MassObservation"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.CheckedMassTable.within_of_maximum_le",
+          "signature": "{n : Nat} → (table : AFPS2017.Analytics.CheckedMassTable n) → {toleranceDaltons : ℝ} → table.maximumResidualDaltons ≤ toleranceDaltons → ∀ i, AFPS2017.Analytics.massResidualDaltons (table.rows i).value ≤ toleranceDaltons"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.ConotoxinMassCheck",
+          "signature": "Type"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.ConotoxinMassCheck.computedMaximum_eq_reported",
+          "signature": "(check : AFPS2017.Analytics.ConotoxinMassCheck) → check.table.maximumResidualDaltons = AFPS2017.Analytics.reportedConotoxinMaximumResidual.value"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.ConotoxinMassCheck.table",
+          "signature": "AFPS2017.Analytics.ConotoxinMassCheck → AFPS2017.Analytics.CheckedConotoxinTable"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Analytics.MassAgreementCert",
+          "signature": "AFPS2017.Analytics.ReportedDatum AFPS2017.Analytics.MassObservation → Type"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.MassAgreementCert.residual_le_tolerance",
+          "signature": "{datum : AFPS2017.Analytics.ReportedDatum AFPS2017.Analytics.MassObservation} → (cert : AFPS2017.Analytics.MassAgreementCert datum) → AFPS2017.Analytics.massResidualDaltons datum.value ≤ cert.toleranceDaltons"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.MassAgreementCert.toleranceDaltons",
+          "signature": "{datum : AFPS2017.Analytics.ReportedDatum AFPS2017.Analytics.MassObservation} → AFPS2017.Analytics.MassAgreementCert datum → ℝ"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.MassAgreementCert.tolerance_nonnegative",
+          "signature": "{datum : AFPS2017.Analytics.ReportedDatum AFPS2017.Analytics.MassObservation} → (cert : AFPS2017.Analytics.MassAgreementCert datum) → 0 ≤ cert.toleranceDaltons"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.alfalfaMassAgreement",
+          "signature": "AFPS2017.Analytics.MassAgreementCert AFPS2017.Analytics.alfalfaMassObservation"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.alfalfaMassObservation",
+          "signature": "AFPS2017.Analytics.ReportedDatum AFPS2017.Analytics.MassObservation"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.alfalfa_massResidual_eq_zero",
+          "signature": "AFPS2017.Analytics.massResidualDaltons AFPS2017.Analytics.alfalfaMassObservation.value = 0"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.conotoxin_all_within_pointTwo",
+          "signature": "(check : AFPS2017.Analytics.ConotoxinMassCheck) → ∀ i : Fin 25, AFPS2017.Analytics.massResidualDaltons (check.table.rows i).value ≤ (1 / 5 : ℝ)"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.reportedConotoxinMaximumResidual",
+          "signature": "AFPS2017.Analytics.ReportedDatum ℝ"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.analytics.conotoxin_table"
+      ],
+      "depends_on": [
+        "AFPS2017/Analytics/MassAgreement.lean"
+      ],
+      "layer": 3,
+      "module_path": "AFPS2017/Analytics/ConotoxinTable.lean",
+      "public_api": [
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.checkedConotoxinMassData",
+          "signature": "AFPS2017.Analytics.ConotoxinMassCheck"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.checkedConotoxinMassTable",
+          "signature": "AFPS2017.Analytics.CheckedConotoxinTable"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Analytics.conotoxinMassRows",
+          "signature": "Fin 25 → AFPS2017.Analytics.ReportedDatum AFPS2017.Analytics.MassObservation"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Analytics.conotoxinMassRows_all_within_pointTwo",
+          "signature": "∀ i : Fin 25, AFPS2017.Analytics.massResidualDaltons (AFPS2017.Analytics.conotoxinMassRows i).value ≤ (1 / 5 : ℝ)"
+        }
+      ]
+    }
+  ],
+  "prerequisite_capabilities": [
+    {
+      "capability_id": "afps2017.flow.chemistry_adapters",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "owner_module": "AFPS2017/Flow/ChemistryAdapters.lean",
+      "spec_hash": "298edb7d1f63ababb4efc6f46fc079838b269f9d403a47a1903966dfe6ce1d5d"
+    },
+    {
+      "capability_id": "afps2017.flow.continuity_adapter",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "owner_module": "AFPS2017/Flow/ContinuityAdapter.lean",
+      "spec_hash": "bddd43861efc16e680329968f2eb15a0311c588cf05bed49f6744221621254e2"
+    },
+    {
+      "capability_id": "afps2017.flow.protocol_timing",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "owner_module": "AFPS2017/Flow/Protocol.lean",
+      "spec_hash": "a40328485a3aa4d96374b95c736660f3a8bc915a656a80ec03c11b0a4a8e1994"
+    },
+    {
+      "capability_id": "afps2017.flow.quantity_accounting",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "owner_module": "AFPS2017/Flow/Quantity.lean",
+      "spec_hash": "5c6a65d2fc0e65d54c09cee54aa12d3f5b8ced736d5f9132f320f8a4e89ac53e"
+    },
+    {
+      "capability_id": "afps2017.flow.source_lint",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "owner_module": "AFPS2017/Flow/SourceLint.lean",
+      "spec_hash": "d251d2303c304cfb13fad8c73901fa3fc3fb42580386282cb79968f0eaeeb9f0"
+    },
+    {
+      "capability_id": "afps2017.sequence.repeated_successful_assembly",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "owner_module": "AFPS2017/Sequence/Assembly.lean",
+      "spec_hash": "bc993c7cf599fab36f7f51b1b56ae06adc3432e7848f94b0a43a904c5ae9b125"
+    },
+    {
+      "capability_id": "afps2017.sequence.residue_specification",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "owner_module": "AFPS2017/Sequence/Residue.lean",
+      "spec_hash": "f258d8f10374db37db37da20222572882e3bf560dce5b10c193feb9debb1f083"
+    },
+    {
+      "capability_id": "afps2017.sequence.stoichiometry_adapter",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "owner_module": "AFPS2017/Sequence/StoichiometryAdapter.lean",
+      "spec_hash": "ba520291f26559b99c3029e5b3970a5547759d77408d7553baceff11bebdb34e"
+    },
+    {
+      "capability_id": "afps2017.sequence.target_n_to_c",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "owner_module": "AFPS2017/Sequence/Target.lean",
+      "spec_hash": "8e0bca40288ef207f96b8f8c09b1a1b7fbbcf65c65149ce960348b6cf350e9aa"
+    },
+    {
+      "capability_id": "afps2017.solid_phase.conditional_coupling",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "owner_module": "AFPS2017/Sequence/Coupling.lean",
+      "spec_hash": "15838831608e15a019c9840d1915947716fa768b98c99c34a02db46e0ae10e49"
+    },
+    {
+      "capability_id": "afps2017.solid_phase.deprotection_transition",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "owner_module": "AFPS2017/Sequence/Deprotection.lean",
+      "spec_hash": "b7eeb0e6c7ad7b2fe76909e473d821615949d58073ada89d3b0e576ade478952"
+    },
+    {
+      "capability_id": "afps2017.solid_phase.full_cycle",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "owner_module": "AFPS2017/Sequence/Cycle.lean",
+      "spec_hash": "5ece2fc414a521aa51e4170e026bddb7e876ea473ac8993b9ee91329daf07c3f"
+    },
+    {
+      "capability_id": "afps2017.solid_phase.resin_state",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "owner_module": "AFPS2017/Sequence/State.lean",
+      "spec_hash": "1398a0e5acb85616104588fe49f795b0e45799252687cdcbe65557ba0acb48e9"
+    },
+    {
+      "capability_id": "afps2017.solid_phase.wash_transition",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "owner_module": "AFPS2017/Sequence/Wash.lean",
+      "spec_hash": "d367ecd60e56308343012f71bd1188f20c6fea6c15aabbaa9f5145e049640d5d"
+    },
+    {
+      "capability_id": "afps2017.yield.step_product",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "owner_module": "AFPS2017/Yield/StepYield.lean",
+      "spec_hash": "5db9ff5ab28b452fed821c0beb8bd74776938cf21ce64fe50c609531467bd071"
+    },
+    {
+      "capability_id": "afps2017.yield.throughput_model",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "owner_module": "AFPS2017/Yield/Throughput.lean",
+      "spec_hash": "7c651ba9355f48f38d48a9f53e98b2ca95007fdb7231806a86857a22c7a3e312"
+    }
+  ],
+  "prerequisite_modules": [
+    {
+      "api_hash": "264c0a714f82ebaa931231a988f2990750ff17f4d7b31e284484641686c9428c",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "module_path": "AFPS2017/Flow/ChemistryAdapters.lean",
+      "verified_sha256": "01f28990ae5a41e079fe109e3ead29306d35f74f333fbb7aad460a3e763ef88e"
+    },
+    {
+      "api_hash": "4ce98350f3864f1f0bdf66d9880d4cbc071c3935efe266a00590186b961dcf07",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "module_path": "AFPS2017/Flow/ContinuityAdapter.lean",
+      "verified_sha256": "f850c5e22f278e87f1c4bd8bc762b61b3ec3059508c6f72c2d27bf32970d1b8e"
+    },
+    {
+      "api_hash": "323a834d8a4862eb3bda194d6f9f127761f898978f1be2a9a5f32569aa27cb51",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "module_path": "AFPS2017/Flow/Protocol.lean",
+      "verified_sha256": "4ed5c8e593ef6e5cac320b0208f70e04b298679e0285f2ccce854f4a0a0b53e5"
+    },
+    {
+      "api_hash": "4511069764e7e5fabf79cc3ef3ab0125de502fe7d061162c4fdcbf9324919091",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "module_path": "AFPS2017/Flow/Quantity.lean",
+      "verified_sha256": "1dcb2553b3ca5f3992371ae69179940bcd09c2c6d2e34d1efd919280f573d2de"
+    },
+    {
+      "api_hash": "f0f2a56aff046970fd0479d6c5df19a3c555d96afbd07a3d40f4940053e34ef9",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "module_path": "AFPS2017/Flow/SourceLint.lean",
+      "verified_sha256": "7dfc351a172a4f34db8e0a679d5f44cdff8b3ff4f32ec913ff6222bb4b79a0e3"
+    },
+    {
+      "api_hash": "406f3ad6bf86f642e54a185ac25e26245de73ff3c21e89d691e60aa4f8255186",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "module_path": "AFPS2017/Sequence/Assembly.lean",
+      "verified_sha256": "a2972b805481c7bb9e7a967c4fa12db3438cf2640ad1b5e81db1e658394daabe"
+    },
+    {
+      "api_hash": "ca3c4c8c46963a7ba37555405f4c4884484502528fbaa9ed7f3d3e55c36cab01",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "module_path": "AFPS2017/Sequence/Coupling.lean",
+      "verified_sha256": "d4755de62e7a391ecf1df81e935a40f3b1677b97adb8f9a9a19c0c41f07cce23"
+    },
+    {
+      "api_hash": "ea06ccb56f1dde55f00f8407d3892cd581422131849b1b64494abde818a6df95",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "module_path": "AFPS2017/Sequence/Cycle.lean",
+      "verified_sha256": "17d3a5054244f16cedb04168fd5dfb6a7fdb0174d485b2cf8f74a1da6b56ffc0"
+    },
+    {
+      "api_hash": "8b0fcd767821b194d1e81e96c37c11ad9ecf678d47921b5eb1ff6301fa575e49",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "module_path": "AFPS2017/Sequence/Deprotection.lean",
+      "verified_sha256": "9ad6ceca9840d0d54b07311a62ea648ebe848987ad692132f67699ec565a5985"
+    },
+    {
+      "api_hash": "21c8e764474e3d9336c82e77e02ea23ae853940f0397ff96ddcddbf87301fe05",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "module_path": "AFPS2017/Sequence/Residue.lean",
+      "verified_sha256": "f5c99b8e80d5e743640048f6e56c6b78541f5b0204bb73cdb8f8b9b0f6dbbb8a"
+    },
+    {
+      "api_hash": "ab2e254eec80f47e94034fbcccbc3d429b0054399c5560c0d3f9f85490f3ee92",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "module_path": "AFPS2017/Sequence/State.lean",
+      "verified_sha256": "b99b07b2346f1bedaa770d4bd5e66af3af1deac1282531a03bd87313d2d5a074"
+    },
+    {
+      "api_hash": "2d40e3a3f8a9fff07f347e10f4fd766a3836c9aa314503fa94998195544ee77c",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "module_path": "AFPS2017/Sequence/StoichiometryAdapter.lean",
+      "verified_sha256": "9a880e2604ca8a97d11914d67e541f7201d13186f3f881894851bda9f5ce4fea"
+    },
+    {
+      "api_hash": "ce46f57558402bce772e0c332f603fd26747d2b4bd74e71f29e37267b6fcc7bb",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "module_path": "AFPS2017/Sequence/Target.lean",
+      "verified_sha256": "fb60e472f4315edc06f75168b085bca30c249faa13d934f41979c3193fdd2978"
+    },
+    {
+      "api_hash": "a452baaa40785ab8165428385b244f7a112808e7ddc4586ffdaa84e15ca84f5e",
+      "evidence_hash": "11313d57583a992dd8ae4b67e07825c46cdc2f6e996f4d37fe92c41416d7d7c5",
+      "module_path": "AFPS2017/Sequence/Wash.lean",
+      "verified_sha256": "8826fd814315581e015c01fe2e5866300231bb8990a500ef506af2d8350dce87"
+    },
+    {
+      "api_hash": "cbf90b4776eb501d7237678fa1e4c6e25409a05388c751ce6dc3d287d52a7574",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "module_path": "AFPS2017/Yield/StepYield.lean",
+      "verified_sha256": "7ae8fb9dd7d86375f25550b493b7f2378528cfb6bec2417516c3611bb2b8aecc"
+    },
+    {
+      "api_hash": "84dda91f26496c2ff0464ffe72c34cf4b462da9e548737181a42f9ddb9acb2cc",
+      "evidence_hash": "f86a97eea3ac9e199b415e82223cd1583d3f632600d3b1ff076f1e96f7dc004b",
+      "module_path": "AFPS2017/Yield/Throughput.lean",
+      "verified_sha256": "521d7afb758dbc18c338ce65ee9921a71ab8da7c1b8b485f455493e30d01fb11"
+    }
+  ]
+}

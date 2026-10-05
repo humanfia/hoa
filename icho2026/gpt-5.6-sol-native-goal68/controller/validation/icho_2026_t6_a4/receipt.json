@@ -1,0 +1,56 @@
+{
+  "target": "icho_2026_t6_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301753.5863166,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t6_a4.lean": "00d86f764d728eb43bf3368e4698b20de900b74cf7612e79091c4cf8f6551639",
+    "answer.md": "05214202ff5126ea916dc17ad8576c3cd63d48e88bff58435d50b22044371ef1",
+    "verification.md": "2e6ce6fed6caad01190ec77be1ec0bb988d5529042b460c2ae2be1a56d4c0d88",
+    "result.json": "87233d290ac76c44ae35e2948c0a5b578a96e311d04ff31a28db89bc92fefc1d"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t6_a4",
+    "status": "completed",
+    "answer_summary": "m/z 783 is [C48 + 3E + 3H]^3+; m/z 879 is [C48 + 2E + 2H]^2+; m/z 1174 is [C48 + 3E + 2H]^2+, where E = C40H34N2O3. Their exact charged formulas are C168H105N6O9^3+, C128H70N4O6^2+, and C168H104N6O9^2+.",
+    "theorem_names": [
+      "IChO2026Problems.T6A4.macrocycleE_integerMass",
+      "IChO2026Problems.T6A4.cyclo48Carbon_integerMass",
+      "IChO2026Problems.T6A4.worked_example_591",
+      "IChO2026Problems.T6A4.ion_783_identity",
+      "IChO2026Problems.T6A4.ion_879_identity",
+      "IChO2026Problems.T6A4.ion_1174_identity",
+      "IChO2026Problems.T6A4.requested_ion_identities"
+    ],
+    "assumptions": [
+      "Integer nominal atomic masses C = 12, H = 1, N = 14, and O = 16 are used as requested by the problem.",
+      "The suggested ions contain intact C48 and E components and acquire positive charge by the displayed added protons, following the problem's no-fragmentation instruction and its worked [E + H]+ example."
+    ],
+    "source_gaps": [
+      "The prompt requests suggested identities but does not specify an exhaustive domain of possible adducts, charge carriers, or aggregate sizes; accordingly, uniqueness over every conceivable positive ion is neither claimed nor needed for the requested suggestions."
+    ],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T6_page-1.png icho_2026_source/image/T6_page-2.png icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t6_a4.lean",
+      "grep -RInE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t6_a4.lean",
+      "python3 -m json.tool result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

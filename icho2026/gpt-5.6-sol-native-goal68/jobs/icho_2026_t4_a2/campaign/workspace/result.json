@@ -1,0 +1,24 @@
+{
+  "target_id": "icho_2026_t4_a2",
+  "status": "completed",
+  "answer_summary": "The balanced neutron-producing equations are 11-B + alpha -> 14-N + neutron, gamma + 2-H -> 1-H + neutron, and 9-Be + alpha -> 12-C + neutron. Conservation of mass number and atomic number uniquely fixes each residual isotope in the specified one-neutron channel.",
+  "theorem_names": [
+    "IChO2026Problems.ProblemIChO2026T4A2.reactionA_balanced",
+    "IChO2026Problems.ProblemIChO2026T4A2.reactionB_balanced",
+    "IChO2026Problems.ProblemIChO2026T4A2.reactionC_balanced",
+    "IChO2026Problems.ProblemIChO2026T4A2.nuclear_a",
+    "IChO2026Problems.ProblemIChO2026T4A2.nuclear_b",
+    "IChO2026Problems.ProblemIChO2026T4A2.nuclear_c"
+  ],
+  "assumptions": [
+    "Mass number and atomic number are conserved in a balanced nuclear equation.",
+    "The standard bookkeeping labels are alpha=(4,2), gamma=(0,0), and neutron=(1,0); the isotope symbols carry their standard atomic numbers.",
+    "Each prompt item is represented by its requested net one-residual-nucleus plus one-emitted-neutron channel; the prompt supplies that these channels occur as neutron sources."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T4_page-1.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a2.lean",
+    "perl -ne 'BEGIN{$bad=0} if (/\\b(?:sorry|admit|unsafe)\\b/) { print \"$.:$_\"; $bad=1 } END { exit $bad }' IChO2026Problems/problem_icho_2026_t4_a2.lean"
+  ]
+}

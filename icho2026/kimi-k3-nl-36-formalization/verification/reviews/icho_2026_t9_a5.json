@@ -1,0 +1,831 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The candidate derives one concrete L structure from the bound beta-CD topology, depicted reagent sequence, and source-stated Sinay direction rule; its complete graph, template fields, stereochemistry, composition audit, submission, and sealed Kimi 9.5 fidelity target agree without answer-bearing hypotheses.",
+    "updated_at": "2026-09-13T09:27:26Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "54258ac62eacf96037d3b8532fd00ca7d6e3fc6d46c50121819e66a91738d620",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The source-first reading fixes a concrete draw/fill witness, not uniqueness: seven alpha-D-glucopyranoside residues are retained, every secondary box is benzylated, and the two DIBAL-H edits free the symmetry-labelled unit 1 primary site and the source-directed available unit 4 primary site. CompleteTemplateFields and templateStereo encode exactly that scope."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "derivedL is computed from unprotectedBetaCD by exhaustiveOBenzylation, a first primaryDebenzylation, directedTarget, and a second primaryDebenzylation. source_directing_rule_selects_unitFour checks the decisive printed rule; no requested result is assumed as a hypothesis."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "MolecularGraph expands the beta-CD core and every benzyl heavy atom with bond orders, implicit-hydrogen counts, formal charges and radicals; ExpandedAtom/ExpandedBonded expose individual hydrogens. CompleteLSpecification additionally fixes all 21 O-site states, 35 stereocentres, chair/configuration, formula, valence, connectivity, and closed-shell status."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The requested structure and all used reagent equivalents/site counts are exact symbolic data; no measurement, tolerance, or rounded classification is involved."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The source says unit 4 is selected and unit 3 is only the fallback when unit 4 is unavailable. afterFirstDebenzylation leaves unit 4 benzylated, so directedTarget takes offset 3; source_directing_rule_selects_unitFour records this orientation and excludes the fallback."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Within the source-stated seven-site model, the first site is only a symmetry-based naming choice and all other primary sites, including unit 4, remain available after it. The printed directing rule then fixes the second site. No free flag, opaque identity predicate, or source-compatible alternate box pattern remains in the Lean derivation."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The substrate is a cyclic seven-residue alpha-(1,4)-linked beta-CD with one primary and two secondary hydroxyl sites per residue.",
+          "carrier": "IChO2026Problems.T9A5.unprotectedBetaCD; IChO2026Problems.T9A5.coreBonds; IChO2026Problems.T9A5.templateStereo",
+          "status": "covered",
+          "evidence": "Bound shared text identifies beta-CD as seven alpha-D-glucopyranosides, while the page-2 repeat drawing and page-3 numbered template show the cyclic connector, seven primary CH2OH boxes, and (OH)14 secondary rim."
+        },
+        {
+          "claim": "The source arrow runs from beta-CD through NaH/BnCl and then DIBAL-H to named intermediate L.",
+          "carrier": "IChO2026Problems.T9A5.sourceArrowDescriptor; IChO2026Problems.T9A5.sourceReactionConditions; IChO2026Problems.T9A5.SourceArrowBound",
+          "status": "covered",
+          "evidence": "Page 3 has a right-pointing upper arrow: beta-CD is at the tail, 30 equiv NaH and 30 equiv BnCl are step 1, 2 equiv DIBAL-H is step 2, and L is at the head. The carriers transcribe these roles, order, direction, quantities, and path."
+        },
+        {
+          "claim": "The first depicted step converts all 21 O-H sites to O-Bn without changing the cyclodextrin skeleton.",
+          "carrier": "IChO2026Problems.T9A5.exhaustiveOBenzylation; IChO2026Problems.T9A5.fullyBenzylated",
+          "status": "covered",
+          "evidence": "In qualitative_named_transform_only scope, the explicit NaH/BnCl source arrow and 30-equivalent amounts support the transparent uniform O-H to O-Bn topology edit over the 21 depicted sites. The carrier preserves every core bond and stereochemical field and makes no yield or sole-product claim."
+        },
+        {
+          "claim": "Two primary reductive debenzylation edits occur, with the first symmetry-equivalent site named unit 1.",
+          "carrier": "IChO2026Problems.T9A5.primaryDebenzylation; IChO2026Problems.T9A5.unitOne; IChO2026Problems.T9A5.afterFirstDebenzylation",
+          "status": "covered",
+          "evidence": "Page 3 prints 2 equiv DIBAL-H and describes reductive debenzylation of primary positions. Before differentiation the seven positions are rotationally equivalent, so naming the first freed site unit 1 does not select a distinct constitutional outcome."
+        },
+        {
+          "claim": "A protic site at unit 1 directs the next primary reductive debenzylation to unit 4, with unit 3 only if unit 4 is unavailable.",
+          "carrier": "IChO2026Problems.T9A5.SinayDirectingRule; IChO2026Problems.T9A5.directedTarget; IChO2026Problems.T9A5.source_directing_rule_selects_unitFour",
+          "status": "covered",
+          "evidence": "This is stated verbatim above the page-3 scheme and in shared_context. The computed post-first-step state proves unit 4 is still benzylated, so the source branch selects unit 4 and not the fallback."
+        },
+        {
+          "claim": "O-protection/deprotection at the depicted sites retains the alpha-D-glucopyranoside carbon skeleton and stereochemistry.",
+          "carrier": "IChO2026Problems.T9A5.CyclodextrinTemplate; IChO2026Problems.T9A5.templateStereo; IChO2026Problems.T9A5.StereoCentre.ValidFor",
+          "status": "covered",
+          "evidence": "Both transparent site edits change only hydroxylState and definitionally preserve chair, residueConfiguration, stereocentre, and coreBonds; the graph audit verifies the same carbon connectivity. No source arrow depicts a carbon-bond or stereocentre-changing operation."
+        },
+        {
+          "claim": "The final atom ledger contains the beta-CD core plus exactly the benzyl fragments implied by the final site states.",
+          "carrier": "IChO2026Problems.T9A5.benzylBondsAt; IChO2026Problems.T9A5.FormulaAssemblyLedger; IChO2026Problems.T9A5.derivedL_formulaAudit",
+          "status": "covered",
+          "evidence": "The page-3 Bn legend expands the attachment as O-CH2-C6H5. Each protected O contributes a C7H7 fragment while replacing one O-H hydrogen, and the computed 19 protected sites give the independently rederived closed formula with unchanged oxygen inventory."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t9_a5.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t9_a5",
+        "source_record_sha256": "8e12fa0083a152002f0d494a2261beb240df48e5f53c7590966e596bafe641c2",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a5.answer.json",
+        "answer_submission_sha256": "7317bdc7e69649afef7c49189506bcc00b6eed0c61841c32b08f56ac3c2d847d",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t9_a5.source.json",
+        "source_report_sha256": "42ff6619c2c3d7d5c3f05644d0bec9e9b40e42b8988e3d62969068e6276ecbb7",
+        "candidate": "IChO2026Problems/problem_icho_2026_t9_a5.lean",
+        "preflight_sha256": "530dc10c03cd282a652a59b90b03f873254ece2d2659ee1a6287c6fb674448b7",
+        "candidate_sha256": "54258ac62eacf96037d3b8532fd00ca7d6e3fc6d46c50121819e66a91738d620",
+        "question_sha256": "a75c142d7f52ff80d728e649d0a55c71219af4db44561dc4f2cabf4a3d3a68ca",
+        "shared_context_sha256": "da7e91cc5f772d98a27c90b78d8fe45a23444377224639843b090e5fcf26df75",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "9b0ea03b4c20e9675814908a6083efc8edc9a1785f2a4e005f6275c36f56917d",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T9_page-3.png",
+            "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f"
+          },
+          {
+            "path": "icho_2026_source/image/T9_page-2.png",
+            "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "7d8e09899d6929c501488bcab97a8b99ca9d67539dadb1e440edd63997ddbb3b",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_l"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t9_a5",
+          "path": ".archon/provided_answer_drafts/Q9.md",
+          "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t9_a5.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t9_a5",
+          "source_record_sha256": "8e12fa0083a152002f0d494a2261beb240df48e5f53c7590966e596bafe641c2",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a5.answer.json",
+          "answer_submission_sha256": "7317bdc7e69649afef7c49189506bcc00b6eed0c61841c32b08f56ac3c2d847d",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t9_a5.source.json",
+          "source_report_sha256": "42ff6619c2c3d7d5c3f05644d0bec9e9b40e42b8988e3d62969068e6276ecbb7",
+          "candidate": "IChO2026Problems/problem_icho_2026_t9_a5.lean",
+          "preflight_sha256": "530dc10c03cd282a652a59b90b03f873254ece2d2659ee1a6287c6fb674448b7",
+          "candidate_sha256": "54258ac62eacf96037d3b8532fd00ca7d6e3fc6d46c50121819e66a91738d620",
+          "question_sha256": "a75c142d7f52ff80d728e649d0a55c71219af4db44561dc4f2cabf4a3d3a68ca",
+          "shared_context_sha256": "da7e91cc5f772d98a27c90b78d8fe45a23444377224639843b090e5fcf26df75",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "9b0ea03b4c20e9675814908a6083efc8edc9a1785f2a4e005f6275c36f56917d",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T9_page-3.png",
+              "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f"
+            },
+            {
+              "path": "icho_2026_source/image/T9_page-2.png",
+              "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "7d8e09899d6929c501488bcab97a8b99ca9d67539dadb1e440edd63997ddbb3b",
+            "node_count": 5,
+            "edge_count": 4,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "structure_l"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t9_a5",
+            "path": ".archon/provided_answer_drafts/Q9.md",
+            "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, stock-flow inapplicability, visual topology, arrow direction, site inventory, and endpoint derivation were frozen from the two bound images and inline problem text before the generated submission or Lean candidate was opened. The authorized sealed Kimi 9.5 text was checked afterward only for fidelity and was not used as a source axiom."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "End to end: 7 residues times 3 OH sites gives 21; uniform O-benzylation followed by two primary deprotections leaves 19 O-benzyl sites; the first is symmetry-labelled unit 1 and the source rule selects available unit 4 for the second. The full formula follows without rounding from the beta-CD core plus 19 net C7H6 additions."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy is exact_symbolic from problem_output_type. The candidate's RawResult and ReportedResult are definitionally the same structure proposition, so no display rounding or precision conversion occurs."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or needed: the structure, counts, equivalents, atom ledger, and exact-symbolic display are discrete/exact."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No finite chemical universe is used to prove uniqueness or exhaustiveness. The source verb asks for a concrete drawing, and derivedL is a direct witness computed on the source-given Fin 7 residue carrier and three depicted hydroxyl positions per residue."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=54258ac62eacf96037d3b8532fd00ca7d6e3fc6d46c50121819e66a91738d620; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=11, duration_bucket=under_1m. Nontrivial result declarations are derivedL, CompleteLSpecification, derivedL_complete, StructureLResult, structure_l, RawResult/raw_result, and ReportedResult/reported_result in IChO2026Problems.T9A5."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "structure_l states one complete source-compatible L witness and neither asserts global chemical uniqueness nor enumerates all possible products, matching the verb draw."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The main theorem has no hypotheses. Its source inputs are concrete transcriptions, its branch is computed from availability, and all structure predicates reduce to transparent local definitions rather than caller-chosen propositions or flags."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The sole requested output structure_l is carried by StructureLResult/structure_l and contains every template box, full graph, stereochemistry, charge/radical state, formula, and well-formedness audit; the answer JSON has the same sole id/kind/unit and a concrete value rather than a diagnostic sentinel."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are named above: source topology, arrow roles/conditions, uniform O-benzylation, two primary deprotections, Sinay branch selection, stereochemical retention, and benzyl atom accounting. No dormant registry rule is needed for the limited qualitative source-arrow use."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "complete structure of L, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T9A5.StructureLResult; IChO2026Problems.T9A5.structure_l",
+            "status": "covered",
+            "evidence": "The bound answer has exactly one output in bundle order with the correct id, classification kind, empty unit, concrete raw/display structure, site count, formula, and exact-symbolic presentation; all independently match the nontrivial Lean graph carrier.",
+            "output_id": "structure_l",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T9_page-3.png",
+            "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f",
+            "inspected": true,
+            "evidence": "Source-only Q9-3 recount: the upper panel has a right-pointing arrow from one closed seven-unit beta-CD scaffold to L; tail reagents are step 1 NaH (30 equiv) plus BnCl (30 equiv), then step 2 DIBAL-H (2 equiv). Primary boxes are numbered 1 through 7 clockwise and each starts as CH2OH; the secondary rim is (OH)14. The one residue type has ring path O5-C1-C2-C3-C4-C5-O5, exocyclic C5-C6, O substituents at C2/C3/C6, and an alpha-(1,4) cross-boundary C1-O-C4 connector. The Bn legend is Ph-CH2 with its attachment boundary at CH2: adjacent O remains in the CD, while each installed fragment is C7H7 and replaces one OH hydrogen. The frozen source derivation leaves two primary OH and 19 O-Bn sites; static recombination C42H70O35 + 19(C7H6) gives C175H184O35. The lower dimer retains the same macrocyclic motif and introduces no fragment into the upstream L endpoint."
+          },
+          {
+            "path": "icho_2026_source/image/T9_page-2.png",
+            "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f",
+            "inspected": true,
+            "evidence": "Source-only Q9-2 topology check: the beta-CD drawing shows one alpha-D-glucopyranoside building block bracketed with subscript 7 and a macrocycle connector crossing the repeat boundary. Per block the six-membered pyranose ring has five carbon nodes and O5, an exocyclic C6 branch, C2/C3/C6 hydroxyl oxygens, and the C1-O-C4 inter-residue linkage; the bold ring bonds encode the fixed chair face. No page-2 reagent, cap, adduct, or connector belongs to L's page-3 arrow, so this panel supplies only the retained seven-repeat scaffold/stereochemical context."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The final graph is a seven-residue beta-CD with two free primary hydroxyls at the source-related positions, five primary benzyl ethers, fourteen secondary benzyl ethers, and no carbon-skeleton change. This matches the arrow, directing statement, and template semantics."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only: SourceArrowDescriptor binds the page-3 rightward beta-CD/reagents/L arrow and SourceReactionCompatible binds its transparent O-site edits. Named stages are unprotected beta-CD, the fully O-benzylated local state, the once-primary-debenzylated state, and derivedL; omitted phases, byproducts, yields, and streams remain unclaimed."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "The cyclic seven-anhydroglucose core is C42H70O35. Expanded Bn at the O attachment boundary is C7H7, and substitution removes the original hydroxyl H, so each O-benzyl site is a net C7H6 addition. Nineteen additions give C175H184O35, exactly the graph-computed formula; no molar mass is requested or claimed."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "For the static product-composition dimension actually used, FormulaAssemblyLedger preserves all 35 core oxygens and adds exactly the carbon/hydrogen inventory of 19 benzyl substituents while two O-H sites remain. No quantitative reaction completion or omitted-stream balance is asserted."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "The requested output is a molecular structure with empty unit; reagent equivalents and atom/site counts are dimensionless exact annotations."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "All counts and formula subscripts are exact integers, and the requested reporting policy is exact_symbolic. RawResult and ReportedResult introduce no rounding."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "coreBonds gives complete cyclic alpha-(1,4) connectivity and benzylBondsAt expands each O-CH2-phenyl substituent with bond order. templateStereo records the retained 4C1 alpha-D-gluco C1-C5 face/disposition at every residue, and ValidFor connects each stereochemical ligand to the molecular graph."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The source asks to draw/fill a structure, so one source-supported witness is sufficient. The candidate supplies that witness and does not claim open-world uniqueness or exhaustive enumeration."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "derivedL is not supplied in a premise: it is computed from the unprotected source template through explicit transformations and a branch determined by actual site availability. CompleteLSpecification then audits, rather than defines by an opaque identity predicate, all requested fields and graph properties."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "After uniform O-benzylation and the first symmetry-labelled primary deprotection at unit 1, the unit 4 primary O-benzyl site remains available; therefore the printed unit-3 fallback is inactive.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#sinay-directing-rule"
+                }
+              }
+            ],
+            "constants": [
+              {
+                "name": "NaH equivalents in depicted first step",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-3.png#upper-reaction-to-L"
+                },
+                "unit": "dimensionless",
+                "value": "30"
+              },
+              {
+                "name": "BnCl equivalents in depicted first step",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-3.png#upper-reaction-to-L"
+                },
+                "unit": "dimensionless",
+                "value": "30"
+              },
+              {
+                "name": "DIBAL-H equivalents in depicted second step",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-3.png#upper-reaction-to-L"
+                },
+                "unit": "dimensionless",
+                "value": "2"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "beta-CD repeat and hydroxyl-site inventory",
+                "relation": "Seven alpha-D-glucopyranoside residues provide seven primary C6-OH sites and fourteen secondary C2/C3-OH sites on one cyclic scaffold.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-3.png#numbered-beta-CD-template"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "depicted two-step qualitative transformation",
+                "relation": "NaH/BnCl uniformly changes the 21 depicted O-H sites to O-Bn, then two primary DIBAL-H debenzylation edits restore two O-H sites while retaining the CD core.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T9_page-3.png#upper-reaction-to-L"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "Sinay protic directing rule",
+                "relation": "A protic group at unit 1 directs the next primary reductive debenzylation to unit 4, or to unit 3 only if unit 4 is unavailable.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#sinay-directing-rule"
+                }
+              }
+            ],
+            "evidence": "The source-first endpoint assignment, full graph, exact composition, and reporting rule agree with the semantic card, bound submission, and named Lean carriers.",
+            "id": "structure_l",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T9A5.unprotectedBetaCD",
+                "IChO2026Problems.T9A5.sourceArrowDescriptor",
+                "IChO2026Problems.T9A5.sourceReactionConditions"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T9A5.derivedL",
+                "IChO2026Problems.T9A5.CompleteLSpecification",
+                "IChO2026Problems.T9A5.RawResult",
+                "IChO2026Problems.T9A5.raw_result"
+              ],
+              "relations": [
+                "IChO2026Problems.T9A5.exhaustiveOBenzylation",
+                "IChO2026Problems.T9A5.primaryDebenzylation",
+                "IChO2026Problems.T9A5.SinayDirectingRule",
+                "IChO2026Problems.T9A5.source_directing_rule_selects_unitFour"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T9A5.StructureLResult",
+                "IChO2026Problems.T9A5.structure_l",
+                "IChO2026Problems.T9A5.ReportedResult",
+                "IChO2026Problems.T9A5.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The Lean carriers compute the same seven-residue molecular graph, site states, retained stereochemistry, benzyl count, and exact formula as the source-first derivation.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Overall endpoint structure after the depicted two-step qualitative sequence; no recycle, fresh-feed, cumulative-yield, or stock-flow quantity is requested.",
+              "kind": "overall"
+            },
+            "quantity_definition": "The complete atom/bond and stereochemical structure of intermediate L, including all seven primary and fourteen secondary beta-CD template fields.",
+            "raw_result": {
+              "derivation": "The seven-residue template has 21 OH sites. The first step gives 21 O-benzyl sites; the first of two primary reductive debenzylations is symmetry-labelled unit 1, whose protic OH directs the second to still-available unit 4. Thus secondary O2/O3 are OBn on every residue, primary boxes 1 and 4 are CH2OH and 2,3,5,6,7 are CH2OBn, with the 4C1 alpha-D-gluco core retained. Nineteen O-H to O-CH2-C6H5 replacements add 19(C7H6) to C42H70O35, yielding C175H184O35.",
+              "exact_unrounded": true,
+              "value_or_expression": "L is the neutral closed-shell 6A,6D-diol of per-O-benzyl-beta-CD: seven cyclic alpha-(1->4)-linked 4C1 alpha-D-glucopyranosides; O2=OBn and O3=OBn at all seven units; clockwise primary boxes 1..7 are [CH2OH, CH2OBn, CH2OBn, CH2OH, CH2OBn, CH2OBn, CH2OBn]; 19 O-benzyl groups; molecular formula C175H184O35."
+            },
+            "reporting": {
+              "application": "Report the complete structure exactly; numerical rounding is not applied to a symbolic molecular graph or template assignment.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output is one exact classification witness with complete connectivity, substituents, neutral closed-shell state, and retained requested stereochemistry; no uniqueness or exhaustive-universe claim is added.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context#beta-CD-and-Sinay-rule"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-3.png#upper-reaction-to-L"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-2.png#beta-CD-repeat-template"
+              }
+            ],
+            "source_requirement": "complete structure of L, including all requested stereochemistry and template fields",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "54258ac62eacf96037d3b8532fd00ca7d6e3fc6d46c50121819e66a91738d620"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a5.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The candidate derives one concrete L structure from the bound beta-CD topology, depicted reagent sequence, and source-stated Sinay direction rule; its complete graph, template fields, stereochemistry, composition audit, submission, and sealed Kimi 9.5 fidelity target agree without answer-bearing hypotheses.",
+        "reviewed_at": "2026-09-13T09:27:26Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "54258ac62eacf96037d3b8532fd00ca7d6e3fc6d46c50121819e66a91738d620",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a5.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 11,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The bound submission and candidate hashes match, the sole exact-symbolic classification is independently supported by the numbered beta-CD template, reagent arrow, and source-stated Sinay directing rule, and the zero-sorry compiled theorem proves a complete atom-level, stereochemical, formula, valence, connectivity, and reporting specification.",
+    "evidence": "Both image digests, the answer-submission digest, and candidate_sha256 were independently reproduced. The answer JSON has schema_version 1 and exactly one output in the required order with matching id/kind/unit. From the page-3 source arrow, exhaustive O-benzylation precedes two primary debenzylation edits; symmetry names the first site unitOne, and the printed protic-director rule selects the available 1,4-related unit. The declarations derivedL_sourceReactionCompatible, derivedL_templateFields, derivedL_formulaAudit, derivedL_graphAudit, derivedL_complete, structure_l, raw_result, and reported_result discharge the resulting contract. Deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "9135ee265ede3fdb0895d57af4ebf4ccfa95746bcf66d051bc37d818471938c3",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t9_a5.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t9_a5",
+      "source_record_sha256": "8e12fa0083a152002f0d494a2261beb240df48e5f53c7590966e596bafe641c2",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a5.answer.json",
+      "answer_submission_sha256": "7317bdc7e69649afef7c49189506bcc00b6eed0c61841c32b08f56ac3c2d847d",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t9_a5.source.json",
+      "source_report_sha256": "42ff6619c2c3d7d5c3f05644d0bec9e9b40e42b8988e3d62969068e6276ecbb7",
+      "candidate": "IChO2026Problems/problem_icho_2026_t9_a5.lean",
+      "preflight_sha256": "dc2ff6688571879c98e2c65eb5ee7e201b30b71ffebf941705dcdce26d653f7c",
+      "candidate_sha256": "9135ee265ede3fdb0895d57af4ebf4ccfa95746bcf66d051bc37d818471938c3",
+      "question_sha256": "a75c142d7f52ff80d728e649d0a55c71219af4db44561dc4f2cabf4a3d3a68ca",
+      "shared_context_sha256": "da7e91cc5f772d98a27c90b78d8fe45a23444377224639843b090e5fcf26df75",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "9b0ea03b4c20e9675814908a6083efc8edc9a1785f2a4e005f6275c36f56917d",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T9_page-3.png",
+          "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f"
+        },
+        {
+          "path": "icho_2026_source/image/T9_page-2.png",
+          "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "7d8e09899d6929c501488bcab97a8b99ca9d67539dadb1e440edd63997ddbb3b",
+        "node_count": 5,
+        "edge_count": 4,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "structure_l"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t9_a5",
+        "path": ".archon/provided_answer_drafts/Q9.md",
+        "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t9_a5.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t9_a5",
+        "source_record_sha256": "8e12fa0083a152002f0d494a2261beb240df48e5f53c7590966e596bafe641c2",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a5.answer.json",
+        "answer_submission_sha256": "7317bdc7e69649afef7c49189506bcc00b6eed0c61841c32b08f56ac3c2d847d",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t9_a5.source.json",
+        "source_report_sha256": "42ff6619c2c3d7d5c3f05644d0bec9e9b40e42b8988e3d62969068e6276ecbb7",
+        "candidate": "IChO2026Problems/problem_icho_2026_t9_a5.lean",
+        "preflight_sha256": "dc2ff6688571879c98e2c65eb5ee7e201b30b71ffebf941705dcdce26d653f7c",
+        "candidate_sha256": "9135ee265ede3fdb0895d57af4ebf4ccfa95746bcf66d051bc37d818471938c3",
+        "question_sha256": "a75c142d7f52ff80d728e649d0a55c71219af4db44561dc4f2cabf4a3d3a68ca",
+        "shared_context_sha256": "da7e91cc5f772d98a27c90b78d8fe45a23444377224639843b090e5fcf26df75",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "9b0ea03b4c20e9675814908a6083efc8edc9a1785f2a4e005f6275c36f56917d",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T9_page-3.png",
+            "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f"
+          },
+          {
+            "path": "icho_2026_source/image/T9_page-2.png",
+            "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "7d8e09899d6929c501488bcab97a8b99ca9d67539dadb1e440edd63997ddbb3b",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_l"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t9_a5",
+          "path": ".archon/provided_answer_drafts/Q9.md",
+          "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The chemistry was rederived only from the inline problem evidence, the two bound images, and ordinary structural chemistry. The untrusted submission and Lean file were used only as audit subjects; the sealed Kimi draft was used only for the separately recorded fidelity comparison and not as a source premise."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "The transparent chain unprotectedBetaCD -> exhaustiveOBenzylation -> afterFirstDebenzylation -> directedTarget -> derivedL supplies the symbolic structure; derivedL_templateFields, derivedL_formulaAudit, derivedL_graphAudit, and derivedL_complete verify every downstream carrier without rounding."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The controller-bound requested output specifies exact_symbolic reporting. RawResult and ReportedResult are definitionally the same StructureLResult, so reporting introduces no alteration."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "This is an exact symbolic classification with no measured value, numerical tolerance, or rounding interval."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The seven residues and their three hydroxyl-site classes come from the depicted beta-CD template; the reagent sequence and the unit-1 directing statement constrain the transparent site-state edits. The source asks for a concrete drawn witness, not an open-world exhaustive classification."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=9135ee265ede3fdb0895d57af4ebf4ccfa95746bcf66d051bc37d818471938c3; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result declarations are derivedL_complete, structure_l, raw_result, and reported_result, supported by explicit graph, template-field, formula, stereochemical, valence, and connectivity audits."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "StructureLResult expands to CompleteLSpecification derivedL, which requires source-arrow compatibility, all template fields, chair/configuration, five stereocentre records per residue, component formula, a neutral closed-valence connected molecular graph, and exact reporting."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The reviewed theorem has no answer-bearing hypotheses. Source conditions and arrow metadata reduce by computation, availability of the 1,4 site is checked in the intermediate state, and all structural obligations are proved from transparent definitions."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The theorem concludes the requested complete structure classification and the raw/reported carriers preserve that same proposition; it is neither a workflow sentinel nor a weakened count/name-only result."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The exact page-3 arrow binds substrate, reagents, direction, and product role; SourceReactionCompatible binds the local topology edits, while SinayDirectingRule encodes the verbatim source-stated selection rule. The graph and stereochemical checks then validate the concrete product without an unsupported quantitative-yield claim."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "complete structure of L, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T9A5.structure_l (with raw_result and reported_result)",
+          "status": "covered",
+          "evidence": "The sole submission entry has the required id, order, classification kind, and empty unit. Its raw and display descriptions independently match the source-derived complete template, and the named Lean carrier proves the corresponding nontrivial structural specification.",
+          "output_id": "structure_l",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T9_page-3.png",
+          "sha256": "a63869290bd2dcbc80632be3cbf121fab1ffa361f725255f17c191d16df7da4f",
+          "inspected": true,
+          "evidence": "Readable inspection confirmed the numbered seven-unit beta-CD template, the fourteen secondary-rim hydroxyl label, the 30-equivalent NaH/BnCl stage followed by 2-equivalent DIBAL-H arrow to L, and the printed unit-1-to-unit-4 directing statement with its unit-3 fallback."
+        },
+        {
+          "path": "icho_2026_source/image/T9_page-2.png",
+          "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f",
+          "inspected": true,
+          "evidence": "Readable inspection confirmed the sevenfold beta-CD alpha-D-glucopyranoside template and fixed sugar-ring stereochemical context carried into the page-3 transformation."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "NaH/BnCl O-benzylation and primary O-debenzylation are represented as explicit site-state/topology edits; after the first symmetry-equivalent primary cleavage, the source-stated protic directing rule selects the available 1,4-related site. No fallback or previous-part result is assumed."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only: the page-3 upper arrow ending at L is bound by sourceArrowDescriptor/sourceReactionConditions, and SourceReactionCompatible names the substrate, fully benzylated structural state, first-debenzylation state, and product state. The conclusion uses non-exclusive structural compatibility only; omitted phases, coefficients beyond the printed equivalents, byproducts, yields, and streams remain unspecified."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "The molecular formula is computed from the complete graph and independently checked by FormulaAssemblyLedger from the beta-CD core and the mechanically counted benzyl-ether sites; it matches the untrusted submission. No molar-mass claim is part of this target."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "For this qualitative structure target, the used component accounting is explicit and oxygen inventory plus benzyl substitution increments are checked. A complete reaction-stream ledger is neither used nor claimed."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "The required output is a dimensionless classification and both source contract and submission use the empty unit."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The output is exact symbolic; no numerical rounding, significant figures, or tolerance applies."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "molecularGraph expands every core and benzyl atom, bond order, attached hydrogen, charge, and radical state. CompleteTemplateFields fixes every box, while templateStereo/l_stereo_valid bind all retained alpha-D-glucopyranoside stereocentres and fourCOne dispositions to the graph."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source asks to draw the concrete intermediate rather than prove global chemical uniqueness. Within the finite depicted template, the first site is fixed by rotational naming and the available 1,4 target is determined by the stated directing rule."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "No answer-bearing premise, singleton candidate assumption, opaque predicate, local axiom, sorry, or admit is present. derivedL is computed from the source-bound transformation states, and StructureLResult requires the independently checked CompleteLSpecification rather than a reflexive string equality."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a5.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The bound submission and candidate hashes match, the sole exact-symbolic classification is independently supported by the numbered beta-CD template, reagent arrow, and source-stated Sinay directing rule, and the zero-sorry compiled theorem proves a complete atom-level, stereochemical, formula, valence, connectivity, and reporting specification.",
+        "evidence": "Both image digests, the answer-submission digest, and candidate_sha256 were independently reproduced. The answer JSON has schema_version 1 and exactly one output in the required order with matching id/kind/unit. From the page-3 source arrow, exhaustive O-benzylation precedes two primary debenzylation edits; symmetry names the first site unitOne, and the printed protic-director rule selects the available 1,4-related unit. The declarations derivedL_sourceReactionCompatible, derivedL_templateFields, derivedL_formulaAudit, derivedL_graphAudit, derivedL_complete, structure_l, raw_result, and reported_result discharge the resulting contract. Deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T10:03:05.000603Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "9135ee265ede3fdb0895d57af4ebf4ccfa95746bcf66d051bc37d818471938c3",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a5.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "5_to_15m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T10:03:05.000648Z",
+    "repair_handoff": {}
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "target": "icho_2026_t4_a6",
+  "goal_status": "goal_complete",
+  "checked_at": 1789389742.9801152,
+  "missing": [
+    "IChO2026Problems/problem_icho_2026_t4_a6.lean"
+  ],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "21dcbe164309cef196575a6c512aef3974eff918c53cd0e1a32b8f143d9fa2af",
+    "IChO2026Problems/Problem_icho_2026_t4_a6.lean": "979dca052e145a1ab99ba8791769a97ac4f1bc505e46542bec1473d3ef1e73e8",
+    "answer.md": "04e5ebdd83f2d6e092796afaf66778136a97fcbf1ecfabe2a3f11fec927992ee",
+    "verification.md": "007990115bdb39bf3608cbe0f9cb33e9a997b3c33c872df39dc1688c8347c675",
+    "result.json": "df8a5a1b5298689f402947548b5c8c41a78a6530123dd7a914dcb60f616d7f32"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "kernel_check": "not_run"
+}

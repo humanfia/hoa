@@ -1,0 +1,90 @@
+{
+  "target": "icho_2026_t9_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789369380.7275734,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a2.lean": "c5047fe9b70d998ce7f3b81d9affe1bcb8d49b6d175b902ac3b60467542a4551",
+    "answer.md": "5565630661b54fba2ccd69c697aee56290eb962761542c3b0238d2a3edae99dd",
+    "verification.md": "4a9b801620c7bc30904247ef375d27ea1543e5ff534c8e8e0173c999230c97cb",
+    "result.json": "e115c22687973f5261ca8772d4ec83c80e83837e21df5ff43521597dec3dd110"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a2",
+    "status": "completed",
+    "answer_summary": {
+      "chair_conformation": "Tick the LEFT chair template: 4C1. In the printed axial/equatorial convention the 4C1 chair carries only the anomeric C1-OR bond axial (anomerically stabilised, count 1), whereas the flipped 1C4 chair forces C2-OH, C3-OH, the C4 glycosidic bond and the bulky CH2OH group axial (count 4).",
+      "structure_k": "K is heptakis-(2,6-anhydro)-beta-cyclodextrin (per-2,6-anhydro-beta-CD): TsCl (7 equiv = 1 per unit) tosylates only the primary 6-OH; NaOH then closes an intramolecular Williamson ether between O2 and C6 - the only trans-diaxial-competent closure (O3 can never attain the antiperiplanar geometry). Each unit therefore bears a 2,6-epoxide (2,6-anhydro) ring fused to the pyranose and retains exactly one free OH, at C3 (7 free OH in the whole molecule, as stated). Stereochemistry: all five stereocentres retain their geometry (SN2 occurs at C6, not a stereocentre); product CIP labels C1 S, C2 R, C3 R, C4 R, C5 R - the C2 S-to-R flip is purely a CIP re-ranking effect (O2 becomes a diether oxygen; the C3-side ring path outranks the C1-side path). On the answer template: bold new bond from C6 to O2 closing the five-membered 2,6-anhydro ring, single free -OH drawn at C3 (equatorial up), glycosidic alpha-1,4 stereobonds unchanged.",
+      "consistency_check": "Matches the printed statement 'only one OH group remained free per glucopyranoside unit' and sets up 9.3 (HIO4 cleavage of the residual 3,4-trans-diol of K)."
+    },
+    "theorem_names": [
+      "favourable_chair_is_4C1",
+      "axial_positions_4C1",
+      "axial_positions_1C4",
+      "clashes_4C1",
+      "clashes_1C4",
+      "c6_up_bond_equatorial",
+      "tosyl_equiv_lemma",
+      "betaCD_OH_budget",
+      "oh_budget_per_unit",
+      "trans_diaxial_O2_CH2OTs_present",
+      "no_trans_diaxial_C3O",
+      "competent_iff_C2",
+      "cyclization_regioselective",
+      "kUnit_valid",
+      "unique_bridge_structure",
+      "card_kUnit",
+      "kUnit_has_bridge",
+      "kUnit_deg_o2",
+      "kUnit_o2_nbrs",
+      "kUnit_c6_nbrs",
+      "kUnit_has_one_free_OH",
+      "kUnit_free_OH_at_C3",
+      "kUnit_no_free_OH_at_C2",
+      "kUnit_ne_mUnit",
+      "mUnit_has_bridge_o3",
+      "mUnit_no_bridge_o2",
+      "stereoK_c1_rank_atomicNumbers",
+      "stereoK_hydrogen_lowest",
+      "stereoK_ranks_are_bonded",
+      "c2_label_flips",
+      "stereo_labels_k",
+      "other_labels_retained",
+      "kCD_total_free_OH",
+      "K_characterization"
+    ],
+    "assumptions": [
+      "Standard Lean logical axioms propext, Classical.choice, Quot.sound (explicitly allowed).",
+      "native_decide trust extensions (.*._native.native_decide.ax_*) for finite decidable computations; standard Lean machinery, no custom axioms.",
+      "Trusted general chemistry laws encoded explicitly in the model: selective tosylation of primary over secondary alcohols; Williamson ether synthesis; intramolecular SN2 on pyranose CH2-OTs requires a trans-diaxial (antiperiplanar) arrangement; a chair flip preserves up/down but interchanges axial and equatorial; CIP priority rules. Each is stated as explicit data in the file and the requested conclusions are derived from it, not assumed.",
+      "Beta-CD alpha-1,4 connectivity and the alpha-D-gluco substitution pattern taken from the printed problem figures (Q9-1 and the A9-1 answer sheet templates)."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t9_a2/campaign/workspace && lake env lean IChO2026Problems/problem_icho_2026_t9_a2.lean   # exit 0, no output",
+      "cp IChO2026Problems/problem_icho_2026_t9_a2.lean /tmp/axioms_final.lean && printf '\\nopen IChO2026T9A2\\n#print axioms K_characterization\\n#print axioms favourable_chair_is_4C1\\n#print axioms unique_bridge_structure\\n#print axioms kUnit_valid\\n#print axioms stereo_labels_k\\n#print axioms kCD_total_free_OH\\n' >> /tmp/axioms_final.lean && lake env lean /tmp/axioms_final.lean   # only [propext, Classical.choice, Quot.sound] plus native_decide trust extensions",
+      "grep -n 'sorry\\|admit' IChO2026Problems/problem_icho_2026_t9_a2.lean   # no matches"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t9_a2.lean": {
+      "native_decide": 19
+    }
+  },
+  "output_hashes_still_match": true
+}

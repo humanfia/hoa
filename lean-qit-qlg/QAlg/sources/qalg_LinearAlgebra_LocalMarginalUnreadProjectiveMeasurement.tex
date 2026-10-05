@@ -1,0 +1,30 @@
+Let
+$$
+    \mathcal H_A\otimes\mathcal H_B\cong \C^2\otimes\C^2
+$$
+and let $\rho_{AB}$ be an arbitrary density operator on this bipartite space.  A non-selective projective measurement is performed on subsystem $B$ in the computational basis, with joint projectors
+$$
+    \Pi_0=I_A\otimes\ketbra{0}{0}_B,
+    \qquad
+    \Pi_1=I_A\otimes\ketbra{1}{1}_B.
+$$
+The measurement outcome is discarded, so the post-measurement state is
+$$
+    \rho'_{AB}=\sum_{b=0}^1\Pi_b\rho_{AB}\Pi_b .
+$$
+Write
+$$
+    \rho_{AB}=
+    \sum_{b,b'=0}^1\rho_{bb'}^{(A)}\otimes\ketbra{b}{b'}_B,
+$$
+where each $\rho_{bb'}^{(A)}$ is an operator on $\mathcal H_A$.  Prove that
+$$
+    \rho'_{AB}=
+    \rho_{00}^{(A)}\otimes\ketbra{0}{0}_B
+    +
+    \rho_{11}^{(A)}\otimes\ketbra{1}{1}_B,
+$$
+and prove that the reduced state of $A$ is unchanged:
+$$
+    \tr_B(\rho'_{AB})=\tr_B(\rho_{AB}).
+$$

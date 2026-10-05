@@ -1,0 +1,66 @@
+{
+  "target": "icho_2026_t2_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300943.7572649,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t2_a5.lean": "a1f3182308d8480755eb7a1b9d05c03a93ce4c2f89857e8009efceddac83de2e",
+    "answer.md": "a44c6ed01b29cebcae3de7b90335b9893446c7c29a26d19ee35954aed7f391af",
+    "verification.md": "d59137b73843f06130103cf51dc46f8b3cd06197506dd6597b4fade4f3df2ee0",
+    "result.json": "aa943610c64a4324f5c79c47835bc2e19a549881e15377ce8c8b5e9ff1df9a32"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a5",
+    "status": "completed",
+    "answer_summary": "The independently derived Process B steady state is [HBrO2]_B = 5.04e-11 M and the switching condition gives [Br-]_critical = 3.00e-7 M. The slow bromide decay has kappa = 2 k4 [HBrO2]_B [H+] = 0.16128 s^-1, so tau = ln((7.0e-4)/(3.00e-7))/kappa = 48.0844068661... s, reported as 48.1 s to three significant figures.",
+    "theorem_names": [
+      "IChO2026Problems.T2A5.processA_reduced_balance",
+      "IChO2026Problems.T2A5.hbro2_processA",
+      "IChO2026Problems.T2A5.hbro2_processB",
+      "IChO2026Problems.T2A5.bromide_critical",
+      "IChO2026Problems.T2A5.hbro2B_is_stationary",
+      "IChO2026Problems.T2A5.bromideCritical_is_switch",
+      "IChO2026Problems.T2A5.bromideCritical_lt_max",
+      "IChO2026Problems.T2A5.bromide_decay_constant_value",
+      "IChO2026Problems.T2A5.processB_bromide_loss_rate",
+      "IChO2026Problems.T2A5.bromide_slow_phase_initial",
+      "IChO2026Problems.T2A5.bromide_slow_phase_rate",
+      "IChO2026Problems.T2A5.period_raw_exact",
+      "IChO2026Problems.T2A5.bromide_at_period",
+      "IChO2026Problems.T2A5.period_bounds",
+      "IChO2026Problems.T2A5.oscillation_period"
+    ],
+    "assumptions": [
+      "The printed elementary reactions obey mass-action rate laws.",
+      "The HBrO2 and BrO2 radical concentrations use the steady-state approximation requested in T2-A2, with physically positive concentrations when cancellation is used.",
+      "The almost-immediate return from critical to maximum bromide has negligible duration compared with the slow Process B branch, exactly as directed by the T2-A5 source text.",
+      "On the long colourless Process B branch, Ce(IV) is negligible because the source attributes that state to Ce(III); hence the Ce(IV)-dependent Process C rate is confined to the rapid regeneration transient for the period approximation.",
+      "Printed constants are treated as exact according to TASK.json; the final answer uses its predeclared three-significant-figure reporting policy."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T2_page-2.png icho_2026_source/image/T2_page-3.png",
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t2_a5.lean",
+      "if grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t2_a5.lean; then exit 1; else echo 'PASS: no sorry/admit/unsafe/custom axiom tokens'; fi",
+      "python3 -m json.tool result.json >/dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

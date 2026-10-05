@@ -1,0 +1,56 @@
+{
+  "target": "icho_2026_t3_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301162.196155,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t3_a4.lean": "fea26c2799c06757dbbb29bbea8dbf8ac5d8b31be9e4e6df66dcba650d07f6e3",
+    "answer.md": "b79d152ded22c0839bb20fce28741eb0d7581d7fe149f5e2e7c6d4630462ea6e",
+    "verification.md": "18a1277acb7d79cdc0ea6bd2d0a3ea469c97c4a64531514f3f664ab92be1d10e",
+    "result.json": "dfbfa2d4381ee5029bcf8e7b5f1c35ea1a3e61e5d3ad33f273bd6c4f86f16b5b"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t3_a4",
+    "status": "completed",
+    "answer_summary": "COF-3 is the three-arm hydroxy-imine repeat unit; oxidative dehydrogenative ring closure gives the three-benzoxazole COF-4 unit with an H6 loss; COF-5 is the trihydroxy enol-imine unit; and irreversible tautomerization gives the cyclohexane-1,3,5-trione beta-ketoenamine COF-6 unit. Each displayed cell uses the source's central-node convention and has three dashed lines crossing six arene bonds.",
+    "theorem_names": [
+      "IChO2026Problems.T3A4.cof3_repeat_unit",
+      "IChO2026Problems.T3A4.cof4_repeat_unit",
+      "IChO2026Problems.T3A4.cof5_repeat_unit",
+      "IChO2026Problems.T3A4.cof6_repeat_unit",
+      "IChO2026Problems.T3A4.products_match_problem_observations"
+    ],
+    "assumptions": [
+      "Problem figure: COF-3 precursors are benzene-1,3,5-tricarbaldehyde and 1,4-diamino-2,5-dihydroxybenzene.",
+      "Problem figure: COF-5 precursors are 2,4,6-trihydroxybenzene-1,3,5-tricarbaldehyde and p-phenylenediamine.",
+      "Problem statements: COF-3 has an imine IR stretch; COF-4 has no imine stretch, retains another C=N type, and has six fewer H atoms per repeat unit; COF-5 irreversibly isomerizes to COF-6, which has no imine stretch.",
+      "Trusted general chemistry: aldehyde-primary-amine condensation forms C(H)=N; an ortho-hydroxy imine oxidatively cyclizes to benzoxazole by loss of O-H and imine-carbon C-H; an ortho-hydroxy imine can tautomerize to a beta-ketoenamine by proton and pi-bond transfer.",
+      "Cell convention copied from the problem's COF-1 example: one tritopic node plus the inward halves of three ditopic linkers; each of three dashed lines crosses two linker-ring bonds."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t3_a4.lean",
+      "python3 -c \"import xml.etree.ElementTree as E; E.parse('cof_repeat_units.svg'); print('SVG XML parses successfully')\"",
+      "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t3_a4.lean",
+      "python3 -m json.tool result.json >/dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

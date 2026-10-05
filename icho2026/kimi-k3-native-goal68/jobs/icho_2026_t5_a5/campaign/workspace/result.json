@@ -1,0 +1,30 @@
+{
+  "target_id": "icho_2026_t5_a5",
+  "status": "completed",
+  "answer_summary": "Option (c) hexagonal. Fully protonating PL1 neutralizes its two identical phosphoric acid head groups; the neutral heads are less hydrated and no longer repel electrostatically, so the effective head-group area shrinks relative to the unchanged fatty-acid tail cross-section. The problem states the dianion forms a lamellar phase; moving strictly up the standard lyotropic mesophase order (micellar < lamellar < hexagonal < inverse hexagonal) from that anchor selects the hexagonal phase for the fully protonated form.",
+  "theorem_names": [
+    "IChO2026T5A5.t5_a5_answer_is_hexagonal",
+    "IChO2026T5A5.icho_2026_t5_a5_lipid_phase",
+    "IChO2026T5A5.t5_a5_anchor_and_exclusive_gap",
+    "IChO2026T5A5.t5_a5_single_correct_answer"
+  ],
+  "assumptions": [
+    "Problem-stated anchor (problem input, not a derived result): in physiological conditions PL1 is a dianion and forms a lamellar phase.",
+    "Trusted general law: the four offered lipid mesophases fall in the standard lyotropic order of increasing effective tail-to-head cross-section ratio (micellar < lamellar < hexagonal < inverse hexagonal), encoded as PhaseOrder.",
+    "Trusted general law: protonating a charged phospholipid head group strictly decreases its effective (hydrated, electrostatically repelling) cross-section while leaving the hydrophobic tail cross-section unchanged, so the fully protonated state's phase lies strictly above the dianion's lamellar phase in that order.",
+    "IChO 'tick the correct answer' convention that exactly one listed option is correct (IsSingleCorrectAnswer); used only for the exhaustiveness corollary t5_a5_single_correct_answer, not for the classification theorem."
+  ],
+  "source_gaps": [
+    "The printed problem does not explicitly state that the single-answer tick convention guarantees uniqueness of the correct option; this exclusivity is recorded as a separate explicit premise (IsSingleCorrectAnswer) and is not relied upon in deriving the classified phase.",
+    "The standard lyotropic mesophase order and the effect of head-group charge on effective head area are physico-chemical background knowledge (trusted_general_law) rather than verbatim problem text; they are the smallest standard premises needed and are flagged accordingly."
+  ],
+  "verification_commands": [
+    "export PATH=\"$HOME/.elan/bin:$PATH\"",
+    "lake --version",
+    "lake env lean IChO2026Problems/problem_icho_2026_t5_a5.lean"
+  ],
+  "verification_results": [
+    "lake --version → Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)",
+    "lake env lean IChO2026Problems/problem_icho_2026_t5_a5.lean → exit 0; #print axioms reports 'does not depend on any axioms' for t5_a5_answer_is_hexagonal and icho_2026_t5_a5_lipid_phase"
+  ]
+}

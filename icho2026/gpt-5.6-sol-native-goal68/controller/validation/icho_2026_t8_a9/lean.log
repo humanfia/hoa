@@ -1,0 +1,2 @@
+'IChO2026Problems.T8A9.quenchingFraction_eq_dimensionless' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T8A9.final_quenching_outputs' depends on axioms: [propext, Classical.choice, Quot.sound]

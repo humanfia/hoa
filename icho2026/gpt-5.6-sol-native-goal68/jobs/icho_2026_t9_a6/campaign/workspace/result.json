@@ -1,0 +1,24 @@
+{
+  "target_id": "icho_2026_t9_a6",
+  "status": "completed",
+  "answer_summary": "The exact number is 3: L has two distinguishable choices for which of its unit-1/unit-4 primary OH sites becomes the tether, and an unordered pair of the resulting two monomer end types gives AA, AB = BA, and BB.",
+  "theorem_names": [
+    "IChO2026Problems.ProblemIcho2026T9A6.lFreePrimarySites_card",
+    "IChO2026Problems.ProblemIcho2026T9A6.monomer_regioisomer_count",
+    "IChO2026Problems.ProblemIcho2026T9A6.exchanging_dimer_ends_does_not_create_an_isomer",
+    "IChO2026Problems.ProblemIcho2026T9A6.dimer_isomer_count"
+  ],
+  "assumptions": [
+    "The first primary OH is normalized as unit 1 and the stated directing rule selects the available unit 4 as the second free primary site of L.",
+    "As displayed in the product scheme, exactly one of those two primary sites on each beta-CD end bears the tether and the other remains CH2OH.",
+    "The alpha-1,4-linked seven-unit ring has an oriented cyclic constitution, so tether-at-unit-1 and tether-at-unit-4 are distinct regioforms.",
+    "Swapping the two identical beta-CD ends across the symmetric hydrogenated spacer does not define a new constitutional isomer."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T9_page-3.png icho_2026_source/image/T9_page-2.png icho_2026_source/raw/theory_problem.pdf",
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t9_a6.lean",
+    "grep -nE '^[[:space:]]*(axiom|unsafe)([[:space:]]|$)|\\b(sorry|admit)\\b' IChO2026Problems/problem_icho_2026_t9_a6.lean"
+  ]
+}

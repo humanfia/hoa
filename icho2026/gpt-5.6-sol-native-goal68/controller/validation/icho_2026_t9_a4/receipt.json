@@ -1,0 +1,63 @@
+{
+  "target": "icho_2026_t9_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789303359.9254282,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a4.lean": "6afa986140af1fb52af9ed271b44eedcbd2226d8f540ee8af9c951c6a84f13e7",
+    "answer.md": "ae49f9af174acb68d0121f44b0910c7424a0254334f508bf146fb402be85d483",
+    "verification.md": "9d6e2c7b6d886cd4390c81a15f5bc921b56b47196994942834af824c1c47b2ea",
+    "result.json": "62551460fd8641ebef335fa716c591051a2698f857a328053d3b2bff0279344b"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a4",
+    "status": "completed",
+    "answer_summary": "Y is the sixfold 6-O-tert-butyldimethylsilyl-protected 2,3-anhydro-alpha-cyclomannin: six alpha-(1->4)-linked 6-O-TBS-2,3-anhydro-D-mannopyranosyl units. On every supplied template repeat, CH2OTBS is up at C5/C6 and one upper-face oxygen bridges C2 and C3; C2 is inverted from glucose, C3 is retained, and the alpha glycosidic stereochemistry is unchanged. The structure is neutral, closed-shell, and has formula C72H132O24Si6.",
+    "theorem_names": [
+      "IChO2026Problems.Icho2026T9A4.alpha_cd_formula_from_six_glucoses",
+      "IChO2026Problems.Icho2026T9A4.reaction_repeat_is_protected_manno_epoxide",
+      "IChO2026Problems.Icho2026T9A4.alpha_anomer_retained",
+      "IChO2026Problems.Icho2026T9A4.c2_inverted_c3_retained",
+      "IChO2026Problems.Icho2026T9A4.epoxide_connectivity",
+      "IChO2026Problems.Icho2026T9A4.tbs_connectivity",
+      "IChO2026Problems.Icho2026T9A4.alpha_one_four_connectivity",
+      "IChO2026Problems.Icho2026T9A4.all_bonds_are_single",
+      "IChO2026Problems.Icho2026T9A4.neutral_and_closed_shell",
+      "IChO2026Problems.Icho2026T9A4.every_atom_has_normal_valence",
+      "IChO2026Problems.Icho2026T9A4.graph_formula_is_printed_formula",
+      "IChO2026Problems.Icho2026T9A4.reaction_formula_is_printed_formula",
+      "IChO2026Problems.Icho2026T9A4.structure_y"
+    ],
+    "assumptions": [
+      "Problem input: alpha-cyclodextrin has six alpha-D-glucopyranosyl units connected by alpha-(1->4) glycosidic bonds.",
+      "Problem input: the sequence uses 6 equivalents TBSCl in pyridine, then 12 equivalents NaH and 6 equivalents TsCl; Y is printed as C72H132O24Si6 and is converted by TBAF/hot water to the displayed alpha-cycloaltrin.",
+      "Trusted general chemistry: TBSCl/pyridine protects the primary O6 alcohols under the shown conditions.",
+      "Trusted general chemistry: O2 sulfonation followed by intramolecular O3 attack is an SN2 epoxide closure, so C2 inverts while C3 retains its configuration.",
+      "Only standard Lean logical axioms propext, Classical.choice, and Quot.sound occur in the final axiom report; no custom unchecked axiom is used."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T9_page-1.png icho_2026_source/image/T9_page-2.png icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t9_a4.lean",
+      "if grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t9_a4.lean; then exit 1; fi",
+      "python3 -m json.tool result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

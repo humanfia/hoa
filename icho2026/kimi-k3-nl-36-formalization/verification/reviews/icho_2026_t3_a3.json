@@ -1,0 +1,759 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The candidate faithfully formalizes the source-bounded 15-monomer inventory, all 14 blank cells, and the finite exclusions required by the three XXX entries; the exact-symbolic submission and Kimi 3.3 draft are preserved without using the draft as a premise.",
+    "updated_at": "2026-09-13T08:43:00Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "7355ade9f946da4eb6ed00b50c21ac4734133e27ae4661395fee24a0db36dfba",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The image-derived functional classes, six site-geometry classes, seven topology geometry pairs, three supplied examples, two answer rows, and canonical A-B/C-D/E-D condensation orientations are all represented exactly."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "All compatible ordered pairs are generated from Finset.univ before the proposed rows are defined; CellCorrect reduces combination cells to admissibility/newness and XXX cells to a universal finite exclusion. The four sorry bodies are permitted in semantic Review."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "TopologyTableCorrect covers every topology twice, validates the printed givens, threads prior cells into used sets, and retains the distinctions among square-planar, rhombic-planar, tetrahedral, and six-connected geometries needed to separate the columns."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The output is an exact symbolic classification with no measured or rounded quantity."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "condensationKind uses the source-compatible canonical orders A-B, C-D, and E-D, while ChemicallyCompatible and hasGeometryPair explicitly remove any semantic dependence on input ordering. XXX is selected only on the no-unused-admissible-pair branch."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The finite domain contains all pairs of the 15 depicted labels and filters them uniformly. The three XXX cells quantify over that full admissible domain; the additional Hexagonal-1 witness E1+D4 remains admissible but does not alter either filled witness cell or create an XXX counterexample."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The displayed inventory consists of the 15 labels A1-A4, B1-B3, C1-C3, D1-D4, and E1, grouped by the depicted reactive functional groups.",
+          "carrier": "IChO2026Problems.IChO2026T3A3.Monomer; IChO2026Problems.IChO2026T3A3.ReactiveClass; IChO2026Problems.IChO2026T3A3.reactiveClass",
+          "status": "covered",
+          "evidence": "Direct visual recount on T3_page-3.png gives four boronic acids, three polyols, three amines, four aldehydes, and one active-methylene monomer."
+        },
+        {
+          "claim": "Each printed monomer has the reactive-site geometry and degree used by the topology classification.",
+          "carrier": "IChO2026Problems.IChO2026T3A3.SiteGeometry; IChO2026Problems.IChO2026T3A3.siteGeometry; IChO2026Problems.IChO2026T3A3.siteCount",
+          "status": "covered",
+          "evidence": "The structures visibly classify A2/B2/C1/D4 as linear-2; A1/B3/D2/E1 as trigonal-3; B1/C3 as square-4; A3/C2 as rhombic-4; A4/D3 as tetrahedral-4; and D1 as planar-6."
+        },
+        {
+          "claim": "Within the question's three admitted condensation bond families, compatible functional-class pairs are A-B, C-D, and E-D.",
+          "carrier": "IChO2026Problems.IChO2026T3A3.CondensationKind; IChO2026Problems.IChO2026T3A3.condensationKind; IChO2026Problems.IChO2026T3A3.reactionCompatibleCombinations; IChO2026Problems.IChO2026T3A3.reactionCompatibleCombinations_source_complete",
+          "status": "covered",
+          "evidence": "Boronate ester formation joins boronic acid to polyol, imine formation joins amine to aldehyde, and the displayed active-methylene/aldehyde pairing supplies the stipulated C=C condensation class."
+        },
+        {
+          "claim": "The seven icons require respectively square-4+linear-2, square-4+tetrahedral-4, trigonal-3+linear-2, trigonal-3+trigonal-3, planar-6+linear-2, rhombic-4+linear-2, and tetrahedral-4+linear-2.",
+          "carrier": "IChO2026Problems.IChO2026T3A3.Topology; IChO2026Problems.IChO2026T3A3.hasGeometryPair; IChO2026Problems.IChO2026T3A3.matchesTopology; IChO2026Problems.IChO2026T3A3.Admissible",
+          "status": "covered",
+          "evidence": "Counting black/red vertices and incident half-edges in each T3_page-3.png topology icon yields exactly these unordered geometry pairs."
+        },
+        {
+          "claim": "Every one of the 14 blank cells is a new admissible pair or a justified XXX after the three printed examples and earlier row entries.",
+          "carrier": "IChO2026Problems.IChO2026T3A3.suppliedExamples; IChO2026Problems.IChO2026T3A3.CellCorrect; IChO2026Problems.IChO2026T3A3.TopologyTableCorrect; IChO2026Problems.IChO2026T3A3.proposedTopologyTable; IChO2026Problems.IChO2026T3A3.topologyTable_reported_result",
+          "status": "covered",
+          "evidence": "The supplied examples are encoded by column, both total row functions cover all seven columns, and each XXX has a universal rather than freely chosen meaning."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t3_a3.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t3_a3",
+        "source_record_sha256": "e7a7ffb62dfbf7bcdf44ff8a2d168196336fcabde05166eca306190d9322757d",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a3.answer.json",
+        "answer_submission_sha256": "08509c3f3dd7c994faf55ebe3547d613f1ac3f81922382213d6dcc35cb03edfb",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t3_a3.source.json",
+        "source_report_sha256": "fd3dbc99012000369d063cbae79221ba3e4408e265422979aaad968ac324dee7",
+        "candidate": "IChO2026Problems/problem_icho_2026_t3_a3.lean",
+        "preflight_sha256": "f792a91972b62656d019558fa1f15a597b5e763706cb5cef2e1f877cb26d3cd9",
+        "candidate_sha256": "7355ade9f946da4eb6ed00b50c21ac4734133e27ae4661395fee24a0db36dfba",
+        "question_sha256": "012fe8057d70707dfe45cb432683c763f1aaa4e7d5ae9407800e028bd1811b10",
+        "shared_context_sha256": "b3270e90ab8aef65f806aba1fc6f25517f26cabbcdf6ffd4a3bdd944c280460d",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "24a0697097f964893e4c9d3f6b355185013264eca86354972fbdf0c52e075272",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T3_page-4.png",
+            "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+          },
+          {
+            "path": "icho_2026_source/image/T3_page-3.png",
+            "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "1510e5d815f6978cc3fa4ba7954e9108421f5ef379020aee639086dbb5b306e3",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "topology_table"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t3_a3",
+          "path": ".archon/provided_answer_drafts/Q3.md",
+          "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t3_a3.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t3_a3",
+          "source_record_sha256": "e7a7ffb62dfbf7bcdf44ff8a2d168196336fcabde05166eca306190d9322757d",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a3.answer.json",
+          "answer_submission_sha256": "08509c3f3dd7c994faf55ebe3547d613f1ac3f81922382213d6dcc35cb03edfb",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t3_a3.source.json",
+          "source_report_sha256": "fd3dbc99012000369d063cbae79221ba3e4408e265422979aaad968ac324dee7",
+          "candidate": "IChO2026Problems/problem_icho_2026_t3_a3.lean",
+          "preflight_sha256": "f792a91972b62656d019558fa1f15a597b5e763706cb5cef2e1f877cb26d3cd9",
+          "candidate_sha256": "7355ade9f946da4eb6ed00b50c21ac4734133e27ae4661395fee24a0db36dfba",
+          "question_sha256": "012fe8057d70707dfe45cb432683c763f1aaa4e7d5ae9407800e028bd1811b10",
+          "shared_context_sha256": "b3270e90ab8aef65f806aba1fc6f25517f26cabbcdf6ffd4a3bdd944c280460d",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "24a0697097f964893e4c9d3f6b355185013264eca86354972fbdf0c52e075272",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T3_page-4.png",
+              "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+            },
+            {
+              "path": "icho_2026_source/image/T3_page-3.png",
+              "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "1510e5d815f6978cc3fa4ba7954e9108421f5ef379020aee639086dbb5b306e3",
+            "node_count": 5,
+            "edge_count": 4,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "topology_table"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t3_a3",
+            "path": ".archon/provided_answer_drafts/Q3.md",
+            "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, finite-domain scope, visual classifications, and complete table were frozen from the two bound images and inline problem text before the untrusted submission and Lean file were opened. The authorized Kimi draft was checked only afterward for fidelity and was not treated as a source axiom."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The end-to-end symbolic derivation is carried by reactionCompatibleCombinations, matchesTopology, CellCorrect, TopologyTableCorrect, proposedTopologyTable, and topologyTable_raw_result."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy requires exact_symbolic output; topologyTableReportedResult preserves the same classification proposition without rounding."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance or measured quantity is used; exact symbolic equality is required throughout."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The output-decisive domain for XXX is exactly the Cartesian inventory induced by the 15 labels visible on T3_page-3.png, filtered uniformly by the three problem-admitted reaction families and depicted geometry pairs. It is not claimed to exhaust the open chemical universe."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=7355ade9f946da4eb6ed00b50c21ac4734133e27ae4661395fee24a0db36dfba; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=4, duration_bucket=under_1m. Nontrivial result carriers are proposedTopologyTable, topologyTableRawResult, topologyTable_raw_result, topologyTableReportedResult, and topologyTable_reported_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The statement is scoped to the finite printed inventory and all fourteen actual blank cells; it neither asserts global chemical uniqueness nor treats the four black first-row positions as answer cells."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The main theorem has no answer-bearing hypotheses. Its decisive definitions transparently encode visually auditable label classes, degrees, topology pairs, and supplied examples."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The sole requested output topology_table is a concrete exact-symbolic two-row table, not a diagnostic sentinel, and it matches the bound submission and independently derived source result."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Every outcome-decisive chemistry bridge is named above: label/class inventory, reactive-site geometry, allowed condensation compatibility, topology geometry, supplied examples, and XXX exhaustiveness."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "all table cells: additional monomer combinations or XXX, respecting supplied examples",
+            "lean_carrier": "IChO2026Problems.IChO2026T3A3.topologyTable_reported_result",
+            "status": "covered",
+            "evidence": "The answer JSON has exactly one output in bundle order with id topology_table, kind classification, empty unit, and exact raw/display agreement; the Lean carrier validates the same 14 cells and all three finite exclusions.",
+            "output_id": "topology_table",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T3_page-4.png",
+            "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19",
+            "inspected": true,
+            "evidence": "The T3.3 table has seven topology columns, three supplied examples (A2+B3 under Hexagonal 1, E1+D2 under Hexagonal 2, C2+D4 under Kagome), four black non-answer positions in that supplied row, and exactly two blank rows across all seven columns, hence 14 requested cells. The lower T3.4 reaction panels are outside this target."
+          },
+          {
+            "path": "icho_2026_source/image/T3_page-3.png",
+            "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71",
+            "inspected": true,
+            "evidence": "Visual recount: A1/A2/A3/A4 have 3/2/4-rhombic/4-tetrahedral boronic-acid sites; B1/B2/B3 have 4-square/2-linear/3-trigonal catechol sites; C1/C2/C3 have 2-linear/4-rhombic/4-square amines; D1/D2/D3/D4 have 6-planar/3-trigonal/4-tetrahedral/2-linear aldehydes; E1 has 3 trigonal active-methylene sites. Black/red icon vertices and connecting half-edges give the seven geometry pairs encoded in matchesTopology. No dashed repeat boundary, whole-product formula, cross-boundary atom allocation, or atom ledger is used by T3.3."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The three permitted bond-forming families are applied only to their complementary printed functional classes, and topology is determined from the complete reactive-site geometry rather than label subscripts."
+          },
+          "staged_species_domain": {
+            "status": "not_applicable",
+            "evidence": "not_staged_transformation: topology_table uses static monomer compatibility and topology icons; no depicted or stated transformation stage is used to derive this requested output."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No molecular formula, atom count, molar mass, or composition is requested or used."
+          },
+          "conservation_laws": {
+            "status": "not_applicable",
+            "evidence": "No quantitative material stage or atom/charge/mass ledger is outcome-decisive for this topology classification."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "The requested classification has the source-specified empty unit."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "The reporting policy is exact_symbolic and contains no numerical precision operation."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "The formalization preserves linear, trigonal-planar, square-planar, rhombic-planar, tetrahedral, and planar-six-connected distinctions visible in the structures and required by the topology icons; no separate stereochemical output is requested."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The verb requires every blank cell to contain a valid new witness or XXX. The candidate proves only source-bounded exhaustion for XXX and allows more than two Hexagonal-1 witnesses, so it does not overclaim global uniqueness."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The finite inventory, reaction filter, and topology relation are defined before the proposed rows and are not answer-shaped singletons or free flags. The result rows occur only in the conclusion carrier and are checked by nontrivial admissibility and universal-exclusion predicates."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "Enter XXX only when no additional unused pair from the displayed finite inventory is both reaction-compatible and matched to the column's depicted geometry; otherwise enter a new admissible pair.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "constants": [],
+            "dependencies": [],
+            "evidence": "A source-first finite scan of all displayed labels gives the submitted two-row classification; the three XXX entries are exhaustive only within that source-bounded inventory.",
+            "id": "topology_table",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.IChO2026T3A3.reactiveClass",
+                "IChO2026Problems.IChO2026T3A3.siteGeometry",
+                "IChO2026Problems.IChO2026T3A3.condensationKind",
+                "IChO2026Problems.IChO2026T3A3.suppliedExamples"
+              ],
+              "raw_result": [
+                "IChO2026Problems.IChO2026T3A3.proposedTopologyTable",
+                "IChO2026Problems.IChO2026T3A3.topologyTableRawResult",
+                "IChO2026Problems.IChO2026T3A3.topologyTable_raw_result"
+              ],
+              "relations": [
+                "IChO2026Problems.IChO2026T3A3.reactionCompatibleCombinations",
+                "IChO2026Problems.IChO2026T3A3.CandidateDomainComplete",
+                "IChO2026Problems.IChO2026T3A3.matchesTopology",
+                "IChO2026Problems.IChO2026T3A3.Admissible",
+                "IChO2026Problems.IChO2026T3A3.CellCorrect",
+                "IChO2026Problems.IChO2026T3A3.TopologyTableCorrect"
+              ],
+              "reported_result": [
+                "IChO2026Problems.IChO2026T3A3.topologyTableReportedResult",
+                "IChO2026Problems.IChO2026T3A3.topologyTable_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The named Lean carriers encode all 14 cells, the printed givens, reaction and geometry filters, newness, and universal XXX exclusions.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Static exact-symbolic classification of all fourteen blank cells in the displayed table.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Two exact-symbolic rows with one entry for each of the fourteen blank table cells; a combination is a new admissible displayed-label pair and XXX asserts that no further admissible displayed-label pair remains.",
+            "raw_result": {
+              "derivation": "Classify the 15 labels by reactive class and site geometry; filter all label pairs by A-B, C-D, or E-D condensation compatibility and then by each icon's geometry pair; remove the three supplied examples and earlier-row entries. The remaining witnesses fill the combination cells, while exhaustive empty remainders justify the Hexagonal-2, Trigonal, and Kagome XXX cells.",
+              "exact_unrounded": true,
+              "value_or_expression": "row1=[A2+B1,A4+B1,A1+B2,A1+B3,C1+D1,A3+B2,A4+B2]; row2=[C3+D4,C3+D3,C1+D2,XXX,XXX,XXX,C1+D3]; columns=[Tetragonal1,Tetragonal2,Hexagonal1,Hexagonal2,Trigonal,Kagome,Tetrahedral]"
+            },
+            "reporting": {
+              "application": "Preserve the final finite classification exactly; no numerical rounding applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The single output id, classification kind, empty unit, exact-symbolic policy, all-cells scope, and XXX-exclusion requirement match the problem card.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-3.png#monomer_inventory_and_topology_icons"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-4.png#topology_answer_table"
+              }
+            ],
+            "source_requirement": "all table cells: additional monomer combinations or XXX, respecting supplied examples",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "7355ade9f946da4eb6ed00b50c21ac4734133e27ae4661395fee24a0db36dfba"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a3.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The candidate faithfully formalizes the source-bounded 15-monomer inventory, all 14 blank cells, and the finite exclusions required by the three XXX entries; the exact-symbolic submission and Kimi 3.3 draft are preserved without using the draft as a premise.",
+        "reviewed_at": "2026-09-13T08:43:00Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "7355ade9f946da4eb6ed00b50c21ac4734133e27ae4661395fee24a0db36dfba",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a3.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 4,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The candidate faithfully formalizes every blank cell, validates the three printed examples, and proves each XXX by exhaustive elimination over the complete image-derived monomer inventory; the exact-symbolic submission and frozen Kimi 3.3 selection agree, and deterministic Lean preflight passed with no sorry.",
+    "evidence": "Both image, submission, and candidate digests match their bindings. Page Q3-3 independently supplies all 15 labelled structures, their functional classes and site geometries, and all seven topology incidence patterns; page Q3-4 supplies the three existing examples and fourteen blanks. The transparent finite model filters every monomer pair by the three permitted condensation families, checks geometry, freshness, and universal exhaustion, and topologyTable_raw_result proves TopologyTableCorrect proposedTopologyTable. topologyTable_reported_result carries the same exact-symbolic result. No candidate-local axiom, sorry, admit, opaque chemical premise, unused hypothesis, numerical tolerance, or reporting conversion is involved.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "a96be59f2512829c18cb0143b80936472d7255dd800419c10fc1bfd588b8f59a",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t3_a3.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t3_a3",
+      "source_record_sha256": "e7a7ffb62dfbf7bcdf44ff8a2d168196336fcabde05166eca306190d9322757d",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a3.answer.json",
+      "answer_submission_sha256": "08509c3f3dd7c994faf55ebe3547d613f1ac3f81922382213d6dcc35cb03edfb",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t3_a3.source.json",
+      "source_report_sha256": "fd3dbc99012000369d063cbae79221ba3e4408e265422979aaad968ac324dee7",
+      "candidate": "IChO2026Problems/problem_icho_2026_t3_a3.lean",
+      "preflight_sha256": "c53e78443bd61dc046ceafb4b5aba0e725d55cf127a2722b04d7147568d3b9ac",
+      "candidate_sha256": "a96be59f2512829c18cb0143b80936472d7255dd800419c10fc1bfd588b8f59a",
+      "question_sha256": "012fe8057d70707dfe45cb432683c763f1aaa4e7d5ae9407800e028bd1811b10",
+      "shared_context_sha256": "b3270e90ab8aef65f806aba1fc6f25517f26cabbcdf6ffd4a3bdd944c280460d",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "24a0697097f964893e4c9d3f6b355185013264eca86354972fbdf0c52e075272",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T3_page-4.png",
+          "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+        },
+        {
+          "path": "icho_2026_source/image/T3_page-3.png",
+          "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "1510e5d815f6978cc3fa4ba7954e9108421f5ef379020aee639086dbb5b306e3",
+        "node_count": 5,
+        "edge_count": 4,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "topology_table"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t3_a3",
+        "path": ".archon/provided_answer_drafts/Q3.md",
+        "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t3_a3.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t3_a3",
+        "source_record_sha256": "e7a7ffb62dfbf7bcdf44ff8a2d168196336fcabde05166eca306190d9322757d",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a3.answer.json",
+        "answer_submission_sha256": "08509c3f3dd7c994faf55ebe3547d613f1ac3f81922382213d6dcc35cb03edfb",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t3_a3.source.json",
+        "source_report_sha256": "fd3dbc99012000369d063cbae79221ba3e4408e265422979aaad968ac324dee7",
+        "candidate": "IChO2026Problems/problem_icho_2026_t3_a3.lean",
+        "preflight_sha256": "c53e78443bd61dc046ceafb4b5aba0e725d55cf127a2722b04d7147568d3b9ac",
+        "candidate_sha256": "a96be59f2512829c18cb0143b80936472d7255dd800419c10fc1bfd588b8f59a",
+        "question_sha256": "012fe8057d70707dfe45cb432683c763f1aaa4e7d5ae9407800e028bd1811b10",
+        "shared_context_sha256": "b3270e90ab8aef65f806aba1fc6f25517f26cabbcdf6ffd4a3bdd944c280460d",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "24a0697097f964893e4c9d3f6b355185013264eca86354972fbdf0c52e075272",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T3_page-4.png",
+            "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+          },
+          {
+            "path": "icho_2026_source/image/T3_page-3.png",
+            "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "1510e5d815f6978cc3fa4ba7954e9108421f5ef379020aee639086dbb5b306e3",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "topology_table"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t3_a3",
+          "path": ".archon/provided_answer_drafts/Q3.md",
+          "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The chemistry and topology were rederived only from the inline problem evidence and the two bound images. The sealed Kimi draft was used solely for the expressly required fidelity comparison, not as a scientific premise; the submission and candidate were treated as untrusted, and no unlisted artifact, official solution, registry record, or literature source was accessed."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "reactiveClass and siteGeometry partition all 15 printed monomers; condensationKind encodes exactly A-B boronate ester, C-D imine, and E-D carbon-carbon condensation compatibility; reactionCompatibleCombinations filters the full Monomer product; matchesTopology encodes each icon's unordered geometry pair; CellCorrect checks admissibility/freshness or universally excludes every remaining pair. topologyTable_raw_result composes these carriers without rounding."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The controller-bound requested output is a classification with exact_symbolic reporting. topologyTableReportedResult is definitionally the same complete table specification as topologyTableRawResult, and topologyTable_reported_result proves it directly from the raw theorem."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No measurement, approximation, or tolerance applies to this exact-symbolic classification; equality of labels, cells, and finite-set membership is exact."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "Page Q3-3 displays the complete labelled inventory A1-A4, B1-B3, C1-C3, D1-D4, and E1. Its structures support the geometry partition linear2={A2,B2,C1,D4}, trigonalPlanar3={A1,B3,D2,E1}, squarePlanar4={B1,C3}, rhombicPlanar4={A3,C2}, tetrahedral4={A4,D3}, trigonalPlanar6={D1}; the problem text restricts compatibility to the three encoded functional-class pairings. Finset.univ is filtered before any answer row is selected."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=a96be59f2512829c18cb0143b80936472d7255dd800419c10fc1bfd588b8f59a; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0, duration_bucket=under_1m. Nontrivial carriers are reactiveClass, siteGeometry, condensationKind, reactionCompatibleCombinations, matchesTopology, CellCorrect, TopologyTableCorrect, reactionCompatibleCombinations_source_complete, suppliedExamples_are_admissible, topologyTable_raw_result, and topologyTable_reported_result."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "TopologyTable has two total rows over all seven topology constructors, hence exactly fourteen answer cells. TopologyTableCorrect also validates all three supplied examples and checks row cells sequentially against examples already used in each column."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The reviewed theorem has no external binders or hypotheses. Every decisive fact reduces transparently to finite definitions audited against the images and problem restriction, and CandidateDomainComplete is proved rather than assumed."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The conclusion is the requested complete exact-symbolic topology-table classification, not a sentinel, proxy, weakened existential, or unsupported equality. The raw and reported declarations cover the sole requested output."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The model connects printed functional groups to permitted condensation kinds, printed reactive-site geometry to every topology icon, all printed labels to a candidate-independent finite domain, the three givens to suppliedExamples, and each XXX to universal finite exclusion. No chemistry bridge needed by the conclusion is left as an unconstrained proposition."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "all table cells: additional monomer combinations or XXX, respecting supplied examples",
+          "lean_carrier": "IChO2026Problems.IChO2026T3A3.topologyTable_reported_result",
+          "status": "covered",
+          "evidence": "The submission schema_version, record id, official-answer flag, single-output count/order, output id, classification kind, and empty unit are valid. Its raw and display forms agree with each other, with the independently enumerated cells, and with the nontrivial raw/reported Lean proofs; each XXX is supported by universal exclusion rather than assertion.",
+          "output_id": "topology_table",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T3_page-4.png",
+          "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19",
+          "inspected": true,
+          "evidence": "The page visibly contains seven columns in the contracted order, printed givens only under Hexagonal 1, Hexagonal 2, and Kagome, and two blank rows of seven cells, matching the table carrier and suppliedExamples."
+        },
+        {
+          "path": "icho_2026_source/image/T3_page-3.png",
+          "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71",
+          "inspected": true,
+          "evidence": "The page visibly supplies all 15 labelled monomer structures, the A/B/C/D/E functional-group classes, and the seven colored topology diagrams. Counting reactive groups and colored-node incidences supports every siteGeometry and matchesTopology branch used by the proof."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The depicted A boronic acids pair with B polyols for boronate esters, C amines pair with D aldehydes for imines, and E1's active methylene groups pair with D aldehydes for C=C condensation, exactly within the problem's restriction. Reactive-site counts and spatial classes agree with the structures and topology diagrams."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only: page Q3-3 names COF formation restricted to boronate-ester, imine, and C=C condensation families, used here only as non-exclusive compatibility from a monomer pair to a topology. Named-role and direction carriers are reactiveClass, condensationKind, ChemicallyCompatible, and Admissible, with the source locator being the Q3-3 instruction and structures. No yield, completion, sole-product claim, coefficient, phase amount, byproduct absence, or material ledger is asserted."
+        },
+        "formula_mass_consistency": {
+          "status": "not_applicable",
+          "evidence": "The requested classification contains no molecular formula, molar mass, or mass calculation."
+        },
+        "conservation_laws": {
+          "status": "not_applicable",
+          "evidence": "No quantitative material stage or conservation-dependent conclusion is requested or claimed."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "The requested classification is dimensionless and the submission unit is exactly the required empty string."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "There is no numerical value or rounding; the exact_symbolic policy is preserved identically by the raw and reported result carriers."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "All decisive structural information is connectivity and reactive-site geometry. The candidate distinguishes linear, trigonal-planar, square-planar, rhombic-planar, tetrahedral, and six-connected trigonal arrangements as depicted; no stereochemical output is requested."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "Because the prompt requires every blank and penalizes false XXX entries, finite exhaustiveness is outcome-decisive. The domain is generated from every printed label before selection, CandidateDomainComplete proves unordered coverage, and each XXX branch universally covers every admissible pair already used in that column."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The answer rows are concrete outputs, not premises. The candidate domain is the full independent image inventory filtered by transparent chemistry, and correctness of the proposed rows is then proved computationally; there is no singleton domain, free flag, opaque predicate, answer assumption, or reflexive theorem."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a3.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The candidate faithfully formalizes every blank cell, validates the three printed examples, and proves each XXX by exhaustive elimination over the complete image-derived monomer inventory; the exact-symbolic submission and frozen Kimi 3.3 selection agree, and deterministic Lean preflight passed with no sorry.",
+        "evidence": "Both image, submission, and candidate digests match their bindings. Page Q3-3 independently supplies all 15 labelled structures, their functional classes and site geometries, and all seven topology incidence patterns; page Q3-4 supplies the three existing examples and fourteen blanks. The transparent finite model filters every monomer pair by the three permitted condensation families, checks geometry, freshness, and universal exhaustion, and topologyTable_raw_result proves TopologyTableCorrect proposedTopologyTable. topologyTable_reported_result carries the same exact-symbolic result. No candidate-local axiom, sorry, admit, opaque chemical premise, unused hypothesis, numerical tolerance, or reporting conversion is involved.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:04:07.884812Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "a96be59f2512829c18cb0143b80936472d7255dd800419c10fc1bfd588b8f59a",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a3.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:04:07.884860Z",
+    "repair_handoff": {}
+  }
+}

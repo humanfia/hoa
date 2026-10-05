@@ -1,0 +1,1 @@
+import IChO2026Problems.ProblemIcho2026T3A6

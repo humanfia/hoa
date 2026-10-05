@@ -1,0 +1,59 @@
+{
+  "target": "icho_2026_t5_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302149.284878,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t5_a2.lean": "be98051c9fc3f7992b5b670f77793a84851d4f123700ecfd8eb82cbc1bf32c21",
+    "answer.md": "149babcd01ca9a4652bc6febf33dfe384abd18038382508c7ad76323a578861a",
+    "verification.md": "1a7c8b7c68c8b43e8fe923495e9be76b94fd9b3ab2568a7d1203632c03ddab90",
+    "result.json": "72b8cf187ab39ad76af0270e625b52417a90d5a05868817a89d2a017efcd1aab"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t5_a2",
+    "status": "completed",
+    "answer_summary": "One valid PL1 enantiomer is the cardiolipin constitution with identical R residues and R configuration at both peripheral glycerol C2 stereocentres; its mirror is S,S and the mixed assignments are meso. Monoanion Y has one deprotonated phosphate and one protonated phosphate folded around the central glycerol OH, which donates to the anionic phosphate and accepts from the remaining P-OH. The two hydrogen bonds give symmetry-related left- and right-deprotonated canonical forms and make the second deprotonation less favourable.",
+    "theorem_names": [
+      "IChO2026Problems.T5A2.structure_pl1",
+      "IChO2026Problems.T5A2.structure_y",
+      "IChO2026Problems.T5A2.preceding_part_n_is_odd",
+      "IChO2026Problems.T5A2.mixed_diastereomers_are_achiral",
+      "IChO2026Problems.T5A2.y_canonical_forms_reflected_atom_states",
+      "IChO2026Problems.T5A2.y_canonical_forms_reflected_connectivity",
+      "IChO2026Problems.T5A2.positive_stabilization_raises_second_pKa"
+    ],
+    "assumptions": [
+      "The four problem-authorized R labels denote identical hydrocarbon portions of fatty-acid residues; their internal atoms are intentionally abstracted.",
+      "The source calls PL1 a cardiolipin; the standard constitutional definition used is two diacylated peripheral glycerols joined through two phosphate diesters to a central glycerol.",
+      "The problem-stated special stabilization of Y is represented by a strictly positive monoanion stabilization free energy.",
+      "The thermodynamic explanation uses the standard relation deltaG_standard = R*T*ln(10)*pKa with R*T > 0.",
+      "Phosphorus configurations are excluded exactly as directed by the problem."
+    ],
+    "source_gaps": [
+      "The problem gives no numerical definition or lower-bound factor for the qualitative symbol pKa2 >> pKa1, so the formal theorem proves the strict ordering pKa2 > pKa1 and does not invent a quantitative gap."
+    ],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T5_page-1.png icho_2026_source/image/T5_page-2.png icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t5_a2.lean",
+      "grep -nE '(^|[[:space:]])(sorry|admit|unsafe|native_decide)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t5_a2.lean",
+      "python3 -m json.tool result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

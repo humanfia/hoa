@@ -1,0 +1,41 @@
+Let $G$ be a finite group, $H\leq G$, and let $\sigma:G\to\mathcal U(V_\sigma)$ be an irreducible unitary representation of dimension $d_\sigma$.  Define
+$$
+    \sigma(H)=\sum_{h\in H}\sigma(h).
+$$
+Assume
+$$
+    \sum_{h\in H}\chi_\sigma(h)^*\neq0,
+$$
+and define the conditional strong-Fourier state
+$$
+    \widehat\rho_{H,\sigma}
+    =
+    \frac{\sigma(H)^*}
+    {\sum_{h\in H}\chi_\sigma(h)^*}.
+$$
+Prove that
+$$
+    P_{H,\sigma}=\frac1{|H|}\sigma(H)
+$$
+is the orthogonal projector onto the $H$-invariant subspace
+$$
+    V_\sigma^H=\{v\in V_\sigma:\sigma(h)v=v\text{ for all }h\in H\}.
+$$
+Prove that
+$$
+    \widehat\rho_{H,\sigma}
+    =
+    \frac{P_{H,\sigma}^*}{\rank(P_{H,\sigma})}
+$$
+and prove the rank formula
+$$
+    \rank(\widehat\rho_{H,\sigma})
+    =
+    \rank(P_{H,\sigma})
+    =
+    \frac1{|H|}\sum_{h\in H}\chi_\sigma(h).
+$$
+Equivalently, under the conjugated convention in the definition of $\widehat\rho_{H,\sigma}$, the same rank is
+$$
+    \frac1{|H|}\sum_{h\in H}\chi_\sigma(h)^*.
+$$

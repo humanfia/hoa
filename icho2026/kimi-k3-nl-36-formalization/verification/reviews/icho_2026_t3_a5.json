@@ -1,0 +1,751 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The submission and hypothesis-free Lean contract faithfully encode the source-supported cyclo[V-L]\u2086 structure, its explicit atom/bond graph, one-corner/one-edge least repeat, and exact symbolic composition without assuming uniqueness, yield, or reaction completeness.",
+    "updated_at": "2026-09-13T08:53:08Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "f628768ee3fd573602e370832ee5b16dd48f66047e8c4d9d67931e633a906846",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "T3_page-4 identifies C2+D4 as Kagome and T3_page-5 depicts C2, tetrafluoroterephthalaldehyde D4, COF-7, the forward chlorite/phosphate and reductive-ozonolysis sequence, and X. repeatAtomSpec/repeatBonds encode the resulting 1,3,5-substituted aldehyde corner, two para-phenylene-NH arms, and tetrafluoroterephthaloyl edge exactly."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "MacrocycleRepeatRawResult has no hypotheses. Transparent local transformations, fragment ledgers, graph assembly, valence/connectivity checks, motif predicates, and the least-period computation jointly derive every requested structural claim; the two sorry bodies are permitted in semantic formalization Review."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "The carrier records every heavy atom, each attached hydrogen and its single bond after expansion, aromatic/single/double bond orders, substituent positions, formal charge, radical count, and stereochemical status. macrocycleX closes six explicit cells, checks neutral closed valence and connectivity, and separately records outward aldehyde orientation and minimal component period."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The requested classification and formula are exact symbolic outputs; no measured quantity, tolerance, approximation, or numerical rounding enters the derivation."
+        },
+        "branch_orientation": {
+          "status": "not_applicable",
+          "evidence": "There is no alternative computational branch. All depicted arrowheads were audited left-to-right: precursor formation to COF-7, then post-synthetic amide modification, then reductive-ozonolysis degradation to X."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Under the depicted C2+D4 Kagome connectivity and named forward local edits, the explicit neutral-valence graph fixes one aldehyde-bearing half-C2 corner and one oxidized D4 edge per cell. Sixfold closure and the alternating 12-component boundary rule out a one-component period; no source-compatible output-changing countermodel is introduced by free flags, opaque predicates, or a singleton candidate premise."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The source figures supply a Kagome boundary made from alternating cleaved C2 corner halves and D4-derived edges, with six of each and outward aldehydes.",
+          "carrier": "cof7BoundaryComponent, boundaryCornerCount, boundaryEdgeCount, aldehydeOrientation, repeatAtomSpec, repeatBonds",
+          "status": "covered",
+          "evidence": "The black/red source topology and the explicitly drawn C2 and D4 structures support the nontrivial 12-position carrier; the raw result checks both counts, all six orientations, aldehyde motifs, and both amide connections."
+        },
+        {
+          "claim": "The forward source sequence is compatible with imine-to-amide oxidation followed by reductive cleavage of each C2 alkene carbon to a formyl carbon.",
+          "carrier": "cof7RepeatInventory, oxidizeIminesToAmides, reductiveOzonolysis, QualitativeNamedTransformOnly, finalRepeatInventory",
+          "status": "covered",
+          "evidence": "T3_page-5 fixes tail/reagent/head direction. The transparent local rewrites preserve the depicted scaffolds and are used only as qualitative_named_transform_only compatibility, with no yield, exclusivity, or omitted-stream claim."
+        },
+        {
+          "claim": "One post-cleavage corner and one oxidized edge have the exact atom inventory represented by the molecular graph.",
+          "carrier": "c2HalfFormula, d4Formula, cof7CondensedRepeatFormula, postSyntheticRepeatFormula, degradedRepeatFormula, cornerVFormula, edgeLFormula, vlFormula, MolecularGraph.formula",
+          "status": "covered",
+          "evidence": "The independently expanded ledger gives a C19H16N2 half-C2 plus C8H2F4O2 D4, removes two waters for the two imines, adds two amide oxygens and one formyl oxygen, and agrees with a direct V+L recount and the explicit graph."
+        },
+        {
+          "claim": "The complete product is a sixfold cyclic assembly and one V-L pair is its smallest component repeat.",
+          "carrier": "macrocycleRepeat, sixfoldCyclicAssembly, macrocycleX, interCellBonds, IsBoundaryPeriod, IsLeastBoundaryPeriod",
+          "status": "covered",
+          "evidence": "The raw proposition checks six inter-cell single bonds, closed neutral valence/connectivity, sixfold formula scaling, and least positive boundary period 2 for the alternating V,L source pattern."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t3_a5.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t3_a5",
+        "source_record_sha256": "c3343e834df52b6b1dc8eb5ac1eea16040a03b9d205de90d38bdcd3584b38f8a",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a5.answer.json",
+        "answer_submission_sha256": "cc8a2ad1a9150cc7462b898ebb3c6455abda1ffa8362e0a6e971eb354c27236b",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t3_a5.source.json",
+        "source_report_sha256": "2f3364bc5433e0ab90326a86e3de8a97e127d9c2ba13ef2b08f6ccf02a257336",
+        "candidate": "IChO2026Problems/problem_icho_2026_t3_a5.lean",
+        "preflight_sha256": "8c93edb9d9dbe7aeab54f6d7a1c8f8a5be318e59db82ad30136c18c938f0a9f2",
+        "candidate_sha256": "f628768ee3fd573602e370832ee5b16dd48f66047e8c4d9d67931e633a906846",
+        "question_sha256": "25203c3894c96fad38c8b10ace0a1fd1ffe62ce46a22e92c049a6bf920d52464",
+        "shared_context_sha256": "a527485a11ffabb4ad432da897ac9eab3e77feb5aac3a831d2688db021ff032f",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "86ee07901235a981fdce051bd7f82d14658b5e1f00bdfea08d1695dfe0ddd159",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T3_page-5.png",
+            "sha256": "87bae68e38447e58b2c48efeb3ef2d9fdfbbb345b28e3d137fa66ab4bf438f7d"
+          },
+          {
+            "path": "icho_2026_source/image/T3_page-4.png",
+            "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "02aa0b4e4c4d4840d7f304a2df53a632d57d1c3382c93ec6a2ca443659347066",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "macrocycle_repeat"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t3_a5",
+          "path": ".archon/provided_answer_drafts/Q3.md",
+          "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t3_a5.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t3_a5",
+          "source_record_sha256": "c3343e834df52b6b1dc8eb5ac1eea16040a03b9d205de90d38bdcd3584b38f8a",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a5.answer.json",
+          "answer_submission_sha256": "cc8a2ad1a9150cc7462b898ebb3c6455abda1ffa8362e0a6e971eb354c27236b",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t3_a5.source.json",
+          "source_report_sha256": "2f3364bc5433e0ab90326a86e3de8a97e127d9c2ba13ef2b08f6ccf02a257336",
+          "candidate": "IChO2026Problems/problem_icho_2026_t3_a5.lean",
+          "preflight_sha256": "8c93edb9d9dbe7aeab54f6d7a1c8f8a5be318e59db82ad30136c18c938f0a9f2",
+          "candidate_sha256": "f628768ee3fd573602e370832ee5b16dd48f66047e8c4d9d67931e633a906846",
+          "question_sha256": "25203c3894c96fad38c8b10ace0a1fd1ffe62ce46a22e92c049a6bf920d52464",
+          "shared_context_sha256": "a527485a11ffabb4ad432da897ac9eab3e77feb5aac3a831d2688db021ff032f",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "86ee07901235a981fdce051bd7f82d14658b5e1f00bdfea08d1695dfe0ddd159",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T3_page-5.png",
+              "sha256": "87bae68e38447e58b2c48efeb3ef2d9fdfbbb345b28e3d137fa66ab4bf438f7d"
+            },
+            {
+              "path": "icho_2026_source/image/T3_page-4.png",
+              "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "02aa0b4e4c4d4840d7f304a2df53a632d57d1c3382c93ec6a2ca443659347066",
+            "node_count": 5,
+            "edge_count": 4,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "macrocycle_repeat"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t3_a5",
+            "path": ".archon/provided_answer_drafts/Q3.md",
+            "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, forward arrow certificate, topology, fragment expansion, atom ledger, and least-period interpretation were frozen from the two bound problem images and inline problem text before opening generated outputs. The sealed Kimi draft was then used only for the expressly authorized fidelity comparison and was not treated as a source axiom or official answer."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The end-to-end exact symbolic chain is carried by c2HalfFormula/d4Formula through condensation and local oxygen edits, independently recombined by cornerVFormula+edgeLFormula, matched to repeatHeavyGraph.formula, and closed by sixfoldCyclicAssembly with IsLeastBoundaryPeriod 2."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy requires exact_symbolic reporting; the raw and display submission express the same connected structure and MacrocycleRepeatReportedResult is definitionally the raw proposition."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance, measured interval, decimal display, or rounding is used. The exact graph, integer counts, component period, and molecular formula are compared by equality."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No output-decisive finite candidate universe is used. The verb Draw requests a concrete source-supported witness, not global uniqueness; the only finite carrier is the directly depicted 12-position pore boundary used for internal repeat minimality."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=f628768ee3fd573602e370832ee5b16dd48f66047e8c4d9d67931e633a906846; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=2, duration_bucket=under_1m. Nontrivial result declarations are MacrocycleRepeatRawResult, macrocycle_repeat_raw_result, MacrocycleRepeatReportedResult, and macrocycle_repeat_reported_result, backed by macrocycleRepeat and macrocycleX."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The statement provides the requested concrete smallest-repeat drawing as a labelled molecular graph and sixfold macrocycle assembly. It does not strengthen Draw into global uniqueness or claim quantitative reaction completion."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "Both result theorems are closed propositions with no candidate-injected hypotheses. All inputs are transparent structures or source-mapped inventories, and their decisive equalities are computed within the raw result."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The sole submission output has the required id, classification kind, empty unit, and exact-symbolic policy; its raw/display descriptions agree with the independently derived graph and the reported Lean theorem."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are covered: visual C2/D4/Kagome component mapping, forward local transformation compatibility, complete atom/bond and formula ledger, sixfold cyclic closure, and least-period minimality. No dormant empirical bridge is needed."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "smallest repeat unit of macrocycle X, with minimality justification",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T3A5.macrocycle_repeat_reported_result",
+            "status": "covered",
+            "evidence": "The sole answer entry has the exact id/kind/unit and an exact connected-structure description; the named theorem carries the graph, local motifs, atom count/formula agreement, sixfold closure, and least boundary period, with no operational sentinel.",
+            "output_id": "macrocycle_repeat",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T3_page-5.png",
+            "sha256": "87bae68e38447e58b2c48efeb3ef2d9fdfbbb345b28e3d137fa66ab4bf438f7d",
+            "inspected": true,
+            "evidence": "Q3-5 depicts black C2 as one four-connected cleavable node: two identical 120\u00b0 1,3,5-C6H3 halves, each bearing two para-aminophenyl arms, joined by CH=CH. Red D4 is linear two-connected OHC-C6F4-CHO. The central Kagome boundary yields six half-C2 corners and six D4 links after cleavage. A selected V-L open cell has one internal and two boundary amide connections; six cells close with no terminal cap. OHC expands to CHO at its carbon attachment, each p-C6H4-NH arm retains its N, and each D4 carbonyl belongs to L."
+          },
+          {
+            "path": "icho_2026_source/image/T3_page-4.png",
+            "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19",
+            "inspected": true,
+            "evidence": "The printed topology table places C2+D4 specifically under Kagome, confirming the topology used on Q3-5. The page also states the black/red building-block convention in shared context; no additional fragment, cap, bracket, or cross-boundary atom for X is depicted here."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "C2 supplies two 120\u00b0 diamine corners joined at a cleavable alkene; D4 supplies a para tetrafluorodialdehyde edge. Imine formation, chlorite/phosphate amide conversion, and reductive ozonolysis give the encoded neutral aldehyde-bearing V and diamide L connectivity while retaining both aromatic scaffolds."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only. Arrow 1 points from C2+D4 with AcOH at the tail/shaft to black/red imine-linked COF-7 at the head, preserving both distinctive aryl scaffolds. Arrow 2 points from COF-7 with NaClO2/NaH2PO4 to an unnamed amide-modified COF intermediate, preserving C2's alkene and D4's C6F4 core. Arrow 3 points from that intermediate with 1) O3 and 2) Me2S to X, splitting each C2 CH=CH into two CHO-ended V corners while L remains amide-linked. Compatibility carriers are cof7CondensedRepeatFormula, cof7RepeatInventory, QualitativeNamedTransformOnly, oxidizeIminesToAmides, reductiveOzonolysis, and finalRepeatInventory. Omitted protocols, coefficients, phases, byproducts, yields, completion, and sole-product status remain unknown."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "Expanded boundaries: OHC contributes C1H1O1 with its carbon in V; each p-C6H4-NH arm contributes C6H5N with N in V and an outgoing N-C(O) bond; each L carbonyl carbon/oxygen belongs to L and C6F4 has no H. Thus V=C19H14N2O and L=C8F4O2, giving the exact pair formula. The independent precursor ledger C19H16N2+C8H2F4O2-2H2O+2O+O reaches the same composition; no molar mass is claimed."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "Only local atom/composition compatibility is used, not a quantitative material-stage balance. The two condensations remove exactly two waters, imine-to-amide conversion retains C/H/F/N while installing two O atoms, and cleavage assigns one new formyl O to each half-alkene carbon; graph and direct-fragment ledgers agree atom-for-atom."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "The requested output is a classification/structure and correctly carries the empty unit. Molecular-formula subscripts, atom counts, and component periods are dimensionless exact integers."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "There is no numerical measurement or requested precision. Exact-symbolic raw and display values agree, so significant-figure and tie rules are unused."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "repeatBonds explicitly fixes the 1,3,5 central substitution, para phenylene-N connectivity, aldehyde C=O, both amide N-C(O) motifs, para D4 carbonyl positions, four fluorine substituents, aromatic rings, and cyclic cross-cell bonds. NeutralClosedValence checks zero heavy-atom charge/radicals and no stereocentre or surviving alkene requires a descriptor; all six aldehydes are separately marked outward."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "Draw asks for one concrete evidence-supported structure, not an exhaustive open-universe classification. The formalization makes no global uniqueness claim; IsLeastBoundaryPeriod 2 proves only the requested internal minimality of the alternating depicted boundary."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "No hypothesis assumes X, its formula, its component count, or its period. Concrete definitions are checked through a non-singleton 12-position topology, independent precursor and fragment ledgers, 36-site graph formula, motif predicates, sixfold closure, connected neutral valence, and a least-period computation; the reported theorem is not reflexive or premise-driven."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "id": "macrocycle_repeat",
+            "kind": "classification",
+            "source_requirement": "smallest repeat unit of macrocycle X, with minimality justification",
+            "quantity_definition": "The neutral molecular-graph motif containing one aldehyde-bearing 1,3,5-trisubstituted corner V and one tetrafluoroterephthaloyl diamide edge L whose sixfold cyclic assembly is X, with [V,L] proved the least boundary-component period.",
+            "process_scope": {
+              "kind": "overall",
+              "description": "final structure after the depicted COF-7 formation, post-synthetic oxidation, and reductive-ozonolysis sequence"
+            },
+            "basis": {
+              "status": "not_applicable",
+              "numerator": "not_applicable",
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable"
+            },
+            "constants": [],
+            "dependencies": [],
+            "branch_conditions": [],
+            "unit": "",
+            "raw_result": {
+              "value_or_expression": "X = cyclo[V-L]\u2086, V = OHC-1,3,5-C\u2086H\u2083(-p-C\u2086H\u2084-NH-)\u2082, L = -C(O)-C\u2086F\u2084-C(O)-; the least repeat V-L is C\u2082\u2087H\u2081\u2084F\u2084N\u2082O\u2083 and bears one outward formyl group.",
+              "exact_unrounded": true,
+              "derivation": "Split each depicted C2 at its central CH=CH after preserving the two amide-linked para-phenylene arms, retain each oxidized D4 as a tetrafluoroterephthaloyl edge, follow the 12-component Kagome pore boundary, and independently add V = C19H14N2O to L = C8F4O2."
+            },
+            "reporting": {
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              },
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "application": "Return the exact connected structure and symbolic formula; no numeric rounding or tolerance is applied."
+            },
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T3A5.cof7RepeatInventory",
+                "IChO2026Problems.ProblemIcho2026T3A5.depictedPostSyntheticReagents",
+                "IChO2026Problems.ProblemIcho2026T3A5.depictedDegradationReagents",
+                "IChO2026Problems.ProblemIcho2026T3A5.cof7BoundaryComponent"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T3A5.QualitativeNamedTransformOnly",
+                "IChO2026Problems.ProblemIcho2026T3A5.oxidizeIminesToAmides",
+                "IChO2026Problems.ProblemIcho2026T3A5.reductiveOzonolysis",
+                "IChO2026Problems.ProblemIcho2026T3A5.sixfoldCyclicAssembly",
+                "IChO2026Problems.ProblemIcho2026T3A5.IsLeastBoundaryPeriod",
+                "IChO2026Problems.ProblemIcho2026T3A5.MolecularGraph.formula",
+                "IChO2026Problems.ProblemIcho2026T3A5.MolecularGraph.WellFormedClosed"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T3A5.macrocycleRepeat",
+                "IChO2026Problems.ProblemIcho2026T3A5.macrocycleX",
+                "IChO2026Problems.ProblemIcho2026T3A5.MacrocycleRepeatRawResult",
+                "IChO2026Problems.ProblemIcho2026T3A5.macrocycle_repeat_raw_result"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T3A5.MacrocycleRepeatReportedResult",
+                "IChO2026Problems.ProblemIcho2026T3A5.macrocycle_repeat_reported_result"
+              ]
+            },
+            "semantic_card_comparison": {
+              "status": "matched",
+              "evidence": "The card requests one exact structure witness and minimal repeat, and makes no uniqueness, exhaustive-domain, numerical, or unit claim; all fields match the source-first interpretation."
+            },
+            "lean_statement_comparison": {
+              "status": "matched",
+              "evidence": "The named carriers expose the exact graph, source-direction compatibility, component and atom ledgers, sixfold closure, formula, outward formyls, and least positive period required by the source-first derivation."
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-4.png#kagome-C2-D4-assignment"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-5.png#C2-D4-COF7-X-scheme"
+              }
+            ],
+            "evidence": "A source-only topology and atom recount performed before artifact inspection agrees with the submission and all named Lean carriers."
+          }
+        ]
+      },
+      "candidate_sha256": "f628768ee3fd573602e370832ee5b16dd48f66047e8c4d9d67931e633a906846"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a5.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The submission and hypothesis-free Lean contract faithfully encode the source-supported cyclo[V-L]\u2086 structure, its explicit atom/bond graph, one-corner/one-edge least repeat, and exact symbolic composition without assuming uniqueness, yield, or reaction completeness.",
+        "reviewed_at": "2026-09-13T08:53:08Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "f628768ee3fd573602e370832ee5b16dd48f66047e8c4d9d67931e633a906846",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a5.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 2,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The exact-symbolic submission is faithfully represented by an explicit atom- and bond-labelled cyclic molecular graph; the source-derived component ledger, qualitative reaction trace, closed-valence certificate, sixfold closure, and least positive boundary-period proof all agree with the two bound figures and the sealed Kimi 3.5 draft.",
+    "evidence": "The deterministic preflight passed with compiles=true, returncode=0, sorry_count=0. The reviewed theorem unfolds to MacrocycleRepeatRawResult and is proved without hypotheses, sorry, admit, or local axioms; its nontrivial certificates include graph formula and expanded-atom checks, WellFormedClosed, IsLeastBoundaryPeriod, and aldehyde/amide motif proofs.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "fee3a0c2e921debd08f37284d346a627573dfc4d62b564a45aaa3e628e1e93b5",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t3_a5.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t3_a5",
+      "source_record_sha256": "c3343e834df52b6b1dc8eb5ac1eea16040a03b9d205de90d38bdcd3584b38f8a",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a5.answer.json",
+      "answer_submission_sha256": "cc8a2ad1a9150cc7462b898ebb3c6455abda1ffa8362e0a6e971eb354c27236b",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t3_a5.source.json",
+      "source_report_sha256": "2f3364bc5433e0ab90326a86e3de8a97e127d9c2ba13ef2b08f6ccf02a257336",
+      "candidate": "IChO2026Problems/problem_icho_2026_t3_a5.lean",
+      "preflight_sha256": "3893dcf368717ac30805550456a903f8d20c9a4056357fc6987795fd4d8e6c4c",
+      "candidate_sha256": "fee3a0c2e921debd08f37284d346a627573dfc4d62b564a45aaa3e628e1e93b5",
+      "question_sha256": "25203c3894c96fad38c8b10ace0a1fd1ffe62ce46a22e92c049a6bf920d52464",
+      "shared_context_sha256": "a527485a11ffabb4ad432da897ac9eab3e77feb5aac3a831d2688db021ff032f",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "86ee07901235a981fdce051bd7f82d14658b5e1f00bdfea08d1695dfe0ddd159",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T3_page-5.png",
+          "sha256": "87bae68e38447e58b2c48efeb3ef2d9fdfbbb345b28e3d137fa66ab4bf438f7d"
+        },
+        {
+          "path": "icho_2026_source/image/T3_page-4.png",
+          "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "02aa0b4e4c4d4840d7f304a2df53a632d57d1c3382c93ec6a2ca443659347066",
+        "node_count": 5,
+        "edge_count": 4,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "macrocycle_repeat"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t3_a5",
+        "path": ".archon/provided_answer_drafts/Q3.md",
+        "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t3_a5.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t3_a5",
+        "source_record_sha256": "c3343e834df52b6b1dc8eb5ac1eea16040a03b9d205de90d38bdcd3584b38f8a",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a5.answer.json",
+        "answer_submission_sha256": "cc8a2ad1a9150cc7462b898ebb3c6455abda1ffa8362e0a6e971eb354c27236b",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t3_a5.source.json",
+        "source_report_sha256": "2f3364bc5433e0ab90326a86e3de8a97e127d9c2ba13ef2b08f6ccf02a257336",
+        "candidate": "IChO2026Problems/problem_icho_2026_t3_a5.lean",
+        "preflight_sha256": "3893dcf368717ac30805550456a903f8d20c9a4056357fc6987795fd4d8e6c4c",
+        "candidate_sha256": "fee3a0c2e921debd08f37284d346a627573dfc4d62b564a45aaa3e628e1e93b5",
+        "question_sha256": "25203c3894c96fad38c8b10ace0a1fd1ffe62ce46a22e92c049a6bf920d52464",
+        "shared_context_sha256": "a527485a11ffabb4ad432da897ac9eab3e77feb5aac3a831d2688db021ff032f",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "86ee07901235a981fdce051bd7f82d14658b5e1f00bdfea08d1695dfe0ddd159",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T3_page-5.png",
+            "sha256": "87bae68e38447e58b2c48efeb3ef2d9fdfbbb345b28e3d137fa66ab4bf438f7d"
+          },
+          {
+            "path": "icho_2026_source/image/T3_page-4.png",
+            "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "02aa0b4e4c4d4840d7f304a2df53a632d57d1c3382c93ec6a2ca443659347066",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "macrocycle_repeat"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t3_a5",
+          "path": ".archon/provided_answer_drafts/Q3.md",
+          "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The scientific and structural audit used only the inline problem evidence and both digest-verified bound images. The digest-verified sealed Kimi draft was used solely for the explicitly authorized fidelity comparison, never as a source fact or chemistry axiom; no official answer, rubric, prior proof, or unlisted artifact was consulted."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "The transparent chain c2HalfFormula plus d4Formula through cof7CondensedRepeatFormula, postSyntheticRepeatFormula, and degradedRepeatFormula is cross-checked independently by cornerVFormula plus edgeLFormula, repeatHeavyGraph.formula, macrocycleX.formula, the three motif families, and two_isLeastBoundaryPeriod."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The requested output is a drawing/classification with exact_symbolic reporting; MacrocycleRepeatReportedResult is definitionally the raw structural proposition, so no rounding or formatting transformation alters the result."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No measurement, approximation, or tolerance applies to this exact symbolic structure output; all atom counts, bond orders, component counts, and periodicity claims are exact equalities."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "No answer-shaped exhaustive candidate domain is used. The concrete witness is built transparently from the depicted C2 half-corners, D4-derived edges, Kagome boundary, and the named local oxidation/cleavage edits; the source asks for a structure witness and least repeat, not an open-world exhaustive classification."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=fee3a0c2e921debd08f37284d346a627573dfc4d62b564a45aaa3e628e1e93b5; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial carriers are macrocycleRepeat, macrocycleX, MacrocycleRepeatRawResult, macrocycleX_wellFormedClosed, two_isLeastBoundaryPeriod, macrocycle_repeat_raw_result, and macrocycle_repeat_reported_result."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The theorem exposes an explicit molecular graph rather than a string, includes every heavy atom and attached hydrogen, bond order, neutral charge/radical state, cyclic ports, component counts, full-ring closure, formula checks, radial formyl orientation, and primitive-period minimality. No requested condition is weakened."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The reviewed result has no hypotheses or externally selectable flags. Its reagent roles, monomer fragments, connectivity, and boundary pattern are transparent finite definitions audited against the two source figures; no prior-part result or unauthorized scientific axiom is assumed."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The single exact-symbolic output is carried by macrocycleRepeat and macrocycleX and certified by MacrocycleRepeatRawResult/ReportedResult; it matches the submission\u2019s repeat fragment, cyclic assembly, connectivity, composition, orientation, and minimality claims."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The source bridge names both depicted reagent sequences and their direction, models only local imine-to-amide and reductive alkene-to-formyl compatibility, traces the C2/D4 component formulas, realizes the resulting atom-level graph, proves its closed valence and motifs, and connects the alternating Kagome boundary to a least positive period. It makes no yield, sole-product, phase, or unprinted-stream claim."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "smallest repeat unit of macrocycle X, with minimality justification",
+          "lean_carrier": "macrocycleRepeat; macrocycleX; MacrocycleRepeatRawResult; macrocycle_repeat_reported_result",
+          "status": "covered",
+          "evidence": "The submission has exactly one nonempty classification output in the required position with the empty unit. Its raw and display descriptions are chemically equivalent and are both matched by the explicit graph, cyclic assembly, component-period proof, formula carrier, and orientation/motif certificates without relying on either submitted string as a premise.",
+          "output_id": "macrocycle_repeat",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T3_page-5.png",
+          "sha256": "87bae68e38447e58b2c48efeb3ef2d9fdfbbb345b28e3d137fa66ab4bf438f7d",
+          "inspected": true,
+          "evidence": "The figure visibly supplies the four-connected C2 structure with its central alkene and four para-amino arms, tetrafluoro dialdehyde D4, the C2+D4 COF-7 Kagome drawing, buffered chlorite post-modification arrow, ordered ozone/dimethyl-sulfide degradation arrow, and the request to draw X\u2019s smallest repeat."
+        },
+        {
+          "path": "icho_2026_source/image/T3_page-4.png",
+          "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19",
+          "inspected": true,
+          "evidence": "The preceding page visibly places C2+D4 under the Kagome topology and establishes the black/red building-block convention used to trace the page-5 network; its unmarked answer area supplies no historical solution."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The C2 alkene separates two equivalent 120-degree two-arm halves, D4 is the linear tetrafluoro dialdehyde edge, imine oxidation retains the C-N skeleton as an amide, and reductive ozonolysis converts each retained alkene half into a formyl terminus. The explicit graph realizes exactly those local edits and the hexagonal Kagome-pore boundary."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only. The source arrows are COF-7 --NaClO2/NaH2PO4--> post-modified framework --1) O3, 2) Me2S--> X on T3_page-5.png. Named role/direction carriers are depictedPostSyntheticReagents and depictedDegradationReagents; compatibility carriers are QualitativeNamedTransformOnly, cof7RepeatInventory, oxidizeIminesToAmides, reductiveOzonolysis, finalRepeatInventory, the local formula carriers, and the output graph/motif certificates. No quantitative material stage, yield, completeness, sole-product, phase, or omitted-stream ledger is asserted."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "The C2-half and D4 source-component ledgers, the post-modification and cleavage edits, the independent corner/edge recombination, the explicit repeat graph formula, expanded atom cardinality, and sixfold graph scaling all compute to the same exact composition. No molar mass is requested or claimed."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "For the limited candidate-structure check, condensation bookkeeping removes the depicted waters, imine-to-amide conversion adds the two local oxygens without changing the skeleton count, and reductive cleavage adds the formyl oxygen on the retained alkene half; the independently enumerated output graph confirms every retained atom. The qualitative review does not infer a complete process material balance."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "The requested classification has an empty unit, exactly matching the submission and Lean carrier; all supporting quantities are dimensionless finite atom, bond, component, or period counts."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The output is exact symbolic. There is no decimal display, significant-figure operation, intermediate rounding, or tolerance to audit."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "repeatAtomSpec and repeatBonds explicitly bind elements, attached hydrogens, formal charges, radical counts, aromatic/single/double bond orders, 1,3,5 central-ring substitution, para arms, tetrafluoro edge substitution, amide and aldehyde motifs, and ring-closing cross-cell bonds. No requested or chemically surviving stereocentre is omitted; all applicable descriptors are none."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "For the requested smallest repeat, cof7BoundaryComponent records the source-traced alternating twelve-component boundary and two_isLeastBoundaryPeriod proves that the least positive rotational component period is two; sixfold closure then realizes the whole connected ring. The source asks for a concrete drawing, so no open-world molecule catalogue is required."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The candidate is an explicit transparent witness, not a hypothesis, singleton search domain, opaque predicate, free Bool/Prop field, or reflexive string equality. Its source-component ledger, graph formula, valence, connectivity, motifs, full assembly, and minimality are independently checked by kernel-reducible certificates."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a5.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The exact-symbolic submission is faithfully represented by an explicit atom- and bond-labelled cyclic molecular graph; the source-derived component ledger, qualitative reaction trace, closed-valence certificate, sixfold closure, and least positive boundary-period proof all agree with the two bound figures and the sealed Kimi 3.5 draft.",
+        "evidence": "The deterministic preflight passed with compiles=true, returncode=0, sorry_count=0. The reviewed theorem unfolds to MacrocycleRepeatRawResult and is proved without hypotheses, sorry, admit, or local axioms; its nontrivial certificates include graph formula and expanded-atom checks, WellFormedClosed, IsLeastBoundaryPeriod, and aldehyde/amide motif proofs.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:40:57.939507Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "fee3a0c2e921debd08f37284d346a627573dfc4d62b564a45aaa3e628e1e93b5",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a5.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "1_to_5m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:40:57.939537Z",
+    "repair_handoff": {}
+  }
+}

@@ -1,0 +1,713 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The requested balanced_bz_equation is faithfully encoded and independently derivable from the source-stated redox roles, atom/charge conservation, and primitive equation normalization. The sealed Kimi draft SHA-256 4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51, subpart 2.1, is preserved with no discrepancy.",
+    "updated_at": "2026-09-13T08:37:20Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "b3ef1f314b34e93677d581e29fecfa0a83a8677d7cbb313303a2cdff55fe383b",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "entityData expands the printed malonic-acid and bromate formulae; HasStatedConversionRoles fixes MA\u2192CO2 and BrO3\u2212\u2192Br\u2212; InternalEntitiesCancel, NetReduced, and the reported zero net coefficient encode Ce(IV)'s catalytic omission from the net equation."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Transparent acidic half-reactions are separately atom/charge balanced, their electron transfers are matched at the least positive scales, and cancelCommon yields the reported overall carrier. Independently, Br and C balances fix product coefficients relative to reactants, while H/O and charge give 3a=4b and the water coefficient; coprimality fixes the primitive representative."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "The model names every outcome-decisive species and bookkeeping entity, tracks H/C/O/Br/Ce atom counts and formal charge, fixes reaction direction, cancels common/internal entities, normalizes scalar multiples, and exposes both raw and reported result declarations."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The output is an exact symbolic stoichiometric equation; the source supplies no measured input, uncertainty, tolerance, or requested rounding."
+        },
+        "branch_orientation": {
+          "status": "not_applicable",
+          "evidence": "This subquestion has one non-branching overall transformation and no conditional choice, kinetic branch, or ambiguous reaction-arrow panel."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Within the source-bounded net-reaction domain, bromine balance equates bromide and bromate coefficients, carbon balance makes CO2 triple MA, charge plus net reduction removes net proton, and H/O balance forces 3a=4b. Positive coprime reactant coefficients therefore leave one normalized vector and no source-compatible countermodel."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The printed species have the atom compositions and formal charges used by the balance ledger.",
+          "carrier": "IChO2026Problems.ProblemIChO2026T2A1.entityData; atomCount; formalCharge",
+          "status": "covered",
+          "evidence": "CH2(COOH)2 expands transparently to C3H4O4; bromate, bromide, CO2, water, proton, electron, and Ce(IV) data are explicitly reducible and use ordinary formula/charge bookkeeping."
+        },
+        {
+          "claim": "The source-stated conversion directions and zero-net catalyst role constrain the overall reaction.",
+          "carrier": "IChO2026Problems.ProblemIChO2026T2A1.HasStatedConversionRoles; InternalEntitiesCancel; NetReduced; netCoefficient",
+          "status": "covered",
+          "evidence": "The carriers require the named reactants/products on the correct sides and make electron and Ce(IV) coefficients cancel before the reduced net result."
+        },
+        {
+          "claim": "Atom and charge conservation plus primitive normalization determine the source-bounded net stoichiometry.",
+          "carrier": "IChO2026Problems.ProblemIChO2026T2A1.AtomBalanced; ChargeBalanced; HasPrimitiveReactantCoefficients; IsAdmissibleOverallReaction",
+          "status": "covered",
+          "evidence": "These transparent relations expose all decisive element/charge equalities; coprimality only chooses the conventional least integer representation and does not add a chemical outcome."
+        },
+        {
+          "claim": "The half-reaction construction derives and binds the exact raw and reported equation.",
+          "carrier": "IChO2026Problems.ProblemIChO2026T2A1.half_reactions_balanced; electron_transfer_scales_primitive; half_reactions_derive_overall; balanced_bz_equation_raw; balanced_bz_equation_reported",
+          "status": "covered",
+          "evidence": "The oxidation and reduction carriers balance independently, least positive electron-transfer scales are proved, common species are cancelled, and the resulting coefficients are exposed without theorem hypotheses."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t2_a1.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t2_a1",
+        "source_record_sha256": "3c6a7e8f1d1828579e3f2c40955f6df4fc8887ed5f5364df4dd2270a8674b3d0",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a1.answer.json",
+        "answer_submission_sha256": "937fdcf6d8d5dc182aa3f1bef45268502aaf65ec3deeb893f85d6973c54a19c4",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t2_a1.source.json",
+        "source_report_sha256": "a758493556a6997d464b8e819601bb655dcb466e21bf6860265f31dd9461ca5f",
+        "candidate": "IChO2026Problems/problem_icho_2026_t2_a1.lean",
+        "preflight_sha256": "857a7f2588c62f0a5ed4ebf3c0be1d26544646fca371fdf1bb2046d319445c60",
+        "candidate_sha256": "b3ef1f314b34e93677d581e29fecfa0a83a8677d7cbb313303a2cdff55fe383b",
+        "question_sha256": "1d988b715353b1f3fe1ccb31aa1a81afdb40bf780d3bbc94d6643526e093cc9c",
+        "shared_context_sha256": "8e08f1a721afa04e0b8b8350279ebda6fb687a4f72ed2b0154b88e781c1aa2bb",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "0ecfb34b71da4a33a499bbcd17c7999bcdea3c2c3fc479ea1e47d4f97d8c6021",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T2_page-1.png",
+            "sha256": "0b9e4e1edf255a14c8def4465de188b6cbd72b9df782a7d7efa32528b15c5ff2"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "aaf14cd37c2f43ab29c48a59b7a041103168f764b126854b37b2e71b7a27b697",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "balanced_bz_equation"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t2_a1",
+          "path": ".archon/provided_answer_drafts/Q2.md",
+          "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t2_a1.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t2_a1",
+          "source_record_sha256": "3c6a7e8f1d1828579e3f2c40955f6df4fc8887ed5f5364df4dd2270a8674b3d0",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a1.answer.json",
+          "answer_submission_sha256": "937fdcf6d8d5dc182aa3f1bef45268502aaf65ec3deeb893f85d6973c54a19c4",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t2_a1.source.json",
+          "source_report_sha256": "a758493556a6997d464b8e819601bb655dcb466e21bf6860265f31dd9461ca5f",
+          "candidate": "IChO2026Problems/problem_icho_2026_t2_a1.lean",
+          "preflight_sha256": "857a7f2588c62f0a5ed4ebf3c0be1d26544646fca371fdf1bb2046d319445c60",
+          "candidate_sha256": "b3ef1f314b34e93677d581e29fecfa0a83a8677d7cbb313303a2cdff55fe383b",
+          "question_sha256": "1d988b715353b1f3fe1ccb31aa1a81afdb40bf780d3bbc94d6643526e093cc9c",
+          "shared_context_sha256": "8e08f1a721afa04e0b8b8350279ebda6fb687a4f72ed2b0154b88e781c1aa2bb",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "0ecfb34b71da4a33a499bbcd17c7999bcdea3c2c3fc479ea1e47d4f97d8c6021",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T2_page-1.png",
+              "sha256": "0b9e4e1edf255a14c8def4465de188b6cbd72b9df782a7d7efa32528b15c5ff2"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "aaf14cd37c2f43ab29c48a59b7a041103168f764b126854b37b2e71b7a27b697",
+            "node_count": 5,
+            "edge_count": 4,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "balanced_bz_equation"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t2_a1",
+            "path": ".archon/provided_answer_drafts/Q2.md",
+            "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The bound image and inline problem evidence were inspected and the atom/charge balance and quantifier were fixed before the untrusted submission or Lean candidate was opened. The sealed Kimi draft was used only afterward for authorized fidelity comparison, never as a premise."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The independent symbolic ledger derives product relations from Br/C balance, the reactant ratio from H/O and charge balance, and the conventional primitive representative; BalancedBZEquationRaw and balanced_bz_equation_raw expose the same end-to-end result."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy specifies exact_symbolic reporting; the raw and display strings differ only by typographic subscripts, superscripts, and arrow glyphs."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance, interval, measured quantity, or rounding is used; exact integer coefficients are compared symbolically under the bound policy."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "Entity is a transparent finite ledger containing the two source-named reacting species, their two named products, balancing water/proton/electron, and the named Ce(IV) catalyst. It is used only for the source-bounded net equation, not open-world chemical uniqueness."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=b3ef1f314b34e93677d581e29fecfa0a83a8677d7cbb313303a2cdff55fe383b; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=5, duration_bucket=under_1m. Nontrivial result declarations: half_reactions_derive_overall, balanced_bz_equation_raw, and balanced_bz_equation_reported."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The main declaration reports exactly the overall net ionic equation. Its uniqueness conjunct is confined to primitive representatives in the transparent source-bounded entity domain, so it is normalization rather than an unauthorized global chemical-uniqueness claim."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The result theorems have no hypotheses or candidate-local axioms. Species data and all balance, direction, cancellation, and primitive relations are transparent definitions ultimately checked by atom/charge arithmetic."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The sole concrete formula output is present in the answer sidecar and is mapped to BalancedBZEquationReported and balanced_bz_equation_reported; neither carrier is a blocked or unresolved sentinel."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Every decisive bridge\u2014formula/charge data, source conversion roles, catalyst cancellation, atom/charge conservation, primitive normalization, half-reaction scaling/cancellation, and exact reporting\u2014is named in bridge_obligations and covered."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "overall balanced BZ reaction with atoms and charge conserved",
+            "lean_carrier": "IChO2026Problems.ProblemIChO2026T2A1.balanced_bz_equation_reported",
+            "status": "covered",
+            "evidence": "The one submission entry has the required id/kind/unit/order; its raw and display formulae match the independently derived primitive net equation, and the named theorem carries its exact reported coefficients and zero-net catalyst statement.",
+            "output_id": "balanced_bz_equation",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T2_page-1.png",
+            "sha256": "0b9e4e1edf255a14c8def4465de188b6cbd72b9df782a7d7efa32528b15c5ff2",
+            "inspected": true,
+            "evidence": "The full page visibly states the reacting mixture and T2.1 conversion roles (MA to CO2, BrO3\u2212 to Br\u2212, Ce(IV) catalyst). It contains no molecular-structure/repeat-unit reaction figure relevant to this output; the oscillation graph supplies no equation component or topology."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The candidate correctly treats printed CH2(COOH)2 as C3H4O4, bromate and bromide with charge \u22121, CO2 and water as neutral, acidic protons/electrons as cancellable bookkeeping, and Ce(IV) as zero net catalyst."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "quantitative_material_stage: oxidation and reduction half-reactions are the two construction stages, followed by common-species cancellation. The decisive domain is BrO3\u2212, CH2(COOH)2, Br\u2212, CO2, H2O, H+, e\u2212, and zero-net Ce(IV); totalAtoms, totalCharge, AtomBalanced, ChargeBalanced, combineScaled, cancelCommon, and half_reactions_derive_overall expose the complete used atom/charge ledger with no anonymous stream."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "The printed malonic-acid abbreviation is expanded atom-by-atom as C3H4O4, and all other entity formula counts agree with their displayed formulae. No molar-mass or mass-fraction claim is made."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "Each half-reaction and the reduced overall reaction conserve H, C, O, Br, Ce, and formal charge; electron, proton, common water, and catalyst bookkeeping is explicitly cancelled."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "A stoichiometric equation has exact dimensionless coefficients and the requested unit field is empty; no dimensional calculation occurs."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "All coefficients are exact integers under exact_symbolic policy; the submission display applies only chemical typography and performs no rounding or tolerance comparison."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No structural drawing, connectivity choice, stereoisomer, or stereochemical designation is requested or used."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The verb Write requests a concrete equation, not global uniqueness or exhaustive chemistry. The Lean universal statement is limited to primitive equations over the transparent source-bounded ledger and merely proves representation-level normalization."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "balancedBZReaction is a named output witness, but it is checked by independent atom/charge, direction, cancellation, coprimality, half-reaction, and universal admissibility carriers. No desired coefficient is assumed as a theorem hypothesis, opaque predicate, singleton premise, or free flag."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [],
+            "evidence": "The source-first atom/charge ledger yields the same exact symbolic formula as the semantic card and all named Lean result carriers.",
+            "id": "balanced_bz_equation",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIChO2026T2A1.entityData",
+                "IChO2026Problems.ProblemIChO2026T2A1.HasStatedConversionRoles"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIChO2026T2A1.BalancedBZEquationRaw",
+                "IChO2026Problems.ProblemIChO2026T2A1.balanced_bz_equation_raw"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIChO2026T2A1.AtomBalanced",
+                "IChO2026Problems.ProblemIChO2026T2A1.ChargeBalanced",
+                "IChO2026Problems.ProblemIChO2026T2A1.half_reactions_balanced",
+                "IChO2026Problems.ProblemIChO2026T2A1.electron_transfer_scales_primitive",
+                "IChO2026Problems.ProblemIChO2026T2A1.half_reactions_derive_overall"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIChO2026T2A1.BalancedBZEquationReported",
+                "IChO2026Problems.ProblemIChO2026T2A1.balanced_bz_equation_reported"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The input, balance, derivation, raw-result, and reported-result declarations all match the source-first equation and exact-symbolic scope.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "overall net ionic reaction across the stated oxidation and reduction, after cancellation of internal species and catalyst",
+              "kind": "overall"
+            },
+            "quantity_definition": "Primitive net ionic stoichiometric equation converting bromate and malonic acid to bromide and carbon dioxide, with balancing water and zero net Ce(IV).",
+            "raw_result": {
+              "derivation": "Let a and b be positive bromate and malonic-acid reactant coefficients. Br balance gives the bromide coefficient a and C balance gives the CO2 coefficient 3b. Charge and net reduction remove net proton; H/O balance gives 3a=4b and water coefficient 2b. The primitive positive solution is a=4, b=3, hence 4 BrO3^- + 3 CH2(COOH)2 -> 4 Br^- + 9 CO2 + 6 H2O.",
+              "exact_unrounded": true,
+              "value_or_expression": "4 BrO3^- + 3 CH2(COOH)2 -> 4 Br^- + 9 CO2 + 6 H2O"
+            },
+            "reporting": {
+              "application": "Render the exact primitive integer stoichiometric coefficients and chemical notation once; no numerical rounding is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output id, formula kind, overall scope, empty unit, and exact-symbolic reporting policy agree with the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-1.png#T2-A1"
+              }
+            ],
+            "source_requirement": "overall balanced BZ reaction with atoms and charge conserved",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "b3ef1f314b34e93677d581e29fecfa0a83a8677d7cbb313303a2cdff55fe383b"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a1.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The requested balanced_bz_equation is faithfully encoded and independently derivable from the source-stated redox roles, atom/charge conservation, and primitive equation normalization. The sealed Kimi draft SHA-256 4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51, subpart 2.1, is preserved with no discrepancy.",
+        "reviewed_at": "2026-09-13T08:37:20Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "b3ef1f314b34e93677d581e29fecfa0a83a8677d7cbb313303a2cdff55fe383b",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a1.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 5,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The bound submission and exact-symbolic Lean carriers faithfully derive and report the unique primitive atom- and charge-balanced net ionic equation from the source-stated conversion roles; the authorized sealed Kimi draft is preserved with no discrepancy.",
+    "evidence": "All four bound file digests match. The deterministic preflight passed with compiles=true, returncode=0, sorry_count=0. Transparent half-reaction, cancellation, admissibility, uniqueness, displayed-coefficient, and catalyst-cancellation declarations carry the requested result without theorem hypotheses or local axioms.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "1953ae6ee0fcaf44d694ff8206959a1a19a09089db804d8c1902ebe00a2dcb5a",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t2_a1.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t2_a1",
+      "source_record_sha256": "3c6a7e8f1d1828579e3f2c40955f6df4fc8887ed5f5364df4dd2270a8674b3d0",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a1.answer.json",
+      "answer_submission_sha256": "937fdcf6d8d5dc182aa3f1bef45268502aaf65ec3deeb893f85d6973c54a19c4",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t2_a1.source.json",
+      "source_report_sha256": "a758493556a6997d464b8e819601bb655dcb466e21bf6860265f31dd9461ca5f",
+      "candidate": "IChO2026Problems/problem_icho_2026_t2_a1.lean",
+      "preflight_sha256": "1da07f752e79a19c048d24d6697f1b74373c11977df86738aa003598fa39b92f",
+      "candidate_sha256": "1953ae6ee0fcaf44d694ff8206959a1a19a09089db804d8c1902ebe00a2dcb5a",
+      "question_sha256": "1d988b715353b1f3fe1ccb31aa1a81afdb40bf780d3bbc94d6643526e093cc9c",
+      "shared_context_sha256": "8e08f1a721afa04e0b8b8350279ebda6fb687a4f72ed2b0154b88e781c1aa2bb",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "0ecfb34b71da4a33a499bbcd17c7999bcdea3c2c3fc479ea1e47d4f97d8c6021",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T2_page-1.png",
+          "sha256": "0b9e4e1edf255a14c8def4465de188b6cbd72b9df782a7d7efa32528b15c5ff2"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "aaf14cd37c2f43ab29c48a59b7a041103168f764b126854b37b2e71b7a27b697",
+        "node_count": 5,
+        "edge_count": 4,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "balanced_bz_equation"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t2_a1",
+        "path": ".archon/provided_answer_drafts/Q2.md",
+        "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t2_a1.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t2_a1",
+        "source_record_sha256": "3c6a7e8f1d1828579e3f2c40955f6df4fc8887ed5f5364df4dd2270a8674b3d0",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a1.answer.json",
+        "answer_submission_sha256": "937fdcf6d8d5dc182aa3f1bef45268502aaf65ec3deeb893f85d6973c54a19c4",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t2_a1.source.json",
+        "source_report_sha256": "a758493556a6997d464b8e819601bb655dcb466e21bf6860265f31dd9461ca5f",
+        "candidate": "IChO2026Problems/problem_icho_2026_t2_a1.lean",
+        "preflight_sha256": "1da07f752e79a19c048d24d6697f1b74373c11977df86738aa003598fa39b92f",
+        "candidate_sha256": "1953ae6ee0fcaf44d694ff8206959a1a19a09089db804d8c1902ebe00a2dcb5a",
+        "question_sha256": "1d988b715353b1f3fe1ccb31aa1a81afdb40bf780d3bbc94d6643526e093cc9c",
+        "shared_context_sha256": "8e08f1a721afa04e0b8b8350279ebda6fb687a4f72ed2b0154b88e781c1aa2bb",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "0ecfb34b71da4a33a499bbcd17c7999bcdea3c2c3fc479ea1e47d4f97d8c6021",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T2_page-1.png",
+            "sha256": "0b9e4e1edf255a14c8def4465de188b6cbd72b9df782a7d7efa32528b15c5ff2"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "aaf14cd37c2f43ab29c48a59b7a041103168f764b126854b37b2e71b7a27b697",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "balanced_bz_equation"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t2_a1",
+          "path": ".archon/provided_answer_drafts/Q2.md",
+          "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The semantic audit used only the inline problem evidence, the inspected bound problem image, and ordinary atom/charge conservation. The authorized sealed Kimi section 2.1 was used only for fidelity comparison; the submission and candidate were treated as untrusted, and no official solution or unlisted artifact was consulted."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "entityData, totalAtoms, totalCharge, half_reactions_balanced, electron_transfer_scales_primitive, combineScaled, cancelCommon, half_reactions_derive_overall, and balanced_bz_equation_raw provide an end-to-end exact symbolic derivation and primitive uniqueness proof."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The controller-bound output policy is exact_symbolic for a formula. BalancedBZEquationReported and HasDisplayedBZCoefficients expose the exact coefficient rendering without adding a numerical precision convention."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "The requested result is exact symbolic and has no measurement tolerance, approximation, or rounding step; consequently no post-hoc tolerance is present."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The finite Entity domain contains the problem-named reactant/product species and Ce(IV), plus only water, proton, and electron as ordinary acidic redox-bookkeeping entities. Potassium and sulfate are spectators in the requested net ionic balance; no answer-shaped alternative domain or anonymous stream is used."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=1953ae6ee0fcaf44d694ff8206959a1a19a09089db804d8c1902ebe00a2dcb5a; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result carriers are balanced_bz_equation_raw and balanced_bz_equation_reported, supported by half_reactions_balanced, electron_transfer_scales_primitive, and half_reactions_derive_overall."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The theorem states an exact primitive net ionic equation, its admissibility and uniqueness within the source-derived acidic-redox species domain, all displayed coefficients, and zero net catalyst coefficient; it neither weakens the requested formula nor claims yield or mechanism."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The reviewed theorem has no external hypotheses. Conversion roles come from the question; formula data are transparent; acidic half-reaction bookkeeping and atom/charge conservation are ordinary laws; primitive normalization is the standard meaning of a balanced equation."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The sole requested output is carried by the raw and reported equation theorems, agrees with the independently balanced half-reaction derivation, and matches both submission representations and the frozen Kimi section 2.1 answer."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "All outcome-decisive chemistry bridges are transparent local composition and charge ledgers tied to source formulas and ordinary conservation. Electron and Ce(IV) cancellation, common-species cancellation, primitive scaling, and the complete displayed coefficient ledger are explicit."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "overall balanced BZ reaction with atoms and charge conserved",
+          "lean_carrier": "IChO2026Problems.ProblemIChO2026T2A1.balanced_bz_equation_raw; IChO2026Problems.ProblemIChO2026T2A1.balanced_bz_equation_reported",
+          "status": "covered",
+          "evidence": "The submission has exactly one output in the required order with the exact id, kind=formula, and empty unit. Its raw ASCII and displayed Unicode forms are equivalent and agree with the independently derived primitive coefficient ledger and the named Lean carriers.",
+          "output_id": "balanced_bz_equation",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T2_page-1.png",
+          "sha256": "0b9e4e1edf255a14c8def4465de188b6cbd72b9df782a7d7efa32528b15c5ff2",
+          "inspected": true,
+          "evidence": "The image visibly states KBrO3, CH2(COOH)2, Ce(SO4)2, and H2SO4; identifies malonic acid oxidation to CO2, bromate reduction to bromide, and Ce(IV) as catalyst; and contains a blank response area with no supplied coefficients or conflicting answer panel."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The model represents the stated oxidation and reduction directions, the acidic medium, and catalytic Ce cancellation as an overall net ionic equation. It makes no unsupported kinetic, yield, phase, or sole-pathway claim."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "quantitative_material_stage: equation coefficients depend on complete atom and charge balance. The finite domain is bromate, malonic acid, bromide, carbon dioxide, water, proton, electron, and Ce(IV); the stages are malonicAcidOxidation, bromateReduction, combinedHalfReactions, and cancelCommon. AtomBalanced/totalAtoms and ChargeBalanced/totalCharge are the outcome-decisive ledgers, while InternalEntitiesCancel and NetReduced discharge electron/catalyst/common-species cancellation; there are no anonymous streams."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Transparent entityData expands the problem formulas consistently, including malonic acid as C3H4O4, and the ledger checks every H, C, O, Br, and Ce count. No molar-mass claim is made."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "half_reactions_balanced proves atom and formal-charge conservation separately for both half-reactions; balanced_bz_equation_raw proves conservation for the reduced overall reaction and uniqueness at primitive scale."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "The requested formula has the controller-bound empty unit and contains only exact dimensionless stoichiometric coefficients."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The output policy is exact_symbolic; raw and display forms preserve exact integer coefficients. No significant figures, measured intervals, derived tolerances, or rounding are applicable."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "No structural drawing, connectivity choice, stereoisomer, or stereochemical qualifier is requested or asserted."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "HasPrimitiveReactantCoefficients removes common positive scaling, and balanced_bz_equation_raw proves every admissible source-role, atom-balanced, charge-balanced, reduced reaction in the independently sourced finite domain equals the reported carrier."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "Although balancedBZReaction names the output witness, its admissibility is checked coefficient-by-coefficient, the half-reaction construction independently reduces to it, and uniqueness is proved from conversion roles, transparent formula/charge data, conservation, cancellation, and primitive normalization. No coefficient is assumed in a theorem premise, singleton domain, free flag, or opaque predicate."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a1.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The bound submission and exact-symbolic Lean carriers faithfully derive and report the unique primitive atom- and charge-balanced net ionic equation from the source-stated conversion roles; the authorized sealed Kimi draft is preserved with no discrepancy.",
+        "evidence": "All four bound file digests match. The deterministic preflight passed with compiles=true, returncode=0, sorry_count=0. Transparent half-reaction, cancellation, admissibility, uniqueness, displayed-coefficient, and catalyst-cancellation declarations carry the requested result without theorem hypotheses or local axioms.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:10:23.837644Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "1953ae6ee0fcaf44d694ff8206959a1a19a09089db804d8c1902ebe00a2dcb5a",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a1.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:10:23.837688Z",
+    "repair_handoff": {}
+  }
+}

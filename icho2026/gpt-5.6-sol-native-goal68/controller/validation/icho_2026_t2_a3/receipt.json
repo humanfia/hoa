@@ -1,0 +1,55 @@
+{
+  "target": "icho_2026_t2_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300903.4129872,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t2_a3.lean": "8f3d5e842a97a0e198f755c8097f5423788afa98ddfdef5093a31fad3d3704f5",
+    "answer.md": "4ef973ba4faa159b6e6d9c0e3175a71ee652ef38de49ad5ad83dca104ec9a8c0",
+    "verification.md": "0cdc700507074eaae930954731b7aff9f623ecbfb74fe109f290e69e75989f31",
+    "result.json": "003e86039168b9475059702c828747bfbfd451cff951acb4322feb8daff7eac1"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a3",
+    "status": "completed",
+    "answer_summary": "Equating the elementary mass-action rates of steps (1) and (4) and cancelling their common positive [HBrO2] and [H+] factors gives [Br-]_critical = (k1/k4)[BrO3-] = 3/10^7 M, reported as 3.00e-7 mol dm^-3.",
+    "theorem_names": [
+      "IChO2026Problems.T2A3.switchBoundary_formula",
+      "IChO2026Problems.T2A3.printedRates_equal_iff",
+      "IChO2026Problems.T2A3.step4_exceeds_step1_iff",
+      "IChO2026Problems.T2A3.step1_exceeds_step4_iff",
+      "IChO2026Problems.T2A3.fallbackHBrO2_levels_positive",
+      "IChO2026Problems.T2A3.bromide_critical",
+      "IChO2026Problems.T2A3.bromide_critical_reported"
+    ],
+    "assumptions": [
+      "For each reaction explicitly identified as an elementary step, its rate obeys the standard mass-action rate law.",
+      "The common [HBrO2] and [H+] factors are positive at the switching comparison; the problem gives [H+] = 0.8 M and positive fallback [HBrO2] levels for both processes."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T2_page-2.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T2_page-3.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean --version",
+      "lake build IChO2026Chem.Reporting",
+      "lake env lean IChO2026Problems/problem_icho_2026_t2_a3.lean",
+      "if grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t2_a3.lean; then exit 1; else echo 'No prohibited proof shortcuts or custom axioms found.'; fi"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

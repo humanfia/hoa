@@ -1,0 +1,9 @@
+{
+  "target": "icho_2026_t8_a5",
+  "reason": "missing_structured_verdict",
+  "detail": "The original final output contains prose source and proof checks but no extractable review JSON payload. Required structured verdict and coverage fields cannot be recovered without new model output; no fields were invented.",
+  "original_preserved": true,
+  "accepted": false,
+  "model_rerun": false,
+  "feedback_to_solver": false
+}

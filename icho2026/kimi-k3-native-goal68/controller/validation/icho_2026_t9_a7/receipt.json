@@ -1,0 +1,78 @@
+{
+  "target": "icho_2026_t9_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789360999.7509048,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a7.lean": "4df4bd50402b348d727ad9ce193dfaae3dcd8eebdf6427d21a78cdf031d5ba7b",
+    "answer.md": "31ba1484b5046f8327262bbc4df24336abc1528145a6e8cba67a3950a413431d",
+    "verification.md": "5297e1d480b07582b320abe49378564a0a61fa7b9bad02b6f18fefe180f9623f",
+    "result.json": "c64d802f7020392dc530b24b1b26f98a92488a370a53e6e920ef06c1061832f2"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a7",
+    "status": "completed",
+    "answer_summary": "The two [M+Na]+ peaks observed for the hexo-5-enose degradation products of L are at m/z = 455 and m/z = 376. Using integer masses (C=12, H=1, O=16, Na=23): fragment 1 (printed formula C27H28O5) has M = 27*12+28*1+5*16 = 432, so [M+Na]+ = 432+23 = 455; fragment 2 (printed formula C22H25O4) has M = 22*12+25*1+4*16 = 353, so [M+Na]+ = 353+23 = 376.",
+    "requested_outputs": {
+      "first_fragment_mz": 455,
+      "second_fragment_mz": 376
+    },
+    "theorem_names": [
+      "icho_2026_t9_a7_first_fragment_mz",
+      "icho_2026_t9_a7_second_fragment_mz",
+      "IChO2026.Problems.T9A7.first_fragment_mz",
+      "IChO2026.Problems.T9A7.second_fragment_mz",
+      "IChO2026.Problems.T9A7.firstFragment_neutral_mass",
+      "IChO2026.Problems.T9A7.secondFragment_neutral_mass",
+      "IChO2026.Problems.T9A7.firstFragment_formula",
+      "IChO2026.Problems.T9A7.secondFragment_formula",
+      "IChO2026.Problems.T9A7.degradation_products_mNa_mz_eq_pair",
+      "IChO2026.Problems.T9A7.degradation_peaks_distinct",
+      "IChO2026.Problems.T9A7.firstFragment_mz_explicit",
+      "IChO2026.Problems.T9A7.secondFragment_mz_explicit",
+      "IChO2026.Problems.T9A7.definitions_agree"
+    ],
+    "assumptions": [
+      "The two degradation-product molecular formulas (C27H28O5 and C22H25O4) are printed verbatim on the Q9-4 problem page/scheme and are taken as problem-given inputs.",
+      "Integer (nominal) atomic masses C=12, H=1, O=16, Na=23, as sanctioned by the problem instruction 'Use integer values of atomic mass'.",
+      "[M+Na]+ is a singly-charged sodium adduct, so its nominal m/z equals the nominal neutral molecular mass plus the nominal mass of one Na atom (unit charge).",
+      "Each drawn product bracket is a closed neutral molecule; the 'O~' squiggle denotes the attachment point to the remainder of L and is properly capped in the isolated product."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t9_a7.lean",
+        "cwd": "/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t9_a7/campaign/workspace",
+        "exit_code": 0,
+        "output": "'icho_2026_t9_a7_first_fragment_mz' does not depend on any axioms\n'icho_2026_t9_a7_second_fragment_mz' does not depend on any axioms\n'IChO2026.Problems.T9A7.firstFragment_neutral_mass_explicit' depends on axioms: [propext]\n'IChO2026.Problems.T9A7.secondFragment_neutral_mass_explicit' depends on axioms: [propext]"
+      },
+      {
+        "command": "grep -nE '\\bsorry\\b|\\badmit\\b|native_decide|axiom ' IChO2026Problems/problem_icho_2026_t9_a7.lean",
+        "result": "no occurrences (only a prose mention inside a doc comment); no sorry/admit/native_decide/custom axiom"
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t9_a7.lean": {
+      "sorry": 1,
+      "admit": 1,
+      "axiom": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

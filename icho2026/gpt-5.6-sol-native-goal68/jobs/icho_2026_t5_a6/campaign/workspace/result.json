@@ -1,0 +1,31 @@
+{
+  "target_id": "icho_2026_t5_a6",
+  "status": "completed",
+  "answer_summary": "A valid PL2 is the neutral bis(phosphatidyl) phosphate diester of symmetric 1,3-propanediol, with the two diacylglycerol stereocentres having the same handedness; its mirror has both handednesses reversed. PL3 is the physiological monoanion RCOO-CH2-CH(OCOR)-CH2-O-P(=O)(O-)-O-CH2CH3, together with its mirror enantiomer. The PL2 count is 255 - 13 + 12 = 254, and PL3 has hydrolysis coefficient m = 4.",
+  "theorem_names": [
+    "IChO2026Problems.ProblemIcho2026T5A6.fatty_acid_counts_derived",
+    "IChO2026Problems.ProblemIcho2026T5A6.pl2_has_254_total_bond_orders",
+    "IChO2026Problems.ProblemIcho2026T5A6.pl2_hydrolysis_formula_balance",
+    "IChO2026Problems.ProblemIcho2026T5A6.pl3_water_coefficient_is_four",
+    "IChO2026Problems.ProblemIcho2026T5A6.pl2_enantiomeric_pair",
+    "IChO2026Problems.ProblemIcho2026T5A6.pl3_enantiomeric_pair",
+    "IChO2026Problems.ProblemIcho2026T5A6.structure_pl2",
+    "IChO2026Problems.ProblemIcho2026T5A6.structure_pl3",
+    "IChO2026Problems.ProblemIcho2026T5A6.requested_structures"
+  ],
+  "assumptions": [
+    "Standard closed-shell valences C=4, H=1, O=2, and phosphate P=5 are used to count sigma-plus-pi bond order.",
+    "The source's three equimolar reductive-ozonolysis pieces correspond to two C=C bonds in the acyclic fatty acid dependency.",
+    "Complete hydrolysis reverses the four carboxylate-ester and relevant phosphate-ester condensations shown by the constructed graphs.",
+    "Conventional skeletal-formula hydrogens are implicit, and each R pseudoatom denotes the common hydrocarbon residue requested by the prompt."
+  ],
+  "source_gaps": [
+    "The prompt asks for a creative construction and gives no uniqueness criterion; the result proves a satisfying witness, not uniqueness.",
+    "The comparative phrase 'more symmetrical' is not assigned a point-group metric in the source. The formalization proves the concrete nontrivial involutive side exchange of the proposed PL2 instead of inventing such a metric."
+  ],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t5_a6.lean",
+    "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t5_a6.lean; then exit 1; else echo 'No forbidden proof shortcuts found.'; fi",
+    "python3 -m json.tool result.json >/dev/null"
+  ]
+}

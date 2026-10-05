@@ -1,0 +1,23 @@
+{
+  "target_id": "icho_2026_t9_a3",
+  "status": "completed",
+  "answer_summary": "The seven opened glucopyranoside repeats contribute five atoms each to the surviving covalent loop and three retained stereocentres each, so rs = 35 and sc = 21.",
+  "theorem_names": [
+    "IChO2026Problems.T9A3.macrocycle_X_ring_size",
+    "IChO2026Problems.T9A3.macrocycle_X_stereocentres",
+    "IChO2026Problems.T9A3.macrocycle_X_requested_outputs"
+  ],
+  "assumptions": [
+    "Problem input: the beta-cyclodextrin starting-material diagram contains seven glucopyranoside repeats.",
+    "Standard periodate chemistry: NaIO4 cleaves the C2-C3 vicinal-diol bond in each repeat.",
+    "Standard borohydride chemistry: NaBH4 reduces the resulting carbonyl ends so the former C2 and C3 sites are methylene carbons.",
+    "Acetylation with Ac2O/pyridine changes alcohol functionality but neither reconnects C2-C3 nor adds a stereogenic carbon.",
+    "Ring size counts all atoms in the surviving covalent cyclic path."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t9_a3.lean",
+    "grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe|axiom)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t9_a3.lean",
+    "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T9_page-1.png icho_2026_source/image/T9_page-2.png"
+  ]
+}

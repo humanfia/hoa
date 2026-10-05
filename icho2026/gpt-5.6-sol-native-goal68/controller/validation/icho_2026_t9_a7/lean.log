@@ -1,0 +1,6 @@
+'IChO2026Problems.T9A7.degradation_arc_counts' depends on axioms: [propext]
+'IChO2026Problems.T9A7.first_fragment_formula' depends on axioms: [propext]
+'IChO2026Problems.T9A7.second_fragment_formula' depends on axioms: [propext]
+'IChO2026Problems.T9A7.first_fragment_mz' depends on axioms: [propext]
+'IChO2026Problems.T9A7.second_fragment_mz' depends on axioms: [propext]
+'IChO2026Problems.T9A7.t9_a7_answer' depends on axioms: [propext]

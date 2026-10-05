@@ -1,0 +1,27 @@
+{
+  "target": "icho_2026_t9_a7",
+  "candidate_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "result.json": "d7dbfa7a3f81de1686bac8fd3fe9226b88bb6fc30737821c7cf5b00dd81a2f66",
+    ".gitignore": "8a31ab62303e26f93ba0b4c3937ead4ab85022e475094b542d69385985d39b63",
+    "lakefile.toml": "6bf5c92d5b48593a3dd1e636bf71b0894a074c737c3c3e663539b4d335a7fd2b",
+    "isolation_manifest.json": "dac4bbdd4230167e04362de19490d24add9e6d9ac96ce80d9eb55879a771bdc4",
+    "lake-manifest.json": "cf800f81ecf5e27a8ff144bad0f8055c2c05bb7493eb94d0ed1f5ae4bae94143",
+    "answer.md": "b0402ce4cf2dce973cb9a9c0e6247c2b6deec814869dc9ca5691ac40d2bd7c4b",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "TASK.json": "44160601a84aa5b739beae9394bae7c13601e2f51cba2daf9a94cac635eb1537",
+    "lean-toolchain": "efac0b94923b2d8b6840cd35be9177ad0fc5ab2332f4f4311c98712cee92fdee",
+    "verification.md": "a4e61ac6d2ceb6acfbdead22492e5513396c757fe4b588e8b13836f1f4dfbf6f",
+    "archon-protected.yaml": "c447b97d89415ce4e88e712ea466d5bc1909e88983de159a329d879478e88e55",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a7.lean": "982525b6e6be1c53a4edd77bfcb54cef1ecf5237cd10a711ced9768f9247b23f"
+  },
+  "created": 1789302780.6580212,
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "xhigh",
+  "feedback_to_solver": false
+}

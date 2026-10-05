@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t3_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "cyclo-hexamer of alternating 3,5-bis(4-amidophenyl)benzaldehyde corners and 2,3,5,6-tetrafluoroterephthaloyl linkers; smallest repeat C27H14F4N2O3",
+      "id": "macrocycle_repeat",
+      "kind": "classification",
+      "raw_value": "For i in Z/6Z, A_i is OHC-1,3,5-C6H3(-p-C6H4-NH-)2 and B_i is -CO-(2,3,5,6-F4-1,4-C6)-CO-; connect A_i.right-NH to B_i.left-C(O) and B_i.right-C(O) to A_(i+1).left-NH. The primitive open sector A_i+B_i is C27H14F4N2O3 and the closed six-sector ring is C162H84F24N12O18.",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

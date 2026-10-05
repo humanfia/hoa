@@ -1,0 +1,65 @@
+{
+  "at": 1789385626.9668486,
+  "previous_status": {
+    "status": "review_error",
+    "target": "icho_2026_t1_a2",
+    "error": "Expected exactly one review JSON payload",
+    "at": 1789385497.0548651
+  },
+  "original_review_sha256": "c97a9f0dbcab3199bd0b90524cc417c8cdbeb4938b68d0a93ba9acae7534a507",
+  "recovered_payload": {
+    "target_id": "icho_2026_t1_a2",
+    "semantic_status": "passed",
+    "proof_status": "conditional",
+    "reason": "Source-first inspection of the official page images confirms the shared-context text and the plant-table entry 7 (C14H16) on the Chamomilla row: a fused [5.7] azulene core with an ethyl on the seven-membered ring, a methyl on the five-membered ring adjacent to the fusion, and a methyl on the seven-membered ring adjacent to the fusion. The candidate's answer Z = compound 7 = 4-ethyl-1,7-dimethylazulene, A = azulene (C10H8), B = naphthalene (C10H8) is chemically and textually consistent with every printed constraint: azulene is the classic blue well-known hydrocarbon with exactly two perpendicular symmetry planes, it thermally isomerises to aromatic naphthalene (D2h, three mutually perpendicular planes), the formula is conserved, and monochlorination of C14H16 gives C14H15Cl with M/M+2 = 218/220 at the 3:1 35Cl/37Cl ratio. The Lean skeleton bond tables match the page-2 pixels substituent-for-substituent, and all structural certificates (carbon counts, Z/azulene core equality, substituent bonds, mirror-plane existence/commutativity, SameFormula, nominal masses) are genuinely proved by term-level definitions plus decide. However, the three identification theorems are largely definitional wraps (Z_is_compound_seven : Z = zSkeleton := rfl; A = azulene and B = naphthalene introduced with \u27e8rfl,...\u27e9). Z is never *derived* from the problem constraints: there is no scan/exclusion of the other nine table compounds, no proof that A is the unique well-known C10H8 hydrocarbon with exactly two perpendicular planes whose thermal aromatic isomer has three, and no proof that the 218/220 3:1 pair uniquely forces compound 7. Moreover the plane-count formalisation is a result-shaped re-scoping: HasTwoPerpendicularPlanes M := Nonempty M.MirrorPlane and HasThreePerpendicularPlanes M := exists one pair of commuting skeletal reflections, relying on an explicit convention that adds the molecular plane separately and allows bond orders to be non-invariant; 'exactly two' is stated only in prose, and 'perpendicular' is defined as 'distinct and commuting', not derived from geometry. Final theorems compile with only standard Lean axioms (propext, Classical.choice, Quot.sound), no sorry/admit/native_decide/custom axioms. Hence semantic answer correct and source-grounded (passed), while the proofs are conditional on these disclosed model conventions and on taking the identifications themselves as definitional inputs rather than derived conclusions.",
+    "coverage": [
+      {
+        "output_id": "identity_z",
+        "status": "conditional",
+        "theorem": "IChO2026Problems.T1A2.Z_is_compound_seven (+ Certificates.Z_structure, Z_chloride_ms, Z_ms_consistent; Skeletons.Certificates.zSkeleton_is_azulene_derivative, zSkeleton_substituent_bonds)",
+        "evidence": "Z is defined as zSkeleton and equality is rfl, so the identification is stipulated, not derived. Supporting substance is genuine: zBond on Fin 14 matches the page-2 drawing of compound 7 pixel-for-pixel (ethyl at a seven-ring atom three from fusion, methyls at 5-ring-adjacent and 7-ring-adjacent positions), C count = 14 proved, azulene-core bond equality and all four substituent bonds proved by decide +kernel, and 12*14+15+35=218, 12*14+15+37=220 proved. But no theorem enumerates/excludes other table compounds or proves uniqueness of Z from blue colour + derivative-of-A + MS; blue_unique is vacuous because Blue has no constructors and 'cases h1' closes any two blue components."
+      },
+      {
+        "output_id": "structure_a",
+        "status": "conditional",
+        "theorem": "IChO2026Problems.T1A2.A_structure_is_azulene (+ Certificates.A_two_perpendicular_planes, A_formula; Skeletons.Certificates.azulene_has_two_perpendicular_planes)",
+        "evidence": "Azulene skeleton on Fin 10 (fusion 0-1, seven-ring 0..6, five-ring 0-7-8-9-1; Kekule 1=9,3=4,5=6,7=8) matches the standard fused [5.7] structure and the substituent-relative positions in the source drawing of 7. The long-axis mirror (0 1)(2 6)(3 5)(7 9), fixing 4 and 8, is proved connectivity-preserving and involutive. But HasTwoPerpendicularPlanes is defined as mere Nonempty MirrorPlane with the molecular plane counted by external convention, so the theorem proves one skeletal reflection, not 'exactly two perpendicular planes'; the 'exactly' (no third plane) appears only in prose. Identification of A as azulene is definitional (A := azulene), conditioned on the disclosed plane-counting scoping."
+      },
+      {
+        "output_id": "structure_b",
+        "status": "conditional",
+        "theorem": "IChO2026Problems.T1A2.B_structure_is_naphthalene (+ Certificates.B_three_perpendicular_planes, BA_same_formula; Skeletons.Certificates.naphthalene_has_three_perpendicular_planes, naphthalene_aromatic)",
+        "evidence": "Naphthalene skeleton on Fin 10 (fused 6+6 rings, fusion 4-9; Kekule 0=1,2=3,4=9,5=6,7=8) is the correct aromatic C10H8. Two distinct skeletal reflections (short-axis (0 3)(1 2)(4 9)(5 8)(6 7) and long-axis v+5 mod 10) are proved connectivity-preserving, involutive, distinct, and commuting. SameFormula A B is proved elementwise, consistent with 'isomerises' conserving formula. B := naphthalene is definitional; 'three mutually perpendicular' is packaged as one commuting pair plus the molecular plane by convention, and Perpendicular := distinct-and-commuting rather than geometric perpendicularity, so the conclusion is conditional on that scoping."
+      }
+    ],
+    "unsupported_assumptions": [
+      "Result-shaped symmetry scoping: HasTwoPerpendicularPlanes := Nonempty MirrorPlane (one skeletal reflection plus a separately-counted molecular plane asserted by convention), and HasThreePerpendicularPlanes := one pair of distinct commuting skeletal reflections; 'perpendicular' is defined as 'distinct and commuting', never tied to geometric perpendicularity.",
+      "Kekule double bonds are declared non-invariant under skeletal reflections except naphthalene's; mirror planes certify connectivity only, and the claimed bond-invariance of naphthalene's Kekule table under its reflections is not actually proved invariant (conn_pres ignores bond orders).",
+      "IsAromatic := Nonempty MirrorPlane is asserted as a definition of aromaticity rather than derived from planar conjugated 4n+2 structure; aromaticity of B is thereby trivially given by any mirror plane.",
+      "The azulene to naphthalene thermal rearrangement, azulene's planarity and blue colour, and the well-known status of A are trusted-general-law declarations, not proved; formula conservation under isomerisation (SameFormula) is proved, but the rearrangement itself is only schematic.",
+      "identity theorems (Z := zSkeleton, A := azulene, B := naphthalene via rfl) assume the outputs rather than deriving them; no exhaustive exclusion of the other nine plant-table compounds and no uniqueness argument from the MS pair + symmetry + isomerisation data.",
+      "'Exactly two perpendicular planes' for azulene: the absence of a second distinct skeletal reflection plane is stated in prose but never proved; only existence of one reflection is certified. For Z the substituents break the azulene mirror plane entirely; the file itself notes identification of Z does not rest on symmetry, but planesA/packages still describe unsubstituted frameworks.",
+      "blue_unique is proved by 'cases h1' on an inductive with no constructors, so any two blue components are deemed equal without content; uniqueness of the blue chromophore is vacuous rather than derived from the four-component mixture."
+    ],
+    "source_checks": [
+      "Read TASK.json first; confirmed requested_outputs ids identity_z, structure_a, structure_b and the shared T1 context.",
+      "Inspected T1_page-3.png directly: text matches the shared context exactly (blue Z; A well-known with two perpendicular planes; A heated to aromatic B with three mutually perpendicular planes; chlorinated Z gives 218/220 at 3:1; question 1.2 'Identify Z and draw the structures of A and B', 4.0 pt).",
+      "Inspected T1_page-2.png directly, including a high-zoom crop of compound 7: Chamomilla row shows a fused [5.7] azulene bicycle bearing an ethyl on the seven-membered ring (three ring atoms from a fusion atom), a methyl on the five-membered ring carbon adjacent to the fusion, and a methyl on the seven-membered ring carbon adjacent to the fusion, captioned '7 (C14H16)'. This matches zBond's substituent positions (ethyl chain at ring atom 4 via 12-13, methyls at ring atoms 1 and 7) and the 4-ethyl-1,7-dimethylazulene assignment.",
+      "Cross-checked the table labels/formulas for compounds 1-10 against TASK.json; no other azulene-core entry besides 7 (compound 8 is C15H24 terpenoid; compounds 3/9/10 are oxygenated terpenes), consistent with the candidate's selection.",
+      "Verified mass arithmetic against the printed peaks: monochloride C14H15Cl gives 12*14+15+35=218 and 12*14+15+37=220 with M+2 spacing 2, consistent with one chlorine and the natural 3:1 35Cl/37Cl ratio (ordinary reference check, no official answers consulted).",
+      "Blank verified answer sheets are not present in the isolation bundle beyond the problem pages; structure template fields therefore verified against the problem drawings themselves as the authoritative graphical inputs."
+    ],
+    "proof_checks": [
+      "Independently ran `lake build IChO2026Problems`: exit 0, 8565 jobs, only benign style warnings.",
+      "Independently ran `lake env lean IChO2026Problems/problem_icho_2026_t1_a2.lean`: exit 0; `#print axioms` confirms Certificates.Z_chloride_ms, B_structure_is_naphthalene and answer depend only on [propext, Classical.choice, Quot.sound].",
+      "Grepped all Lean sources for sorry/admit/native_decide/custom axiom/unsafe/set_option/extern/implemented_by/ofReduceBool: none found (only prose mentions). All finite certificates use `decide` or `decide +kernel`; native_decide is not used.",
+      "Audited helper file IChO2026Chem/Molecule.lean: bond tables for azuleneBond, naphthaleneBond, zBond are symmetric/irreflexive/positive by decide, and the mirror-plane constructions are concrete Equiv.Perms proved involutive and connectivity-preserving.",
+      "Confirmed the identification theorems: Z_is_compound_seven is `:= rfl`; A_structure_is_azulene and B_structure_is_naphthalene package `rfl` with proved plane/formula certificates, so the existence facts are proved but the identifications are definitional rather than derived.",
+      "Confirmed blue_unique uses an empty inductive `Blue` with 'cases', making uniqueness of the blue chromophore logically vacuous; theorem `answer` assembles SharedContext from hb : Blue Zc and proved structure fields, so it is correctly typed but carries the vacuous blue premise only as an input, not as derived substance.",
+      "Checked Perpendicular := distinct + commute and ThreeMutuallyPerpendicular := pairwise; no geometric notion of perpendicularity is encoded; the molecular plane is added by prose convention, which is exactly the result-shaped conditioning behind the conditional proof status."
+    ]
+  },
+  "model_rerun": false,
+  "verdict_changed": false,
+  "feedback_to_solver": false
+}

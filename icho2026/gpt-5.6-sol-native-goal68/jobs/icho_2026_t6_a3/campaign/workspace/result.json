@@ -1,0 +1,24 @@
+{
+  "target_id": "icho_2026_t6_a3",
+  "status": "completed",
+  "answer_summary": "The 2.5 V electron energy is 241.2125 kJ mol^-1. Of the listed C-X BDEs, only C-I at 228 kJ mol^-1 is no greater than this energy, so the possible-halogen set is exactly {I}.",
+  "theorem_names": [
+    "IChO2026Problems.T6A3.availableEnergy_exact",
+    "IChO2026Problems.T6A3.fluorine_not_accessible",
+    "IChO2026Problems.T6A3.chlorine_not_accessible",
+    "IChO2026Problems.T6A3.bromine_not_accessible",
+    "IChO2026Problems.T6A3.iodine_accessible",
+    "IChO2026Problems.T6A3.energeticallyAccessible_iff",
+    "IChO2026Problems.T6A3.possibleHalogens_eq_singleton"
+  ],
+  "assumptions": [
+    "Standard electrical-energy law E = qV; for one mole of singly charged electrons q = F, and 1 C V = 1 J.",
+    "As directed by the prompt's comparison of voltage with bond energies, a listed C-X bond passes the energetic screen exactly when its BDE is no greater than the available molar electron energy."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T6_page-1.png icho_2026_source/image/T6_page-2.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t6_a3.lean",
+    "if grep -nE '(^|[[:space:]])(sorry|admit|unsafe)([[:space:]]|$)|^[[:space:]]*(axiom|constant)[[:space:]]' IChO2026Problems/problem_icho_2026_t6_a3.lean; then exit 1; else echo 'PASS: no sorry/admit/unsafe or custom axiom/constant declaration'; fi"
+  ]
+}

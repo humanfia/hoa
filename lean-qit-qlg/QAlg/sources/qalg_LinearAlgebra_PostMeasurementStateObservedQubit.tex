@@ -1,0 +1,14 @@
+Let
+$$
+    \ket{\psi}=\sum_{y\in\{0,1\}^{n-1}}\alpha_{0y}\ket{0}\ket{y}
+    +\sum_{y\in\{0,1\}^{n-1}}\alpha_{1y}\ket{1}\ket{y}
+$$
+be a normalized $n$-qubit pure state.  A projective measurement is performed only on the first qubit in the computational basis.  Prove that the probability of outcome $1$ is
+$$
+    p_1=\sum_{y\in\{0,1\}^{n-1}}|\alpha_{1y}|^2,
+$$
+and, when $p_1>0$, the normalized post-measurement state of the full register is
+$$
+    \ket{\psi'}=\frac{1}{\sqrt{p_1}}
+    \sum_{y\in\{0,1\}^{n-1}}\alpha_{1y}\ket{1}\ket{y}.
+$$

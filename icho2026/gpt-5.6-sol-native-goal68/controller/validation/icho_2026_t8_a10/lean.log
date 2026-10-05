@@ -1,0 +1,6 @@
+'IChO2026Problems.ProblemIChO2026T8A10.quenchedLifetime_strictAntiOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.ProblemIChO2026T8A10.lifetime_s1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.ProblemIChO2026T8A10.lifetime_t1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.ProblemIChO2026T8A10.icho_2026_t8_a10' depends on axioms: [propext, Classical.choice, Quot.sound]

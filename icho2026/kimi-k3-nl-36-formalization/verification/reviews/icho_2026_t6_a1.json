@@ -1,0 +1,1604 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The candidate faithfully formalizes all eight source-requested exact counts using the standard two-loop cyclocarbon electron model and a uniform H\u00fcckel classifier; every sidecar value and named Lean carrier matches the independent derivation and the frozen Kimi 6.1 answer.",
+    "updated_at": "2026-09-13T08:39:38Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "230ccace58ddee005349b175cdc65bb64f53fb1cfde8a7af65bc47937b0625f4",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The bound page asks to fill all A/AA blanks for exactly C18, C16, triplet C13 (S=1), and singlet C13 (S=0). The candidate exposes exactly those eight integer counts and makes no global chemical-universe or uniqueness claim."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Two orthogonal loops give 18/18, 16/16, triplet 13/13 open-shell, and closed-shell singlet 14/12 electron ledgers. Applying the ordinary closed-shell H\u00fcckel residues 4k+2 and 4k yields every submitted count without using a requested result as a premise."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "PiOrientation is an exhaustive two-element carrier; PiSystem records electron and unpaired-electron counts plus cyclic conjugation; pi_electron_conservation, c13_spin_inventory, HuckelEligible, huckelClass, and countHuckelClass retain all distinctions that can change a requested count."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "All outputs are exact finite cardinalities from integer electron counts and modular classification; the source supplies no measured input, approximation, tolerance, or rounding-sensitive quantity."
+        },
+        "branch_orientation": {
+          "status": "not_applicable",
+          "evidence": "T6.1 has no reaction branch, directional arrow, recycle, fresh feed, yield horizon, or competing process interpretation; it classifies four source-named electronic states."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "No free hypothesis, Bool supplied by a witness, singleton candidate domain, or opaque chemistry predicate can vary the result. Both orientations are enumerated, total pi-electron conservation is exposed, and the two open triplet loops are explicitly counted as unclassified."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "A monocyclic sp-carbon cyclocarbon supplies two distinct perpendicular, cyclic, fully conjugated pi systems.",
+          "carrier": "IChO2026Problems.T6A1.PiOrientation; IChO2026Problems.T6A1.standardPiSystem; IChO2026Problems.T6A1.two_distinct_pi_systems",
+          "status": "covered",
+          "evidence": "This is the standard cyclocarbon orbital model presupposed by the source's request for distinct pi systems; the inductive orientation type has exactly the in-plane and out-of-plane constructors and the theorem audits cardinality two."
+        },
+        {
+          "claim": "The two-loop electron ledgers are 18+18 for C18, 16+16 for C16, 13+13 with one unpaired electron per loop for triplet C13, and the minimal paired 14+12 split for closed-shell singlet C13.",
+          "carrier": "IChO2026Problems.T6A1.occupancyPattern; IChO2026Problems.T6A1.piElectronCount; IChO2026Problems.T6A1.piUnpairedElectronCount; IChO2026Problems.T6A1.pi_electron_conservation; IChO2026Problems.T6A1.c13_spin_inventory",
+          "status": "covered",
+          "evidence": "The source fixes ring sizes and C13 spin labels. Standard sp-carbon electron allocation supplies two pi electrons per carbon; the transparent definitions implement the even-shell, triplet, and closed-shell-singlet cases uniformly and the named theorems expose conservation and spin inventory."
+        },
+        {
+          "claim": "Ordinary ground-state H\u00fcckel classification assigns eligible closed-shell 4k+2 loops aromatic, eligible 4k loops anti-aromatic, and neither label to the open-shell 13-electron triplet loops.",
+          "carrier": "IChO2026Problems.T6A1.HuckelEligible; IChO2026Problems.T6A1.huckelClass; IChO2026Problems.T6A1.triplet_c13_unclassified",
+          "status": "covered",
+          "evidence": "The problem explicitly directs use of H\u00fcckel's rule. The classifier is a transparent modulo-four definition guarded by cyclic conjugation and zero unpaired electrons; it does not contain a species-specific answer table."
+        },
+        {
+          "claim": "Each requested number is the exact cardinality of one H\u00fcckel class over the complete two-orientation inventory.",
+          "carrier": "IChO2026Problems.T6A1.countHuckelClass; IChO2026Problems.T6A1.aromaticCount; IChO2026Problems.T6A1.antiaromaticCount; IChO2026Problems.T6A1.completed_table",
+          "status": "covered",
+          "evidence": "A Finset filter over all PiOrientation values supplies a nonvacuous uniform counting relation, and completed_table covers all eight blanks in source order."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t6_a1.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t6_a1",
+        "source_record_sha256": "404675bf2ff6547507a8d062ad17310fc2d44f07f158c94ebb8049b7a9a93028",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a1.answer.json",
+        "answer_submission_sha256": "4be47a745f3f9a3ea61185d8c70fa563d82afa276513d056d2dbc0faaf173a57",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t6_a1.source.json",
+        "source_report_sha256": "6e73ef9d184bfea5ec8b81b641add4b58284bdbd0cde0b4b0ba227ee034126dc",
+        "candidate": "IChO2026Problems/problem_icho_2026_t6_a1.lean",
+        "preflight_sha256": "041153f81d87e042e15516523bdd4d47a9e158d0d9e652aa87c788b4a8709be3",
+        "candidate_sha256": "230ccace58ddee005349b175cdc65bb64f53fb1cfde8a7af65bc47937b0625f4",
+        "question_sha256": "17e175de1da5d9cd97bf11e7a74ef301554f389657a43a3228ef286c2a867cfc",
+        "shared_context_sha256": "1d80a8f3fb1e245ec5c8953cc41310f97222b8e206a6600a32bcb14cb3d45348",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "cdf57fb93131b4d55ab5823d8c97f7f118c03211ec396ee5babdef32a5c4493a",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T6_page-1.png",
+            "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "c44bde0509fc7cbd69fbb73d3574ffa43dbd066016c7b2b09bcaf03c8377b810",
+          "node_count": 19,
+          "edge_count": 32,
+          "node_kind_counts": {
+            "derivation_obligation": 8,
+            "requested_output": 8,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "c18_aromatic",
+            "c18_antiaromatic",
+            "c16_aromatic",
+            "c16_antiaromatic",
+            "triplet_c13_aromatic",
+            "triplet_c13_antiaromatic",
+            "singlet_c13_aromatic",
+            "singlet_c13_antiaromatic"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t6_a1",
+          "path": ".archon/provided_answer_drafts/Q6.md",
+          "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t6_a1.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t6_a1",
+          "source_record_sha256": "404675bf2ff6547507a8d062ad17310fc2d44f07f158c94ebb8049b7a9a93028",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a1.answer.json",
+          "answer_submission_sha256": "4be47a745f3f9a3ea61185d8c70fa563d82afa276513d056d2dbc0faaf173a57",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t6_a1.source.json",
+          "source_report_sha256": "6e73ef9d184bfea5ec8b81b641add4b58284bdbd0cde0b4b0ba227ee034126dc",
+          "candidate": "IChO2026Problems/problem_icho_2026_t6_a1.lean",
+          "preflight_sha256": "041153f81d87e042e15516523bdd4d47a9e158d0d9e652aa87c788b4a8709be3",
+          "candidate_sha256": "230ccace58ddee005349b175cdc65bb64f53fb1cfde8a7af65bc47937b0625f4",
+          "question_sha256": "17e175de1da5d9cd97bf11e7a74ef301554f389657a43a3228ef286c2a867cfc",
+          "shared_context_sha256": "1d80a8f3fb1e245ec5c8953cc41310f97222b8e206a6600a32bcb14cb3d45348",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "cdf57fb93131b4d55ab5823d8c97f7f118c03211ec396ee5babdef32a5c4493a",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T6_page-1.png",
+              "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "c44bde0509fc7cbd69fbb73d3574ffa43dbd066016c7b2b09bcaf03c8377b810",
+            "node_count": 19,
+            "edge_count": 32,
+            "node_kind_counts": {
+              "derivation_obligation": 8,
+              "requested_output": 8,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "c18_aromatic",
+              "c18_antiaromatic",
+              "c16_aromatic",
+              "c16_antiaromatic",
+              "triplet_c13_aromatic",
+              "triplet_c13_antiaromatic",
+              "singlet_c13_aromatic",
+              "singlet_c13_antiaromatic"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t6_a1",
+            "path": ".archon/provided_answer_drafts/Q6.md",
+            "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, two-loop ledger, H\u00fcckel classification, and all eight counts were fixed from the bound page and inline problem evidence before opening the generated submission or Lean candidate. The sealed Kimi 6.1 draft was used only for the expressly authorized fidelity comparison, not as a scientific premise."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The exact source-first ledger is two loops per species: 18/18 and 16/16 for the even closed shells, 13/13 with one unpaired electron per loop for the triplet, and the conserving paired 14/12 singlet split. Modulo-four classification and exact finite counting complete the derivation with no rounding."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "Each problem-evidence output row declares kind integer, empty unit, and exact_integer reporting. Submission display strings are unchanged decimal renderings of their raw integers."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or needed: all eight outputs are exact integer cardinalities and no measured datum enters the derivation."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The output-decisive domain is not an open candidate universe: it is exactly the two standard perpendicular pi orientations of each of the four species explicitly named by the source. PiOrientation transparently enumerates both."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=230ccace58ddee005349b175cdc65bb64f53fb1cfde8a7af65bc47937b0625f4; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=13, duration_bucket=under_1m. Nontrivial result declarations: IChO2026Problems.T6A1.c18_aromatic, IChO2026Problems.T6A1.c18_antiaromatic, IChO2026Problems.T6A1.c16_aromatic, IChO2026Problems.T6A1.c16_antiaromatic, IChO2026Problems.T6A1.triplet_c13_aromatic, IChO2026Problems.T6A1.triplet_c13_antiaromatic, IChO2026Problems.T6A1.singlet_c13_aromatic, IChO2026Problems.T6A1.singlet_c13_antiaromatic; aggregate IChO2026Problems.T6A1.completed_table."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The source verb 'fill in all blanks' requires the eight finite table entries. The candidate states exactly those entries, exhaustively across the two orientations, without asserting global uniqueness beyond the specified table."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The requested theorems have no hypotheses. Their transparent inputs encode the source-named species/spins and the standard cyclocarbon/H\u00fcckel laws; no requested count is assumed."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The answer JSON has exactly eight concrete integer outputs in bundle order, with no sentinel, and every output maps one-to-one to a theorem whose left side is the corresponding aromatic or antiaromatic count."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are inventoried: two-loop topology, state-dependent electron occupancy and conservation, closed-shell H\u00fcckel classification, and finite class counting. No staged chemistry, mass, unit conversion, or prior-part conclusion is used."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "number of distinct aromatic pi systems in c18 by Huckel's rule",
+            "lean_carrier": "IChO2026Problems.T6A1.c18_aromatic",
+            "status": "covered",
+            "evidence": "The complete bound submission row has the correct id, position, integer kind, empty unit and exact-integer rendering, and its payload agrees with the independent derivation and the named theorem.",
+            "output_id": "c18_aromatic",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "number of distinct antiaromatic pi systems in c18 by Huckel's rule",
+            "lean_carrier": "IChO2026Problems.T6A1.c18_antiaromatic",
+            "status": "covered",
+            "evidence": "The complete bound submission row has the correct id, position, integer kind, empty unit and exact-integer rendering, and its payload agrees with the independent derivation and the named theorem.",
+            "output_id": "c18_antiaromatic",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "number of distinct aromatic pi systems in c16 by Huckel's rule",
+            "lean_carrier": "IChO2026Problems.T6A1.c16_aromatic",
+            "status": "covered",
+            "evidence": "The complete bound submission row has the correct id, position, integer kind, empty unit and exact-integer rendering, and its payload agrees with the independent derivation and the named theorem.",
+            "output_id": "c16_aromatic",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "number of distinct antiaromatic pi systems in c16 by Huckel's rule",
+            "lean_carrier": "IChO2026Problems.T6A1.c16_antiaromatic",
+            "status": "covered",
+            "evidence": "The complete bound submission row has the correct id, position, integer kind, empty unit and exact-integer rendering, and its payload agrees with the independent derivation and the named theorem.",
+            "output_id": "c16_antiaromatic",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "number of distinct aromatic pi systems in triplet_c13 by Huckel's rule",
+            "lean_carrier": "IChO2026Problems.T6A1.triplet_c13_aromatic",
+            "status": "covered",
+            "evidence": "The complete bound submission row has the correct id, position, integer kind, empty unit and exact-integer rendering, and its payload agrees with the independent derivation and the named theorem.",
+            "output_id": "triplet_c13_aromatic",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "number of distinct antiaromatic pi systems in triplet_c13 by Huckel's rule",
+            "lean_carrier": "IChO2026Problems.T6A1.triplet_c13_antiaromatic",
+            "status": "covered",
+            "evidence": "The complete bound submission row has the correct id, position, integer kind, empty unit and exact-integer rendering, and its payload agrees with the independent derivation and the named theorem.",
+            "output_id": "triplet_c13_antiaromatic",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "number of distinct aromatic pi systems in singlet_c13 by Huckel's rule",
+            "lean_carrier": "IChO2026Problems.T6A1.singlet_c13_aromatic",
+            "status": "covered",
+            "evidence": "The complete bound submission row has the correct id, position, integer kind, empty unit and exact-integer rendering, and its payload agrees with the independent derivation and the named theorem.",
+            "output_id": "singlet_c13_aromatic",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "number of distinct antiaromatic pi systems in singlet_c13 by Huckel's rule",
+            "lean_carrier": "IChO2026Problems.T6A1.singlet_c13_antiaromatic",
+            "status": "covered",
+            "evidence": "The complete bound submission row has the correct id, position, integer kind, empty unit and exact-integer rendering, and its payload agrees with the independent derivation and the named theorem.",
+            "output_id": "singlet_c13_antiaromatic",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T6_page-1.png",
+            "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba",
+            "inspected": true,
+            "evidence": "The page visibly states T6.1, the four species C18, C16, triplet C13 (S=1), and singlet C13 (S=0), the A/AA count request, H\u00fcckel's rule, and 'Fill in all blanks.' It depicts no additional T6.1 molecular component, legend, repeat boundary, or arrow; the later A-D AFM reaction scheme belongs to T6.2 and is not used."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The model correctly separates the in-plane and out-of-plane pi systems, conserves two pi electrons per carbon across them, distinguishes the stated C13 spin states, and applies ordinary closed-shell H\u00fcckel arithmetic separately to each loop."
+          },
+          "staged_species_domain": {
+            "status": "not_applicable",
+            "evidence": "not_staged_transformation: no depicted or stated transformation contributes to any T6.1 requested count; the A-D surface sequence lower on the page is explicitly the next subquestion."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No molecular formula derivation, molar mass, mass fraction, or composition output is requested or used."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "IChO2026Problems.T6A1.pi_electron_conservation exposes the decisive electron ledger: the two loop occupancies sum to twice the carbon count for every modeled form; c13_spin_inventory separately audits the unpaired-electron totals."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "The requested outputs are dimensionless cardinalities represented as natural numbers with the contractually required empty unit."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "All raw results are exact integers and all display values are their unchanged decimal strings, satisfying exact_integer policy without intermediate rounding."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "T6.1 requests counts, not a drawn molecular structure, configuration, conformation, or stereochemical assignment."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The source requests every blank in a finite table. The four species and two classes are fixed by the prompt, and PiOrientation exhaustively contains the two distinct systems being counted; no open-world enumeration or stronger uniqueness theorem is claimed."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "No requested value occurs in an assumption or witness-controlled field. Species-independent huckelClass and countHuckelClass compute over a non-singleton two-orientation type; the species-specific theorems are conclusions, not premises."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "H\u00fcckel rule on the standard two-loop cyclocarbon model",
+                "relation": "Each of the two orthogonal cyclic conjugated pi loops is classified only when closed-shell: 4k+2 electrons is aromatic and 4k electrons is anti-aromatic.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "C18 ring size and requested aromatic classification",
+                "relation": "The source names C18; the standard even closed-shell cyclocarbon model assigns 18 pi electrons to each of its two loops.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first exact count matches the bound submission entry and the named Lean theorem.",
+            "id": "c18_aromatic",
+            "kind": "integer",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A1.PiOrientation",
+                "IChO2026Problems.T6A1.CyclocarbonForm.c18",
+                "IChO2026Problems.T6A1.carbonCount",
+                "IChO2026Problems.T6A1.standardPiSystem"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A1.aromaticCount"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A1.piElectronCount",
+                "IChO2026Problems.T6A1.piUnpairedElectronCount",
+                "IChO2026Problems.T6A1.HuckelEligible",
+                "IChO2026Problems.T6A1.huckelClass",
+                "IChO2026Problems.T6A1.countHuckelClass"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A1.c18_aromatic"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The theorem c18_aromatic equates the correct aromatic count for c18 to the independently derived exact integer.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Not a process quantity; this is a count over the two pi orientations of one source-named species.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Cardinality of the aromatic class among the two distinct perpendicular pi systems of C18.",
+            "raw_result": {
+              "derivation": "C18 has two closed-shell loops with 18 pi electrons each; 18 = 4*4 + 2, so both loops are aromatic.",
+              "exact_unrounded": true,
+              "value_or_expression": "2"
+            },
+            "reporting": {
+              "application": "The requested exact integer is displayed unchanged; no rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_integer",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission id, order, integer kind, empty unit, raw integer, and display string all match the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              }
+            ],
+            "source_requirement": "number of distinct aromatic pi systems in c18 by Huckel's rule",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "H\u00fcckel rule on the standard two-loop cyclocarbon model",
+                "relation": "Each of the two orthogonal cyclic conjugated pi loops is classified only when closed-shell: 4k+2 electrons is aromatic and 4k electrons is anti-aromatic.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "C18 ring size and requested anti-aromatic classification",
+                "relation": "The source names C18; the standard even closed-shell cyclocarbon model assigns 18 pi electrons to each of its two loops.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first exact count matches the bound submission entry and the named Lean theorem.",
+            "id": "c18_antiaromatic",
+            "kind": "integer",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A1.PiOrientation",
+                "IChO2026Problems.T6A1.CyclocarbonForm.c18",
+                "IChO2026Problems.T6A1.carbonCount",
+                "IChO2026Problems.T6A1.standardPiSystem"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A1.antiaromaticCount"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A1.piElectronCount",
+                "IChO2026Problems.T6A1.piUnpairedElectronCount",
+                "IChO2026Problems.T6A1.HuckelEligible",
+                "IChO2026Problems.T6A1.huckelClass",
+                "IChO2026Problems.T6A1.countHuckelClass"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A1.c18_antiaromatic"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The theorem c18_antiaromatic equates the correct antiaromatic count for c18 to the independently derived exact integer.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Not a process quantity; this is a count over the two pi orientations of one source-named species.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Cardinality of the anti-aromatic class among the two distinct perpendicular pi systems of C18.",
+            "raw_result": {
+              "derivation": "Both C18 loops have 18 = 4*4 + 2 electrons and are aromatic, so neither loop has the 4k anti-aromatic count.",
+              "exact_unrounded": true,
+              "value_or_expression": "0"
+            },
+            "reporting": {
+              "application": "The requested exact integer is displayed unchanged; no rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_integer",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission id, order, integer kind, empty unit, raw integer, and display string all match the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              }
+            ],
+            "source_requirement": "number of distinct antiaromatic pi systems in c18 by Huckel's rule",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "H\u00fcckel rule on the standard two-loop cyclocarbon model",
+                "relation": "Each of the two orthogonal cyclic conjugated pi loops is classified only when closed-shell: 4k+2 electrons is aromatic and 4k electrons is anti-aromatic.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "C16 ring size and requested aromatic classification",
+                "relation": "The source names C16; the standard even closed-shell cyclocarbon model assigns 16 pi electrons to each of its two loops.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first exact count matches the bound submission entry and the named Lean theorem.",
+            "id": "c16_aromatic",
+            "kind": "integer",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A1.PiOrientation",
+                "IChO2026Problems.T6A1.CyclocarbonForm.c16",
+                "IChO2026Problems.T6A1.carbonCount",
+                "IChO2026Problems.T6A1.standardPiSystem"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A1.aromaticCount"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A1.piElectronCount",
+                "IChO2026Problems.T6A1.piUnpairedElectronCount",
+                "IChO2026Problems.T6A1.HuckelEligible",
+                "IChO2026Problems.T6A1.huckelClass",
+                "IChO2026Problems.T6A1.countHuckelClass"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A1.c16_aromatic"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The theorem c16_aromatic equates the correct aromatic count for c16 to the independently derived exact integer.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Not a process quantity; this is a count over the two pi orientations of one source-named species.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Cardinality of the aromatic class among the two distinct perpendicular pi systems of C16.",
+            "raw_result": {
+              "derivation": "Both C16 loops have 16 = 4*4 electrons and are anti-aromatic, so neither has a 4k+2 aromatic count.",
+              "exact_unrounded": true,
+              "value_or_expression": "0"
+            },
+            "reporting": {
+              "application": "The requested exact integer is displayed unchanged; no rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_integer",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission id, order, integer kind, empty unit, raw integer, and display string all match the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              }
+            ],
+            "source_requirement": "number of distinct aromatic pi systems in c16 by Huckel's rule",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "H\u00fcckel rule on the standard two-loop cyclocarbon model",
+                "relation": "Each of the two orthogonal cyclic conjugated pi loops is classified only when closed-shell: 4k+2 electrons is aromatic and 4k electrons is anti-aromatic.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "C16 ring size and requested anti-aromatic classification",
+                "relation": "The source names C16; the standard even closed-shell cyclocarbon model assigns 16 pi electrons to each of its two loops.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first exact count matches the bound submission entry and the named Lean theorem.",
+            "id": "c16_antiaromatic",
+            "kind": "integer",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A1.PiOrientation",
+                "IChO2026Problems.T6A1.CyclocarbonForm.c16",
+                "IChO2026Problems.T6A1.carbonCount",
+                "IChO2026Problems.T6A1.standardPiSystem"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A1.antiaromaticCount"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A1.piElectronCount",
+                "IChO2026Problems.T6A1.piUnpairedElectronCount",
+                "IChO2026Problems.T6A1.HuckelEligible",
+                "IChO2026Problems.T6A1.huckelClass",
+                "IChO2026Problems.T6A1.countHuckelClass"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A1.c16_antiaromatic"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The theorem c16_antiaromatic equates the correct antiaromatic count for c16 to the independently derived exact integer.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Not a process quantity; this is a count over the two pi orientations of one source-named species.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Cardinality of the anti-aromatic class among the two distinct perpendicular pi systems of C16.",
+            "raw_result": {
+              "derivation": "C16 has two closed-shell loops with 16 pi electrons each; 16 = 4*4, so both loops are anti-aromatic.",
+              "exact_unrounded": true,
+              "value_or_expression": "2"
+            },
+            "reporting": {
+              "application": "The requested exact integer is displayed unchanged; no rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_integer",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission id, order, integer kind, empty unit, raw integer, and display string all match the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              }
+            ],
+            "source_requirement": "number of distinct antiaromatic pi systems in c16 by Huckel's rule",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "H\u00fcckel rule on the standard two-loop cyclocarbon model",
+                "relation": "Each of the two orthogonal cyclic conjugated pi loops is classified only when closed-shell: 4k+2 electrons is aromatic and 4k electrons is anti-aromatic.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "Triplet C13 with stated spin S = 1",
+                "relation": "For the source-named triplet, the two pi electrons left by odd occupancy are parallel and occupy different loops, giving one unpaired electron in each 13-electron loop.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first exact count matches the bound submission entry and the named Lean theorem.",
+            "id": "triplet_c13_aromatic",
+            "kind": "integer",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A1.PiOrientation",
+                "IChO2026Problems.T6A1.CyclocarbonForm.tripletC13",
+                "IChO2026Problems.T6A1.carbonCount",
+                "IChO2026Problems.T6A1.statedSpin",
+                "IChO2026Problems.T6A1.occupancyPattern",
+                "IChO2026Problems.T6A1.standardPiSystem"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A1.aromaticCount"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A1.piElectronCount",
+                "IChO2026Problems.T6A1.piUnpairedElectronCount",
+                "IChO2026Problems.T6A1.HuckelEligible",
+                "IChO2026Problems.T6A1.huckelClass",
+                "IChO2026Problems.T6A1.countHuckelClass"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A1.triplet_c13_aromatic"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The theorem triplet_c13_aromatic equates the correct aromatic count for tripletC13 to the independently derived exact integer.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Not a process quantity; this is a count over the two pi orientations of one source-named species.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Cardinality of the aromatic closed-shell H\u00fcckel class among the two distinct perpendicular pi systems of triplet C13.",
+            "raw_result": {
+              "derivation": "Triplet C13 has two 13-electron loops with one unpaired electron in each; both are open-shell and therefore neither is in the ordinary aromatic H\u00fcckel class.",
+              "exact_unrounded": true,
+              "value_or_expression": "0"
+            },
+            "reporting": {
+              "application": "The requested exact integer is displayed unchanged; no rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_integer",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission id, order, integer kind, empty unit, raw integer, and display string all match the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              }
+            ],
+            "source_requirement": "number of distinct aromatic pi systems in triplet_c13 by Huckel's rule",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "H\u00fcckel rule on the standard two-loop cyclocarbon model",
+                "relation": "Each of the two orthogonal cyclic conjugated pi loops is classified only when closed-shell: 4k+2 electrons is aromatic and 4k electrons is anti-aromatic.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "Triplet C13 with stated spin S = 1",
+                "relation": "For the source-named triplet, the two pi electrons left by odd occupancy are parallel and occupy different loops, giving one unpaired electron in each 13-electron loop.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first exact count matches the bound submission entry and the named Lean theorem.",
+            "id": "triplet_c13_antiaromatic",
+            "kind": "integer",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A1.PiOrientation",
+                "IChO2026Problems.T6A1.CyclocarbonForm.tripletC13",
+                "IChO2026Problems.T6A1.carbonCount",
+                "IChO2026Problems.T6A1.statedSpin",
+                "IChO2026Problems.T6A1.occupancyPattern",
+                "IChO2026Problems.T6A1.standardPiSystem"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A1.antiaromaticCount"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A1.piElectronCount",
+                "IChO2026Problems.T6A1.piUnpairedElectronCount",
+                "IChO2026Problems.T6A1.HuckelEligible",
+                "IChO2026Problems.T6A1.huckelClass",
+                "IChO2026Problems.T6A1.countHuckelClass"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A1.triplet_c13_antiaromatic"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The theorem triplet_c13_antiaromatic equates the correct antiaromatic count for tripletC13 to the independently derived exact integer.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Not a process quantity; this is a count over the two pi orientations of one source-named species.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Cardinality of the anti-aromatic closed-shell H\u00fcckel class among the two distinct perpendicular pi systems of triplet C13.",
+            "raw_result": {
+              "derivation": "Triplet C13 has two 13-electron open-shell loops; neither is eligible for the ordinary 4k anti-aromatic H\u00fcckel class.",
+              "exact_unrounded": true,
+              "value_or_expression": "0"
+            },
+            "reporting": {
+              "application": "The requested exact integer is displayed unchanged; no rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_integer",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission id, order, integer kind, empty unit, raw integer, and display string all match the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              }
+            ],
+            "source_requirement": "number of distinct antiaromatic pi systems in triplet_c13 by Huckel's rule",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "H\u00fcckel rule on the standard two-loop cyclocarbon model",
+                "relation": "Each of the two orthogonal cyclic conjugated pi loops is classified only when closed-shell: 4k+2 electrons is aromatic and 4k electrons is anti-aromatic.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "Singlet C13 with stated spin S = 0",
+                "relation": "In the standard closed-shell singlet model the two odd loop occupancies pair by transferring one electron, producing the minimal conserving 14- and 12-electron split.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first exact count matches the bound submission entry and the named Lean theorem.",
+            "id": "singlet_c13_aromatic",
+            "kind": "integer",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A1.PiOrientation",
+                "IChO2026Problems.T6A1.CyclocarbonForm.singletC13",
+                "IChO2026Problems.T6A1.carbonCount",
+                "IChO2026Problems.T6A1.statedSpin",
+                "IChO2026Problems.T6A1.occupancyPattern",
+                "IChO2026Problems.T6A1.standardPiSystem"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A1.aromaticCount"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A1.piElectronCount",
+                "IChO2026Problems.T6A1.piUnpairedElectronCount",
+                "IChO2026Problems.T6A1.HuckelEligible",
+                "IChO2026Problems.T6A1.huckelClass",
+                "IChO2026Problems.T6A1.countHuckelClass"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A1.singlet_c13_aromatic"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The theorem singlet_c13_aromatic equates the correct aromatic count for singletC13 to the independently derived exact integer.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Not a process quantity; this is a count over the two pi orientations of one source-named species.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Cardinality of the aromatic class among the two distinct perpendicular pi systems of closed-shell singlet C13.",
+            "raw_result": {
+              "derivation": "Pairing the singlet's 26 pi electrons gives the conserving 14+12 split; 14 = 4*3 + 2 is aromatic while 12 is not, so exactly one loop is aromatic.",
+              "exact_unrounded": true,
+              "value_or_expression": "1"
+            },
+            "reporting": {
+              "application": "The requested exact integer is displayed unchanged; no rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_integer",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission id, order, integer kind, empty unit, raw integer, and display string all match the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              }
+            ],
+            "source_requirement": "number of distinct aromatic pi systems in singlet_c13 by Huckel's rule",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "H\u00fcckel rule on the standard two-loop cyclocarbon model",
+                "relation": "Each of the two orthogonal cyclic conjugated pi loops is classified only when closed-shell: 4k+2 electrons is aromatic and 4k electrons is anti-aromatic.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "Singlet C13 with stated spin S = 0",
+                "relation": "In the standard closed-shell singlet model the two odd loop occupancies pair by transferring one electron, producing the minimal conserving 14- and 12-electron split.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first exact count matches the bound submission entry and the named Lean theorem.",
+            "id": "singlet_c13_antiaromatic",
+            "kind": "integer",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A1.PiOrientation",
+                "IChO2026Problems.T6A1.CyclocarbonForm.singletC13",
+                "IChO2026Problems.T6A1.carbonCount",
+                "IChO2026Problems.T6A1.statedSpin",
+                "IChO2026Problems.T6A1.occupancyPattern",
+                "IChO2026Problems.T6A1.standardPiSystem"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A1.antiaromaticCount"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A1.piElectronCount",
+                "IChO2026Problems.T6A1.piUnpairedElectronCount",
+                "IChO2026Problems.T6A1.HuckelEligible",
+                "IChO2026Problems.T6A1.huckelClass",
+                "IChO2026Problems.T6A1.countHuckelClass"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A1.singlet_c13_antiaromatic"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The theorem singlet_c13_antiaromatic equates the correct antiaromatic count for singletC13 to the independently derived exact integer.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Not a process quantity; this is a count over the two pi orientations of one source-named species.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Cardinality of the anti-aromatic class among the two distinct perpendicular pi systems of closed-shell singlet C13.",
+            "raw_result": {
+              "derivation": "The closed-shell singlet's conserving 14+12 split contains one 12 = 4*3 anti-aromatic loop and one 14-electron aromatic loop.",
+              "exact_unrounded": true,
+              "value_or_expression": "1"
+            },
+            "reporting": {
+              "application": "The requested exact integer is displayed unchanged; no rounding or tolerance is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_integer",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission id, order, integer kind, empty unit, raw integer, and display string all match the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              }
+            ],
+            "source_requirement": "number of distinct antiaromatic pi systems in singlet_c13 by Huckel's rule",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "230ccace58ddee005349b175cdc65bb64f53fb1cfde8a7af65bc47937b0625f4"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a1.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The candidate faithfully formalizes all eight source-requested exact counts using the standard two-loop cyclocarbon electron model and a uniform H\u00fcckel classifier; every sidecar value and named Lean carrier matches the independent derivation and the frozen Kimi 6.1 answer.",
+        "reviewed_at": "2026-09-13T08:39:38Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "230ccace58ddee005349b175cdc65bb64f53fb1cfde8a7af65bc47937b0625f4",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a1.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 13,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "All eight requested exact-integer entries are independently reproduced by a transparent two-orientation H\u00fcckel classifier: the standard sp-cyclocarbon model gives two conjugated loops, the even rings carry n electrons per loop, triplet C13 has two open 13-electron loops, and the closed-shell singlet has the nearest conserving even split. The submission schema and order match the requested outputs, every output has a nontrivial theorem carrier, and deterministic preflight is clean.",
+    "evidence": "The bound page states the four cyclocarbons, the triplet and singlet spins, and the instruction to apply H\u00fcckel's rule. Exact SHA-256 checks matched the image, submission, and candidate bindings. The candidate transparently defines the two orientations, electron and unpaired-electron ledgers, eligibility, the modulo-four classifier, and a Finset cardinality over both orientations; completed_table composes the eight result theorems. Controller preflight reports status=passed, compiles=true, returncode=0, sorry_count=0.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "2b55f32563b87c62060b9058876e284f7cc14dafc19c314b4163cab3e16a19c9",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t6_a1.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t6_a1",
+      "source_record_sha256": "404675bf2ff6547507a8d062ad17310fc2d44f07f158c94ebb8049b7a9a93028",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a1.answer.json",
+      "answer_submission_sha256": "4be47a745f3f9a3ea61185d8c70fa563d82afa276513d056d2dbc0faaf173a57",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t6_a1.source.json",
+      "source_report_sha256": "6e73ef9d184bfea5ec8b81b641add4b58284bdbd0cde0b4b0ba227ee034126dc",
+      "candidate": "IChO2026Problems/problem_icho_2026_t6_a1.lean",
+      "preflight_sha256": "0c795f9b94af055329ea40aeb2eb258faf85c7de9e233b8e37efda8e6f905372",
+      "candidate_sha256": "2b55f32563b87c62060b9058876e284f7cc14dafc19c314b4163cab3e16a19c9",
+      "question_sha256": "17e175de1da5d9cd97bf11e7a74ef301554f389657a43a3228ef286c2a867cfc",
+      "shared_context_sha256": "1d80a8f3fb1e245ec5c8953cc41310f97222b8e206a6600a32bcb14cb3d45348",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "cdf57fb93131b4d55ab5823d8c97f7f118c03211ec396ee5babdef32a5c4493a",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T6_page-1.png",
+          "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "c44bde0509fc7cbd69fbb73d3574ffa43dbd066016c7b2b09bcaf03c8377b810",
+        "node_count": 19,
+        "edge_count": 32,
+        "node_kind_counts": {
+          "derivation_obligation": 8,
+          "requested_output": 8,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "c18_aromatic",
+          "c18_antiaromatic",
+          "c16_aromatic",
+          "c16_antiaromatic",
+          "triplet_c13_aromatic",
+          "triplet_c13_antiaromatic",
+          "singlet_c13_aromatic",
+          "singlet_c13_antiaromatic"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t6_a1",
+        "path": ".archon/provided_answer_drafts/Q6.md",
+        "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t6_a1.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t6_a1",
+        "source_record_sha256": "404675bf2ff6547507a8d062ad17310fc2d44f07f158c94ebb8049b7a9a93028",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a1.answer.json",
+        "answer_submission_sha256": "4be47a745f3f9a3ea61185d8c70fa563d82afa276513d056d2dbc0faaf173a57",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t6_a1.source.json",
+        "source_report_sha256": "6e73ef9d184bfea5ec8b81b641add4b58284bdbd0cde0b4b0ba227ee034126dc",
+        "candidate": "IChO2026Problems/problem_icho_2026_t6_a1.lean",
+        "preflight_sha256": "0c795f9b94af055329ea40aeb2eb258faf85c7de9e233b8e37efda8e6f905372",
+        "candidate_sha256": "2b55f32563b87c62060b9058876e284f7cc14dafc19c314b4163cab3e16a19c9",
+        "question_sha256": "17e175de1da5d9cd97bf11e7a74ef301554f389657a43a3228ef286c2a867cfc",
+        "shared_context_sha256": "1d80a8f3fb1e245ec5c8953cc41310f97222b8e206a6600a32bcb14cb3d45348",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "cdf57fb93131b4d55ab5823d8c97f7f118c03211ec396ee5babdef32a5c4493a",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T6_page-1.png",
+            "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "c44bde0509fc7cbd69fbb73d3574ffa43dbd066016c7b2b09bcaf03c8377b810",
+          "node_count": 19,
+          "edge_count": 32,
+          "node_kind_counts": {
+            "derivation_obligation": 8,
+            "requested_output": 8,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "c18_aromatic",
+            "c18_antiaromatic",
+            "c16_aromatic",
+            "c16_antiaromatic",
+            "triplet_c13_aromatic",
+            "triplet_c13_antiaromatic",
+            "singlet_c13_aromatic",
+            "singlet_c13_antiaromatic"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t6_a1",
+          "path": ".archon/provided_answer_drafts/Q6.md",
+          "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The derivation used only the inline T6.1 problem evidence, the inspected bound page, and ordinary H\u00fcckel, spin-multiplicity, and sp-orbital chemistry. The sealed Kimi draft was used only for the separately required fidelity comparison, never as a premise; no official answer, rubric, prior proof, source report, source bundle, or unlisted artifact was opened."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "Each sp carbon contributes one electron to each of two perpendicular cyclic conjugated loops. Consequently the even Cn forms carry n electrons in each loop: the C18 loops satisfy 18 = 4*4+2 and the C16 loops satisfy 16 = 4*4. In triplet C13, the two parallel unpaired electrons occupy different loops, giving the conserving open-shell split 13+13 and making both loops ineligible for the closed-shell classifier. In singlet C13, pair occupancy and the lowest balanced conserving split give 14+12=26, with residues 2 and 0 modulo four. The Lean carriers pi_electron_conservation, c13_spin_inventory, and triplet_c13_unclassified expose the corresponding ledgers."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "Every requested output is an integer count with the controller-bound exact_integer policy; display strings are therefore the canonical decimal forms of the integer raw values, with no rounding."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No tolerance or measured quantity is used. All eight outputs are exact finite-set cardinalities under exact-integer reporting."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The problem names exactly the four audited species, and ordinary sp-hybridized cyclocarbon bonding supplies exactly the in-plane and out-of-plane conjugated loops represented by PiOrientation. The audit uses no finite chemical candidate search, empirical registry rule, or unjustified search bound."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=2b55f32563b87c62060b9058876e284f7cc14dafc19c314b4163cab3e16a19c9; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result carriers are IChO2026Problems.T6A1.c18_aromatic, c18_antiaromatic, c16_aromatic, c16_antiaromatic, triplet_c13_aromatic, triplet_c13_antiaromatic, singlet_c13_aromatic, singlet_c13_antiaromatic, composed by IChO2026Problems.T6A1.completed_table."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The eight closed theorem statements give exactly the aromatic and anti-aromatic cardinalities for every source-named form, and completed_table preserves their source order. No requested species, class, branch, unit, or precision condition is omitted or weakened."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "There are no theorem hypotheses or user-settable chemistry flags. The transparent definitions instantiate source-named carbon counts and spins together with the ordinary two-loop sp-cyclocarbon electron model; the requested results are not assumed as premises."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "Each exact submission output id maps one-to-one to the same-named theorem over aromaticCount or antiaromaticCount, and the combined theorem covers all eight blanks without adding a sentinel or substituting another answer."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The candidate makes the decisive bridge inspectable through PiOrientation, PiSystem, HuckelEligible, huckelClass, countHuckelClass, two_distinct_pi_systems, pi_electron_conservation, c13_spin_inventory, and triplet_c13_unclassified. The final proofs reduce to this transparent model and kernel-checked finite computation, not a local axiom or opaque predicate."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "number of distinct aromatic pi systems in c18 by Huckel's rule",
+          "lean_carrier": "IChO2026Problems.T6A1.c18_aromatic",
+          "status": "covered",
+          "evidence": "The submission entry has the exact id, position, integer kind, empty unit, canonical exact-integer display, and independently derived class-cardinality; the named theorem computes the same aromatic filter.",
+          "output_id": "c18_aromatic",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "number of distinct antiaromatic pi systems in c18 by Huckel's rule",
+          "lean_carrier": "IChO2026Problems.T6A1.c18_antiaromatic",
+          "status": "covered",
+          "evidence": "The submission entry has the exact id, position, integer kind, empty unit, canonical exact-integer display, and independently derived class-cardinality; the named theorem computes the same anti-aromatic filter.",
+          "output_id": "c18_antiaromatic",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "number of distinct aromatic pi systems in c16 by Huckel's rule",
+          "lean_carrier": "IChO2026Problems.T6A1.c16_aromatic",
+          "status": "covered",
+          "evidence": "The submission entry has the exact id, position, integer kind, empty unit, canonical exact-integer display, and independently derived class-cardinality; the named theorem computes the same aromatic filter.",
+          "output_id": "c16_aromatic",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "number of distinct antiaromatic pi systems in c16 by Huckel's rule",
+          "lean_carrier": "IChO2026Problems.T6A1.c16_antiaromatic",
+          "status": "covered",
+          "evidence": "The submission entry has the exact id, position, integer kind, empty unit, canonical exact-integer display, and independently derived class-cardinality; the named theorem computes the same anti-aromatic filter.",
+          "output_id": "c16_antiaromatic",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "number of distinct aromatic pi systems in triplet_c13 by Huckel's rule",
+          "lean_carrier": "IChO2026Problems.T6A1.triplet_c13_aromatic",
+          "status": "covered",
+          "evidence": "The submission entry has the exact id, position, integer kind, empty unit, canonical exact-integer display, and independently derived open-shell classification; the named theorem computes the same aromatic filter while retaining both loops in the inventory.",
+          "output_id": "triplet_c13_aromatic",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "number of distinct antiaromatic pi systems in triplet_c13 by Huckel's rule",
+          "lean_carrier": "IChO2026Problems.T6A1.triplet_c13_antiaromatic",
+          "status": "covered",
+          "evidence": "The submission entry has the exact id, position, integer kind, empty unit, canonical exact-integer display, and independently derived open-shell classification; the named theorem computes the same anti-aromatic filter while retaining both loops in the inventory.",
+          "output_id": "triplet_c13_antiaromatic",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "number of distinct aromatic pi systems in singlet_c13 by Huckel's rule",
+          "lean_carrier": "IChO2026Problems.T6A1.singlet_c13_aromatic",
+          "status": "covered",
+          "evidence": "The submission entry has the exact id, position, integer kind, empty unit, canonical exact-integer display, and independently derived singlet-loop classification; the named theorem computes the same aromatic filter.",
+          "output_id": "singlet_c13_aromatic",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "number of distinct antiaromatic pi systems in singlet_c13 by Huckel's rule",
+          "lean_carrier": "IChO2026Problems.T6A1.singlet_c13_antiaromatic",
+          "status": "covered",
+          "evidence": "The submission entry has the exact id, position, integer kind, empty unit, canonical exact-integer display, and independently derived singlet-loop classification; the named theorem computes the same anti-aromatic filter.",
+          "output_id": "singlet_c13_antiaromatic",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T6_page-1.png",
+          "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba",
+          "inspected": true,
+          "evidence": "The legible page identifies cyclocarbons as monocyclic all-carbon compounds, names C18, C16, triplet C13 with S=1, and singlet C13 with S=0, and asks for every aromatic and anti-aromatic pi-system count using H\u00fcckel's rule. It is an unmarked problem page; the later T6.2 reaction scheme is outside this target and supplies no answer premise."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Ordinary sp-carbon bonding supplies two mutually perpendicular p orbitals and thus two distinct cyclic conjugated pi systems. Applying closed-shell H\u00fcckel residues separately makes the even loops classifiable, leaves both odd-electron triplet loops unclassified, and classifies the conserving closed-shell singlet split once in each requested class. The candidate represents these semantics transparently."
+        },
+        "staged_species_domain": {
+          "status": "not_applicable",
+          "evidence": "not_staged_transformation: T6.1 asks only for electronic aromaticity classifications. No depicted or stated transformation is used in any requested-output derivation; the later T6.2 arrows on the same page are outside the assigned target."
+        },
+        "formula_mass_consistency": {
+          "status": "not_applicable",
+          "evidence": "No molecular-formula or molar-mass output or inference is used in T6.1."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "The total pi-electron ledger is conserved at twice the carbon count for all four forms, formally carried by pi_electron_conservation. c13_spin_inventory separately checks the modeled unpaired-electron totals against the two source-stated spin forms."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "All requested outputs are dimensionless integer cardinalities."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The answer submission contains exactly eight outputs in the required order, all with integer kind, empty unit, matching raw integers and canonical decimal display strings. Exact-integer reporting introduces neither significant-figure rounding nor tolerance."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "No constitutional structure or stereochemical assignment is requested; the only geometric distinction needed is the exhaustive pair of orthogonal pi orientations represented by PiOrientation."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "PiOrientation is a two-constructor finite type, two_distinct_pi_systems proves its cardinality, and countHuckelClass filters the full universe. Thus every distinct loop is accounted for exactly once as aromatic, anti-aromatic, or unclassified; there is no omitted orientation or duplicate witness."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The requested cardinalities are theorem conclusions, not premises. A single transparent modulo-four classifier uniformly filters both orientations for every form; the model includes electron conservation and the open-shell remainder rather than a preselected result table, singleton candidate domain, arbitrary Bool witness, local axiom, or reflexive theorem."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a1.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "All eight requested exact-integer entries are independently reproduced by a transparent two-orientation H\u00fcckel classifier: the standard sp-cyclocarbon model gives two conjugated loops, the even rings carry n electrons per loop, triplet C13 has two open 13-electron loops, and the closed-shell singlet has the nearest conserving even split. The submission schema and order match the requested outputs, every output has a nontrivial theorem carrier, and deterministic preflight is clean.",
+        "evidence": "The bound page states the four cyclocarbons, the triplet and singlet spins, and the instruction to apply H\u00fcckel's rule. Exact SHA-256 checks matched the image, submission, and candidate bindings. The candidate transparently defines the two orientations, electron and unpaired-electron ledgers, eligibility, the modulo-four classifier, and a Finset cardinality over both orientations; completed_table composes the eight result theorems. Controller preflight reports status=passed, compiles=true, returncode=0, sorry_count=0.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T08:52:41.045281Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "2b55f32563b87c62060b9058876e284f7cc14dafc19c314b4163cab3e16a19c9",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a1.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T08:52:41.045317Z",
+    "repair_handoff": {}
+  }
+}

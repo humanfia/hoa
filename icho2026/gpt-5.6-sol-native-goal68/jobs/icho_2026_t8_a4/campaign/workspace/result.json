@@ -1,0 +1,38 @@
+{
+  "target_id": "icho_2026_t8_a4",
+  "status": "completed",
+  "answer_summary": "With L = neutral tetradentate ligand 8: 9 is cis-[FeII(L)(H2O)2]2+ (OS 2, CN 6, VE 18, Z 2); 10 is [FeI(L)(H2O)]+ (1,5,17,1); 11 is [FeIII(L)(kappa2-C,O-CO2)] + with formal CO2(2-) (3,6,17,1); 12 is C-bound [FeII(L)(COOH)]+ (2,5,16,1); 13 is [FeII(L)(COOH)(H2O)]+ (2,6,18,1); 14 is [FeII(L)(CO)(H2O)]2+ (2,6,18,2); and 15 is [FeII(L)(H2O)]2+ (2,5,16,2).",
+  "theorem_names": [
+    "IChO2026Problems.T8A4.structure_9",
+    "IChO2026Problems.T8A4.structure_10",
+    "IChO2026Problems.T8A4.structure_11",
+    "IChO2026Problems.T8A4.structure_12",
+    "IChO2026Problems.T8A4.structure_13",
+    "IChO2026Problems.T8A4.structure_14",
+    "IChO2026Problems.T8A4.structure_15",
+    "IChO2026Problems.T8A4.complex_9_outputs",
+    "IChO2026Problems.T8A4.complex_10_outputs",
+    "IChO2026Problems.T8A4.complex_11_outputs",
+    "IChO2026Problems.T8A4.complex_12_outputs",
+    "IChO2026Problems.T8A4.complex_13_outputs",
+    "IChO2026Problems.T8A4.complex_14_outputs",
+    "IChO2026Problems.T8A4.complex_15_outputs",
+    "IChO2026Problems.T8A4.all_fragment_graphs_wellFormed",
+    "IChO2026Problems.T8A4.reconstructed_structures_wellFormed",
+    "IChO2026Problems.T8A4.supplied_answer_sheet_fields_match",
+    "IChO2026Problems.T8A4.catalytic_cycle_closes",
+    "IChO2026Problems.T8A4.catalytic_cycle_net_reaction"
+  ],
+  "assumptions": [
+    "Ligand 8 is represented exactly at the neutral tetradentate N4-cartoon resolution mandated by Q8.4; its noncoordinating carboxylic acid substituent remains neutral as drawn on Q8-1.",
+    "The printed arrow labels obey conservation of total charge, with electron charge -1, proton charge +1, chloride charge -1, and H2O, CO2, and CO neutral.",
+    "Oxidation states and valence-electron counts use standard ionic organometallic bookkeeping: Fe is group 8 and each bound donor atom supplies two electrons.",
+    "Absolute octahedral axis names in Lean are arbitrary labels; only the chemically relevant cis relation of the two labile sites is asserted."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a4.lean",
+    "grep -nE '(^|[[:space:]])(sorry|admit|unsafe)([[:space:]]|$)|^[[:space:]]*axiom[[:space:]]' IChO2026Problems/problem_icho_2026_t8_a4.lean || true",
+    "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T8_page-1.png icho_2026_source/image/T8_page-2.png icho_2026_source/image/icho_2026_t8_a4-page-79.png icho_2026_source/image/icho_2026_t8_a4-page-80.png"
+  ]
+}

@@ -1,0 +1,40 @@
+Let $\mathcal H_A=(\C^2)^{\otimes n}$ be an address register and $\mathcal H_D=(\C^2)^{\otimes m}$ a data register.  Let
+$$
+    D:\{0,1\}^n\to\{0,1\}^m
+$$
+be a classical data function.  The ideal QROM unitary is
+$$
+    U_D(\ket{x}_A\otimes\ket{y}_D)
+    =
+    \ket{x}_A\otimes\ket{y\oplus D(x)}_D.
+$$
+Identify each address integer $k\in\{0,1,\dots,2^n-1\}$ with its $n$-bit computational basis string, and write $D(k)=D_1(k)\cdots D_m(k)$.  Let
+$$
+    X=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+$$
+For each address $k$, define
+$$
+    C_k
+    =
+    I_A\otimes I_D
+    +
+    \ketbra{k}{k}_A
+    \otimes
+    \left(X^{D(k)}-I_D\right),
+    \qquad
+    X^{D(k)}=\bigotimes_{j=1}^m X^{D_j(k)}.
+$$
+Prove that each $C_k$ is unitary and acts on computational basis states as
+$$
+    C_k(\ket{x}_A\otimes\ket{y}_D)
+    =
+    \begin{cases}
+    \ket{k}_A\otimes\ket{y\oplus D(k)}_D, & x=k,\\[1mm]
+    \ket{x}_A\otimes\ket{y}_D, & x\neq k.
+    \end{cases}
+$$
+Prove the exact factorization
+$$
+    U_D=\prod_{k=0}^{2^n-1}C_k,
+$$
+and prove that $C_kC_\ell=C_\ell C_k$ for all $k,\ell$, so the product ordering has no effect.

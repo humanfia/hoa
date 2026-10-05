@@ -1,0 +1,32 @@
+{
+  "ChannelsAndChoiRepresentations": {
+    "end_to_end_passed": 11,
+    "proof_review_passed": 11,
+    "semantic_review_passed": 11,
+    "tasks": 11
+  },
+  "EntropyCodingAndInformationInequalities": {
+    "end_to_end_passed": 9,
+    "proof_review_passed": 9,
+    "semantic_review_passed": 9,
+    "tasks": 9
+  },
+  "MixedUnitaryObstructionsAndSymmetry": {
+    "end_to_end_passed": 7,
+    "proof_review_passed": 7,
+    "semantic_review_passed": 7,
+    "tasks": 7
+  },
+  "NormFidelityAndContinuityTools": {
+    "end_to_end_passed": 10,
+    "proof_review_passed": 10,
+    "semantic_review_passed": 10,
+    "tasks": 10
+  },
+  "OneShotEntropiesAndHypothesisTesting": {
+    "end_to_end_passed": 3,
+    "proof_review_passed": 3,
+    "semantic_review_passed": 3,
+    "tasks": 3
+  }
+}

@@ -1,0 +1,767 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The single exact phase-direction classification is source-derived, agrees with the sealed Kimi 2.4 draft and bound submission, and is carried by a non-vacuous four-corner traversal theorem rather than assumed.",
+    "updated_at": "2026-09-13T08:44:51Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "74f53e2d845e1a54841a716f3c615f9615d4fb2686a207d069c42a75d58b387b",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "T2_page-3 fixes bromide as the horizontal coordinate, HBrO2 as the vertical coordinate, the four connected boundary edges, the high/low and critical/maximum orderings, and the slow decrease from maximum to critical; the Lean PhasePortraitGeometry, BoundaryAdjacent, and HasPrintedSlowLeg carriers preserve exactly those facts."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Starting at lowAtMaximum, the source-directed edge reaches lowAtCritical; distinct boundary adjacency then forces highAtLeft and highAtCritical. The shoelace expression factors as (hbrO2A-hbrO2B)*(bromideAtHighLeft-bromideMaximum), which is strictly negative from the visible coordinate orders, and directionFromSignedArea supplies the exact classification."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "The model exposes axes, all four visible corners, all four boundary connections, the directed slow leg, signed area, a nonempty admissible traversal, and separate raw and reported result propositions. The unlabelled upper-left x-coordinate remains universally parameterized, so no pixel value or answer-shaped coordinate is introduced."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The requested result is an exact symbolic orientation. It depends only on strict visual/source orderings, not a measured threshold, tolerance, rounded numerical value, or uncertain constant."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "With standard plotted axes, the lower branch is traversed right-to-left from maximum bromide to critical bromide; the forced continuation around the supplied connected boundary has negative signed area. The candidate explicitly maps negative area to the clockwise constructor and positive area to the opposite constructor."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "phaseDirectionRawResult quantifies over every admissible upper-left coordinate and every distinct four-corner boundary cycle satisfying the source-directed slow leg, while SourceTraversalDomainNonempty supplies a witness. Reversing the orientation reverses the decisive slow edge and therefore violates the same source constraint; no free flag or alternate source-compatible traversal changes the output."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The supplied portrait has bromide on x, HBrO2 on y, and the depicted four-corner boundary with the printed coordinate orderings.",
+          "carrier": "PhasePortraitGeometry.point; sourcePortrait; BoundaryAdjacent",
+          "status": "covered",
+          "evidence": "Directly covered by T2_page-3.png: the axis labels, dashed critical/maximum guides, high/low guides, and four connected red segments are represented without assigning an unsupported numerical upper-left coordinate."
+        },
+        {
+          "claim": "The outcome-decisive slow leg proceeds from maximum bromide to critical bromide on the low-HBrO2 branch.",
+          "carrier": "HasPrintedSlowLeg",
+          "status": "covered",
+          "evidence": "T2_page-3 states that bromide slowly decreases from its maximum to its critical value; the plotted low branch connects exactly those labelled endpoints. T2_page-2 independently agrees because displayed Process-B steps (4) and (5) consume bromide."
+        },
+        {
+          "claim": "The source-directed edge and boundary adjacency force the full ordered cycle and a negative signed area.",
+          "carrier": "printed_slow_leg_forces_corner_order; printed_traversal_has_negative_signed_area",
+          "status": "covered",
+          "evidence": "These transparent geometric statements use distinctness, all four depicted adjacency edges, and only the strict coordinate orderings read from the portrait."
+        },
+        {
+          "claim": "The negative-area cycle yields the requested exact classification and the admissible domain is nonempty.",
+          "carrier": "directionFromSignedArea; SourceTraversalDomainNonempty; phaseDirectionRawResult; phaseDirectionReportedResult",
+          "status": "covered",
+          "evidence": "The direction convention is explicit, the existential witness prevents vacuity, and the final theorem contains the classification only in the conclusion, not in any source hypothesis."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t2_a4.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t2_a4",
+        "source_record_sha256": "8f1f64bb8becd83293a598dd98cc99e9f4dae56292502c15fcae07b8f4ffdfac",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a4.answer.json",
+        "answer_submission_sha256": "13c10085b64de62c1ba3ad8d9ac30e645a25dbab86e43f43b0a6b1237797c968",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t2_a4.source.json",
+        "source_report_sha256": "480e78825b8f26fd06c9e87433a4582a38fbd92cee51b5b47f1151d1d9a6a338",
+        "candidate": "IChO2026Problems/problem_icho_2026_t2_a4.lean",
+        "preflight_sha256": "f36d1f27f154e644e73fd274eca97e6a06728e709dcb61af82b8e68eec13468c",
+        "candidate_sha256": "74f53e2d845e1a54841a716f3c615f9615d4fb2686a207d069c42a75d58b387b",
+        "question_sha256": "9133b6a940bea871b91044fced5c62e1bd980be42d19e911004c8cd4672d1ad3",
+        "shared_context_sha256": "32ac33abcb6e818815c896ca5f686f5ae7757e67f9108c9b340a4ba56ca9729c",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "298a9a6f2a6d859331e9541755f3cf5e8147b0a1b325f377408563c648eeba3f",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T2_page-3.png",
+            "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-2.png",
+            "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "5103e015d0d8d7bc199250ae628432aa08312994aafcdeda22a3709d070b3a6a",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "phase_direction"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t2_a4",
+          "path": ".archon/provided_answer_drafts/Q2.md",
+          "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t2_a4.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t2_a4",
+          "source_record_sha256": "8f1f64bb8becd83293a598dd98cc99e9f4dae56292502c15fcae07b8f4ffdfac",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a4.answer.json",
+          "answer_submission_sha256": "13c10085b64de62c1ba3ad8d9ac30e645a25dbab86e43f43b0a6b1237797c968",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t2_a4.source.json",
+          "source_report_sha256": "480e78825b8f26fd06c9e87433a4582a38fbd92cee51b5b47f1151d1d9a6a338",
+          "candidate": "IChO2026Problems/problem_icho_2026_t2_a4.lean",
+          "preflight_sha256": "f36d1f27f154e644e73fd274eca97e6a06728e709dcb61af82b8e68eec13468c",
+          "candidate_sha256": "74f53e2d845e1a54841a716f3c615f9615d4fb2686a207d069c42a75d58b387b",
+          "question_sha256": "9133b6a940bea871b91044fced5c62e1bd980be42d19e911004c8cd4672d1ad3",
+          "shared_context_sha256": "32ac33abcb6e818815c896ca5f686f5ae7757e67f9108c9b340a4ba56ca9729c",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "298a9a6f2a6d859331e9541755f3cf5e8147b0a1b325f377408563c648eeba3f",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T2_page-3.png",
+              "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+            },
+            {
+              "path": "icho_2026_source/image/T2_page-2.png",
+              "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "5103e015d0d8d7bc199250ae628432aa08312994aafcdeda22a3709d070b3a6a",
+            "node_count": 5,
+            "edge_count": 4,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "phase_direction"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t2_a4",
+            "path": ".archon/provided_answer_drafts/Q2.md",
+            "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, per-cycle scope, lack of stock-flow applicability, portrait geometry, directed slow leg, and signed-area derivation were frozen from the inline problem evidence and two bound images before the submission, candidate, or sealed draft subpart was opened. No official answer, rubric, report, or unlisted artifact was used."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The unrounded symbolic carrier is the strict inequality (H-L)*(X-M)<0 for H>L and X<M, followed by the explicit signed-area direction map; PhaseDirectionRawResult and phaseDirectionRawResult expose this end to end."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy specifies exact_symbolic, and the global reporting policy is copied verbatim; raw and display classifications therefore remain unchanged."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is admitted or needed: the requested output is exact symbolic and the strict coordinate inequalities make the orientation stable throughout the represented source domain."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The only decisive domain is the four visibly distinct corners and four edges in T2_page-3. The unknown upper-left coordinate is universally parameterized under its visible order constraints, and the theorem ranges over every distinct boundary cycle with the printed slow leg; there is no singleton answer domain or free exclusion flag."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=74f53e2d845e1a54841a716f3c615f9615d4fb2686a207d069c42a75d58b387b; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=9. Nontrivial result declarations are SourceTraversalDomainNonempty, printed_slow_leg_forces_corner_order, printed_traversal_has_negative_signed_area, phaseDirectionRawResult, and phaseDirectionReportedResult."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The theorem answers the one requested per-cycle phase-direction classification. Its universal quantification is only robustness over the visibly unconstrained upper-left coordinate and compatible traversals, not an unrequested global uniqueness claim about chemical systems."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The decisive hypotheses are the graph's strict coordinate ordering, boundary adjacency, and printed maximum-to-critical slow leg. Each is visible or stated in T2_page-3, while the level and threshold orders are also derived inline from the printed mechanism and exact constants; the desired classification is not a premise."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The reported Lean proposition, the sole submission output, the source-first signed-area derivation, and the sealed Kimi subpart all give the same exact requested classification with an empty unit."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are named: source portrait geometry, source-directed slow leg, forced corner order, signed-area sign, direction convention, nonempty admissible traversal, and raw-to-reported result. The unused detailed chemistry carriers are supporting context and introduce no missing outcome bridge."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "direction of motion in the supplied phase portrait",
+            "lean_carrier": "IChO2026Problems.ProblemIChO2026T2A4.phaseDirectionReportedResult",
+            "status": "covered",
+            "evidence": "Exactly one classification output is present in the required order with the required empty unit and exact-symbolic reporting; the cited theorem is nontrivial, non-vacuous, and agrees with the independent derivation.",
+            "output_id": "phase_direction",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T2_page-3.png",
+            "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260",
+            "inspected": true,
+            "evidence": "Digest matched. The panel visibly places Br- on x and HBrO2 on y; the red loop has four connected edges with lowAtMaximum at bottom right, lowAtCritical at bottom left, highAtLeft at upper left, and highAtCritical at upper right. The adjacent text states the slow bromide decrease from maximum to critical followed by rapid return."
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-2.png",
+            "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b",
+            "inspected": true,
+            "evidence": "Digest matched. The mechanism panel shows Process-B arrows (4) and (5) with Br- among the tail reactants and absent from the named heads, and Process-C arrow (7) from Ce4+ plus BMA to a head explicitly containing Br-; A and B alternate while C occurs continuously. This is consistent supporting chemistry, not a substituted answer premise."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The source-arrow directions were checked: step (4) tail HBrO2+Br-+H+ leads to 2 HBrO; step (5) tail BrO3-+Br-+2H+ leads to HBrO+HBrO2; step (7) tail Ce4++BMA leads to Ce3++Br- plus explicitly unspecified other products. The candidate tracks those named roles and correctly leaves the unnamed products unquantified."
+          },
+          "staged_species_domain": {
+            "status": "not_applicable",
+            "evidence": "not_staged_transformation: the requested output is geometric orientation of a repeated phase trajectory. It claims no staged material balance, yield, completion, sole product, residue, identity, or quantitative cross-stage flow; the displayed elementary reactions are only consistency context for the source-directed leg."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No molecular formula, molar mass, mass fraction, or composition is requested or used to select the phase-direction classification."
+          },
+          "conservation_laws": {
+            "status": "not_applicable",
+            "evidence": "No material, atom, charge, or mass conservation ledger is outcome-decisive for this exact phase-orientation output."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "The requested classification correctly has unit='', and raw/display output units match. Both phase coordinates are concentrations, so the sign of the signed-area expression is dimensionally coherent; no dimensional numerical equality is used as the answer."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "The requested policy is exact_symbolic. Submission raw and display fields match exactly, with no rounding, tolerance, significant-figure transformation, or intermediate numerical approximation."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No molecular structure, connectivity identification, stereochemistry, or depicted whole-product topology is requested."
+          },
+          "identification_uniqueness": {
+            "status": "not_applicable",
+            "evidence": "This is a supplied-loop orientation classification, not an identify/draw/give-structure task and not an open-world enumeration or uniqueness claim."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The decisive HasPrintedSlowLeg hypothesis encodes the source-stated maximum-to-critical motion, not the requested direction constructor. The clockwise constructor appears only in the derived conclusion/reporting map; admissible geometry and traversal are nonempty and universally quantified, with no opaque predicate, preselected singleton, or free Boolean."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "Traverse the source-directed low-HBrO2 branch from maximum bromide to critical bromide before continuing around the connected loop.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T2_page-3.png#slow_leg"
+                }
+              }
+            ],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "directed bromide slow leg",
+                "relation": "Bromide decreases from its maximum to its critical value on the plotted low branch and then returns rapidly to the maximum.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T2_page-3.png#slow_leg"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "oriented four-edge phase-loop signed area",
+                "relation": "For the depicted Cartesian axes, the forced corner order has signed area proportional to (high-low)*(upperLeftX-maximumX), which is negative under the visible strict orderings.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T2_page-3.png#phase_portrait"
+                }
+              }
+            ],
+            "evidence": "Source-first reconstruction of the directed lower edge and connected four-edge portrait agrees with the one-output card and all named Lean carriers.",
+            "id": "phase_direction",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIChO2026T2A4.sourcePortrait",
+                "IChO2026Problems.ProblemIChO2026T2A4.BoundaryAdjacent",
+                "IChO2026Problems.ProblemIChO2026T2A4.HasPrintedSlowLeg"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIChO2026T2A4.PhaseDirectionRawResult",
+                "IChO2026Problems.ProblemIChO2026T2A4.phaseDirectionRawResult"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIChO2026T2A4.printed_slow_leg_forces_corner_order",
+                "IChO2026Problems.ProblemIChO2026T2A4.printed_traversal_has_negative_signed_area",
+                "IChO2026Problems.ProblemIChO2026T2A4.directionFromSignedArea"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIChO2026T2A4.PhaseDirectionReportedResult",
+                "IChO2026Problems.ProblemIChO2026T2A4.phaseDirectionReportedResult"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The Lean input carriers encode the exact source geometry and directed leg; the raw theorem is non-vacuous and universally yields the independently derived classification; the reported theorem is definitionally the raw result.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "orientation of one complete traversal of the repeatedly oscillating phase loop",
+              "kind": "per_cycle"
+            },
+            "quantity_definition": "Direction of one complete time-ordered traversal of the supplied phase portrait, with bromide on the horizontal axis and HBrO2 on the vertical axis.",
+            "raw_result": {
+              "derivation": "Let M>C>X be the maximum, critical, and upper-left bromide coordinates and H>L the high and low HBrO2 levels. The printed slow leg fixes the order (M,L)->(C,L); boundary adjacency forces (X,H)->(C,H). Its twice-signed area is (H-L)*(X-M)<0, so the standard Cartesian orientation classification is clockwise.",
+              "exact_unrounded": true,
+              "value_or_expression": "clockwise"
+            },
+            "reporting": {
+              "application": "Return the exact symbolic classification unchanged; no rounding or tolerance applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission contains exactly one output in bundle order with matching id, classification kind, empty unit, and identical exact-symbolic raw and display fields.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-3.png#phase_portrait"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T2_page-3.png#slow_leg"
+              }
+            ],
+            "source_requirement": "direction of motion in the supplied phase portrait",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "74f53e2d845e1a54841a716f3c615f9615d4fb2686a207d069c42a75d58b387b"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a4.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The single exact phase-direction classification is source-derived, agrees with the sealed Kimi 2.4 draft and bound submission, and is carried by a non-vacuous four-corner traversal theorem rather than assumed.",
+        "reviewed_at": "2026-09-13T08:44:51Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "74f53e2d845e1a54841a716f3c615f9615d4fb2686a207d069c42a75d58b387b",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a4.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 9,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The bound pages determine the directed low-level leg from maximum bromide to critical bromide; the candidate transparently models the four-edge portrait and proves that every compatible nondegenerate traversal has the reported Cartesian orientation.",
+    "evidence": "All four recomputed file digests match their controller bindings. The one-output submission has schema_version 1 and exactly one output in the required order with id phase_direction, kind classification, and empty unit; raw and display classifications agree with the independently derived result. The supplied deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. In Lean, printed_slow_leg_forces_corner_order and printed_traversal_has_negative_signed_area discharge the geometric obligation, while phaseDirectionRawResult proves inhabitedness and the universal result and phaseDirectionReportedResult carries the exact-symbolic report.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "51bec5f45e35a441aac99abcf29a59f2ee61860c7df26b7c18b6848e4fc03f6d",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t2_a4.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t2_a4",
+      "source_record_sha256": "8f1f64bb8becd83293a598dd98cc99e9f4dae56292502c15fcae07b8f4ffdfac",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a4.answer.json",
+      "answer_submission_sha256": "13c10085b64de62c1ba3ad8d9ac30e645a25dbab86e43f43b0a6b1237797c968",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t2_a4.source.json",
+      "source_report_sha256": "480e78825b8f26fd06c9e87433a4582a38fbd92cee51b5b47f1151d1d9a6a338",
+      "candidate": "IChO2026Problems/problem_icho_2026_t2_a4.lean",
+      "preflight_sha256": "160dfa50515933dd210f91c87e11c8c88e68da4d6466b0d76d33b0693af7a061",
+      "candidate_sha256": "51bec5f45e35a441aac99abcf29a59f2ee61860c7df26b7c18b6848e4fc03f6d",
+      "question_sha256": "9133b6a940bea871b91044fced5c62e1bd980be42d19e911004c8cd4672d1ad3",
+      "shared_context_sha256": "32ac33abcb6e818815c896ca5f686f5ae7757e67f9108c9b340a4ba56ca9729c",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "298a9a6f2a6d859331e9541755f3cf5e8147b0a1b325f377408563c648eeba3f",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T2_page-3.png",
+          "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+        },
+        {
+          "path": "icho_2026_source/image/T2_page-2.png",
+          "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "5103e015d0d8d7bc199250ae628432aa08312994aafcdeda22a3709d070b3a6a",
+        "node_count": 5,
+        "edge_count": 4,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "phase_direction"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t2_a4",
+        "path": ".archon/provided_answer_drafts/Q2.md",
+        "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t2_a4.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t2_a4",
+        "source_record_sha256": "8f1f64bb8becd83293a598dd98cc99e9f4dae56292502c15fcae07b8f4ffdfac",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t2_a4.answer.json",
+        "answer_submission_sha256": "13c10085b64de62c1ba3ad8d9ac30e645a25dbab86e43f43b0a6b1237797c968",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t2_a4.source.json",
+        "source_report_sha256": "480e78825b8f26fd06c9e87433a4582a38fbd92cee51b5b47f1151d1d9a6a338",
+        "candidate": "IChO2026Problems/problem_icho_2026_t2_a4.lean",
+        "preflight_sha256": "160dfa50515933dd210f91c87e11c8c88e68da4d6466b0d76d33b0693af7a061",
+        "candidate_sha256": "51bec5f45e35a441aac99abcf29a59f2ee61860c7df26b7c18b6848e4fc03f6d",
+        "question_sha256": "9133b6a940bea871b91044fced5c62e1bd980be42d19e911004c8cd4672d1ad3",
+        "shared_context_sha256": "32ac33abcb6e818815c896ca5f686f5ae7757e67f9108c9b340a4ba56ca9729c",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "298a9a6f2a6d859331e9541755f3cf5e8147b0a1b325f377408563c648eeba3f",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T2_page-3.png",
+            "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260"
+          },
+          {
+            "path": "icho_2026_source/image/T2_page-2.png",
+            "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "5103e015d0d8d7bc199250ae628432aa08312994aafcdeda22a3709d070b3a6a",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "phase_direction"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t2_a4",
+          "path": ".archon/provided_answer_drafts/Q2.md",
+          "sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The result was independently rederived from the inline problem evidence and both digest-bound images. The submission and authorized sealed draft were treated only as untrusted objects for output and fidelity comparison; no official solution, prior proof, report, rubric, or unlisted artifact was consulted."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "The problem states that bromide slowly decreases from its maximum to its critical concentration. Steps (4) and (5) consume bromide, Process A has no bromide term, and continuously occurring step (7) produces bromide, so the declining leg is Process B at the lower stationary bromous-acid level. On the displayed connected four-edge portrait this is the bottom edge from right to left; adjacency and non-repetition force the remaining corner order. The shoelace carrier printed_traversal_has_negative_signed_area proves a strictly negative signed area for every allowed upper-left coordinate, and directionFromSignedArea converts that sign to the submitted classification."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The controller-bound requested output is a unitless classification with exact_symbolic reporting; raw and displayed submission fields are therefore required to be identical, with no rounding transformation, and they are."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No numerical tolerance or measurement interval is used for this exact-symbolic classification. The Lean proof uses strict source-derived coordinate orders rather than a post-hoc tolerance."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The finite domain consists exactly of the four visible corners and four visible boundary adjacencies of page T2-3. The unlabelled upper-left horizontal coordinate remains universally quantified subject only to physical nonnegativity and its visible position left of the critical guide; the domain is proved inhabited and is neither singleton nor answer-shaped."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=51bec5f45e35a441aac99abcf29a59f2ee61860c7df26b7c18b6848e4fc03f6d; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial carriers are IChO2026Problems.ProblemIChO2026T2A4.printed_traversal_has_negative_signed_area, phaseDirectionRawResult, and phaseDirectionReportedResult."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "PhaseDirectionReportedResult exposes only the requested phase-direction classification, via a non-vacuous universal specification over source-compatible traversals; it makes no yield, completeness, or unrequested kinetic-time claim."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "Every decisive constraint is source-grounded: axes and corner incidences come from page T2-3; maximum-to-critical slow bromide decline is stated below part 2.4; the Process-B and stationary-level interpretation follows from the page T2-2 mechanism and exact printed constants. The unlabelled coordinate is not assigned a guessed numerical value."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The sole output carrier has the exact classification kind and empty unit, agrees with the independently audited submission, and preserves the relevant Kimi 2.4 intended answer without substitution."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "Transparent carriers cover displayed stoichiometry, Process-B bromide consumption, Process-C bromide production, stationary-level and horizontal-order inequalities, source portrait adjacency, the directed slow leg, nondegeneracy, signed area, and the reported enum. No candidate-local axiom or opaque chemistry predicate supplies the conclusion."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "direction of motion in the supplied phase portrait",
+          "lean_carrier": "IChO2026Problems.ProblemIChO2026T2A4.phaseDirectionReportedResult",
+          "status": "covered",
+          "evidence": "The submission contains exactly this one required output with the stipulated kind and unit; its raw and display fields coincide and match the independently source-derived exact enum carried by the named theorem.",
+          "output_id": "phase_direction",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T2_page-3.png",
+          "sha256": "c3149da1c24d984ae95dea8947243aba8fe833b79e4447761bb04ec17b831260",
+          "inspected": true,
+          "evidence": "The horizontal axis is bromide and the vertical axis is bromous acid. The four connected edges place the low-level critical corner left of the low-level maximum corner, the high-left corner left of the high critical corner, and the text states slow bromide decrease from maximum to critical followed by an almost immediate return."
+        },
+        {
+          "path": "icho_2026_source/image/T2_page-2.png",
+          "sha256": "77bd97168be820a9643a8acac845ca1ef8c4c1a4a99f678c78227e6e5e48ef8b",
+          "inspected": true,
+          "evidence": "The complete visible mechanism confirms that steps (4) and (5) each consume one bromide, Process-A steps contain no bromide, and continuously occurring step (7) produces one named bromide; it also supplies the process assignments, stationary-level data, and exact constants modeled by the candidate."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The candidate faithfully transcribes all named reactants and products of steps (1)-(7), explicitly treats step (7) as only a named-species projection because other products are undisclosed, and uses only bromide production/consumption and stationary-level ordering needed for the direction."
+        },
+        "staged_species_domain": {
+          "status": "not_applicable",
+          "evidence": "not_staged_transformation: the requested result is a qualitative phase-plane orientation for an oscillatory mechanism, not a staged material transformation claiming yield, completion, sole product, loss/residue, phase amount, or a cross-stage ledger."
+        },
+        "formula_mass_consistency": {
+          "status": "not_applicable",
+          "evidence": "No formula, molar mass, mass balance, or measured composition is requested or used to select the classification."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "The outcome-relevant stoichiometric sign audit matches the displayed mechanism: both Process-B bromide terms are consumptive and the named Process-C bromide term is productive. No complete balance is asserted for step (7), whose other products remain unspecified."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "The requested classification has the required empty unit. Printed concentrations and rate-constant dimensions are represented consistently, and the final signed-area sign comparison does not equate dimensionally incompatible quantities."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The requested output is exact symbolic, so no significant-figure conversion, rounding, tolerance, or staged numerical approximation applies. Exact rational source constants are used only to prove strict coordinate orders."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "No molecular structure, connectivity identification, stereochemistry, or drawing is requested by this subquestion."
+        },
+        "identification_uniqueness": {
+          "status": "not_applicable",
+          "evidence": "This is a two-orientation qualitative classification, not an identify/draw task requiring chemical candidate uniqueness or exhaustive coverage."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The classification occurs in the conclusion of the raw-result specification, not in a hypothesis. The decisive directed edge is transparently tied to the printed maximum-to-critical slow leg, the four-corner domain is image-derived and nonempty, and the universal signed-area theorem rules out the opposite orientation without a preselected witness table, free flag, opaque predicate, or axiom."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a4.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The bound pages determine the directed low-level leg from maximum bromide to critical bromide; the candidate transparently models the four-edge portrait and proves that every compatible nondegenerate traversal has the reported Cartesian orientation.",
+        "evidence": "All four recomputed file digests match their controller bindings. The one-output submission has schema_version 1 and exactly one output in the required order with id phase_direction, kind classification, and empty unit; raw and display classifications agree with the independently derived result. The supplied deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. In Lean, printed_slow_leg_forces_corner_order and printed_traversal_has_negative_signed_area discharge the geometric obligation, while phaseDirectionRawResult proves inhabitedness and the universal result and phaseDirectionReportedResult carries the exact-symbolic report.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:03:31.613908Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "51bec5f45e35a441aac99abcf29a59f2ee61860c7df26b7c18b6848e4fc03f6d",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t2_a4.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:03:31.613937Z",
+    "repair_handoff": {}
+  }
+}

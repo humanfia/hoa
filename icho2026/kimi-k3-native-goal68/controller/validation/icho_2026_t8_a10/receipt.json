@@ -1,0 +1,68 @@
+{
+  "target": "icho_2026_t8_a10",
+  "goal_status": "goal_complete",
+  "checked_at": 1789366946.9005454,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t8_a10.lean": "f33852d1056334a7f8022732cfdd2627ef6a76f243967677935dad15d965a90d",
+    "answer.md": "b437ce8d8d458398b8ccea1c8cd401e0686e9fc6c6291a3d7fecc326e7b6eb3a",
+    "verification.md": "bb6903e9379214d089cac9f46a8a1cf57c6321d98c8096acf11ab4c259da88d1",
+    "result.json": "29dafe5a37aa5fbcc899cbe6618e5775c9c9d8feb5fc61dd7e36932391e56c2d"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a10",
+    "status": "completed",
+    "answer_summary": "Q8.10 (2.0 pt, single tick applying to both states per the blank answer sheet p. A8-7): b) decreases. In the Stern-Volmer lifetime picture (same quenching model as Q8.9), tau([Red]) = tau0 / (1 + kq*tau0*[Red]). With the printed constants K_S = k_S*tau0(S1) = 7.83 M^-1 > 0 and K_T = k_T*tau0(T1) = 1.26e4 M^-1 > 0, the emission lifetimes of both S1 and T1 are strictly decreasing functions of [Red] on [0, infinity). Requested outputs: lifetime_s1 = decreases; lifetime_t1 = decreases.",
+    "theorem_names": [
+      "IChO2026Problems.sternVolmerLifetime_strictAntiOn",
+      "IChO2026Problems.emissionLifetime_eq_sternVolmer",
+      "IChO2026Problems.tauS1_strictAntiOn",
+      "IChO2026Problems.tauT1_strictAntiOn",
+      "IChO2026Problems.lifetime_s1",
+      "IChO2026Problems.lifetime_t1",
+      "IChO2026Problems.answer_T8_A10",
+      "IChO2026Problems.icho_2026_t8_a10_answer",
+      "IChO2026Problems.KS_val",
+      "IChO2026Problems.KT_val",
+      "IChO2026Problems.not_lifetimeIncreases_of_lifetimeDecreases"
+    ],
+    "assumptions": [
+      "Stern-Volmer lifetime form tau = tau0 / (1 + kq*tau0*[Q]) (trusted general photophysical law), grounded in the problem by the printed quenching rate constants k_S, k_T and the tau0 definitions, and consistent with the Q8.9 quenching formalism eta_q = 1 - tau/tau0.",
+      "Concentration domain [0, infinity) for [Red].",
+      "Printed constants taken exactly as given: k_S = 2.7e9 M^-1 s^-1, k_T = 1.5e8 M^-1 s^-1, tau0(S1) = 2.9 ns, tau0(T1) = 84 us.",
+      "Lean theorems use standard logical axioms only: propext, Classical.choice, Quot.sound."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      {
+        "command": "lake build IChO2026Chem",
+        "result": "success: Build completed successfully (8561 jobs)"
+      },
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t8_a10.lean",
+        "result": "exit 0, no errors or warnings; #print axioms for answer_T8_A10, lifetime_s1, lifetime_t1, sternVolmerLifetime_strictAntiOn each report [propext, Classical.choice, Quot.sound] only (no sorryAx, no custom axioms)"
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t8_a10.lean": {
+      "sorry": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

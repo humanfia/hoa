@@ -1,0 +1,11 @@
+import Mathlib
+import IChO2026Problems.problem_icho_2026_t1_a6
+open IChO2026T1A6
+#print axioms cryolite_sodium_fraction
+#print axioms cryolite_aluminium_fraction
+#print axioms aluminium_fluoride_trihydrate_water_fraction
+#print axioms cyclononacarbon_oxygen_fraction
+#print axioms stone_x12_first_plateau_fails
+#print axioms stone_x22_first_plateau_fails
+#print axioms stone_x21_second_plateau_fails
+#print axioms tg_system_inconsistent

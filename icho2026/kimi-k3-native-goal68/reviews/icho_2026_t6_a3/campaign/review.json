@@ -1,0 +1,37 @@
+All checks complete. The Lean file compiles cleanly with only the three standard logical axioms, the numeric derivation matches an independent computation (241.1811 kJ/mol), and every source datum was verified against the original PDF text extraction (Q6-2 page 53: table 467/346/290/228, 2.5 V; G1-3 page 3: e and N_A; A6-2 page 58: blank answer sheet "X = ___").
+
+The submission's scientific model: the criterion `Possible X ↔ BDE(C–X) ≤ e·V·N_A` encodes the intended physical interpretation of the problem (electron kinetic energy must at least reach the C–X bond dissociation energy). This is a disclosed, standard physical-energy-conservation argument — an allowed "trusted general law" source in the task's domain policy — and it is applied uniformly over the whole printed table rather than being fitted to a preconceived answer. The energy value is derived from printed inputs, not injected as a result-shaped constant. The proofs establish the singleton {I} by genuine case analysis over all four enumerated halogens; nothing is weakened or vacuous.
+
+Independent reference check of the chemistry: cleavage of the weaker C–I bond at 2.5 V while C–Br/Cl/F remain intact is chemically sound (2.5 eV brackets 228 and 290 kJ/mol), and the reported 6.2 precedent of a chlorinated C14 precursor at higher voltage coheres with the candidate's cross-check.
+
+```json
+{
+  "target_id": "icho_2026_t6_a3",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The requested output is a finite set of halogen symbols; both the prose answer (X = I only) and the Lean theorems establish exactly the singleton {I}. Independently verified against the source PDF: Q6-2 (p.53) prints 2.5 V and BDE table 467/346/290/228 kJ mol^-1 for C-F/Cl/Br/I; G1-3 (p.3) prints e = 1.602e-19 C and N_A = 6.022e23 mol^-1; A6-2 (p.58) gives the blank 'X = ___'. The electron energy e*V*N_A = 241.1811 kJ/mol (recomputed independently) brackets C-I (228) below C-Br (290), so iodine is the unique possible halogen under the standard and explicitly disclosed energy-conservation criterion that cleavage requires electron kinetic energy at least the C-X BDE. The criterion is a trusted general physical law (allowed source), disclosed in answer.md, result.json and code comments, and applied uniformly over the full printed table rather than fitted to the answer. The Lean file compiles to exit 0; final theorems possible_halogens (forall X, Possible X iff X = I) and possible_set ({X | Possible X} = {I}) exactly express the requested output; all exclusions of F/Cl/Br are proved, not assumed. #print axioms shows only [propext, Classical.choice, Quot.sound]; grep finds no sorry/admit/native_decide/custom axioms. Precision policy respected: 241.1811 is the exact product of the printed 4-s.f. constants with no intermediate rounding, and the final output is exact-symbolic ({I}) as required by the requested output kind.",
+  "coverage": [
+    {
+      "output_id": "possible_halogens",
+      "status": "passed",
+      "theorem": "IChO2026T6A3.possible_halogens and IChO2026T6A3.possible_set",
+      "evidence": "Halogen enumerates exactly the four table entries; bdeKJ reproduces the printed PDF table (467/346/290/228 kJ mol^-1, verified on p.53 text extraction and T6_page-2.png pixels); electronEnergyKJ_value proves V*e*N_A/1000 = 241.1811 using printed constants e = 1.602e-19, N_A = 6.022e23 (verified on p.3); electronEnergyKJ_bounds proves 228 <= E < 290; possible_I/not_possible_F/Cl/Br prove each classification by norm_num over the derived energy; possible_halogens gives the iff over the full type; possible_set gives the answer-sheet set form {I} matching blank A6-2 'X = ___'. Compiled locally with lake env lean (exit 0); axioms limited to propext, Classical.choice, Quot.sound."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "pymupdf extraction of theory_problem.pdf p.53 (Q6-2) confirms verbatim question text, 2.5 V, and BDE table C-F 467, C-Cl 346, C-Br 290, C-I 228 kJ mol^-1",
+    "Visual inspection of T6_page-2.png matches the extracted text and table exactly; T6_page-1.png confirms shared context (C14 synthesis via chlorinated precursor with dechlorination steps) used only as a consistency cross-check",
+    "Constants page G1-3 (p.3 of PDF): electron charge e = 1.602e-19 C, Avogadro constant N_A = 6.022e23 mol^-1, 1 eV = 1.602e-19 J — matching the Lean defs",
+    "Blank answer sheet A6-2 (p.58) shows '6.3 (2.0 pt) X = ___', matching the finite-set answer form",
+    "Independent recomputation: 2.5 * 1.602e-19 * 6.022e23 / 1000 = 241.1811 kJ/mol, strictly between C-I (228) and C-Br (290)"
+  ],
+  "proof_checks": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t6_a3.lean exits 0 under toolchain leanprover/lean4:v4.31.0",
+    "#print axioms for both final theorems yields only [propext, Classical.choice, Quot.sound]",
+    "rg finds no sorry/admit/native_decide/custom axiom declarations in IChO2026Problems, IChO2026Chem, or IChO2026Run",
+    "possible_halogens proves the iff over all four Halogen constructors via case analysis with explicit norm_num-backed impossibility of F/Cl/Br — no vacuous premises, tautological definitions, or precomputed answer lookup",
+    "bdeKJ encodes only the printed table; electronEnergyKJ is a derivation from inputs (V, e, N_A), not a result-shaped constant; the possibility criterion Possible X := bdeKJ X <= electronEnergyKJ is a disclosed physical modeling condition (allowed trusted general law), applied uniformly across all candidates"
+  ]
+}
+```

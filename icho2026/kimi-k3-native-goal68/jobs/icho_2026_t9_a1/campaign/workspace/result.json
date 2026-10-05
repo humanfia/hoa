@@ -1,0 +1,32 @@
+{
+  "target_id": "icho_2026_t9_a1",
+  "status": "completed",
+  "answer_summary": "M(β-CD) = 7 × 180.16 − 7 × 18.016 = 1135.008 g mol⁻¹; reported at three significant figures as 1135 g mol⁻¹ (≈ 1.14 × 10³ g mol⁻¹).",
+  "theorem_names": [
+    "IChO2026Problems.T9A1.waterMass_value",
+    "IChO2026Problems.T9A1.betaCDMolarMass_value",
+    "IChO2026Problems.T9A1.betaCDMolarMass_reports_1135",
+    "IChO2026Problems.T9A1.betaCDSubmission_valid"
+  ],
+  "assumptions": [
+    "β-CD contains 7 glucose units (stated in the shared problem context on Q9-1 and confirmed by the figure label 'n = 7 β-CD').",
+    "Each of the 7 α-1,4-glycosidic bonds eliminates one H₂O, so 1 mol of β-CD corresponds to 7 mol glucose − 7 mol water.",
+    "M(H₂O) is derived from the IChO 2026 data sheet printed on the inside front cover of theory_problem.pdf: A_r(H) = 1.008, A_r(O) = 16.00.",
+    "M𝑤(glucose) = 180.16 g mol⁻¹ is exact as printed, per the problem statement.",
+    "Final display follows the TASK.json reporting policy: exactly three significant figures, quantum 1 g mol⁻¹ for a value in [1000, 10000), ties half-away-from-zero."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "cmd": "lake build",
+      "cwd": "/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t9_a1/campaign/workspace",
+      "exit_code": 0,
+      "note": "Build completed successfully (8581 jobs)."
+    },
+    {
+      "cmd": "lake env lean IChO2026Problems/problem_icho_2026_t9_a1.lean",
+      "exit_code": 0,
+      "note": "All four final theorems depend only on [propext, Classical.choice, Quot.sound]; no custom or unchecked axioms."
+    }
+  ]
+}

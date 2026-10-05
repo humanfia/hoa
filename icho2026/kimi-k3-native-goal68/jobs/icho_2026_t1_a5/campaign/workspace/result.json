@@ -1,0 +1,47 @@
+{
+  "target_id": "icho_2026_t1_a5",
+  "status": "completed",
+  "answer_summary": "E = hexamethylbenzene C6(CH3)6 = C12H18 (six-fold axis, H% = 18.144/162.264 = 0.111818 in the measured 11.18% window); F = mellitic acid (benzenehexacarboxylic acid) C6(COOH)6 = C12H6O12 (the coal-deposit 'mellite/honeystone' clue; obtained from E by hot acidic KMnO4 oxidation of all six benzylic methyls to COOH; retains the six-fold axis); G = mellitic trianhydride C12O9 (F minus 3 H2O with P2O5: three fused five-membered cyclic anhydride rings, binary C/O, O% = 144/288.12 = 0.499772 in the measured 49.98% window, three-fold axis).",
+  "theorem_names": [
+    "IChO2026T1A5.structures_EFG",
+    "IChO2026T1A5.hexamethylbenzene_axis",
+    "IChO2026T1A5.melliticAcid_axis",
+    "IChO2026T1A5.melliticTrianhydride_axis",
+    "IChO2026T1A5.E_carbon_count",
+    "IChO2026T1A5.E_hydrogen_count",
+    "IChO2026T1A5.F_carbon_count",
+    "IChO2026T1A5.F_hydrogen_count",
+    "IChO2026T1A5.F_oxygen_count",
+    "IChO2026T1A5.G_carbon_count",
+    "IChO2026T1A5.G_oxygen_count",
+    "IChO2026T1A5.G_hydrogen_count",
+    "IChO2026T1A5.E_is_hydrocarbon",
+    "IChO2026T1A5.G_is_binary",
+    "IChO2026T1A5.E_hydrogen_fraction",
+    "IChO2026T1A5.E_hydrogen_fraction_exact",
+    "IChO2026T1A5.G_oxygen_fraction",
+    "IChO2026T1A5.G_oxygen_fraction_exact",
+    "IChO2026T1A5.empirical_ratio_E",
+    "IChO2026T1A5.empirical_ratio_G",
+    "IChO2026T1A5.empirical_formula_E",
+    "IChO2026T1A5.empirical_formula_G"
+  ],
+  "assumptions": [
+    "Atomic masses H 1.008, C 12.01, O 16.00 as printed in the official periodic table page of theory_problem.pdf, treated as exact stipulated constants (measurement policy).",
+    "Measured percentages interpreted as intervals with half-width equal to half of the last displayed digit: H% in E in [0.11175, 0.11185); O% in G in [0.49975, 0.49985).",
+    "LAW1 (trusted general law): hot acidic KMnO4 oxidises aryl alkyl/benzylic side chains (here six methyls) to COOH.",
+    "LAW2 (trusted general law): P2O5 dehydrates vicinal COOH pairs to five-membered cyclic anhydrides; complete dehydration of mellitic acid loses exactly 3 H2O.",
+    "LAW3 (trusted general law): closed-shell valence/octet parity for hydrocarbons implies b even in C_a H_b.",
+    "Minimal-mass (empirical-to-molecular formula) olympiad convention, encoded as mass bounds <= 162.264 for E and <= 288.12 for G plus declared scale hypotheses a <= 488 (E) and x <= 1430 (G) in empirical_ratio/empirical_formula theorems.",
+    "The qualitative clue 'highly symmetrical acid F' is read as six-fold symmetry (maximal consistent with the skeleton-preserving E -> F oxidation); the coal-deposit stone is identified with mellite (Al mellitate, honeystone) from trusted general chemistry knowledge."
+  ],
+  "source_gaps": [
+    "The problem states F is 'highly symmetrical' only in prose; we formalised this as a six-fold axis (six COOH substituents evenly distributed on a benzene ring). No further numeric ground for F's identity is printed in the problem beyond the coal-deposit/mellite story and the E -> F -> G sequence.",
+    "The mass-fraction windows do not pin the empirical ratios for arbitrary giant compositions (first off-ratio in-window hits: C489H733 for E, x approx 1431 for G); the theorems therefore carry explicit molecular-scale hypotheses (a <= 488, x <= 1430) reflecting the olympiad's smallest-mass convention. These bounds are thousands of times looser than the chemistry of this problem requires and are declared rather than hidden.",
+    "Valence parity for E (2 | b) is justified by LAW3 rather than printed data; it is only used to exclude the odd multiples (s = 1, i.e. C6H9, which is not a closed-shell hydrocarbon anyway)."
+  ],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t1_a5.lean",
+    "grep -nE 'sorry|admit|native_decide' IChO2026Problems/problem_icho_2026_t1_a5.lean"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Calculate the number of catalytic molecules per nm2, \ud835\udc41\ud835\udc50\ud835\udc4e\ud835\udc61, of C3N4 loaded with 1, when the mass fraction of catalyst, \ud835\udf14\ud835\udc50\ud835\udc4e\ud835\udc61= 3.8%, if the specific surface area of C3N4 is 17.8 m2 g\u22121. M\ud835\udc50\ud835\udc4e\ud835\udc61= 557.21 g mol\u22121.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t8_a5",
+  "image": "T8_page-2.png",
+  "images": [
+    "T8_page-2.png",
+    "T8_page-1.png"
+  ],
+  "index": "icho_2026_t8_a5",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T8",
+  "part_id": "T8-A5",
+  "phase": "solve",
+  "points": 5.0,
+  "previous_parts": [],
+  "printed_page": 2,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T8_page-2.png",
+      "printed_page": 2,
+      "sha256": "cfd3c6fa64d0126843e3cf65a1235337fa3f869db285f36fbb0a18dddebfacee",
+      "source_page": 73
+    },
+    {
+      "kind": "problem_page",
+      "path": "T8_page-1.png",
+      "printed_page": 2,
+      "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843",
+      "source_page": 73
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 73
+    }
+  ],
+  "problem_id": "icho_2026_t8",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT8. Recycling of Carbon Dioxide 7% Removing CO2 gas from the atmosphere is key to combat climate change. One promising solution is the photocatalytic reduction of CO2 to CO using molecular catalyst 1. 8.1 Write the half equation for the reduction of CO2 to CO in an acidic medium. The conjugate oxidation reaction occurs with sacrificial reductant 2 in aqueous solution with the following mechanism: Species 3, 4, and 5 are short-lived ionic and radical intermediates. 7 yields a silver mirror with the [Ag(NH3)2]OH test. 8.2 Draw the structures of 3-7. Catalyst 1 can be synthesised with the following reaction. 8.3 Tick the correct geometry for the structure of 1. When 1 is loaded on crystalline carbon nitride (C3N4) support material, it can reduce CO2 via the following mechanism. 8.4 Draw the structures of 9-15. Use the cartoon structure for ligand 8 shown above. For 9-15, specify the oxidation state, \ud835\udc42\ud835\udc46, coordination number, \ud835\udc36\ud835\udc41, and number of valence electrons, \ud835\udc49\ud835\udc38, of Fe, along with the total charge of corresponding complex structures, \ud835\udc4d. Note: Some information is provided on the answer sheet.\n\n## Current subquestion T8-A5\nCalculate the number of catalytic molecules per nm2, \ud835\udc41\ud835\udc50\ud835\udc4e\ud835\udc61, of C3N4 loaded with 1, when the mass fraction of catalyst, \ud835\udf14\ud835\udc50\ud835\udc4e\ud835\udc61= 3.8%, if the specific surface area of C3N4 is 17.8 m2 g\u22121. M\ud835\udc50\ud835\udc4e\ud835\udc61= 557.21 g mol\u22121.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "digits": 3,
+      "kind": "significant_figures",
+      "source": "uniform_blind_evaluation_default"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "catalyst_surface_density",
+      "kind": "numeric",
+      "reporting_policy": {
+        "digits": 3,
+        "kind": "significant_figures",
+        "source": "uniform_blind_evaluation_default"
+      },
+      "source_requirement": "catalytic molecules per square nanometre",
+      "unit": "molecules nm^-2"
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T8. Recycling of Carbon Dioxide 7% Removing CO2 gas from the atmosphere is key to combat climate change. One promising solution is the photocatalytic reduction of CO2 to CO using molecular catalyst 1. 8.1 Write the half equation for the reduction of CO2 to CO in an acidic medium. The conjugate oxidation reaction occurs with sacrificial reductant 2 in aqueous solution with the following mechanism: Species 3, 4, and 5 are short-lived ionic and radical intermediates. 7 yields a silver mirror with the [Ag(NH3)2]OH test. 8.2 Draw the structures of 3-7. Catalyst 1 can be synthesised with the following reaction. 8.3 Tick the correct geometry for the structure of 1. When 1 is loaded on crystalline carbon nitride (C3N4) support material, it can reduce CO2 via the following mechanism. 8.4 Draw the structures of 9-15. Use the cartoon structure for ligand 8 shown above. For 9-15, specify the oxidation state, \ud835\udc42\ud835\udc46, coordination number, \ud835\udc36\ud835\udc41, and number of valence electrons, \ud835\udc49\ud835\udc38, of Fe, along with the total charge of corresponding complex structures, \ud835\udc4d. Note: Some information is provided on the answer sheet.",
+  "source_index": "T8-A5",
+  "source_page": 73,
+  "source_pdf": "theory_problem.pdf"
+}

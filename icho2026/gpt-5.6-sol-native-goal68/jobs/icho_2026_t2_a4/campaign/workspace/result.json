@@ -1,0 +1,20 @@
+{
+  "target_id": "icho_2026_t2_a4",
+  "status": "completed",
+  "answer_summary": "Tick the upper-right answer-sheet box: the phase portrait is traversed clockwise.",
+  "theorem_names": [
+    "IChO2026Problems.T2A4.icho_2026_t2_a4_phase_direction",
+    "IChO2026Problems.T2A4.icho_2026_t2_a4_unique_phase_direction"
+  ],
+  "assumptions": [
+    "The four answer diagrams are transcribed from the blank A2-3 student answer sheet in the supplied theory_problem.pdf.",
+    "The problem's closed phase portrait and statement that the concentrations oscillate strictly in relation to each other require a coherent directed cycle.",
+    "The lower branch is the [HBrO2]_B branch, and the problem explicitly states that [Br-] decreases from [Br-]_max to [Br-]_critical there."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t2_a4.lean",
+    "grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t2_a4.lean",
+    "python3 -m json.tool result.json"
+  ]
+}

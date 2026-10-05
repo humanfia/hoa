@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "thread": "01a09a89-fc5e-7670-8a07-c517a37ccb4d",
+  "goal": {
+    "goal": {
+      "threadId": "01a09a89-fc5e-7670-8a07-c517a37ccb4d",
+      "objective": "API preflight only; do not run any task.",
+      "status": "paused",
+      "tokenBudget": null,
+      "tokensUsed": 0,
+      "timeUsedSeconds": 0,
+      "createdAt": 1789299129,
+      "updatedAt": 1789299129
+    }
+  },
+  "at": 1789299130.0148957
+}

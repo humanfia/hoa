@@ -1,0 +1,9 @@
+'IChO2026Problems.T1A4.hydration_number_eq_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T1A4.identify_metal_C_and_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T1A4.metal_q_identity' does not depend on any axioms
+'IChO2026Problems.T1A4.hydrated_c_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T1A4.compound_d_formula' does not depend on any axioms
+'IChO2026Problems.T1A4.identified_answer_satisfies_problem_data' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T1A4.bare_arithmetic_does_not_identify_C' depends on axioms: [propext, Classical.choice, Quot.sound]

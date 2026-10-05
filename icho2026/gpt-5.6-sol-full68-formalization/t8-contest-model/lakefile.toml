@@ -1,0 +1,47 @@
+name = "icho_2026_run"
+version = "0.1.0"
+defaultTargets = ["Main", "L001", "L002", "L003", "L004", "L005", "L006", "L007", "L008", "L009", "L010", "L011", "L012"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.31.0"
+
+[[lean_lib]]
+name = "Main"
+
+[[lean_lib]]
+name = "L001"
+
+[[lean_lib]]
+name = "L002"
+
+[[lean_lib]]
+name = "L003"
+
+[[lean_lib]]
+name = "L004"
+
+[[lean_lib]]
+name = "L005"
+
+[[lean_lib]]
+name = "L006"
+
+[[lean_lib]]
+name = "L007"
+
+[[lean_lib]]
+name = "L008"
+
+[[lean_lib]]
+name = "L009"
+
+[[lean_lib]]
+name = "L010"
+
+[[lean_lib]]
+name = "L011"
+
+[[lean_lib]]
+name = "L012"

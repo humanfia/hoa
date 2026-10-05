@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t9_a4",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "Y is per-6-O-tert-butyldimethylsilyl-2,3-anhydro-alpha-cyclomannin: six alpha-(1->4)-linked units, each bearing O-TBS at C6 and an upper-face C2-O-C3 epoxide; the C1 and C4 glycosidic substituents are below and C5-C6 is above.",
+      "id": "structure_y",
+      "kind": "classification",
+      "raw_value": "per-6-O-tert-butyldimethylsilyl-2,3-anhydro-alpha-cyclomannin; explicit formula C72H132O24Si6 and template faces C1 below, C2 above, C3 above, C4 below, C5 above in every one of six repeat units",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

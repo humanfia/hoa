@@ -1,0 +1,3 @@
+'IChO2026Problems.Icho2026T7A1.gases_m1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.Icho2026T7A1.gases_m2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.Icho2026T7A1.xy_relation' depends on axioms: [propext, Classical.choice, Quot.sound]

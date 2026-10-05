@@ -1,0 +1,56 @@
+{
+  "target": "icho_2026_t4_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300160.1426249,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t4_a5.lean": "d72a727d6a1fe6bef61b5b3b6ddc3055a2e606be3e035ee8861c88368f2d4388",
+    "answer.md": "f8df75065f6cfc3582737c494b26e381e398d66da4084587cf72d4e39d7a53a9",
+    "verification.md": "12055d7c47de4f043f15d69570710c4fe21e8e3a18fc87f1b93e2ddb2eb2bbf5",
+    "result.json": "e5d640284020d0b8d93bd7ec56d3672ffa6ca53e88eb09d89167360cefb37f7a"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a5",
+    "status": "completed",
+    "answer_summary": "Using n_c * xi = ln(E_initial/E_final), the exact raw expression is ln((2*10^6)/(12/1000))/(948/1000) = 19.969943425863... collisions, which reports as 20.0 collisions to three significant figures.",
+    "theorem_names": [
+      "IChO2026Problems.T4A5.averageCollisionCount_formula",
+      "IChO2026Problems.T4A5.averageCollisionCount_satisfies",
+      "IChO2026Problems.T4A5.averageCollisionCount_unique",
+      "IChO2026Problems.T4A5.totalLogDecrement_bounds",
+      "IChO2026Problems.T4A5.averageCollisionCount_rounding_interval",
+      "IChO2026Problems.T4A5.answerSubmission_valid",
+      "IChO2026Problems.T4A5.icho_2026_t4_a5_answer"
+    ],
+    "assumptions": [
+      "Problem-stated initial neutron energy: 2 MeV.",
+      "Problem-stated final neutron energy: 0.012 eV.",
+      "Problem-stated constant logarithmic energy decrement for water: xi = 0.948 per collision.",
+      "Standard SI prefix conversion: 1 MeV = 10^6 eV.",
+      "Successive constant average logarithmic decrements add, giving n_c * xi = ln(E_initial/E_final); this is derived directly from the problem's definition of xi and its statement that xi is material-constant."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem.Reporting",
+      "lake build IChO2026Problems.problem_icho_2026_t4_a5",
+      "lake env lean IChO2026Problems/problem_icho_2026_t4_a5.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

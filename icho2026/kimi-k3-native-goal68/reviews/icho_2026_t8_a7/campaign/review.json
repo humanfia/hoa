@@ -1,0 +1,35 @@
+All checks are complete. The submission is sound on both semantic and proof fronts.
+
+```json
+{
+  "target_id": "icho_2026_t8_a7",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "Box (a) 'increases' is the semantically correct and well-grounded answer. The trap of the question is that the printed diagram's TOF decreases with omega_cat (62 -> 8 h^-1), but the requested quantity is the overall CO formation rate per gram, which the TOF definition on Q8-2 forces to be rate = TOF x (catalyst molecules per gram) = specificFactor * omega * TOF. Evaluating omega*TOF at the seven points transcribed directly from the Q8-3 diagram pixels gives 6.2, 16.8, 22.2, 29, 30, 31.9, 30.4 (%.h^-1): strictly increasing through every interior step and ~4.9x higher end-to-end. The Lean theorem co_rate_trend packages the classification (tickedBox = RateTrend.increases, rfl-checked) with the strict displayed-value endpoint inequality, supported by a tolerance-robust endpoint theorem (worst-case rate at 3.8% = 28.5 > worst-case rate at 0.1% = 6.25) and the strict interior chain. The only nuance — the final displayed step 31.9 -> 30.4 is not sign-determined within the half-quantum tolerance of integer TOF displays — is honestly disclosed and formally proved (last_step_direction_not_determined) rather than hidden, and it does not affect the overall-trend classification. Proof hygiene is clean: the file compiles with exit 0, #print axioms shows only propext/Classical.choice/Quot.sound for all final theorems, and grep confirms no sorry/admit/custom axiom/unsafe/native_decide anywhere in the project sources. Shared helpers (IChO2026Chem.Core/Reporting, IChO2026Run) contain no custom axioms; diagram numbers and constants enter as def-level inputs, not axioms.",
+  "coverage": [
+    {
+      "output_id": "co_rate_trend",
+      "status": "passed",
+      "theorem": "IChO2026.T8.A7.co_rate_trend",
+      "evidence": "States tickedBox = RateTrend.increases (box a) conjoined with coRatePerGram 0.1 62 < coRatePerGram 3.8 8, where coRatePerGram is defined from the problem-stated TOF definition on Q8-2 (rate per gram = TOF * omega/100 * N_A / M_cat, via coRatePerGram_factor : rate = specificFactor * (omega * tof)). Backed by measured_rates_increase_interior (strict increase over the 5 interior consecutive pairs at displayed diagram values), endpoint_rate_increases_robust (end-to-end increase for ALL true TOFs within the half-quantum tolerance of printed 62 and 8), and displayed_last_step_dips + last_step_direction_not_determined (honest proof that the final step's direction is not sign-determined, which does not change the overall classification). #print axioms for all four final theorems reports only propext, Classical.choice, Quot.sound; compilation exits 0 in my independent re-run; no sorry/admit/custom axioms/native_decide found by grep of IChO2026Chem, IChO2026Problems, IChO2026Run."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Inspected T8_page-3.png directly: diagram 'change in TOF of CO as omega_cat is varied' carries seven labelled red points (omega %, TOF h^-1) = (0.1,62), (0.3,56), (0.6,37), (1,29), (2,15), (2.9,11), (3.8,8); the candidate's transcription matches the pixels exactly (graphical input transcription is authorized for problem material).",
+    "Inspected T8_page-2.png directly: TOF definition ('number of product molecules formed per active catalyst molecule per hour'), M_cat = 557.21 g mol^-1 (8.5), and the reference statement 'TOF of 8 h^-1 ... with omega_cat = 3.8%' — which anchors the diagram's last point and confirms the axis reading.",
+    "Question 8.7 text on Q8-3 verified: asks for the overall rate of CO formation PER GRAM of C3N4 loaded with 1, with boxes a) increases b) decreases c) doesn't change, 2.0 pt.",
+    "Blank answer sheet A8-6 (PDF page 82) extracted from theory_problem.pdf: three empty boxes a/b/c, no hints — no advantage imported from the answer sheet.",
+    "Constants page G1-3 (PDF page 3) checked directly: Avogadro constant N_A = 6.022 x 10^23 mol^-1, matching the def AvogadroConstant.",
+    "Arithmetic independently verified: omega*TOF products 6.2 < 16.8 < 22.2 < 29 < 30 < 31.9, final 30.4; endpoint ~4.9-fold increase (worst-tolerance-case 28.5 vs 6.25). The overall classification 'increases' is fixed by the strict interior chain and robust endpoint comparison; the small non-sign-determined final dip (within integer-display tolerance) is disclosed rather than hidden.",
+    "No empirical rate law or unsupported scaling was invented from labels; the rate formula is forced by the problem's own TOF definition. Use of T8-A5 givens (M_cat, omega definition) is problem-stated material, compliant with the previous-part dependency policy."
+  ],
+  "proof_checks": [
+    "Independent re-run of 'lake env lean IChO2026Problems/problem_icho_2026_t8_a7.lean' (after lake build IChO2026Chem, exit 0) exits 0 with #print axioms for co_rate_trend, measured_rates_increase_interior, endpoint_rate_increases_robust, last_step_direction_not_determined all showing [propext, Classical.choice, Quot.sound] — no sorryAx, no custom axioms.",
+    "Full 'lake build IChO2026Problems' (8564 jobs) completed successfully; only a pre-existing style-linter note in the controller-owned umbrella file.",
+    "ripgrep over IChO2026Chem, IChO2026Problems, IChO2026Run for sorry/admit/axiom/unsafe/native_decide finds only the four '#print axioms' commands; helper modules Core.lean/Reporting.lean/Basic.lean/Dependencies.lean contain no axioms and only innocuous definitions.",
+    "Final theorem statements are genuine: tickedBox = RateTrend.increases is a value-level rfl fact over an enumerated type (not a tautology smuggling the answer), and the conjoined strict inequality is proved from the displayed diagram values via specificFactor > 0 and omega*TOF comparisons (norm_num/ring over reals); endpoint robustness quantifies over arbitrary TOF values within the half-quantum tolerance rather than cherry-picking corners.",
+    "The inductive RateTrend with three constructors a/b/c faithfully mirrors the printed answer-sheet boxes; no output constraint omitted. Diagram numerals enter as problem-source inputs inside def/theorem statements, not as axioms."
+  ]
+}
+```

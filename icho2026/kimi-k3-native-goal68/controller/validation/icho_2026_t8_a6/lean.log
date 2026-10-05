@@ -1,0 +1,2 @@
+'IChO2026.T8.A6.co_quantum_yield_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T8.A6.co_quantum_yield_reported' depends on axioms: [propext, Classical.choice, Quot.sound]

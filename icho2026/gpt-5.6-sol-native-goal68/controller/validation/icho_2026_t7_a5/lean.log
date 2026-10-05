@@ -1,0 +1,13 @@
+/home/jing/icho-native-goal-gpt68-20260913-01/jobs/icho_2026_t7_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t7_a5.lean:311:25: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+/home/jing/icho-native-goal-gpt68-20260913-01/jobs/icho_2026_t7_a5/campaign/workspace/IChO2026Problems/problem_icho_2026_t7_a5.lean:312:17: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'IChO2026Problems.T7A5.five_n2_for_two_precursors_matches_gas_datum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T7A5.binding_topology_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T7A5.structure_5_is_dinitrogen_bridged_dimolybdenum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

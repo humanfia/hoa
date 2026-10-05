@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t3_a3",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "Columns: Tetragonal 1 | Tetragonal 2 | Hexagonal 1 | Hexagonal 2 | Trigonal | Kagome | Tetrahedral; upper writable row: A2 + B1 | A3 + B1 | A1 + B2 | A1 + B3 | C1 + D1 | XXX | A4 + B2; lower writable row: A3 + B2 | XXX | C1 + D2 | XXX | XXX | XXX | C1 + D3",
+      "id": "topology_table",
+      "kind": "classification",
+      "raw_value": "proposedTopologyTable filtered from all 15x15 depicted ordered monomer pairs by canonical condensations A-B, C-D, or E-D and exact connector profiles: upper=(A2+B1,A3+B1,A1+B2,A1+B3,C1+D1,XXX,A4+B2); lower=(A3+B2,XXX,C1+D2,XXX,XXX,XXX,C1+D3)",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

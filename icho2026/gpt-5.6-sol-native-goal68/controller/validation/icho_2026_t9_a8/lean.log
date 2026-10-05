@@ -1,0 +1,10 @@
+'IChO2026Problems.T9A8.structure_o' does not depend on any axioms
+'IChO2026Problems.T9A8.structure_p' does not depend on any axioms
+'IChO2026Problems.T9A8.structure_q' does not depend on any axioms
+'IChO2026Problems.T9A8.structure_r' does not depend on any axioms
+'IChO2026Problems.T9A8.structure_s' does not depend on any axioms
+'IChO2026Problems.T9A8.structure_q_bridge_connectivity' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T9A8.structure_r_has_NBoc_and_unit6_azide' does not depend on any axioms
+'IChO2026Problems.T9A8.structure_s_has_NBn_and_preserves_unit6_azide' does not depend on any axioms
+'IChO2026Problems.T9A8.all_requested_structures_fully_specified' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T9A8.requested_outputs' depends on axioms: [propext, Quot.sound]

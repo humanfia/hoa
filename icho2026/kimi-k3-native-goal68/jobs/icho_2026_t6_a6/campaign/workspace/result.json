@@ -1,0 +1,39 @@
+{
+  "target_id": "icho_2026_t6_a6",
+  "status": "completed",
+  "answer_summary": "M = 1-methyl-4-tert-butylbenzene (para, thermodynamic FC product with four proton types). N = 4-tert-butylbenzaldehyde (Wohl-Ziegler bromination of M's benzylic methyl, then Sommelet with HMTA). O = trans-5,15-bis(4-tert-butylphenyl)porphyrinato zinc(II) (MacDonald 2+2 of N + dipyrromethane, DDQ oxidation, Zn(OAc)2 metallation; meso-10/20 retain H; Zn coordinated to all four porphyrin N). Q = 2,3,17,18-tetrabromo-O (NBS bromination of the four free beta-pyrrole positions of the two rings between the Ar-bearing meso edges). R = 3,17-diethynyl-2,18-dibromo porphyrinato Zn(II): double Sonogashira with (C6H13)3Si-CCH on Q replaces two of the four Br (the P6-axis pair) with THS-protected ethynyls, then n-Bu4NF deprotects to terminal alkynes; two Br remain as coupling sites for the final template-directed cyclooligomerisation. The template drawn in the scheme is hexakis[4-(pyridin-4-yl)phenyl]benzene (six pyridine N sites for the six Zn centres of the belt).",
+  "theorem_names": [
+    "IChO2026T6A6.icho_2026_t6_a6_structures",
+    "IChO2026T6A6.M_formula_counts",
+    "IChO2026T6A6.M_para",
+    "IChO2026T6A6.M_four_proton_types",
+    "IChO2026T6A6.N_formula_counts",
+    "IChO2026T6A6.N_aldehyde",
+    "IChO2026T6A6.O_counts",
+    "IChO2026T6A6.O_trans_meso",
+    "IChO2026T6A6.Q_counts",
+    "IChO2026T6A6.Q_beta_pattern",
+    "IChO2026T6A6.R_counts",
+    "IChO2026T6A6.R_terminal_alkynes",
+    "IChO2026T6A6.ar_ten_carbons",
+    "IChO2026T6A6.template_six_arms",
+    "IChO2026T6A6.template_arm1_para",
+    "IChO2026T6A6.template_six_binding_sites"
+  ],
+  "assumptions": [
+    "Skeletal-drawing convention for implicit hydrogens (C valence 4, aromatic bond order 1.5) used to compute implicit-H counts.",
+    "Porphyrin-skeleton naming convention adopted in the model: meso carbons me5(A|B), me10(B|C), me15(C|D), me20(D|A); beta-carbons bX1/bX2; matches the P6 drawing.",
+    "For R, the identity of 'which two of the four Br are replaced by ethynyls' is fixed by the P6/belt figure (the pair on the oligomer axis); the IUPAC-style indices 3,17 vs 2,18 in answer.md are that choice.",
+    "Lean's logical axiom propext is allowed by the task statement ('standard Lean logical axioms are allowed'); no custom axioms were introduced."
+  ],
+  "source_gaps": [
+    "The scheme does not give molecular formulas for M-R, so carbon counts in the Lean file are derived from the drawn connectivity (porphine core C20, two Ar groups C10 each, alkyne carbons C4 in R) rather than from printed formulas.",
+    "The (C6H13)3Si group (trihexylsilyl, THS) is treated as a protecting group removed by n-Bu4NF, per standard Sonogashira/TBAF chemistry; the problem does not spell out the deprotection product explicitly, but the two-step sequence and the final belt structure (no Si) determine it."
+  ],
+  "verification_commands": [
+    "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t6_a6/campaign/workspace",
+    "lake env lean IChO2026Problems/problem_icho_2026_t6_a6.lean",
+    "grep -n \"sorry\\|admit\\|axiom \" IChO2026Problems/problem_icho_2026_t6_a6.lean",
+    "sha256sum IChO2026Problems/problem_icho_2026_t6_a6.lean answer.md"
+  ]
+}

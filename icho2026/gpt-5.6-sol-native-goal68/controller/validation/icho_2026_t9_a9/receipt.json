@@ -1,0 +1,55 @@
+{
+  "target": "icho_2026_t9_a9",
+  "goal_status": "goal_complete",
+  "checked_at": 1789303174.8560162,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a9.lean": "0e355903eae889e5fefd4b398adf6cea529a97eca12758dae1e74e648e76d5f7",
+    "answer.md": "c5abda010d076eebeb34ebf7100cc7ad1d9850b945b2bf1fd1bc63de4fc6c700",
+    "verification.md": "82997f6e322d0c58bce832a82a336096028348f8cd0cd50180f2afdfb159250a",
+    "result.json": "650e7feba256510e970581840a5cd5a2f021a616bdc88a52428b51a5fbf956be"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a9",
+    "status": "completed",
+    "answer_summary": "A hexadifferentiated alpha-CD has six pairwise-distinct primary substituents on an oriented six-membered cyclic scaffold. Anchoring one group leaves 5! clockwise orders, equivalently 6!/6, so the exact arrangement count is 120.",
+    "theorem_names": [
+      "IChO2026Problems.T9A9.rotateReading_injective",
+      "IChO2026Problems.T9A9.rotationalReadings_count",
+      "IChO2026Problems.T9A9.labelledLinearArrangement_count",
+      "IChO2026Problems.T9A9.cyclic_orbit_arithmetic",
+      "IChO2026Problems.T9A9.anchored_factorial_count",
+      "IChO2026Problems.T9A9.arrangement_count",
+      "IChO2026Problems.T9A9.anchored_count_eq_cyclic_quotient"
+    ],
+    "assumptions": [
+      "Problem-stated alpha-CD has six alpha-D-glucopyranoside units, hence six primary CH2OH sites.",
+      "Hexadifferentiated means the six functional groups are pairwise distinct.",
+      "Cyclic rotations are identical readings of one arrangement, while reversal is not identified because the alpha-1,4-linked D-glucose ring is oriented; the source explicitly distinguishes clockwise and counterclockwise."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T9_page-5.png icho_2026_source/image/T9_page-4.png icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t9_a9.lean",
+      "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t9_a9.lean",
+      "/home/jing/science-mango/.venv/bin/python3 -m json.tool result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

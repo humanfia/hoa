@@ -1,0 +1,617 @@
+{
+  "capabilities": [
+    {
+      "capability_id": "afps2017.sequence.residue_specification",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [],
+      "description": "A generic residue record keeps chemical identity, chirality, and protection metadata explicit and type-safe.",
+      "empirical_inputs": [],
+      "laws": [
+        "A residue specification exposes identity, chirality, and protection metadata without assigning empirical values."
+      ],
+      "semantic_tags": [
+        "chirality",
+        "peptide",
+        "protection",
+        "residue"
+      ],
+      "source_refs": [
+        "afps2017.main:DOI-10.1038/nchembio.2318",
+        "afps2017.supplement:sha256-f7baa2cd59141ec38d95c9980e60117b596a9a78a9f4cbd4ae4e2cd4a2c8044e"
+      ]
+    },
+    {
+      "capability_id": "afps2017.sequence.stoichiometry_adapter",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [],
+      "description": "A thin AFPS adapter instantiates released ChemistryLib CRN, stoichiometry, dimension, quantity, amount, and concentration APIs without claiming a full chemical mechanism.",
+      "empirical_inputs": [],
+      "laws": [
+        "A coarse coupling bookkeeping network is defined directly as a ChemistryLib.ReactionNetwork whose complexes are ChemistryLib.Complex values; no parallel CRN representation is introduced.",
+        "Coupling amounts, dimensioned quantities, and concentrations reuse ChemistryLib.Foundations.Amount, ChemistryLib.Units.Quantity, ChemistryLib.Units.ChemicalDimension, and ChemistryLib.Foundations.ConcentrationProfile directly.",
+        "Released ChemistryLib reactionVector and stoichiometricMatrix give the growing-chain, incoming-residue, and extended-chain coefficients minus one, minus one, and plus one.",
+        "The bookkeeping network omits reagents and byproducts, and its residue-count conservation theorem is not a molecular-mass conservation or complete reaction-mechanism claim.",
+        "Weights n, one, and n plus one form a released ChemistryLib IsConservationLaw for residue-count bookkeeping."
+      ],
+      "semantic_tags": [
+        "amount-reuse",
+        "bookkeeping-model",
+        "concentration-reuse",
+        "reaction-network-reuse",
+        "stoichiometry-reuse"
+      ],
+      "source_refs": [
+        "afps2017.main:DOI-10.1038/nchembio.2318",
+        "afps2017.sequence.contract:question",
+        "afps2017.supplement:sha256-f7baa2cd59141ec38d95c9980e60117b596a9a78a9f4cbd4ae4e2cd4a2c8044e"
+      ]
+    },
+    {
+      "capability_id": "afps2017.sequence.target_n_to_c",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.sequence.residue_specification"
+      ],
+      "description": "A nonempty peptide target stores its public sequence orientation and derives the solid-phase coupling order from carried nonemptiness evidence.",
+      "empirical_inputs": [],
+      "laws": [
+        "A peptide target carries a nonempty residue list stored N-to-C.",
+        "The C-to-N coupling schedule is the reverse of all residues except the C-terminal residue.",
+        "The schedule length plus the initially loaded C-terminal residue equals the target length."
+      ],
+      "semantic_tags": [
+        "C-to-N",
+        "N-to-C",
+        "peptide",
+        "schedule",
+        "sequence"
+      ],
+      "source_refs": [
+        "afps2017.main:DOI-10.1038/nchembio.2318",
+        "afps2017.sequence.contract:question"
+      ]
+    },
+    {
+      "capability_id": "afps2017.solid_phase.resin_state",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.sequence.residue_specification"
+      ],
+      "description": "The resin-bound state uses released ChemistryLib dimensions, quantities, and Amount directly while separating structural sequence semantics from empirical values.",
+      "empirical_inputs": [],
+      "laws": [
+        "A resin state exposes its growing N-to-C chain, N-terminal protection state, linker, resin loading, and reactive-site amount.",
+        "Reactive-site amount is ChemistryLib.Foundations.Amount; the state introduces no parallel unit or quantity representation.",
+        "Resin loading is a nonnegative ChemistryLib Quantity with the ChemicalDimension amount-of-substance per Physlib mass dimension."
+      ],
+      "semantic_tags": [
+        "loading",
+        "quantity-reuse",
+        "resin",
+        "solid-phase-synthesis",
+        "state-machine"
+      ],
+      "source_refs": [
+        "afps2017.sequence.contract:question",
+        "afps2017.supplement:sha256-f7baa2cd59141ec38d95c9980e60117b596a9a78a9f4cbd4ae4e2cd4a2c8044e"
+      ]
+    },
+    {
+      "capability_id": "afps2017.solid_phase.conditional_coupling",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.solid_phase.resin_state"
+      ],
+      "description": "A coupling attempt and three independent predicates enforce the evidence boundary between protocol intent and chemical outcome.",
+      "empirical_inputs": [
+        "no-deletion hypothesis",
+        "no-epimerization hypothesis",
+        "successful-coupling hypothesis"
+      ],
+      "laws": [
+        "A coupling operation records incoming residue, before state, and after state without asserting success.",
+        "Successful-coupling, no-deletion, and no-epimerization hypotheses are separate obligations and together imply that the intended incoming residue is prepended to the N-to-C chain.",
+        "The state machine does not redefine reaction networks, stoichiometric matrices, units, or quantities; the separate stoichiometry adapter reuses released ChemistryLib declarations."
+      ],
+      "semantic_tags": [
+        "conditional-invariant",
+        "coupling",
+        "solid-phase-synthesis",
+        "stereochemistry"
+      ],
+      "source_refs": [
+        "afps2017.main:DOI-10.1038/nchembio.2318",
+        "afps2017.sequence.contract:question"
+      ]
+    },
+    {
+      "capability_id": "afps2017.solid_phase.deprotection_transition",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.solid_phase.resin_state"
+      ],
+      "description": "A model transition updates only the protection field and does not assert that an experimental deprotection succeeded.",
+      "empirical_inputs": [],
+      "laws": [
+        "The abstract deprotection transition changes the N-terminal protection state to deprotected while preserving chain, linker, resin loading, and reactive-site amount."
+      ],
+      "semantic_tags": [
+        "deprotection",
+        "solid-phase-synthesis",
+        "state-transition"
+      ],
+      "source_refs": [
+        "afps2017.sequence.contract:question"
+      ]
+    },
+    {
+      "capability_id": "afps2017.solid_phase.wash_transition",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.solid_phase.resin_state"
+      ],
+      "description": "The abstract wash transition has no sequence-level effect; it makes no transport, removal-efficiency, or purification claim.",
+      "empirical_inputs": [],
+      "laws": [
+        "The abstract sequence-state wash transition preserves the growing chain."
+      ],
+      "semantic_tags": [
+        "solid-phase-synthesis",
+        "state-transition",
+        "wash"
+      ],
+      "source_refs": [
+        "afps2017.sequence.contract:question"
+      ]
+    },
+    {
+      "capability_id": "afps2017.solid_phase.full_cycle",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.solid_phase.conditional_coupling",
+        "afps2017.solid_phase.deprotection_transition",
+        "afps2017.solid_phase.wash_transition"
+      ],
+      "description": "The full-cycle theorem is conditional and contains no inference from a protocol record to experimental success.",
+      "empirical_inputs": [
+        "no-deletion hypothesis",
+        "no-epimerization hypothesis",
+        "successful-coupling hypothesis"
+      ],
+      "laws": [
+        "A full-cycle attempt composes abstract deprotection, wash, and coupling at the sequence-state level.",
+        "Under explicit successful-coupling, no-deletion, and no-epimerization hypotheses, one full cycle adds exactly the intended residue."
+      ],
+      "semantic_tags": [
+        "conditional-invariant",
+        "cycle",
+        "solid-phase-synthesis"
+      ],
+      "source_refs": [
+        "afps2017.sequence.contract:question"
+      ]
+    },
+    {
+      "capability_id": "afps2017.sequence.repeated_successful_assembly",
+      "consumers": [
+        "AFPS2017.lean"
+      ],
+      "depends_on": [
+        "afps2017.sequence.target_n_to_c",
+        "afps2017.solid_phase.full_cycle"
+      ],
+      "description": "Finite-list reasoning proves target construction and cycle count only from a connected trace whose outcomes meet all three explicit hypotheses.",
+      "empirical_inputs": [
+        "no-deletion hypothesis for every attempt",
+        "no-epimerization hypothesis for every attempt",
+        "successful-coupling hypothesis for every attempt"
+      ],
+      "laws": [
+        "A trace connects coupling attempts in C-to-N schedule order from an initially loaded C-terminal residue.",
+        "If every attempt explicitly satisfies successful-coupling, no-deletion, and no-epimerization, the final N-to-C chain equals the target.",
+        "The number of coupling attempts plus the initially loaded residue equals the target length."
+      ],
+      "semantic_tags": [
+        "conditional-invariant",
+        "cycle-count",
+        "finite-trace",
+        "peptide",
+        "sequence-assembly"
+      ],
+      "source_refs": [
+        "afps2017.main:DOI-10.1038/nchembio.2318",
+        "afps2017.sequence.contract:question"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "capabilities": [
+        "afps2017.sequence.residue_specification"
+      ],
+      "depends_on": [],
+      "layer": 0,
+      "module_path": "AFPS2017/Sequence/Residue.lean",
+      "public_api": [
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Sequence.ResidueSpec",
+          "signature": "Type → Type → Type → Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.ResidueSpec.chirality",
+          "signature": "{Identity Chirality Protection : Type} → AFPS2017.Sequence.ResidueSpec Identity Chirality Protection → Chirality"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.ResidueSpec.identity",
+          "signature": "{Identity Chirality Protection : Type} → AFPS2017.Sequence.ResidueSpec Identity Chirality Protection → Identity"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.ResidueSpec.protection",
+          "signature": "{Identity Chirality Protection : Type} → AFPS2017.Sequence.ResidueSpec Identity Chirality Protection → Protection"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.sequence.stoichiometry_adapter"
+      ],
+      "depends_on": [],
+      "layer": 0,
+      "module_path": "AFPS2017/Sequence/StoichiometryAdapter.lean",
+      "public_api": [
+        {
+          "kind": "abbrev",
+          "name": "AFPS2017.Sequence.CouplingAmounts",
+          "signature": "Type"
+        },
+        {
+          "kind": "inductive",
+          "name": "AFPS2017.Sequence.CouplingComplexId",
+          "signature": "Type"
+        },
+        {
+          "kind": "abbrev",
+          "name": "AFPS2017.Sequence.CouplingConcentrations",
+          "signature": "Type"
+        },
+        {
+          "kind": "inductive",
+          "name": "AFPS2017.Sequence.CouplingReactionId",
+          "signature": "Type"
+        },
+        {
+          "kind": "inductive",
+          "name": "AFPS2017.Sequence.CouplingSpecies",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.couplingAmountQuantity",
+          "signature": "ChemistryLib.Foundations.Amount → ChemistryLib.Units.Quantity ChemistryLib.Units.ChemicalDimension.amountOfSubstance"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.couplingComplex",
+          "signature": "AFPS2017.Sequence.CouplingComplexId → ChemistryLib.Complex AFPS2017.Sequence.CouplingSpecies"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.couplingConcentrations",
+          "signature": "(AFPS2017.Sequence.CouplingSpecies → ChemistryLib.Foundations.Amount) → ChemistryLib.Foundations.Volume → ChemistryLib.Foundations.ConcentrationProfile AFPS2017.Sequence.CouplingSpecies"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.couplingConcentrations_apply",
+          "signature": "(amounts : AFPS2017.Sequence.CouplingSpecies → ChemistryLib.Foundations.Amount) → (volume : ChemistryLib.Foundations.Volume) → (species : AFPS2017.Sequence.CouplingSpecies) → AFPS2017.Sequence.couplingConcentrations amounts volume species = ChemistryLib.Foundations.amountConcentration (amounts species) volume"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.couplingNetwork",
+          "signature": "ChemistryLib.ReactionNetwork AFPS2017.Sequence.CouplingSpecies AFPS2017.Sequence.CouplingComplexId AFPS2017.Sequence.CouplingReactionId"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.coupling_reactionVector_extendedChain",
+          "signature": "AFPS2017.Sequence.couplingNetwork.reactionVector AFPS2017.Sequence.CouplingReactionId.amideFormation AFPS2017.Sequence.CouplingSpecies.extendedChain = (1 : ℝ)"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.coupling_reactionVector_growingChain",
+          "signature": "AFPS2017.Sequence.couplingNetwork.reactionVector AFPS2017.Sequence.CouplingReactionId.amideFormation AFPS2017.Sequence.CouplingSpecies.growingChain = (-1 : ℝ)"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.coupling_reactionVector_incomingResidue",
+          "signature": "AFPS2017.Sequence.couplingNetwork.reactionVector AFPS2017.Sequence.CouplingReactionId.amideFormation AFPS2017.Sequence.CouplingSpecies.incomingResidue = (-1 : ℝ)"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.coupling_residueCount_conservation",
+          "signature": "(n : Nat) → AFPS2017.Sequence.couplingNetwork.IsConservationLaw (AFPS2017.Sequence.residueCountWeight n)"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.coupling_stoichiometricMatrix_apply",
+          "signature": "(species : AFPS2017.Sequence.CouplingSpecies) → AFPS2017.Sequence.couplingNetwork.stoichiometricMatrix species AFPS2017.Sequence.CouplingReactionId.amideFormation = AFPS2017.Sequence.couplingNetwork.reactionVector AFPS2017.Sequence.CouplingReactionId.amideFormation species"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.residueCountWeight",
+          "signature": "Nat → AFPS2017.Sequence.CouplingSpecies → ℝ"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.solid_phase.resin_state"
+      ],
+      "depends_on": [
+        "AFPS2017/Sequence/Residue.lean"
+      ],
+      "layer": 1,
+      "module_path": "AFPS2017/Sequence/State.lean",
+      "public_api": [
+        {
+          "kind": "inductive",
+          "name": "AFPS2017.Sequence.NTerminalProtection",
+          "signature": "Type"
+        },
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Sequence.ResinBoundState",
+          "signature": "Type → Type → Type → Type → Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.ResinBoundState.chainNToC",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → List (AFPS2017.Sequence.ResidueSpec Identity Chirality Protection)"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.ResinBoundState.linker",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → Linker"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.ResinBoundState.loading",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → AFPS2017.Sequence.ResinLoading"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.ResinBoundState.nTerminalProtection",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → AFPS2017.Sequence.NTerminalProtection"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.ResinBoundState.reactiveSiteAmount",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → ChemistryLib.Foundations.Amount"
+        },
+        {
+          "kind": "abbrev",
+          "name": "AFPS2017.Sequence.ResinLoading",
+          "signature": "Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.resinLoadingDimension",
+          "signature": "ChemistryLib.Units.ChemicalDimension"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.resinLoadingQuantity",
+          "signature": "AFPS2017.Sequence.ResinLoading → ChemistryLib.Units.Quantity AFPS2017.Sequence.resinLoadingDimension"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.sequence.target_n_to_c"
+      ],
+      "depends_on": [
+        "AFPS2017/Sequence/Residue.lean"
+      ],
+      "layer": 1,
+      "module_path": "AFPS2017/Sequence/Target.lean",
+      "public_api": [
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Sequence.PeptideTarget",
+          "signature": "Type → Type → Type → Type"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.PeptideTarget.nonempty",
+          "signature": "{Identity Chirality Protection : Type} → (target : AFPS2017.Sequence.PeptideTarget Identity Chirality Protection) → target.residuesNToC ≠ []"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.PeptideTarget.residuesNToC",
+          "signature": "{Identity Chirality Protection : Type} → AFPS2017.Sequence.PeptideTarget Identity Chirality Protection → List (AFPS2017.Sequence.ResidueSpec Identity Chirality Protection)"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.cTerminalResidue",
+          "signature": "{Identity Chirality Protection : Type} → AFPS2017.Sequence.PeptideTarget Identity Chirality Protection → AFPS2017.Sequence.ResidueSpec Identity Chirality Protection"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.couplingSchedule",
+          "signature": "{Identity Chirality Protection : Type} → AFPS2017.Sequence.PeptideTarget Identity Chirality Protection → List (AFPS2017.Sequence.ResidueSpec Identity Chirality Protection)"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.couplingSchedule_length",
+          "signature": "{Identity Chirality Protection : Type} → (target : AFPS2017.Sequence.PeptideTarget Identity Chirality Protection) → (AFPS2017.Sequence.couplingSchedule target).length + 1 = target.residuesNToC.length"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.solid_phase.conditional_coupling"
+      ],
+      "depends_on": [
+        "AFPS2017/Sequence/State.lean"
+      ],
+      "layer": 2,
+      "module_path": "AFPS2017/Sequence/Coupling.lean",
+      "public_api": [
+        {
+          "kind": "structure",
+          "name": "AFPS2017.Sequence.CouplingAttempt",
+          "signature": "Type → Type → Type → Type → Type"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.CouplingAttempt.after",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.CouplingAttempt.before",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.CouplingAttempt.incoming",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker → AFPS2017.Sequence.ResidueSpec Identity Chirality Protection"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.NoDeletion",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker → Prop"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.NoEpimerization",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker → Prop"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.SuccessfulCoupling",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker → Prop"
+        },
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.couple",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.ResidueSpec Identity Chirality Protection → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.successful_coupling_prepends",
+          "signature": "{Identity Chirality Protection Linker : Type} → (attempt : AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker) → AFPS2017.Sequence.SuccessfulCoupling attempt → AFPS2017.Sequence.NoDeletion attempt → AFPS2017.Sequence.NoEpimerization attempt → attempt.after.chainNToC = attempt.incoming :: attempt.before.chainNToC"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.solid_phase.deprotection_transition"
+      ],
+      "depends_on": [
+        "AFPS2017/Sequence/State.lean"
+      ],
+      "layer": 2,
+      "module_path": "AFPS2017/Sequence/Deprotection.lean",
+      "public_api": [
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.deprotect",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.deprotect_changes_only_protection",
+          "signature": "{Identity Chirality Protection Linker : Type} → (state : AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker) → (AFPS2017.Sequence.deprotect state).chainNToC = state.chainNToC ∧ (AFPS2017.Sequence.deprotect state).linker = state.linker ∧ (AFPS2017.Sequence.deprotect state).loading = state.loading ∧ (AFPS2017.Sequence.deprotect state).reactiveSiteAmount = state.reactiveSiteAmount ∧ (AFPS2017.Sequence.deprotect state).nTerminalProtection = AFPS2017.Sequence.NTerminalProtection.deprotected"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.solid_phase.wash_transition"
+      ],
+      "depends_on": [
+        "AFPS2017/Sequence/State.lean"
+      ],
+      "layer": 2,
+      "module_path": "AFPS2017/Sequence/Wash.lean",
+      "public_api": [
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.wash",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.wash_preserves_chain",
+          "signature": "{Identity Chirality Protection Linker : Type} → (state : AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker) → (AFPS2017.Sequence.wash state).chainNToC = state.chainNToC"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.solid_phase.full_cycle"
+      ],
+      "depends_on": [
+        "AFPS2017/Sequence/Coupling.lean",
+        "AFPS2017/Sequence/Deprotection.lean",
+        "AFPS2017/Sequence/Wash.lean"
+      ],
+      "layer": 3,
+      "module_path": "AFPS2017/Sequence/Cycle.lean",
+      "public_api": [
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.fullCycle",
+          "signature": "{Identity Chirality Protection Linker : Type} → AFPS2017.Sequence.ResidueSpec Identity Chirality Protection → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.successful_full_cycle_adds_intended",
+          "signature": "{Identity Chirality Protection Linker : Type} → (incoming : AFPS2017.Sequence.ResidueSpec Identity Chirality Protection) → (before after : AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker) → AFPS2017.Sequence.SuccessfulCoupling (AFPS2017.Sequence.fullCycle incoming before after) → AFPS2017.Sequence.NoDeletion (AFPS2017.Sequence.fullCycle incoming before after) → AFPS2017.Sequence.NoEpimerization (AFPS2017.Sequence.fullCycle incoming before after) → after.chainNToC = incoming :: before.chainNToC"
+        }
+      ]
+    },
+    {
+      "capabilities": [
+        "afps2017.sequence.repeated_successful_assembly"
+      ],
+      "depends_on": [
+        "AFPS2017/Sequence/Cycle.lean",
+        "AFPS2017/Sequence/Target.lean"
+      ],
+      "layer": 4,
+      "module_path": "AFPS2017/Sequence/Assembly.lean",
+      "public_api": [
+        {
+          "kind": "def",
+          "name": "AFPS2017.Sequence.IsCouplingTrace",
+          "signature": "{Identity Chirality Protection Linker : Type} → List (AFPS2017.Sequence.ResidueSpec Identity Chirality Protection) → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker → List (AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker) → Prop"
+        },
+        {
+          "kind": "theorem",
+          "name": "AFPS2017.Sequence.repeated_successful_cycles_construct_target",
+          "signature": "{Identity Chirality Protection Linker : Type} → (target : AFPS2017.Sequence.PeptideTarget Identity Chirality Protection) → (initial final : AFPS2017.Sequence.ResinBoundState Identity Chirality Protection Linker) → (attempts : List (AFPS2017.Sequence.CouplingAttempt Identity Chirality Protection Linker)) → initial.chainNToC = [AFPS2017.Sequence.cTerminalResidue target] → AFPS2017.Sequence.IsCouplingTrace (AFPS2017.Sequence.couplingSchedule target) initial final attempts → (∀ attempt ∈ attempts, AFPS2017.Sequence.SuccessfulCoupling attempt) → (∀ attempt ∈ attempts, AFPS2017.Sequence.NoDeletion attempt) → (∀ attempt ∈ attempts, AFPS2017.Sequence.NoEpimerization attempt) → final.chainNToC = target.residuesNToC ∧ attempts.length + 1 = target.residuesNToC.length"
+        }
+      ]
+    }
+  ]
+}

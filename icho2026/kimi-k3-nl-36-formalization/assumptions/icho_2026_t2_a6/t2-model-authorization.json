@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "record_id": "icho_2026_t2_a6",
+  "scope": "this Kimi-NL GPT formalization campaign, T2-A6 actions 1, 2 and 4 only",
+  "source_bundle_sha256": "b0a3224909d3e2e1bce627c1b29a9b1d9b0d6987462e5d2b31bc1e1bd66f73ca",
+  "draft_sha256": "4a9faffd81c206ca1a01408e3bb6ead859372695c7543d53c7f46b890049be51",
+  "user_reply": "\u652f\u6301\u8865\u5145\u5177\u4f53\u3001\u975e\u5faa\u73af\u7684\u521d\u59cb\u72b6\u6001\u4e0e\u5242\u91cf\u6761\u4ef6 \u6765\u8865\u5145\u5427",
+  "recorded_at": "2026-09-13T16:02:49Z",
+  "assumptions": {
+    "M201": "Only for action 4, continuous bromide supply exceeds net bromide consumption at the switching threshold. In the source-grounded reduced constant-feed Process-B model db/dt = u - k*b, use u > k*b_critical, where k > 0 and b_critical must be derived from the printed mechanism. This is an additional contest-model input, not a printed feed rate or an assumed concentration trajectory, process label or final answer.",
+    "M202": "For action 1 only, synthesize and disclose sufficient initial-state, Ce(IV) dose, available BMA, and finite observation-time conditions in physical quantities. Derive bromide production from printed step (7), including stoichiometric availability and any source-grounded competing loss bound. Conditions may constrain initial distance below the source-derived threshold, dose, and time, but may not assume a final bromide concentration, net production sufficient to cross, a switching event, the requested output, or a freely postulated response law. Derive the quantitative production/loss bounds and crossing from those primitive inputs. Quantify the dose scale relative to source concentrations and disclose any idealization needed for small-pulse kinetics; no unbounded or impossible dose witnesses.",
+    "M203": "For action 2 only, synthesize and disclose sufficient initial bromide concentration, effective silver dose, mixing/volume and precipitation-regime conditions in physical quantities. Ground AgBr stoichiometry and the applicable precipitation/equilibrium law in a bound ordinary scientific source; account for residual dissolved ions rather than assuming every positive dose removes bromide. Derive the removed amount and threshold crossing from mass balance and the grounded law. Do not assume removal sufficient to cross, a final concentration below threshold, a process switch or answer label. A zero-solubility idealization is not independently authorized."
+  },
+  "evaluation_basis": "conditional_contest_model",
+  "proved_from_figures": false,
+  "final_answer_axioms_allowed": false,
+  "model_version": "dose-conditions-v2",
+  "synthesis_acceptance_requirements": [
+    "Exact chosen inequalities and their units must appear in Lean, report and review receipts as additional model assumptions, not printed facts.",
+    "Prove conclusions for every admissible parameter tuple, and supply a separately kernel-checked feasible tuple with positive concentrations, consistent mass balance and finite time.",
+    "Source-derived chemistry and any authorized initial-state/dose conditions must be separated. Reject arbitrary ungrounded kinetic laws, circular carriers and answer-label assumptions.",
+    "Do not introduce extra model assumptions for action 3 or silently change the frozen Kimi answers."
+  ]
+}

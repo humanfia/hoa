@@ -1,0 +1,31 @@
+{
+  "target_id": "icho_2026_t3_a6",
+  "status": "completed",
+  "answer_summary": {
+    "stacking_energy_aa_kJ_mol^-1": -38.3,
+    "stacking_energy_ab_kJ_mol^-1": -49.8,
+    "stacking_energy_ab_prime_kJ_mol^-1": -55.6
+  },
+  "theorem_names": [
+    "IChO2026Problems.T3A6.stacking_energy_aa",
+    "IChO2026Problems.T3A6.stacking_energy_ab",
+    "IChO2026Problems.T3A6.stacking_energy_ab_prime",
+    "IChO2026Problems.T3A6.aa_submission_valid",
+    "IChO2026Problems.T3A6.ab_submission_valid",
+    "IChO2026Problems.T3A6.ab_prime_submission_valid"
+  ],
+  "assumptions": [
+    "The problem's tabulated pair energies add over the aromatic overlaps in one repeat area.",
+    "The AA and AB labels select the centred table geometry; the corresponding prime labels select the slightly shifted/slipped geometry, as explicitly described for AA-prime.",
+    "The displayed E1 + D2 repeat unit contains one E1 benzene, three D2 phenylene rings, and one D2 triazine.",
+    "The displayed AB translation gives one benzene-triazine aromatic overlap per repeat area; all other sites lie over non-aromatic regions or pores."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t3_a6.lean",
+    "lake build IChO2026Problems.problem_icho_2026_t3_a6",
+    "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t3_a6.lean",
+    "python3 -m json.tool result.json >/dev/null"
+  ]
+}

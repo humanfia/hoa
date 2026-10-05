@@ -1,0 +1,6 @@
+'IChO2026Problems.ProblemIChO2026T4A2.reactionA_balanced' depends on axioms: [propext]
+'IChO2026Problems.ProblemIChO2026T4A2.reactionB_balanced' depends on axioms: [propext]
+'IChO2026Problems.ProblemIChO2026T4A2.reactionC_balanced' depends on axioms: [propext]
+'IChO2026Problems.ProblemIChO2026T4A2.nuclear_a' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.ProblemIChO2026T4A2.nuclear_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.ProblemIChO2026T4A2.nuclear_c' depends on axioms: [propext, Classical.choice, Quot.sound]

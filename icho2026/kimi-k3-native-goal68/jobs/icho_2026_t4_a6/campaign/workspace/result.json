@@ -1,0 +1,19 @@
+{
+  "target_id": "icho_2026_t4_a6",
+  "status": "completed",
+  "answer_summary": "Δ_rH°₂₉₈ = −802.3 kJ mol⁻¹ for CH₄(g) + 2 O₂(g) → CO₂(g) + 2 H₂O(g), computed from the given enthalpies of formation at 298 K.",
+  "theorem_names": [
+    "reactionEnthalpy298_value",
+    "reactionEnthalpy298_reported",
+    "submission_valid"
+  ],
+  "assumptions": [
+    "Δ_fH°₂₉₈(O₂, g) = 0 kJ mol⁻¹ because oxygen is in its standard reference state",
+    "Stoichiometry of complete methane combustion: CH₄ + 2 O₂ → CO₂ + 2 H₂O",
+    "All species gaseous as stated in the problem"
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Run"
+  ]
+}

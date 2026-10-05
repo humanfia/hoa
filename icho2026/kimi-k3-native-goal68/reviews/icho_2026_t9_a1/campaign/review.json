@@ -1,0 +1,35 @@
+```json
+{
+  "target_id": "icho_2026_t9_a1",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The submission correctly derives M(beta-CD) = 7*180.16 - 7*18.016 = 1135.008 g mol^-1 and reports it at the TASK.json 3-significant-figure default as 1135 g mol^-1. I independently verified every input against the source: PDF page Q9-1 (page 84) states cyclodextrins are cyclic glucose oligosaccharides joined by alpha-1,4-glycosidic bonds, states beta-CD contains 7 units, gives Mw(glucose) = 180.16 g mol^-1, and the figure on the same page is literally labelled 'n = 7 beta-CD' with (OH)14 bracket structure consistent with a cyclised cyclic heptamer. The blank answer sheet (PDF page 89, A9-1) requests exactly one output 'Mw : beta-CD'. The IChO 2026 periodic table page (G1-5, PDF page 5) prints Ar(H) = 1.008 and Ar(O) = 16.00, giving M(H2O) = 18.016 g mol^-1 as used. The chemistry is sound: 7 glycosidic bonds in a cyclic 7-mer each formally eliminate one H2O, giving C42H70O35 and 7*180.16 - 7*18.016 = 1135.008. The Lean formalization encodes the problem-given inputs (n = 7, molar masses as printed) as definitions and proves the arithmetic exactly in rationals/reals and proves the final rounding relation ReportsAtQuantum(1135.008, 1135, 1) with tie rule half-away-from-zero. The build compiles cleanly (8581 jobs) and all four final theorems depend only on propext, Classical.choice, Quot.sound; no sorry/admit/native_decide/custom axioms found in the problem file or helper modules. No unsupported scientific assumptions were introduced.",
+  "coverage": [
+    {
+      "output_id": "beta_cd_molar_mass",
+      "status": "passed",
+      "theorem": "IChO2026Problems.T9A1.betaCDMolarMass_value (raw 1135.008); IChO2026Problems.T9A1.betaCDMolarMass_reports_1135 (3-sf display 1135 at quantum 1); IChO2026Problems.T9A1.betaCDSubmission_valid (packaged submission); supported by IChO2026Problems.T9A1.waterMass_value",
+      "evidence": "betaCDMolarMassRaw := 7*glucoseMass - 7*waterMass with glucoseMass = 18016/100 (printed Mw(glucose) = 180.16, Q9-1), betaUnits = 7 (shared context 'beta...7...units' and figure label 'n = 7 beta-CD'), waterMass = 2*1.008 + 16.00 = 18.016 from the data sheet (verified on PDF page 5). betaCDMolarMass_value proves the exact equality (raw = 1135008/1000) by unfold/push_cast/ring; betaCDMolarMass_reports_1135 proves via ReportsAtQuantum that 1135.008 rounds to 1135 at quantum 1 g mol^-1, matching the three-significant-figure reporting policy of TASK.json. Blank answer sheet A9-1 confirms this is the sole requested output. Arithmetic re-verified independently: 1261.12 - 126.112 = 1135.008."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "problem statement Mw(glucose) = 180.16 g mol^-1 matches T9_page-1.png and PDF page 84 exactly",
+    "shared context 'contain 6, 7, and 8 alpha-D-glucopyranoside units, respectively' verified on page Q9-1; beta-CD = 7 units",
+    "figure on Q9-1 labelled 'n = 7 beta-CD' with the cyclic oligomer bracket structure and (OH)14 count, consistent with 7 units and cyclisation",
+    "blank answer sheet (PDF page 89, A9-1) requests exactly 'Mw : beta-CD' for 9.1 (2.0 pt), matching the single requested output",
+    "IChO 2026 periodic table (G1-5, PDF page 5) inspected directly: Ar(H) = 1.008, Ar(O) = 16.00, so M(H2O) = 18.016 as used",
+    "condensation physics: encoded cyclisation loses 1 H2O per alpha-1,4-glycosidic bond; a cyclic 7-mer has 7 such bonds, giving C42H70O35; matches the structure drawn on the problem page",
+    "chemistry transcription in answer.md matches the source pixels; no scientific law inferred from labels alone; printed constants treated as exact per the measurement policy"
+  ],
+  "proof_checks": [
+    "lake build completed successfully (8581 jobs)",
+    "lake env lean on problem_icho_2026_t9_a1.lean exits 0",
+    "#print axioms for waterMass_value, betaCDMolarMass_value, betaCDMolarMass_reports_1135, betaCDSubmission_valid each report only [propext, Classical.choice, Quot.sound] - no custom or unchecked axioms",
+    "grep of IChO2026Problems, IChO2026Chem, IChO2026Run finds no sorry/admit/native_decide/axiom/unsafe/implemented_by",
+    "theorem statements are non-vacuous equalities and an existentially witnessed rounding relation over exact rationals/reals; the only semantic inputs (n = 7, printed masses) appear as definitions justified by the problem page and data sheet, not as unsupported hypotheses or result-shaped assumptions",
+    "ReportsAtQuantum helper in IChO2026Chem.Reporting encodes nearest-multiple-of-quantum reporting with ties half-away-from-zero; the rounding proof is a genuine interval membership proof (1134.5 <= 1135.008 < 1135.5)",
+    "no intermediate rounding: exact rational arithmetic throughout; raw and displayed values kept separate per ValidNumericSubmission contract"
+  ]
+}
+```

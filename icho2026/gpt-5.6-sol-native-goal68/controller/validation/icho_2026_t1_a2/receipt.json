@@ -1,0 +1,64 @@
+{
+  "target": "icho_2026_t1_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301965.1344817,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t1_a2.lean": "3248041a8441d10ba39b28b0c5396035ed438e829fc72a79c54d52827b0f82f7",
+    "answer.md": "b9f1312a03a935e2ce1a6dc1032b1874c8332c201f32ad7f93486669a37e30b4",
+    "verification.md": "40e38cee4c145c30ea9390426d8c147cdb4e08d451949a4be18158439d510ed6",
+    "result.json": "d12561aa6bf331a2b3fd1af78b9c44f77ec86024d3a483980948073b2773c679"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t1_a2",
+    "status": "completed",
+    "answer_summary": "Z is compound 7, chamazulene (7-ethyl-1,4-dimethylazulene); A is azulene; B is naphthalene. The 218/220 3:1 monochloro cluster uniquely selects the printed C14H16 candidate, whose azulene core has the stated two mirror planes and rearranges to the three-plane naphthalene graph.",
+    "theorem_names": [
+      "IChO2026T1A2.one_chlorine_has_two_peaks_and_ratio_three_to_one",
+      "IChO2026T1A2.identify_Z_from_mass_spectrum",
+      "IChO2026T1A2.candidate7_is_unique_mass_match",
+      "IChO2026T1A2.candidate7_formula_is_chamazulene_formula",
+      "IChO2026T1A2.chamazulene_complete",
+      "IChO2026T1A2.chamazulene_has_azulene_core",
+      "IChO2026T1A2.chamazulene_substitution_bonds",
+      "IChO2026T1A2.azulene_complete",
+      "IChO2026T1A2.azulene_two_perpendicular_planes",
+      "IChO2026T1A2.azulene_isomerizes_structurally_to_naphthalene",
+      "IChO2026T1A2.azulene_and_naphthalene_are_distinct_isomers",
+      "IChO2026T1A2.naphthalene_complete",
+      "IChO2026T1A2.naphthalene_three_mutually_perpendicular_planes",
+      "IChO2026T1A2.icho_2026_t1_a2"
+    ],
+    "assumptions": [
+      "The problem's 218/220 pair is interpreted in the standard way as the molecular-ion isotope cluster of a monochlorinated product formed by replacement of one hydrogen by chlorine.",
+      "Nominal integer masses are 12 for carbon-12, 1 for hydrogen-1, 16 for oxygen-16, 35 for chlorine-35, and 37 for chlorine-37.",
+      "The approximately 3:1 natural chlorine isotope abundance identifies a one-chlorine cluster; the blank answer sheet confirms that Z is selected from printed compounds 1 through 10.",
+      "The problem supplies the experimental thermal-isomerization premise. Lean verifies the exact azulene-to-naphthalene molecular graph rewrite rather than attempting to derive reaction kinetics from first principles.",
+      "The ordinary chemical names attached to the explicit graphs were checked against PubChem/NIST and primary literature, none of which is a competition answer source."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t1_a2.lean",
+      "grep -En '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t1_a2.lean",
+      "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T1_page-2.png icho_2026_source/image/T1_page-3.png",
+      "python3 -m json.tool result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

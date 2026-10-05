@@ -1,0 +1,49 @@
+{
+  "id": "icho_2026_t7_a7",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "LaN",
+      "id": "formula_7",
+      "kind": "formula",
+      "raw_value": "LaN",
+      "unit": ""
+    },
+    {
+      "display_value": "Ca₃N₂",
+      "id": "formula_8",
+      "kind": "formula",
+      "raw_value": "Ca3N2",
+      "unit": ""
+    },
+    {
+      "display_value": "Si₃N₄",
+      "id": "formula_9",
+      "kind": "formula",
+      "raw_value": "Si3N4",
+      "unit": ""
+    },
+    {
+      "display_value": "La₅Ca₉O₂[SiO₃N][Si₁₂N₂₄]",
+      "id": "formula_10",
+      "kind": "formula",
+      "raw_value": "La5Ca9O2[SiO3N][Si12N24]",
+      "unit": ""
+    },
+    {
+      "display_value": "O²⁻",
+      "id": "formula_s",
+      "kind": "formula",
+      "raw_value": "O^2-",
+      "unit": ""
+    },
+    {
+      "display_value": "[SiO₃N]⁵⁻",
+      "id": "formula_t",
+      "kind": "formula",
+      "raw_value": "[SiO3N]^5-",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

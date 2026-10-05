@@ -1,0 +1,34 @@
+Let $G$ be a finite group, and let $H,H'\leq G$.  For a subgroup $K\leq G$, define
+$$
+    \ket{gK}
+    =
+    \frac1{\sqrt{|K|}}\sum_{k\in K}\ket{gk},
+    \qquad
+    \rho_K=
+    \frac1{|G|}
+    \sum_{g\in G}\ketbra{gK}{gK}.
+$$
+Let $\Pi_{\rho_H}$ denote the orthogonal projector onto the support of $\rho_H$.  For density operators $\rho,\sigma$ on the same finite-dimensional Hilbert space, define the fidelity convention
+$$
+    F(\rho,\sigma)=\tr\!\sqrt{\sqrt{\rho}\,\sigma\sqrt{\rho}} .
+$$
+Assume the fidelity upper bound
+$$
+    F(\rho_H,\rho_{H'})^2
+    \leq
+    \tr(\Pi_{\rho_H}\rho_{H'})
+$$
+and the coset identities
+$$
+    \braket{gH}{g'H'}
+    =
+    \frac{|gH\cap g'H'|}{\sqrt{|H||H'|}},
+    \qquad
+    |HH'|=\frac{|H||H'|}{|H\cap H'|}.
+$$
+Prove that
+$$
+    F(\rho_H,\rho_{H'})
+    \leq
+    \sqrt{\frac{|H\cap H'|}{|H|}}.
+$$

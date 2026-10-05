@@ -1,0 +1,18 @@
+name = "Ipho2026KimiK3Blind32"
+version = "0.1.0"
+keywords = ["math", "physics", "ipho"]
+defaultTargets = ["Ipho2026KimiK3Blind32"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.31.0"
+
+[[lean_lib]]
+name = "Ipho2026KimiK3Blind32"

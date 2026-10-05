@@ -1,0 +1,979 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The candidate faithfully exposes all three source-requested neutron-producing equations as concrete exact-symbolic witnesses, checks each with independent mass-number and atomic-number ledgers, matches the bound submission and preserved Kimi 4.2 draft, and introduces no result-bearing hypothesis, uniqueness claim, or unsupported branch.",
+    "updated_at": "2026-09-13T08:35:33Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "d07b6f376bcc188a9058b9f5939560362968c54cf7f85de7fc2e9922f3ac4255",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The source asks to write one equation for each of items (a), (b), and (c). nuclearA, nuclearB, and nuclearC preserve the stated reactants and neutron-producing direction and give exactly one concrete equation per item; the candidate does not claim global uniqueness or exhaustive reaction-channel coverage."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "For one emitted neutron and one residual nucleus, nuclearA_residual_numbers, nuclearB_residual_numbers, and nuclearC_residual_numbers encode the source-required balance calculation. Independently, the three reactant/product (A,Z) totals are respectively (15,7), (2,1), and (13,6) on each side, so nuclear_a, nuclear_b, and nuclear_c are source-compatible witnesses."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "NuclearSpecies distinguishes isotopes, the neutron, and the photon; lists retain multiplicity and orientation; NuclearEquation.IsBalanced conjoins mass-number and atomic-number conservation; each Nuclear*Spec fixes both the source reactants and exact product list, while raw_result and reported_result cover all outputs in controller order."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "All requested outputs are exact symbolic nuclear equations. No measured quantity, tolerance, significant-figure choice, or numerical uncertainty enters any result."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The source describes the named nuclei and alpha/gamma as neutron-producing inputs. nuclearAReactants, nuclearBReactants, and nuclearCReactants occur only on the reactant side, while neutron occurs on the product side; no arrow or branch is reversed."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The theorem states direct balanced witnesses rather than uniqueness. Within each represented one-neutron/one-residual event, simultaneous A and Z conservation forces the residual numerical labels, and no freely chosen flag, opaque predicate, answer-shaped premise, or source-compatible alternative invalidates the stated witnesses."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "Item (a)'s source-stated boron-11/alpha reactants and neutron-producing role are connected to an exact balanced witness.",
+          "carrier": "IChO2026Problems.T4A2.nuclearAReactants; IChO2026Problems.T4A2.NuclearASpec; IChO2026Problems.T4A2.nuclearA_residual_numbers; IChO2026Problems.T4A2.nuclear_a",
+          "status": "covered",
+          "evidence": "shared_context and the inspected T4.2 image supply the reactants and requested direction; transparent nuclide A/Z definitions and IsBalanced verify 11+4=14+1 and 5+2=7+0."
+        },
+        {
+          "claim": "Item (b)'s source-stated gamma/deuterium reactants and neutron-producing role are connected to an exact balanced witness.",
+          "carrier": "IChO2026Problems.T4A2.nuclearBReactants; IChO2026Problems.T4A2.NuclearBSpec; IChO2026Problems.T4A2.nuclearB_residual_numbers; IChO2026Problems.T4A2.nuclear_b",
+          "status": "covered",
+          "evidence": "shared_context and the inspected T4.2 image supply gamma plus deuterium and the requested direction; the photon has zero A/Z and the transparent ledgers verify 0+2=1+1 and 0+1=1+0."
+        },
+        {
+          "claim": "Item (c)'s source-stated beryllium-9/alpha reactants and neutron-producing role are connected to an exact balanced witness.",
+          "carrier": "IChO2026Problems.T4A2.nuclearCReactants; IChO2026Problems.T4A2.NuclearCSpec; IChO2026Problems.T4A2.nuclearC_residual_numbers; IChO2026Problems.T4A2.nuclear_c",
+          "status": "covered",
+          "evidence": "shared_context and the inspected T4.2 image supply the reactants and requested direction; transparent nuclide A/Z definitions and IsBalanced verify 9+4=12+1 and 4+2=6+0."
+        },
+        {
+          "claim": "Exact-symbolic raw and reported contracts preserve all three requested equations without rounding or omission.",
+          "carrier": "IChO2026Problems.T4A2.RawResult; IChO2026Problems.T4A2.raw_result; IChO2026Problems.T4A2.ReportedResult; IChO2026Problems.T4A2.reported_result",
+          "status": "covered",
+          "evidence": "RawResult and ReportedResult are explicit conjunctions of NuclearASpec, NuclearBSpec, and NuclearCSpec in bundle order, so the reporting layer cannot erase or alter an output."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t4_a2.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t4_a2",
+        "source_record_sha256": "8e28a278a03a9243470e0e61f11c50ab840dfc3d37d6234aac205b8a5850cee1",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t4_a2.answer.json",
+        "answer_submission_sha256": "5b5e18664b088d2651c6fa0349a2324593de8a0d79563cf2db28ac3053a21a29",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t4_a2.source.json",
+        "source_report_sha256": "d4bab2eb820e2778f03e8d1f8d9d6b7a2beec6a12ec8a8c9619a21b50e9a6373",
+        "candidate": "IChO2026Problems/problem_icho_2026_t4_a2.lean",
+        "preflight_sha256": "f5d233b3125390609b479856a88fb94eca834a2c7ea2bedf5f15c92867763db2",
+        "candidate_sha256": "d07b6f376bcc188a9058b9f5939560362968c54cf7f85de7fc2e9922f3ac4255",
+        "question_sha256": "03f77049e58906cf031d8c5287b5e8e41cebb4f72859d4535e49cbd7f6cc5ae4",
+        "shared_context_sha256": "3d6e3013fb42ff7a2e5040f74927bf5aee058271aa6bbb39760f2b1b30fffb2c",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "929b057636ea906030d7e2f8e2d795d46da6b3120ffee3cb035a30817b7f07e5",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T4_page-1.png",
+            "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "f05c4b4e12bda06143ce047bf283ce1a4accbf35237c65ede05d20efb6ff23fb",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "nuclear_a",
+            "nuclear_b",
+            "nuclear_c"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t4_a2",
+          "path": ".archon/provided_answer_drafts/Q4.md",
+          "sha256": "e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t4_a2.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t4_a2",
+          "source_record_sha256": "8e28a278a03a9243470e0e61f11c50ab840dfc3d37d6234aac205b8a5850cee1",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t4_a2.answer.json",
+          "answer_submission_sha256": "5b5e18664b088d2651c6fa0349a2324593de8a0d79563cf2db28ac3053a21a29",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t4_a2.source.json",
+          "source_report_sha256": "d4bab2eb820e2778f03e8d1f8d9d6b7a2beec6a12ec8a8c9619a21b50e9a6373",
+          "candidate": "IChO2026Problems/problem_icho_2026_t4_a2.lean",
+          "preflight_sha256": "f5d233b3125390609b479856a88fb94eca834a2c7ea2bedf5f15c92867763db2",
+          "candidate_sha256": "d07b6f376bcc188a9058b9f5939560362968c54cf7f85de7fc2e9922f3ac4255",
+          "question_sha256": "03f77049e58906cf031d8c5287b5e8e41cebb4f72859d4535e49cbd7f6cc5ae4",
+          "shared_context_sha256": "3d6e3013fb42ff7a2e5040f74927bf5aee058271aa6bbb39760f2b1b30fffb2c",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "929b057636ea906030d7e2f8e2d795d46da6b3120ffee3cb035a30817b7f07e5",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T4_page-1.png",
+              "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "f05c4b4e12bda06143ce047bf283ce1a4accbf35237c65ede05d20efb6ff23fb",
+            "node_count": 9,
+            "edge_count": 12,
+            "node_kind_counts": {
+              "derivation_obligation": 3,
+              "requested_output": 3,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "nuclear_a",
+              "nuclear_b",
+              "nuclear_c"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t4_a2",
+            "path": ".archon/provided_answer_drafts/Q4.md",
+            "sha256": "e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The requested quantifier, reaction direction, species roles, and all three A/Z balances were fixed from the inline problem evidence and inspected bound image before the submission or candidate was opened. The sealed Kimi draft and generated submission were used only for subsequent fidelity comparisons, not as premises."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "Exact symbolic derivations use separate integer mass-number and atomic-number sums for each one-neutron event; the corresponding nontrivial carriers are NuclearEquation.totalMassNumber, totalAtomicNumber, IsBalanced, the three residual_numbers theorems, and raw_result."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "Each bundle output is formula-valued with the exact_symbolic problem_output_type policy. ReportedResult repeats the three exact specs, so no generic three-significant-figure default is applied."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or needed: every source label and result is exact symbolic, and the submission contains no approximate or rounded field."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No output-decisive uniqueness or exhaustive candidate domain is used. Element is explicitly only a vocabulary for the three direct witnesses; each witness is checked against source reactants and both conservation ledgers rather than selected from an answer-shaped singleton premise."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=d07b6f376bcc188a9058b9f5939560362968c54cf7f85de7fc2e9922f3ac4255; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=8, duration_bucket=under_1m. Requested results are carried nontrivially by nuclear_a, nuclear_b, nuclear_c and jointly by raw_result and reported_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The contract gives exactly three per-event equations corresponding to (a), (b), and (c), with no numerical quantity, global uniqueness, exhaustive channel classification, or unrelated subpart claim."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The source-facing result theorems nuclear_a, nuclear_b, nuclear_c, raw_result, and reported_result have no hypotheses. The residual helper theorems use only the transparent balance relation as their governing premise and do not assume a requested product identity."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "All three concrete formula outputs are present in bundle order, match the independently derived and preserved draft equations, retain empty units, and are exposed individually and in the reported conjunction."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Every outcome-decisive bridge is named: source reactant lists, nuclide/photon/neutron A/Z encodings, both conservation totals, per-output residual arithmetic and specs, individual proof carriers, and raw/reported conjunctions. No empirical yield or omitted-protocol bridge is claimed."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "balanced nuclear reaction (a)",
+            "lean_carrier": "IChO2026Problems.T4A2.nuclear_a",
+            "status": "covered",
+            "evidence": "The submission formula and display are mutually consistent, independently balance in A and Z, and map to an exact source-reactant/product specification with no rounding or unit.",
+            "output_id": "nuclear_a",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "balanced nuclear reaction (b)",
+            "lean_carrier": "IChO2026Problems.T4A2.nuclear_b",
+            "status": "covered",
+            "evidence": "The submission formula and display are mutually consistent, independently balance photon/deuterium photodisintegration in A and Z, and map to an exact specification with no rounding or unit.",
+            "output_id": "nuclear_b",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "balanced nuclear reaction (c)",
+            "lean_carrier": "IChO2026Problems.T4A2.nuclear_c",
+            "status": "covered",
+            "evidence": "The submission formula and display are mutually consistent, independently balance in A and Z, and map to an exact source-reactant/product specification with no rounding or unit.",
+            "output_id": "nuclear_c",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T4_page-1.png",
+            "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf",
+            "inspected": true,
+            "evidence": "The digest matches. The T4.2 region visibly lists (a) boron-11 with alpha particles, (b) gamma rays with deuterium nuclei, and (c) beryllium-9 with alpha particles, then asks for all three equations. There is no molecular topology, legend, product drawing, repeat boundary, or component-count figure relevant to 4.2; the yield graph below belongs to later material."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The model preserves alpha as helium-4, deuterium as hydrogen-2, gamma as a photon with A=Z=0, and a neutron with A=1,Z=0. Derived product nuclide labels agree with the independently conserved residual A/Z pairs and the three equations preserve the Kimi 4.2 intent."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "Classification: quantitative_material_stage. The three finite one-event domains are exactly the item-specific source inputs plus one emitted neutron and the displayed residual witness; stages are a, b, and c. Outcome-decisive mass-number and atomic-number ledgers are NuclearEquation.totalMassNumber, totalAtomicNumber, ConservesMassNumber, ConservesAtomicNumber, IsBalanced, and the three residual_numbers carriers. All admitted species are explicit; no anonymous stream, phase, yield, completeness, or absence claim is used."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No molecular formula, molar mass, mass fraction, or loading is requested. Nuclide mass-number consistency is audited under conservation_laws."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "Independent checks give a: A 11+4=14+1 and Z 5+2=7+0; b: A 0+2=1+1 and Z 0+1=1+0; c: A 9+4=12+1 and Z 4+2=6+0. Lean represents both ledgers separately and conjoins them in IsBalanced."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "The outputs are equations with the bundle-prescribed empty unit; no dimensional numerical quantity is asserted."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "The applicable policy is exact_symbolic. Raw and displayed submission fields express the same three equations, and Lean's ReportedResult repeats RawResult semantically without rounding."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No molecular structure, connectivity, geometry, stereochemistry, or image-derived component topology is requested."
+          },
+          "identification_uniqueness": {
+            "status": "not_applicable",
+            "evidence": "The verb 'Write' requests one concrete equation for each named process. The source does not say unique, all, every, or otherwise require an exhaustive universe of nuclear channels, and the candidate makes no such claim."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The named equations are direct output witnesses, not hypotheses. Their source reactants and product lists are checked by transparent A/Z functions and nontrivial balance specs; all main result theorems are premise-free, and no singleton domain, free Bool/Prop, opaque predicate, post-hoc tolerance, or reflexive assumption establishes a result."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "item (a) reactants and neutron-producing context",
+                "relation": "sets boron-11 and an alpha particle as inputs and requires a neutron among the outputs",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "balanced nuclear reaction (a)",
+                "relation": "the sums of mass number A and atomic number Z are separately conserved",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "requested_outputs[0].source_requirement"
+                }
+              }
+            ],
+            "evidence": "The independently balanced exact equation agrees with the nuclear_a card, submission, and Lean contract.",
+            "id": "nuclear_a",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T4A2.nuclearAReactants"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T4A2.nuclearA",
+                "IChO2026Problems.T4A2.raw_result"
+              ],
+              "relations": [
+                "IChO2026Problems.T4A2.NuclearEquation.IsBalanced",
+                "IChO2026Problems.T4A2.NuclearASpec",
+                "IChO2026Problems.T4A2.nuclearA_residual_numbers"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T4A2.nuclear_a",
+                "IChO2026Problems.T4A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "nuclearA uses the source reactants and the derived residual, and nuclear_a proves the exact specification including both ledgers.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "one neutron-producing reaction event for item (a)",
+              "kind": "per_step"
+            },
+            "quantity_definition": "The exact one-event nuclear equation for boron-11 reacting with an alpha particle to produce a neutron.",
+            "raw_result": {
+              "derivation": "A: 11 + 4 = 15, so after one neutron the residual A is 14; Z: 5 + 2 = 7, so the residual Z is 7.",
+              "exact_unrounded": true,
+              "value_or_expression": "\u00b9\u00b9\u2085B + \u2074\u2082\u03b1 \u2192 \u00b9\u2074\u2087N + \u00b9\u2080n"
+            },
+            "reporting": {
+              "application": "Render the final balanced equation exactly; no rounding or numeric formatting is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The id, formula kind, empty unit, balanced-reaction requirement, and exact-symbolic policy all agree.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T4_page-1.png#T4.2.a"
+              }
+            ],
+            "source_requirement": "balanced nuclear reaction (a)",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "item (b) reactants and neutron-producing context",
+                "relation": "sets a gamma ray and deuterium as inputs and requires a neutron among the outputs",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "balanced nuclear reaction (b)",
+                "relation": "the sums of mass number A and atomic number Z are separately conserved, with a photon contributing zero to both",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "requested_outputs[1].source_requirement"
+                }
+              }
+            ],
+            "evidence": "The independently balanced exact equation agrees with the nuclear_b card, submission, and Lean contract.",
+            "id": "nuclear_b",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T4A2.nuclearBReactants"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T4A2.nuclearB",
+                "IChO2026Problems.T4A2.raw_result"
+              ],
+              "relations": [
+                "IChO2026Problems.T4A2.NuclearEquation.IsBalanced",
+                "IChO2026Problems.T4A2.NuclearBSpec",
+                "IChO2026Problems.T4A2.nuclearB_residual_numbers"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T4A2.nuclear_b",
+                "IChO2026Problems.T4A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "nuclearB uses the source reactants and the derived residual, and nuclear_b proves the exact specification including both ledgers.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "one photodisintegration event for item (b)",
+              "kind": "per_step"
+            },
+            "quantity_definition": "The exact one-event photoneutron equation for a gamma ray interacting with deuterium.",
+            "raw_result": {
+              "derivation": "A: 0 + 2 = 2, so after one neutron the residual A is 1; Z: 0 + 1 = 1, so the residual Z is 1.",
+              "exact_unrounded": true,
+              "value_or_expression": "\u03b3 + \u00b2\u2081H \u2192 \u00b9\u2081H + \u00b9\u2080n"
+            },
+            "reporting": {
+              "application": "Render the final balanced equation exactly; no rounding or numeric formatting is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The id, formula kind, empty unit, balanced-reaction requirement, and exact-symbolic policy all agree.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T4_page-1.png#T4.2.b"
+              }
+            ],
+            "source_requirement": "balanced nuclear reaction (b)",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "item (c) reactants and neutron-producing context",
+                "relation": "sets beryllium-9 and an alpha particle as inputs and requires a neutron among the outputs",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "balanced nuclear reaction (c)",
+                "relation": "the sums of mass number A and atomic number Z are separately conserved",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "requested_outputs[2].source_requirement"
+                }
+              }
+            ],
+            "evidence": "The independently balanced exact equation agrees with the nuclear_c card, submission, and Lean contract.",
+            "id": "nuclear_c",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T4A2.nuclearCReactants"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T4A2.nuclearC",
+                "IChO2026Problems.T4A2.raw_result"
+              ],
+              "relations": [
+                "IChO2026Problems.T4A2.NuclearEquation.IsBalanced",
+                "IChO2026Problems.T4A2.NuclearCSpec",
+                "IChO2026Problems.T4A2.nuclearC_residual_numbers"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T4A2.nuclear_c",
+                "IChO2026Problems.T4A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "nuclearC uses the source reactants and the derived residual, and nuclear_c proves the exact specification including both ledgers.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "one neutron-producing reaction event for item (c)",
+              "kind": "per_step"
+            },
+            "quantity_definition": "The exact one-event nuclear equation for beryllium-9 reacting with an alpha particle to produce a neutron.",
+            "raw_result": {
+              "derivation": "A: 9 + 4 = 13, so after one neutron the residual A is 12; Z: 4 + 2 = 6, so the residual Z is 6.",
+              "exact_unrounded": true,
+              "value_or_expression": "\u2079\u2084Be + \u2074\u2082\u03b1 \u2192 \u00b9\u00b2\u2086C + \u00b9\u2080n"
+            },
+            "reporting": {
+              "application": "Render the final balanced equation exactly; no rounding or numeric formatting is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The id, formula kind, empty unit, balanced-reaction requirement, and exact-symbolic policy all agree.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T4_page-1.png#T4.2.c"
+              }
+            ],
+            "source_requirement": "balanced nuclear reaction (c)",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "d07b6f376bcc188a9058b9f5939560362968c54cf7f85de7fc2e9922f3ac4255"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t4_a2.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The candidate faithfully exposes all three source-requested neutron-producing equations as concrete exact-symbolic witnesses, checks each with independent mass-number and atomic-number ledgers, matches the bound submission and preserved Kimi 4.2 draft, and introduces no result-bearing hypothesis, uniqueness claim, or unsupported branch.",
+        "reviewed_at": "2026-09-13T08:35:33Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "d07b6f376bcc188a9058b9f5939560362968c54cf7f85de7fc2e9922f3ac4255",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t4_a2.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 8,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The submission, exact-symbolic reporting, and all three named Lean carriers faithfully give the source-stated neutron-producing equations; each equation is independently certified by mass-number and atomic-number conservation with no premise containing the answer.",
+    "evidence": "The image, answer-submission, and candidate hashes match their bound digests. The complete answer JSON has schema_version 1, the expected top-level and per-output fields, exactly three outputs in controller order, formula kinds, and empty units. Independent A/Z accounting gives residual pairs (14,7), (1,1), and (12,6), and the transparent element map identifies the corresponding nuclei. The supplied deterministic preflight is passed/compiles=true/returncode=0/sorry_count=0/under_1m. Draft fidelity: frozen SHA-256 e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63, relevant Kimi subpart 4.2; all three original equations are preserved without correction or discrepancy.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "345ff9316abf552e621a274a522b1d6962607cf22bec2b0865a6f04d4d1a7202",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t4_a2.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t4_a2",
+      "source_record_sha256": "8e28a278a03a9243470e0e61f11c50ab840dfc3d37d6234aac205b8a5850cee1",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t4_a2.answer.json",
+      "answer_submission_sha256": "5b5e18664b088d2651c6fa0349a2324593de8a0d79563cf2db28ac3053a21a29",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t4_a2.source.json",
+      "source_report_sha256": "d4bab2eb820e2778f03e8d1f8d9d6b7a2beec6a12ec8a8c9619a21b50e9a6373",
+      "candidate": "IChO2026Problems/problem_icho_2026_t4_a2.lean",
+      "preflight_sha256": "26155e41c767b22376aa366c9c4bb2de2723c3657395f08dd849a3e5b298fceb",
+      "candidate_sha256": "345ff9316abf552e621a274a522b1d6962607cf22bec2b0865a6f04d4d1a7202",
+      "question_sha256": "03f77049e58906cf031d8c5287b5e8e41cebb4f72859d4535e49cbd7f6cc5ae4",
+      "shared_context_sha256": "3d6e3013fb42ff7a2e5040f74927bf5aee058271aa6bbb39760f2b1b30fffb2c",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "929b057636ea906030d7e2f8e2d795d46da6b3120ffee3cb035a30817b7f07e5",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T4_page-1.png",
+          "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "f05c4b4e12bda06143ce047bf283ce1a4accbf35237c65ede05d20efb6ff23fb",
+        "node_count": 9,
+        "edge_count": 12,
+        "node_kind_counts": {
+          "derivation_obligation": 3,
+          "requested_output": 3,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "nuclear_a",
+          "nuclear_b",
+          "nuclear_c"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t4_a2",
+        "path": ".archon/provided_answer_drafts/Q4.md",
+        "sha256": "e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t4_a2.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t4_a2",
+        "source_record_sha256": "8e28a278a03a9243470e0e61f11c50ab840dfc3d37d6234aac205b8a5850cee1",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t4_a2.answer.json",
+        "answer_submission_sha256": "5b5e18664b088d2651c6fa0349a2324593de8a0d79563cf2db28ac3053a21a29",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t4_a2.source.json",
+        "source_report_sha256": "d4bab2eb820e2778f03e8d1f8d9d6b7a2beec6a12ec8a8c9619a21b50e9a6373",
+        "candidate": "IChO2026Problems/problem_icho_2026_t4_a2.lean",
+        "preflight_sha256": "26155e41c767b22376aa366c9c4bb2de2723c3657395f08dd849a3e5b298fceb",
+        "candidate_sha256": "345ff9316abf552e621a274a522b1d6962607cf22bec2b0865a6f04d4d1a7202",
+        "question_sha256": "03f77049e58906cf031d8c5287b5e8e41cebb4f72859d4535e49cbd7f6cc5ae4",
+        "shared_context_sha256": "3d6e3013fb42ff7a2e5040f74927bf5aee058271aa6bbb39760f2b1b30fffb2c",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "929b057636ea906030d7e2f8e2d795d46da6b3120ffee3cb035a30817b7f07e5",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T4_page-1.png",
+            "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "f05c4b4e12bda06143ce047bf283ce1a4accbf35237c65ede05d20efb6ff23fb",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "nuclear_a",
+            "nuclear_b",
+            "nuclear_c"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t4_a2",
+          "path": ".archon/provided_answer_drafts/Q4.md",
+          "sha256": "e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The audit rederived the equations from the inline problem evidence, the inspected bound page, standard nuclide notation, and mass/atomic-number conservation. The generated submission and candidate were treated only as outputs to check; the sealed Kimi draft was used only for the explicitly required fidelity comparison, not as a scientific premise. No other artifact, official solution, registry fact, or prior result was used."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "For nuclear_a the source reactants total A=15 and Z=7, so emission of one neutron leaves A=14 and Z=7; for nuclear_b they total A=2 and Z=1, leaving A=1 and Z=1; for nuclear_c they total A=13 and Z=6, leaving A=12 and Z=6. Lean exposes these symbolic deductions as nuclearA_residual_numbers, nuclearB_residual_numbers, and nuclearC_residual_numbers, then carries all outputs in raw_result."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The problem asks to write nuclear equations and every controller-bound requested output is kind=formula with reporting_policy kind=exact_symbolic. The submission's raw and display fields are equivalent notations of each audited equation, so no rounding or numerical formatting rule changes the result."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "All three outputs are exact symbolic formulae. No measurement interval, approximation, or tolerance is introduced or needed."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The source supplies the three reactant systems and states that each produces neutrons. The candidate makes no exhaustive-universe or uniqueness premise: its finite Element vocabulary only represents the concrete source and residual species, while the residual A/Z values are checked by transparent conservation ledgers."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=345ff9316abf552e621a274a522b1d6962607cf22bec2b0865a6f04d4d1a7202; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0, duration_bucket=under_1m. Nontrivial carriers are nuclearA_residual_numbers, nuclearB_residual_numbers, nuclearC_residual_numbers, nuclear_a, nuclear_b, nuclear_c, raw_result, and reported_result."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "ReportedResult is the conjunction of NuclearASpec, NuclearBSpec, and NuclearCSpec in the required order. Each specification fixes the source reactants, gives the exact product list, and requires both conservation ledgers; no requested branch is dropped or weakened."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The final output theorems have no hypotheses. Source reactants are transparent definitions matching items (a), (b), and (c), and all numeric element, photon, and neutron contributions reduce definitionally."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The three submission members and the Lean carriers agree output-by-output with the independently balanced equations and with the frozen Kimi 4.2 draft (SHA-256 e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63). No unauthorized answer substitution or discrepancy is present."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "NuclearSpecies assigns transparent A/Z contributions to isotopes, the free neutron, and the photon; Element.atomicNumber transparently supplies the standard element identities; NuclearEquation.IsBalanced requires both ledgers. The source page locates all three reactant systems and their neutron-producing role, so no candidate-local empirical axiom or opaque bridge is used."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "balanced nuclear reaction (a)",
+          "lean_carrier": "IChO2026Problems.T4A2.nuclear_a : NuclearASpec nuclearA",
+          "status": "covered",
+          "evidence": "The first submission member has the exact required id/kind/unit and exact-symbolic notation, matches the independent conservation audit, and is carried by a theorem proving the source reactants, product list, and both ledgers.",
+          "output_id": "nuclear_a",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "balanced nuclear reaction (b)",
+          "lean_carrier": "IChO2026Problems.T4A2.nuclear_b : NuclearBSpec nuclearB",
+          "status": "covered",
+          "evidence": "The second submission member has the exact required id/kind/unit and exact-symbolic notation, matches the independent conservation audit, and is carried by a theorem proving the source reactants, product list, and both ledgers.",
+          "output_id": "nuclear_b",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "balanced nuclear reaction (c)",
+          "lean_carrier": "IChO2026Problems.T4A2.nuclear_c : NuclearCSpec nuclearC",
+          "status": "covered",
+          "evidence": "The third submission member has the exact required id/kind/unit and exact-symbolic notation, matches the independent conservation audit, and is carried by a theorem proving the source reactants, product list, and both ledgers.",
+          "output_id": "nuclear_c",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T4_page-1.png",
+          "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf",
+          "inspected": true,
+          "evidence": "The readable T4 page 1 visibly states item (a) as boron-11 with alpha particles, item (b) as gamma rays with deuterium nuclei, item (c) as beryllium-9 with alpha particles, and T4.2 asks for all three nuclear equations. The yield graph below belongs to subsequent context and supplies no T4.2 product answer."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The products are the standard residual nuclei forced by the source reactants, one emitted neutron, and A/Z conservation: nitrogen-14 for (a), hydrogen-1 for deuterium photodisintegration in (b), and carbon-12 for (c). Alpha, gamma, deuterium, and neutron semantics are represented transparently."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "Selected classification: quantitative_material_stage. Each requested exact equation is a one-stage nuclear transformation whose coefficients and A/Z ledgers are outcome-decisive. The finite per-stage domains are named by nuclearAReactants/nuclearA.products, nuclearBReactants/nuclearB.products, and nuclearCReactants/nuclearC.products; NuclearEquation.totalMassNumber, totalAtomicNumber, IsBalanced, and nuclear_a/nuclear_b/nuclear_c carry the complete dimensions actually used, with no anonymous streams."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Nuclide formula accounting is exact: the three reactant/product A totals are respectively 15=15, 2=2, and 13=13, while the Z totals are 7=7, 1=1, and 6=6."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "Each output theorem proves NuclearEquation.IsBalanced, defined as the conjunction of ConservesMassNumber and ConservesAtomicNumber. The residual-number lemmas independently expose the subtraction behind each product nucleus."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "Formula outputs correctly carry the empty unit required by the contract. Within each equation, mass number and atomic number are kept as separate dimension-like ledgers and are not conflated."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "Exact-symbolic reporting applies; every submission formula is exact and no significant figures, rounding, tolerances, or staged arithmetic occur."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "The target concerns nuclide equations, not molecular connectivity, geometry, or stereochemistry."
+        },
+        "identification_uniqueness": {
+          "status": "not_applicable",
+          "evidence": "The source requests concrete equations for the three named neutron-producing systems and does not ask for an open-world uniqueness classification. All requested systems are nevertheless covered."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "No theorem hypothesis, free Bool/Prop field, singleton candidate-domain premise, axiom, or opaque predicate supplies a product. The named equations occur as output carriers, their balance is computed transparently, and the residual-number theorems derive each residual A/Z pair from the source-side totals and neutron emission."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t4_a2.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The submission, exact-symbolic reporting, and all three named Lean carriers faithfully give the source-stated neutron-producing equations; each equation is independently certified by mass-number and atomic-number conservation with no premise containing the answer.",
+        "evidence": "The image, answer-submission, and candidate hashes match their bound digests. The complete answer JSON has schema_version 1, the expected top-level and per-output fields, exactly three outputs in controller order, formula kinds, and empty units. Independent A/Z accounting gives residual pairs (14,7), (1,1), and (12,6), and the transparent element map identifies the corresponding nuclei. The supplied deterministic preflight is passed/compiles=true/returncode=0/sorry_count=0/under_1m. Draft fidelity: frozen SHA-256 e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63, relevant Kimi subpart 4.2; all three original equations are preserved without correction or discrepancy.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T08:52:41.238111Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "345ff9316abf552e621a274a522b1d6962607cf22bec2b0865a6f04d4d1a7202",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t4_a2.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T08:52:41.238142Z",
+    "repair_handoff": {}
+  }
+}

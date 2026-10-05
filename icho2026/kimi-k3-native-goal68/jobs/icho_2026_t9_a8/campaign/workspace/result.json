@@ -1,0 +1,40 @@
+{
+  "target_id": "icho_2026_t9_a8",
+  "status": "completed",
+  "answer_summary": {
+    "structure_O": "unit1 = -CH=CH2 (Swern oxidation of the free CH2OH of N, then Wittig methylenation); units 2-6 = -CH2OBn; secondary rim (OBn)12",
+    "structure_P": "alkene-directed (ortho, 1,2-clockwise per the 9.8 convention) DIBAL-H debenzylation frees unit 2; MsCl/NaN3 turns it into -CH2N3. unit1 = -CH=CH2; unit2 = -CH2N3; units 3-6 = -CH2OBn",
+    "structure_Q": "2 equiv DIBAL-H reduce the unit-2 azide to -CH2NH2 (protic director) and debenzylate the amine's 1,4-unit = unit 5; NaH and ClCH2-C(=CH2)-CH2Cl double-alkylate OH(5)/NH2(2) into the -CH2-NH-CH2-C(=CH2)-CH2-O- bridge between units 2 and 5. unit1 = -CH=CH2; unit2 = bridge N-arm (cap H); unit5 = bridge O-arm; units 3, 4, 6 = -CH2OBn",
+    "structure_R": "bridge NH is protic; its 1,4-unit (unit 5) is occupied by the bridge, so the stated 1,3-counterclockwise fallback frees unit 6; Boc2O protects the bridge nitrogen; MsCl/NaN3 install -CH2N3 at unit 6. unit1 = -CH=CH2; unit2 = bridge N-arm (cap Boc); unit5 = bridge O-arm; unit6 = -CH2N3; units 3, 4 = -CH2OBn",
+    "structure_S": "TFA removes Boc, NaH/BnI N-benzylates the bridge nitrogen; final 2 equiv DIBAL-H reduce the unit-6 azide to -CH2NH2 and debenzylate the 1,4-unit of the new amine at unit 6 = unit 3 (the rival director NHBn@2 has both targets blocked: 1,4 = unit 5 bridge, 1,3-ccw = unit 6 amine). unit1 = -CH=CH2; unit2 = bridge N-arm (cap Bn); unit3 = -CH2OH; unit4 = -CH2OBn; unit5 = bridge O-arm; unit6 = -CH2NH2. The six boxes are pairwise distinct (hexadifferentiated), matching the problem preamble."
+  },
+  "theorem_names": [
+    "ICho2026T9A8.structure_o_derivation",
+    "ICho2026T9A8.structure_p_derivation",
+    "ICho2026T9A8.structure_q_derivation",
+    "ICho2026T9A8.structure_r_derivation",
+    "ICho2026T9A8.structure_s_derivation",
+    "ICho2026T9A8.o_director_is_alkene",
+    "ICho2026T9A8.step_o_to_p_regiochemistry",
+    "ICho2026T9A8.step_p_to_q_regiochemistry",
+    "ICho2026T9A8.step_q_to_r_regiochemistry",
+    "ICho2026T9A8.step_r_to_s_regiochemistry",
+    "ICho2026T9A8.structure_s_hexadifferentiated",
+    "ICho2026T9A8.bridge_units_fixed",
+    "ICho2026T9A8.bridge_caps",
+    "ICho2026T9A8.secondary_rim_unchanged"
+  ],
+  "assumptions": [
+    "Trusted general chemistry (ordinary scientific references, not competition answers): Swern oxidation CH2OH->CHO; Wittig methylenation CHO->CH=CH2; MsCl/NaN3 as CH2OH->CH2N3 via SN2; Boc2O protects a secondary amine and TFA removes it; NaH-promoted double alkylation of an OH/NH2 pair with a dichloride; DIBAL-H reduces alkyl azides to primary amines (justification of the 2-equiv. steps, forced by the downstream Boc2O step which requires an N-H); isolated C=C groups are untouched by DIBAL-H.",
+    "All directing rules actually used for regiochemistry are printed in the problem: Sinay protic 1,4 direction with 1,3 fallback when 1,4 is unavailable; Sollogoub alkene ortho (1,2) direction; the 9.8 convention 1,2 = clockwise, 1,3 = counterclockwise; protic groups stronger than alkenes.",
+    "Starting material N read directly from the printed figure: unit 1 = CH2OH, units 2-6 = CH2OBn, secondary rim (OBn)12.",
+    "Blank answer sheets A9-4/A9-5 (theory_problem.pdf PDF pages 92-93) confirm the six numbered boxes and the preprinted (OBn)12 on each of the five templates O-S."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t9_a8.lean",
+      "result": "exit code 0; no errors; #print axioms for every final theorem reports only [propext, Classical.choice, Quot.sound] or [propext, Quot.sound]; no sorryAx and no custom axioms"
+    }
+  ]
+}

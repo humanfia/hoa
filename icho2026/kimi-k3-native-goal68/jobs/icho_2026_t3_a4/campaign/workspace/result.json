@@ -1,0 +1,36 @@
+{
+  "target_id": "icho_2026_t3_a4",
+  "status": "completed",
+  "answer_summary": "Repeat units (dashed edges bisect the shared p-phenylene ring at the para C-H pair as in COF-1). COF-3: honeycomb imine COF of benzene-1,3,5-tricarbaldehyde + 2,5-dihydroxybenzene-1,4-diamine; three Ar-CH=N-Ar' links, both ortho/meta phenolic OH persist (ortho OH closes O-H...N h-bond); empirical C21H15N3O4 (ledger C18H12N3O3). COF-4: each ortho OH+imine pair oxidatively cyclised to a benzoxazole (the 'different type of C=N'); per empirical repeat unit exactly 6 H fewer than COF-3, empirical C21H9N3O4; no isolated imine IR. COF-5: honeycomb imine COF of 2,4,6-trihydroxybenzene-1,3,5-tricarbaldehyde + p-phenylenediamine; empirical C18H12N3O3. COF-6: its irreversible keto-enamine tautomer - cyclohexane-1,3,5-trione core with three -NH-CH= arms, three ketones, no C=N (no imine stretch), same composition C18H12N3O3.",
+  "theorem_names": [
+    "IChO2026.T3.t3_a4_main",
+    "IChO2026.T3.cof3Content_eq",
+    "IChO2026.T3.cof3_empirical",
+    "IChO2026.T3.cof4Content_eq",
+    "IChO2026.T3.cof5Content_eq",
+    "IChO2026.T3.cof3_cof4_hydrogen_balance",
+    "IChO2026.T3.imine_condensation_balance",
+    "IChO2026.T3.patterns_consistent",
+    "IChO2026.T3.monomer_hydrogen_content",
+    "IChO2026.T3.cof3_has_imine",
+    "IChO2026.T3.cof4_different_CN",
+    "IChO2026.T3.cof4_benzoxazole_hydrogen_balance",
+    "IChO2026.T3.cof6_no_imine",
+    "IChO2026.T3.cof5_cof6_isomerisation",
+    "IChO2026.T3.cof6_is_keto_enamine"
+  ],
+  "assumptions": [
+    "Problem inputs read from theory_problem.pdf printed Q3-4 (PDF index 27) and T3_page-3/4.png: the two monomers schemes, [O] conversion COF-3 -> COF-4, irreversible isomerisation COF-5 -> COF-6, and the four IR/elemental-analysis constraints.",
+    "Dashed-edge convention taken from the printed COF-1/COF-8 example figures: repeat unit halves the peripheral (red) building block, dashed line through the para C-H pair.",
+    "Standard organic chemistry (trusted general law): imine condensation -CHO + H2N- -> -CH=N- + H2O; oxidative benzoxazole annulation of 2-hydroxyimines; keto-enamine (enol->keto) tautomerisation of phloroglucinol-derived imines.",
+    "COF-4 benzoxazole assignment is a derived deduction (unique structure meeting all four stated constraints), recorded in cof4Inventory/cof4_benzoxazole_hydrogen_balance."
+  ],
+  "source_gaps": [
+    "The requested outputs are drawings; the formalisation represents connectivity, bond orders and dashed-edge halving by typed structure inventories and rational half-linker ledgers rather than literal pixels.",
+    "The problem states but does not structurally specify the 'different type of C=N' in COF-4; it is fixed by deduction from the -6H elemental analysis, loss of the imine IR band and the [O] reagent."
+  ],
+  "verification_commands": [
+    "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t3_a4/campaign/workspace && lake env lean IChO2026Problems/problem_icho_2026_t3_a4.lean   # exit 0, no errors; #print axioms for all final theorems: only [propext, Classical.choice, Quot.sound], several axiom-free, no sorryAx",
+    "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t3_a4/campaign/workspace && lake build IChO2026Problems   # Build completed successfully (8564 jobs); only pre-existing style linter notes in unmodified shared infrastructure"
+  ]
+}

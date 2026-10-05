@@ -1,0 +1,77 @@
+{
+  "target": "icho_2026_t5_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789367788.4125516,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t5_a4.lean": "3ab7555644bd230644b05350443a5e0dbc98d5338cd03bae4c6fbcf18d6e00ba",
+    "answer.md": "1e247841fbae4ccab87693313cf7c5d36b2c7d7e4539c6869c06fefa00e930e0",
+    "verification.md": "230c3d6df7cea6945d885069ad5f739830ff4b82a8399e7ac5303c6cd517f610",
+    "result.json": "2311ca6e83f93bbedfc0e1f44fae48f515f8e351e4fc977bee4063a4cb6aa4c6"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t5_a4",
+    "status": "completed",
+    "answer_summary": "X = IBr (iodine monobromide). Ozonolysis sentence forces k = 2 C=C bonds (k+1 = 3 products); the printed 181.0 g iodine per 100 g acid with one-I2-per-pi-bond addition gives M(RCOOH) = 253808/905 = 280.451 g/mol, singling out C18H32O2 (linoleic acid, M = 280.452) on the fatty-acid lattice; the 36.57% iodine mass fraction of the analogous X-adduct then requires a residual mass r = 126.904*(100/36.57 - 1) - 280.451/2 = 79.887 g/mol = bromine (79.904), unique among halogens by hundreds of measurement half-quanta and robust across the full half-quantum windows of both measured values; multivalent X = IR'_v variants need non-halogen residuals (39.94, 26.63, 15.98 for v = 2, 3, 5).",
+    "theorem_names": [
+      "subquestion_5_4_answer",
+      "x_is_IBr",
+      "xAdduct_residual_eq",
+      "residual_matches_bromine",
+      "halogen_forced_bromine",
+      "multivalent_residuals_not_halogen",
+      "predicted_fraction_bromine_in_window",
+      "predicted_fraction_fluorine_excluded",
+      "predicted_fraction_chlorine_excluded",
+      "predicted_fraction_iodine_excluded",
+      "predicted_fraction_astatine_excluded",
+      "robust_to_measurement_quantum",
+      "acid_carbonCount_forced",
+      "linoleic_molarMass_from_iodine",
+      "linoleic_molarMass",
+      "iodine_mass_in_window",
+      "ozonolysis_products_eq",
+      "linoleic_products",
+      "iodine_experiment_equation"
+    ],
+    "assumptions": [
+      "Trusted general law: halogen addition across C=C consumes exactly one reagent molecule per pi bond (HalogenAddition structure, stoich = 1), applied both to I2 (iodine-value reaction) and to the 'similar way' reagent X.",
+      "Standard IUPAC atomic masses as supplied with the exam: I 126.904, Br 79.904, Cl 35.453, F 18.998, At 209.987, C 12.011, H 1.008, O 15.999 g/mol.",
+      "Reductive ozonolysis of an acyclic chain with k C=C bonds yields k+1 organic products (trusted general law), used to read k = 2 off the printed ozonolysis sentence.",
+      "Printed measured values carry the measurement-policy tolerance of half a last displayed quantum: 181.0 +/- 0.05 g, 36.57 +/- 0.005 %.",
+      "Previous-part dependency T5-A3 resolved by deriving the fatty-acid formula inline from the problem-only material (ozonolysis + iodine datum + monocarboxylic fatty-acid mass lattice), consistent with the problem-stated 5.3 fallback."
+    ],
+    "source_gaps": [
+      "The problem never explicitly writes the 1:1 halogen-per-pi-bond stoichiometry or the ozonolysis k+1 product count; both are standard, trusted general laws encoded as plain definitions/structure data, not axioms.",
+      "X is constrained to iodine-containing halogen-adding reagents I R'_v by the printed iodine mass fraction of the adduct and the 'in similar way' clause; a hypothetical exotic X outside this class is not derivable from the problem inputs and is flagged as out of scope."
+    ],
+    "verification_commands": [
+      "export PATH=\"$HOME/.elan/bin:$PATH\"; lake build IChO2026Chem",
+      "export PATH=\"$HOME/.elan/bin:$PATH\"; lake env lean IChO2026Problems/problem_icho_2026_t5_a4.lean   (exit 0, no diagnostics)",
+      "lake env lean on a scratch copy extended with #print axioms for subquestion_5_4_answer, x_is_IBr, xAdduct_residual_eq, halogen_forced_bromine, multivalent_residuals_not_halogen, robust_to_measurement_quantum, acid_carbonCount_forced, iodine_mass_in_window -> all report only [propext, Classical.choice, Quot.sound]"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t5_a4.lean": {
+      "sorry": 1,
+      "admit": 1,
+      "axiom": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

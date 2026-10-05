@@ -1,0 +1,328 @@
+{
+  "admissions": [
+    {
+      "allowed_import_modules": [
+        "Physlib.Units.Dimension",
+        "Physlib.QuantumMechanics.QuantumSystem.Basic",
+        "Physlib.QuantumMechanics.PlanckConstant",
+        "Physlib.QuantumMechanics.Hydrogen.Basic",
+        "Physlib.CondensedMatter.TightBindingChain.Basic",
+        "Physlib.Thermodynamics.Temperature.Basic",
+        "Physlib.Thermodynamics.Temperature.TemperatureUnits",
+        "Physlib.Thermodynamics.IdealGas.Basic",
+        "Physlib.StatisticalMechanics.CanonicalEnsemble.Finite",
+        "Physlib.Mathematics.FDerivCurry",
+        "Physlib.FluidDynamics.NavierStokes.Continuity"
+      ],
+      "git": "https://github.com/leanprover-community/physlib.git",
+      "integration_contracts": [
+        "Retain the reviewed eleven-module Physlib grant as inherited grounding; the scalar-composability repair directly imports no Physlib module, and the umbrella import Physlib remains forbidden.",
+        "Reuse the released ChemistryLib.Units.Quantity, PositiveQuantity, Volume, Amount, AFPS2017.Flow.FlowRate, and their explicit value projections; do not create a parallel units or scalar-wrapper system.",
+        "Derive the reported 5.6 mmol scalar value from the released factor-ten and computed-amount theorems, preserve the reported-versus-computed inequality, and do not silently correct the supplementary source.",
+        "Treat flowVolume_hydraulicDuration_value as an ideal hydraulic calculation. Any statement about actual delivered volume must require an explicit ConstantFlowModel witness.",
+        "Add only new repair-family modules and preserve all twenty-one authenticated prerequisite source files byte-for-byte.",
+        "Use narrow imports and standard Mathlib reasoning only; do not infer experimental success, purity, identity, yield, pump performance, or transport behavior from scalar arithmetic."
+      ],
+      "lake_package": "Physlib",
+      "namespace": "Physlib",
+      "rev": "1706ae68b63996f1d97717e672e50c9e3933d933"
+    }
+  ],
+  "allowed_lake_packages": [
+    "mathlib",
+    "Physlib"
+  ],
+  "clean_room_policy_sha256": "0f33d6cff6cfa4cec3cbd008c855f56445529a706940001c7f108f4b1ace54b0",
+  "exact_import_preflights": [
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "3f3ad5667d7b7b659ba8be1427a55cffb770175519c03d15c677555205241b77",
+      "lake_package": "Physlib",
+      "module": "Physlib.Units.Dimension",
+      "module_source": ".lake/packages/Physlib/Physlib/Units/Dimension.lean",
+      "module_source_sha256": "f35053bd87cb9000098c771e696cb77a02a8d09181656e7e5b49df309340ea52",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "3a76ca5103cd9fbe3b6de7c7006398536c110e46ce9b8a344de3501d84abbf67",
+      "lake_package": "Physlib",
+      "module": "Physlib.QuantumMechanics.QuantumSystem.Basic",
+      "module_source": ".lake/packages/Physlib/Physlib/QuantumMechanics/QuantumSystem/Basic.lean",
+      "module_source_sha256": "489e3701401ced4989973a82de34fc3f91e7f13bcf9e09d752ed4be2fcb82c7d",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "97edf74d95f8e1d749eb91804920a598fcc75d435df8530e0acfa41e86f4c3e5",
+      "lake_package": "Physlib",
+      "module": "Physlib.QuantumMechanics.PlanckConstant",
+      "module_source": ".lake/packages/Physlib/Physlib/QuantumMechanics/PlanckConstant.lean",
+      "module_source_sha256": "7f6d99426ba7171c2836fc82a62f169ca192361aab74cda309fc44d9b2f0f81b",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "ee19780d23ec384a3706d097137c9899b7778540bc5ec6ac08a55bb9341b1d78",
+      "lake_package": "Physlib",
+      "module": "Physlib.QuantumMechanics.Hydrogen.Basic",
+      "module_source": ".lake/packages/Physlib/Physlib/QuantumMechanics/Hydrogen/Basic.lean",
+      "module_source_sha256": "4be0ead42b4b4a41585de2123fdf912a949ee609a3eeea1d3384b98dc9e7b722",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "b87513b4e491a836e31aaf21f0ad85b3583dffa7c420e71294c1e6ba7f86b8e5",
+      "lake_package": "Physlib",
+      "module": "Physlib.CondensedMatter.TightBindingChain.Basic",
+      "module_source": ".lake/packages/Physlib/Physlib/CondensedMatter/TightBindingChain/Basic.lean",
+      "module_source_sha256": "7f961ca3caca6c69b924d5b3fcfa30a4a4cc72fd1386f277efb16dce34b51bea",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "7c46c2da50cf93c56adb93de2bc9f31e344547914f017c4719d75c1991883006",
+      "lake_package": "Physlib",
+      "module": "Physlib.Thermodynamics.Temperature.Basic",
+      "module_source": ".lake/packages/Physlib/Physlib/Thermodynamics/Temperature/Basic.lean",
+      "module_source_sha256": "9ec3bd2880dabf67a52c5429333a8baa0a5cf40ef839988e81830ef316585492",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "1675c26473dfee7fbea6b37955b954ec4f0a77095af24fdbb9643d625c8fbdce",
+      "lake_package": "Physlib",
+      "module": "Physlib.Thermodynamics.Temperature.TemperatureUnits",
+      "module_source": ".lake/packages/Physlib/Physlib/Thermodynamics/Temperature/TemperatureUnits.lean",
+      "module_source_sha256": "a1e0c3417456445c84eb9f0b03d516902c534cb1c1dc49ada3f49d3c49e0a731",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "6cb0a8996e4a7348d85e67c07405361ea93932f060cdb9ecfe59bbb20ced9e52",
+      "lake_package": "Physlib",
+      "module": "Physlib.Thermodynamics.IdealGas.Basic",
+      "module_source": ".lake/packages/Physlib/Physlib/Thermodynamics/IdealGas/Basic.lean",
+      "module_source_sha256": "e50dbe2f245b810628c29c5334326707213e9f0665de7278da9fa66e6b621a44",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "7e9051b231356c52dde15e7afb3c8a39aa8af11ba31419e1fae3e959c9f7d8e1",
+      "lake_package": "Physlib",
+      "module": "Physlib.StatisticalMechanics.CanonicalEnsemble.Finite",
+      "module_source": ".lake/packages/Physlib/Physlib/StatisticalMechanics/CanonicalEnsemble/Finite.lean",
+      "module_source_sha256": "b6fd4237e9f996110845c173592d00b4778e181e0cb1fe76d6cb549569e66ff6",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "4412df4155e257091cfe812f80a8650930f66c3f61bde2f40b68e2b73e98bf99",
+      "lake_package": "Physlib",
+      "module": "Physlib.Mathematics.FDerivCurry",
+      "module_source": ".lake/packages/Physlib/Physlib/Mathematics/FDerivCurry.lean",
+      "module_source_sha256": "12da545a009d45def096a7c1bb2c89443cdde4d5ab482bfbaec92b07146a241c",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "<exact-grounding-import.lean>"
+      ],
+      "import_source_sha256": "e05230596303f948fef25379088472a0dd9ac9a173aeb9b907f0198f4a036335",
+      "lake_package": "Physlib",
+      "module": "Physlib.FluidDynamics.NavierStokes.Continuity",
+      "module_source": ".lake/packages/Physlib/Physlib/FluidDynamics/NavierStokes/Continuity.lean",
+      "module_source_sha256": "82a3b133789ebc04d6cd3c3b760993110f53217f2f80b3a4a9216174587f57af",
+      "returncode": 0
+    }
+  ],
+  "exact_module_builds": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.Units.Dimension"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.Units.Dimension",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.QuantumMechanics.QuantumSystem.Basic"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.QuantumMechanics.QuantumSystem.Basic",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.QuantumMechanics.PlanckConstant"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.QuantumMechanics.PlanckConstant",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.QuantumMechanics.Hydrogen.Basic"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.QuantumMechanics.Hydrogen.Basic",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.CondensedMatter.TightBindingChain.Basic"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.CondensedMatter.TightBindingChain.Basic",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.Thermodynamics.Temperature.Basic"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.Thermodynamics.Temperature.Basic",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.Thermodynamics.Temperature.TemperatureUnits"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.Thermodynamics.Temperature.TemperatureUnits",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.Thermodynamics.IdealGas.Basic"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.Thermodynamics.IdealGas.Basic",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.StatisticalMechanics.CanonicalEnsemble.Finite"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.StatisticalMechanics.CanonicalEnsemble.Finite",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.Mathematics.FDerivCurry"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.Mathematics.FDerivCurry",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Physlib.FluidDynamics.NavierStokes.Continuity"
+      ],
+      "lake_package": "Physlib",
+      "module": "Physlib.FluidDynamics.NavierStokes.Continuity",
+      "returncode": 0
+    }
+  ],
+  "forbidden_umbrella_imports": [
+    "Physlib"
+  ],
+  "goal_family_id": "afps2017.scalar_composability",
+  "goal_id": "pentelute.afps2017.formal_benchmark.v1",
+  "goal_spec_hash": "aaf1261e7a195a9e27b4e6e335ed13e66a22ca11a18ad21cadf14add174f794b",
+  "grounding_packages": [
+    "Mathlib",
+    "Physlib"
+  ],
+  "grounding_policy_hash": "bc622ec379a0107af0487829da8f8e113a0975fa71cf6f2cc3d9228259c322b8",
+  "kind": "chemistrylib.exact-grounding-policy",
+  "lake_manifest_locks": [
+    {
+      "input_rev": "1706ae68b63996f1d97717e672e50c9e3933d933",
+      "name": "Physlib",
+      "rev": "1706ae68b63996f1d97717e672e50c9e3933d933",
+      "type": "git",
+      "url": "https://github.com/leanprover-community/physlib.git"
+    }
+  ],
+  "lake_manifest_sha256": "a820efa82d987353000653a1b2c312a8b2ea239bc27e14890ab7707a3bc4900c",
+  "lakefile_sha256": "f6f9f3bef9caeb1908cc6b3cc67d9185d93f6082ba3360a7e1d9a23842bf672f",
+  "schema_version": 2
+}

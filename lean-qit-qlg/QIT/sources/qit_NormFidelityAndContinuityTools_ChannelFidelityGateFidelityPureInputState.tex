@@ -1,0 +1,46 @@
+Let
+$$
+\mathcal{E}:\cL(\cH)\to \cL(\cH)
+$$
+be a trace-preserving quantum operation with Kraus representation
+$$
+\mathcal{E}(\rho)=\sum_i E_i\rho E_i^\dagger.
+$$
+The entanglement fidelity of $\mathcal{E}$ with respect to an input state $\rho$ is given by
+$$
+F_e(\rho,\mathcal{E})
+=
+\sum_i
+\left|
+\Tr(\rho E_i)
+\right|^2.
+$$
+Equivalently, there exists a preferred Kraus representation for which
+$$
+F_e(\rho,\mathcal{E})
+=
+\left|
+\Tr(\rho E_1)
+\right|^2.
+$$
+
+Suppose now that the input state is pure,
+$$
+\rho=\ket{\psi}\bra{\psi}.
+$$
+Let $U$ be a target unitary gate, and let the noisy implementation of $U$ be described by the effective channel
+$$
+\widetilde{\mathcal{E}}(\rho)
+=
+U^\dagger \mathcal{E}(\rho) U.
+$$
+Prove that the entanglement fidelity reduces to the standard pure-state gate fidelity:
+$$
+F_e(\rho,\widetilde{\mathcal{E}})
+=
+\bra{\psi}
+U^\dagger
+\mathcal{E}(\ket{\psi}\bra{\psi})
+U
+\ket{\psi}.
+$$

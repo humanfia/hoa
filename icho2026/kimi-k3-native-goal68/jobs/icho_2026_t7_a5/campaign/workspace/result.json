@@ -1,0 +1,30 @@
+{
+  "target_id": "icho_2026_t7_a5",
+  "status": "completed",
+  "answer_summary": "Complex 5 is the dinuclear mu-dinitrogen complex [(PNP)Mo]2(mu-N2): a single N2 molecule bridges two (PNP)Mo fragments end-on (mu-eta1:eta1), giving a near-linear Mo-N-N-Mo axis. The gas-uptake data give n(N2)/n(4) = (1.0 bar*94.97 cm3 / R*273.15 K) / (1.00 g/597.824 g/mol) = 2.500 = 5/2, i.e. 1 N2 per 2 Mo. Na-Hg (3 equiv) reduces Mo(III) in (PNP)MoCl3 to Mo(0); the tridentate meridional PNP pincer is retained on each Mo. Drawn with the simplified arc ligand glyph as in 4.",
+  "theorem_names": [
+    "nN2_value",
+    "n4_value",
+    "n2_mo_ratio",
+    "n2_per_mo4_is_two_point_five",
+    "two_Mo_per_N2",
+    "structure5_two_fragments",
+    "structure5_pincer_donors",
+    "structure5_bridge_and_stoichiometry",
+    "reduction_consistent",
+    "t7_a5_answer"
+  ],
+  "assumptions": [
+    "Ideal-gas behaviour pV = nRT for N2 (trusted general law).",
+    "Half-quantum measurement convention for the printed input quantities (matches IChO2026Chem.Reporting).",
+    "Stoichiometric (1:1 Mo:ligand) pincer complex 4 and its retention in 5, as depicted by the unchanged simplified-ligand glyph in the scheme.",
+    "3 equiv Na-Hg delivers 3 electrons per Mo (Mo(III) -> Mo(0)); N2 retained as an intact bridge (mild reductant)."
+  ],
+  "source_gaps": [
+    "The precise N-N bond order in the drawn mu-N2 bridge is a drawing convention; the problem only requires the connectivity (one N2 bridging two Mo). No template fields exist on the blank answer sheet A7-4."
+  ],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t7_a5.lean"
+  ],
+  "verification_result": "exit 0; t7_a5_answer depends on axioms [propext, Classical.choice, Quot.sound] only (no sorryAx, no custom axioms)"
+}

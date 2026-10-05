@@ -1,0 +1,45 @@
+All checks are complete. Final review:
+
+```json
+{
+  "target_id": "icho_2026_t4_a2",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The candidate answers (a) 11_5B + 4_2He -> 14_7N + 1_0n, (b) 2_1D + gamma -> 1_1H + 1_0n, (c) 9_4Be + 4_2He -> 12_6C + 1_0n are correct nuclear equations for the stated channels, independently verified against PDF page 37 (text and rendered image agree verbatim: 11B+alpha, gamma rays on 2D, 9Be+alpha). The blank answer sheet (page 40) has unconstrained free-form slots for (a),(b),(c). Neutron production is explicitly dictated by the problem prose ('Neutrons that induce the chain reaction are produced by several ways'), and conservation of A and Z then uniquely forces each residual nucleus; the images showed no additional diagrams relevant to 4.2 (the P(A) fission-fragment graph belongs to part 4.3). The Lean formalization models each nuclide by its (A,Z) pair, defines Balanced as equality of summed label vectors, proves the three equations balanced (reaction_*_balanced) via kernel-checked decide over Fin 2 coordinates, and proves that the residual product is uniquely forced (reaction_*_residual_forced) given the single-neutron output. I recompiled the file myself (exit 0, no warnings) and independently ran #print axioms on all six theorems: only propext, Classical.choice, Quot.sound. No sorry/admit/axiom/unsafe/native_decide anywhere. The theorem hypotheses (reactant identities, single-neutron output) are problem-grounded, so the conditionality is actual problem content, not an unsupported extra assumption; none of the assumptions go beyond the problem text plus standard (A,Z) conservation.",
+  "coverage": [
+    {
+      "output_id": "nuclear_a",
+      "status": "passed",
+      "theorem": "IChO2026T4.reaction_a_balanced, IChO2026T4.reaction_a_residual_forced",
+      "evidence": "answer.md states 11_5B + 4_2He -> 14_7N + 1_0n; PDF p.37 confirms reactants '11B with alpha-particles'; balanced sums 11+4=14+1 and 5+2=7+0 verified by kernel decide in reaction_a_balanced; reaction_a_residual_forced proves (A,Z)=(15,7) reactants plus emitted neutron force residual X=(14,7)=14_7N, excluding the competing 14_6C+p channel. This is the known Be-free (alpha,n) reaction on 11B; correct."
+    },
+    {
+      "output_id": "nuclear_b",
+      "status": "passed",
+      "theorem": "IChO2026T4.reaction_b_balanced, IChO2026T4.reaction_b_residual_forced",
+      "evidence": "answer.md states 2_1D + gamma -> 1_1H + 1_0n; PDF p.37 confirms 'gamma rays with 2D nuclei'; photodisintegration of the deuteron conserves A (2=1+1) and Z (1=1+0), kernel-verified; uniqueness theorem forces residual (1,1)=proton. Symbol 2D = deuterium/deuteron used consistently with the source. Correct."
+    },
+    {
+      "output_id": "nuclear_c",
+      "status": "passed",
+      "theorem": "IChO2026T4.reaction_c_balanced, IChO2026T4.reaction_c_residual_forced",
+      "evidence": "answer.md states 9_4Be + 4_2He -> 12_6C + 1_0n; PDF p.37 confirms '9Be with alpha-particles ... neutron source'; predicts the textbook Be-9(alpha,n)C-12 neutron-source reaction; balance 9+4=12+1, 4+2=6+0 kernel-verified; uniqueness theorem forces residual (12,6)=12_6C. Correct."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Extracted theory_problem.pdf page 37 (0-indexed 36) with PyMuPDF: text matches the supplied problem verbatim, including 'a) Reaction of 11B with alpha-particles', 'b) Interaction of gamma rays with 2D nuclei', 'c) Reaction of 9Be with alpha-particles', and '4.2 Write the nuclear reaction equations for (a), (b), and (c). 3.0 pt'.",
+    "Viewed T4_page-1.png directly: the nuclear equation 235_92U + 1_0n -> ... + 3 1_0n and channel list display as described; the P(A) graph at the bottom belongs to part 4.3 and is irrelevant to 4.2.",
+    "Verified blank student answer sheet (PDF page 40, A4-1): 4.2 provides free-form slots '(a):', '(b):', '(c):' with no additional printed constraints, so three nuclear equations are the complete requested output.",
+    "Confirmed the problem prose 'Neutrons that induce the chain reaction are produced by several ways' licenses one emitted neutron per channel; given this, A/Z conservation uniquely determines each residual nucleus (the alternative balanced channel 11B+alpha->14C+p is excluded because it emits a proton, not a neutron).",
+    "Sanity-checked the three equations against general nuclear-physics knowledge (all are standard, well-known reactions: 11B(alpha,n)14N; gamma+d->p+n; 9Be(alpha,n)12C neutron source). No official solutions or answer repositories consulted."
+  ],
+  "proof_checks": [
+    "Re-ran `lake env lean IChO2026Problems/problem_icho_2026_t4_a2.lean` from the workspace: exit code 0, no errors or warnings (~39 s).",
+    "Independently rebuilt an axiom-check copy (in /tmp, untouched candidate files) with six `#print axioms` lines: balanced theorems depend on [propext, Classical.choice, Quot.sound]; residual_forced theorems on [propext, Quot.sound]; no custom axioms.",
+    "Grepped all candidate Lean sources: no sorry, admit, axiom, unsafe, or native_decide (only a doc comment mentioning these words).",
+    "Inspected Balanced definition and `decide`-based balanced proofs: decide is a kernel-checked Decidable dispatch, not native_decide, so it is permitted; the proofs genuinely check both A and Z coordinates via fin_cases.",
+    "Inspected uniqueness theorems: hypothesis is only Balanced [target, projectile] [X, neutron]; omega derives exact (A,Z) of X; no result-shaped assumptions, no vacuous premises, no precomputed answer tables — required kernel reductions plus linear integer arithmetic."
+  ]
+}
+```
