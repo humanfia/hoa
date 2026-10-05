@@ -1,0 +1,22 @@
+{
+  "target_id": "icho_2026_t7_a4",
+  "status": "completed",
+  "answer_summary": "Compound 3 is N-methyldiethanolamine (MDEA). The balanced aqueous CO2-scrubbing equation is CH3N(CH2CH2OH)2 + CO2 + H2O <=> [CH3NH(CH2CH2OH)2]+ + HCO3-, with every coefficient equal to one.",
+  "theorem_names": [
+    "IChO2026Problems.T7A4.mdea_atom_counts",
+    "IChO2026Problems.T7A4.reaction_conserved_totals",
+    "IChO2026Problems.T7A4.t7_a4_reaction_equation"
+  ],
+  "assumptions": [
+    "The structure drawn as compound 3 on the official problem page is read as CH3N(CH2CH2OH)2, N-methyldiethanolamine (MDEA).",
+    "Trusted general chemical law: in water, a tertiary amine captures CO2 by base-assisted hydration, giving the protonated amine and bicarbonate; this product-selection premise is documented by primary literature in answer.md and is not introduced as a Lean axiom."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T7_page-1.png icho_2026_source/image/T7_page-2.png",
+    "lake env lean IChO2026Problems/problem_icho_2026_t7_a4.lean",
+    "grep -nE '\\bsorry\\b|\\badmit\\b|\\bunsafe\\b|^[[:space:]]*axiom\\b' IChO2026Problems/problem_icho_2026_t7_a4.lean",
+    "python3 -m json.tool result.json >/dev/null",
+    "test -s answer.md -a -s verification.md -a -s result.json -a -s IChO2026Problems/problem_icho_2026_t7_a4.lean"
+  ]
+}

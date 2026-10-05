@@ -1,0 +1,1035 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "Passed: the source requests three concrete structure witnesses, and the submission plus Lean candidate faithfully provide and independently check all three without uniqueness, yield, or omitted-protocol claims. Draft fidelity: sealed Kimi subpart 1.5 at SHA-256 426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961 is preserved exactly in identity and connectivity, with no discrepancy.",
+    "updated_at": "2026-09-13T08:43:00Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "fcc169fe636264944773e7775f6c7414889bec402023ff47daa7730030acc60f",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "Before generated artifacts were opened, the source audit fixed the witness quantifier, found no dynamic stock-flow quantity, read the two left-to-right arrows, and derived the three graphs from the composition, symmetry, acid/binary, and qualitative-transform constraints. The Lean statements make no global-uniqueness, yield, completeness, phase, or unprinted-heating claim."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Each output is a transparent finite graph whose formula, valence, functional groups, symmetry, displayed mass-fraction consistency, and arrow compatibility reduce to explicit definitions; RawResult has no assumptions or candidate-selectable flags. Sorry bodies are permitted in this semantic review."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "E, F, and G enumerate every explicit H/C/O atom and every bond. Atom element, formal charge, radical electrons and R/S status, plus bond order and E/Z status, are represented. StructureEAnswer, StructureFAnswer, and StructureGAnswer cover formula, valence, topology, and symmetry."
+        },
+        "uncertainty_propagation": {
+          "status": "passed",
+          "evidence": "The printed 11.18% and 49.98% observations use dimensionless displayed quantum 0.0001 and source-policy half-width 0.00005. Unrounded candidate fractions 0.111809509724\u2026 and 0.499755312835\u2026 lie in the respective display intervals; nominal pinned atomic weights are used as exact conventional inputs as required."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "sourceOxidationArrow binds E at the tail, KMnO4 and HNO3 on the shaft, and F at the head; sourceDehydrationArrow binds F at the tail, P2O5 on the shaft, and G at the head. sourceArrowContract checks both left-to-right assignments, preventing label reversal."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The target proves concrete graph witnesses rather than uniqueness over an open universe. No answer-shaped premise, singleton domain, free Bool/Prop, opaque identity predicate, or reflexive equality selects them; all decisive observable properties are computed from their graph definitions."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "E's explicit graph realizes the source-stated sixfold symmetry and 11.18% hydrogen fraction and is the E\u2192F arrow tail.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T1A5.structureE; IChO2026Problems.ProblemIcho2026T1A5.StructureEAnswer; IChO2026Problems.ProblemIcho2026T1A5.hydrogenFractionObservation; IChO2026Problems.ProblemIcho2026T1A5.sourceOxidationArrow",
+          "status": "covered",
+          "evidence": "Graph counts give C12H18; order-six preservation is explicit. CIAAW C and H lookups matched dataset 11a02c\u2026 with record hashes 0f558fc72d4299d061e9d29f394ebed43fc8246f7dbdb402bbb2a338cfbe4b8a and 8e5f2e512d11f6c3409197956a4f015f6144f43057a286107064436c64b4bce5."
+        },
+        {
+          "claim": "F is a highly symmetrical acid graph related sitewise to E under the printed qualitative oxidation arrow.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T1A5.structureF; IChO2026Problems.ProblemIcho2026T1A5.StructureFAnswer; IChO2026Problems.ProblemIcho2026T1A5.IsCarboxylicAcidAt; IChO2026Problems.ProblemIcho2026T1A5.oxidationStructureCompatibility; IChO2026Problems.ProblemIcho2026T1A5.sourceArrowContract",
+          "status": "covered",
+          "evidence": "Six explicit C(=O)OH groups occupy the six retained aromatic sites and the graph admits the required rotation. The arrow plus transparent topology edit is used only as non-exclusive compatibility, so no missing cold/protocol condition is inferred."
+        },
+        {
+          "claim": "G is a binary C/O graph with 49.98% oxygen, threefold symmetry, and three explicit anhydride bridges compatible with F\u2192G.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T1A5.structureG; IChO2026Problems.ProblemIcho2026T1A5.StructureGAnswer; IChO2026Problems.ProblemIcho2026T1A5.dehydrationStructureCompatibility; IChO2026Problems.ProblemIcho2026T1A5.oxygenFractionObservation; IChO2026Problems.ProblemIcho2026T1A5.sourceDehydrationArrow",
+          "status": "covered",
+          "evidence": "Graph counts give C12O9 and the formula edit F=G+3H2O; rotation by two ring sites preserves the three bridges. The O lookup matched dataset 11a02c\u2026 and record d55ad5591b6aebea80363701cf500c7e0a46a5f46fd4fcfef16cc331efcc0588."
+        },
+        {
+          "claim": "All three concrete structures are returned under exact-symbolic reporting.",
+          "carrier": "IChO2026Problems.ProblemIcho2026T1A5.RawResult; IChO2026Problems.ProblemIcho2026T1A5.ReportedResult; IChO2026Problems.ProblemIcho2026T1A5.problem_icho_2026_t1_a5_reported_result",
+          "status": "covered",
+          "evidence": "ReportedResult is definitionally RawResult and conjoins sourceArrowContract with all three nontrivial structure-answer predicates; no rounding or sentinel replaces a requested output."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t1_a5.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t1_a5",
+        "source_record_sha256": "56a7ca7428701a6afe9fd4177170b0ee32333e1bfd3a5af6cd7ecf488a9e3fe5",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a5.answer.json",
+        "answer_submission_sha256": "b7fe3ac0f0a7a6f3563febb72bb70847d2094fb199cf70536b97467c80e5e8be",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t1_a5.source.json",
+        "source_report_sha256": "6d0b73fef67a73649b7fd75b326a40d6809020209268f64b08747342627f9710",
+        "candidate": "IChO2026Problems/problem_icho_2026_t1_a5.lean",
+        "preflight_sha256": "42929d46145ce7e82ace425f648254c8d0d3d4fbc1a1295d14c886ae75a448b4",
+        "candidate_sha256": "fcc169fe636264944773e7775f6c7414889bec402023ff47daa7730030acc60f",
+        "question_sha256": "421ea4cbb835f0ab06e5dc6731a110986a027e7b1e3d5126df4de79ec03c0d99",
+        "shared_context_sha256": "e9354e2bcdf6c22dedd3439a2e0bc1b09114321dfcc6d2cd3788c74bd121a65f",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "fd30635a333a01e269e5865d2e16bed2e43155f489c62f765454fee1e9c76335",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T1_page-3.png",
+            "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "1c3709e04bba4d62ef6c2cc7f0784d411a7c67985f8a56bba3de1803452a6aad",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_e",
+            "structure_f",
+            "structure_g"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t1_a5",
+          "path": ".archon/provided_answer_drafts/Q1.md",
+          "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t1_a5.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t1_a5",
+          "source_record_sha256": "56a7ca7428701a6afe9fd4177170b0ee32333e1bfd3a5af6cd7ecf488a9e3fe5",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a5.answer.json",
+          "answer_submission_sha256": "b7fe3ac0f0a7a6f3563febb72bb70847d2094fb199cf70536b97467c80e5e8be",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t1_a5.source.json",
+          "source_report_sha256": "6d0b73fef67a73649b7fd75b326a40d6809020209268f64b08747342627f9710",
+          "candidate": "IChO2026Problems/problem_icho_2026_t1_a5.lean",
+          "preflight_sha256": "42929d46145ce7e82ace425f648254c8d0d3d4fbc1a1295d14c886ae75a448b4",
+          "candidate_sha256": "fcc169fe636264944773e7775f6c7414889bec402023ff47daa7730030acc60f",
+          "question_sha256": "421ea4cbb835f0ab06e5dc6731a110986a027e7b1e3d5126df4de79ec03c0d99",
+          "shared_context_sha256": "e9354e2bcdf6c22dedd3439a2e0bc1b09114321dfcc6d2cd3788c74bd121a65f",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "fd30635a333a01e269e5865d2e16bed2e43155f489c62f765454fee1e9c76335",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T1_page-3.png",
+              "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+            },
+            {
+              "path": "icho_2026_source/image/T1_page-2.png",
+              "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "1c3709e04bba4d62ef6c2cc7f0784d411a7c67985f8a56bba3de1803452a6aad",
+            "node_count": 9,
+            "edge_count": 12,
+            "node_kind_counts": {
+              "derivation_obligation": 3,
+              "requested_output": 3,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "structure_e",
+              "structure_f",
+              "structure_g"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t1_a5",
+            "path": ".archon/provided_answer_drafts/Q1.md",
+            "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, no-stock-flow finding, image topology, arrow certificates, formulas, symmetry requirements, composition bases, and staged classification were fixed from the bound problem and verified registry records before the answer JSON or Lean candidate was opened. The sealed Kimi draft was used afterward only for the required fidelity comparison, never as a premise."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "E: six ring C plus six CH3 gives C12H18 and the exact unrounded H fraction. F: replace all six methyl-site motifs by C(=O)OH on the retained ring, giving C12H6O12. G: three adjacent pairwise anhydride closures give C12O9 and the exact unrounded O fraction. Named Lean graph, formula, symmetry, and compatibility carriers cover each step."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0..2].reporting_policy all require exact_symbolic output. The answer sidecar supplies exact structural descriptions/formulas, and ReportedResult makes no representational or rounding change."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "measurement_policy.measured_display_half_width supplies one half of the last displayed quantum. Both two-decimal percentages therefore use \u00b10.005 percentage point (\u00b10.00005 fraction) intervals; no post-hoc or candidate-dependent tolerance appears."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No finite candidate domain is used to prove uniqueness or exhaustiveness. The source verb draw requires direct concrete witnesses, and each named graph is audited against every decisive source constraint."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=fcc169fe636264944773e7775f6c7414889bec402023ff47daa7730030acc60f. Deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=12, duration_bucket=under_1m. Nontrivial result carriers are structureE/StructureEAnswer, structureF/StructureFAnswer, structureG/StructureGAnswer, RawResult, ReportedResult, and problem_icho_2026_t1_a5_reported_result in namespace IChO2026Problems.ProblemIcho2026T1A5."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The theorem returns exactly three static structure witnesses. It does not strengthen draw into global uniqueness or exhaustive enumeration and does not assert quantitative conversion, yield, completeness, sole products, phases, or unprinted reaction conditions."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The final theorem is closed and has no hypotheses. Source observations are represented by transparent definitions, and every graph-property conjunct is computationally tied to explicit atom and bond data rather than assumed as an input."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The answer JSON has schema_version 1, id icho_2026_t1_a5, and exactly three classification outputs in bundle order with empty units. Each output is concrete rather than blocked/unresolved and matches its corresponding Lean structure carrier and exact-symbolic policy."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are covered: E formula/fraction/C6 and arrow role; F acidity/C6 and retained-site oxidation compatibility; G binary formula/fraction/C3, explicit bridges and dehydration compatibility; and combined exact-symbolic reporting."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "complete structure of E, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T1A5.structureE; IChO2026Problems.ProblemIcho2026T1A5.StructureEAnswer; IChO2026Problems.ProblemIcho2026T1A5.problem_icho_2026_t1_a5_reported_result",
+            "status": "covered",
+            "evidence": "The first sidecar output has the required id/kind/unit and agrees with the complete explicit E graph; all atom, bond, formula, symmetry and composition fields are checked.",
+            "output_id": "structure_e",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of F, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T1A5.structureF; IChO2026Problems.ProblemIcho2026T1A5.StructureFAnswer; IChO2026Problems.ProblemIcho2026T1A5.problem_icho_2026_t1_a5_reported_result",
+            "status": "covered",
+            "evidence": "The second sidecar output has the required id/kind/unit and agrees with the complete explicit F graph; acid-group connectivity, formula, valence, symmetry and oxidation-site compatibility are checked.",
+            "output_id": "structure_f",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of G, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.ProblemIcho2026T1A5.structureG; IChO2026Problems.ProblemIcho2026T1A5.StructureGAnswer; IChO2026Problems.ProblemIcho2026T1A5.problem_icho_2026_t1_a5_reported_result",
+            "status": "covered",
+            "evidence": "The third sidecar output has the required id/kind/unit and agrees with the complete explicit G graph; all carbonyl and bridge atoms, formula, valence, binary composition, symmetry and qualitative dehydration compatibility are checked.",
+            "output_id": "structure_g",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T1_page-3.png",
+            "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17",
+            "inspected": true,
+            "evidence": "Digest matched. Q1-3 prints the Part 2 text and a left-to-right E -- KMnO4/HNO3 --> F -- P2O5 --> G scheme. It depicts only symbolic substance labels and reagent labels: no molecular nodes, legend encodings, repeat boundaries, caps, cross-boundary bonds, or product drawing is present to recount. The adjacent Q1.4 scheme was checked and not confused with Q1.5."
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb",
+            "inspected": true,
+            "evidence": "Digest matched. Q1-2 contains the Part 1 plant-extract table and Q1.1 only; none of its molecular panels is labelled E, F, or G and none supplies a building block, connector, legend, or reaction edge for Q1.5."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "E's six methyl-substituted aromatic sites, F's six carboxylic-acid sites, and G's six carbonyls plus three anhydride oxygens are represented as explicit neutral closed-shell graphs. The two source arrows are treated only as non-exclusive compatibility constraints."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only. Stage 1 source arrow: tail E, shaft KMnO4/HNO3, head F; carriers sourceOxidationArrow, sourceArrowContract, oxidationStructureCompatibility retain the six-site ring and map CH3 motifs to C(=O)OH motifs. Stage 2: tail F, shaft P2O5, head G; carriers sourceDehydrationArrow, sourceArrowContract, dehydrationStructureCompatibility retain the scaffold, create three explicit bridges, and check only F=G+3H2O formula compatibility. Coefficients, phases, omitted streams, yield, completeness and sole-product status remain unknown. Reference-only record 211a9bed\u2026 was not used because the source omits its required heating condition; baseline oxidation record 7c58a047\u2026 was likewise not used because its cold-condition scope is not printed."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "Using pinned C=12.011, H=1.0080 and O=15.999: E has total 162.276 and H numerator 18.144, giving 11.180950972%; G has total 288.123 and O numerator 143.991, giving 49.975531284%. Both match the displayed observations under their half-quantum intervals. F's explicit atom ledger is C12H6O12."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "The only used primitive formula ledger is C12H6O12 = C12O9 + 3 H2O, carried by dehydrationStructureCompatibility, and every G bridge atom is explicit. The oxidation arrow is qualitative; external oxidant/byproduct balances are neither used nor claimed, so their omission cannot change these requested witness outputs."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "All three requested structure outputs correctly have empty units. Hydrogen and oxygen checks use component mass divided by complete-compound mass and compare dimensionless fractions to dimensionless displayed observations."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "Requested outputs are exact symbolic classifications, so no numeric final rounding applies. Composition checks retain exact rational atomic weights and unrounded ratios until comparison with source-derived display intervals."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "Every atom and bond is explicit, including all hydrogens and all three G bridging oxygens. Formal charges and radical counts are zero; all atom and bond stereochemistry fields are explicitly notStereogenic, appropriate because none of these three graphs contains a requested stereocentre or E/Z bond."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The source says draw, so one evidence-supported structure per label is required; it does not say unique, all, or every. The candidate supplies concrete witnesses and does not claim global uniqueness or an exhaustive chemical universe."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The named outputs are transparent graph definitions verified by nontrivial formula, valence, functional-group, symmetry, mass-fraction, and arrow-compatibility predicates. No candidate-named premise, singleton domain, free exclusion flag, opaque chemistry predicate, or assumed equality forces the result."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "total mass of the same complete E formula unit",
+              "mass_or_composition_basis": "hydrogen mass fraction of the complete compound E",
+              "numerator": "mass of all hydrogen atoms in that E formula unit",
+              "status": "applicable"
+            },
+            "branch_conditions": [],
+            "constants": [
+              {
+                "name": "displayed hydrogen mass fraction of E",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "dimensionless",
+                "value": "1118/10000"
+              },
+              {
+                "name": "displayed-fraction half-width for E",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "measurement_policy.measured_display_half_width"
+                },
+                "unit": "dimensionless",
+                "value": "1/20000"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "E-to-F oxidation arrow and E composition/symmetry observations",
+                "relation": "E is the left-hand reactant under KMnO4/HNO3; its proposed graph must have sixfold symmetry, reproduce 11.18% H, and admit the sitewise oxidation compatibility check with F",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first graph, formula, sixfold symmetry, hydrogen-fraction, and arrow-tail audits match both the sidecar and the Lean carriers.",
+            "id": "structure_e",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T1A5.hydrogenFractionObservation",
+                "IChO2026Problems.ProblemIcho2026T1A5.sourceOxidationArrow"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T1A5.structureE",
+                "IChO2026Problems.ProblemIcho2026T1A5.StructureEAnswer"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T1A5.oxidationStructureCompatibility",
+                "IChO2026Problems.ProblemIcho2026T1A5.PreservesStructure",
+                "IChO2026Problems.ProblemIcho2026T1A5.PermutationOrderExactly"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T1A5.RawResult",
+                "IChO2026Problems.ProblemIcho2026T1A5.ReportedResult",
+                "IChO2026Problems.ProblemIcho2026T1A5.problem_icho_2026_t1_a5_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The explicit E graph has six aromatic ring carbons, six methyl carbons, eighteen explicit hydrogens, neutral closed-shell valence, no stereogenic fields, and an order-six structure-preserving rotation.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Static molecular-structure witness; no recycle, fresh-feed, yield, or time-horizon quantity is requested.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Complete neutral molecular graph of E, including every atom and bond and the source-stated sixfold rotational symmetry.",
+            "raw_result": {
+              "derivation": "A six-site aromatic ring bearing CH3 at every site has formula C12H18 and an order-six rotation. Its unrounded hydrogen fraction is 18\u00b71.0080/(12\u00b712.011+18\u00b71.0080)=0.111809509724\u2026, within the source display interval [0.11175,0.11185].",
+              "exact_unrounded": true,
+              "value_or_expression": "aromatic C6 ring with one CH3 substituent at each ring site; molecular formula C12H18"
+            },
+            "reporting": {
+              "application": "Return the exact molecular graph and symbolic formula; numeric rounding is used only to audit the printed composition constraint.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output is a complete concrete structure witness, not a uniqueness claim, and its atoms, bonds, charges, radicals, and stereochemistry are all bound.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-3.png#q1.5-reaction-scheme"
+              }
+            ],
+            "source_requirement": "complete structure of E, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_e",
+                "relation": "F retains E's six-carbon aromatic ring sites and replaces each methyl substituent by a carboxylic-acid substituent in the qualitative oxidation compatibility graph",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first acid, high-symmetry, retained-scaffold, and six-carboxyl topology audits match both the sidecar and the Lean carriers.",
+            "id": "structure_f",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T1A5.sourceOxidationArrow"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T1A5.structureF",
+                "IChO2026Problems.ProblemIcho2026T1A5.StructureFAnswer"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T1A5.IsCarboxylicAcidAt",
+                "IChO2026Problems.ProblemIcho2026T1A5.oxidationStructureCompatibility",
+                "IChO2026Problems.ProblemIcho2026T1A5.PreservesStructure",
+                "IChO2026Problems.ProblemIcho2026T1A5.PermutationOrderExactly"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T1A5.RawResult",
+                "IChO2026Problems.ProblemIcho2026T1A5.ReportedResult",
+                "IChO2026Problems.ProblemIcho2026T1A5.problem_icho_2026_t1_a5_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The explicit F graph has an aromatic six-carbon ring and six C(=O)OH groups with all six acidic hydrogens explicit, closed-shell neutral valence, and an order-six structure-preserving rotation.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Static molecular-structure witness linked to a qualitative named transformation; no quantitative process balance is claimed.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Complete neutral graph of the highly symmetrical acid F, with a carboxylic-acid group at every site of the retained six-carbon aromatic ring.",
+            "raw_result": {
+              "derivation": "Apply the source's non-exclusive E\u2192F oxidation compatibility to the six equivalent methyl-bearing ring sites: the ring scaffold is retained and every site bears C(=O)OH, giving C6(COOH)6 = C12H6O12 with sixfold graph symmetry.",
+              "exact_unrounded": true,
+              "value_or_expression": "aromatic C6 ring with one C(=O)OH substituent at each ring site; molecular formula C12H6O12"
+            },
+            "reporting": {
+              "application": "Return the exact molecular graph and symbolic formula without numeric rounding.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The carrier supplies the complete acid connectivity and symmetry required for the concrete drawing, without asserting global uniqueness or oxidation yield.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-3.png#q1.5-reaction-scheme"
+              }
+            ],
+            "source_requirement": "complete structure of F, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "total mass of the same complete G formula unit",
+              "mass_or_composition_basis": "oxygen mass fraction of the complete compound G",
+              "numerator": "mass of all oxygen atoms in that G formula unit",
+              "status": "applicable"
+            },
+            "branch_conditions": [],
+            "constants": [
+              {
+                "name": "displayed oxygen mass fraction of G",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "dimensionless",
+                "value": "4998/10000"
+              },
+              {
+                "name": "displayed-fraction half-width for G",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "measurement_policy.measured_display_half_width"
+                },
+                "unit": "dimensionless",
+                "value": "1/20000"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_f",
+                "relation": "G retains F's aromatic and six carbonyl-carbon scaffold while three pairs of adjacent acid groups form three explicit anhydride bridges",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "F-to-G phosphorus-pentoxide arrow",
+                "relation": "F is the left-hand reactant, P2O5 is the printed reagent, and G is the right-hand product in a non-exclusive qualitative named transform",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The source-first binary-composition, oxygen-fraction, threefold-symmetry, and three-bridge topology audits match both the sidecar and the Lean carriers.",
+            "id": "structure_g",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIcho2026T1A5.oxygenFractionObservation",
+                "IChO2026Problems.ProblemIcho2026T1A5.sourceDehydrationArrow"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIcho2026T1A5.structureG",
+                "IChO2026Problems.ProblemIcho2026T1A5.StructureGAnswer"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIcho2026T1A5.IsAnhydrideBridgeAt",
+                "IChO2026Problems.ProblemIcho2026T1A5.dehydrationStructureCompatibility",
+                "IChO2026Problems.ProblemIcho2026T1A5.ContainsOnlyCarbonAndOxygen",
+                "IChO2026Problems.ProblemIcho2026T1A5.PreservesStructure",
+                "IChO2026Problems.ProblemIcho2026T1A5.PermutationOrderExactly"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIcho2026T1A5.RawResult",
+                "IChO2026Problems.ProblemIcho2026T1A5.ReportedResult",
+                "IChO2026Problems.ProblemIcho2026T1A5.problem_icho_2026_t1_a5_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The explicit G graph contains twelve carbons and nine oxygens, six carbonyls and three bridging oxygens, no H, neutral closed-shell valence, and an order-three structure-preserving rotation.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Static molecular-structure witness linked to a qualitative named transformation; no quantitative conversion or product-exclusivity claim is made.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "Complete neutral binary C/O graph of G, with the six peripheral carbonyl carbons paired across three alternating adjacent anhydride bridges.",
+            "raw_result": {
+              "derivation": "Three pairwise condensations of the six C(=O)OH groups give the graph identity F = G + 3 H2O, hence C12O9. The unrounded oxygen fraction is 9\u00b715.999/(12\u00b712.011+9\u00b715.999)=0.499755312835\u2026, within [0.49975,0.49985], and rotation by two ring sites preserves all three bridges.",
+              "exact_unrounded": true,
+              "value_or_expression": "mellitic-skeleton trianhydride with adjacent pairs (1,2), (3,4), and (5,6) joined as C(=O)-O-C(=O); molecular formula C12O9"
+            },
+            "reporting": {
+              "application": "Return the exact molecular graph and symbolic formula; numeric rounding is used only to audit the printed composition constraint.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The carrier supplies every carbonyl and bridging oxygen and the requested concrete structure, without claiming sole-product formation or global uniqueness.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-3.png#q1.5-reaction-scheme"
+              }
+            ],
+            "source_requirement": "complete structure of G, including all requested stereochemistry and template fields",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "fcc169fe636264944773e7775f6c7414889bec402023ff47daa7730030acc60f"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a5.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "Passed: the source requests three concrete structure witnesses, and the submission plus Lean candidate faithfully provide and independently check all three without uniqueness, yield, or omitted-protocol claims. Draft fidelity: sealed Kimi subpart 1.5 at SHA-256 426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961 is preserved exactly in identity and connectivity, with no discrepancy.",
+        "reviewed_at": "2026-09-13T08:43:00Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "fcc169fe636264944773e7775f6c7414889bec402023ff47daa7730030acc60f",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a5.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 12,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "All bound hashes match; the deterministic preflight compiled the exact candidate with zero sorry; the submission schema and all three outputs match explicit, nontrivial molecular-graph carriers; the source percentages, symmetry cues, binary-composition cue, and qualitative reaction-arrow compatibility all check; and the frozen Kimi subpart 1.5 answer is preserved without discrepancy.",
+    "evidence": "The reviewed declaration proves ReportedResult, definitionally RawResult, which conjoins the exact source-arrow carrier with StructureEAnswer, StructureFAnswer, and StructureGAnswer. The finite graphs explicitly enumerate every atom and bond; computed well-formedness, formula, substituent topology, rotational automorphism, composition observations, and qualitative graph edits are proved without hypotheses, sorry, admit, or local axioms. Candidate SHA-256 078e9bdf2054159886640edd7b5ec927c98ad8038238e5e1efe941ae53b0a118 and submission SHA-256 b7fe3ac0f0a7a6f3563febb72bb70847d2094fb199cf70536b97467c80e5e8be match the immutable contract.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "078e9bdf2054159886640edd7b5ec927c98ad8038238e5e1efe941ae53b0a118",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t1_a5.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t1_a5",
+      "source_record_sha256": "56a7ca7428701a6afe9fd4177170b0ee32333e1bfd3a5af6cd7ecf488a9e3fe5",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a5.answer.json",
+      "answer_submission_sha256": "b7fe3ac0f0a7a6f3563febb72bb70847d2094fb199cf70536b97467c80e5e8be",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t1_a5.source.json",
+      "source_report_sha256": "6d0b73fef67a73649b7fd75b326a40d6809020209268f64b08747342627f9710",
+      "candidate": "IChO2026Problems/problem_icho_2026_t1_a5.lean",
+      "preflight_sha256": "94a778d55646c290818f4c2c5321d7a3c8dceb530597de96c2cf57c904470d11",
+      "candidate_sha256": "078e9bdf2054159886640edd7b5ec927c98ad8038238e5e1efe941ae53b0a118",
+      "question_sha256": "421ea4cbb835f0ab06e5dc6731a110986a027e7b1e3d5126df4de79ec03c0d99",
+      "shared_context_sha256": "e9354e2bcdf6c22dedd3439a2e0bc1b09114321dfcc6d2cd3788c74bd121a65f",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "fd30635a333a01e269e5865d2e16bed2e43155f489c62f765454fee1e9c76335",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T1_page-3.png",
+          "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+        },
+        {
+          "path": "icho_2026_source/image/T1_page-2.png",
+          "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "1c3709e04bba4d62ef6c2cc7f0784d411a7c67985f8a56bba3de1803452a6aad",
+        "node_count": 9,
+        "edge_count": 12,
+        "node_kind_counts": {
+          "derivation_obligation": 3,
+          "requested_output": 3,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "structure_e",
+          "structure_f",
+          "structure_g"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t1_a5",
+        "path": ".archon/provided_answer_drafts/Q1.md",
+        "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t1_a5.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t1_a5",
+        "source_record_sha256": "56a7ca7428701a6afe9fd4177170b0ee32333e1bfd3a5af6cd7ecf488a9e3fe5",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a5.answer.json",
+        "answer_submission_sha256": "b7fe3ac0f0a7a6f3563febb72bb70847d2094fb199cf70536b97467c80e5e8be",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t1_a5.source.json",
+        "source_report_sha256": "6d0b73fef67a73649b7fd75b326a40d6809020209268f64b08747342627f9710",
+        "candidate": "IChO2026Problems/problem_icho_2026_t1_a5.lean",
+        "preflight_sha256": "94a778d55646c290818f4c2c5321d7a3c8dceb530597de96c2cf57c904470d11",
+        "candidate_sha256": "078e9bdf2054159886640edd7b5ec927c98ad8038238e5e1efe941ae53b0a118",
+        "question_sha256": "421ea4cbb835f0ab06e5dc6731a110986a027e7b1e3d5126df4de79ec03c0d99",
+        "shared_context_sha256": "e9354e2bcdf6c22dedd3439a2e0bc1b09114321dfcc6d2cd3788c74bd121a65f",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "fd30635a333a01e269e5865d2e16bed2e43155f489c62f765454fee1e9c76335",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T1_page-3.png",
+            "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "1c3709e04bba4d62ef6c2cc7f0784d411a7c67985f8a56bba3de1803452a6aad",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_e",
+            "structure_f",
+            "structure_g"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t1_a5",
+          "path": ".archon/provided_answer_drafts/Q1.md",
+          "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The audit used only the inline bound problem evidence, both digest-verified problem images, and permitted version-pinned chemistry constants. The generated submission and Lean candidate were treated as untrusted outputs. The sealed Kimi draft was used only for the expressly authorized fidelity comparison, not as a chemistry premise; no official solution, grading material, prior proof, sibling result, or other project artifact was opened."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "The end-to-end exact carriers are structureE/StructureEAnswer, structureF/StructureFAnswer, and structureG/StructureGAnswer, assembled by RawResult. Finite constructors count all atoms; bond functions give the aromatic ring and every substituent/anhydride edge; formula equalities, neutral valences, rotational automorphisms, exact mass-fraction expressions, same-site oxidation topology, and the three-water dehydration formula difference are proved before ReportedResult."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "Each requested output is a classification with exact_symbolic reporting and no unit. ReportedResult is definitionally RawResult, so no numeric rounding or display-only surrogate replaces any molecular graph."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "The printed 11.18% and 49.98% observations have quantum 0.01 percentage point and therefore half-width 0.005 percentage point (1/20000 dimensionless), as encoded through ConsistentMeasurement with quantum 1/10000. Using the exact pinned central weights, the absolute dimensionless deviations are about 9.51e-6 and 4.47e-5, respectively, both within that half-width. No output tolerance is otherwise used."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The source asks to draw concrete structures, not to prove an exhaustive or globally unique chemical universe. The candidates are supported directly by the source hydrogen percentage and six-fold cue, the stated acidic-permanganate E-to-F arrow plus transparent six-site methyl-to-carboxyl graph compatibility, and the stated P2O5 F-to-G arrow plus binary composition, oxygen percentage, order-three symmetry, and explicit trianhydride topology. No answer-shaped candidate set or reference-only heating rule is used as a premise."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "Exact candidate SHA-256: 078e9bdf2054159886640edd7b5ec927c98ad8038238e5e1efe941ae53b0a118. Deterministic preflight: status=passed, compiles=true, returncode=0, sorry_count=0, duration_bucket=1_to_5m. Nontrivial result carriers are structureE and StructureEAnswer; structureF and StructureFAnswer; structureG and StructureGAnswer; RawResult; and theorem problem_icho_2026_t1_a5_reported_result : ReportedResult."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The public reported-result theorem covers exactly the three requested structure outputs and the two source-arrow facts. It adds useful graph/formula/symmetry checks but no yield, completeness, phase, mechanism, or sole-product conclusion, and it has no unused binders or hypotheses."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The theorem is closed and assumes no candidate identity. SourceArrowContract reduces to the roles, directions, reagents, and medium printed in T1_page-3; all molecular properties reduce to transparent finite definitions and exact arithmetic. The nitric-acid medium is visible under KMnO4 in the bound figure."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "RawResult conjoins StructureEAnswer, StructureFAnswer, and StructureGAnswer, each tied to a complete explicit graph and then exported unchanged by ReportedResult. This matches the output order and exact-symbolic classification contract."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "sourceOxidationArrow with oxidationStructureCompatibility binds E, KMnO4/HNO3, F, direction, retained six-carbon ring, and all six site edits. sourceDehydrationArrow with dehydrationStructureCompatibility binds F, P2O5, G, direction, exact formula difference, and all three adjacent anhydride bridges. These are appropriately non-exclusive qualitative bridges."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "complete structure of E, including all requested stereochemistry and template fields",
+          "lean_carrier": "structureE; StructureEAnswer; problem_icho_2026_t1_a5_reported_result",
+          "status": "covered",
+          "evidence": "The first submission entry has the exact id/kind/unit and agrees atom-for-atom and bond-for-bond with the explicit graph carrier; formula, six substituents, closed-shell neutrality, absent stereochemistry, rotational order, and the printed composition observation are formally checked.",
+          "output_id": "structure_e",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of F, including all requested stereochemistry and template fields",
+          "lean_carrier": "structureF; StructureFAnswer; problem_icho_2026_t1_a5_reported_result",
+          "status": "covered",
+          "evidence": "The second submission entry has the exact id/kind/unit and agrees with the explicit graph carrier; all six acid groups, bond orders, neutral atom fields, formula, symmetry, and E-to-F site compatibility are formally checked.",
+          "output_id": "structure_f",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of G, including all requested stereochemistry and template fields",
+          "lean_carrier": "structureG; StructureGAnswer; problem_icho_2026_t1_a5_reported_result",
+          "status": "covered",
+          "evidence": "The third submission entry has the exact id/kind/unit and agrees with the explicit graph carrier; all six carbonyls and three bridging oxygens, binary composition, formula, neutral valence, rotational order, percentage observation, and F-to-G compatibility are formally checked.",
+          "output_id": "structure_g",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T1_page-3.png",
+          "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17",
+          "inspected": true,
+          "evidence": "The page visibly states the coal-deposit/highly-symmetrical-acid context, G's binary and 49.98%-oxygen/order-three constraints, E's 11.18%-hydrogen/order-six constraints, the directed E -- KMnO4/HNO3 --> F -- P2O5 --> G scheme, and the instruction to draw E, F, and G. No structures are preprinted in the answer box."
+        },
+        {
+          "path": "icho_2026_source/image/T1_page-2.png",
+          "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb",
+          "inspected": true,
+          "evidence": "The page contains the Part 1 extraction table and question 1.1. It supplies no competing E/F/G structure or later answer; inspection confirms it does not alter the 1.5 constraints on page 3."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The candidate graphs encode the intended substituted aromatic hydrocarbon, benzenehexacarboxylic acid, and three cyclic-anhydride closures. Every atom is explicit; aromatic, single, and double bonds give ordinary neutral valences. The answer submission and frozen draft subpart 1.5 agree with those same structures."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only. Source locators are the prose and arrows immediately above question 1.5 on T1_page-3.png. The finite named domain is roles E/F/G with KMnO4, HNO3 acidic medium, and P2O5; carriers sourceOxidationArrow/sourceDehydrationArrow and sourceArrowContract bind tail, reagent, head, medium, and direction, while oxidationStructureCompatibility/dehydrationStructureCompatibility bind transparent topology/formula compatibility. No quantitative stream, phase, yield, completion, or sole-product claim is made."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Pinned registry reruns matched dataset SHA-256 11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5: H=1.0080 (record 8e5f2e512d11f6c3409197956a4f015f6144f43057a286107064436c64b4bce5), C=12.011 (record 0f558fc72d4299d061e9d29f394ebed43fc8246f7dbdb402bbb2a338cfbe4b8a), O=15.999 (record d55ad5591b6aebea80363701cf500c7e0a46a5f46fd4fcfef16cc331efcc0588). Formula masses are 162.276, 342.168, and 288.123 g mol^-1 (records 5da57dc05d836bb8a090b253ebb4798375c3cf360e410cf67a8ded272a0e351c, df956e4933ba35ac8d95411a2e7aa5100abe1c7f940c6d0a637434931e81f665, ece28ad760d7ad8f4a310d02cc2173e64bfe6d4dc2d82f2cdd95e5748941d3e6), and the resulting H/O percentages round to the two printed observations."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "For the only formula balance actually used, dehydrationStructureCompatibility proves formula(F)=formula(G)+3*formula(H2O), element by element, and separately proves each product bridge. The oxidation arrow is qualitative and checks retained ring/site substitution only; omitted oxidant products and streams remain unknown, so no unsupported complete material ledger is asserted."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "All requested structure classifications correctly have empty unit. Source mass percentages are converted to dimensionless fractions before comparison; formulaMass uses g mol^-1-compatible atomic weights only to form dimensionless element mass fractions."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The requested outputs are exact symbolic structures. The only numerical observations are checked from unrounded exact rational central weights against half-display-quantum intervals; no staged rounding or post-hoc tolerance selects a candidate."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "EAtom, FAtom, and GAtom enumerate the complete atoms; their bond functions enumerate all aromatic-ring, substituent, carbonyl, hydroxyl, hydrogen, and anhydride-bridge connections. Atom charge, radical count, atom stereo, bond order, and bond stereo are explicit; these achiral connectivity outputs require no stereocentre assignment, and every field is set and valence-checked."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The wording asks to draw the structures and contains no unique/all/every requirement. Each concrete witness satisfies every decisive printed constraint and both source-arrow compatibility checks. Under the contract's direct-witness policy, no open-world exhaustive chemical catalogue is required."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The theorem has no candidate-valued premise, freely chosen Bool/Prop field, singleton domain, opaque identity predicate, or reflexive answer equality. Named graph definitions are permissible output carriers; their nontrivial atom/bond, valence, formula, symmetry, measurement, and transformation properties are computed and proved."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a5.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "All bound hashes match; the deterministic preflight compiled the exact candidate with zero sorry; the submission schema and all three outputs match explicit, nontrivial molecular-graph carriers; the source percentages, symmetry cues, binary-composition cue, and qualitative reaction-arrow compatibility all check; and the frozen Kimi subpart 1.5 answer is preserved without discrepancy.",
+        "evidence": "The reviewed declaration proves ReportedResult, definitionally RawResult, which conjoins the exact source-arrow carrier with StructureEAnswer, StructureFAnswer, and StructureGAnswer. The finite graphs explicitly enumerate every atom and bond; computed well-formedness, formula, substituent topology, rotational automorphism, composition observations, and qualitative graph edits are proved without hypotheses, sorry, admit, or local axioms. Candidate SHA-256 078e9bdf2054159886640edd7b5ec927c98ad8038238e5e1efe941ae53b0a118 and submission SHA-256 b7fe3ac0f0a7a6f3563febb72bb70847d2094fb199cf70536b97467c80e5e8be match the immutable contract.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:15:35.104697Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "078e9bdf2054159886640edd7b5ec927c98ad8038238e5e1efe941ae53b0a118",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a5.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "1_to_5m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:15:35.104744Z",
+    "repair_handoff": {}
+  }
+}

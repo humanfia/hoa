@@ -1,0 +1,25 @@
+{
+  "target_id": "icho_2026_t6_a2",
+  "status": "completed",
+  "answer_summary": "B is neutral monocyclic C14Cl3 with Cl at numbered sites 0, 3, 13 and a radical at 10; C is neutral monocyclic C14Cl with Cl at 3 and a radical at 10; D is neutral monocyclic C14Cl5 with Cl at 0, 3, 6, 7, 13 and a radical at 10. Complete C-C bond-order vectors are recorded in answer.md and Lean.",
+  "theorem_names": [
+    "IChO2026Problems.T6A2.structure_b_answer",
+    "IChO2026Problems.T6A2.structure_c_answer",
+    "IChO2026Problems.T6A2.structure_d_answer",
+    "IChO2026Problems.T6A2.every_transformation_is_applicable",
+    "IChO2026Problems.T6A2.c_to_cyclo14_consistency"
+  ],
+  "assumptions": [
+    "Problem-input transcription: the given A structure and AFM chlorine features are indexed by the 14-carbon perimeter convention documented in answer.md.",
+    "The arrow labels -Cl radical denote homolytic C-Cl cleavage, leaving one unpaired electron on carbon.",
+    "The retro-Bergman graph transformation printed in the problem applies to the two para-diradical terminal rings.",
+    "Ordinary neutral-carbon Lewis valence is four; all depicted intermediates have zero formal charge."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t6_a2.lean",
+    "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe|axiom)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t6_a2.lean; then exit 1; else exit 0; fi",
+    "python3 -m json.tool result.json >/dev/null",
+    "sha256sum icho_2026_source/image/T6_page-1.png icho_2026_source/raw/theory_problem.pdf"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "target": "icho_2026_t8_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302701.8709714,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t8_a4.lean": "86f8503a03f07485165b581fc8665eeffa2e1fc85fa62b269ead50c05d3e0fd5",
+    "answer.md": "f1541b9e007997be17adf1efb341c18d53cd3604712d29883ee31cd1c2bbd961",
+    "verification.md": "744136ef1a5de2efb6dd6e43e6ab9a673e92d6e171b36bd760a01cdd2bb8d1a1",
+    "result.json": "bb01a919b3ebb3f192307869f56f3f7134ff447cbf23eb92bf08ec80e0a0ecd6"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a4",
+    "status": "completed",
+    "answer_summary": "With L = neutral tetradentate ligand 8: 9 is cis-[FeII(L)(H2O)2]2+ (OS 2, CN 6, VE 18, Z 2); 10 is [FeI(L)(H2O)]+ (1,5,17,1); 11 is [FeIII(L)(kappa2-C,O-CO2)] + with formal CO2(2-) (3,6,17,1); 12 is C-bound [FeII(L)(COOH)]+ (2,5,16,1); 13 is [FeII(L)(COOH)(H2O)]+ (2,6,18,1); 14 is [FeII(L)(CO)(H2O)]2+ (2,6,18,2); and 15 is [FeII(L)(H2O)]2+ (2,5,16,2).",
+    "theorem_names": [
+      "IChO2026Problems.T8A4.structure_9",
+      "IChO2026Problems.T8A4.structure_10",
+      "IChO2026Problems.T8A4.structure_11",
+      "IChO2026Problems.T8A4.structure_12",
+      "IChO2026Problems.T8A4.structure_13",
+      "IChO2026Problems.T8A4.structure_14",
+      "IChO2026Problems.T8A4.structure_15",
+      "IChO2026Problems.T8A4.complex_9_outputs",
+      "IChO2026Problems.T8A4.complex_10_outputs",
+      "IChO2026Problems.T8A4.complex_11_outputs",
+      "IChO2026Problems.T8A4.complex_12_outputs",
+      "IChO2026Problems.T8A4.complex_13_outputs",
+      "IChO2026Problems.T8A4.complex_14_outputs",
+      "IChO2026Problems.T8A4.complex_15_outputs",
+      "IChO2026Problems.T8A4.all_fragment_graphs_wellFormed",
+      "IChO2026Problems.T8A4.reconstructed_structures_wellFormed",
+      "IChO2026Problems.T8A4.supplied_answer_sheet_fields_match",
+      "IChO2026Problems.T8A4.catalytic_cycle_closes",
+      "IChO2026Problems.T8A4.catalytic_cycle_net_reaction"
+    ],
+    "assumptions": [
+      "Ligand 8 is represented exactly at the neutral tetradentate N4-cartoon resolution mandated by Q8.4; its noncoordinating carboxylic acid substituent remains neutral as drawn on Q8-1.",
+      "The printed arrow labels obey conservation of total charge, with electron charge -1, proton charge +1, chloride charge -1, and H2O, CO2, and CO neutral.",
+      "Oxidation states and valence-electron counts use standard ionic organometallic bookkeeping: Fe is group 8 and each bound donor atom supplies two electrons.",
+      "Absolute octahedral axis names in Lean are arbitrary labels; only the chemically relevant cis relation of the two labile sites is asserted."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t8_a4.lean",
+      "grep -nE '(^|[[:space:]])(sorry|admit|unsafe)([[:space:]]|$)|^[[:space:]]*axiom[[:space:]]' IChO2026Problems/problem_icho_2026_t8_a4.lean || true",
+      "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T8_page-1.png icho_2026_source/image/T8_page-2.png icho_2026_source/image/icho_2026_t8_a4-page-79.png icho_2026_source/image/icho_2026_t8_a4-page-80.png"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

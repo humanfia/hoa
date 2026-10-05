@@ -1,0 +1,6 @@
+'IChO2026Problems.T3A6.stacking_energy_aa' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A6.stacking_energy_ab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A6.stacking_energy_ab_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A6.aa_submission_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A6.ab_submission_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A6.ab_prime_submission_valid' depends on axioms: [propext, Classical.choice, Quot.sound]

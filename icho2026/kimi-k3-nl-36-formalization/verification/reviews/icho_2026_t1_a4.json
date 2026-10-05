@@ -1,0 +1,1109 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The candidate supplies the three concrete identifications requested by 'Identify', checks them against both complete-formula mass-fraction cells, the hydrate-water cell, the depicted C-plus-NaF direction and atom ledger, and a verified source-scoped RSC cryolite/aluminium-production claim. It makes no unrequested global-uniqueness, yield, or sole-product claim and preserves the sealed Kimi 1.4 answer.",
+    "updated_at": "2026-09-13T08:50:43Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "1981fb4951eb81b130e580670af1ec2bc9f3141b7e3dcb65a8642a43242734af",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "Page 3 and shared_context state a 39.16 wt% water precipitate C\u00b7xH2O, anhydrous C plus excess NaF yielding D, D at 32.85 wt% Na and 12.85 wt% Q, and industrial use in producing Q. printedCompositionData, printedPrecipitationStage, printedConversionArrow, and the three output carriers retain those roles, directions, and exact-symbolic output kinds. 'Identify' is treated as a concrete witness request, not global uniqueness."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Exact registry values give M(Na3AlF6)=209.940 g mol^-1, sodium and Al fractions 2299/6998 and 4497/34990, and the trihydrate water fraction 18015/46007; all lie in the source-derived half-quantum cells. conversion_arrow_atom_ledger checks QF3+3NaF=Na3QF6, the RSC bridge checks the use clue, and raw_result/reported_result combine the checks without hypotheses."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "ElementLedger covers every atom role actually used (H, O, F, Na, Q); HydratedFormula separates the anhydrous core from whole water units; component masses use the full hydrate or D denominator; source stages retain the stated phases and excess-reagent cue. Omitted yields, byproducts, and unused NaF are outside the concrete identification and are not claimed."
+        },
+        "uncertainty_propagation": {
+          "status": "passed",
+          "evidence": "Each printed 0.01% last place becomes a mass-fraction quantum of 0.0001 and a half-width of 0.00005 through ConsistentMeasurement. The exact candidate ratios lie inside [0.32845,0.32855], [0.12845,0.12855], and [0.39155,0.39165]. Registry atomic-weight uncertainty is retained as metadata and, per policy, is not misclassified as a source measurement."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The page-3 arrowheads point from stone/acid treatment through NaF to precipitated hydrated C and, separately, from anhydrous C with excess NaF to D. printedConversionArrow and ConversionCompatible use C and NaF at the tail and D at the head; no reverse reaction or opposing branch is asserted."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The result is a direct checked witness, not a singleton premise or universal inverse rule. Its formulas, complete-denominator percentages, atom ledger, and industrial-use compatibility are independently constrained. Because the source does not ask for 'unique' or 'all', an imagined additional compatible chemical does not refute the requested witness, and no free Bool/Prop can change any reported output."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The three printed wt% values mean component mass divided by total mass of the complete D or hydrate formula, with half of the last displayed quantum as the measurement cell.",
+          "carrier": "printedCompositionData; sodiumMassFraction; metalQMassFraction; hydrateWaterMassFraction; IChO2026Chem.Reporting.ConsistentMeasurement",
+          "status": "covered",
+          "evidence": "The source says 'by mass'; the candidate names each numerator and uses molarMass of the complete formula as denominator. Display 0.01% corresponds to fraction quantum 0.0001 and half-width 0.00005."
+        },
+        {
+          "claim": "Conventional atomic weights used in the exact composition calculations are Na 22.990, Al 26.982, F 18.998, H 1.0080, and O 15.999.",
+          "carrier": "sodiumAtomicWeight; aluminiumAtomicWeight; fluorineAtomicWeight; hydrogenAtomicWeight; oxygenAtomicWeight; roleAtomicWeight; molarMass",
+          "status": "covered",
+          "evidence": "Reviewer reran the pinned offline atomic_weight operations. Dataset hash matched 11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5; record hashes matched 14234e37d6ac93ded8d1d6f1883bd01f1855b92c90a61fb1370b0bb83f736417, bdb840d02b2eb42be07e27b58fc76501786c75d0a321d38f76dae129c84f5e7f, 96f1d50213dac1410f593d656038a9faa513227e1fd342c16b54096aa2e3b1bb, 8e5f2e512d11f6c3409197956a4f015f6144f43057a286107064436c64b4bce5, and d55ad5591b6aebea80363701cf500c7e0a46a5f46fd4fcfef16cc331efcc0588."
+        },
+        {
+          "claim": "The depicted named conversion is compatible with one QF3 formula unit plus three consumed NaF formula units giving one Na3QF6 formula unit, without a yield or sole-product assertion.",
+          "carrier": "printedConversionArrow; ConversionCompatible; sodium_fluoride_coefficient_unique; conversion_arrow_atom_ledger",
+          "status": "covered",
+          "evidence": "The transparent ledger gives Q 1=1, Na 3=3, and F 3+3=6. The source supplies the direction and excess-NaF role; the formalization deliberately leaves unused reagent, phase, yield, and omitted streams unspecified."
+        },
+        {
+          "claim": "The precipitate formula retains the anhydrous QF3 core and has three whole water adducts selected by the 39.16 wt% cell.",
+          "carrier": "HydratedFormula; HydratedFormula.totalLedger; hydrate_water_units_unique; hydratedC_component_ledger; hydratedC_water_fraction_check",
+          "status": "covered",
+          "evidence": "For the fixed AlF3 core, x\u00b718.015/(83.976+x\u00b718.015) lies in the displayed cell at positive integer x=3; the total ledger expands to Q1F3H6O3."
+        },
+        {
+          "claim": "Sodium hexafluoroaluminate (cryolite) is used in the industrial production of aluminium.",
+          "carrier": "rscCryoliteAluminiumCitation; IndustrialUseCompatible; industrial_use_compatibility",
+          "status": "covered",
+          "evidence": "Independently checked Royal Society of Chemistry, 'Periodic Table: Aluminium', https://www.rsc.org/periodic-table/element/13/aluminium, locators 'Natural abundance' and 'Chemistry in its element: aluminium' transcript. It states that molten cryolite is used in the Hall-H\u00e9roult production of aluminium and names cryolite as sodium hexafluoroaluminate. The carrier uses only this direct compatibility scope."
+        },
+        {
+          "claim": "Each requested output is exposed as an exact symbolic result and joined to all source checks.",
+          "carrier": "metalQIdentity; hydratedCFormula; compoundDFormula; MetalQOutput; HydratedCOutput; CompoundDOutput; RawResult; ReportedResult; reported_result",
+          "status": "covered",
+          "evidence": "The three carriers occur in source order, share proposedIdentification, and are conjuncts of ReportedResult; none is merely a diagnostic sentinel."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t1_a4.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t1_a4",
+        "source_record_sha256": "0a71056bb514d838dec83c6bfa9792290b60f2b24ba4570adc7cfbca1c9094bd",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a4.answer.json",
+        "answer_submission_sha256": "68bede3fd59803377361197d2136a88dc3027ebed946c439f837e86a0c1ab320",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t1_a4.source.json",
+        "source_report_sha256": "25712f98c72aa56205d5d94f8919f370275936c25b31d3138cab42a7bd268fec",
+        "candidate": "IChO2026Problems/problem_icho_2026_t1_a4.lean",
+        "preflight_sha256": "1e6da7102a98bfce80ea8be0e3b2d33d346bfa04ef216b92aac7720a9258c3b9",
+        "candidate_sha256": "1981fb4951eb81b130e580670af1ec2bc9f3141b7e3dcb65a8642a43242734af",
+        "question_sha256": "6c4bf0839e380e7182a54ed1eda9a8b0b04bca8361dbf5cc93594ab2bcf99175",
+        "shared_context_sha256": "8dae8d15f1fa5329892f8ba8677a4cd5bf4b145bc1e237c6284df8c5318906b8",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "22d39ee7aa8b026b153d8c285565593803a08c2dc257c4393f6ca3d08d699ffb",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T1_page-3.png",
+            "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "f915a0483bc9e79e66fd81ba0bcd576078f26c4e2217f34045c955d2366b83f7",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "metal_q_identity",
+            "hydrated_c_formula",
+            "compound_d_formula"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t1_a4",
+          "path": ".archon/provided_answer_drafts/Q1.md",
+          "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t1_a4.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t1_a4",
+          "source_record_sha256": "0a71056bb514d838dec83c6bfa9792290b60f2b24ba4570adc7cfbca1c9094bd",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a4.answer.json",
+          "answer_submission_sha256": "68bede3fd59803377361197d2136a88dc3027ebed946c439f837e86a0c1ab320",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t1_a4.source.json",
+          "source_report_sha256": "25712f98c72aa56205d5d94f8919f370275936c25b31d3138cab42a7bd268fec",
+          "candidate": "IChO2026Problems/problem_icho_2026_t1_a4.lean",
+          "preflight_sha256": "1e6da7102a98bfce80ea8be0e3b2d33d346bfa04ef216b92aac7720a9258c3b9",
+          "candidate_sha256": "1981fb4951eb81b130e580670af1ec2bc9f3141b7e3dcb65a8642a43242734af",
+          "question_sha256": "6c4bf0839e380e7182a54ed1eda9a8b0b04bca8361dbf5cc93594ab2bcf99175",
+          "shared_context_sha256": "8dae8d15f1fa5329892f8ba8677a4cd5bf4b145bc1e237c6284df8c5318906b8",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "22d39ee7aa8b026b153d8c285565593803a08c2dc257c4393f6ca3d08d699ffb",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T1_page-3.png",
+              "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+            },
+            {
+              "path": "icho_2026_source/image/T1_page-2.png",
+              "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "f915a0483bc9e79e66fd81ba0bcd576078f26c4e2217f34045c955d2366b83f7",
+            "node_count": 9,
+            "edge_count": 12,
+            "node_kind_counts": {
+              "derivation_obligation": 3,
+              "requested_output": 3,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "metal_q_identity",
+              "hydrated_c_formula",
+              "compound_d_formula"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t1_a4",
+            "path": ".archon/provided_answer_drafts/Q1.md",
+            "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, no-stock-flow finding, page-3 arrow topology, page-2 irrelevance, component/total mass bases, and exact numerical ledger were frozen from the bound problem and pinned constants before opening either generated artifact. The sealed Kimi draft was used only for the expressly authorized fidelity comparison, never as a scientific premise; no official answer, rubric, or prior proof was read."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "Exact unrounded carriers are 209940/1000 for the D formula mass, 2299/6998 and 4497/34990 for its two component fractions, and 18015/46007 for the trihydrate water fraction. conversion_arrow_atom_ledger, the three fraction-check theorems, and raw_result carry the end-to-end derivation."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "All three bundle outputs have exact_symbolic reporting_policy; the global rule forbids intermediate rounding and requires raw results. The answer provides exact formulas/classification plus exact rational checks."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "The only tolerances are mechanically derived from the printed 0.01 wt% resolution using measurement_policy.measured_display_half_width: fraction quantum 0.0001 and half-width 0.00005. No post-hoc or candidate-shaped tolerance is used."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No finite metal or compound candidate domain is used to prove uniqueness or exhaustiveness. ElementRole is an atom-ledger index, not a preselected candidate list. The source verb asks for a concrete identification, and the proposed witness is checked directly against every decisive observation and the scoped public-literature compatibility fact."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=1981fb4951eb81b130e580670af1ec2bc9f3141b7e3dcb65a8642a43242734af; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=10. Nontrivial result declarations are compoundD_sodium_fraction_check, compoundD_metal_fraction_check, hydratedC_water_fraction_check, conversion_arrow_atom_ledger, industrial_use_compatibility, raw_result, MetalQOutput, HydratedCOutput, CompoundDOutput, and reported_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "ReportedResult is limited to the three exact identities/formulas and candidate compatibility. It does not claim global uniqueness, reaction completion, yield, purity, sole product, or exhaustive chemistry."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The main theorem is closed and has no answer-bearing hypotheses. Source observations, conventional constants, transparent formula ledgers, and the independently verified RSC compatibility citation are data checked by RawResult rather than assumptions supplied by a witness."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The answer JSON has schema_version 1 and exactly three outputs in bundle order with matching ids, kinds, empty units, concrete raw values, and exact-symbolic display values. ReportedResult exposes the same three output kinds and no sentinel."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Every outcome-decisive bridge is named above: printed cells and denominators, pinned weights, hydrate assembly, source-arrow atom compatibility, industrial-use compatibility, and requested-output bindings. No prior-part result or dormant rule is used."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "identity of metal Q",
+            "lean_carrier": "IChO2026Problems.ProblemIChO2026T1A4.MetalQOutput; IChO2026Problems.ProblemIChO2026T1A4.reported_result",
+            "status": "covered",
+            "evidence": "The independently derived classification matches the submission and is tied to the complete-mass fraction and verified industrial-use carriers.",
+            "output_id": "metal_q_identity",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "chemical formula of C \u00b7 xH2O",
+            "lean_carrier": "IChO2026Problems.ProblemIChO2026T1A4.HydratedCOutput; IChO2026Problems.ProblemIChO2026T1A4.reported_result",
+            "status": "covered",
+            "evidence": "The independently derived exact hydrate formula matches the submission and is tied to the whole-water, complete-denominator, and expanded-ledger carriers.",
+            "output_id": "hydrated_c_formula",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "chemical formula of compound D",
+            "lean_carrier": "IChO2026Problems.ProblemIChO2026T1A4.CompoundDOutput; IChO2026Problems.ProblemIChO2026T1A4.reported_result",
+            "status": "covered",
+            "evidence": "The independently derived exact D formula matches the submission and is tied to both composition checks, the conversion atom ledger, and industrial-use compatibility.",
+            "output_id": "compound_d_formula",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T1_page-3.png",
+            "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17",
+            "inspected": true,
+            "evidence": "Digest matched. The upper Part 2 scheme points right from stone through HNO3 and a pH-about-4 NaF step to downward-arrow precipitate C\u00b7xH2O. The separate lower arrow points right from C, with NaF above the shaft, to D. There are no structure panels, repeat brackets, caps, cross-boundary bonds, or legend encodings for 1.4; the relevant building blocks are the named C core, NaF reagent, hydrate waters, and D product. The candidate ledger traces QF3 from C and Na3F3 from three consumed NaF units into Na3QF6, distinct from the adjacent precipitation product."
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb",
+            "inspected": true,
+            "evidence": "Digest matched. This page contains the Part 1 plant/compound table and question 1.1 only. It has no Q, C hydrate, D, mass-percentage, or Part 2 reaction topology and contributes no component count to target 1.4."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "All three concrete identifications satisfy the two D composition observations, hydrate-water observation, C-to-D formula compatibility, precipitation naming, and verified cryolite/aluminium-use fact. The generic Q role is consistently specialized by the joined MetalQOutput."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only. Source arrow carriers are printedPrecipitationStage (stone plus dilute HNO3, pH about 4, NaF, rightward to solid hydrated C) and printedConversionArrow (anhydrous C plus excess NaF, rightward to D). Compatibility carriers are ConversionCompatible and conversion_arrow_atom_ledger over QF3, the consumed portion 3NaF, and Na3QF6; hydratedC_component_ledger covers core plus three waters. These are primitive formula checks only, with unused excess NaF, phases not stated, yield, completion, and byproducts left unknown."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "Pinned masses give AlF3=83.976, H2O=18.015, AlF3\u00b73H2O=138.021, and Na3AlF6=209.940 g mol^-1. Exact component/total ratios are 18015/46007, 2299/6998, and 4497/34990, each inside its printed measurement cell."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "conversion_arrow_atom_ledger checks the only used transformation conservation dimension: QF3+3NaF and Na3QF6 both contain Q1Na3F6. hydratedC_component_ledger expands the hydrate as Q1F3 plus 3(H2O)=Q1F3H6O3. No charge, yield, mass-flow, or phase ledger is used to infer an unclaimed stronger result."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "Atomic and molar masses are consistently in conventional g mol^-1 formula-amount calculations; every mass fraction and tolerance is dimensionless. The three requested exact-symbolic outputs correctly carry the bundle's empty unit."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "All arithmetic is represented by exact integers/rationals until interval comparison. The answer's raw fields expose those checks and its display fields use exact symbols/formulas, so no intermediate rounding or three-significant-figure misapplication occurs."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "Target 1.4 requests one metal identity and two formulas; it asks for no molecular drawing, connectivity isomer, configuration, or stereochemical assignment."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The source says 'Identify' but not 'unique', 'all', or 'every'. The formalization correctly supplies one source-compatible concrete identification and does not assert an open-world uniqueness theorem or rely on an exhaustive candidate universe."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "proposedIdentification is an output witness, not a premise. RawResult independently checks nontrivial exact mass cells, atom accounting, and a verified external compatibility fact; ReportedResult joins those checks to all three named outputs. No answer-shaped hypothesis, singleton domain, free flag, opaque predicate, or reflexive theorem substitutes for the evidence."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "id": "metal_q_identity",
+            "kind": "classification",
+            "source_requirement": "identity of metal Q",
+            "quantity_definition": "The concrete metal represented by Q in D and named by the stated industrial-production compatibility clue.",
+            "process_scope": {
+              "kind": "not_applicable",
+              "description": "Static chemical identification; there is no recycle, fresh-feed, yield, cycle count, or time-horizon quantity."
+            },
+            "basis": {
+              "status": "applicable",
+              "numerator": "mass of metal Q in one stoichiometric formula amount of D",
+              "denominator": "total mass of the complete stoichiometric formula amount of D",
+              "mass_or_composition_basis": "12.85% Q by mass, jointly checked with 32.85% Na by mass, each as component mass divided by total D mass"
+            },
+            "constants": [
+              {
+                "name": "D sodium mass fraction shown",
+                "value": "0.3285",
+                "unit": "dimensionless",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#D.mass.percentages"
+                }
+              },
+              {
+                "name": "D metal-Q mass fraction shown",
+                "value": "0.1285",
+                "unit": "dimensionless",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#D.mass.percentages"
+                }
+              },
+              {
+                "name": "displayed mass-fraction half-width",
+                "value": "0.00005",
+                "unit": "dimensionless",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "measurement_policy.measured_display_half_width"
+                }
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "D mass-composition observations",
+                "relation": "candidate component masses are divided by the complete D formula mass",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#D.mass.percentages"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "industrial-production compatibility clue",
+                "relation": "the identified D is stated to be used in producing Q",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "branch_conditions": [],
+            "unit": "",
+            "raw_result": {
+              "value_or_expression": "Al (atomic number 13), with Q fraction 26982/209940 = 4497/34990 in [0.12845,0.12855]",
+              "exact_unrounded": true,
+              "derivation": "For the concrete joint witness D=Na3AlF6, M(D)=(3\u00b722990+26982+6\u00b718998)/1000=209940/1000 g mol^-1. The exact Al fraction is inside the printed cell; the independently checked RSC Aluminium page identifies sodium hexafluoroaluminate/cryolite as the bath used to produce aluminium."
+            },
+            "reporting": {
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              },
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "application": "Return the exact metal identity; do not numerically round the symbolic classification."
+            },
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIChO2026T1A4.printedCompositionData",
+                "IChO2026Problems.ProblemIChO2026T1A4.aluminiumAtomicWeight",
+                "IChO2026Problems.ProblemIChO2026T1A4.rscCryoliteAluminiumCitation"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIChO2026T1A4.metalQMassFraction",
+                "IChO2026Problems.ProblemIChO2026T1A4.IndustrialUseCompatible",
+                "IChO2026Problems.ProblemIChO2026T1A4.compoundD_metal_fraction_check",
+                "IChO2026Problems.ProblemIChO2026T1A4.industrial_use_compatibility"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIChO2026T1A4.RawResult",
+                "IChO2026Problems.ProblemIChO2026T1A4.raw_result"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIChO2026T1A4.MetalQOutput",
+                "IChO2026Problems.ProblemIChO2026T1A4.reported_result"
+              ]
+            },
+            "semantic_card_comparison": {
+              "status": "matched",
+              "evidence": "The submission has the exact id, classification kind, empty unit, full-denominator composition check, and exact-symbolic display required by the card."
+            },
+            "lean_statement_comparison": {
+              "status": "matched",
+              "evidence": "MetalQOutput fixes the name, symbol, and atomic number, while RawResult carries both the Q fraction and industrial-use checks."
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context#D.mass.percentages"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-3.png#part2.scheme"
+              }
+            ],
+            "evidence": "Source-first calculation, public-literature compatibility check, answer submission, and named Lean carriers agree."
+          },
+          {
+            "id": "hydrated_c_formula",
+            "kind": "formula",
+            "source_requirement": "chemical formula of C \u00b7 xH2O",
+            "quantity_definition": "The exact anhydrous C core and the positive whole number of water formula units in the precipitated hydrate.",
+            "process_scope": {
+              "kind": "not_applicable",
+              "description": "Static hydrate composition; no dynamic stock-flow, yield, recovery, cycle, or time denominator is requested."
+            },
+            "basis": {
+              "status": "applicable",
+              "numerator": "mass of all x water formula units in one hydrate formula amount",
+              "denominator": "total mass of the complete hydrate formula amount, anhydrous core plus all x waters",
+              "mass_or_composition_basis": "39.16% water by mass means water-adduct component mass divided by total precipitate formula mass"
+            },
+            "constants": [
+              {
+                "name": "hydrate water mass fraction shown",
+                "value": "0.3916",
+                "unit": "dimensionless",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#hydrate.water.percentage"
+                }
+              },
+              {
+                "name": "displayed mass-fraction half-width",
+                "value": "0.00005",
+                "unit": "dimensionless",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "measurement_policy.measured_display_half_width"
+                }
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "hydrate component mass balance",
+                "relation": "x\u00b7M(H2O)/(M(C)+x\u00b7M(H2O)) must lie in the printed water-fraction cell for positive integer x",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#hydrate.water.percentage"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "anhydrous C to D named conversion",
+                "relation": "the hydrate core is the anhydrous C used at the tail of the C plus excess NaF arrow",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T1_page-3.png#C.to.D.arrow"
+                }
+              }
+            ],
+            "branch_conditions": [],
+            "unit": "",
+            "raw_result": {
+              "value_or_expression": "AlF3\u00b73H2O; water fraction 54045/138021 = 18015/46007 in [0.39155,0.39165]",
+              "exact_unrounded": true,
+              "derivation": "The atom-compatible anhydrous core is AlF3 with exact conventional mass 83.976 g mol^-1. For positive whole x, x\u00b718.015/(83.976+x\u00b718.015) meets the printed cell at x=3; the expanded ledger is Al1F3H6O3."
+            },
+            "reporting": {
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              },
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "application": "Return the exact chemical formula and integer hydration number; no decimal formatting applies."
+            },
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIChO2026T1A4.printedPrecipitationStage",
+                "IChO2026Problems.ProblemIChO2026T1A4.qFluorideThreeFormula",
+                "IChO2026Problems.ProblemIChO2026T1A4.waterFormula",
+                "IChO2026Problems.ProblemIChO2026T1A4.printedCompositionData"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIChO2026T1A4.HydratedFormula.totalLedger",
+                "IChO2026Problems.ProblemIChO2026T1A4.hydrateWaterMassFraction",
+                "IChO2026Problems.ProblemIChO2026T1A4.hydrate_water_units_unique",
+                "IChO2026Problems.ProblemIChO2026T1A4.hydratedC_component_ledger",
+                "IChO2026Problems.ProblemIChO2026T1A4.hydratedC_water_fraction_check"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIChO2026T1A4.RawResult",
+                "IChO2026Problems.ProblemIChO2026T1A4.raw_result"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIChO2026T1A4.HydratedCOutput",
+                "IChO2026Problems.ProblemIChO2026T1A4.reported_result"
+              ]
+            },
+            "semantic_card_comparison": {
+              "status": "matched",
+              "evidence": "The submission has the exact id, formula kind, empty unit, water/total-hydrate basis, and exact-symbolic formula required by the card."
+            },
+            "lean_statement_comparison": {
+              "status": "matched",
+              "evidence": "HydratedCOutput fixes the core, hydration count, and fully expanded atom ledger; RawResult carries the source measurement check."
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context#hydrate.water.percentage"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-3.png#hydrate.precipitate"
+              }
+            ],
+            "evidence": "The source-first whole-water calculation, submitted raw/display fields, and named Lean carriers agree exactly."
+          },
+          {
+            "id": "compound_d_formula",
+            "kind": "formula",
+            "source_requirement": "chemical formula of compound D",
+            "quantity_definition": "The exact stoichiometric formula of the named product D formed compatibly from anhydrous C and excess NaF.",
+            "process_scope": {
+              "kind": "not_applicable",
+              "description": "Static product-formula identification; the source supplies no dynamic yield, recycle, feed, cycle, or time-horizon quantity."
+            },
+            "basis": {
+              "status": "applicable",
+              "numerator": "mass of sodium, and separately mass of metal Q, in one stoichiometric formula amount of D",
+              "denominator": "total mass of the complete stoichiometric formula amount of D",
+              "mass_or_composition_basis": "32.85% sodium and 12.85% Q by mass, each component divided by total D mass"
+            },
+            "constants": [
+              {
+                "name": "D sodium mass fraction shown",
+                "value": "0.3285",
+                "unit": "dimensionless",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#D.mass.percentages"
+                }
+              },
+              {
+                "name": "D metal-Q mass fraction shown",
+                "value": "0.1285",
+                "unit": "dimensionless",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#D.mass.percentages"
+                }
+              },
+              {
+                "name": "displayed mass-fraction half-width",
+                "value": "0.00005",
+                "unit": "dimensionless",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "measurement_policy.measured_display_half_width"
+                }
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "primitive source-arrow atom ledger",
+                "relation": "one QF3 core plus three consumed NaF units has atom ledger Na3Q1F6",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T1_page-3.png#C.to.D.arrow"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "D mass-composition observations",
+                "relation": "both component fractions are checked against the complete candidate formula mass",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#D.mass.percentages"
+                }
+              }
+            ],
+            "branch_conditions": [],
+            "unit": "",
+            "raw_result": {
+              "value_or_expression": "Na3AlF6; M=209940/1000 g mol^-1, Na fraction 68970/209940=2299/6998 and Al fraction 26982/209940=4497/34990",
+              "exact_unrounded": true,
+              "derivation": "The exact atom ledger AlF3+3NaF gives Na3AlF6. Its sodium fraction lies in [0.32845,0.32855] and its metal fraction lies in [0.12845,0.12855], with no intermediate rounding; the named product is directly compatible with the industrial-use clue."
+            },
+            "reporting": {
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              },
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "application": "Return the exact stoichiometric formula; no numerical rounding is applied to the formula."
+            },
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.ProblemIChO2026T1A4.printedConversionArrow",
+                "IChO2026Problems.ProblemIChO2026T1A4.sodiumFluorideFormula",
+                "IChO2026Problems.ProblemIChO2026T1A4.qFluorideThreeFormula",
+                "IChO2026Problems.ProblemIChO2026T1A4.sodiumThreeQFluorideSixFormula",
+                "IChO2026Problems.ProblemIChO2026T1A4.printedCompositionData"
+              ],
+              "relations": [
+                "IChO2026Problems.ProblemIChO2026T1A4.ConversionCompatible",
+                "IChO2026Problems.ProblemIChO2026T1A4.conversion_arrow_atom_ledger",
+                "IChO2026Problems.ProblemIChO2026T1A4.sodiumMassFraction",
+                "IChO2026Problems.ProblemIChO2026T1A4.metalQMassFraction",
+                "IChO2026Problems.ProblemIChO2026T1A4.compoundD_sodium_fraction_check",
+                "IChO2026Problems.ProblemIChO2026T1A4.compoundD_metal_fraction_check"
+              ],
+              "raw_result": [
+                "IChO2026Problems.ProblemIChO2026T1A4.RawResult",
+                "IChO2026Problems.ProblemIChO2026T1A4.raw_result"
+              ],
+              "reported_result": [
+                "IChO2026Problems.ProblemIChO2026T1A4.CompoundDOutput",
+                "IChO2026Problems.ProblemIChO2026T1A4.reported_result"
+              ]
+            },
+            "semantic_card_comparison": {
+              "status": "matched",
+              "evidence": "The submission has the exact id, formula kind, empty unit, two full-denominator composition checks, and exact-symbolic display required by the card."
+            },
+            "lean_statement_comparison": {
+              "status": "matched",
+              "evidence": "CompoundDOutput fixes all five role counts, while RawResult carries atom-ledger, both mass-fraction, and industrial-use compatibility checks."
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context#D.mass.percentages"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-3.png#C.to.D.arrow"
+              }
+            ],
+            "evidence": "The source-first atom and mass ledgers, submitted raw/display fields, and named Lean carriers agree exactly."
+          }
+        ]
+      },
+      "candidate_sha256": "1981fb4951eb81b130e580670af1ec2bc9f3141b7e3dcb65a8642a43242734af"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a4.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The candidate supplies the three concrete identifications requested by 'Identify', checks them against both complete-formula mass-fraction cells, the hydrate-water cell, the depicted C-plus-NaF direction and atom ledger, and a verified source-scoped RSC cryolite/aluminium-production claim. It makes no unrequested global-uniqueness, yield, or sole-product claim and preserves the sealed Kimi 1.4 answer.",
+        "reviewed_at": "2026-09-13T08:50:43Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "1981fb4951eb81b130e580670af1ec2bc9f3141b7e3dcb65a8642a43242734af",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a4.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 10,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The closed reported_result theorem faithfully carries all three exact-symbolic requested outputs, and its RawResult conjunct independently checks the printed composition cells, the named NaF conversion compatibility, the complete candidate formula ledgers, and the source-scoped industrial-production clue. The deterministic preflight passed with no sorry, and the submission, candidate, image, registry, and draft hashes all match their bindings.",
+    "evidence": "Candidate SHA-256 3a4a67eb4e6cd2948ca09c37733fa8b676feb2d858c411a8d9773d9b23ce08af and submission SHA-256 68bede3fd59803377361197d2136a88dc3027ebed946c439f837e86a0c1ab320 were recomputed exactly. The answer JSON has schema_version 1 and exactly the ordered ids/kinds/units required. Independent exact arithmetic places each proposed component fraction inside its printed half-last-place interval. conversion_arrow_atom_ledger is rolewise atom balance; hydratedC_component_ledger accounts for the whole hydrate. The RSC stable URL and exact locators verify the limited industrial-use compatibility claim. The authorized Kimi subpart 1.4 at frozen SHA-256 426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961 is preserved without discrepancy and was not treated as a source axiom.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "3a4a67eb4e6cd2948ca09c37733fa8b676feb2d858c411a8d9773d9b23ce08af",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t1_a4.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t1_a4",
+      "source_record_sha256": "0a71056bb514d838dec83c6bfa9792290b60f2b24ba4570adc7cfbca1c9094bd",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a4.answer.json",
+      "answer_submission_sha256": "68bede3fd59803377361197d2136a88dc3027ebed946c439f837e86a0c1ab320",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t1_a4.source.json",
+      "source_report_sha256": "25712f98c72aa56205d5d94f8919f370275936c25b31d3138cab42a7bd268fec",
+      "candidate": "IChO2026Problems/problem_icho_2026_t1_a4.lean",
+      "preflight_sha256": "cb5b8655aaa2e4c6002e8d6b16fefbc53edcf68d719da2a82f2b19de8911101a",
+      "candidate_sha256": "3a4a67eb4e6cd2948ca09c37733fa8b676feb2d858c411a8d9773d9b23ce08af",
+      "question_sha256": "6c4bf0839e380e7182a54ed1eda9a8b0b04bca8361dbf5cc93594ab2bcf99175",
+      "shared_context_sha256": "8dae8d15f1fa5329892f8ba8677a4cd5bf4b145bc1e237c6284df8c5318906b8",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "22d39ee7aa8b026b153d8c285565593803a08c2dc257c4393f6ca3d08d699ffb",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T1_page-3.png",
+          "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+        },
+        {
+          "path": "icho_2026_source/image/T1_page-2.png",
+          "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "f915a0483bc9e79e66fd81ba0bcd576078f26c4e2217f34045c955d2366b83f7",
+        "node_count": 9,
+        "edge_count": 12,
+        "node_kind_counts": {
+          "derivation_obligation": 3,
+          "requested_output": 3,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "metal_q_identity",
+          "hydrated_c_formula",
+          "compound_d_formula"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t1_a4",
+        "path": ".archon/provided_answer_drafts/Q1.md",
+        "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t1_a4.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t1_a4",
+        "source_record_sha256": "0a71056bb514d838dec83c6bfa9792290b60f2b24ba4570adc7cfbca1c9094bd",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a4.answer.json",
+        "answer_submission_sha256": "68bede3fd59803377361197d2136a88dc3027ebed946c439f837e86a0c1ab320",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t1_a4.source.json",
+        "source_report_sha256": "25712f98c72aa56205d5d94f8919f370275936c25b31d3138cab42a7bd268fec",
+        "candidate": "IChO2026Problems/problem_icho_2026_t1_a4.lean",
+        "preflight_sha256": "cb5b8655aaa2e4c6002e8d6b16fefbc53edcf68d719da2a82f2b19de8911101a",
+        "candidate_sha256": "3a4a67eb4e6cd2948ca09c37733fa8b676feb2d858c411a8d9773d9b23ce08af",
+        "question_sha256": "6c4bf0839e380e7182a54ed1eda9a8b0b04bca8361dbf5cc93594ab2bcf99175",
+        "shared_context_sha256": "8dae8d15f1fa5329892f8ba8677a4cd5bf4b145bc1e237c6284df8c5318906b8",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "22d39ee7aa8b026b153d8c285565593803a08c2dc257c4393f6ca3d08d699ffb",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T1_page-3.png",
+            "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "f915a0483bc9e79e66fd81ba0bcd576078f26c4e2217f34045c955d2366b83f7",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "metal_q_identity",
+            "hydrated_c_formula",
+            "compound_d_formula"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t1_a4",
+          "path": ".archon/provided_answer_drafts/Q1.md",
+          "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The substantive audit used only the inline bound problem evidence, both digest-verified images, the five permitted pinned atomic-weight lookups, and one generic-species RSC literature page. The sealed Kimi draft was used only for the expressly authorized fidelity comparison, never as an axiom or scientific premise; no unlisted project artifact, official solution, prior proof, rubric, or grading report was opened."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "raw_result composes conversion_arrow_atom_ledger, compoundD_sodium_fraction_check, compoundD_metal_fraction_check, hydratedC_water_fraction_check, positivity of both complete-formula molar masses, and industrial_use_compatibility. hydratedC_component_ledger expands every hydrate component, while hydrate_water_units_unique and sodium_fluoride_coefficient_unique prove the relevant whole-number selections from their respective exact constraints."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "All requested outputs are classifications or formulae with controller-bound exact_symbolic reporting. The answer submission uses exact symbolic displays and empty units in the exact required order; no decimal rounding rule is applied to an output."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "Each printed percentage has last displayed quantum 0.01%, represented as fraction quantum 1/10000; the bound policy supplies half-width 1/20000. printedCompositionData and ConsistentMeasurement use precisely those cells, and all three exact fraction theorems discharge them without staged rounding or post-hoc tolerance."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "No finite exhaustive chemical universe or singleton premise is used. The source supplies the NaF stages, three composition observations, named product roles, and industrial-use clue; the concrete witness is uniformly checked against them. The external compatibility bridge is Royal Society of Chemistry, \u201cPeriodic Table: Aluminium,\u201d https://www.rsc.org/periodic-table/element/13/aluminium, locators \u201cNatural abundance\u201d and \u201cChemistry in its element: aluminium\u201d transcript; its scoped claim is that molten cryolite, identified there as sodium hexafluoroaluminate, is used in the Hall\u2013H\u00e9roult commercial production of aluminium, applicable here only as non-exclusive candidate compatibility."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=3a4a67eb4e6cd2948ca09c37733fa8b676feb2d858c411a8d9773d9b23ce08af; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0, duration_bucket=under_1m. The nontrivial carriers are raw_result and reported_result, with per-output MetalQOutput, HydratedCOutput, CompoundDOutput and the supporting fraction, component-ledger, conversion-ledger, and industrial-use theorems."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "ReportedResult is exactly RawResult conjoined with the three exact symbolic output propositions. It claims a concrete compatible identification but does not claim yield, completion, absence of other streams, global chemical uniqueness, or a quantitative stage balance."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "reported_result is closed and has no user-supplied hypotheses. Printed percentages, phase/arrow roles, and pH are transparent source transcriptions; atomic weights were independently re-looked up in the pinned dataset; the single empirical industrial-use bridge was independently checked at its stable RSC locator."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The conclusion contains exactly one named carrier for each controller requested_output id in the same order and with the same classification/formula semantics and unitless exact-symbolic reporting as the validated answer submission."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The candidate exposes complete ledgers for D and the hydrate, exact complete-formula mass fractions, a rolewise NaF conversion balance, explicit source-arrow records, and an externally traceable industrial-use citation. Repeated atomic-weight lookups matched dataset SHA-256 11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5 and record SHA-256 values 8e5f2e512d11f6c3409197956a4f015f6144f43057a286107064436c64b4bce5, d55ad5591b6aebea80363701cf500c7e0a46a5f46fd4fcfef16cc331efcc0588, 96f1d50213dac1410f593d656038a9faa513227e1fd342c16b54096aa2e3b1bb, 14234e37d6ac93ded8d1d6f1883bd01f1855b92c90a61fb1370b0bb83f736417, and bdb840d02b2eb42be07e27b58fc76501786c75d0a321d38f76dae129c84f5e7f. The first depicted stage is used only to bind the named precipitate role, so no unstated solubility, yield, or material-flow premise is introduced."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "identity of metal Q",
+          "lean_carrier": "metalQIdentity; MetalQOutput; compoundD_metal_fraction_check; industrial_use_compatibility; reported_result",
+          "status": "covered",
+          "evidence": "The submitted classification matches the independently audited candidate. The carrier fixes the identity data, and RawResult binds it to the printed metal fraction, complete D formula mass, and verified source-scoped industrial-use compatibility.",
+          "output_id": "metal_q_identity",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "chemical formula of C \u00b7 xH2O",
+          "lean_carrier": "hydratedCFormula; HydratedCOutput; hydratedC_component_ledger; hydratedC_water_fraction_check; hydrate_water_units_unique; reported_result",
+          "status": "covered",
+          "evidence": "The submitted formula matches the independently audited candidate. The carriers fix the anhydrous core and whole-number water count, expand the full component ledger, and verify the printed water cell with a uniqueness theorem for that count once the checked core is fixed.",
+          "output_id": "hydrated_c_formula",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "chemical formula of compound D",
+          "lean_carrier": "compoundDFormula; CompoundDOutput; conversion_arrow_atom_ledger; compoundD_sodium_fraction_check; compoundD_metal_fraction_check; reported_result",
+          "status": "covered",
+          "evidence": "The submitted formula matches the independently audited candidate. The carriers expose every element-role count, verify both printed D composition cells over the complete formula mass, and prove rolewise compatibility with the named NaF conversion.",
+          "output_id": "compound_d_formula",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T1_page-3.png",
+          "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17",
+          "inspected": true,
+          "evidence": "The page visibly states the stoichiometric-stone context, dilute nitric-acid dissolution, pH approximately 4, NaF addition, precipitate C\u00b7xH2O, 39.16% water, the anhydrous-C plus excess-NaF direction to D, the 32.85% sodium and 12.85% metal-Q observations, the industrial-production clue, and the three requested identifications."
+        },
+        {
+          "path": "icho_2026_source/image/T1_page-2.png",
+          "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb",
+          "inspected": true,
+          "evidence": "The page was visually inspected and contains the Part 1 extraction table and subquestion 1.1 context only; it contains no extra T1-A4 component, connector, choice panel, or formula fragment that changes the current target."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Each concrete submitted identification is a chemically coherent witness for every decisive source observation: the two complete D mass percentages, hydrate water percentage, NaF conversion direction, and verified industrial-production compatibility."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only. The named stages are bound by printedPrecipitationStage (stone, dilute nitric acid, pH approximately four, NaF, hydrated-C precipitate) and printedConversionArrow (anhydrous C, excess NaF, D), over the finite named SourceMaterial roles. conversion_arrow_atom_ledger supplies transparent non-exclusive compatibility for the second arrow; hydratedC_component_ledger and hydratedC_water_fraction_check supply product composition for the first. No yield, completeness, sole-product, omitted-stream, coefficient-as-stage-amount, or phase-amount conclusion is claimed, so omitted solution species and excess reagent remain unknown."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Independent unrounded recomputation from the five pinned nominal atomic weights matches every exact rational expression in the submission and candidate; compoundD_sodium_fraction_check, compoundD_metal_fraction_check, and hydratedC_water_fraction_check prove membership in the three source measurement cells using complete formula denominators."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "conversion_arrow_atom_ledger proves equality for every ElementRole between the candidate anhydrous core plus the consumed NaF portion and D; hydratedC_component_ledger accounts for core plus all water adducts. No unsupported quantitative balance is asserted for the qualitative precipitation stage."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "All composition observations are dimensionless mass fractions formed from like relative-mass quantities. The three requested symbolic outputs correctly carry empty units."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The exact symbolic outputs require no significant-figure rounding. Intermediate molar masses and ratios remain exact rationals in Lean, and printed-percent consistency uses source-derived half-last-place cells without intermediate rounding."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "This target requests an element identity and molecular formulae, not structural drawings, connectivity beyond formula ledgers, or stereochemical assignments."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source verb is \u201cIdentify\u201d and does not say unique, all, or every. Under the bound policy a concrete evidence-supported witness is sufficient; the candidate makes no open-world exhaustive claim, and its witness satisfies every decisive source constraint."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "proposedIdentification is an explicit conclusion witness, not a premise or singleton candidate-domain hypothesis. RawResult independently checks its complete ledgers, all three measurement cells, source-arrow compatibility, positivity, and the externally verified industrial-use clue; no free Bool/Prop flag, opaque identity predicate, reflexive source assumption, or answer-shaped tolerance discharges the result."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a4.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The closed reported_result theorem faithfully carries all three exact-symbolic requested outputs, and its RawResult conjunct independently checks the printed composition cells, the named NaF conversion compatibility, the complete candidate formula ledgers, and the source-scoped industrial-production clue. The deterministic preflight passed with no sorry, and the submission, candidate, image, registry, and draft hashes all match their bindings.",
+        "evidence": "Candidate SHA-256 3a4a67eb4e6cd2948ca09c37733fa8b676feb2d858c411a8d9773d9b23ce08af and submission SHA-256 68bede3fd59803377361197d2136a88dc3027ebed946c439f837e86a0c1ab320 were recomputed exactly. The answer JSON has schema_version 1 and exactly the ordered ids/kinds/units required. Independent exact arithmetic places each proposed component fraction inside its printed half-last-place interval. conversion_arrow_atom_ledger is rolewise atom balance; hydratedC_component_ledger accounts for the whole hydrate. The RSC stable URL and exact locators verify the limited industrial-use compatibility claim. The authorized Kimi subpart 1.4 at frozen SHA-256 426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961 is preserved without discrepancy and was not treated as a source axiom.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:18:32.153189Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "3a4a67eb4e6cd2948ca09c37733fa8b676feb2d858c411a8d9773d9b23ce08af",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a4.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:18:32.153238Z",
+    "repair_handoff": {}
+  }
+}

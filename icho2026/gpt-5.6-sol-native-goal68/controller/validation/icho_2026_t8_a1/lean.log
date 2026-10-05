@@ -1,0 +1,6 @@
+'IChO2026Problems.ProblemIChO2026T8A1.submittedHalfEquation_balanced' does not depend on any axioms
+'IChO2026Problems.ProblemIChO2026T8A1.submittedHalfEquation_isReduction' does not depend on any axioms
+'IChO2026Problems.ProblemIChO2026T8A1.balanced_normalized_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.ProblemIChO2026T8A1.icho_2026_t8_a1' does not depend on any axioms

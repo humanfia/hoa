@@ -1,0 +1,7 @@
+'IChO2026Problems.T6A3.availableEnergy_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A3.fluorine_not_accessible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A3.chlorine_not_accessible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A3.bromine_not_accessible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A3.iodine_accessible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A3.energeticallyAccessible_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A3.possibleHalogens_eq_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]

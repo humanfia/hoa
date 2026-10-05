@@ -1,0 +1,49 @@
+{
+  "id": "icho_2026_t6_a6",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "M = 1-methyl-3,5-di-tert-butylbenzene (3,5-di-tert-butyltoluene), C15H24",
+      "id": "structure_m",
+      "kind": "classification",
+      "raw_value": "1-methyl-3,5-di-tert-butylbenzene; explicit graph IChO2026Problems.T6A6.structureM; formula C15H24",
+      "unit": ""
+    },
+    {
+      "display_value": "N = 3,5-di-tert-butylbenzaldehyde, C15H22O",
+      "id": "structure_n",
+      "kind": "classification",
+      "raw_value": "3,5-di-tert-butylbenzaldehyde; explicit graph IChO2026Problems.T6A6.structureN; formula C15H22O",
+      "unit": ""
+    },
+    {
+      "display_value": "O = zinc(II) 5,15-bis(3,5-di-tert-butylphenyl)porphyrin with meso-H at 10 and 20, C48H52N4Zn",
+      "id": "structure_o",
+      "kind": "classification",
+      "raw_value": "neutral trans-A2 zinc porphyrin with opposite 3,5-di-tert-butylphenyl groups and two remaining meso-H sites; explicit graph IChO2026Problems.T6A6.structureO; formula C48H52N4Zn",
+      "unit": ""
+    },
+    {
+      "display_value": "There is no intermediate P box; P is reserved for P6, the cyclic hexamer of six R-derived zinc porphyrins joined by six butadiyne links",
+      "id": "structure_p",
+      "kind": "classification",
+      "raw_value": "P is absent from the printed intermediate sequence M,N,O,Q,R; the displayed P6 product is the explicit cyclic six-porphyrin graph IChO2026Problems.T6A6.structureP6",
+      "unit": ""
+    },
+    {
+      "display_value": "Q = zinc(II) 10,20-dibromo-5,15-bis(3,5-di-tert-butylphenyl)porphyrin, C48H50Br2N4Zn",
+      "id": "structure_q",
+      "kind": "classification",
+      "raw_value": "O with both remaining meso hydrogens replaced by bromine; explicit graph IChO2026Problems.T6A6.structureQ; formula C48H50Br2N4Zn",
+      "unit": ""
+    },
+    {
+      "display_value": "R = zinc(II) 10,20-diethynyl-5,15-bis(3,5-di-tert-butylphenyl)porphyrin with two terminal C≡CH groups, C52H52N4Zn",
+      "id": "structure_r",
+      "kind": "classification",
+      "raw_value": "Q with each meso-Br replaced by terminal ethynyl after Sonogashira coupling and desilylation; explicit graph IChO2026Problems.T6A6.structureR; formula C52H52N4Zn",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,60 @@
+{
+  "target": "icho_2026_t8_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789363702.9356158,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "e9514296785be7abaf1b4f00c4bdf2ce02ee746c9ffde0d8b9e3fdb0b7c30e5b",
+    "IChO2026Problems/problem_icho_2026_t8_a3.lean": "29c763e553f83335f73e7b33793849546e17bdf570ea44e74d9fb87c6dbb6ca0",
+    "answer.md": "8284b143786bafcb8b231721f7a2b11309e4d652d7a3b3da6823cc74c8750343",
+    "verification.md": "409684ac84872441055732bff336089a1eacb8ffc532fb9bf6c1c76d4c097882",
+    "result.json": "fc908d5a58d43911120694bb391b264d002a6bf506a322255205dbc8e37c6a08"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a3",
+    "status": "completed",
+    "answer_summary": "Correct geometry of complex 1 is the trans-dichlorido octahedron [Fe(8)Cl2]: the linear tetradentate N4 polypyridyl ligand 8 supplies four equatorial pyridine N donors and the two chlorides (from FeCl2, corroborated by the '+2 H2O, -2 Cl-' activation step) occupy the two axial sites (trans Cl-Fe-Cl). This corresponds to answer-sheet A8-2 tick option (vii) (bottom-right).",
+    "theorem_names": [
+      "IChO2026.T8_A3.complex1_CN",
+      "IChO2026.T8_A3.equatorial_card",
+      "IChO2026.T8_A3.axial_card",
+      "IChO2026.T8_A3.axial_disjoint_equatorial",
+      "IChO2026.T8_A3.valid_geometry_has_trans_chlorides",
+      "IChO2026.T8_A3.valid_geometry_chlorides_not_cis",
+      "IChO2026.T8_A3.correct_geometry_1_is_trans_dichloro",
+      "IChO2026.T8_A3.option_vii_isCorrect",
+      "IChO2026.T8_A3.no_other_option_is_correct",
+      "IChO2026.T8_A3.geometry_1_is_correct",
+      "IChO2026.T8_A3.geometry_1_chlorides_trans"
+    ],
+    "assumptions": [
+      "[ProblemInput] Ligand 8 is a linear tetradentate N4 polypyridyl supplying exactly four pyridine N donors (printed structure and four-N cartoon on Q8-1).",
+      "[ProblemInput] Complex 1 is formed from ligand 8 + FeCl2 and is a dichlorido complex, corroborated by the mechanism step 1 -> 9 with '+2 H2O, -2 Cl-' on Q8-2.",
+      "[ProblemInput] Complex 1 is six-coordinate at one Fe (4 N + 2 Cl); six-coordinate Fe entries appear on the 8.4 answer sheets.",
+      "[TrustedLaw] Standard coordination geometry: a linear tetradentate N4 polypyridyl binds a single octahedral metal through the equatorial plane and cannot span to axial sites; hence the remaining two ligands (the two Cl-) are forced into the trans axial sites."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Problems  # Build completed successfully (8564 jobs), exit 0",
+      "lake env lean IChO2026Problems/problem_icho_2026_t8_a3.lean  # no errors/warnings, exit 0",
+      "lake env lean /tmp/axcheck.lean  # #print axioms on all final theorems: only propext, Classical.choice, Quot.sound"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

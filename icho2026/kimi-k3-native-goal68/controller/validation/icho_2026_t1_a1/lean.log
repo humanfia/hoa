@@ -1,0 +1,2 @@
+'IChO2026T1A1.t1_a1_answer' depends on axioms: [propext, Quot.sound]
+'IChO2026T1A1.t1_a1_answer_compound_numbers' depends on axioms: [propext, Quot.sound]

@@ -1,0 +1,42 @@
+{
+  "id": "icho_2026_t9_a8",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "O: u1 = CH=CH2; u2-u6 = CH2OBn; secondary rim = (OBn)12; all residues remain 4C1 alpha-D-gluco",
+      "id": "structure_o",
+      "kind": "classification",
+      "raw_value": "O = alpha-CD[primary: 1=CH=CH2, 2=CH2OBn, 3=CH2OBn, 4=CH2OBn, 5=CH2OBn, 6=CH2OBn; secondary: (OBn)12; stereochemistry: 4C1 alpha-D-gluco on units 1-6]",
+      "unit": ""
+    },
+    {
+      "display_value": "P: u1 = CH=CH2; u2 = CH2N3; u3-u6 = CH2OBn; secondary rim = (OBn)12; all residues remain 4C1 alpha-D-gluco",
+      "id": "structure_p",
+      "kind": "classification",
+      "raw_value": "P = alpha-CD[primary: 1=CH=CH2, 2=CH2N3, 3=CH2OBn, 4=CH2OBn, 5=CH2OBn, 6=CH2OBn; secondary: (OBn)12; stereochemistry: 4C1 alpha-D-gluco on units 1-6]",
+      "unit": ""
+    },
+    {
+      "display_value": "Q: u1 = CH=CH2; u2/u5 are joined by J_H(2,5) = (u2)-CH2-NH-CH2-C(=CH2)-CH2-O-CH2-(u5); u3, u4, u6 = CH2OBn; secondary rim = (OBn)12",
+      "id": "structure_q",
+      "kind": "classification",
+      "raw_value": "Q = alpha-CD[primary: 1=CH=CH2, 2=N-end of J_H, 3=CH2OBn, 4=CH2OBn, 5=O-end of J_H, 6=CH2OBn; J_H(2,5)=(u2)-CH2-NH-CH2-C(=CH2)-CH2-O-CH2-(u5); secondary: (OBn)12; stereochemistry: 4C1 alpha-D-gluco on units 1-6]",
+      "unit": ""
+    },
+    {
+      "display_value": "R: u1 = CH=CH2; u2/u5 are joined by N-Boc bridge J_Boc(2,5); u3, u4 = CH2OBn; u6 = CH2N3; secondary rim = (OBn)12",
+      "id": "structure_r",
+      "kind": "classification",
+      "raw_value": "R = alpha-CD[primary: 1=CH=CH2, 2=N-end of J_Boc, 3=CH2OBn, 4=CH2OBn, 5=O-end of J_Boc, 6=CH2N3; J_Boc(2,5)=(u2)-CH2-N(Boc)-CH2-C(=CH2)-CH2-O-CH2-(u5); secondary: (OBn)12; stereochemistry: 4C1 alpha-D-gluco on units 1-6]",
+      "unit": ""
+    },
+    {
+      "display_value": "S: u1 = CH=CH2; u2/u5 are joined by N-Bn bridge J_Bn(2,5); u3 = CH2OH; u4 = CH2OBn; u6 = CH2NH2; secondary rim = (OBn)12",
+      "id": "structure_s",
+      "kind": "classification",
+      "raw_value": "S = alpha-CD[primary: 1=CH=CH2, 2=N-end of J_Bn, 3=CH2OH, 4=CH2OBn, 5=O-end of J_Bn, 6=CH2NH2; J_Bn(2,5)=(u2)-CH2-N(Bn)-CH2-C(=CH2)-CH2-O-CH2-(u5); secondary: (OBn)12; stereochemistry: 4C1 alpha-D-gluco on units 1-6]",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,57 @@
+{
+  "target": "icho_2026_t3_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789299962.751483,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t3_a1.lean": "a4439da7d8b74f36094524ed640cee04ba78848f25dba9ebe0b25f9dea545bd8",
+    "answer.md": "37a701215bc416b0278b9cf03b6ffb5a3435cf800cb4ff6ffba9774d33d22e35",
+    "verification.md": "57ad015c745a7bb4242dd83666523599b73339e1d3c82a7adcaa435343b923c2",
+    "result.json": "2d99fb3c7f2853dfc2f4b94d1caec60141494d31abcb7c9bc77540c30af1c967"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t3_a1",
+    "status": "completed",
+    "answer_summary": "COF-1 has empirical formula C3H2BO. Using the printed atomic weights gives the exact carbon mass percentage 450375/8107 = 55.553842358...%, which rounds to 55.55% at two decimal places.",
+    "theorem_names": [
+      "IChO2026Problems.T3A1.balanced_cell_multiplicities",
+      "IChO2026Problems.T3A1.balanced_cell_formula",
+      "IChO2026Problems.T3A1.cof1_empirical_formula_is_primitive",
+      "IChO2026Problems.T3A1.cof1_empirical_formula",
+      "IChO2026Problems.T3A1.cof1_formula_mass",
+      "IChO2026Problems.T3A1.cof1_carbon_mass_percent_exact",
+      "IChO2026Problems.T3A1.cof1_carbon_mass_percent_reported",
+      "IChO2026Problems.T3A1.cof1_carbon_mass_percent_two_decimal_places",
+      "IChO2026Problems.T3A1.icho_2026_t3_a1"
+    ],
+    "assumptions": [
+      "The COF-1 line-angle drawing is interpreted by the standard convention: each doubly substituted phenylene linker is C6H4 and has two attachment ends.",
+      "Each boroxine ring shown in the problem is the alternating B3O3 ring with three phenyl attachment sites.",
+      "The periodic-table values printed in the problem are used exactly: C = 12.01, H = 1.008, B = 10.81, O = 16.00."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T3_page-1.png icho_2026_source/raw/theory_problem.pdf",
+      "lake build IChO2026Chem.Reporting",
+      "lake env lean IChO2026Problems/problem_icho_2026_t3_a1.lean",
+      "grep -nE '(^|[[:space:]])(sorry|admit|axiom|unsafe)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t3_a1.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

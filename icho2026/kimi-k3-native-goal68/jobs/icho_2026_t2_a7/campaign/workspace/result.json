@@ -1,0 +1,46 @@
+{
+  "target_id": "icho_2026_t2_a7",
+  "status": "completed",
+  "answer_summary": "Tick the bottom-right box on answer sheet A2-6 (3x2 grid, row 3 column 2): dG/dt starts far below zero, is strictly negative for all t > 0, oscillates while rising with decaying amplitude, and tends to 0 from below.  Reason: the second law for a closed system at constant T,p forces dG/dt <= 0 (excluding the about-axis oscillating options), a closed vessel forces equilibration so dG/dt -> 0 (excluding the constant/fixed-slope negative trends), and the oscillatory premise forces a genuine, decaying ripple (excluding the monotone relaxation).",
+  "theorem_names": [
+    "IChO2026T2A7.optionSixShape_fRepr",
+    "IChO2026T2A7.answer_is_bottom_right",
+    "IChO2026T2A7.P1_fRepr",
+    "IChO2026T2A7.P2_fRepr",
+    "IChO2026T2A7.P3_fRepr",
+    "IChO2026T2A7.P4_fRepr",
+    "IChO2026T2A7.P5_fRepr",
+    "IChO2026T2A7.P6_fRepr",
+    "IChO2026T2A7.positive_violates_P1",
+    "IChO2026T2A7.sine_fails_P1",
+    "IChO2026T2A7.growing_sine_fails_P1",
+    "IChO2026T2A7.constant_rate_fails_P3",
+    "IChO2026T2A7.negative_slope_fails_P3",
+    "IChO2026T2A7.monotone_fails_P5",
+    "IChO2026T2A7.optionThree_shape_fails_P5"
+  ],
+  "assumptions": [
+    "The six answer candidates exist only as line drawings on blank answer sheet A2-6 (PDF page index 23); they are formalized as qualitative shape predicates P1..P6 on curves R -> R.",
+    "The second law of thermodynamics for a closed system at constant T,p (dG/dt <= 0 for the spontaneous direction, equality at equilibrium) is used as an allowed trusted_general_law.",
+    "The representative curve fRepr t = -(2 + cos (8t)) / (2*(t+1)) is a formal witness of the bottom-right qualitative shape; the classification content is the predicate conjunction and the exclusion theorems, not the numeric scale of the sketch."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t2_a7.lean",
+      "result": "exit code 0, no errors or warnings"
+    },
+    {
+      "command": "lake build IChO2026Problems",
+      "result": "Build completed successfully (8564 jobs)"
+    },
+    {
+      "command": "lake env lean axioms_check_icho_2026_t2_a7.lean",
+      "result": "all 15 theorems/lemmas depend only on [propext, Classical.choice, Quot.sound]; exit code 0"
+    },
+    {
+      "command": "grep -n \"sorry\\|admit\\|^axiom\\| axiom \\|unsafe\" IChO2026Problems/problem_icho_2026_t2_a7.lean",
+      "result": "single match is a documentation sentence stating the file has no sorry; no admit/axiom/unsafe present"
+    }
+  ]
+}

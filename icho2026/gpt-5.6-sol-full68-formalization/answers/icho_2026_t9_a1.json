@@ -1,0 +1,14 @@
+{
+    "id": "icho_2026_t9_a1",
+    "official_answer_seen": false,
+    "outputs": [
+        {
+            "display_value": "1.14e3",
+            "id": "beta_cd_molar_mass",
+            "kind": "numeric",
+            "raw_value": "7 * 180.16 - 7 * 18.015",
+            "unit": "g mol^-1"
+        }
+    ],
+    "schema_version": 1
+}

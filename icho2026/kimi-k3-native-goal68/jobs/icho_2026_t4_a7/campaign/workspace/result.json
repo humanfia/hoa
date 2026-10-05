@@ -1,0 +1,25 @@
+{
+  "target_id": "icho_2026_t4_a7",
+  "status": "completed",
+  "answer_summary": "ΔrH2000 = -782 kJ mol^-1 (raw exact value -781.876 kJ mol^-1) for CH4(g) + 2 O2(g) -> CO2(g) + 2 H2O(g) at 2000 K. Derived via Hess's law at 298 K (ΔrH°298 = -802.3 kJ mol^-1, from the problem's enthalpies of formation) and Kirchhoff's law with the problem's constant heat capacities (ΔCp = 37 + 2*34 - 35 - 2*29 = 12 J mol^-1 K^-1): ΔH2000 = -802.3 + 0.012*(2000-298) = -781.876 kJ mol^-1, reported to 3 significant figures as -782 kJ mol^-1.",
+  "theorem_names": [
+    "IChO2026Problems.Icho2026T4A7.CombustionStoichiometry.unique",
+    "IChO2026Problems.Icho2026T4A7.reaction_enthalpy_298",
+    "IChO2026Problems.Icho2026T4A7.reaction_heat_capacity",
+    "IChO2026Problems.Icho2026T4A7.reaction_enthalpy_2000_exact",
+    "IChO2026Problems.Icho2026T4A7.rawAnswer2000_eq",
+    "IChO2026Problems.Icho2026T4A7.reported_at_2000",
+    "IChO2026Problems.Icho2026T4A7.final_submission_valid"
+  ],
+  "assumptions": [
+    "Heat capacities are temperature independent over 298-2000 K (the problem stipulates a single Cp value per species and no temperature dependence).",
+    "ΔfH°298(O2(g)) = 0 (element in its standard state; trusted general law).",
+    "Hess's law and Kirchhoff's law (trusted general thermochemistry laws).",
+    "The conditional fallback values printed in the problem (ΔH298 = -750, ΔH2000 = -700 kJ mol^-1) were not used because the data fully determine the answers."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a7.lean"
+  ]
+}

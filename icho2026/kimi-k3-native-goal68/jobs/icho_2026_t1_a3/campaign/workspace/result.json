@@ -1,0 +1,28 @@
+{
+  "target_id": "icho_2026_t1_a3",
+  "status": "completed",
+  "answer_summary": "n = 10 carbon atoms. From the stated two-isotope carbon model, I[M]+/I[M+1]+ = p/(n·q) with p = 0.989 and q = 0.011, so the observed ratio 9 gives n = 989/99 ≈ 9.99, i.e. n = 10 (uniquely over the extraction table: n = 11 predicts 8.17 ≠ 9 at the printed precision). W carries a phenolic OH (Fe3+ colour change) and 10 carbons; among the table's candidates only compound 5 (C10H12O2, eugenol methyl ether, 4-allyl-1-methoxy-2-hydroxybenzene) satisfies both, so W = compound 5.",
+  "theorem_names": [
+    "Problems.Icho2026T1A3.prob_pair_mul",
+    "Problems.Icho2026T1A3.binomialRecurrence",
+    "Problems.Icho2026T1A3.isotope_ratio",
+    "Problems.Icho2026T1A3.carbon_count_ratio",
+    "Problems.Icho2026T1A3.candidate_arithmetic",
+    "Problems.Icho2026T1A3.table_carbon_counts_correct",
+    "Problems.Icho2026T1A3.phenolic_candidates_correct",
+    "Problems.Icho2026T1A3.identification_of_W",
+    "Problems.Icho2026T1A3.t1_a3_main"
+  ],
+  "assumptions": [
+    "Binomial (Bernoulli-product) isotope model: peak [M]+ = all-12C molecules, [M+1]+ = exactly-one-13C molecules (multiple 13C negligible); this model hierarchy is what the problem's assumptions stipulate, and the n-slot recurrence is proved in Lean.",
+    "13C abundance = 1 - 0.989 = 0.011, from the problem's exclusive-two-isotopes clause.",
+    "The printed ratio 9:1 is used exactly for solving; the integer fit is validated at half the unit quantum (IChO measurement policy).",
+    "Trusted general law (ordinary qualitative-analysis chemistry): a colour change with aqueous Fe3+ indicates a phenolic OH group; applied to the drawn extraction-table structures."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t1_a3.lean  → exit 0; '#print axioms' reports [propext, Classical.choice, Quot.sound]",
+    "lake env lean IChO2026Run/Dependencies.lean  → exit 0 (dependency graph intact)",
+    "lake build  → fails only on IChO2026Problems.All, a controller-rewritten umbrella module absent from the workspace (infrastructure-owned, not modified); all existing generic modules build"
+  ]
+}

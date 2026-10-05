@@ -1,0 +1,33 @@
+{
+  "target_id": "icho_2026_t4_a9",
+  "status": "completed",
+  "answer_summary": "Using the derived part 4.4 energy of 185.20 MeV per fission, the exact raw results are TN = 4.230206366232801957e24 fissions and m = 5.558991132160095 kg of 90%-enriched uranium; to three significant figures, TN = 4.23e24 and m = 5.56 kg.",
+  "theorem_names": [
+    "IChO2026Problems.Icho2026T4A9.Derived.fission_mass_number_conserved",
+    "IChO2026Problems.Icho2026T4A9.Derived.fission_atomic_number_conserved",
+    "IChO2026Problems.Icho2026T4A9.Derived.fission_products_same_periodic_group",
+    "IChO2026Problems.Icho2026T4A9.Derived.part_4_4_fission_energy",
+    "IChO2026Problems.Icho2026T4A9.Derived.total_fissions_energy_balance",
+    "IChO2026Problems.Icho2026T4A9.Derived.total_fissions_unique",
+    "IChO2026Problems.Icho2026T4A9.Derived.enriched_uranium_inventory_balance",
+    "IChO2026Problems.Icho2026T4A9.Derived.enriched_uranium_mass_unique",
+    "IChO2026Problems.Icho2026T4A9.Derived.total_fissions_output",
+    "IChO2026Problems.Icho2026T4A9.Derived.enriched_uranium_mass_output",
+    "IChO2026Problems.Icho2026T4A9.Derived.requested_outputs"
+  ],
+  "assumptions": [
+    "The question's requested energy balance identifies the 30-kiloton TNT-equivalent energy with the energy released by the counted fissions.",
+    "The exact SI values 1 MeV = 1.602176634e-13 J and N_A = 6.02214076e23 mol^-1 are used as trusted general laws.",
+    "Rubidium has atomic number 37 and caesium atomic number 55; both are periodic-table group 1 elements.",
+    "The printed uranium-235 atomic mass 235.04 is used as the numerical molar mass 235.04 g mol^-1.",
+    "Per TASK.json, stipulated printed numbers are treated as exact and rounding occurs only at the final three-significant-figure boundary."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a9.lean",
+    "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)|^[[:space:]]*(axiom|constant)[[:space:]]' IChO2026Problems/problem_icho_2026_t4_a9.lean; then exit 1; else echo 'No sorry, admit, unsafe, or custom axiom/constant declarations found.'; fi",
+    "sha256sum TASK.json icho_2026_source/image/T4_page-1.png icho_2026_source/image/T4_page-2.png icho_2026_source/image/T4_page-3.png icho_2026_source/raw/theory_problem.pdf",
+    "python3 -m json.tool result.json >/dev/null && echo 'result.json is valid JSON.'"
+  ]
+}

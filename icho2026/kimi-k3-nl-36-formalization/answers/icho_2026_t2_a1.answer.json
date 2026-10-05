@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t2_a1",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "4 BrO₃⁻ + 3 CH₂(COOH)₂ → 4 Br⁻ + 9 CO₂ + 6 H₂O",
+      "id": "balanced_bz_equation",
+      "kind": "formula",
+      "raw_value": "4 BrO3^- + 3 CH2(COOH)2 -> 4 Br^- + 9 CO2 + 6 H2O",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t9_a6",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "3",
+      "id": "dimer_isomer_count",
+      "kind": "integer",
+      "raw_value": "Nat.choose (2 + 1) 2",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

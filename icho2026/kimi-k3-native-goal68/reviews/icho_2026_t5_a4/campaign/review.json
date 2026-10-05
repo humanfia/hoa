@@ -1,0 +1,44 @@
+All checks are complete. Summary of my independent findings:
+
+- Verified T5 page 3 directly: the printed data ("100 g of RCOOH reacts with 181.0 g of iodine", "similar way with X", "iodine mass fraction of 36.57%", and the ozonolysis sentence "three different organic products in equimolar amounts") match the candidate's transcription exactly.
+- Independent arithmetic: k+1 = 3 ⟹ k = 2 C=C; M = 100·2·2·126.904/181.0 = 253808/905 = 280.4508 g/mol; fatty-acid lattice forces C₁₈H₃₂O₂ (linoleic, 280.452; neighbors ≥13.9 away); required residual mass 6609842429/82739625 = 79.8873 g/mol vs Br 79.904 (−0.0167); predicted fractions F 44.35 %, Cl 41.94 %, Br 36.568 %, I 32.21 %, At 26.60 % — only Br within the ±0.005 % window; multivalent residuals 39.94/26.63/15.98 match no halogen; measurement-corner range (true [79.80, 79.97], candidate proves looser but sound [79.33, 80.45]) contains only Br.
+- The answer IBr (iodine monobromide, cf. Hanus-reagent chemistry) is scientifically correct and the uniqueness argument is exhaustive over the disclosed hypothesis class; the 1-per-π-bond addition convention is problem-supported ("similar way") and disclosed as trusted general law.
+- After building `IChO2026Chem` (8561 jobs), `lake env lean` on the problem file exits 0 with no diagnostics; no sorry/admit/native_decide/custom axioms anywhere; `#print axioms` on a scratch copy reports only `[propext, Classical.choice, Quot.sound]` for every key theorem. Proofs compute from printed data (`norm_num` chains), not precomputed answer tables; the final theorem's uniqueness component is genuinely discharged via `halogen_forced_bromine`.
+
+```json
+{
+  "target_id": "icho_2026_t5_a4",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The submitted answer X = IBr is correct and fully source-grounded. Direct inspection of T5 page 3 (printed page 'Q5-3') confirms every printed datum used: carbon counts of RCOOH fixed independently by the ozonolysis sentence (k+1=3 products => k=2 C=C) and by the iodine datum (M=253808/905=280.4508 g/mol forces C18H32O2 on the fatty-acid lattice, neighbors >=13.9 g/mol away); the adduct equation then demands a residual mass 79.8873 g/mol, matching only bromine (79.904) among halogens by margins of hundreds of measurement half-quanta, robust across the full half-quantum windows of both measured values, with multivalent IR'_v variants (v=2,3,5) also excluded (residuals 39.94/26.63/15.98, no halogen). The single requested output compound_x_formula is expressed by theorem subquestion_5_4_answer (monovalent X whose residual matches Br within 0.02 g/mol, with Br proved the unique halogen) and discharged by genuine norm_num/nlinarith computations from printed data plus case exhaustion, not by precomputed tables, vacuous premises, or result-shaped axioms. The Lean project compiles cleanly (lake env lean, exit 0, no diagnostics; full library build via lake build IChO2026Chem succeeds), contains no sorry/admit/native_decide/custom axioms, and every audited theorem depends only on [propext, Classical.choice, Quot.sound]. The two modeling conventions (one reagent molecule per pi-bond under the 'similar way' clause; X restricted to iodine-containing halogenating reagents IR'_v) are problem-supported and explicitly disclosed in result.json, so no unsupported scientific assumption receives unconditional passed status.",
+  "coverage": [
+    {
+      "output_id": "compound_x_formula",
+      "status": "passed",
+      "theorem": "IChO2026.T5_A4.subquestion_5_4_answer (with x_is_IBr, xAdduct_residual_eq, residual_matches_bromine, halogen_forced_bromine, multivalent_residuals_not_halogen, predicted_fraction_bromine_in_window, robust_to_measurement_quantum)",
+      "evidence": "xAdduct_residual_eq proves the required residual equals 6609842429/82739625 = 79.88727 g/mol directly from printed data (100 g, 181.0 g, 36.57%); residual_matches_bromine bounds |79.88727 - 79.904| <= 0.02; halogen_forced_bromine proves any halogen within that window is Br, and predicted_fraction_* theorems give independent exclusion margins in mass-fraction space (F/Cl/I/At off by >=800 half-quanta, Br within 0.35); multivalent_residuals_not_halogen excludes v=2,3,5; robust_to_measurement_quantum covers the +/-half-quantum corners of both measurements (my independent recomputation gives the tighter true window [79.80, 79.97], which the proved loose bounds [79.33, 80.45] soundly contain). Preceding-part dependency (T5-A3 formula of RCOOH) is derived inline per policy: ozonolysis_products_eq fixes k=2, linoleic_molarMass_from_iodine fixes M=253808/905, acid_carbonCount_forced proves c=17 is the unique lattice solution (>0.5 g/mol separation for all c=16 and c>=18, vs a 0.0012 g/mol hit for c=17) and iodine_mass_in_window back-checks 180.999 g in 181.0 +/- 0.05 g. Lake build and lake env lean compile cleanly; #print axioms on all key theorems reports only standard Lean axioms. Answer IBr independently confirmed scientifically (linoleic acid iodine value, Hanus-type IBr addition; predicted adduct iodine fraction 36.568% vs printed 36.57%)."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "T5_page-3.png inspected directly: '100 g of RCOOH reacts with 181.0 g of iodine. RCOOH also reacts in similar way with X and forms an adduct with an iodine mass fraction of 36.57%.' and '5.4 Determine the molecular formula of X. Support your answer with calculations. 2.0 pt' match the candidate transcription verbatim.",
+    "Ozonolysis dependency verified on the same page: 'During reductive ozonolysis, RCOOH forms three different organic products in equimolar amounts.'",
+    "T5_page-1.png inspected: R stated to be a hydrocarbon substituent in the fatty acid structure; fragments a-d and the 5.3 fallback 'you can use a-d fragments from 5.1' confirmed, consistent with candidate's dependency handling.",
+    "Significant figures honored: 181.0 g treated as ±0.05 g, 36.57% as ±0.005% (half last displayed quantum), matching the task measurement policy; candidate adds no precision beyond the printout and reports the formula exactly as IBr.",
+    "Atomic masses used (I 126.904, Br 79.904, Cl 35.453, F 18.998, At 209.987, C 12.011, H 1.008, O 15.999) are standard IUPAC weights, cited as exam-supplied stipulated constants (trusted_general_law / exact-as-printed class).",
+    "Independent re-derivation: M(RCOOH)=280.4508 g/mol; lattice M(c,2)=14.027c+42.000 singles out c=17 (C18H32O2); residual from 36.57% equation = 79.887 g/mol; only Br fits; multivalent residuals match no halogen; answer IBr scientifically correct.",
+    "No official solutions, rubrics, or answer repositories consulted during this review; verification against source PDF/images only."
+  ],
+  "proof_checks": [
+    "lake build IChO2026Chem: 8561 jobs, exit 0 (required initial library build in this fresh workspace; file then compiled).",
+    "lake env lean IChO2026Problems/problem_icho_2026_t5_a4.lean: exit 0, no errors, warnings, or sorry diagnostics.",
+    "grep over all Lean sources: no sorry/admit/native_decide/axiom/declare_axiom (only a doc-comment mention of the words).",
+    "Axiom audit on a scratch copy in /tmp (candidate files untouched): #print axioms for subquestion_5_4_answer, x_is_IBr, xAdduct_residual_eq, residual_matches_bromine, halogen_forced_bromine, multivalent_residuals_not_halogen, predicted_fraction_bromine_in_window, robust_to_measurement_quantum, acid_carbonCount_forced, linoleic_molarMass_from_iodine, linoleic_molarMass, iodine_mass_in_window, ozonolysis_products_eq, iodine_experiment_equation - all report only [propext, Classical.choice, Quot.sound].",
+    "Final theorem is not vacuous or result-shaped: the witness residual 6609842429/82739625 is produced by xAdduct_residual_eq via norm_num from printed data, and the uniqueness conjunct of subquestion_5_4_answer is discharged by applying halogen_forced_bromine inside the proof, not assumed.",
+    "Trusted general laws (ozonolysis k+1 products, 1:1 halogen-per-pi-bond addition) are encoded as definitions/structure data, not axioms; HalogenAddition stoich=1 is never asserted beyond data and the mass-balance algebra is proved (iodine_experiment_equation).",
+    "acid_carbonCount_forced proves both-direction integer exclusion (all c<=16 and all c>=18 are >0.5 g/mol from the iodine-implied mass) with nlinarith/norm_num; combined with iodine_mass_in_window this substantively forces c=17.",
+    "Robustness theorem's corner choices match the monotonic directions of the residual formula (min corner at w=36.575, mi=180.95; max corner at w=36.565, mi=181.05); my own four-corner recomputation confirms Br is the unique halogen over the entire measurement box.",
+    "All theorem names listed in result.json/verification.md exist in the file and are used as claimed; no orphan or phantom evidence."
+  ]
+}
+```

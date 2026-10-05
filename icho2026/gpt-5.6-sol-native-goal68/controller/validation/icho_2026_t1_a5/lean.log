@@ -1,0 +1,16 @@
+'IChO2026Problems.T1A5.hydrogen_percentage_selects_methyl' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T1A5.oxygen_percentage_selects_three_waters' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T1A5.structure_e_from_problem' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T1A5.structure_f_from_problem' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T1A5.structure_g_from_problem' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T1A5.structure_e_connectivity' does not depend on any axioms
+'IChO2026Problems.T1A5.structure_f_connectivity' does not depend on any axioms
+'IChO2026Problems.T1A5.structure_g_connectivity' depends on axioms: [propext]
+'IChO2026Problems.T1A5.structure_e_has_sixfold_axis' depends on axioms: [propext]
+'IChO2026Problems.T1A5.structure_f_has_sixfold_axis' depends on axioms: [propext]
+'IChO2026Problems.T1A5.structure_g_has_threefold_axis' depends on axioms: [propext]
+'IChO2026Problems.T1A5.structure_g_matches_49_98_percent_oxygen' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T1A5.triple_dehydration_formula_balance' depends on axioms: [propext]
+'IChO2026Problems.T1A5.identified_structures' depends on axioms: [propext, Quot.sound]

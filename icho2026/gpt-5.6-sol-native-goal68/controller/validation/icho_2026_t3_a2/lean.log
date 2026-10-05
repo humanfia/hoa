@@ -1,0 +1,19 @@
+'IChO2026Problems.problem_icho_2026_t3_a2.cof2_side_bond_counts' does not depend on any axioms
+'IChO2026Problems.problem_icho_2026_t3_a2.cof2_side_length_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.problem_icho_2026_t3_a2.sqrt_three_reporting_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_rounding_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_submission_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.problem_icho_2026_t3_a2.cof2_internal_diameter_reported' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

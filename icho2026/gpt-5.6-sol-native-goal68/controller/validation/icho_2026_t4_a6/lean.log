@@ -1,0 +1,8 @@
+'IChO2026Problems.T4A6.methane_combustion_is_balanced' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T4A6.methane_combustion_hess_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T4A6.combustion_enthalpy_298_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T4A6.combustion_enthalpy_298_reporting_scale' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T4A6.combustion_enthalpy_298_reported' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T4A6.combustion_enthalpy_298_answer' depends on axioms: [propext, Classical.choice, Quot.sound]

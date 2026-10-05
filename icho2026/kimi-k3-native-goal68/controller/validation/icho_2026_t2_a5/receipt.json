@@ -1,0 +1,91 @@
+{
+  "target": "icho_2026_t2_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789365775.450112,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t2_a5.lean": "1b19f7e891459768947535cefa44c0de5678ccae553658f99a5e45fc43ea9d17",
+    "answer.md": "d04cb679078564b5320efb9736b146854fc27b3effadf0e66329c7930a4cee93",
+    "verification.md": "e0e8c0ea896813b9571b3744666a610b148844076f39c4f0dd95ae130d39c627",
+    "result.json": "339b14a41f420e3edd0445c979f5983e88b3c51fff8dab8213b207013a28115b"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a5",
+    "status": "completed",
+    "answer_summary": "\u03c4 = ln([Br\u207b]max/[Br\u207b]crit)/\u03bb = ln(7000/3)/0.16128 = 48.084406866\u2026 s, reported to 3 s.f. as 48.1 s. During the colourless Process-B leg, Ce\u2074\u207a \u2248 0 switches off step (7) (the only Br\u207b source); steps (4) and (5) consume Br\u207b at equal rates (the 2.2 stationary condition), giving exact first-order decay d[Br\u207b]/dt = \u2212\u03bb[Br\u207b] with \u03bb = 2\u00b7k\u2085[BrO\u2083\u207b][H\u207a]\u00b2 = 0.16128 s\u207b\u00b9. The return leg is 'almost immediate' per the problem (page Q2-3), so the descent duration is the period.",
+    "theorem_names": [
+      "IChO2026T2A5.k1_value",
+      "IChO2026T2A5.k2_value",
+      "IChO2026T2A5.k3_value",
+      "IChO2026T2A5.k4_value",
+      "IChO2026T2A5.k5_value",
+      "IChO2026T2A5.k6_value",
+      "IChO2026T2A5.k7_value",
+      "IChO2026T2A5.brMax_value",
+      "IChO2026T2A5.brCritical_value",
+      "IChO2026T2A5.hbrO2_A_value",
+      "IChO2026T2A5.hbrO2_B_value",
+      "IChO2026T2A5.lambda_value",
+      "IChO2026T2A5.lambda_eq_twice_k5",
+      "IChO2026T2A5.br_ratio",
+      "IChO2026T2A5.tau_eq",
+      "IChO2026T2A5.hbrO2_A_gt_B",
+      "IChO2026T2A5.brCritical_characterisation",
+      "IChO2026T2A5.log_two_bounds",
+      "IChO2026T2A5.log_875_768_bounds",
+      "IChO2026T2A5.ratio_decompose",
+      "IChO2026T2A5.log_ratio_bounds",
+      "IChO2026T2A5.tau_report_band",
+      "IChO2026T2A5.tau_pos",
+      "IChO2026T2A5.tauSubmission",
+      "IChO2026T2A5.tauSubmission_raw",
+      "IChO2026T2A5.tauSubmission_valid",
+      "IChO2026T2A5.tauSubmission_contract"
+    ],
+    "assumptions": [
+      "Steady-state approximation for HBrO2 in Processes A and B (mandated by subquestion 2.2).",
+      "During the colourless Process-B leg, [Ce4+] is negligible, so step (7) \u2014 the only bromide source \u2014 is inactive; grounded in the problem's colour definitions (yellow due to Ce4+, colourless due to Ce3+) and 'when Process B occurs the solution is colourless'.",
+      "The return leg from [Br-]critical back to [Br-]max takes negligible time \u2014 stated verbatim on page Q2-3 ('almost immediately reaches [Br-]max again').",
+      "[HBrO2]B is independent of [Br-]; this is derived (not assumed) from the 2.2 stationary condition in which the [Br-] factor cancels between step (4) and step (5).",
+      "Final reporting to three significant figures with quantum 0.1 s and tie rule half away from zero (uniform answer-blind default from TASK.json reporting_policy)."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t2_a5.lean",
+        "result": "exit 0, no diagnostics"
+      },
+      {
+        "command": "lake build IChO2026Problems.problem_icho_2026_t2_a5",
+        "result": "Build completed successfully (8561 jobs)"
+      },
+      {
+        "command": "lake env lean /tmp/check_axioms.lean   # file with #print axioms for tauSubmission_valid, tauSubmission_contract, tau_report_band, log_ratio_bounds, brCritical_characterisation, hbrO2_B_value",
+        "result": "all six theorems depend only on [propext, Classical.choice, Quot.sound]"
+      }
+    ],
+    "raw_answer": {
+      "expression": "Real.log (7000/3) / 0.16128",
+      "approx_seconds": 48.084406866,
+      "reported_seconds": 48.1,
+      "significant_figures": 3
+    }
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

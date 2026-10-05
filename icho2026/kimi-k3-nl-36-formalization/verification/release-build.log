@@ -1,0 +1,1674 @@
+⚠ [8572/8616] Built IChO2026Run.Basic (29s)
+warning: IChO2026Run/Basic.lean:1:1: * '-/':
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [8573/8616] Built IChO2026Run.Dependencies (31s)
+warning: IChO2026Run/Dependencies.lean:1:1: * '-/':
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [8574/8616] Built IChO2026Chem.Core (31s)
+warning: IChO2026Chem/Core.lean:1:1: * '-/':
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+✔ [8575/8616] Built IChO2026Problems.problem_icho_2026_t8_a10 (31s)
+✔ [8576/8616] Built IChO2026Problems.problem_icho_2026_t4_a3 (32s)
+⚠ [8577/8616] Built IChO2026Chem.Reporting (33s)
+warning: IChO2026Chem/Reporting.lean:1:1: * '-/':
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+✔ [8578/8616] Built IChO2026Problems.problem_icho_2026_t4_a2 (34s)
+✔ [8579/8616] Built IChO2026Problems.problem_icho_2026_t6_a2 (34s)
+⚠ [8580/8616] Built IChO2026Problems.problem_icho_2026_t8_a1 (34s)
+warning: IChO2026Problems/problem_icho_2026_t8_a1.lean:188:16: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t8_a1.lean:190:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t8_a1.lean:211:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+⚠ [8581/8616] Built IChO2026Problems.problem_icho_2026_t8_a8 (39s)
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:184:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+                                                            ↓
+  ⏎  have red_lt_blue := lt_trans red_lt_green green_lt_blue⏎⏎  have darkStackAbsent :⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:193:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+                                   ↓
+  ⏎    figure.panelD_productStack.1⏎⏎  -- M001 and preservation of the plotted-stack flag exclude the dark⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:208:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+                                                           ↓
+  ⏎    simp [h, darkStackAbsent, panelD_stack] at preserved⏎⏎  have panelA_dark : assignment.conditionAt .a = .noIrradiation := by⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:216:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+                                                ↓
+  ⏎    | d => exact (panelD_notDark hpanel).elim⏎⏎  -- Injectivity makes the illuminated assignments on b, c, and d pairwise⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:229:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+                                         ↓
+  ⏎    simpa using assignment_injective h⏎⏎  have panelB_red := assignment.preservesIlluminatedReadouts .b .red⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:239:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+                                                                         ↓
+  ⏎  have panelD_blue := assignment.preservesIlluminatedReadouts .d .blue⏎⏎  cases panelB_condition : assignment.conditionAt .b <;>⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:243:8: `simp_all [IlluminatedCondition.toCondition]` is a flexible tactic modifying `⊢`. Try `simp_all?` and use the suggested `simp_all only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t8_a8.lean:244:10: `first
+| exact ⟨panelA_dark, panelB_condition, panelC_condition, panelD_condition⟩
+| exfalso
+  nlinarith` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:243:8: `simp_all [IlluminatedCondition.toCondition]` is a flexible tactic modifying `⊢`. Try `simp_all?` and use the suggested `simp_all only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t8_a8.lean:244:10: `first
+| exact ⟨panelA_dark, panelB_condition, panelC_condition, panelD_condition⟩
+| exfalso
+  nlinarith` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:243:8: `simp_all [IlluminatedCondition.toCondition]` is a flexible tactic modifying `⊢`. Try `simp_all?` and use the suggested `simp_all only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t8_a8.lean:244:10: `first
+| exact ⟨panelA_dark, panelB_condition, panelC_condition, panelD_condition⟩
+| exfalso
+  nlinarith` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:243:8: `simp_all [IlluminatedCondition.toCondition]` is a flexible tactic modifying `⊢`. Try `simp_all?` and use the suggested `simp_all only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t8_a8.lean:244:10: `first
+| exact ⟨panelA_dark, panelB_condition, panelC_condition, panelD_condition⟩
+| exfalso
+  nlinarith` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:243:8: `simp_all [IlluminatedCondition.toCondition]` is a flexible tactic modifying `⊢`. Try `simp_all?` and use the suggested `simp_all only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t8_a8.lean:244:10: `first
+| exact ⟨panelA_dark, panelB_condition, panelC_condition, panelD_condition⟩
+| exfalso
+  nlinarith` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t8_a8.lean:243:8: `simp_all [IlluminatedCondition.toCondition]` is a flexible tactic modifying `⊢`. Try `simp_all?` and use the suggested `simp_all only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t8_a8.lean:244:10: `first
+| exact ⟨panelA_dark, panelB_condition, panelC_condition, panelD_condition⟩
+| exfalso
+  nlinarith` uses `⊢`!
+✔ [8582/8616] Built IChO2026Problems.problem_icho_2026_t2_a4 (43s)
+⚠ [8583/8616] Built IChO2026Problems.problem_icho_2026_t7_a6 (49s)
+warning: IChO2026Problems/problem_icho_2026_t7_a6.lean:294:2: `simp at hEntry` is a flexible tactic modifying `hEntry`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t7_a6.lean:295:2: `rcases hEntry with rfl | rfl | rfl` uses `hEntry`!
+warning: IChO2026Problems/problem_icho_2026_t7_a6.lean:445:14: This simp argument is unused:
+  page3Entries
+
+Hint: Omit it from the simp argument list.
+  simp [p̵a̵g̵e̵3̵E̵n̵t̵r̵i̵e̵s̵,̵ ̵mathematicalConsistencyWitness,
+  ̵  ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵MolarResponseScale.toAmmoniaAmount,
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲consistencyResponseScale,
+  ̵  ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵mathematicalWitnessScore, activeTriflateWitnessScore,
+            zeroYieldReferencePotential, zeroYieldReference, entryFeatures]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: IChO2026Problems/problem_icho_2026_t7_a6.lean:467:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: IChO2026Problems/problem_icho_2026_t7_a6.lean:437:8: `simp_all [printedCalibrationAmount, mathematicalConsistencyWitness,
+          MolarResponseScale.toAmmoniaAmount, consistencyResponseScale,
+          mathematicalWitnessScore, activeTriflateWitnessScore,
+          zeroYieldReferencePotential, zeroYieldReference, entryFeatures]` is a flexible tactic modifying `⊢`. Try `simp_all?` and use the suggested `simp_all only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t7_a6.lean:442:8: `assumption` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t7_a6.lean:437:8: `simp_all [printedCalibrationAmount, mathematicalConsistencyWitness,
+          MolarResponseScale.toAmmoniaAmount, consistencyResponseScale,
+          mathematicalWitnessScore, activeTriflateWitnessScore,
+          zeroYieldReferencePotential, zeroYieldReference, entryFeatures]` is a flexible tactic modifying `⊢`. Try `simp_all?` and use the suggested `simp_all only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t7_a6.lean:442:8: `assumption` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t7_a6.lean:437:8: `simp_all [printedCalibrationAmount, mathematicalConsistencyWitness,
+          MolarResponseScale.toAmmoniaAmount, consistencyResponseScale,
+          mathematicalWitnessScore, activeTriflateWitnessScore,
+          zeroYieldReferencePotential, zeroYieldReference, entryFeatures]` is a flexible tactic modifying `⊢`. Try `simp_all?` and use the suggested `simp_all only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t7_a6.lean:442:8: `assumption` uses `⊢`!
+✔ [8584/8616] Built IChO2026Chem (18s)
+✔ [8585/8616] Built IChO2026Problems.problem_icho_2026_t5_a5 (22s)
+⚠ [8586/8616] Built IChO2026Problems.problem_icho_2026_t8_a7 (23s)
+warning: IChO2026Problems/problem_icho_2026_t8_a7.lean:221:5: Variable name `hAvogadro` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [8587/8616] Built IChO2026Problems.problem_icho_2026_t7_a7 (24s)
+⚠ [8588/8616] Built IChO2026Problems.problem_icho_2026_t1_a4 (29s)
+warning: IChO2026Problems/problem_icho_2026_t1_a4.lean:161:100: This line exceeds the 100 character limit, please shorten it!
+You can use "string gaps" to format long strings: within a string quotation, using a '\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t1_a4.lean:307:100: This line exceeds the 100 character limit, please shorten it!
+You can use "string gaps" to format long strings: within a string quotation, using a '\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t1_a4.lean:309:100: This line exceeds the 100 character limit, please shorten it!
+You can use "string gaps" to format long strings: within a string quotation, using a '\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [8589/8616] Built IChO2026Problems.problem_icho_2026_t6_a1 (37s)
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:165:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:171:17: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:182:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:188:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:194:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:198:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:202:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:206:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:210:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:214:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:218:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t6_a1.lean:222:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+✔ [8590/8616] Built IChO2026Problems.problem_icho_2026_t7_a4 (47s)
+✔ [8591/8616] Built IChO2026Problems.problem_icho_2026_t8_a3 (47s)
+⚠ [8592/8616] Built IChO2026Problems.problem_icho_2026_t7_a1 (54s)
+warning: IChO2026Problems/problem_icho_2026_t7_a1.lean:229:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t7_a1.lean:230:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t7_a1.lean:231:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t7_a1.lean:271:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t7_a1.lean:272:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t7_a1.lean:328:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t7_a1.lean:339:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t7_a1.lean:377:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+✔ [8593/8616] Built IChO2026Problems.problem_icho_2026_t2_a7 (54s)
+⚠ [8594/8616] Built IChO2026Problems.problem_icho_2026_t9_a2 (55s)
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:315:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:352:13: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:355:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:357:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:359:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:427:100: This line exceeds the 100 character limit, please shorten it!
+You can use "string gaps" to format long strings: within a string quotation, using a '\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:433:100: This line exceeds the 100 character limit, please shorten it!
+You can use "string gaps" to format long strings: within a string quotation, using a '\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:487:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:488:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:664:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:665:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:751:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:788:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:790:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:792:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:980:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:982:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:1083:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:1085:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:1087:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a2.lean:1088:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+✔ [8595/8616] Built IChO2026Problems.problem_icho_2026_t3_a4 (77s)
+⚠ [8596/8616] Built IChO2026Problems.problem_icho_2026_t9_a8 (58s)
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:864:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:949:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1158:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1192:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1202:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1215:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1229:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1233:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1243:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1247:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1263:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1267:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1284:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1312:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1326:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1330:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1408:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1447:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1470:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1485:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1487:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1489:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1491:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1492:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1493:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1499:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1506:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1508:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1510:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1512:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1513:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1514:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1520:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1527:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1529:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1531:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1533:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1534:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1535:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1541:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1548:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1550:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1552:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1554:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1555:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1556:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1562:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1569:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1571:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1573:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1575:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1576:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1577:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1583:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1601:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1603:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1615:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1617:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1629:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1631:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1643:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1645:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1657:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1659:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1713:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1721:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1729:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1737:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a8.lean:1746:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+✔ [8597/8616] Built IChO2026Problems.problem_icho_2026_t8_a4 (58s)
+✔ [8598/8616] Built IChO2026Problems.problem_icho_2026_t3_a3 (58s)
+✔ [8599/8616] Built IChO2026Problems.problem_icho_2026_t8_a2 (60s)
+✔ [8600/8616] Built IChO2026Problems.problem_icho_2026_t1_a1 (62s)
+⚠ [8601/8616] Built IChO2026Problems.problem_icho_2026_t2_a1 (64s)
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:370:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hcarbon` is a flexible tactic modifying `hcarbon`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:378:4: `have hcarbon_eq : r.target .carbonDioxide = 3 * r.source .malonicAcid := by omega` uses `hcarbon`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:372:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hhydrogen` is a flexible tactic modifying `hhydrogen`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:378:4: `have hcarbon_eq : r.target .carbonDioxide = 3 * r.source .malonicAcid := by omega` uses `hhydrogen`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:374:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hoxygen` is a flexible tactic modifying `hoxygen`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:378:4: `have hcarbon_eq : r.target .carbonDioxide = 3 * r.source .malonicAcid := by omega` uses `hoxygen`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:375:4: `simp [ChargeBalanced, totalCharge, formalCharge, entityData, sum_entity] at hcharge` is a flexible tactic modifying `hcharge`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:378:4: `have hcarbon_eq : r.target .carbonDioxide = 3 * r.source .malonicAcid := by omega` uses `hcharge`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:368:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hbromine` is a flexible tactic modifying `hbromine`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:378:4: `have hcarbon_eq : r.target .carbonDioxide = 3 * r.source .malonicAcid := by omega` uses `hbromine`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:375:4: `simp [ChargeBalanced, totalCharge, formalCharge, entityData, sum_entity] at hcharge` is a flexible tactic modifying `hcharge`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:393:4: `have hwater_target : r.target .water = 2 * r.source .malonicAcid := by omega` uses `hcharge`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:372:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hhydrogen` is a flexible tactic modifying `hhydrogen`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:393:4: `have hwater_target : r.target .water = 2 * r.source .malonicAcid := by omega` uses `hhydrogen`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:370:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hcarbon` is a flexible tactic modifying `hcarbon`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:393:4: `have hwater_target : r.target .water = 2 * r.source .malonicAcid := by omega` uses `hcarbon`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:374:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hoxygen` is a flexible tactic modifying `hoxygen`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:393:4: `have hwater_target : r.target .water = 2 * r.source .malonicAcid := by omega` uses `hoxygen`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:368:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hbromine` is a flexible tactic modifying `hbromine`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:393:4: `have hwater_target : r.target .water = 2 * r.source .malonicAcid := by omega` uses `hbromine`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:368:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hbromine` is a flexible tactic modifying `hbromine`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:395:4: `have hreactant_ratio : 3 * r.source .bromate = 4 * r.source .malonicAcid := by omega` uses `hbromine`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:370:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hcarbon` is a flexible tactic modifying `hcarbon`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:395:4: `have hreactant_ratio : 3 * r.source .bromate = 4 * r.source .malonicAcid := by omega` uses `hcarbon`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:375:4: `simp [ChargeBalanced, totalCharge, formalCharge, entityData, sum_entity] at hcharge` is a flexible tactic modifying `hcharge`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:395:4: `have hreactant_ratio : 3 * r.source .bromate = 4 * r.source .malonicAcid := by omega` uses `hcharge`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:374:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hoxygen` is a flexible tactic modifying `hoxygen`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:395:4: `have hreactant_ratio : 3 * r.source .bromate = 4 * r.source .malonicAcid := by omega` uses `hoxygen`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:372:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hhydrogen` is a flexible tactic modifying `hhydrogen`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:395:4: `have hreactant_ratio : 3 * r.source .bromate = 4 * r.source .malonicAcid := by omega` uses `hhydrogen`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:374:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hoxygen` is a flexible tactic modifying `hoxygen`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:403:4: `have hmalonic_eq : r.source .malonicAcid = 3 * k := by omega` uses `hoxygen`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:372:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hhydrogen` is a flexible tactic modifying `hhydrogen`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:403:4: `have hmalonic_eq : r.source .malonicAcid = 3 * k := by omega` uses `hhydrogen`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:368:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hbromine` is a flexible tactic modifying `hbromine`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:403:4: `have hmalonic_eq : r.source .malonicAcid = 3 * k := by omega` uses `hbromine`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:375:4: `simp [ChargeBalanced, totalCharge, formalCharge, entityData, sum_entity] at hcharge` is a flexible tactic modifying `hcharge`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:403:4: `have hmalonic_eq : r.source .malonicAcid = 3 * k := by omega` uses `hcharge`!
+warning: IChO2026Problems/problem_icho_2026_t2_a1.lean:370:4: `simp [totalAtoms, atomCount, entityData, sum_entity] at hcarbon` is a flexible tactic modifying `hcarbon`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a1.lean:403:4: `have hmalonic_eq : r.source .malonicAcid = 3 * k := by omega` uses `hcarbon`!
+⚠ [8602/8616] Built IChO2026Problems.problem_icho_2026_t9_a4 (69s)
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:311:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:348:13: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:351:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:353:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:355:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:542:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:675:100: This line exceeds the 100 character limit, please shorten it!
+You can use "string gaps" to format long strings: within a string quotation, using a '\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:800:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:853:13: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:856:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:858:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:860:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:26: `simp [IsTBSLocalBond]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t9_a4.lean:1063:52: `infer_instance` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1155:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1177:6: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1178:6: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1179:6: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1279:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t9_a4.lean:1283:4: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+⚠ [8603/8616] Built IChO2026Problems.problem_icho_2026_t7_a5 (74s)
+warning: IChO2026Problems/problem_icho_2026_t7_a5.lean:649:100: This line exceeds the 100 character limit, please shorten it!
+You can use "string gaps" to format long strings: within a string quotation, using a '\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t7_a5.lean:652:100: This line exceeds the 100 character limit, please shorten it!
+You can use "string gaps" to format long strings: within a string quotation, using a '\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: IChO2026Problems/problem_icho_2026_t7_a5.lean:706:43: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: IChO2026Problems/problem_icho_2026_t7_a5.lean:704:2: `simp [Precursor4ImageSpec, precursor4, precursorElement,
+    precursorSiteCharge, precursorBondLedger, siteChargeSum, atomCount,
+    coordinationDegree, sourcePNPTemplate]` is a flexible tactic modifying `⊢`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t7_a5.lean:706:47: `decide` uses `⊢`!
+warning: IChO2026Problems/problem_icho_2026_t7_a5.lean:771:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: IChO2026Problems/problem_icho_2026_t7_a5.lean:789:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: IChO2026Problems/problem_icho_2026_t7_a5.lean:797:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: IChO2026Problems/problem_icho_2026_t7_a5.lean:911:54: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [8604/8616] Built IChO2026Chem.VerifiedA5 (75s)
+✔ [8605/8616] Built IChO2026Problems.problem_icho_2026_t1_a2 (77s)
+⚠ [8606/8616] Built IChO2026Problems.problem_icho_2026_t5_a2 (88s)
+warning: IChO2026Problems/problem_icho_2026_t5_a2.lean:353:4: `simp [kinds] at fibers` is a flexible tactic modifying `fibers`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t5_a2.lean:354:4: `rw [portFiber, portFiber, portFiber, portFiber] at fibers` uses `fibers`!
+⚠ [8607/8616] Built IChO2026Problems.problem_icho_2026_t2_a6 (132s)
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:26:0: Unscoped option maxHeartbeats is not allowed:
+Please scope this to individual declarations, as in
+```
+set_option maxHeartbeats in
+-- comment explaining why this is necessary
+example : ... := ...
+```
+
+Note: This linter can be disabled with `set_option linter.style.setOption false`
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:177:2: `simp [processAReducedActiveSteps] at h_active` is a flexible tactic modifying `h_active`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: IChO2026Problems/problem_icho_2026_t2_a6.lean:178:2: `rcases h_active with rfl | rfl | rfl | rfl` uses `h_active`!
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:223:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:276:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: IChO2026Problems/problem_icho_2026_t2_a6.lean:445:26: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: IChO2026Problems/problem_icho_2026_t2_a6.lean:445:26: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: IChO2026Problems/problem_icho_2026_t2_a6.lean:463:18: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:499:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:499:8: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:548:30: Variable name `h_admissible` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: IChO2026Problems/problem_icho_2026_t2_a6.lean:816:26: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: IChO2026Problems/problem_icho_2026_t2_a6.lean:816:26: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: IChO2026Problems/problem_icho_2026_t2_a6.lean:850:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: IChO2026Problems/problem_icho_2026_t2_a6.lean:967:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: IChO2026Problems/problem_icho_2026_t2_a6.lean:1107:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:1225:28: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:1225:28: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:1357:30: Variable name `h_admissible` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: IChO2026Problems/problem_icho_2026_t2_a6.lean:1502:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:1543:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: IChO2026Problems/problem_icho_2026_t2_a6.lean:1586:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8608/8616] Built IChO2026Problems.problem_icho_2026_t1_a5 (159s)
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:531:63: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:536:63: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:541:63: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:556:63: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:561:63: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:566:63: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:571:63: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:576:63: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:592:10: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:598:10: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:604:10: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:610:10: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:639:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:644:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:649:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:654:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:661:20: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:665:6: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:672:20: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:676:6: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:683:20: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:687:6: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: IChO2026Problems/problem_icho_2026_t1_a5.lean:719:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+✔ [8609/8616] Built IChO2026Problems.problem_icho_2026_t5_a6 (180s)
+✔ [8610/8616] Built IChO2026Problems.problem_icho_2026_t9_a5 (195s)
+✔ [8611/8616] Built IChO2026Problems.problem_icho_2026_t3_a5 (214s)
+✔ [8612/8616] Built IChO2026Problems.problem_icho_2026_t6_a6 (247s)
+⚠ [8613/8616] Built IChO2026Problems.All (10s)
+warning: IChO2026Problems/All.lean:1:1: * '-/':
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [8614/8616] Built IChO2026Problems (9.0s)
+warning: IChO2026Problems.lean:4:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+✔ [8615/8616] Built IChO2026Run (10s)
+Build completed successfully (8616 jobs).

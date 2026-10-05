@@ -1,0 +1,54 @@
+{
+  "target": "icho_2026_t6_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302215.4055626,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t6_a2.lean": "4890c860bb87eebc554d5937cdd85f71e5edbf03367017f603468b2cb0e6768f",
+    "answer.md": "37df1995526d672a57d9bf4060fea14553167cb66bee93de5f134769d7f3544d",
+    "verification.md": "84df3f3fdd3a8ca12895355f532efab6480eb524cf3ea87315fb2b0557e5d72f",
+    "result.json": "ae8e153ba74a871ef8b1266c3f1fcc98c2a7ca6cdeb62bc1e14594d9d6d17fd7"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t6_a2",
+    "status": "completed",
+    "answer_summary": "B is neutral monocyclic C14Cl3 with Cl at numbered sites 0, 3, 13 and a radical at 10; C is neutral monocyclic C14Cl with Cl at 3 and a radical at 10; D is neutral monocyclic C14Cl5 with Cl at 0, 3, 6, 7, 13 and a radical at 10. Complete C-C bond-order vectors are recorded in answer.md and Lean.",
+    "theorem_names": [
+      "IChO2026Problems.T6A2.structure_b_answer",
+      "IChO2026Problems.T6A2.structure_c_answer",
+      "IChO2026Problems.T6A2.structure_d_answer",
+      "IChO2026Problems.T6A2.every_transformation_is_applicable",
+      "IChO2026Problems.T6A2.c_to_cyclo14_consistency"
+    ],
+    "assumptions": [
+      "Problem-input transcription: the given A structure and AFM chlorine features are indexed by the 14-carbon perimeter convention documented in answer.md.",
+      "The arrow labels -Cl radical denote homolytic C-Cl cleavage, leaving one unpaired electron on carbon.",
+      "The retro-Bergman graph transformation printed in the problem applies to the two para-diradical terminal rings.",
+      "Ordinary neutral-carbon Lewis valence is four; all depicted intermediates have zero formal charge."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t6_a2.lean",
+      "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe|axiom)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t6_a2.lean; then exit 1; else exit 0; fi",
+      "python3 -m json.tool result.json >/dev/null",
+      "sha256sum icho_2026_source/image/T6_page-1.png icho_2026_source/raw/theory_problem.pdf"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t9_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "¹C₄",
+      "id": "chair_conformation",
+      "kind": "classification",
+      "raw_value": "Chair.oneCFour (¹C₄), with the C3–O3 and C5–C6 attachment bonds both up and axial",
+      "unit": ""
+    },
+    {
+      "display_value": "heptakis(3,6-anhydro)-β-cyclodextrin; only C2–OH is free on each residue",
+      "id": "structure_k",
+      "kind": "classification",
+      "raw_value": "C42H56O28 heptakis(3,6-anhydro)-β-CD: on every ¹C₄ α-D-glucopyranoside residue C1–O(glycosidic) is down/equatorial, C2–OH is down/axial, C3–O and C5–C6 are up/axial and joined by the O3–CH2(C6) ether bridge, and C4–O(glycosidic) is down/axial; no carbon stereocentre changes",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

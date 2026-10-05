@@ -1,0 +1,23 @@
+{
+  "target_id": "icho_2026_t8_a3",
+  "status": "completed",
+  "answer_summary": "Tick the bottom-right (seventh) choice: trans-[Fe(kappa4-N4-ligand 8)Cl2], a six-coordinate octahedral complex with four equatorial N donors and two trans axial chlorides.",
+  "theorem_names": [
+    "IChO2026Problems.T8A3.CoordinationModel.ligand8_leaves_two_trans_sites",
+    "IChO2026Problems.T8A3.derived_profile_of_complex1",
+    "IChO2026Problems.T8A3.geometry_1",
+    "IChO2026Problems.T8A3.geometry_1_unique"
+  ],
+  "assumptions": [
+    "Problem input: the Q8-1 ligand-8 drawing contains four pyridyl nitrogen donor atoms.",
+    "Problem input: Q8-2 prints aquation of 1 with loss of two chloride ions, fixing two coordinated chlorides in 1.",
+    "Trusted general coordination chemistry: the conjugated quaterpyridine donor set binds kappa4 in the equatorial plane of the six-coordinate Fe-N4Cl2 octahedral sphere."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a3.lean",
+    "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t8_a3.lean",
+    "python3 -m json.tool result.json",
+    "sha256sum TASK.json icho_2026_source/image/T8_page-1.png icho_2026_source/raw/theory_problem.pdf"
+  ]
+}

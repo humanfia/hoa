@@ -1,0 +1,34 @@
+{
+  "target_id": "icho_2026_t9_a4",
+  "status": "completed",
+  "answer_summary": "Y is the sixfold 6-O-tert-butyldimethylsilyl-protected 2,3-anhydro-alpha-cyclomannin: six alpha-(1->4)-linked 6-O-TBS-2,3-anhydro-D-mannopyranosyl units. On every supplied template repeat, CH2OTBS is up at C5/C6 and one upper-face oxygen bridges C2 and C3; C2 is inverted from glucose, C3 is retained, and the alpha glycosidic stereochemistry is unchanged. The structure is neutral, closed-shell, and has formula C72H132O24Si6.",
+  "theorem_names": [
+    "IChO2026Problems.Icho2026T9A4.alpha_cd_formula_from_six_glucoses",
+    "IChO2026Problems.Icho2026T9A4.reaction_repeat_is_protected_manno_epoxide",
+    "IChO2026Problems.Icho2026T9A4.alpha_anomer_retained",
+    "IChO2026Problems.Icho2026T9A4.c2_inverted_c3_retained",
+    "IChO2026Problems.Icho2026T9A4.epoxide_connectivity",
+    "IChO2026Problems.Icho2026T9A4.tbs_connectivity",
+    "IChO2026Problems.Icho2026T9A4.alpha_one_four_connectivity",
+    "IChO2026Problems.Icho2026T9A4.all_bonds_are_single",
+    "IChO2026Problems.Icho2026T9A4.neutral_and_closed_shell",
+    "IChO2026Problems.Icho2026T9A4.every_atom_has_normal_valence",
+    "IChO2026Problems.Icho2026T9A4.graph_formula_is_printed_formula",
+    "IChO2026Problems.Icho2026T9A4.reaction_formula_is_printed_formula",
+    "IChO2026Problems.Icho2026T9A4.structure_y"
+  ],
+  "assumptions": [
+    "Problem input: alpha-cyclodextrin has six alpha-D-glucopyranosyl units connected by alpha-(1->4) glycosidic bonds.",
+    "Problem input: the sequence uses 6 equivalents TBSCl in pyridine, then 12 equivalents NaH and 6 equivalents TsCl; Y is printed as C72H132O24Si6 and is converted by TBAF/hot water to the displayed alpha-cycloaltrin.",
+    "Trusted general chemistry: TBSCl/pyridine protects the primary O6 alcohols under the shown conditions.",
+    "Trusted general chemistry: O2 sulfonation followed by intramolecular O3 attack is an SN2 epoxide closure, so C2 inverts while C3 retains its configuration.",
+    "Only standard Lean logical axioms propext, Classical.choice, and Quot.sound occur in the final axiom report; no custom unchecked axiom is used."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T9_page-1.png icho_2026_source/image/T9_page-2.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t9_a4.lean",
+    "if grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t9_a4.lean; then exit 1; fi",
+    "python3 -m json.tool result.json"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "target": "icho_2026_t4_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301340.4906192,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t4_a3.lean": "4146d498482f0f7dbfb40a8f5b20b290fcf3e53e0bd200fcc8bf4825383b6a96",
+    "answer.md": "a17c016036c37625fb4de423e40ba7bbdc74983079e0711fbff36c4bef4cf23b",
+    "verification.md": "317636822edad51dd9fd42e585ca5e2aa1146522e571350741a3849a2d973790",
+    "result.json": "e044f3e9f3ce271f4b7b6c958cf8d26dbd53a9ca6b8eab8ca7bc118e02318a44"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a3",
+    "status": "completed",
+    "answer_summary": "235U + n -> 93Rb + 140Cs + 3 n, with full isotope and atomic-number notation; the two product masses match the graph maxima, mass number and nuclear charge are conserved, and Rb/Cs are both group-1 elements.",
+    "theorem_names": [
+      "IChO2026Problems.T4A3.source_mass_number_balance",
+      "IChO2026Problems.T4A3.emitted_neutron_count_forced",
+      "IChO2026Problems.T4A3.rubidium_caesium_same_group",
+      "IChO2026Problems.T4A3.partner_atomic_number_forced",
+      "IChO2026Problems.T4A3.mostCommonFission_uses_yield_peaks",
+      "IChO2026Problems.T4A3.mostCommonFission_conserves_mass_number",
+      "IChO2026Problems.T4A3.mostCommonFission_conserves_atomic_number",
+      "IChO2026Problems.T4A3.mostCommonFission_products_same_group",
+      "IChO2026Problems.T4A3.requested_fission_equation"
+    ],
+    "assumptions": [
+      "Problem-source observation: the fission-yield graph maxima are read at integer mass numbers 93 and 140.",
+      "Problem statement: uranium-235 absorbs one neutron and three neutrons are emitted.",
+      "Supplied periodic-table data: Rb has atomic number 37, Cs has atomic number 55, and both are in group 1.",
+      "Standard nuclear bookkeeping: a valid nuclear equation conserves mass number and atomic number."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t4_a3.lean",
+      "if grep -RInE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t4_a3.lean; then exit 1; else echo 'no forbidden proof shortcuts or custom axiom declarations'; fi",
+      "python3 -m json.tool result.json >/dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

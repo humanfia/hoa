@@ -1,0 +1,36 @@
+Review complete. All source, semantic, and proof checks executed with tools.
+
+```json
+{
+  "target_id": "icho_2026_t4_a7",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The requested output is the combustion enthalpy of methane at 2000 K. I independently verified the source pages (T4_page-2.png data table and T4_page-3.png question 4.7, hash-matched to TASK.json assets): ΔfH°298(CH4) = −74.8, ΔfH°298(H2O,g) = −241.8, ΔfH°298(CO2) = −393.5 kJ/mol; Cp(CH4) = 35, Cp(H2O,g) = 34, Cp(O2) = 29, Cp(CO2) = 37 J/mol/K; 2000 K target with all species gaseous. The candidate derives stoichiometry from atom balances (ν = (−1,−2,+1,+2) for CH4/O2/CO2/H2O), applies Hess's law (ΔrH°298 = −393.5 − 483.6 + 74.8 = −802.3 kJ/mol, with ΔfH°298(O2) = 0 as standard-state trusted law), and applies Kirchhoff's law with the problem's single (temperature-independent) Cp values (ΔCp = +12 J/mol/K; ΔrH2000 = −802.3 + 0.012·1702 = −781.876 kJ/mol), reported at 3 s.f. as −782 kJ/mol. My independent recomputation confirms every arithmetic step. The conditional fallbacks (−750, −700 kJ/mol) apply only when the corresponding part was unanswered and are correctly not used. The Lean file elaborates cleanly (lake env lean, exit 0), contains no sorry/admit/native_decide/custom axioms/unsafe, and both final theorems depend only on propext, Classical.choice, Quot.sound. Stoichiometry is proved from atom-balance constraints (CombustionStoichiometry.unique) rather than asserted, all numerical constants match the printed problem data verbatim, and the reporting certificate (reported_at_2000 / final_submission_valid) correctly encodes nearest-integer rounding of −781.876 to −782 under quantum 1 kJ/mol.",
+  "coverage": [
+    {
+      "output_id": "combustion_enthalpy_2000",
+      "status": "passed",
+      "theorem": "IChO2026Problems.Icho2026T4A7.reaction_enthalpy_2000_exact (with reported_at_2000 / final_submission_valid for the −782 kJ/mol reporting)",
+      "evidence": "reaction_enthalpy_2000_exact proves reactionEnthalpyAt combustion (ΔCp/1000) 2000 = −781.876 from the problem data: stoichiometry forced by atom balances + one-mole-CH4 normalization (CombustionStoichiometry.unique, proved via omega), Hess's law value −802.3 kJ/mol (reaction_enthalpy_298, norm_num over the exact data-table constants −74.8/−241.8/−393.5/0), ΔCp = 12 J/mol/K (reaction_heat_capacity over 37, 34, 35, 29), Kirchhoff's law −802.3 + 0.012·(2000−298). reported_at_2000 proves −782 is the nearest multiple of 1 kJ/mol to −781.876 (−782.5 < −781.876 ≤ −781.5), and final_submission_valid bundles the raw-expression equality with the reporting certificate per the answer-blind Reporting contract. Axioms: propext, Classical.choice, Quot.sound only; compiles with exit 0 and no warnings on the target file."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Inspected T4_page-2.png directly: Part 4.6 data table shows ΔfH°298(CH4) = −74.8 kJ/mol, ΔfH°298(H2O, gas) = −241.8 kJ/mol, ΔfH°298(CO2) = −393.5 kJ/mol, Cp(CH4) = 35, Cp(H2O, gas) = 34, Cp(O2) = 29, Cp(CO2) = 37 J/mol/K, plus the conditional red fallback ΔH298 = −750 kJ/mol.",
+    "Inspected T4_page-3.png directly: Part 4.7 reads 'Calculate ΔrH2000 (kJ/mol) per mole of methane combustion reaction at 2000 K. Assume all species are gaseous.' with conditional fallback ΔH2000 = −700 kJ/mol only if 4.7 unanswered.",
+    "SHA-256 of T4_page-2.png (60fade…) and T4_page-3.png (c9d3ff…) and theory_problem.pdf (af5137…) match TASK.json problem_assets entries, confirming the inspected images are the authorized originals.",
+    "Units (kJ/mol for enthalpies, J/mol/K for heat capacities) and significant figures of every given were transcribed correctly in both answer.md and the Lean formationEnthalpy298/heatCapacity tables; the J-to-kJ conversion (÷1000) in rawAnswer2000 is applied correctly.",
+    "Single Cp value per species with no temperature dependence printed → Kirchhoff's law with temperature-independent Cp is the problem-grounded model; the candidate discloses this scope explicitly.",
+    "Reaction CH4(g) + 2 O2(g) → CO2(g) + 2 H2O(g) matches the 'methane combustion, all species gaseous' stipulation in the shared context; connectivity/charge/stereochemistry not at issue for this numeric thermochemistry output."
+  ],
+  "proof_checks": [
+    "Lake build of IChO2026Chem completed successfully (8561 jobs); lake env lean on problem_icho_2026_t4_a7.lean exits 0 with no errors or warnings.",
+    "grep confirms no sorry, admit, native_decide, custom axiom declarations, or unsafe constructs in the problem file or shared IChO2026Chem modules.",
+    "#print axioms output (verified by me, matching verification.md): reaction_enthalpy_2000_exact and final_submission_valid depend only on [propext, Classical.choice, Quot.sound] — standard Lean logical axioms, no sorryAx.",
+    "CombustionStoichiometry.unique proves ν = (−1,−2,+1,+2) from C/H/O atom balances and the one-mole-of-methane constraint (omega), so the stoichiometric recipe is derived, not asserted as a precomputed table.",
+    "Theorem statements express the requested semantics: reactionEnthalpyAt encodes Kirchhoff's law (ΔH(T) = ΔH298 + ΔCp·(T−298)), reactionEnthalpy298/reactionHeatCapacity encode Hess-law sums with signed stoichiometric coefficients; numeric instances reduce by norm_num to exact decimals matching my independent recomputation (−802.3, 12, −781.876).",
+    "reported_at_2000 correctly instantiates the ReportsAtQuantum contract for a negative raw value (strict lower bound, inclusive upper bound: −782.5 < −781.876 ≤ −781.5); final_submission_valid ties the reported −782 to the exact solver-owned raw expression, not just to a displayed decimal.",
+    "No fallback values (−750, −700 kJ/mol) appear anywhere in the Lean development; the proofs use only problem-data constants."
+  ]
+}
+```

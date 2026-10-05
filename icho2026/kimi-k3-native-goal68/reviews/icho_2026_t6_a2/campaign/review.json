@@ -1,0 +1,60 @@
+Independence checks complete. Summary of what I verified and found:
+
+**Source verification (pixel-level):** Extracted the embedded raster of structure A from the blank answer sheet A6-1 (PDF page 57, image xref 759) without rendering ambiguity, plus scheme (1) from Q6-1. Confirmed: starting material perchloroanthracene C₁₄Cl₁₀ with 10 peripheral Cl; A drawn with exactly 8 peripheral Cl (the two 9,10-meso positions bear radical dots instead); arrows −2/−5/−2/−3/−1 Cl·; retro-Bergman scheme (1) opens the cyclic 1,4-diradical by breaking **one** σ-bond (between the two R-bearing ring members) to give hex-3-ene-1,5-diyne. The candidate's anthracene graph (14 C, 16 bonds) and `matchesGivenA` binding (8 Cl positions, radicals at the two meso carbons only) match the pixels.
+
+**Proof verification:** `lake build IChO2026Problems` succeeds (8564 jobs); no `sorry`/`admit`/`axiom`/`native_decide`/`unsafe` anywhere; my own independent `#print axioms` on all 20 final theorems shows only `propext`, `Classical.choice`, `Quot.sound`.
+
+**Material defects found:**
+1. **Structure C is topologically impossible and contradicts scheme (1).** The candidate breaks *both* bonds incident to meso carbon `cl` (`jb–cl` and `cl–jrB`). Since `cl` has no other neighbors in their own adjacency graph, `cl` becomes an isolated valence-0 carbon atom; C would be a C₁₃Cl tricycle-plus-fragment, and the final step (only −Cl·) could never yield monocyclic C₁₄ from this topology. Scheme (1) shows a *single* bond cleavage between the two ring members flanked by the radical pair (in anthracene terms, a fused junction edge such as `jrT–jrB`/`jt–jb`, or both fused edges for direct 14-ring expansion). The claim that `jb`,`jrB` form a "1,4-diradical junction pair" is wrong even in their encoding (ring para-pairs are cu↔cl, jt↔jrB, jrT↔jb). Additionally `opened_C_intact_elsewhere` sets *all* 13 remaining bonds to multiplicity 3 — a formal artifact inconsistent with enediyne chemistry.
+2. **Radical bookkeeping is inconsistent and underived.** Their stated mechanism is "each Cl· abstraction leaves one unpaired electron at the abstraction site." A = SM−2Cl· has 2 radicals at the abstraction sites (consistent). But B (A−5Cl·) would then have 7 radicals, D (A−3Cl·) 5 radicals; the submission asserts B=2 and D=3 via undisclosed, selectively-applied electron-pairing rules that differ between B and D. The "migration" of radicals to jb/jrB in C has no support on the page.
+3. **Residual-chlorine positions in B, C, D are free positional choices** (disclosed in answer.md/result.json as minimal-changes readings), so those bindings are conditional rather than derived. The Lean structures B/C/D are posited constructions whose properties are verified by `decide`, not derived from problem constraints.
+
+```json
+{
+  "target_id": "icho_2026_t6_a2",
+  "semantic_status": "failed",
+  "proof_status": "conditional",
+  "reason": "The submission correctly reads the source pixels it was built on: the A6-1 example A (8 peripheral Cl, radical dots on the two meso carbons, intact anthracene skeleton; verified image-independently from the embedded PDF raster) and the printed arrow stoichiometry, and the Lean development compiles cleanly with only standard axioms. However, the encoded structure C contradicts the drawn retro-Bergman mechanism (1): it breaks BOTH bonds incident to one meso carbon (jb-cl and cl-jrB), which strands that carbon as an isolated valence-0 atom (it has no other neighbors in the submission's own graph), mislabels jb/jrB as a 1,4-diradical pair (they are not para in the central ring under the submission's own ring definition), and sets all 13 remaining bonds to multiplicity 3, none of which resembles the single-bond-cleavage enediyne product drawn on the page; from this topology the final step (printed as only -Cl radical) cannot yield monocyclic C14. Radical-count bookkeeping is internally inconsistent with the submission's stated one-unpaired-electron-per-abstraction rule (B asserts 2 radicals after 5 further abstractions, D asserts 3 after 3 abstractions, with differently-applied undisclosed pairing rules). B and D are plausible readings but their residual-chlorine positions (and D's third-radical site) are disclosed assumptions, not derived from the page, so they receive conditional status.",
+  "coverage": [
+    {
+      "output_id": "structure_b",
+      "status": "conditional",
+      "theorem": "IChO2026T6A2.clCount_B, radTotal_B, skeletonIntact_B, step_A_B",
+      "evidence": "Proves molB = C14Cl3 (8->3 matches the printed -5Cl arrow; decide-proved), all 16 skeleton bonds intact, 2 meso radicals retained. Clean axioms [propext, Classical.choice, Quot.sound]. However B is a posited construction: chloride positions {lt,lbl,rl} are admitted positional guesses not determined by the AFM frames, and retaining exactly the 2 meso radicals after 5 further Cl abstractions requires electron-pairing beyond the submission's stated abstraction rule; correctly proved only on top of these disclosed conditions."
+    },
+    {
+      "output_id": "structure_c",
+      "status": "failed",
+      "theorem": "IChO2026T6A2.clCount_C, radTotal_C, opened_C_broken, opened_C_intact_elsewhere",
+      "evidence": "The theorems prove what they state about molC, but the encoded structure is source-inconsistent: broken bond set {jb-cl, cl-jrB} disconnects carbon cl entirely (its only neighbors are jb, jrB in skelAdj, so cl becomes an isolated atom in 'C14Cl1'), contradicting the retro-Bergman scheme (1) which opens a single sigma bond to an enediyne; the jb/jrB '1,4-diradical junction pair' is not a para pair in the submission's own central ring; radical 'migration' to jb/jrB is unsupported; opened_C_intact_elsewhere forces multiplicity 3 on all 13 remaining bonds, an impossible valence assignment inconsistent with the drawn enediyne; and from this topology the final printed -Cl step cannot produce monocyclic C14. Formula C14Cl1 (3->1) matches the printed arrow, but structure C as drawn/unfolded is wrong."
+    },
+    {
+      "output_id": "structure_d",
+      "status": "conditional",
+      "theorem": "IChO2026T6A2.clCount_D, radTotal_D, skeletonIntact_D, step_A_D",
+      "evidence": "Proves molD = C14Cl5 (8->5 matches the printed -3Cl arrow), intact skeleton, 3 unpaired electrons. Clean axioms. But the triradical count (2 meso + 1 at rt) is an ad hoc pairing choice inconsistent with the submission's own one-radical-per-abstraction rule (which would give 5), and the site rt of the third radical plus the residual chloride set {lt,ltu,lb,lbl,rl} are disclosed positional assumptions not forced by the grey AFM frame of D; proved conditional on that reading."
+    }
+  ],
+  "unsupported_assumptions": [
+    "Residual chloride positions {lt,lbl,rl} in B, {lt} in C, and dechlorination sites {rt,rr,rb} in D: positional readings not determined by the AFM frames (disclosed by the candidate but not derivable)",
+    "Selective electron-pairing rule letting B retain exactly 2 radicals after 5 further Cl abstractions while D has exactly 3 after 3 abstractions, contradicting the candidate's stated one-unpaired-electron-per-abstraction bookkeeping (would give 7 and 5)",
+    "Radical 'migration' to junctions jb and jrB in the alleged retro-Bergman product C, and alkyne multiplicity assigned to all remaining bonds: no support in the drawn scheme (1) or general mechanism",
+    "Opening two sigma bonds incident to a single carbon as 'the retro-Bergman step': scheme (1) shows cleavage of one bond to an open-chain enediyne; the claimed two-bond cleavage has no mechanistic basis"
+  ],
+  "source_checks": [
+    "Q6-1 (PDF page index 51) inspected directly: starting material C14Cl10 (10 peripheral Cl on anthracene periphery, junctions bare), arrows -2Cl to A, -5Cl to B, -2Cl to C, -1Cl to C14, A -3Cl to D; AFM frames for A/B/D show fused-ring (multi-lobed) outlines while C/C14 show ring-like contours",
+    "Embedded raster of example A extracted losslessly from blank answer sheet A6-1 (image xref 759+760 with soft mask): confirms exactly 8 Cl on the perimeter and radical dots on the two 9,10-meso carbons; candidate's matchesGivenA 18 clauses match these pixels",
+    "Scheme (1) raster extracted from Q6-1 (xref 694+695): cyclic 1,4-diradical ring opens by ONE bond cleavage to (Z)-hex-3-ene-1,5-diyne; contradicts the candidate's two-bond cleavage at a single vertex for structure C",
+    "Verified the candidate's anthracene graph is topologically valid (14 carbons, 4 junctions, 2 meso, 8 peripheral, 16 sigma bonds) and that '1,4-related' pairs in its central ring are cu/cl, jt/jrB, jrT/jb - so jb,jrB is NOT a 1,4 pair as claimed",
+    "Confirmed breaking both fused junction edges (not the candidate's bond pair) is the only bond set that expands the anthracene skeleton directly to the 14-membered monocycle needed before the final printed -Cl step"
+  ],
+  "proof_checks": [
+    "Independent build: lake build IChO2026Problems completes (8564 jobs); direct lake env lean on the problem file also verified",
+    "Independent #print axioms on all 20 final theorems recreated in a scratch file outside the workspace: only propext, Classical.choice, Quot.sound appear; no custom or unchecked axioms",
+    "grep of IChO2026Problems, IChO2026Chem, IChO2026Run shows no sorry/admit/axiom/native_decide/unsafe in any proof position",
+    "Helper modules (Core.lean, Reporting.lean, Basic.lean, Dependencies.lean) inspected: Reporting defines only inert numerical conventions unused by this classification target",
+    "Theorem statements express claimed structures as explicit per-atom/per-pair records (Cl: Skel->Bool, rad: Skel->nat, mult: Skel->Skel->nat) rather than string equalities; proofs are genuine decide/simp/fin_cases with no vacuous premises",
+    "Caveats: molB/molC/molD are assumed constructions whose properties are verified rather than derived from problem constraints; opened_C_intact_elsewhere bakes the result-shaped multiplicity-3 assignment into the structure definition itself; matchesGivenA correctly binds the encoded A to 18 pixel-verified facts"
+  ]
+}
+```

@@ -1,0 +1,62 @@
+{
+  "target": "icho_2026_t2_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301040.3435197,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t2_a7.lean": "e591b9056f17a51389d126e61bdbed691cf8781a24e3cba1418f8cf3d261de63",
+    "answer.md": "10b53dc9268ceeb4fb483bcdd5df6138c60b383cf713e9c78e86ca565c8a820f",
+    "verification.md": "fcfa048f1ab8a7e75cb36dd446de4f5ee986d93a6c209be6ce78dda334b29d07",
+    "result.json": "604ca53d7e6ca92345873f8221e8e4aca479f8712552e59940ad9f3e741ce998"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a7",
+    "status": "completed",
+    "answer_summary": "Under the standard fixed-temperature, fixed-pressure spontaneous-reaction interpretation, tick the bottom-right (third-row, right-column) graph: dG/dt remains nonpositive, oscillates with decaying amplitude, and tends to zero from below.",
+    "theorem_names": [
+      "IChO2026Problems.T2A7.stepGibbsRate_nonpositive",
+      "IChO2026Problems.T2A7.gibbs_tends_to_infimum",
+      "IChO2026Problems.T2A7.stepGibbsRate_tends_to_zero",
+      "IChO2026Problems.T2A7.closed_oscillatory_rate_constraints",
+      "IChO2026Problems.T2A7.gibbsDerivative_nonpositive",
+      "IChO2026Problems.T2A7.continuous_gibbs_rate_constraints",
+      "IChO2026Problems.T2A7.satisfies_constraints_iff_bottomRight",
+      "IChO2026Problems.T2A7.gibbs_rate_graph_answer",
+      "IChO2026Problems.T2A7.closed_oscillatory_system_selects_bottomRight",
+      "IChO2026Problems.T2A7.continuous_system_selects_bottomRight",
+      "IChO2026Problems.T2A7.selectedGraph_eq_bottomRight"
+    ],
+    "assumptions": [
+      "The standard Gibbs-energy criterion applies: the closed system evolves spontaneously at fixed temperature and pressure with no non-expansion work, so Gibbs energy is nonincreasing.",
+      "The finite reacting system has Gibbs energy bounded below and relaxes toward equilibrium.",
+      "The source phrase oscillatory reaction is represented qualitatively by an oscillatory Gibbs-dissipation rate; no numerical period or amplitude is assumed."
+    ],
+    "source_gaps": [
+      "The problem says closed but does not explicitly state fixed temperature and pressure or the absence of non-expansion work; closedness alone is insufficient for an unconditional dG/dt <= 0 claim.",
+      "The problem supplies no concrete differentiable time law. The continuous Lean theorem therefore keeps differentiability, rate oscillation, and relaxation to zero as explicit model premises; a separate discrete theorem derives the analogous sign and limiting facts from monotonicity and a lower bound without inventing a kinetic function."
+    ],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T2_page-4.png icho_2026_source/image/T2_page-3.png icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t2_a7.lean",
+      "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t2_a7.lean; then echo 'forbidden proof shortcut found'; exit 1; else echo 'no sorry/admit/unsafe proof shortcut found'; fi",
+      "python3 -m json.tool result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

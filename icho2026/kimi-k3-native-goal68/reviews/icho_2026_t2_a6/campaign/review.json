@@ -1,0 +1,53 @@
+All checks complete. The Lean file compiles cleanly (verified independently), its final theorems tick exactly the boxes answer.md reports, and every conclusion was cross-checked against the source images Q2-2, Q2-3 and Q2-4.
+
+```json
+{
+  "target_id": "icho_2026_t2_a6",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The four classifications (1→c, 2→d, 3→b, 4→e) are correct and fully justified by the problem's own stated machinery, independently verified against source pages Q2-2 (mechanism, k1=1.0e4, k4=2.0e9, k7=1.0e2, [BrO3-]0=0.06 M, [H+]0=0.8 M, 'Process C occurs continuously', reactants/pH constant), Q2-3 (phase portrait, switching criterion r4 vs r1, [Br-]max=7.0e-4 M slow drain to [Br-]critical), and Q2-4 (the four actions and boxes a-e, one box per case). The derived [Br-]critical = k1[BrO3-]/k4 = 3.0e-7 M re-derives the T2-A3 dependency inline from printed constants (and is consistent with the problem's 1e-7 M fallback since the verdict depends only on threshold sign, not magnitude). Semantics: (1) During A, [Br-] must stay below critical; added Ce4+ accelerates the continuous step (7) Ce4+ + BMA -> Ce3+ + Br-, pushing [Br-] up to critical => A switches to B (c) — for 'small amount' read in the tick-box sense, matching the intended one-box-per-case semantics. (2) Ag+ precipitates Br- as sparingly soluble AgBr (ordinary general-chemistry law, explicitly and accurately disclosed as the one unprinted premise) lowering [Br-] toward critical during B => B switches to A (d). (3) Added Br- during B raises [Br-] away from critical, lengthening the drain => prolongs B (b). (4) Continuous Br- feed pins [Br-] above critical so r4 > r1 forever and the B->A switch never fires => oscillations stop (e). The Lean development formalizes the rate laws, derives the BrCrit threshold and proves both rate directions (rate4_gt_rate1_iff), the monotonicity facts behind each action, and evaluates the classifier definitionally; action1..4 and answer_summary are rfl-proved definitional equalities whose mapping (balanceEffectOf) is justified in-prose and backed per action by proved kinetic lemmas (action1..4_chemistry). Coarse as any formalization of qualitative tick-box chemistry must be, every science step invoked is grounded in the problem statement plus one accurately-scoped standard law (AgBr precipitation). Recompiled independently: exit 0, no warnings, no sorry/admit/native_decide/custom axioms; #print axioms shows the four answer theorems depend on no axioms and the kinetic lemmas only on propext/Classical.choice/Quot.sound.",
+  "coverage": [
+    {
+      "output_id": "action_1",
+      "status": "passed",
+      "theorem": "IChO2026.T2.A6.answer_action1",
+      "evidence": "answerOf .addCe4DuringA = .switchAtoB (box c), by rfl. Justified: step (7) Ce4+ + BMA -> Ce3+ + Br- (Q2-2) is continuous and is the Br- source; ce4_raises_bromide_flux proves r7 = k7[Ce4+][BMA] strictly increasing in [Ce4+]; the extra Br- pushes [Br-] during Process A (which exists only below BrCrit) to the threshold where above_crit_forces_B gives r4 > r1, the problem's stated A->B switch. The Ce-independence of [HBrO2]_A (part 2.2 steady state, no cerium factor) rules out prolonging A."
+    },
+    {
+      "output_id": "action_2",
+      "status": "passed",
+      "theorem": "IChO2026.T2.A6.answer_action2",
+      "evidence": "answerOf .addAgDuringB = .switchBtoA (box d), by rfl; backed by action2_chemistry / below_crit_forces_A (b < BrCrit => r1 > r4 over ℝ). Chemistry: Ag+ removes free Br- as sparingly soluble AgBr(s) — the single unprinted premise, accurately disclosed in answer.md/result.json as ordinary general chemistry (a trusted_general_law under the domain policy); removal during the B-leg drain (BrMax -> BrCrit per Q2-3) reaches the threshold sooner, firing the B->A switch."
+    },
+    {
+      "output_id": "action_3",
+      "status": "passed",
+      "theorem": "IChO2026.T2.A6.answer_action3",
+      "evidence": "answerOf .addBrDuringB = .prolongsB (box b), by rfl; backed by addition_delays_switch_from_B (adding Δb > 0 strictly increases b - BrCrit). Semantics grounded in the Q2-3 statement that [Br-] slowly drains from 7.0e-4 M to [Br-]critical during Process B; raising the starting level lengthens the drain and hence prolongs Process B."
+    },
+    {
+      "output_id": "action_4",
+      "status": "passed",
+      "theorem": "IChO2026.T2.A6.answer_action4",
+      "evidence": "answerOf .feedBrContinuous = .oscillationsStop (box e), by rfl; backed by action4_chemistry / above_crit_forces_B (b > BrCrit => r4 > r1). A continuous Br- feed keeps [Br-] above critical indefinitely, so rate4_gt_rate1_iff (for any [HBrO2] > 0) makes r4 > r1 permanent; the B->A switch can never fire and oscillations stop."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Q2-4 (T2_page-4.png) inspected directly: four actions (Ce4+ during A, Ag+ during B, Br- during B, continuous Br-) and boxes (a) prolongs A, (b) prolongs B, (c) A->B, (d) B->A, (e) oscillations stop, 'Tick only one box (a-e) for each case', 4.0 pt — matches TASK.json and candidate mapping exactly.",
+    "Q2-3 (T2_page-3.png) inspected directly: switching criterion 'to switch Process A to Process B, the reaction rate of the elementary step (4) must exceed that of the elementary step (1) and vice versa'; phase portrait with [Br-]critical below [Br-]max; '[Br-] slowly decreases from [Br-]max = 7.0e-4 M to [Br-]critical' — grounds the B-leg drain used in actions 2-4 and BrCrit_lt_BrMax.",
+    "Q2-2 (T2_page-2.png) inspected directly: steps (1), (4), (7) and constants k1 = 1.0e4 M^-2 s^-1, k4 = 2.0e9 M^-2 s^-1, k7 = 1.0e2 M^-1 s^-1; BMA = CHBr(COOH)2; 'Process C occurs continuously, while Processes A and B alternate'; [BrO3-]0 = 0.06 M, [H+]0 = 0.8 M, reactants (except Ce4+) and pH maintained constant — all constants in the Lean file match the printed values.",
+    "T2-A3 dependency: [Br-]critical = k1[BrO3-]/k4 = 3.0e-7 M derived inline from problem-stated rates (BrCrit_value, proved by norm_num); consistent with problem-stated fallback 1e-7 M since all classifications depend only on the sign of [Br-] - [Br-]critical (BrCrit < BrMax holds for both 3e-7 and 1e-7).",
+    "AgBr low solubility: checked as ordinary general reference chemistry (Ag+ + Br- -> AgBr(s), Ksp ~ 5e-13) and explicitly disclosed by the candidate as an assumption; allowed under trusted_general_law of the domain policy. No official solutions, rubrics or answer repositories were consulted.",
+    "PDF text extraction tools unavailable in environment (no pdftotext/pypdf); the answer-sheet grid framing therefore could not be re-inspected in the PDF, but it is not needed for source verification since boxes a-e are printed in full on Q2-4 itself."
+  ],
+  "proof_checks": [
+    "Independent recompilation: timeout 1800 lake env lean IChO2026Problems/problem_icho_2026_t2_a6.lean exited 0 with no errors/warnings; output reproduced exactly the axiom report claimed in verification.md.",
+    "#print axioms: answer_action1..4 and answer_summary 'does not depend on any axioms'; rate4_gt_rate1_iff and action1_chemistry depend only on [propext, Classical.choice, Quot.sound] — standard Lean logical axioms only.",
+    "grep over all candidate Lean sources found no sorry/admit/native_decide/unsafe/custom axiom declarations.",
+    "rate4_gt_rate1_iff proof checked line-by-line: correctly cancels positive factors X and H+ via mul_lt_mul equivalences and div_lt_iff₀, deriving r4 > r1 iff b > k1*BrO3/k4; above_crit_forces_B and below_crit_forces_A are sound corollaries (the latter via sub-positivity and ring). No result-shaped assumptions; all quantitative lemmas are proved from definitional rate laws over ℝ.",
+    "Final theorems genuinely express the requested outputs: Effect and Action inductives mirror the printed boxes/actions one-to-one, classify_unique proves uniqueness (one box per case), answers_all_distinct confirms the four ticks are distinct, and answer_summary assembles exactly the grid 1->c, 2->d, 3->b, 4->e matching answer.md.",
+    "Proof architecture is a definitional classifier whose mappings are justified by proved kinetic lemmas plus problem-stated qualitative dynamics (open system, continuous Process C, threshold switching) — appropriately scoped: Per the schema, classifications are evaluated by whether sign/monotonicity of the bromide balance change is proved (ce4_raises_bromide_flux, bromide_removal_lowers_level, bromide_addition_raises_level, removal_hastens_switch_from_B, addition_delays_switch_from_B), not by precomputed answer tables; the uniformly quantified kinetic lemmas force consistency with the model rather than asserting conclusions."
+  ]
+}
+```

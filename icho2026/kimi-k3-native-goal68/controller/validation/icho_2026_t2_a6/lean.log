@@ -1,0 +1,7 @@
+'IChO2026.T2.A6.answer_action1' does not depend on any axioms
+'IChO2026.T2.A6.answer_action2' does not depend on any axioms
+'IChO2026.T2.A6.answer_action3' does not depend on any axioms
+'IChO2026.T2.A6.answer_action4' does not depend on any axioms
+'IChO2026.T2.A6.answer_summary' does not depend on any axioms
+'IChO2026.T2.A6.rate4_gt_rate1_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T2.A6.action1_chemistry' depends on axioms: [propext, Classical.choice, Quot.sound]

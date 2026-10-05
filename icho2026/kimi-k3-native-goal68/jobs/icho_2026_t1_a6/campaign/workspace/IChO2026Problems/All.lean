@@ -1,0 +1,1 @@
+import IChO2026Problems.problem_icho_2026_t1_a6

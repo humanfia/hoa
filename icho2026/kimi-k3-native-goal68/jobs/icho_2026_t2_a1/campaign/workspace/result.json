@@ -1,0 +1,32 @@
+{
+  "target_id": "icho_2026_t2_a1",
+  "status": "completed",
+  "answer_summary": "Overall balanced BZ reaction: 3 CH2(COOH)2 (malonic acid) + 4 BrO3- -> 9 CO2 + 4 Br- + 6 H2O. Atoms conserved (C 9=9, H 12=12, O 24=24, Br 4=4) and charge conserved (-4=-4). Derived by the half-reaction method from the problem-stated notes: MA -> CO2 releases 8 e- per MA, BrO3- -> Br- consumes 6 e- per bromate, lcm(8,6)=24 gives the 3:4 stoichiometry; Ce(IV) is a catalyst and cancels out, K+ and sulfate are spectators.",
+  "theorem_names": [
+    "IChO2026.overallBZ_isBalanced",
+    "IChO2026.overallBZ_atom_balance",
+    "IChO2026.overallBZ_charge_balance",
+    "IChO2026.oxidation_half_reaction_balance",
+    "IChO2026.reduction_half_reaction_balance",
+    "IChO2026.electron_lcm",
+    "IChO2026.cerium_is_catalyst_balance"
+  ],
+  "assumptions": [
+    "All species and redox directions are taken from the problem statement and its note (MA oxidised to CO2, BrO3- reduced to Br-, Ce(IV) catalyst, acidic H2SO4 medium).",
+    "Standard oxidation-number conventions H=+1, O=-2 (fractional averages allowed) used only to derive the electron ledger; the final equation is certified by atom and charge balance, which is premise-free.",
+    "K+ and SO4(2-) treated as spectator ions of the stated reactant salts/medium; they appear on neither side of the overall equation."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake env lean --root=. IChO2026Problems/problem_icho_2026_t2_a1.lean",
+      "exit_code": 0,
+      "output": "'IChO2026.overallBZ_isBalanced' does not depend on any axioms\n'IChO2026.overallBZ_atom_balance' does not depend on any axioms\n'IChO2026.overallBZ_charge_balance' does not depend on any axioms\n'IChO2026.oxidation_half_reaction_balance' does not depend on any axioms\n'IChO2026.reduction_half_reaction_balance' does not depend on any axioms\n'IChO2026.electron_lcm' does not depend on any axioms"
+    },
+    {
+      "command": "grep -nE \"sorry|admit|^axiom|unsafe|set_option\" IChO2026Problems/problem_icho_2026_t2_a1.lean",
+      "exit_code": 0,
+      "output": "44:axioms.  (Protons appear in the half-reactions but cancel in the overall   (documentation comment only; no proof shortcuts present)"
+    }
+  ]
+}

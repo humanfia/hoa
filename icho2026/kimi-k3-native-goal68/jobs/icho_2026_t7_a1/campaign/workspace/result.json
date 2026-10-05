@@ -1,0 +1,36 @@
+{
+  "target_id": "icho_2026_t7_a1",
+  "status": "completed",
+  "answer_summary": {
+    "gases_m1": ["N2", "CO", "H2"],
+    "gases_m2": ["N2", "H2", "NH3"],
+    "xy_relation": "x > y"
+  },
+  "theorem_names": [
+    "IChO2026T7A1.composition_M1",
+    "IChO2026T7A1.M1_mem_N2",
+    "IChO2026T7A1.M1_mem_CO",
+    "IChO2026T7A1.M1_mem_H2",
+    "IChO2026T7A1.M1_complete",
+    "IChO2026T7A1.composition_M2",
+    "IChO2026T7A1.M2_mem_N2",
+    "IChO2026T7A1.M2_mem_H2",
+    "IChO2026T7A1.M2_mem_NH3",
+    "IChO2026T7A1.M2_complete",
+    "IChO2026T7A1.xy_relation_from_balances",
+    "IChO2026T7A1.xy_relation"
+  ],
+  "assumptions": [
+    "Problem figure Fig.1 (T7_page-1.png, printed page 1, source page 63 of theory_problem.pdf): reactions (I) CH4+H2O->CO+3H2, (II) 2CH4+O2->2CO+4H2, (III) CO+H2O->CO2+H2; air feed 4N2+1O2; stipulation that all reactions except NH3 formation are quantitative.",
+    "Trusted general law: conservation of chemical elements (C/H/O/N balances).",
+    "Reading of the single printed feed line xCH4 + yH2O as x = (reformed CH4 + POX CH4) and y = (steam for the reformed part, 1:1 with reformed CH4)."
+  ],
+  "source_gaps": [
+    "The problem page does not print the candidate list of x-y relations to tick and the provided theory_problem.pdf contains no separate T7 answer-sheet page; the strict identity 2x = 3y is not derivable from the T7-A1 problem inputs alone — only the order relation x > y is forced (proved).",
+    "Compositions of M1 and M2 are fully determined by the problem figure and are not a gap."
+  ],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t7_a1.lean  (exit 0, no errors/warnings)",
+    "#print axioms on all listed theorems -> only [propext, Classical.choice, Quot.sound]; no sorryAx, no custom axiom"
+  ]
+}

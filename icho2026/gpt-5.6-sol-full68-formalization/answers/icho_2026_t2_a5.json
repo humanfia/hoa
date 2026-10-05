@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t2_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "48.1",
+      "id": "oscillation_period",
+      "kind": "numeric",
+      "raw_value": "(3125/504)*ln(7000/3)",
+      "unit": "s"
+    }
+  ],
+  "schema_version": 1
+}

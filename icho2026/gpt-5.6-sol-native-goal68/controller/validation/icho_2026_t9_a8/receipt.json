@@ -1,0 +1,60 @@
+{
+  "target": "icho_2026_t9_a8",
+  "goal_status": "goal_complete",
+  "checked_at": 1789303263.8466985,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a8.lean": "80a8db8e3674663abf662609991575332ff555f2a05caaa794dd16933b67e5fe",
+    "answer.md": "52ff01008080135e3fe0d75a631ae6dae514c9f85df9caa081f1867bda3fd249",
+    "verification.md": "8a3eca188e41cf3f50ba241219f6abd1b0e4ce09c721b9d9f815df63b0106133",
+    "result.json": "ef5ac142f6229bb6f28fbaa834ab6676787aad5a734bfa734d8491c5219344f0"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a8",
+    "status": "completed",
+    "answer_summary": "O is 1-vinyl; P is 1-vinyl/2-azido; Q joins unit-2 CH2NH and unit-5 CH2O with an N/O methallyl bridge; R protects that nitrogen with Boc and installs CH2N3 at unit 6; S replaces N-Boc by N-Bn. Units 3 and 4, plus every otherwise unmodified primary site, retain CH2OBn, and all twelve secondary sites retain OBn.",
+    "theorem_names": [
+      "IChO2026Problems.T9A8.structure_o",
+      "IChO2026Problems.T9A8.structure_p",
+      "IChO2026Problems.T9A8.structure_q",
+      "IChO2026Problems.T9A8.structure_r",
+      "IChO2026Problems.T9A8.structure_s",
+      "IChO2026Problems.T9A8.structure_q_bridge_connectivity",
+      "IChO2026Problems.T9A8.all_requested_structures_fully_specified",
+      "IChO2026Problems.T9A8.requested_outputs"
+    ],
+    "assumptions": [
+      "Problem-stated source facts: alpha-CD has six alpha-D-glucopyranoside residues; 1,2 selection is clockwise; 1,3 selection is counterclockwise; protic directing groups dominate alkenes; an NH/OH director selects the opposite unit and falls back to the 1,3 unit if the opposite site is unavailable.",
+      "Trusted general reaction laws specialized and checked as partial Lean functions: Swern oxidation followed by methylene Wittig olefination converts CH2OH to CH=CH2; alkene-directed DIBAL-H removes the selected primary O-benzyl group; MsCl/NaN3 converts CH2OH to CH2N3; DIBAL-H reduces CH2N3 to CH2NH2 while effecting the directed debenzylation; NaH with ClCH2-C(=CH2)-CH2Cl makes the N/O bridge; Boc2O and CF3COOH protect/deprotect the bridge nitrogen; NaH/BnI N-benzylates it.",
+      "Hydrogens omitted by the skeletal source drawing are represented by valence-implied attached-hydrogen counts in Lean. The azide is represented by the charge-explicit resonance form CH2-N=N(+)=N(-).",
+      "No supplementary user-model assumptions, custom axioms, official solutions, marking schemes, answer repositories, or prior competition answers are used."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum TASK.json icho_2026_source/image/T9_page-3.png icho_2026_source/image/T9_page-4.png icho_2026_source/raw/theory_problem.pdf",
+      "python3 (PyMuPDF page-count/text-label inspection of PDF pages 87, 92, and 93; exact script recorded in verification.md)",
+      "if grep -RInE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t9_a8.lean; then exit 1; else echo 'No forbidden Lean placeholders or custom axiom declarations found.'; fi",
+      "lake env lean IChO2026Problems/problem_icho_2026_t9_a8.lean",
+      "python3 -m json.tool result.json >/dev/null",
+      "if grep -nE '^(<<<<<<<|=======|>>>>>>>)|[[:blank:]]$' answer.md verification.md result.json IChO2026Problems/problem_icho_2026_t9_a8.lean; then exit 1; else echo 'No conflict markers or trailing whitespace found.'; fi",
+      "python3 (SHA-256 comparison of every lake_skeleton_files entry against isolation_manifest.json; exact script recorded in verification.md)"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

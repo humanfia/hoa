@@ -1,0 +1,40 @@
+{
+  "target_id": "icho_2026_t6_a7",
+  "status": "completed",
+  "answer_summary": "P6 is a six-porphyrin nanobelt with two butadiyne bridges per meso-meso junction. Along the continuous global pi pathway each porphyrin unit contributes 7 double-bond equivalents (3 porphyrin-rim C=C plus 2 used doubles from each of the 2 butadiyne bridges), i.e. 14 pi electrons, so neutral P6 has 6 x 14 = 84 = 4 x 21 pi electrons (globally anti-aromatic, matching the problem statement). The first Hueckel 4k+2 count reached by oxidation is 82 = 4 x 20 + 2, so the minimum number of electrons to remove is n(e) = 2 and the global aromatic system holds n(t) = 82 pi electrons.",
+  "requested_outputs": {
+    "minimum_electrons_removed": 2,
+    "global_pi_electron_count": 82
+  },
+  "theorem_names": [
+    "IChO2026T6A7.minimum_electrons_removed",
+    "IChO2026T6A7.global_pi_electron_count",
+    "IChO2026T6A7.p6_neutral_count",
+    "IChO2026T6A7.p6_neutral_not_globally_aromatic",
+    "IChO2026T6A7.nt_plus_ne_eq_neutral",
+    "IChO2026T6A7.neutral_eq_nt_plus_ne",
+    "IChO2026T6A7.residual_4e_antiaromatic",
+    "IChO2026T6A7.huckel_82_aromatic",
+    "IChO2026T6A7.huckel_80_antiaromatic",
+    "IChO2026T6A7.huckel_84_antiaromatic",
+    "IChO2026T6A7.huckel_83_not_aromatic",
+    "IChO2026T6A7.huckel_84_not_aromatic",
+    "IChO2026T6A7.huckelLabel_aromatic_disjoint_antiaromatic"
+  ],
+  "assumptions": [
+    "Hueckel's rule (4k+2 aromatic / 4k anti-aromatic for a closed cyclic conjugated pi system) is the trusted general law the question explicitly invokes.",
+    "Problem-input structural facts read from the given drawings on T6 pages 4-5: P6 has 6 porphyrin units; adjacent porphyrins are joined meso-to-meso by two butadiyne bridges; the continuous global pathway uses 3 porphyrin-rim C=C bonds and 2 used alkyne pi doubles per bridge, i.e. 7 double-bond equivalents per porphyrin unit (14 pi electrons); the counting rule (only the continuous conjugated pathway counts, one C=C per arylene-type unit as bolded in the [n]CPP example) is stated in the problem text.",
+    "Standard Lean logical axioms (propext, Quot.sound) are permitted; no custom axioms were introduced."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t6_a7.lean",
+      "result": "exit code 0; no errors or warnings"
+    },
+    {
+      "command": "#print axioms on minimum_electrons_removed, global_pi_electron_count, p6_neutral_not_globally_aromatic, huckelLabel_aromatic_disjoint_antiaromatic (embedded at end of the .lean file)",
+      "result": "each theorem depends only on [propext, Quot.sound]; no sorryAx and no custom axioms"
+    }
+  ]
+}

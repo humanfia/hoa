@@ -1,0 +1,558 @@
+{
+  "at": 1789398469.5664709,
+  "targets": 68,
+  "all_original_and_copy_hashes_fresh": true,
+  "all_structured_verdicts_reproduced": true,
+  "all_alternate_receipts_fresh": true,
+  "review_errors": [
+    "icho_2026_t5_a3",
+    "icho_2026_t8_a5"
+  ],
+  "scope": "All 68 candidate and review-copy receipt hashes; strict review schema and aggregate gate replay; alternate Lean source hashes. Not official-answer grading.",
+  "rows": [
+    {
+      "target": "icho_2026_t1_a1",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t1_a2",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t1_a3",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t1_a4",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t1_a5",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t1_a6",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t2_a1",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t2_a2",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t2_a3",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t2_a4",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t2_a5",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t2_a6",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t2_a7",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t3_a1",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t3_a2",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t3_a3",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t3_a4",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t3_a5",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t3_a6",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": true,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t3_a7",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t4_a1",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t4_a2",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t4_a3",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t4_a4",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t4_a5",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t4_a6",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": true,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t4_a7",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t4_a8",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t4_a9",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t5_a1",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t5_a2",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t5_a3",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": null,
+      "alternate_source_fresh": null,
+      "review_status": "review_error"
+    },
+    {
+      "target": "icho_2026_t5_a4",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t5_a5",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t5_a6",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t6_a1",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t6_a2",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t6_a3",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t6_a4",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t6_a5",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t6_a6",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t6_a7",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t7_a1",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t7_a2",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t7_a3",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t7_a4",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t7_a5",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t7_a6",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t7_a7",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t8_a1",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t8_a2",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t8_a3",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t8_a4",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t8_a5",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": null,
+      "alternate_source_fresh": null,
+      "review_status": "review_error"
+    },
+    {
+      "target": "icho_2026_t8_a6",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t8_a7",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t8_a8",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t8_a9",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t8_a10",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t9_a1",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t9_a2",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t9_a3",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t9_a4",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t9_a5",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t9_a6",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t9_a7",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t9_a8",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    },
+    {
+      "target": "icho_2026_t9_a9",
+      "original_hashes_fresh": true,
+      "reviewer_copy_hashes_fresh": true,
+      "verdict_reproduced": true,
+      "alternate_source_fresh": null,
+      "review_status": "reviewed"
+    }
+  ]
+}

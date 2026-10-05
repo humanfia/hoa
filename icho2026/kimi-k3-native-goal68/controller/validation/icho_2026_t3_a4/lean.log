@@ -1,0 +1,15 @@
+'IChO2026.T3.t3_a4_main' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T3.cof3Content_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T3.cof3_empirical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T3.cof4Content_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T3.cof5Content_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T3.cof3_cof4_hydrogen_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T3.imine_condensation_balance' does not depend on any axioms
+'IChO2026.T3.patterns_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T3.monomer_hydrogen_content' does not depend on any axioms
+'IChO2026.T3.cof3_has_imine' does not depend on any axioms
+'IChO2026.T3.cof4_different_CN' does not depend on any axioms
+'IChO2026.T3.cof4_benzoxazole_hydrogen_balance' does not depend on any axioms
+'IChO2026.T3.cof6_no_imine' does not depend on any axioms
+'IChO2026.T3.cof5_cof6_isomerisation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T3.cof6_is_keto_enamine' does not depend on any axioms

@@ -1,0 +1,30 @@
+{
+  "target_id": "icho_2026_t5_a2",
+  "status": "completed",
+  "answer_summary": "One valid PL1 enantiomer is the cardiolipin constitution with identical R residues and R configuration at both peripheral glycerol C2 stereocentres; its mirror is S,S and the mixed assignments are meso. Monoanion Y has one deprotonated phosphate and one protonated phosphate folded around the central glycerol OH, which donates to the anionic phosphate and accepts from the remaining P-OH. The two hydrogen bonds give symmetry-related left- and right-deprotonated canonical forms and make the second deprotonation less favourable.",
+  "theorem_names": [
+    "IChO2026Problems.T5A2.structure_pl1",
+    "IChO2026Problems.T5A2.structure_y",
+    "IChO2026Problems.T5A2.preceding_part_n_is_odd",
+    "IChO2026Problems.T5A2.mixed_diastereomers_are_achiral",
+    "IChO2026Problems.T5A2.y_canonical_forms_reflected_atom_states",
+    "IChO2026Problems.T5A2.y_canonical_forms_reflected_connectivity",
+    "IChO2026Problems.T5A2.positive_stabilization_raises_second_pKa"
+  ],
+  "assumptions": [
+    "The four problem-authorized R labels denote identical hydrocarbon portions of fatty-acid residues; their internal atoms are intentionally abstracted.",
+    "The source calls PL1 a cardiolipin; the standard constitutional definition used is two diacylated peripheral glycerols joined through two phosphate diesters to a central glycerol.",
+    "The problem-stated special stabilization of Y is represented by a strictly positive monoanion stabilization free energy.",
+    "The thermodynamic explanation uses the standard relation deltaG_standard = R*T*ln(10)*pKa with R*T > 0.",
+    "Phosphorus configurations are excluded exactly as directed by the problem."
+  ],
+  "source_gaps": [
+    "The problem gives no numerical definition or lower-bound factor for the qualitative symbol pKa2 >> pKa1, so the formal theorem proves the strict ordering pKa2 > pKa1 and does not invent a quantitative gap."
+  ],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T5_page-1.png icho_2026_source/image/T5_page-2.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t5_a2.lean",
+    "grep -nE '(^|[[:space:]])(sorry|admit|unsafe|native_decide)([[:space:]]|$)' IChO2026Problems/problem_icho_2026_t5_a2.lean",
+    "python3 -m json.tool result.json"
+  ]
+}

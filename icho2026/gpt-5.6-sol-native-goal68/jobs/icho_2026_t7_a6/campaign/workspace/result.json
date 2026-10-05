@@ -1,0 +1,30 @@
+{
+  "target_id": "icho_2026_t7_a6",
+  "status": "completed",
+  "answer_summary": "Decreasing predicted ammonia yield: B > C > D > A.",
+  "theorem_names": [
+    "IChO2026Problems.T7A6.calibration_reductant_trend",
+    "IChO2026Problems.T7A6.calibration_pKa_trend",
+    "IChO2026Problems.T7A6.calibration_counterion_effect",
+    "IChO2026Problems.T7A6.decisive_candidate_comparisons",
+    "IChO2026Problems.T7A6.ammonia_yield_decreasing_order",
+    "IChO2026Problems.T7A6.ammonia_yield_ranking_is_complete",
+    "IChO2026Problems.T7A6.ammonia_yield_ranking_is_strict",
+    "IChO2026Problems.T7A6.numerical_ammonia_yields_follow_ranking"
+  ],
+  "assumptions": [
+    "Printed reduction potentials are represented exactly in hundredths of a volt, printed pKa values in tenths, and calibration yields in tenths of a mole.",
+    "The qualitative classifier requested by the problem treats a reductant more negative than the -0.88 V zero-yield calibration as passing the productive-reductant screen.",
+    "Within the passing reductant class and with triflate held constant, larger additive pKa ranks higher, following calibration rows 3 and 4.",
+    "All candidate additives A-D have the triflate counterion, as shown in the source table."
+  ],
+  "source_gaps": [
+    "The source prints no measured yields for A-D and no universal kinetic law. The reported sequence is the problem-requested qualitative extrapolation; the Lean theorem for arbitrary numerical yields therefore exposes trend compatibility as a hypothesis."
+  ],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t7_a6.lean",
+    "if grep -nE '(^|[[:space:]])(sorry|admit|unsafe)([[:space:]]|$)|^[[:space:]]*axiom[[:space:]]' IChO2026Problems/problem_icho_2026_t7_a6.lean; then exit 1; else echo 'no forbidden proof shortcuts'; fi",
+    "python3 -m json.tool result.json >/dev/null",
+    "if grep -nE '[[:blank:]]$|^(<<<<<<<|=======|>>>>>>>)' answer.md verification.md result.json IChO2026Problems/problem_icho_2026_t7_a6.lean; then exit 1; else echo 'no whitespace errors or conflict markers'; fi"
+  ]
+}

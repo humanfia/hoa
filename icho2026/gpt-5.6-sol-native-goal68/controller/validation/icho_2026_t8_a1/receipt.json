@@ -1,0 +1,54 @@
+{
+  "target": "icho_2026_t8_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302578.6391149,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t8_a1.lean": "4d79824e24d5b9f659edaab6ffe28adeecb91360d616c597c9cded67cdebc039",
+    "answer.md": "a2f7c37b24d27c003a2390bacd072b359a57c7a025d28d55f1035d2eb3b15abf",
+    "verification.md": "2afc33814d0fbfdf408f0e9d1761613593a202ae0b765f282b15c8df5c477fa6",
+    "result.json": "1d7843b501d58e9747ba97f837ea8af367d1fdbb9f8b96a460e712b44f38732c"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a1",
+    "status": "completed",
+    "answer_summary": "CO2 + 2 H+ + 2 e- -> CO + H2O; the equation conserves C, H, O, and charge and consumes exactly two electrons.",
+    "theorem_names": [
+      "IChO2026Problems.ProblemIChO2026T8A1.submitted_atom_balance",
+      "IChO2026Problems.ProblemIChO2026T8A1.submitted_charge_balance",
+      "IChO2026Problems.ProblemIChO2026T8A1.submittedHalfEquation_balanced",
+      "IChO2026Problems.ProblemIChO2026T8A1.submittedHalfEquation_isReduction",
+      "IChO2026Problems.ProblemIChO2026T8A1.balanced_normalized_unique",
+      "IChO2026Problems.ProblemIChO2026T8A1.icho_2026_t8_a1"
+    ],
+    "assumptions": [
+      "Chemical formula semantics: subscripts give atom counts, H+ has charge +1, and e- has charge -1.",
+      "Atoms and electric charge are conserved when balancing a half-equation.",
+      "The allowed acidic-medium balancing species are H+, H2O, and e-, and the equation is normalized to one CO2."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T8_page-1.png icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t8_a1.lean",
+      "grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)|^[[:space:]]*axiom[[:space:]]' IChO2026Problems/problem_icho_2026_t8_a1.lean",
+      "python3 -m json.tool result.json >/dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

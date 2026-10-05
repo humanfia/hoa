@@ -1,0 +1,4 @@
+'IChO2026.T9.A9.patterns_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T9.A9.rotation_action_isFree' depends on axioms: [propext, Quot.sound]
+'IChO2026.T9.A9.orbit_card_eq_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T9.A9.arrangement_count' depends on axioms: [propext, Classical.choice, Quot.sound]

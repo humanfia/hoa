@@ -1,0 +1,56 @@
+{
+  "target": "icho_2026_t9_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789303325.9607944,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a2.lean": "6b8d965fd2628929a855c2d1650dbfc55330b6883f4191b82e5cda15e03fa75b",
+    "answer.md": "1d6290ac16cb24dc4f1c98626fa5820d8897005ae440f80ef1978871e84753db",
+    "verification.md": "801094b8f6042711a64065d3b8c40e7839618b6eeec884cfc442cc7a0e405a08",
+    "result.json": "a91c685619d6fd5b315989379cc9fe24b6a6d14d16f70c2167d3462f8213e74a"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a2",
+    "status": "completed",
+    "answer_summary": "Tick the right-hand 1C4 chair. K is neutral, closed-shell heptakis(3,6-anhydro)-beta-cyclodextrin: each of seven alpha-(1->4)-linked alpha-D-gluco repeats has a C3-O-C6 bridge and C2-OH as its only free hydroxyl, with all carbon configurations retained (formula C42H56O28).",
+    "theorem_names": [
+      "IChO2026Problems.Icho2026T9A2.chair_conformation",
+      "IChO2026Problems.Icho2026T9A2.structure_K",
+      "IChO2026Problems.Icho2026T9A2.k_connectivity_is_exact",
+      "IChO2026Problems.Icho2026T9A2.k_stereo_predicate_is_exact",
+      "IChO2026Problems.Icho2026T9A2.k_formula"
+    ],
+    "assumptions": [
+      "Problem input: beta-cyclodextrin consists of seven alpha-D-glucopyranosyl units joined by alpha-(1->4) glycosidic bonds.",
+      "Problem input: the reaction uses TsCl (7 equivalents) in pyridine, then aqueous NaOH at 60 degrees C, and K has one free OH per glucopyranosyl unit.",
+      "Trusted general chemistry: one equivalent of TsCl per beta-CD repeat gives per-6-O-tosylation under the printed pyridine conditions.",
+      "Trusted general chemistry: warm aqueous hydroxide converts each C3-OH/C6-OTs pair into a C3-O-C6 intramolecular ether and that bridge constrains the glucopyranosyl unit to the 1C4 chair.",
+      "Lean logical dependencies reported by #print axioms are limited to propext, Classical.choice, and Quot.sound for structure_K; chair_conformation has no axioms."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t9_a2.lean",
+      "! grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t9_a2.lean",
+      "python3 -m json.tool result.json >/dev/null",
+      "! grep -nE '[[:blank:]]+$|^(<<<<<<<|=======|>>>>>>>)' answer.md verification.md result.json IChO2026Problems/problem_icho_2026_t9_a2.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

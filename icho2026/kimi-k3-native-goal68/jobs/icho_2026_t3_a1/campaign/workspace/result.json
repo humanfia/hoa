@@ -1,0 +1,50 @@
+{
+  "target_id": "icho_2026_t3_a1",
+  "status": "completed",
+  "answer_summary": {
+    "cof1_empirical_formula": "C9H4BO2",
+    "cof1_carbon_mass_percent": {
+      "raw": "900750/12911 = 69.766090930...%",
+      "reported": "69.77",
+      "unit": "%",
+      "reporting": "two decimal places, half-away-from-zero (exact value lies strictly inside [69.765, 69.775))"
+    },
+    "derivation": "B3 = hexahydroxytriphenylene C18H12O6 (honeycomb vertex), A2 = benzene-1,4-diboronic acid C6H8B2O4 (honeycomb edge); 2 B3 + 3 A2 per hexagon, 12 boronate-ester condensations eliminating 12 H2O, giving raw counts C54 H24 B6 O12 per hexagon; gcd = 6 gives empirical formula C9H4BO2. Carbon mass percentage with printed IChO 2026 periodic-table masses (12.01, 1.008, 10.81, 16.00): (9*12.01)/154.932*100 = 69.76609...% -> 69.77%."
+  },
+  "theorem_names": [
+    "IChO2026T3A1.answer_icho_2026_t3_a1",
+    "IChO2026T3A1.hexagon_composition",
+    "IChO2026T3A1.empirical_counts",
+    "IChO2026T3A1.gcd_is_six",
+    "IChO2026T3A1.molar_mass_empirical_unit",
+    "IChO2026T3A1.carbon_mass_empirical_unit",
+    "IChO2026T3A1.carbon_percent_value",
+    "IChO2026T3A1.carbon_percent_rounding_window",
+    "IChO2026T3A1.carbon_percent_reports_to_6977",
+    "IChO2026T3A1.carbon_percent_nonneg",
+    "IChO2026T3A1.carbon_percent_four_figure_masses"
+  ],
+  "assumptions": [
+    "Atomic masses are taken from the periodic table printed in the problem bundle (G1-5): A(H)=1.008, A(B)=10.81, A(C)=12.01, A(O)=16.00; a sensitivity theorem confirms four-figure masses (12.011/15.999) give the same two-decimal answer 69.77%.",
+    "Triphenylene hydrocarbon skeleton C18H12 (standard general-chemistry knowledge, consistent with the printed fused four-ring nucleus); six aromatic H are replaced by OH to give the printed B3 hexaol C18H12O6.",
+    "The printed '-H2O' on the B3+A2 arrow and the drawn B-O-B-O-C-C boronate-ester rings ground complete condensation (12 H2O per hexagon).",
+    "Honeycomb graph counting: each vertex (B3) shared by 3 hexagons, each edge (A2) shared by 2 hexagons, per the printed infinite honeycomb topology."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t3_a1.lean",
+      "workdir": "/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t3_a1/campaign/workspace",
+      "result": "exit 0, no errors/warnings/sorries"
+    },
+    {
+      "command": "lake env lean --root=. <copy of file with appended #print axioms commands for all 11 theorems>",
+      "workdir": "/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t3_a1/campaign/workspace",
+      "result": "all theorems depend only on [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "command": "grep -n 'sorry\\|admit\\|axiom \\|unsafe' IChO2026Problems/problem_icho_2026_t3_a1.lean",
+      "result": "no matches"
+    }
+  ]
+}

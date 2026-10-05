@@ -1,0 +1,7 @@
+'IChO2026.T2.A2.hbro2_process_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T2.A2.hbro2_process_B' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T2.A2.hbro2A_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T2.A2.hbro2B_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T2.A2.valid_submission_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T2.A2.valid_submission_B' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026.T2.A2.icho_2026_t2_a2_answer' depends on axioms: [propext, Classical.choice, Quot.sound]

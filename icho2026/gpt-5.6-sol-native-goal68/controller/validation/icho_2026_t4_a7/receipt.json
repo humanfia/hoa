@@ -1,0 +1,59 @@
+{
+  "target": "icho_2026_t4_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300213.321213,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t4_a7.lean": "a995b325cdd354e5dbdf42a96d8aa3fad88af4d700c41627f9233b8e3e1df8ba",
+    "answer.md": "3bbb0679e0192c0250061f17189092de390209bc8b0b9c6ab89b0d1c8291c388",
+    "verification.md": "47663d9a4dfcf94159904709696e40605bbff0ed1714ec39eeadfba7f41cbe12",
+    "result.json": "a921ddee30b6f4af528b6349c1c7a489365208e6e174c86d2769e768470a766f"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a7",
+    "status": "completed",
+    "answer_summary": "For CH4(g) + 2 O2(g) -> CO2(g) + 2 H2O(g), the source data give Delta_r H_298 = -802.3 kJ mol^-1 and Delta_r Cp = 12 J mol^-1 K^-1. The constant-Cp Kirchhoff correction to 2000 K is +20.424 kJ mol^-1, so the exact raw result is -781.876 kJ mol^-1 and the three-significant-figure answer is -782 kJ mol^-1.",
+    "theorem_names": [
+      "IChO2026Problems.Icho2026T4A7.reactionEnthalpy298_value",
+      "IChO2026Problems.Icho2026T4A7.reactionHeatCapacity_value",
+      "IChO2026Problems.Icho2026T4A7.temperatureRise_value",
+      "IChO2026Problems.Icho2026T4A7.kirchhoffCorrection_value",
+      "IChO2026Problems.Icho2026T4A7.methane_combustion_enthalpy_2000_raw",
+      "IChO2026Problems.Icho2026T4A7.methane_combustion_enthalpy_2000_of_constantCp_model",
+      "IChO2026Problems.Icho2026T4A7.methane_combustion_enthalpy_2000_reports_three_sig_figures",
+      "IChO2026Problems.Icho2026T4A7.methane_combustion_enthalpy_2000_submission_valid"
+    ],
+    "assumptions": [
+      "The balanced gaseous combustion reaction is CH4 + 2 O2 -> CO2 + 2 H2O.",
+      "The standard formation enthalpy of O2(g) is zero by the standard-state convention.",
+      "Kirchhoff's law is evaluated with the single tabulated Cp value for each species treated as constant from 298 K to 2000 K.",
+      "The printed numerical inputs are treated as exact for the raw worksheet calculation, as required by TASK.json's stipulated-constant policy."
+    ],
+    "source_gaps": [
+      "The problem provides only one Cp value for each gas and does not explicitly state temperature-independence over 298-2000 K. The submitted numerical value is the intended constant-Cp approximation; a temperature-dependent exact physical value is not determined by the printed data alone."
+    ],
+    "verification_commands": [
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t4_a7.lean",
+      "grep -RInE 'sorry|admit|unsafe|^\\s*axiom\\b' IChO2026Problems/problem_icho_2026_t4_a7.lean",
+      "python3 -m json.tool result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

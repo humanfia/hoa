@@ -1,0 +1,45 @@
+{
+  "at": 1789395407.518469,
+  "previous_status": {
+    "status": "review_error",
+    "target": "icho_2026_t8_a3",
+    "error": "Expected exactly one review JSON payload",
+    "at": 1789395398.2571836
+  },
+  "original_review_sha256": "d35b31e16f22f5cf64266ce505994fdadf358fcb430ca1bc404af16fcb0e9765",
+  "recovered_payload": {
+    "target_id": "icho_2026_t8_a3",
+    "semantic_status": "passed",
+    "proof_status": "passed",
+    "reason": "The classification geometry_1 = trans-dichlorido octahedral [Fe(8)Cl2] (answer-sheet A8-2 bottom-right box, candidate's option vii) is correct and uniquely determined by source data. Source-first check: Q8-1 pixels show ligand 8 as a genuinely linear tetrapyridyl chain (COOH-phenyl-pyridine-pyridine-pyridine-pyridine) with exactly four pyridine N donors joined by three consecutive bpy-type chelate arcs, matching the printed cartoon of four Ns in a row; synthesis is 8 + FeCl2 -> 1, and the Q8-2 mechanism activates 1 -> 9 with '+ 2H2O, - 2Cl-', independently fixing two chlorides in 1. I rendered answer sheet A8-2 (authorized official PDF page 78) directly: the seven tick boxes are four planar FeN4 tetrahedral drawings, one 5-coordinate FeN4Cl, and two octahedral FeN4Cl2 variants (cis-equatorial-Cl and trans-axial-Cl); the trans-axial box is the one ticked on the supplied delegation sheet. The candidate's PrintedOption encoding (N count, Cl count, trans-flag, equatorial-span flag) matches these pixels; the planar drawings are FeN4 tetrahedral (no Cl), not metal-free pincers as loosely suggested in answer.md prose, but this nuance does not affect the formal model or conclusion. The only non-pixel scientific input is the disclosed [TrustedLaw] that a linear tetradentate polypyridyl binds a single metal through the equatorial plane of an octahedron, forcing the two chlorides trans; this is standard, correctly scoped coordination chemistry and is the decisive criterion the tick options encode. All compositional exclusions (options with 0 or 1 Cl contradict the -2Cl- step; cis-octahedral and 2-axial-N variants violate the linear span) are sound. Proof check: lake build IChO2026Problems exits 0; #print axioms on all final theorems shows only propext/Classical.choice/Quot.sound; grep finds no sorry/admit/native_decide/custom axioms/unsafe. The theorems are not vacuous: correct_geometry_1_is_trans_dichloro proves a biconditional uniqueness over the enumerated options, no_other_option_is_correct gives exclusivity, and geometry_1 is definitionally PrintedOption.vii with geometry_1_is_correct closing the goal. The span law is encoded as a definitional hypothesis rather than derived from geometry primitives, but it is applied as an explicit assumption and matches the documented TrustedLaw allowance.",
+    "coverage": [
+      {
+        "output_id": "geometry_1",
+        "status": "passed",
+        "theorem": "IChO2026.T8_A3.correct_geometry_1_is_trans_dichloro (with geometry_1_is_correct, option_vii_isCorrect, no_other_option_is_correct in IChO2026Problems/problem_icho_2026_t8_a3.lean)",
+        "evidence": "Lean file enumerates all seven printed A8-2 options; correct option is uniquely PrintedOption.vii, the octahedral structure with four equatorial N donors from ligand 8 and two trans axial chlorides. Uniqueness proved by biconditional case split over the enum; exclusivity by no_other_option_is_correct. Matches the ticked bottom-right trans box on the rendered A8-2 sheet. Grounded in Q8-1 ligand-8 pixels (linear 4xN chain), synthesis 8 + FeCl2 -> 1, and Q8-2 mechanism step '+ 2H2O, - 2Cl-' fixing two chlorides."
+      }
+    ],
+    "unsupported_assumptions": [],
+    "source_checks": [
+      "Read TASK.json; single requested output geometry_1 (classification, exact symbolic, 2.0 pt).",
+      "Rendered official PDF page 71 (Q8-1) at 200 dpi and cropped ligand-8 region: structure is a linear tetrapyridyl (benzoic-acid-phenyl + three more pyridines), four N donors, three consecutive bpy-chelate arcs; cartoon box shows N N N N in one row. Matches candidate claim.",
+      "Rendered official PDF page 72 (Q8-2): mechanism cycle confirms activation of 1 into 9 by '+ 2 H2O, - 2 Cl-', fixing the dichlorido composition of 1.",
+      "Answer sheets A8-3/A8-4 (images icho_2026_t8_a4-page-79/80.png) confirm six-coordinate Fe species (CN = 6 printed for 11), consistent with 4 N + 2 Cl octahedral 1.",
+      "Rendered official PDF page 78 (A8-2, 8.3 answer sheet) at 150 dpi and inspected all seven tick drawings directly: four tetrahedral FeN4 (no Cl), one trigonal-bipyramidal FeN4Cl, two octahedral FeN4Cl2 (cis-equatorial Cl pair and trans-axial Cl pair). Candidate's PrintedOption encoding matches these pixels; the trans box is the delegation-printed tick.",
+      "No official solution, marking scheme, or answer repository was consulted; only the authorized problem PDF, page images, and blank answer sheets."
+    ],
+    "proof_checks": [
+      "Read IChO2026Problems/problem_icho_2026_t8_a3.lean in full; also IChO2026Chem/Core.lean, IChO2026Chem/Reporting.lean, IChO2026Problems/All.lean, IChO2026Run/*.lean contain no relevant unchecked content.",
+      "Independently ran lake build IChO2026Problems: Build completed successfully (8564 jobs), exit 0; only pre-existing style linter notes on generic headers, no errors or sorry warnings from the target file.",
+      "Independently ran lake env lean on a scratch axiom-audit file importing the target module: all final theorems depend only on propext, Classical.choice, Quot.sound (geometry_1 itself on none); no custom axioms.",
+      "grep over IChO2026Problems, IChO2026Chem, IChO2026Run: no sorry, admit, native_decide, unsafe, or axiom declarations.",
+      "Semantic-shape audit of the formal model: main theorem is a genuine uniqueness biconditional over a seven-constructor enum, not a tautology; composition validity and trans/cis predicates are checked per constructor by kernel-reduced simp/decide steps; the [TrustedLaw] span condition enters as an explicit hypothesis (SatisfiesLinearSpanLaw), consistent with the documented assumption policy.",
+      "Minor note: the answer.md prose briefly describes the tetrahedral FeN4 options (i), (ii) in 'FeN4 without chloride' terms that could be misread, and loosely implies planar drawings are 'alternative N arrangements'; the formal model only records N count/Cl count/trans/span flags, which is the discriminating content, so this does not affect the result."
+    ]
+  },
+  "model_rerun": false,
+  "verdict_changed": false,
+  "parser_policy": "single payload; optional JSON trailing-comma removal; strict schema",
+  "feedback_to_solver": false
+}

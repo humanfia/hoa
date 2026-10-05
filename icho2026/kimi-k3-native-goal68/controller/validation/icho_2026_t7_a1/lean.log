@@ -1,0 +1,8 @@
+'IChO2026T7A1.composition_M1' depends on axioms: [propext, Quot.sound]
+'IChO2026T7A1.M1_complete' depends on axioms: [propext, Quot.sound]
+'IChO2026T7A1.M1_mem_CO' depends on axioms: [propext, Quot.sound]
+'IChO2026T7A1.composition_M2' depends on axioms: [propext, Quot.sound]
+'IChO2026T7A1.M2_complete' depends on axioms: [propext, Quot.sound]
+'IChO2026T7A1.M2_mem_NH3' depends on axioms: [propext, Quot.sound]
+'IChO2026T7A1.xy_relation_from_balances' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T7A1.xy_relation' depends on axioms: [propext, Classical.choice, Quot.sound]

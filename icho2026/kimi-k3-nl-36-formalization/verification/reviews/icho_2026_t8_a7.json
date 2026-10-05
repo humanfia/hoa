@@ -1,0 +1,957 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "Passed. The finite three-box output is derived from the source TOF definition, ordinary total-mixture mass-fraction accounting, and the complete seven-point graph. Lean proves the exact low-to-high rate inequality, its displayed-TOF interval robustness, and the same result on a support-only denominator while explicitly denying strict adjacent-point monotonicity. Draft fidelity: frozen SHA-256 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d; Kimi subpart 8.7's original answer 'a) increases' is preserved. Its explanation stops at 2.9%, whereas the source also has a 3.8% point with a small central-value dip; the candidate exposes that discrepancy and does not use the draft as a premise.",
+    "updated_at": "2026-09-13T08:41:48Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "af1360c7b19652ae8467a40cc745441b9c90d942139489623079a67b866c6fbc",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "All seven page-3 pairs are represented exactly, page 2's TOF meaning is respected, omega_cat is treated as catalyst mass over total loaded-composite mass, and the only requested output is the printed qualitative classification. The candidate also audits the support-only reading. Its endpoint meaning is explicitly limited to the coarse overall direction and does not erase the final local dip."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "On a one-gram total-composite basis, R_CO=(N_A/M_cat)*omega_cat*TOF. The positive common factor cancels, and the exact endpoint products satisfy 38/125 > 31/500. The theorem proves this for every positive N_A and over all source-policy-consistent endpoint TOFs; the output is not assumed."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "The model exposes typed observations, the complete plot audit, total-composite and support-only rate laws, a three-constructor RateTrend, nontrivial Describes semantics, the endpoint specification, raw/reported contracts, and the theorem recording the nonmonotone last central step. No unused reaction mechanism is needed."
+        },
+        "uncertainty_propagation": {
+          "status": "passed",
+          "evidence": "Integral displayed TOFs receive the source-policy half-width 1/2 h^-1. CoRateTrendSpec universally quantifies consistent low/high actual values; even high-end 7.5 versus low-end 62.5 leaves 0.038*7.5 > 0.001*62.5. Nominal preparation loadings are not called measured; varying them by their displayed half-quanta would also leave the branch unchanged."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "RateTrend.Describes maps increases to initial < final, decreases to final < initial, and unchanged to equality. observation01 is the lowest loading, observation38 the highest, so co_rate_trend proves the correctly oriented printed branch."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The result is required for every positive molecular conversion factor and every endpoint TOF within the display intervals, and support_basis_endpoint_robustness covers the alternate plausible gram denominator. CentralPlotAudit and final_central_step_decreases prevent a false strict-monotonic reading. No source-compatible model within this stated coarse endpoint scope changes the classification."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The complete source graph contains the seven stated loading/TOF observations, including the 3.8%, 8 h^-1 endpoint and the 2.9%, 11 h^-1 predecessor.",
+          "carrier": "IChO2026Problems.T8A7.tofObservations; IChO2026Problems.T8A7.CentralPlotAudit; IChO2026Problems.T8A7.central_plot_audit",
+          "status": "covered",
+          "evidence": "Transparent definitions reproduce every plotted label and the audit computes every loading-times-TOF product, including the final local decrease."
+        },
+        {
+          "claim": "TOF and catalyst mass fraction imply R_CO=(N_A/M_cat)*omega_cat*TOF per gram of total loaded composite.",
+          "carrier": "IChO2026Problems.T8A7.IsCatalystMassFraction; IChO2026Problems.T8A7.catalystMoleculesPerLoadedGram; IChO2026Problems.T8A7.coRatePerLoadedCompositeGram; IChO2026Problems.T8A7.loaded_rate_order_iff",
+          "status": "covered",
+          "evidence": "The problem defines TOF per active molecule per hour; ordinary amount conversion and the required component/total mass-fraction ledger transparently yield the rate law, with only a positive common factor."
+        },
+        {
+          "claim": "The source's finite choice 'increases' means the low-loading overall rate is less than the high-loading overall rate, without a stronger all-adjacent monotonic claim.",
+          "carrier": "IChO2026Problems.T8A7.RateTrend; IChO2026Problems.T8A7.RateTrend.Describes; IChO2026Problems.T8A7.CoRateTrendSpec; IChO2026Problems.T8A7.co_rate_trend",
+          "status": "covered",
+          "evidence": "The three constructors match the three printed boxes, Describes gives nonvacuous order semantics, and the main theorem discharges the selected constructor against hardcoded source observations."
+        },
+        {
+          "claim": "The qualitative branch survives the displayed-value measurement interval and either plausible per-gram mass basis.",
+          "carrier": "IChO2026Problems.T8A7.tofDisplayQuantum; IChO2026Problems.T8A7.CoRateTrendSpec; IChO2026Problems.T8A7.support_basis_endpoint_robustness",
+          "status": "covered",
+          "evidence": "The main specification quantifies over both half-unit endpoint intervals, and the support-only theorem applies the catalyst/support ratio omega_cat/(1-omega_cat)."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a7.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t8_a7",
+        "source_record_sha256": "bce67c62a9217d2454abdec07eebe90f4e86a306a458e0a4eb1abc09902ccb1b",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a7.answer.json",
+        "answer_submission_sha256": "8da9477a823da6ef83d5a87c066de83ba85c7a30e11263f742515d8d468a8176",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a7.source.json",
+        "source_report_sha256": "8facd57c97de6c8eb50435023559f0ded908a98e542b0e848e1a5c0051a63f3e",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a7.lean",
+        "preflight_sha256": "bb3f1faa00043ac0fb2b294e9e866e4450fee862043bb33dd8b2a5737058db94",
+        "candidate_sha256": "af1360c7b19652ae8467a40cc745441b9c90d942139489623079a67b866c6fbc",
+        "question_sha256": "7ec5b96110efa78e4ba9b37e86320bed38af5e8924a16acfe582fe01a0481904",
+        "shared_context_sha256": "901f9e45b67ae31e3f1202e5882717674575c53df294c4293d6ec6b193741f81",
+        "previous_parts_sha256": "c649ab5890368803b8bc074a8e803a0b27445c77e9b5616956de49b32675e987",
+        "requested_outputs_sha256": "19d9f473cf39030c5d306634e597bd3fcee1176b03f4a21252e93d06b222be4c",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-3.png",
+            "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f"
+          },
+          {
+            "path": "icho_2026_source/image/T8_page-2.png",
+            "sha256": "cfd3c6fa64d0126843e3cf65a1235337fa3f869db285f36fbb0a18dddebfacee"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "2e3c252b2f4c715b649d12aabf13a860499c08f23e07011771f37fa8342f9032",
+          "node_count": 7,
+          "edge_count": 6,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "previous_part_prerequisite": 2,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "co_rate_trend"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t8_a5",
+            "icho_2026_t8_a6"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a7",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t8_a7.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t8_a7",
+          "source_record_sha256": "bce67c62a9217d2454abdec07eebe90f4e86a306a458e0a4eb1abc09902ccb1b",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a7.answer.json",
+          "answer_submission_sha256": "8da9477a823da6ef83d5a87c066de83ba85c7a30e11263f742515d8d468a8176",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t8_a7.source.json",
+          "source_report_sha256": "8facd57c97de6c8eb50435023559f0ded908a98e542b0e848e1a5c0051a63f3e",
+          "candidate": "IChO2026Problems/problem_icho_2026_t8_a7.lean",
+          "preflight_sha256": "bb3f1faa00043ac0fb2b294e9e866e4450fee862043bb33dd8b2a5737058db94",
+          "candidate_sha256": "af1360c7b19652ae8467a40cc745441b9c90d942139489623079a67b866c6fbc",
+          "question_sha256": "7ec5b96110efa78e4ba9b37e86320bed38af5e8924a16acfe582fe01a0481904",
+          "shared_context_sha256": "901f9e45b67ae31e3f1202e5882717674575c53df294c4293d6ec6b193741f81",
+          "previous_parts_sha256": "c649ab5890368803b8bc074a8e803a0b27445c77e9b5616956de49b32675e987",
+          "requested_outputs_sha256": "19d9f473cf39030c5d306634e597bd3fcee1176b03f4a21252e93d06b222be4c",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T8_page-3.png",
+              "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f"
+            },
+            {
+              "path": "icho_2026_source/image/T8_page-2.png",
+              "sha256": "cfd3c6fa64d0126843e3cf65a1235337fa3f869db285f36fbb0a18dddebfacee"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "2e3c252b2f4c715b649d12aabf13a860499c08f23e07011771f37fa8342f9032",
+            "node_count": 7,
+            "edge_count": 6,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "previous_part_prerequisite": 2,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "co_rate_trend"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t8_a5",
+              "icho_2026_t8_a6"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t8_a7",
+            "path": ".archon/provided_answer_drafts/Q8.md",
+            "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The requested quantifier, mass ledger, seven-point recount, endpoint arithmetic, local-dip limitation, and no-recycle determination were frozen from the inline problem and both hash-verified images before the generated answer and Lean file were opened. The sealed Kimi text was used only afterward for fidelity comparison, never as a source premise."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "Raw carrier: R_CO=(N_A/M_cat)*omega_cat*TOF, so exact endpoint comparison is 38/125 > 31/500; CentralPlotAudit retains all intermediate products and RawResult conjoins that audit with CoRateTrendSpec."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy requires exact_symbolic classification, and the current question prints the three labels. ReportedResult applies no numerical rounding."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "The only used tolerance is one-half of the graph's last displayed TOF quantum, exactly the bound measurement policy. It is applied symmetrically in CoRateTrendSpec and is not selected post hoc."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No open chemical candidate domain is outcome-decisive. The only classification domain is the three boxes explicitly enumerated in current_question and mirrored by RateTrend."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=af1360c7b19652ae8467a40cc745441b9c90d942139489623079a67b866c6fbc; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=11, duration_bucket=under_1m. Nontrivial result declarations are CentralPlotAudit, central_plot_audit, CoRateTrendSpec, co_rate_trend, RawResult, and reported_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The main contract returns exactly one qualitative overall trend across the displayed range. It neither claims a chemical mechanism nor universal/strict monotonicity; the latter is explicitly refuted for the final central step."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "co_rate_trend is closed. Its data are transparent source-read definitions; its only quantified physical premise is positivity of the molecule-per-mole conversion, an ordinary necessary condition. No requested result or candidate-local opaque chemistry axiom appears as a hypothesis."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The sole answer-submission output has the required id/kind/unit, its raw endpoint comparison agrees with the independent exact derivation, and its displayed finite-choice branch is exactly the branch proved by co_rate_trend."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Every outcome-decisive bridge\u2014graph readout, mass-fraction/TOF rate law, choice orientation, measurement robustness, and denominator interpretation\u2014is named above and covered. Previous-part numerical answers and the depicted catalytic cycle do not feed this output."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "trend in CO formation rate per gram C3N4 with increasing catalyst mass fraction",
+            "lean_carrier": "IChO2026Problems.T8A7.co_rate_trend",
+            "status": "covered",
+            "evidence": "The submission schema has this sole output in bundle order, and its exact symbolic endpoint relation and finite-choice display agree with the independent derivation and the nontrivial Lean specification.",
+            "output_id": "co_rate_trend",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [
+          {
+            "source_claim": "The page-3 graph continues through the plotted pair 3.8%, 8 h^-1 after 2.9%, 11 h^-1.",
+            "blueprint_or_lean_claim": "The Kimi 8.7 explanation supports its final choice with products only through 2.9% and does not mention the 3.8% central-value dip.",
+            "status": "resolved_in_favor_of_problem_source",
+            "evidence": "tofObservations includes all seven pairs, CentralPlotAudit proves the final product is below the 2.9% product, and the main result is deliberately only the coarse lowest-to-highest overall classification."
+          }
+        ],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T8_page-3.png",
+            "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f",
+            "inspected": true,
+            "evidence": "The graph labels the ordered pairs (0.1%,62), (0.3%,56), (0.6%,37), (1%,29), (2%,15), (2.9%,11), and (3.8%,8), and prints the three T8.7 choices. The separate Gibbs-energy diagram is not used. This output depends on plot values, not molecular topology."
+          },
+          {
+            "path": "icho_2026_source/image/T8_page-2.png",
+            "sha256": "cfd3c6fa64d0126843e3cf65a1235337fa3f869db285f36fbb0a18dddebfacee",
+            "inspected": true,
+            "evidence": "The page defines TOF as product molecules per active catalyst molecule per hour and independently states the 3.8% loading/8 h^-1 datum. The catalytic-cycle arrows and A5/A6 calculations are not used to derive T8.7, so no reaction-topology or arrow ledger is outcome-decisive."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "TOF is multiplied by catalyst molecules per gram, rather than mistaken for the overall rate itself. Catalyst mass fraction uses catalyst mass as numerator and total loaded-composite mass as denominator; the support-only normalization is separately audited."
+          },
+          "staged_species_domain": {
+            "status": "not_applicable",
+            "evidence": "not_staged_transformation: no depicted reaction arrow, staged material transformation, species balance, or product-identity inference is used for co_rate_trend. The target compares rates for separate catalyst-loading experiments."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "The printed 557.21 g mol^-1 is used exactly as the common catalyst molar mass; it converts catalyst grams to moles and cancels from the ordering. No unprovided molecular formula or recomputed molar mass is asserted."
+          },
+          "conservation_laws": {
+            "status": "not_applicable",
+            "evidence": "No atom, charge, mass-through-reaction, or phase conservation controls the requested classification. Despite the problem title, this is not a dynamic recycle/fresh-feed quantity: there is no cumulative input, output, ending inventory, cohort, cycle, or horizon to ledger."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "omega_cat is dimensionless; one gram times omega_cat gives catalyst grams; division by g mol^-1 and multiplication by molecules mol^-1 gives catalyst molecules per gram; multiplying by h^-1 gives CO molecules g^-1 h^-1. Only the unitless trend label is reported."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "All graph products and endpoint comparisons are exact rationals with no intermediate rounding. The output policy is exact symbolic, so the finite-choice label is unchanged; the half-unit TOF robustness is separately proved."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No structure, connectivity, geometry, or stereochemistry is requested or used for T8.7."
+          },
+          "identification_uniqueness": {
+            "status": "not_applicable",
+            "evidence": "This is not an open-world chemical identification. The problem explicitly supplies a finite three-box classification, and the formalization makes no global uniqueness claim beyond that requested choice."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "coRateTrend names the requested witness, which is permitted, but CoRateTrendSpec is parameterized and nontrivial; co_rate_trend must establish exact source endpoint orders for all positive conversion factors and all allowed TOF values. No premise asserts the chosen branch, singleton domain, opaque predicate, or reflexive theorem."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "id": "co_rate_trend",
+            "kind": "classification",
+            "source_requirement": "trend in CO formation rate per gram C3N4 with increasing catalyst mass fraction",
+            "quantity_definition": "The qualitative low-to-high change in total CO molecules formed per hour per gram of loaded C3N4/catalyst material as catalyst mass fraction is increased across the plotted range.",
+            "process_scope": {
+              "kind": "overall",
+              "description": "Overall direction from the lowest to highest displayed loading across separate per-hour loading experiments; no strict adjacent-point monotonicity or dynamic recycle horizon is claimed."
+            },
+            "basis": {
+              "status": "applicable",
+              "numerator": "CO molecules formed per hour",
+              "denominator": "one gram of total loaded C3N4/catalyst composite; a one-gram-C3N4-support reading is checked separately",
+              "mass_or_composition_basis": "By the ordinary mass-fraction meaning required by the contract, omega_cat=m_catalyst/m_total, so one gram total contains omega_cat grams catalyst; on a support-only denominator m_catalyst/m_support=omega_cat/(1-omega_cat)."
+            },
+            "constants": [
+              {
+                "name": "loading_0.1_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "dimensionless",
+                "value": "1/1000"
+              },
+              {
+                "name": "tof_at_0.1_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "h^-1",
+                "value": "62"
+              },
+              {
+                "name": "loading_0.3_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "dimensionless",
+                "value": "3/1000"
+              },
+              {
+                "name": "tof_at_0.3_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "h^-1",
+                "value": "56"
+              },
+              {
+                "name": "loading_0.6_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "dimensionless",
+                "value": "6/1000"
+              },
+              {
+                "name": "tof_at_0.6_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "h^-1",
+                "value": "37"
+              },
+              {
+                "name": "loading_1.0_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "dimensionless",
+                "value": "1/100"
+              },
+              {
+                "name": "tof_at_1.0_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "h^-1",
+                "value": "29"
+              },
+              {
+                "name": "loading_2.0_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "dimensionless",
+                "value": "2/100"
+              },
+              {
+                "name": "tof_at_2.0_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "h^-1",
+                "value": "15"
+              },
+              {
+                "name": "loading_2.9_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "dimensionless",
+                "value": "29/1000"
+              },
+              {
+                "name": "tof_at_2.9_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "h^-1",
+                "value": "11"
+              },
+              {
+                "name": "loading_3.8_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "dimensionless",
+                "value": "38/1000"
+              },
+              {
+                "name": "tof_at_3.8_percent",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                },
+                "unit": "h^-1",
+                "value": "8"
+              },
+              {
+                "name": "catalyst_molar_mass",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "g mol^-1",
+                "value": "55721/100"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "TOF-to-overall-rate conversion",
+                "relation": "For one gram of loaded composite, N_cat=(omega_cat/M_cat)N_A and R_CO=N_cat*TOF=(N_A/M_cat)*omega_cat*TOF; the parenthesized factor is common and positive.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "complete seven-point loading/TOF graph",
+                "relation": "The source supplies the ordered loading/TOF pairs used for the full central-value audit and the endpoint classification.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-3.png#tof_graph"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "support-only denominator robustness",
+                "relation": "If 'per gram C3N4' is read as support-only mass, R_CO is proportional to omega_cat*TOF/(1-omega_cat), and the same endpoint branch follows.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "branch_conditions": [
+              {
+                "condition": "For the printed three-box qualitative question, select the increases branch exactly when the rate at the highest displayed loading exceeds the rate at the lowest displayed loading; this does not assert strict increase between every adjacent point.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "unit": "",
+            "raw_result": {
+              "value_or_expression": "(38/1000)*8 = 38/125 > 31/500 = (1/1000)*62, with common positive N_A/M_cat; hence the overall endpoint trend is RateTrend.increases",
+              "exact_unrounded": true,
+              "derivation": "The seven exact central products omega_cat*TOF are 31/500, 21/125, 111/500, 29/100, 3/10, 319/1000, and 38/125. The last adjacent product falls, but the highest-loading endpoint exceeds the lowest-loading endpoint by 121/500. With TOF half-width 1/2 h^-1, the worst endpoint comparison is still (38/1000)*(15/2) > (1/1000)*(125/2)."
+            },
+            "reporting": {
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              },
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "application": "Return the matching printed classification exactly; no rounding is applied to the symbolic branch."
+            },
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T8A7.tofObservations",
+                "IChO2026Problems.T8A7.observation01",
+                "IChO2026Problems.T8A7.observation38",
+                "IChO2026Problems.T8A7.IsCatalystMassFraction",
+                "IChO2026Problems.T8A7.tofDisplayQuantum"
+              ],
+              "relations": [
+                "IChO2026Problems.T8A7.centralRelativeRate",
+                "IChO2026Problems.T8A7.coRatePerLoadedCompositeGram",
+                "IChO2026Problems.T8A7.coRatePerSupportGram",
+                "IChO2026Problems.T8A7.loaded_rate_order_iff",
+                "IChO2026Problems.T8A7.RateTrend.Describes",
+                "IChO2026Problems.T8A7.CoRateTrendSpec",
+                "IChO2026Problems.T8A7.support_basis_endpoint_robustness",
+                "IChO2026Problems.T8A7.final_central_step_decreases"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T8A7.CentralPlotAudit",
+                "IChO2026Problems.T8A7.central_plot_audit",
+                "IChO2026Problems.T8A7.RawResult"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T8A7.coRateTrend",
+                "IChO2026Problems.T8A7.co_rate_trend",
+                "IChO2026Problems.T8A7.ReportedResult",
+                "IChO2026Problems.T8A7.reported_result"
+              ]
+            },
+            "semantic_card_comparison": {
+              "status": "matched",
+              "evidence": "The submission has the sole required id, classification kind, empty unit, exact endpoint inequality, and the matching printed branch."
+            },
+            "lean_statement_comparison": {
+              "status": "matched",
+              "evidence": "The Lean input, rate-law, complete-plot, interval-robustness, and reported-result carriers all encode the source-first derivation without asserting pointwise monotonicity."
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-3.png#tof_graph"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-2.png#tof_definition"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "measurement_policy.measured_display_half_width"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "requested_outputs[0].reporting_policy"
+              }
+            ],
+            "evidence": "The source-defined TOF and ordinary total-mixture mass fraction give rate proportional to omega_cat*TOF. Exact graph recount and the half-unit TOF audit support the coarse endpoint branch; the visible final local dip is retained as a limitation rather than hidden."
+          }
+        ]
+      },
+      "candidate_sha256": "af1360c7b19652ae8467a40cc745441b9c90d942139489623079a67b866c6fbc"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a7.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "Passed. The finite three-box output is derived from the source TOF definition, ordinary total-mixture mass-fraction accounting, and the complete seven-point graph. Lean proves the exact low-to-high rate inequality, its displayed-TOF interval robustness, and the same result on a support-only denominator while explicitly denying strict adjacent-point monotonicity. Draft fidelity: frozen SHA-256 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d; Kimi subpart 8.7's original answer 'a) increases' is preserved. Its explanation stops at 2.9%, whereas the source also has a 3.8% point with a small central-value dip; the candidate exposes that discrepancy and does not use the draft as a premise.",
+        "reviewed_at": "2026-09-13T08:41:48Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "af1360c7b19652ae8467a40cc745441b9c90d942139489623079a67b866c6fbc",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a7.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 11,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The exact bound graph, the source definition of TOF, and catalyst mass accounting justify the submitted overall classification. The candidate faithfully interprets overall as the net change from the lowest to the highest displayed loading, proves that endpoint comparison on both plausible gram bases, and explicitly records the small final central-value dip so that no pointwise-monotonic claim is smuggled in.",
+    "evidence": "The two image hashes, answer-submission hash, and candidate hash all match their controller bindings. The answer JSON has schema version 1, exactly one output in the required order with the required id, kind, and unit, and its raw comparison and exact-symbolic display agree with the independent rate derivation. Deterministic preflight passed with compiles=true, returncode=0, sorry_count=0; direct candidate inspection found no sorry, admit, or axiom. The nontrivial carriers central_plot_audit, loaded_rate_order_iff, co_rate_trend, support_basis_endpoint_robustness, raw_result, and reported_result close the requested contract. Draft fidelity: frozen draft 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d, subpart 8.7, preserves its original choice; its detailed comparison stops at 2.9 percent and omits the plotted 3.8 percent point, while the candidate audits that point and the resulting local dip without changing the requested answer.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "780b015f414d61e9484720002a97f739826aac8fcf3837578f6627cdcefb2687",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t8_a7.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t8_a7",
+      "source_record_sha256": "bce67c62a9217d2454abdec07eebe90f4e86a306a458e0a4eb1abc09902ccb1b",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a7.answer.json",
+      "answer_submission_sha256": "8da9477a823da6ef83d5a87c066de83ba85c7a30e11263f742515d8d468a8176",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t8_a7.source.json",
+      "source_report_sha256": "8facd57c97de6c8eb50435023559f0ded908a98e542b0e848e1a5c0051a63f3e",
+      "candidate": "IChO2026Problems/problem_icho_2026_t8_a7.lean",
+      "preflight_sha256": "1248474013533eb43b294dbd52f8c97ae80efb509d4548a7a201c6844da7de01",
+      "candidate_sha256": "780b015f414d61e9484720002a97f739826aac8fcf3837578f6627cdcefb2687",
+      "question_sha256": "7ec5b96110efa78e4ba9b37e86320bed38af5e8924a16acfe582fe01a0481904",
+      "shared_context_sha256": "901f9e45b67ae31e3f1202e5882717674575c53df294c4293d6ec6b193741f81",
+      "previous_parts_sha256": "c649ab5890368803b8bc074a8e803a0b27445c77e9b5616956de49b32675e987",
+      "requested_outputs_sha256": "19d9f473cf39030c5d306634e597bd3fcee1176b03f4a21252e93d06b222be4c",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T8_page-3.png",
+          "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f"
+        },
+        {
+          "path": "icho_2026_source/image/T8_page-2.png",
+          "sha256": "cfd3c6fa64d0126843e3cf65a1235337fa3f869db285f36fbb0a18dddebfacee"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "2e3c252b2f4c715b649d12aabf13a860499c08f23e07011771f37fa8342f9032",
+        "node_count": 7,
+        "edge_count": 6,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "previous_part_prerequisite": 2,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "co_rate_trend"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t8_a5",
+          "icho_2026_t8_a6"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t8_a7",
+        "path": ".archon/provided_answer_drafts/Q8.md",
+        "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a7.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t8_a7",
+        "source_record_sha256": "bce67c62a9217d2454abdec07eebe90f4e86a306a458e0a4eb1abc09902ccb1b",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a7.answer.json",
+        "answer_submission_sha256": "8da9477a823da6ef83d5a87c066de83ba85c7a30e11263f742515d8d468a8176",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a7.source.json",
+        "source_report_sha256": "8facd57c97de6c8eb50435023559f0ded908a98e542b0e848e1a5c0051a63f3e",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a7.lean",
+        "preflight_sha256": "1248474013533eb43b294dbd52f8c97ae80efb509d4548a7a201c6844da7de01",
+        "candidate_sha256": "780b015f414d61e9484720002a97f739826aac8fcf3837578f6627cdcefb2687",
+        "question_sha256": "7ec5b96110efa78e4ba9b37e86320bed38af5e8924a16acfe582fe01a0481904",
+        "shared_context_sha256": "901f9e45b67ae31e3f1202e5882717674575c53df294c4293d6ec6b193741f81",
+        "previous_parts_sha256": "c649ab5890368803b8bc074a8e803a0b27445c77e9b5616956de49b32675e987",
+        "requested_outputs_sha256": "19d9f473cf39030c5d306634e597bd3fcee1176b03f4a21252e93d06b222be4c",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-3.png",
+            "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f"
+          },
+          {
+            "path": "icho_2026_source/image/T8_page-2.png",
+            "sha256": "cfd3c6fa64d0126843e3cf65a1235337fa3f869db285f36fbb0a18dddebfacee"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "2e3c252b2f4c715b649d12aabf13a860499c08f23e07011771f37fa8342f9032",
+          "node_count": 7,
+          "edge_count": 6,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "previous_part_prerequisite": 2,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "co_rate_trend"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t8_a5",
+            "icho_2026_t8_a6"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a7",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The classification was rederived only from the inline problem evidence, both bound images, the TOF definition, and ordinary positive-factor arithmetic. The submission and authorized sealed draft were treated as untrusted objects for output and fidelity comparison, not as premises; no official solution, rubric, prior proof, or unlisted artifact was consulted."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "On a one-gram loaded-material basis, coRatePerLoadedCompositeGram reduces to the positive common factor N_A/M_cat multiplied by catalyst mass fraction and TOF. loaded_rate_order_iff cancels that factor; central_plot_audit evaluates every displayed graph point; co_rate_trend proves the strict first-to-last ordering, including the source-policy half-unit TOF intervals. support_basis_endpoint_robustness separately proves the same classification if per gram C3N4 is read as support-only normalization."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The problem requests one of three printed classifications, and the bound requested-output policy is exact_symbolic. ReportedResult is therefore identical to the proved classification specification, with no numerical rounding or altered display convention."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "The graph prints integral TOF labels, so tofDisplayQuantum is one inverse hour and ConsistentMeasurement supplies the mandated half-of-last-displayed-quantum interval. co_rate_trend proves the endpoint order uniformly over both intervals; no fitted or post-hoc tolerance is used. The catalyst loadings are controlled mass-fraction settings, not source-declared uncertain measurements."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "RateTrend contains exactly the three boxes visible in T8_page-3.png, while tofObservations transcribes all seven plotted settings in increasing-loading order. The proof does not rely on an answer-shaped singleton domain or any chemical candidate enumeration."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=780b015f414d61e9484720002a97f739826aac8fcf3837578f6627cdcefb2687; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Named nontrivial result declarations are IChO2026Problems.T8A7.central_plot_audit, loaded_rate_order_iff, co_rate_trend, support_basis_endpoint_robustness, final_central_step_decreases, raw_result, and reported_result; t8a5_inline_result and t8a6_inline_result reconstruct the two listed prior-part prerequisites without importing sibling answers."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "CoRateTrendSpec gives the source word overall a concrete lowest-displayed-loading to highest-displayed-loading meaning and adds interval robustness. final_central_step_decreases expressly prevents the result from being misread as strict monotonicity at every adjacent central point, so the contract is neither stronger nor deceptively weakened relative to the qualitative three-box task."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "All source numerals come from the two bound pages. Positivity of Avogadro's constant is the only abstract physical side condition and is used honestly solely to preserve order under a common conversion factor; the main theorem quantifies over every such positive value. Measurement-consistency hypotheses are exactly the predeclared display-half-width rule."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The submission has exactly the required classification output and its raw endpoint comparison agrees with CoRateTrendSpec coRateTrend. co_rate_trend and reported_result expose that requested result directly; the separate local-dip theorem avoids silently upgrading it to a universal monotonicity claim."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The source definition of TOF, one-gram catalyst mass accounting, the printed molar mass, positivity of the common molecular-count factor, and all graph points are connected by transparent definitions and proved arithmetic. reference_mass_balance and t8a5_inline_result reconstruct T8-A5's density relation; co2ToCoReduction_balanced and t8a6_inline_result reconstruct T8-A6's unrounded yield expression. Neither prior answer is assumed or needed to force the trend."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "trend in CO formation rate per gram C3N4 with increasing catalyst mass fraction",
+          "lean_carrier": "IChO2026Problems.T8A7.co_rate_trend (reported by IChO2026Problems.T8A7.reported_result)",
+          "status": "covered",
+          "evidence": "The sole submitted classification agrees with the independently established endpoint rate ordering; its exact-symbolic choice formatting, empty unit, output id, kind, count, and order all match the bound requested-output contract.",
+          "output_id": "co_rate_trend",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T8_page-3.png",
+          "sha256": "d6431350f32953011648ffe537d8d51ed7dc9dfb5a437a6f1c94620d6041055f",
+          "inspected": true,
+          "evidence": "The page is legible and shows the seven loading/TOF points and all three T8.7 choice boxes. The candidate transcribes every point, including the highest-loading point and the slight central-value decline from the preceding point."
+        },
+        {
+          "path": "icho_2026_source/image/T8_page-2.png",
+          "sha256": "cfd3c6fa64d0126843e3cf65a1235337fa3f869db285f36fbb0a18dddebfacee",
+          "inspected": true,
+          "evidence": "The page is legible and supplies the TOF definition, the separately printed highest-loading TOF datum, and the T8.5/T8.6 numerical context. These facts cross-check the graph transcription and the catalyst-count-times-TOF rate model."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "TOF counts product molecules per active catalyst molecule per hour; multiplying by catalyst molecules per gram is exactly the overall CO formation rate per gram. With fixed catalyst identity and molar mass, comparison reduces to loading times TOF, and both loaded-composite and support-only gram conventions give the same endpoint classification."
+        },
+        "staged_species_domain": {
+          "status": "not_applicable",
+          "evidence": "not_staged_transformation: the requested output is a kinetic loading-trend classification and consumes no depicted reaction stage, species stream, yield, residue, phase, or material ledger. The page-2 catalytic cycle is contextual and is not used as a premise for this output."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "catalystMolarMass exactly transcribes the problem-stipulated molar mass and is used consistently as the positive grams-per-mole conversion. No molecular-formula inference or registry lookup is needed for the requested classification."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "ReferenceMassBalance transparently partitions the one-gram loaded-material basis into catalyst and support. The auxiliary co2ToCoReduction_balanced carrier checks carbon, oxygen, hydrogen, and charge for the inline T8-A6 prerequisite, but no reaction-completion or untracked-stream claim is used to derive T8-A7."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "Catalyst mass fraction is dimensionless, N_A/M_cat converts catalyst grams to molecules, and TOF contributes inverse hours, yielding product molecules per gram per hour. The positive dimensional conversion cancels only inside an order comparison, which is valid."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "All seven loading-times-TOF central products are represented as exact rationals, the output is exact symbolic rather than rounded, and the integer TOF display intervals are propagated through the decisive endpoint inequality."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "The requested output contains no molecular structure, bonding, geometry, stereochemistry, or drawing identification."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source supplies exactly three mutually exclusive order classifications. The proved strict endpoint inequality selects one and rules out both the reverse strict order and equality; no open-world chemical uniqueness claim is made."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "Although coRateTrend names the submitted candidate choice, co_rate_trend proves a nontrivial source-grounded CoRateTrendSpec for it. No answer-valued hypothesis, singleton witness table, opaque chemistry predicate, free flag, or reflexive theorem supplies the conclusion."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a7.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The exact bound graph, the source definition of TOF, and catalyst mass accounting justify the submitted overall classification. The candidate faithfully interprets overall as the net change from the lowest to the highest displayed loading, proves that endpoint comparison on both plausible gram bases, and explicitly records the small final central-value dip so that no pointwise-monotonic claim is smuggled in.",
+        "evidence": "The two image hashes, answer-submission hash, and candidate hash all match their controller bindings. The answer JSON has schema version 1, exactly one output in the required order with the required id, kind, and unit, and its raw comparison and exact-symbolic display agree with the independent rate derivation. Deterministic preflight passed with compiles=true, returncode=0, sorry_count=0; direct candidate inspection found no sorry, admit, or axiom. The nontrivial carriers central_plot_audit, loaded_rate_order_iff, co_rate_trend, support_basis_endpoint_robustness, raw_result, and reported_result close the requested contract. Draft fidelity: frozen draft 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d, subpart 8.7, preserves its original choice; its detailed comparison stops at 2.9 percent and omits the plotted 3.8 percent point, while the candidate audits that point and the resulting local dip without changing the requested answer.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:01:26.226851Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "780b015f414d61e9484720002a97f739826aac8fcf3837578f6627cdcefb2687",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a7.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:01:26.226890Z",
+    "repair_handoff": {}
+  }
+}

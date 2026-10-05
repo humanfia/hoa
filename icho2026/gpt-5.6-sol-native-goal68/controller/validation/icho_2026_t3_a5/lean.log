@@ -1,0 +1,21 @@
+'IChO2026Problems.T3A5.pipeline_state' does not depend on any axioms
+'IChO2026Problems.T3A5.kagome_hexagon_boundary_is_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.kagome_hexagon_boundary_degree_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.repeatUnit_explicit_atom_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_repeat_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_explicit_atom_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_formula_derived_from_reagents' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_bonds_are_undirected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_has_no_self_bonds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_carbonyl_bond_orders' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_local_amide_bond' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_intercell_amide_bond' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_fluorine_substitution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_is_neutral_closed_shell_achiral' depends on axioms: [propext]
+'IChO2026Problems.T3A5.no_identical_integral_repeat_count_exceeds_six' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T3A5.macrocycleX_smallest_repeat_unit' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,33 @@
+{
+  "target": "icho_2026_t1_a6",
+  "candidate_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "axiom_check.lean": "6e4cd0c9d4b277731617270e8f3a2657d7ef7451147ad7a5f6fefab985b2e5ad",
+    "result.json": "3194c14ef10007f821a1e15f894fd0f779732ded48589a5a8bfb07a09624c6d6",
+    "scratch11.lean": "e14a6a4111cd5f5ad7b8e986ebf3d16f763ad1f8d7fb3d2880121d1a3fea22ff",
+    ".gitignore": "8a31ab62303e26f93ba0b4c3937ead4ab85022e475094b542d69385985d39b63",
+    "lakefile.toml": "6bf5c92d5b48593a3dd1e636bf71b0894a074c737c3c3e663539b4d335a7fd2b",
+    "isolation_manifest.json": "dac4bbdd4230167e04362de19490d24add9e6d9ac96ce80d9eb55879a771bdc4",
+    "scratch9.lean": "8d77200d551d1d613456969ee6c3676555cfcfbf07989a9ac1726e9a9c61396e",
+    "lake-manifest.json": "cf800f81ecf5e27a8ff144bad0f8055c2c05bb7493eb94d0ed1f5ae4bae94143",
+    "answer.md": "8f4eb3500d2a1c273467d6ffdf9b7bf80d6adbee49e0052d87f22a5bfbcb12d7",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "TASK.json": "f9e70449aa7aa760cb8b188dacf07f394ef7e31f020298ebe74254ac9d8c3e7a",
+    "lean-toolchain": "efac0b94923b2d8b6840cd35be9177ad0fc5ab2332f4f4311c98712cee92fdee",
+    "scratch8.lean": "3c86401806c6ee74db6f2ce696925674bc4af011870cf44ef355b64d7230f61c",
+    "verification.md": "cd6266c09678d5f0dffeb5b0d23afd055b5f4d07392cd30adee2f662d4a35265",
+    "scratch13.lean": "86cc83505eaaf8557da3797a1b63bbf7359cd583a80fbae035e71182c562ddab",
+    "archon-protected.yaml": "c447b97d89415ce4e88e712ea466d5bc1909e88983de159a329d879478e88e55",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "24b3899321e75699a37a1611a613b29d6c947cce2ef924d11f7be93beee73434",
+    "IChO2026Problems/problem_icho_2026_t1_a6.lean": "4b33bd6eb70801869e7ca5c39ab6e2b98ed220bec3b8b51422b6fc92b11a6a19"
+  },
+  "created": 1789385675.4636803,
+  "model": "nvidia/moonshotai/kimi-k3",
+  "reasoning_effort": "xhigh",
+  "feedback_to_solver": false
+}

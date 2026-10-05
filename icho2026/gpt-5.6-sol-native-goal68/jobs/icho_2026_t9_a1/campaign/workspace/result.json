@@ -1,0 +1,26 @@
+{
+  "target_id": "icho_2026_t9_a1",
+  "status": "completed",
+  "answer_summary": "Beta-CD is a seven-unit cyclic glucose condensation product with seven glycosidic links. Using the stipulated glucose molar mass and H/O masses from the supplied periodic table gives an exact raw value of 1135.008 g mol^-1, reported as 1.14e3 g mol^-1 at three significant figures.",
+  "theorem_names": [
+    "IChO2026Problems.ProblemIcho2026T9A1.beta_cd_has_seven_glycosidic_bonds",
+    "IChO2026Problems.ProblemIcho2026T9A1.water_molar_mass_exact",
+    "IChO2026Problems.ProblemIcho2026T9A1.beta_cd_raw_molar_mass",
+    "IChO2026Problems.ProblemIcho2026T9A1.beta_cd_three_significant_figures",
+    "IChO2026Problems.ProblemIcho2026T9A1.beta_cd_molar_mass_answer"
+  ],
+  "assumptions": [
+    "Problem input: beta-CD is cyclic and contains seven glucose-derived units joined by alpha-1,4-glycosidic bonds.",
+    "Problem input: M(glucose) = 180.16 g mol^-1.",
+    "Supplied periodic-table input: M(H) = 1.008 g mol^-1 and M(O) = 16.00 g mol^-1.",
+    "Trusted general chemistry law: formation of each glycosidic bond by condensation removes one H2O molecule.",
+    "TASK.json reporting contract: exact printed constants, no intermediate rounding, and a final three-significant-figure display."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T9_page-1.png icho_2026_source/raw/theory_problem.pdf",
+    "lake build IChO2026Chem",
+    "! grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)|^[[:space:]]*axiom[[:space:]]' IChO2026Problems/problem_icho_2026_t9_a1.lean",
+    "lake env lean IChO2026Problems/problem_icho_2026_t9_a1.lean"
+  ]
+}

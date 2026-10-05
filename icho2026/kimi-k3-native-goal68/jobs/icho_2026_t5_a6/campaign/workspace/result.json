@@ -1,0 +1,34 @@
+{
+  "target_id": "icho_2026_t5_a6",
+  "status": "completed",
+  "answer_summary": "PL2 is the propane-1,3-diol-bridged cardiolipin: two phosphatidyl wings RCO-O-CH2-C*H(O-OCR)-CH2-O- joined as ...CH2-O-P(=O)(OH)-O-CH2-CH2-CH2-O-P(=O)(OH)-O-CH2... (Z = propane-1,3-diol bridging both phosphates through its terminal oxygens; one free P-OH on each phosphate). It has 254 sigma+pi bonds (explicit skeleton 58 + 4 x 49 per C17H31 residue), is H2-inert in the bridge, and is MORE symmetrical than PL1: wing-exchange is an automorphism. Hence the meso (R,S) assignment is achiral and the printed chirality forces the homochiral (R,R) or (S,S) drawing at the two wing glycerol centres. PL3 is phosphatidylethanol: glycerol esterified with RCO- at sn-1 and sn-2 and carrying at sn-3 the group -O-P(=O)(OH)-O-CH2-CH3; the single free phosphate OH makes it a monoanion (net charge -1) at physiological pH; exactly one stereocentre (glycerol C2) gives the required pair of enantiomers (R)/(S). Hydrolysis balance PL3 + m H2O forces m = 4. Derived entirely from the problem materials: fragments a-e and inventory (T5 page 1), 255-bond count and 100 g/181.0 g I2 data fixing RCOOH = C18H32O2 hence R = C17H31 with 49 bonds per residue (page 2), and the three balanced hydrolysis equations plus the 254-bond, Z(C,H,O; H2-inert), chirality and charge clues (page 4).",
+  "theorem_names": [
+    "bondsPerResidue_C17H31",
+    "pl1_valid", "pl2_valid", "pl2_asym_valid", "pl3_valid", "pl3_phys_valid",
+    "pl1_valences", "pl2_valences", "pl3_valences", "pl3_phys_valences",
+    "pl1_bondOrderTotal", "bondTotal_pl1",
+    "pl2_bondOrderTotal", "bondTotal_pl2", "pl2_one_bond_less",
+    "bondTotal_pl2_asym",
+    "z_atoms", "z_composition_CHO", "z_h2_inert", "z_is_C3H8O2",
+    "pl1_stereocentres", "pl2_stereocentres", "pl2_asym_stereocentres",
+    "pl2_homochiral", "pl2_wingSwap_is_automorphism", "pl2_wingSwap_nontrivial",
+    "pl1_forces_swap_absent", "pl2_meso_RS_achiral", "pl2_RR_not_meso",
+    "pl3_composition", "pl3_phys_netCharge", "pl3_phys_chargedO",
+    "pl3_neutral_netCharge", "pl3_stereocentre",
+    "pl3_pair_of_enantiomers", "pl3_mirror_distinct",
+    "pl3_hydrolysis_atomCensus", "pl3_hydrolysis_waters"
+  ],
+  "assumptions": [
+    "Standard Lean logical axioms only (propext, Quot.sound, Classical.choice) plus the Lean 4.31 toolchain's native_decide trust base (ofReduceBool compiler evaluation); no custom axioms, no sorry/admit/unsafe.",
+    "Either enantiomer of each pair is an acceptable drawing (the problem asks to show stereochemistry, not to select an enantiomer): PL2 drawn homochiral (R,R) [equivalently (S,S)]; PL3 drawn (R) [equivalently (S)] at glycerol C2.",
+    "PL3's glycerol carries its two acyl chains at sn-1 and sn-2 with the phosphoethanol group at sn-3 (the standard phospholipid convention and the only assignment consistent with the fragment set); the printed data do not distinguish sn-1/sn-2 from sn-1/sn-3 placement of the second acyl, so both are stereochemically equivalent answer drawings.",
+    "Phosphorus atoms are not counted as stereocentres, as explicitly instructed by the problem (page 1)."
+  ],
+  "source_gaps": [
+    "The 1,3- versus 1,2-propanediol choice for the PL2 bridge is not fixed by the bond count alone (both give 254); the 1,2-isomer is excluded only via the family-level statement (from 5.1 context, page 1) that the meso-like diastereomers are achiral, since the 1,2-bridge adds a third stereocentre making every diastereomer chiral. This argument and the exclusion are formalized (bondTotal_pl2_asym, pl2_asym_stereocentres) and explained in answer.md.",
+    "PL1's middle glycerol carbon passes the local four-single-bond stereocentre test in the formalization (theorem pl1_stereocentres lists it) but is not a true stereocentre because its two phosphate arms are identical substituents; the global symmetry reasoning for PL1/PL2 is carried by the automorphism theorems instead. Documented in the file docstring and answer.md."
+  ],
+  "verification_commands": [
+    "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t5_a6/campaign/workspace && lake env lean IChO2026Problems/problem_icho_2026_t5_a6.lean"
+  ]
+}

@@ -1,0 +1,3 @@
+'IChO2026Problems.ProblemIcho2026T5A6.structure_pl2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.ProblemIcho2026T5A6.structure_pl3' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.ProblemIcho2026T5A6.requested_structures' depends on axioms: [propext, Classical.choice, Quot.sound]

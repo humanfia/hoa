@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t1_a1",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "compound 6",
+      "id": "identity_x",
+      "kind": "classification",
+      "raw_value": "compound 6",
+      "unit": ""
+    },
+    {
+      "display_value": "compound 3",
+      "id": "identity_y",
+      "kind": "classification",
+      "raw_value": "compound 3",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t4_a1",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "id": "uranium235_abundance",
+      "kind": "numeric",
+      "raw_value": "200/301",
+      "display_value": "0.664",
+      "unit": "%"
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,63 @@
+{
+  "target": "icho_2026_t7_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302451.0828981,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t7_a5.lean": "38d08c1e008099c21e75b44b4513c4f148087c1fac933c565cbc1bdd76884c73",
+    "answer.md": "b46d78f46f6cf23f290fdf8d00d37574ff699bd20f7e1b808d675027fa0104ca",
+    "verification.md": "1b88b098ef4fb5629e39042bb7f4adab5ce490644956b957337feb73afff3342",
+    "result.json": "b85b4bd8a67d132689e0d2809d7b9fc092fef344fe9686009cd128f4fd09e557"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t7_a5",
+    "status": "completed",
+    "answer_summary": "Complex 5 is the neutral dinitrogen-bridged dimolybdenum(0) complex [{Mo(PNP)(N2)2}2(mu-eta1:eta1-N2)]: one intact N2 bridges the two Mo centers and each Mo also carries two terminal end-on N2 ligands.",
+    "theorem_names": [
+      "IChO2026Problems.T7A5.source_mole_ratio_near_five_halves",
+      "IChO2026Problems.T7A5.five_n2_for_two_precursors_matches_gas_datum",
+      "IChO2026Problems.T7A5.five_n2_for_two_precursors_in_measurement_interval",
+      "IChO2026Problems.T7A5.three_electron_reduction_gives_mo_zero",
+      "IChO2026Problems.T7A5.binding_topology_unique",
+      "IChO2026Problems.T7A5.source_pnp_template_fields",
+      "IChO2026Problems.T7A5.bond_order_symmetric",
+      "IChO2026Problems.T7A5.every_n2_has_triple_bond",
+      "IChO2026Problems.T7A5.graph_n2_binding_counts",
+      "IChO2026Problems.T7A5.product_is_neutral_closed_shell_mo_zero",
+      "IChO2026Problems.T7A5.pnp_is_tridentate",
+      "IChO2026Problems.T7A5.coordination_geometry",
+      "IChO2026Problems.T7A5.structure_5_is_dinitrogen_bridged_dimolybdenum"
+    ],
+    "assumptions": [
+      "Ideal-gas behavior at the stated 273.15 K and 1.0 bar, using R = 0.08314 L bar mol^-1 K^-1.",
+      "The designed gas-uptake clue is interpreted by its primitive whole-molecule stoichiometry: the candidate 5:2 N2:4 ratio predicts a volume inside the printed 94.97 +/- 0.005 cm3 interval.",
+      "Reduction of neutral MoCl3(PNP) by three sodium equivalents removes three chloride ligands and gives neutral Mo(0).",
+      "PNP remains a neutral tridentate six-electron donor, coordinated N2 remains intact and neutral, each end-on Mo-N2 contact donates two electrons, and the isolated closed-shell product follows the 18-electron rule.",
+      "The product is a single molecular species represented by the smallest integral stoichiometric unit, rather than an arbitrary higher oligomer or mixture."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T7_page-2.png icho_2026_source/image/T7_page-3.png",
+      "lake build IChO2026Chem",
+      "lake env lean IChO2026Problems/problem_icho_2026_t7_a5.lean",
+      "if grep -nE '\\b(sorry|admit|unsafe|axiom)[[:space:]]' IChO2026Problems/problem_icho_2026_t7_a5.lean; then exit 1; else echo 'no prohibited declarations'; fi"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

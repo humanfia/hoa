@@ -1,0 +1,2 @@
+'IChO2026.Problems.T8.A1.half_equation_balanced' depends on axioms: [propext]
+'IChO2026.Problems.T8.A1.coefficients_forced' depends on axioms: [propext, Quot.sound]

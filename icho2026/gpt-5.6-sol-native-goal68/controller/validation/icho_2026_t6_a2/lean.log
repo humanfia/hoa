@@ -1,0 +1,5 @@
+'IChO2026Problems.T6A2.structure_d_answer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A2.structure_b_answer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A2.structure_c_answer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T6A2.every_transformation_is_applicable' depends on axioms: [propext]
+'IChO2026Problems.T6A2.c_to_cyclo14_consistency' depends on axioms: [propext, Classical.choice, Quot.sound]

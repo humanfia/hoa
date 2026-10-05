@@ -1,0 +1,23 @@
+{
+  "target_id": "icho_2026_t2_a1",
+  "status": "completed",
+  "answer_summary": "3 CH2(COOH)2 + 4 BrO3^- -> 9 CO2 + 4 Br^- + 6 H2O, with Ce(IV) as a zero-net-consumption catalyst; equivalently 4 KBrO3 gives 4 KBr in the molecular form.",
+  "theorem_names": [
+    "IChO2026Problems.icho_2026_t2_a1.balanced_bz_equation",
+    "IChO2026Problems.icho_2026_t2_a1.balanced_overall_shape_classification",
+    "IChO2026Problems.icho_2026_t2_a1.least_positive_balanced_coefficients",
+    "IChO2026Problems.icho_2026_t2_a1.bz_coefficients_are_the_minimum"
+  ],
+  "assumptions": [
+    "The printed formula CH2(COOH)2 is parsed as C3H4O4.",
+    "Chemical equations conserve each element and total electric charge.",
+    "A catalyst has zero net stoichiometric consumption in an overall reaction."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t2_a1.lean",
+    "/usr/bin/grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)|^[[:space:]]*axiom[[:space:]]' IChO2026Problems/problem_icho_2026_t2_a1.lean",
+    "sha256sum icho_2026_source/image/T2_page-1.png icho_2026_source/raw/theory_problem.pdf",
+    "python3 -m json.tool result.json >/dev/null"
+  ]
+}

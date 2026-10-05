@@ -1,0 +1,58 @@
+{
+  "target": "icho_2026_t9_a9",
+  "goal_status": "goal_complete",
+  "checked_at": 1789367908.5405061,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a9.lean": "99e9a26be56b257c3eacbb977530c433a9efe1e8fa198a01ce2b941ab13e8e46",
+    "answer.md": "17aee12355eccbf076483588d43050c133fc8e3cfdab4e555f733ecebe4cf8c5",
+    "verification.md": "43ccf9d1d6235c64952d20187041e7a4f8806c451246bef053d350f13319e4e5",
+    "result.json": "7734130013b63852d8924906ba0543785a96869afb4f53a709b9ad6a73f5a7d3"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a9",
+    "status": "completed",
+    "answer_summary": "120 arrangements: 6! = 720 bijective assignments of six distinct functional groups to the six primary CH2OH sites of alpha-CD, divided by the 6 rotations of the macrocycle (free action because all six groups are distinct; no reflection symmetry since alpha-CD is chiral), giving 720/6 = 5! = 120.",
+    "requested_outputs": {
+      "arrangement_count": 120
+    },
+    "theorem_names": [
+      "IChO2026.T9.A9.patterns_count",
+      "IChO2026.T9.A9.rotation_action_isFree",
+      "IChO2026.T9.A9.orbit_card_eq_six",
+      "IChO2026.T9.A9.rotations_count",
+      "IChO2026.T9.A9.arrangement_count",
+      "IChO2026.T9.A9.answer_numeric"
+    ],
+    "final_theorem": "IChO2026.T9.A9.arrangement_count",
+    "final_theorem_statement": "Fintype.card Arrangement = 120, where Arrangement is the quotient of addressed patterns (ZMod 6 \u2243 Fin 6) by the rotation action of Multiplicative (ZMod 6).",
+    "assumptions": [
+      "alpha-CD contains exactly six alpha-D-glucopyranoside units, hence six CH2OH modification sites arranged on a 6-site cyclic array (problem text, Q9 preamble).",
+      "hexadifferentiated means the six sites carry six distinct functional groups (context of Q9-8, compound S).",
+      "arrangements are counted up to rotation of the macrocycle only; alpha-CD is chiral (all-D-glucose), so reflection produces the enantiomer, a different molecule, and is not quotiented out.",
+      "standard chemistry knowledge used: cyclodextrin macrocyclic topology and chirality of D-glucose-derived cyclooligosaccharides."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "/home/jing/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lake env lean IChO2026Problems/problem_icho_2026_t9_a9.lean  (exit 0; #print axioms shows only propext, Classical.choice, Quot.sound for all four key theorems)"
+    ],
+    "verification_log": "verification.md"
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

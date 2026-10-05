@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t3_a1",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "C9H4BO2",
+      "id": "cof1_empirical_formula",
+      "kind": "formula",
+      "raw_value": "C9H4BO2",
+      "unit": ""
+    },
+    {
+      "display_value": "69.77",
+      "id": "cof1_carbon_mass_percent",
+      "kind": "numeric",
+      "raw_value": "10809900/154939",
+      "unit": "%"
+    }
+  ],
+  "schema_version": 1
+}

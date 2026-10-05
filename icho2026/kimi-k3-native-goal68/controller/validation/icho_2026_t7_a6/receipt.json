@@ -1,0 +1,55 @@
+{
+  "target": "icho_2026_t7_a6",
+  "goal_status": "goal_complete",
+  "checked_at": 1789364634.1603956,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t7_a6.lean": "b99a318e1d41619cfa1268599e545b68c70294489302cd7d9683c413ceccfb75",
+    "answer.md": "2f0f3ad457c0fa5b23b6292bd0869caf7cd015ed216eefac6cae73edddb73f02",
+    "verification.md": "b51a99589ead20ece1696d3f0656e437c88f6773d3de8a893a79fdca79b5e354",
+    "result.json": "a8b8a20b92e2b349f69219e08906fa0bef2f724177529088485ac55c053a8c00"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t7_a6",
+    "status": "completed",
+    "answer_summary": "Ranking of Red/Ad combinations by decreasing NH3 yield: B > C > D > A. Grounding: at fixed acid (A vs C, pKa 13.7) the stronger reductant Cp2V (E\u00b0=-1.10 V) beats Cp2Ni (-0.09 V), so C > A; at fixed reductant (Cp2V) the higher-pKa acid wins, so B (pKa 15.0) > C (13.7) > D (10.6). The cross-parameter pair D vs A is settled by the Bordwell CPET conversion 0.0591 V/pKa: D's reductant advantage (1.01 V) exceeds its acid disadvantage (3.1 x 0.0591 = 0.183 V) by >5x, so D > A. Final: B > C > D > A.",
+    "theorem_names": [
+      "IChO2026.Problems.T7A6.C_above_A",
+      "IChO2026.Problems.T7A6.B_above_C",
+      "IChO2026.Problems.T7A6.C_above_D",
+      "IChO2026.Problems.T7A6.B_above_D",
+      "IChO2026.Problems.T7A6.B_above_A",
+      "IChO2026.Problems.T7A6.D_above_A",
+      "IChO2026.Problems.T7A6.ranking_BCDA",
+      "IChO2026.Problems.T7A6.rank_positions",
+      "IChO2026.Problems.T7A6.all_pairs"
+    ],
+    "assumptions": [
+      "YieldOrder.potential_mono: at fixed pKa, a more negative reductant E\u00b0 gives higher NH3 yield (grounded in the problem's printed reference yields 1 vs 3 on T7_page-3.png: Cp2Cr 0 mol vs Cp2Co 9.1 mol at near-equal pKa).",
+      "YieldOrder.pKa_mono: at fixed reductant, a higher-pKa CF3SO3- acid gives higher NH3 yield (grounded in the printed reference yields 3 vs 4: pKa 13.9 -> 9.1 mol vs pKa 14.4 -> 11.8 mol, same Cp2Co reductant and counterion).",
+      "YieldOrder.bordwell_joint: Bordwell linear free-energy relation for CPET with conversion 0.0591 V per pKa unit at 298 K (trusted general physical-organic chemistry law); used only to compare D vs A, where both E\u00b0 and pKa change."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t7_a6.lean  (exit 0, no errors/warnings)",
+      "lake env lean /tmp/axcheck_t7a6.lean  (file copy + open namespace + #print axioms on the seven final theorems; every theorem: [propext, Classical.choice, Quot.sound] only)"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

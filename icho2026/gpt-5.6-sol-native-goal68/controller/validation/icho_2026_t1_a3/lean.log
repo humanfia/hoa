@@ -1,0 +1,3 @@
+'IChO2026T1A3.carbon_atom_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A3.compound_identity' depends on axioms: [propext]
+'IChO2026T1A3.solve_t1_a3' depends on axioms: [propext, Classical.choice, Quot.sound]

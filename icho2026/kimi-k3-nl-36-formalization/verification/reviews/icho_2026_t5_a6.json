@@ -1,0 +1,1751 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 2,
+    "last_review_iter": 1,
+    "reason": "Passed: the submission and closed Lean theorem expose one complete source-supported PL2 graph and one complete source-supported PL3 graph, including charges and stereochemistry, with the printed hydrolysis equations, bond counts, CHO/no-hydrogenation condition, symmetry/chirality observations, and both prior-part prerequisites rederived rather than assumed. The structures also preserve the sealed Kimi 5.6 answers exactly.",
+    "updated_at": "2026-09-13T10:36:15Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The source verb 'Draw' was fixed before artifact inspection as requesting concrete structures, not global uniqueness. structurePL2 is the non-ionised symmetric propane-1,3-diol-bridged tetra-acyl bis(phosphate) graph; structurePL3 is the physiological monoanion of the ethyl phosphate diester with two adjacent acyl substituents. Both match the page-4 arrows and stated stereochemical conditions."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "The main theorem is closed. previousPartA2_derived_inline and previousPartA3_derived_inline reconstruct the used prerequisites; structurePL2_raw_result and structurePL3_raw_result then prove graph well-formedness, valence, formulas, bond counts, ester-site ledgers, atom/charge balance, charge state, symmetry, and chirality without hypotheses containing either requested result."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "MolecularGraph records every non-R atom, bond order, implicit H count, formal charge, radical count, and stereocentre. R is the authorized pseudoatom and is expanded by fattyResidueRFormula and fattyResidueRInternalBondOrder. StereoCentre.ValidFor checks four distinct graph-derived ligand classes, while IsChiral and EnantiomerPair use mirror non-superposition."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "Both outputs are exact symbolic structures; no measured interval, tolerance, rounding, or uncertainty enters their classification."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "For PL3, the source's charged enantiomer-pair branch is applied in the correct direction: the terminal-phosphate pattern has one checked stereocentre and survives, whereas the central-phosphate pattern has equivalent terminal acyl arms and is achiral. Either R drawing is permitted; its mirror supplies the other enantiomer."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The requested witness graphs themselves satisfy every outcome-decisive source constraint. PL3's two positional cases are generated from the three glycerol oxygens modulo exchange of identical terminal positions and filtered uniformly. PL2 does not use a preselected isomer list to claim open-world uniqueness. No source-compatible model makes either displayed witness violate its hydrolysis, valence, charge, symmetry, or chirality constraints."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The page-1 fragment topology and page-3 observations yield the PL1 baseline and R expansion used in both structures.",
+          "carrier": "sourcePL1Inventory; PreviousPartA3Constraints; previousPartA2_derived_inline; previousPartA3_derived_inline; fattyResidueRFormula; fattyResidueRInternalBondOrder",
+          "status": "covered",
+          "evidence": "The fragment stub ledger derives the single cap and an explicit PL1 graph; the ozonolysis/bond-count equations derive the acid counts, and the R pseudoatom is checked by its valence ledger."
+        },
+        {
+          "claim": "The printed PL2 hydrolysis, 254-bond count, CHO/no-H2 facts, and comparative symmetry support the propane-1,3-diol bridge and complete PL2 connectivity.",
+          "carrier": "PL2BridgeSourceConstraints; propane13Diol; MoreSymmetricalThanPL1Witness; PL2StructureSpec; structurePL2_raw_result",
+          "status": "covered",
+          "evidence": "The one-bond decrement relative to glycerol gives bridge bond order 12; the saturated acyclic diol valence equations give C3H8O2, and the concrete linear diol has equivalent ends. Its two phosphatidyl arms, neutral phosphates, formula, chirality, and bilateral automorphism are checked on the graph."
+        },
+        {
+          "claim": "The printed hydrolysis arrows are represented on the exact species and atom/charge dimensions used to infer each structure.",
+          "carrier": "MolecularReaction.AtomBalanced; MolecularReaction.ChargeBalanced; pl2HydrolysisReaction; pl3HydrolysisReaction; pl2HydrolysisSites_valid; pl3NeutralHydrolysisSites_valid",
+          "status": "covered",
+          "evidence": "PL2 uses one phospholipid plus eight waters and exactly the four printed product roles; PL3 uses its neutral representative plus four waters and exactly the four printed product roles. Acyl- and phosphate-ester sites are explicit and all atom and charge totals are proved equal."
+        },
+        {
+          "claim": "The physiological charge and pair-of-enantiomers observation selects and validates the PL3 drawing.",
+          "carrier": "IsSingleODeprotonationAt; GlycerolSubstitutionPattern; PL3PatternMatchesSource; enantiomer_pair_selects_terminal_phosphate; PL3StructureSpec",
+          "status": "covered",
+          "evidence": "Single deprotonation of the non-ester phosphate oxygen gives charge -1 without altering connectivity or stereo data; the central-phosphate alternative has an explicit arm-exchange automorphism and no stereocentre, while the terminal pattern is chiral."
+        },
+        {
+          "claim": "Requested stereochemistry is structural rather than an unconstrained flag.",
+          "carrier": "LigandCertificate.ValidFor; StereoCentre.ValidFor; MolecularGraph.IsChiral; structurePL2_isChiral; structurePL3_isChiral",
+          "status": "covered",
+          "evidence": "Each listed stereocentre is a tetrahedral carbon whose H, direct oxygen, acyl-side carbon path, and phosphate-side carbon path are distinct and graph-checked; mirror configurations fail stereo-preserving superposition."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t5_a6",
+        "source_record_sha256": "e46c433a1bedb285fcaef3998eef89f61d1c8f010cd71011578d506e5145fed3",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a6.answer.json",
+        "answer_submission_sha256": "5a4728333b825b3706068f30d49cce34639ee66c43c97099f53eb4b3d977d566",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t5_a6.source.json",
+        "source_report_sha256": "d460e35cc440ef2357f65af959ba076780699552f6dfd90ffe807c7eead7fbd3",
+        "candidate": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+        "preflight_sha256": "2cb9d7fe45e9c155ef73586012d3afdde2c87d81e8d17b4a87a1197083de879f",
+        "candidate_sha256": "ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c",
+        "question_sha256": "4e0b3a9fcab242613478a5330aadcac613c0c087161594cfa893d2ad856a0dae",
+        "shared_context_sha256": "126ebe52c29985845e346ddfb16fbdf923540a95eeb8a59493429c92cf3b4bc0",
+        "previous_parts_sha256": "da1945bc39262ea33345833133c60e88d9be8d13b792b14de30cd238c33ca518",
+        "requested_outputs_sha256": "7d4395dc073fb754d7210d973d8a4aa361611837eab090a7815b176208132788",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T5_page-4.png",
+            "sha256": "bd87230867a821630559f26fb8c6ec968579a3d7cc2c130460fb91b8aa0463f3"
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-3.png",
+            "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-2.png",
+            "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-1.png",
+            "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "658ccd62e80110023126aeb82c16434b8e3e4462b3684877eb226593a5ff2109",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 2,
+            "previous_part_prerequisite": 2,
+            "requested_output": 2,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_pl2",
+            "structure_pl3"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t5_a2",
+            "icho_2026_t5_a3"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t5_a6",
+          "path": ".archon/provided_answer_drafts/Q5.md",
+          "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t5_a6",
+          "source_record_sha256": "e46c433a1bedb285fcaef3998eef89f61d1c8f010cd71011578d506e5145fed3",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a6.answer.json",
+          "answer_submission_sha256": "5a4728333b825b3706068f30d49cce34639ee66c43c97099f53eb4b3d977d566",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t5_a6.source.json",
+          "source_report_sha256": "d460e35cc440ef2357f65af959ba076780699552f6dfd90ffe807c7eead7fbd3",
+          "candidate": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+          "preflight_sha256": "2cb9d7fe45e9c155ef73586012d3afdde2c87d81e8d17b4a87a1197083de879f",
+          "candidate_sha256": "ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c",
+          "question_sha256": "4e0b3a9fcab242613478a5330aadcac613c0c087161594cfa893d2ad856a0dae",
+          "shared_context_sha256": "126ebe52c29985845e346ddfb16fbdf923540a95eeb8a59493429c92cf3b4bc0",
+          "previous_parts_sha256": "da1945bc39262ea33345833133c60e88d9be8d13b792b14de30cd238c33ca518",
+          "requested_outputs_sha256": "7d4395dc073fb754d7210d973d8a4aa361611837eab090a7815b176208132788",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T5_page-4.png",
+              "sha256": "bd87230867a821630559f26fb8c6ec968579a3d7cc2c130460fb91b8aa0463f3"
+            },
+            {
+              "path": "icho_2026_source/image/T5_page-3.png",
+              "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+            },
+            {
+              "path": "icho_2026_source/image/T5_page-2.png",
+              "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+            },
+            {
+              "path": "icho_2026_source/image/T5_page-1.png",
+              "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "658ccd62e80110023126aeb82c16434b8e3e4462b3684877eb226593a5ff2109",
+            "node_count": 9,
+            "edge_count": 12,
+            "node_kind_counts": {
+              "derivation_obligation": 2,
+              "previous_part_prerequisite": 2,
+              "requested_output": 2,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "structure_pl2",
+              "structure_pl3"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t5_a2",
+              "icho_2026_t5_a3"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t5_a6",
+            "path": ".archon/provided_answer_drafts/Q5.md",
+            "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The 'Draw' witness quantifier, absence of any recycle ledger, all four image topologies, and the hydrolysis atom ledgers were fixed from the bound problem before the submission, Lean file, or sanitized process metadata was inspected. The sealed Kimi draft was used only afterward for the expressly authorized fidelity comparison, never as a chemistry premise."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "PL2 is carried end-to-end by PreviousPartA3Constraints, PL2BridgeSourceConstraints, PL2StructureSpec, and structurePL2_raw_result. PL3 is carried by the printed-product reconstruction, PL3StructureSpec, the positional branch audit, and structurePL3_raw_result. Both atom ledgers are exact and symbolic."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy and requested_outputs[1].reporting_policy require exact_symbolic output; raw and reported propositions are identical and no numeric display rounding is performed."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or used. The classifications, formulas, charge counts, bond orders, and stereochemical labels are exact."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The source asks for concrete drawings, so no open-world chemical universe is outcome-decisive. PL2 is audited as a direct witness. The only finite elimination used for PL3 is the two-position quotient obtained before selection from one phosphate and two identical acyl groups occupying the three glycerol oxygens; both cases receive the same core checks."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result declarations are structurePL2, PL2StructureSpec, structurePL2_raw_result, structurePL2_reported_result, structurePL3, structurePL3Neutral, PL3StructureSpec, structurePL3_raw_result, structurePL3_reported_result, and problem_icho_2026_t5_a6."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The theorem supplies exactly the two requested structure classifications in bundle order. Extra internal formula, hydrolysis, and mirror facts only certify those drawings; it makes no yield, phase, global-isomer enumeration, or open-world uniqueness claim."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The main result and both per-output results have no chemistry hypotheses. Prior-part data are reconstructed by explicit closed graphs and arithmetic constraints; the candidate contains no local axiom, opaque declaration, sorry, or admit."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "Both submission outputs are concrete structures rather than diagnostic sentinels, and their raw/display values agree with the exact graph carriers, empty units, physiological/non-ionised conditions, and requested stereochemistry."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Every outcome-decisive bridge is named above: fragment/R reconstruction, saturated diol bridge inference, functional-group topology, atom/charge hydrolysis ledgers, physiological deprotonation, positional chirality, and mirror stereochemistry. No dormant registry rule or external literature is needed."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "complete structure of PL2, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.IChO2026T5A6.structurePL2_reported_result : StructurePL2ReportedResult",
+            "status": "covered",
+            "evidence": "The first submission row has the required id/kind/unit and exact-symbolic complete non-ionised PL2 connectivity and stereochemistry; it is bound to an explicit atom graph and source-constraint specification.",
+            "output_id": "structure_pl2",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of PL3, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.IChO2026T5A6.structurePL3_reported_result : StructurePL3ReportedResult",
+            "status": "covered",
+            "evidence": "The second submission row has the required id/kind/unit and exact-symbolic complete physiological PL3 connectivity, charge, and stereochemistry; it is bound to explicit neutral and monoanionic atom graphs and a source-constraint specification.",
+            "output_id": "structure_pl3",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T5_page-4.png",
+            "sha256": "bd87230867a821630559f26fb8c6ec968579a3d7cc2c130460fb91b8aa0463f3",
+            "inspected": true,
+            "evidence": "The three arrows point left-to-right. PL2 + 8 H2O has exactly 4 RCOOH, 2 H3PO4, Z, and 2 glycerols at the head; PL3 + m H2O has 2 RCOOH, H3PO4, ethanol, and glycerol. The page also states PL2's 254-bond/chiral/more-symmetric constraints, Z's CHO/no-H2 constraints, PL3's physiological charge/enantiomer pair, and the exact draw request. No reagent is printed above or below an arrow."
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-3.png",
+            "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7",
+            "inspected": true,
+            "evidence": "The page supplies the A3 observations used inline: RCOOH gives three different equimolar reductive-ozonolysis products and non-ionised PL1 has 255 total sigma-plus-pi bonds. The unrelated phase-choice panel adds no component to either requested structure."
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-2.png",
+            "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96",
+            "inspected": true,
+            "evidence": "This page contains only the A2 request and a blank response field. It adds no hidden product, repeat bracket, connector, cap, or marked answer; A2 must therefore be reconstructed from page 1 rather than read from this page."
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-1.png",
+            "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347",
+            "inspected": true,
+            "evidence": "The W example fixes connector semantics. For PL1, fragment a is a one-connector H cap, b is P(=O)(OH) with two attachment stubs, c is a three-oxygen glycerol C3 unit with three stubs, and d is one RC(=O) acyl unit with one stub; multiplicities are n, 2, 3, and 4. A connected acyclic assembly pairs n+17 stubs over n+9 fragments, giving n=1. R's boundary atom belongs to the C17H31 hydrocarbon substituent and its external bond attaches to the adjacent carbonyl carbon; no atom is shared across that boundary."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "All abbreviations and attachment boundaries are explicit. R expands to C17H31 and attaches once to a carbonyl carbon; glycerol is C3H8O3, propane-1,3-diol is C3H8O2, ethanol is C2H6O, phosphoric acid is H3PO4, and water is H2O. Ester and phosphate-diester motifs in both graphs have chemically valid valences and no radicals or peroxide bonds."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "quantitative_material_stage. Source-arrow certificate: every relevant page-4 arrowhead points left-to-right, with no above/below-shaft reagent. PL2 tail={PL2,8 H2O}, head={4 RCOOH,2 H3PO4,Z,2 glycerol}; PL3 tail={neutral PL3 representative,4 H2O derived from two acyl and one phosphate diester sites}, head={2 RCOOH,H3PO4,ethanol,glycerol}. Distinct R-carbonyl, glycerol C3, bridge/ethoxy, and phosphate motifs are traced by AcylEsterSite.ValidFor and PhosphateDiesterSite.ValidFor. The outcome-used finite species, atom, and charge ledgers are pl2HydrolysisReaction/pl3HydrolysisReaction with AtomBalanced and ChargeBalanced; phases remain explicitly unspecified and no yield or sole-product claim is made."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "The source-only recount gives PL1 C81H142O17P2 with bond order 255; replacing glycerol C3H8O3 (13 bonds) by propane-1,3-diol C3H8O2 (12 bonds) gives PL2 C81H142O16P2 and bond order 254. PL3 products total C41H81O12P before subtracting 4 H2O, giving neutral C41H73O8P; physiological deprotonation changes only H and charge. No molar-mass claim is used."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "PL2 product total is C81H158O24P2 and subtraction of 8 H2O matches the graph C81H142O16P2. PL3 product total is C41H81O12P and subtraction of 4 H2O matches neutral C41H73O8P. Both exact MolecularReaction atom ledgers and their neutral charge ledgers are proved; the physiological PL3 graph is separately proved to be a single O-H deprotonation."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "The requested outputs are exact molecular structures with empty units; all internal counts are dimensionless integer atom, charge, and bond counts."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "No requested numeric result is rounded or displayed; exact_symbolic reporting applies to both classifications."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "PL2 has the complete R,R graph and a checked S,S mirror; PL3 has one complete R graph and checked S mirror. Each centre's four ligand paths are graph-validated and distinct. The central-phosphate PL3 alternative has two equivalent carbon arms and no stereocentre, correctly orienting the source chirality constraint."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The verb 'Draw' requires concrete evidence-supported identifications, not exhaustive coverage. The certificate makes no global PL2 isomer claim. Its limited PL3 positional theorem concerns exactly the two glycerol substitution patterns derived from identical acyl groups and is not presented as an open-world chemical classification."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The named structure definitions are permissible output witnesses and are subjected to nontrivial valence, connectivity, formula, hydrolysis, symmetry, charge, and stereochemical checks. Neither appears in a theorem hypothesis or candidate-shaped singleton premise. The final hash equalities are reflexive bookkeeping only; each is conjoined with and proved alongside the substantive RawResult/ReportedResult. Targeted inspection found no axiom, opaque, sorry, or admit."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "The non-ionised PL2 has 254 total sigma-plus-pi bonds, is chiral, and is more symmetrical than PL1.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T5_page-4.png#pl2_constraints"
+                }
+              },
+              {
+                "condition": "Z contains only C, H, and O and does not react with catalytic hydrogen.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T5_page-4.png#z_constraints"
+                }
+              }
+            ],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "T5-A2",
+                "relation": "The PL1 fragment assembly and its explicit graph are independently rederived to supply the comparison structure and 255-bond baseline.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "previous_part",
+                "reference": "T5-A3",
+                "relation": "The fatty acid formula is independently rederived and supplies the C17H31 expansion of each displayed R residue.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[1].question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "PL2 hydrolysis equation",
+                "relation": "The left-to-right arrow has one PL2 and eight waters at its tail and four RCOOH, two H3PO4, one Z, and two glycerols at its head.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T5_page-4.png#pl2_hydrolysis"
+                }
+              }
+            ],
+            "evidence": "The source-first graph and atom ledger agree with the submission and the complete PL2 Lean carrier.",
+            "id": "structure_pl2",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.IChO2026T5A6.sourcePL1Inventory",
+                "IChO2026Problems.IChO2026T5A6.PreviousPartA3Constraints",
+                "IChO2026Problems.IChO2026T5A6.PL2BridgeSourceConstraints"
+              ],
+              "raw_result": [
+                "IChO2026Problems.IChO2026T5A6.StructurePL2RawResult",
+                "IChO2026Problems.IChO2026T5A6.structurePL2_raw_result"
+              ],
+              "relations": [
+                "IChO2026Problems.IChO2026T5A6.PL2StructureSpec",
+                "IChO2026Problems.IChO2026T5A6.pl2HydrolysisReaction",
+                "IChO2026Problems.IChO2026T5A6.MoreSymmetricalThanPL1Witness"
+              ],
+              "reported_result": [
+                "IChO2026Problems.IChO2026T5A6.StructurePL2ReportedResult",
+                "IChO2026Problems.IChO2026T5A6.structurePL2_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structurePL2 lists the complete graph with four R pseudoatoms, two phosphates, the symmetric three-carbon bridge, neutral phosphate OH groups, and two validated R-configured centres; all source constraints are conjuncts of PL2StructureSpec.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Exact molecular structure; no dynamic time, cycle, feed, or recycle scope applies.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "One complete non-ionised PL2 molecular graph using R for each fatty-acid hydrocarbon residue and explicitly showing an allowed enantiomer.",
+            "raw_result": {
+              "derivation": "Expanding R from the inline A3 derivation, the common PL1/PL2 hydrolysis ledgers transfer the 255-to-254 bond decrement to replacement of glycerol (bond order 13) by Z (bond order 12). A connected acyclic saturated two-ended diol then has C3H8O2; equivalent ends give the propane-1,3-diol bridge. Joining its terminal oxygens to two neutral phosphate diesters and two diacylglycerol arms gives the checked R,R graph and its S,S mirror.",
+              "exact_unrounded": true,
+              "value_or_expression": "RC(=O)O-CH2-C*_L(H)(O-C(=O)R)-CH2-O-P(=O)(OH)-O-CH2-CH2-CH2-O-P(=O)(OH)-O-CH2-C*_R(H)(O-C(=O)R)-CH2-O-C(=O)R; C*_L=R and C*_R=R (mirror S,S)."
+            },
+            "reporting": {
+              "application": "Return the exact symbolic molecular graph and stereochemical labels; no rounding is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The answer submission has the exact output id, classification kind, empty unit, full connectivity, neutral charge state, and enantiomeric stereochemistry required by the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-1.png#fragment_inventory"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-3.png#a3_bond_and_ozonolysis_data"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-4.png#pl2_hydrolysis_and_constraints"
+              }
+            ],
+            "source_requirement": "complete structure of PL2, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "PL3 is charged at physiological pH and exists as a pair of enantiomers.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T5_page-4.png#pl3_constraints"
+                }
+              }
+            ],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "T5-A2",
+                "relation": "The common phosphatidyl-glycerol fragment interpretation is independently reconstructed; no prior answer is assumed.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "previous_part",
+                "reference": "T5-A3",
+                "relation": "The independently derived fatty acid formula supplies the C17H31 expansion of each R residue.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[1].question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "PL3 hydrolysis equation",
+                "relation": "The left-to-right arrow has PL3 plus m waters at its tail and two RCOOH, one H3PO4, ethanol, and glycerol at its head.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T5_page-4.png#pl3_hydrolysis"
+                }
+              }
+            ],
+            "evidence": "The source-first graph, atom/charge ledger, and stereochemical branch agree with the submission and complete PL3 Lean carrier.",
+            "id": "structure_pl3",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.IChO2026T5A6.PreviousPartA3Constraints",
+                "IChO2026Problems.IChO2026T5A6.GlycerolSubstitutionPattern"
+              ],
+              "raw_result": [
+                "IChO2026Problems.IChO2026T5A6.StructurePL3RawResult",
+                "IChO2026Problems.IChO2026T5A6.structurePL3_raw_result"
+              ],
+              "relations": [
+                "IChO2026Problems.IChO2026T5A6.PL3StructureSpec",
+                "IChO2026Problems.IChO2026T5A6.pl3HydrolysisReaction",
+                "IChO2026Problems.IChO2026T5A6.IsSingleODeprotonationAt",
+                "IChO2026Problems.IChO2026T5A6.enantiomer_pair_selects_terminal_phosphate"
+              ],
+              "reported_result": [
+                "IChO2026Problems.IChO2026T5A6.StructurePL3ReportedResult",
+                "IChO2026Problems.IChO2026T5A6.structurePL3_reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structurePL3 explicitly contains two acyl esters on adjacent glycerol oxygens, a terminal glycerol phosphate diester linked to ethanol, one anionic non-ester phosphate oxygen, and one validated R-configured centre with an S mirror.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Exact molecular structure and physiological charge state; no dynamic time, cycle, feed, or recycle scope applies.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "One complete physiological-pH PL3 molecular graph using R for both fatty-acid hydrocarbon residues and explicitly showing one member of its enantiomeric pair.",
+            "raw_result": {
+              "derivation": "The printed products require a glycerol bearing two RCOO ester residues and a phosphate diester whose second alcohol fragment is ethanol. Four ester hydrolyses give m=4 and the neutral atom ledger C41H73O8P. Putting phosphate on a terminal glycerol oxygen makes the middle carbon stereogenic; single deprotonation of the remaining phosphate OH gives the source-stated physiological monoanion and its R/S mirror pair.",
+              "exact_unrounded": true,
+              "value_or_expression": "RC(=O)O-CH2-C*(H)(O-C(=O)R)-CH2-O-P(=O)(O^-)-O-CH2CH3; C*=R with mirror C*=S and net charge -1."
+            },
+            "reporting": {
+              "application": "Return the exact symbolic molecular graph, formal charge, and stereochemical label; no rounding is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The answer submission has the exact output id, classification kind, empty unit, complete connectivity, physiological charge, and enantiomeric stereochemistry required by the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-1.png#fragment_connector_semantics"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-3.png#a3_fatty_acid_data"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T5_page-4.png#pl3_hydrolysis_and_constraints"
+              }
+            ],
+            "source_requirement": "complete structure of PL3, including all requested stereochemistry and template fields",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a6.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "Both exact-symbolic molecular graphs faithfully encode and nontrivially check the two source-requested drawings, including hydrolysis composition, atom/bond/charge ledgers, R abstraction, and stereochemistry. The sealed Kimi 5.6 draft at SHA-256 43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010 is preserved without discrepancy.",
+        "reviewed_at": "2026-09-13T08:54:42Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a6.lean:formalization:2",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 2,
+        "reason": "Passed: the submission and closed Lean theorem expose one complete source-supported PL2 graph and one complete source-supported PL3 graph, including charges and stereochemistry, with the printed hydrolysis equations, bond counts, CHO/no-hydrogenation condition, symmetry/chirality observations, and both prior-part prerequisites rederived rather than assumed. The structures also preserve the sealed Kimi 5.6 answers exactly.",
+        "reviewed_at": "2026-09-13T10:36:15Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "8655c8dde74061837ec3544bab8215b26b9779c59b4b75d3d01b90f6fa8add5a",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a6.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 12,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c",
+        "iteration": 1,
+        "attempt": 2,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a6.lean:formalization:2",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "1_to_5m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {},
+    "last_reopened_iter": 1,
+    "last_reopen_event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a6.lean:proof:1",
+    "reopen_history": [
+      {
+        "reopened_at": "2026-09-13T09:38:12Z",
+        "proof_review_iter": 1,
+        "proof_review_reason": "The candidate compiles, and its concrete graphs preserve the sealed Kimi 5.6 structures, but the decisive source-to-structure proof is circular and answer-shaped: previousPartPL1, which is presented as the independently derived T5-A2 prerequisite, is defined by modifying the already selected structurePL2; chirality is then obtained from inserted R labels rather than a proof that the ligand branches are chemically distinct; and the PL3 terminal-substitution selector is detached from the graph and reduces to True.",
+        "redraft_kind": "answer_as_assumption",
+        "previous_status": "passed",
+        "previous_reviews": 1,
+        "previous_reason": "Both exact-symbolic molecular graphs faithfully encode and nontrivially check the two source-requested drawings, including hydrolysis composition, atom/bond/charge ledgers, R abstraction, and stereochemistry. The sealed Kimi 5.6 draft at SHA-256 43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010 is preserved without discrepancy.",
+        "previous_certificate": {
+          "schema_version": 2,
+          "checks": {
+            "source_faithfulness": {
+              "status": "passed",
+              "evidence": "Page-1 fragment topology, page-3 prior bond-count data, and each page-4 rightward hydrolysis arrow were inspected before generated artifacts. structurePL2 and structurePL3 reproduce exactly the source-supported acyl, glycerol/bridge, phosphate, ethyl, charge, and stereochemical roles; no official answer or unstated correction is used."
+            },
+            "derivability": {
+              "status": "passed",
+              "evidence": "PreviousPartA2Spec and PreviousPartA3Constraints rederive the used prior facts inline. PL2StructureSpec and PL3StructureSpec then check the fixed witness graphs through explicit valence, formula, hydrolysis-site, atom/charge balance, chirality, symmetry, and deprotonation relations rather than assuming either output."
+            },
+            "abstraction_sufficiency": {
+              "status": "passed",
+              "evidence": "Every non-R atom has kind, formal charge, radical count, implicit H count, and indexed bonds; R is the source-authorized pseudoatom with an independently derived formula/internal bond ledger. StereoCentre binds each R/S label to its four actual ligands. MoreSymmetricalThanPL1Witness uses an explicit end-exchange permutation plus the central CH2-versus-CH(OH) structural comparison, not a free symmetry flag."
+            },
+            "uncertainty_propagation": {
+              "status": "not_applicable",
+              "evidence": "The requested outputs are exact symbolic structures. Their decisive inputs are exact printed coefficients, integer bond counts, qualitative charge/symmetry observations, and graph relations; no measured interval or tolerance enters either classification."
+            },
+            "branch_orientation": {
+              "status": "passed",
+              "evidence": "All printed hydrolysis arrows are read tail-to-head. PL2 is reported in the explicitly referenced non-ionised branch. For PL3, structurePL3Neutral alone enters the neutral balanced hydrolysis, while structurePL3 is its single phosphate-OH deprotonation and is correctly reported for the separately stated physiological-pH charged branch."
+            },
+            "countermodel_resistance": {
+              "status": "passed",
+              "evidence": "The theorem supplies concrete checked witnesses, matching the source verb 'Draw', and makes no global uniqueness or exhaustive-universe claim. The graphs cannot be changed through a free Bool/Prop: explicit indices, valence, component multiplicities, balances, configurations, mirror non-superposability, and the PL2 end-exchange permutation all constrain the requested structures."
+            }
+          },
+          "bridge_obligations": [
+            {
+              "claim": "PL1 fragment inventory supplies the comparator topology and its 255-bond neutral structure.",
+              "carrier": "PreviousPartA2Spec; previousPartA2_derived_inline; previousPartPL1",
+              "status": "covered",
+              "evidence": "The page-1 degree ledger has n+17 stubs on n+9 acyclic connected fragments, so n=1; the explicit PL1 graph has four acyl esters, two phosphate diesters, three glycerol units, one central OH, two R centres, formula C81H142O17P2, and total bond order 255."
+            },
+            {
+              "claim": "The fatty-acid prior result expands each authorized R abbreviation consistently with the page-3 observations.",
+              "carrier": "PreviousPartA3Constraints; previousPartA3_unique_counts; fattyResidueRFormula; fattyResidueRInternalBondOrder",
+              "status": "covered",
+              "evidence": "For an acyclic chain, reductive ozonolysis gives k+1 fragments; the unique carboxyl-end and methyl-end types and equimolar three-type observation give k=2. The printed 255 total and valence relation yield the checked acid counts, after which the R formula and hidden internal bond-order ledger are transparent."
+            },
+            {
+              "claim": "PL2 contains the reconstructed propane-1,3-diol bridge and satisfies the printed quantitative hydrolysis and 254-bond constraints.",
+              "carrier": "propane13Diol; structurePL2; pl2HydrolysisSites; pl2HydrolysisReaction; PL2StructureSpec",
+              "status": "covered",
+              "evidence": "The named graph exposes four acyl sites and two phosphate-diester sites (eight hydrolysed bonds), and its complete atom/charge balance yields exactly the printed product domain. Its graph formula and hidden-R ledger give the printed total bond order."
+            },
+            {
+              "claim": "The selected PL2 stereoisomer is chiral and structurally more symmetrical than PL1.",
+              "carrier": "StereoCentre.ValidFor; MolecularGraph.IsChiral; pl2EndExchange; MoreSymmetricalThanPL1Witness; structurePL2_enantiomer_pair",
+              "status": "covered",
+              "evidence": "Both centres bind four ligands and carry R; mirror flips both to S. The explicit 35-index end exchange preserves the PL2 graph, while the bridge centre is CH2 rather than PL1's CH(OH), transparently recording the symmetry-increasing replacement."
+            },
+            {
+              "claim": "PL3 hydrolysis fixes an ethyl phosphate diester on a 1,2-diacylglycerol and the enantiomer observation fixes terminal phosphate placement.",
+              "carrier": "structurePL3Neutral; pl3NeutralHydrolysisSites; pl3HydrolysisReaction; GlycerolSubstitutionPattern; enantiomer_pair_selects_terminal_phosphate",
+              "status": "covered",
+              "evidence": "The rightward source arrow's two acids, glycerol, phosphoric acid, and ethanol are represented by two acyl sites and one phosphate diester, giving four waters and an atom/charge-balanced neutral graph. Central phosphate placement has two identical terminal acyl arms and no stereogenic C2; terminal placement gives the bound R/S pair."
+            },
+            {
+              "claim": "PL3's requested physiological form is the charged one-proton-deprotonated phosphate diester.",
+              "carrier": "structurePL3; IsSingleODeprotonationAt; PL3StructureSpec; structurePL3_enantiomer_pair",
+              "status": "covered",
+              "evidence": "The transparent relation changes only the remaining non-ester phosphate OH to O-, preserves bonds/stereochemistry, removes one H, and changes total formal charge from 0 to -1; this binds the source's physiological charge observation without contaminating the neutral hydrolysis ledger."
+            }
+          ],
+          "source_contract": {
+            "schema_version": 1,
+            "contract_kind": "native_problem_input_only",
+            "authority": "problem-only",
+            "evaluation_mode": "answer_blind",
+            "target": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+            "source_bundle": "icho_2026_source/questions_only.jsonl",
+            "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+            "source_record_id": "icho_2026_t5_a6",
+            "source_record_sha256": "e46c433a1bedb285fcaef3998eef89f61d1c8f010cd71011578d506e5145fed3",
+            "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a6.answer.json",
+            "answer_submission_sha256": "c961ea8c0d36f1ebd5370999b185377a51c201f4d9115c3ef4eee8fb80de758a",
+            "chemistry_constant_dataset": {
+              "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+              "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+            },
+            "source_report": "reports/icho_2026/problem_icho_2026_t5_a6.source.json",
+            "source_report_sha256": "d460e35cc440ef2357f65af959ba076780699552f6dfd90ffe807c7eead7fbd3",
+            "candidate": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+            "preflight_sha256": "070e9c4d770d2651087454896ae4dd0270ff3885cc1e33bac9aaa83b6c1fd0aa",
+            "candidate_sha256": "8655c8dde74061837ec3544bab8215b26b9779c59b4b75d3d01b90f6fa8add5a",
+            "question_sha256": "4e0b3a9fcab242613478a5330aadcac613c0c087161594cfa893d2ad856a0dae",
+            "shared_context_sha256": "126ebe52c29985845e346ddfb16fbdf923540a95eeb8a59493429c92cf3b4bc0",
+            "previous_parts_sha256": "da1945bc39262ea33345833133c60e88d9be8d13b792b14de30cd238c33ca518",
+            "requested_outputs_sha256": "7d4395dc073fb754d7210d973d8a4aa361611837eab090a7815b176208132788",
+            "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+            "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+            "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+            "certified_prior_result_path": null,
+            "certified_prior_result_sha256": null,
+            "certified_prior_result_context_receipt_sha256": null,
+            "images": [
+              {
+                "path": "icho_2026_source/image/T5_page-4.png",
+                "sha256": "bd87230867a821630559f26fb8c6ec968579a3d7cc2c130460fb91b8aa0463f3"
+              },
+              {
+                "path": "icho_2026_source/image/T5_page-3.png",
+                "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+              },
+              {
+                "path": "icho_2026_source/image/T5_page-2.png",
+                "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+              },
+              {
+                "path": "icho_2026_source/image/T5_page-1.png",
+                "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347"
+              }
+            ],
+            "semantic_dag": {
+              "schema_version": 1,
+              "authority": "controller",
+              "sha256": "658ccd62e80110023126aeb82c16434b8e3e4462b3684877eb226593a5ff2109",
+              "node_count": 9,
+              "edge_count": 12,
+              "node_kind_counts": {
+                "derivation_obligation": 2,
+                "previous_part_prerequisite": 2,
+                "requested_output": 2,
+                "source_fact_set": 3
+              },
+              "requested_output_ids": [
+                "structure_pl2",
+                "structure_pl3"
+              ],
+              "previous_part_source_ids": [
+                "icho_2026_t5_a2",
+                "icho_2026_t5_a3"
+              ]
+            },
+            "provided_answer_draft": {
+              "record_id": "icho_2026_t5_a6",
+              "path": ".archon/provided_answer_drafts/Q5.md",
+              "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+              "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+              "origin": "Kimi-K3 natural-language full-theory solution",
+              "allow_corrections": false,
+              "fresh_answer_blind_run": false,
+              "draft_is_source_axiom": false
+            }
+          },
+          "blind_review_certificate": {
+            "source_contract": {
+              "schema_version": 1,
+              "contract_kind": "native_problem_input_only",
+              "authority": "problem-only",
+              "evaluation_mode": "answer_blind",
+              "target": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+              "source_bundle": "icho_2026_source/questions_only.jsonl",
+              "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+              "source_record_id": "icho_2026_t5_a6",
+              "source_record_sha256": "e46c433a1bedb285fcaef3998eef89f61d1c8f010cd71011578d506e5145fed3",
+              "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a6.answer.json",
+              "answer_submission_sha256": "c961ea8c0d36f1ebd5370999b185377a51c201f4d9115c3ef4eee8fb80de758a",
+              "chemistry_constant_dataset": {
+                "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+                "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+              },
+              "source_report": "reports/icho_2026/problem_icho_2026_t5_a6.source.json",
+              "source_report_sha256": "d460e35cc440ef2357f65af959ba076780699552f6dfd90ffe807c7eead7fbd3",
+              "candidate": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+              "preflight_sha256": "070e9c4d770d2651087454896ae4dd0270ff3885cc1e33bac9aaa83b6c1fd0aa",
+              "candidate_sha256": "8655c8dde74061837ec3544bab8215b26b9779c59b4b75d3d01b90f6fa8add5a",
+              "question_sha256": "4e0b3a9fcab242613478a5330aadcac613c0c087161594cfa893d2ad856a0dae",
+              "shared_context_sha256": "126ebe52c29985845e346ddfb16fbdf923540a95eeb8a59493429c92cf3b4bc0",
+              "previous_parts_sha256": "da1945bc39262ea33345833133c60e88d9be8d13b792b14de30cd238c33ca518",
+              "requested_outputs_sha256": "7d4395dc073fb754d7210d973d8a4aa361611837eab090a7815b176208132788",
+              "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+              "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+              "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+              "certified_prior_result_path": null,
+              "certified_prior_result_sha256": null,
+              "certified_prior_result_context_receipt_sha256": null,
+              "images": [
+                {
+                  "path": "icho_2026_source/image/T5_page-4.png",
+                  "sha256": "bd87230867a821630559f26fb8c6ec968579a3d7cc2c130460fb91b8aa0463f3"
+                },
+                {
+                  "path": "icho_2026_source/image/T5_page-3.png",
+                  "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+                },
+                {
+                  "path": "icho_2026_source/image/T5_page-2.png",
+                  "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+                },
+                {
+                  "path": "icho_2026_source/image/T5_page-1.png",
+                  "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347"
+                }
+              ],
+              "semantic_dag": {
+                "schema_version": 1,
+                "authority": "controller",
+                "sha256": "658ccd62e80110023126aeb82c16434b8e3e4462b3684877eb226593a5ff2109",
+                "node_count": 9,
+                "edge_count": 12,
+                "node_kind_counts": {
+                  "derivation_obligation": 2,
+                  "previous_part_prerequisite": 2,
+                  "requested_output": 2,
+                  "source_fact_set": 3
+                },
+                "requested_output_ids": [
+                  "structure_pl2",
+                  "structure_pl3"
+                ],
+                "previous_part_source_ids": [
+                  "icho_2026_t5_a2",
+                  "icho_2026_t5_a3"
+                ]
+              },
+              "provided_answer_draft": {
+                "record_id": "icho_2026_t5_a6",
+                "path": ".archon/provided_answer_drafts/Q5.md",
+                "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+                "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+                "origin": "Kimi-K3 natural-language full-theory solution",
+                "allow_corrections": false,
+                "fresh_answer_blind_run": false,
+                "draft_is_source_axiom": false
+              }
+            },
+            "blind_source_audit": {
+              "answer_independence": {
+                "status": "passed",
+                "evidence": "The quantifier, topology, arrow directions, component ledgers, charge branch, and stereochemical consequences were frozen from the four digest-verified problem pages and inline problem-only evidence before opening the bound submission or Lean file. The sealed Kimi draft was used only for the expressly authorized fidelity comparison, never as a chemistry premise."
+              },
+              "raw_derivation": {
+                "status": "passed",
+                "evidence": "The end-to-end exact carriers are PreviousPartA2Spec/PreviousPartA3Constraints followed by PL2StructureSpec or PL3StructureSpec, with explicit graphs, hydrolysis-site counts, formula totals, charge totals, and unrounded symbolic reported propositions."
+              },
+              "reporting_rule_source": {
+                "status": "passed",
+                "evidence": "Both bundle outputs specify exact_symbolic reporting. StructurePL2RawResult equals StructurePL2ReportedResult chemically, as does the PL3 pair; the submission applies no decimal rendering or extra precision."
+              },
+              "tolerance_provenance": {
+                "status": "passed",
+                "evidence": "No tolerance is introduced. All values relevant to these structure classifications are exact symbols or exact printed integers, so the measurement half-width and numerical tie rules are inactive."
+              },
+              "candidate_domain_provenance": {
+                "status": "passed",
+                "evidence": "No finite open-world molecule domain is used to claim uniqueness. The source asks to draw concrete structures. The only local case split is the transparent two-placement glycerol pattern obtained from two identical acyl substitutions and one phosphate substitution, modulo exchange of the two terminal glycerol carbons."
+              },
+              "lean_result_binding": {
+                "status": "passed",
+                "evidence": "candidate_sha256=8655c8dde74061837ec3544bab8215b26b9779c59b4b75d3d01b90f6fa8add5a; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=12. Nontrivial result declarations: structurePL2, PL2StructureSpec, structurePL2_reported_result, structurePL3Neutral, structurePL3, PL3StructureSpec, structurePL3_reported_result, and problem_icho_2026_t5_a6."
+              }
+            },
+            "contract_audit": {
+              "statement_scope": {
+                "status": "passed",
+                "evidence": "The combined theorem covers exactly structure_pl2 and structure_pl3 as concrete exact-symbolic drawings. It adds consistency ledgers but no yield, sole-product, phase, global uniqueness, or exhaustive chemical-universe conclusion."
+              },
+              "hypothesis_derivability": {
+                "status": "passed",
+                "evidence": "The main theorem is closed and takes no answer-shaped hypothesis. Used prior-part facts are independently reconstructed in transparent propositions; the fixed output graphs occur only in conclusions that are checked against nontrivial source-derived relations."
+              },
+              "conclusion_alignment": {
+                "status": "passed",
+                "evidence": "Neither sidecar output is a sentinel or diagnostic. Each matches its named reported-result declaration, including PL2's neutral state/R,R mirror pair and PL3's physiological charge/R,S mirror pair."
+              },
+              "bridge_completeness": {
+                "status": "passed",
+                "evidence": "All outcome-decisive bridges are inventoried above: fragment/prior reconstruction, R expansion, PL2 bridge/balance/symmetry, PL3 component placement, and phosphate deprotonation. None relies on an opaque local chemistry axiom, dormant registry rule, or unlisted prior result."
+              }
+            },
+            "requested_outputs": [
+              {
+                "source_requirement": "complete structure of PL2, including all requested stereochemistry and template fields",
+                "lean_carrier": "IChO2026Problems.IChO2026T5A6.structurePL2_reported_result",
+                "status": "covered",
+                "evidence": "The answer JSON has the correct first id/kind/unit and an exact-symbolic neutral PL2 drawing; its connectivity, four R sites, two phosphate OH groups, bridge, configured centres, and mirror statement match the full graph carrier.",
+                "output_id": "structure_pl2",
+                "submission_status": "matched",
+                "reporting_policy_status": "matched"
+              },
+              {
+                "source_requirement": "complete structure of PL3, including all requested stereochemistry and template fields",
+                "lean_carrier": "IChO2026Problems.IChO2026T5A6.structurePL3_reported_result",
+                "status": "covered",
+                "evidence": "The answer JSON has the correct second id/kind/unit and an exact-symbolic physiological PL3 drawing; its two R sites, ethyl phosphate diester, anionic oxygen, configured centre, net charge, and mirror statement match the full graph carrier.",
+                "output_id": "structure_pl3",
+                "submission_status": "matched",
+                "reporting_policy_status": "matched"
+              }
+            ],
+            "blueprint_conflicts": [],
+            "image_audit": [
+              {
+                "path": "icho_2026_source/image/T5_page-4.png",
+                "sha256": "bd87230867a821630559f26fb8c6ec968579a3d7cc2c130460fb91b8aa0463f3",
+                "inspected": true,
+                "evidence": "Three separate rightward arrows were traced. PL2+8H2O has heads 4 RCOOH, 2 H3PO4, Z, and 2 glycerols; PL3+mH2O has heads 2 RCOOH, H3PO4, ethanol (one skeletal C-C segment ending OH), and glycerol. The adjacent PL2 254-bond/chiral/more-symmetrical and Z CHO/H2 facts, and PL3 physiological-charge/enantiomer-pair fact, were recorded before arithmetic."
+              },
+              {
+                "path": "icho_2026_source/image/T5_page-3.png",
+                "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7",
+                "inspected": true,
+                "evidence": "The prior-part panel supplies reductive ozonolysis to three different equimolar products and the exact 255 total bond count for neutral PL1; no answer drawing appears. These facts are used only in the inline R/PL1 consistency derivation."
+              },
+              {
+                "path": "icho_2026_source/image/T5_page-2.png",
+                "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96",
+                "inspected": true,
+                "evidence": "This is the unmarked continuation containing only the T5.2 drawing instruction and blank response area. It contributes no hidden topology, choice mark, or answer and confirms that no adjacent student drawing can be treated as source."
+              },
+              {
+                "path": "icho_2026_source/image/T5_page-1.png",
+                "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347",
+                "inspected": true,
+                "evidence": "The W legend fixes attachment semantics: a is a one-bond H cap, b is P(=O)(OH) with two open bonds, c is a three-O glycerol scaffold with degree 3, and d is one open R-C(=O) acyl fragment. For PL1 the multiplicities n,2,3,4 and no-peroxide rule give a connected whole graph with one cap, four acyl connections, four phosphate-ester connections, and a central glycerol OH."
+              }
+            ],
+            "chemistry_checks": {
+              "chemical_semantics": {
+                "status": "passed",
+                "evidence": "R's boundary carbon belongs to the adjacent explicit carbonyl and R itself is C17H31; esterification replaces the acid OH and alcohol H without double counting. Glycerol, propane-1,3-diol, ethanol, phosphate oxo/non-ester/ester oxygens, and all attachment boundaries are explicit and consistent."
+              },
+              "staged_species_domain": {
+                "status": "passed",
+                "evidence": "quantitative_material_stage. Source arrows: PL2+8H2O -> 4RCOOH+2H3PO4+Z+2 glycerol and neutral PL3+4H2O -> 2RCOOH+H3PO4+ethanol+glycerol. The finite printed domains are carried by pl2HydrolysisReaction and pl3HydrolysisReaction; outcome-used atom and charge dimensions are carried by MolecularReaction.AtomBalanced/ChargeBalanced and water coefficients by pl2HydrolysisSites/pl3NeutralHydrolysisSites. Phases remain unspecified and no yield or sole-product claim is made."
+              },
+              "formula_mass_consistency": {
+                "status": "passed",
+                "evidence": "Expanding R as C17H31, the PL2 graph gives C81H142O16P2 and total bond order 254; its bridge gives C3H8O2. The PL3 neutral ledger gives C41H73O8P and its physiological deprotonation C41H72O8P with charge -1. No molar-mass claim is needed."
+              },
+              "conservation_laws": {
+                "status": "passed",
+                "evidence": "PL2: C81H142O16P2+8H2O and 4C18H32O2+2H3PO4+C3H8O2+2C3H8O3 both total C81H158O24P2 with charge 0. PL3 neutral: C41H73O8P+4H2O and 2C18H32O2+H3PO4+C2H6O+C3H8O3 both total C41H81O12P with charge 0. The charged PL3 is kept outside that neutral arrow."
+              },
+              "units_dimensions": {
+                "status": "not_applicable",
+                "evidence": "Both requested outputs are molecular-structure classifications with unit=\"\". Bond counts and stoichiometric coefficients are exact dimensionless integers; no dimensional conversion is performed."
+              },
+              "numerical_reporting": {
+                "status": "passed",
+                "evidence": "The per-output policy is exact_symbolic. Raw and display values preserve the exact connectivity, charge, and configurations; no intermediate or final rounding, tolerance, or significant-figure choice occurs."
+              },
+              "structure_stereochemistry": {
+                "status": "passed",
+                "evidence": "PL2 explicitly binds two tetrahedral glycerol C2 centres to their four ligands, assigns R,R, proves non-superposability with the S,S mirror, and carries an end-exchange automorphism. PL3 binds one glycerol C2 centre, assigns R, carries the S mirror, and excludes central-phosphate placement because that would give identical terminal arms."
+              },
+              "identification_uniqueness": {
+                "status": "passed",
+                "evidence": "The source verb is 'Draw', with no 'unique', 'all', or exhaustive equivalent. The formalization therefore correctly supplies one evidence-supported structure for each requested item and does not assert global uniqueness over an open chemical universe."
+              },
+              "answer_smuggling": {
+                "status": "passed",
+                "evidence": "The named graphs are output witnesses, not assumptions. They are tested by transparent atom-indexed graphs, valence and radical predicates, exact formula/bond ledgers, source-bounded hydrolysis reactions, explicit stereochemical isomorphism checks, and a nontrivial symmetry permutation. No singleton candidate premise, free qualitative flag, reflexive equality theorem, or opaque chemistry axiom determines an output."
+              }
+            }
+          },
+          "official_answer_alignment": null,
+          "source_inconsistency": null,
+          "independent_rederivation": {
+            "ambiguity": "clear",
+            "method": "source_first_without_lean",
+            "requested_outputs": [
+              {
+                "basis": {
+                  "denominator": "not_applicable",
+                  "mass_or_composition_basis": "not_applicable",
+                  "numerator": "not_applicable",
+                  "status": "not_applicable"
+                },
+                "branch_conditions": [],
+                "constants": [],
+                "dependencies": [
+                  {
+                    "kind": "source_quantity",
+                    "reference": "page-1 PL1 fragment inventory",
+                    "relation": "The degree-1 H cap, two degree-2 phosphate fragments, three degree-3 glycerol fragments, and four degree-1 acyl fragments reconstruct the connected acyclic PL1 comparator.",
+                    "source_locator": {
+                      "kind": "problem_image",
+                      "reference": "T5_page-1.png#fragments.a-d"
+                    }
+                  },
+                  {
+                    "kind": "source_quantity",
+                    "reference": "PL2 hydrolysis and qualitative constraints",
+                    "relation": "The rightward balanced arrow supplies four fatty acids, two phosphoric acids, two glycerols, Z, and eight waters; the adjacent text supplies 254 bonds, chirality, greater symmetry, CHO-only Z, and catalytic-H2 nonreaction.",
+                    "source_locator": {
+                      "kind": "problem_image",
+                      "reference": "T5_page-4.png#PL2.hydrolysis-and-constraints"
+                    }
+                  },
+                  {
+                    "kind": "previous_part",
+                    "reference": "T5-A2 source question",
+                    "relation": "PL1 connectivity and its stereochemical comparator are rederived inline from the page-1 fragment inventory; no prior answer is assumed.",
+                    "source_locator": {
+                      "kind": "previous_parts",
+                      "reference": "previous_parts[0].question"
+                    }
+                  },
+                  {
+                    "kind": "previous_part",
+                    "reference": "T5-A3 source question",
+                    "relation": "The fatty-residue expansion and PL1 255-bond count are rederived inline from the printed bond-count and ozonolysis constraints.",
+                    "source_locator": {
+                      "kind": "previous_parts",
+                      "reference": "previous_parts[1].question"
+                    }
+                  }
+                ],
+                "evidence": "The exact graph, neutral charge state, four acyl esters, two phosphate diesters, saturated CHO bridge, two stereocentres, end-exchange symmetry, formula ledger, and 254-bond ledger agree with the source-first reconstruction.",
+                "id": "structure_pl2",
+                "kind": "classification",
+                "lean_carriers": {
+                  "inputs": [
+                    "IChO2026Problems.IChO2026T5A6.PreviousPartA2Spec",
+                    "IChO2026Problems.IChO2026T5A6.PreviousPartA3Spec",
+                    "IChO2026Problems.IChO2026T5A6.propane13Diol",
+                    "IChO2026Problems.IChO2026T5A6.structurePL2"
+                  ],
+                  "raw_result": [
+                    "IChO2026Problems.IChO2026T5A6.StructurePL2RawResult",
+                    "IChO2026Problems.IChO2026T5A6.structurePL2_raw_result"
+                  ],
+                  "relations": [
+                    "IChO2026Problems.IChO2026T5A6.PL2StructureSpec",
+                    "IChO2026Problems.IChO2026T5A6.pl2HydrolysisReaction",
+                    "IChO2026Problems.IChO2026T5A6.MoreSymmetricalThanPL1Witness"
+                  ],
+                  "reported_result": [
+                    "IChO2026Problems.IChO2026T5A6.StructurePL2ReportedResult",
+                    "IChO2026Problems.IChO2026T5A6.structurePL2_reported_result"
+                  ]
+                },
+                "lean_statement_comparison": {
+                  "evidence": "The named graph and specs explicitly carry the independently derived connectivity, atom types, bond orders, neutral phosphate OH groups, R/R centres, mirror enantiomer, component ledgers, and exact symbolic result.",
+                  "status": "matched"
+                },
+                "process_scope": {
+                  "description": "whole-molecule reconstruction from one complete printed PL2 hydrolysis balance",
+                  "kind": "overall"
+                },
+                "quantity_definition": "One complete non-ionised PL2 molecular graph using R pseudoatoms at all four fatty-acid residues, with every other atom, bond order, charge, radical count, and requested stereocentre explicit.",
+                "raw_result": {
+                  "derivation": "Relative to PL1, the identical eight-water hydrolysis replaces one glycerol (bond order 13) by Z while the intact phospholipid bond count falls from 255 to 254, so Z has bond order 12. A two-OH saturated acyclic CHO bridge has CqH(2q+2)O2 and bond order 3q+3, hence q=3. Equivalent terminal OH groups give the 1,3-propanediol bridge. Condensing its two OH groups with two phosphatidyl phosphate groups gives four acyl esters and two phosphate diesters; the end-exchanged R/R graph is chiral and has the stated increased structural symmetry.",
+                  "exact_unrounded": true,
+                  "value_or_expression": "RC(=O)O\u2013CH2\u2013C*_L(H)(O\u2013C(=O)R)\u2013CH2\u2013O\u2013P(=O)(OH)\u2013O\u2013CH2\u2013CH2\u2013CH2\u2013O\u2013P(=O)(OH)\u2013O\u2013CH2\u2013C*_R(H)(O\u2013C(=O)R)\u2013CH2\u2013O\u2013C(=O)R, with C*_L=C*_R=(R) and mirror enantiomer (S,S)"
+                },
+                "reporting": {
+                  "application": "Return the exact symbolic molecular graph and stereochemical labels; no numerical rounding is applied.",
+                  "global_policy": {
+                    "default_final_display": "three_significant_figures",
+                    "explicit_precision": "use_only_precision_requested_in_problem",
+                    "final_precision": {
+                      "kind": "per_requested_output",
+                      "source": "requested_outputs"
+                    },
+                    "intermediate_rounding": "forbidden",
+                    "raw_result_required": true,
+                    "tie_rule": "half_away_from_zero"
+                  },
+                  "policy": {
+                    "kind": "exact_symbolic",
+                    "source": "problem_output_type"
+                  }
+                },
+                "semantic_card_comparison": {
+                  "evidence": "The submission identifies the same neutral four-R, two-phosphate, 1,3-propanediol-bridged graph and the same explicit enantiomeric assignment.",
+                  "status": "matched"
+                },
+                "source_locators": [
+                  {
+                    "kind": "problem_text",
+                    "reference": "current_question"
+                  },
+                  {
+                    "kind": "problem_image",
+                    "reference": "T5_page-1.png#fragment-topology"
+                  },
+                  {
+                    "kind": "problem_image",
+                    "reference": "T5_page-3.png#part5.3-bond-count"
+                  },
+                  {
+                    "kind": "problem_image",
+                    "reference": "T5_page-4.png#PL2-arrow-and-properties"
+                  }
+                ],
+                "source_requirement": "complete structure of PL2, including all requested stereochemistry and template fields",
+                "unit": ""
+              },
+              {
+                "basis": {
+                  "denominator": "not_applicable",
+                  "mass_or_composition_basis": "not_applicable",
+                  "numerator": "not_applicable",
+                  "status": "not_applicable"
+                },
+                "branch_conditions": [
+                  {
+                    "condition": "Use the neutral phosphate-diester representative in the printed balanced hydrolysis ledger, then report its one-proton-deprotonated form under the separately stated physiological-pH condition.",
+                    "source_locator": {
+                      "kind": "problem_image",
+                      "reference": "T5_page-4.png#PL3.neutral-hydrolysis-versus-charge"
+                    }
+                  },
+                  {
+                    "condition": "Choose one explicitly configured member of the stated enantiomeric pair and identify its mirror.",
+                    "source_locator": {
+                      "kind": "problem_image",
+                      "reference": "T5_page-4.png#PL3.enantiomer-pair"
+                    }
+                  }
+                ],
+                "constants": [],
+                "dependencies": [
+                  {
+                    "kind": "source_quantity",
+                    "reference": "PL3 rightward hydrolysis arrow",
+                    "relation": "The printed products are exactly two RCOOH, one H3PO4, one ethanol, and one glycerol; ester-site reconstruction gives four hydrolysed linkages.",
+                    "source_locator": {
+                      "kind": "problem_image",
+                      "reference": "T5_page-4.png#PL3.hydrolysis"
+                    }
+                  },
+                  {
+                    "kind": "source_quantity",
+                    "reference": "PL3 physiological charge and enantiomer-pair observations",
+                    "relation": "The glycerol substitution pattern must retain one stereogenic C2 and the remaining phosphate-diester OH is represented in its charged physiological branch.",
+                    "source_locator": {
+                      "kind": "problem_image",
+                      "reference": "T5_page-4.png#PL3.charge-and-stereochemistry"
+                    }
+                  },
+                  {
+                    "kind": "previous_part",
+                    "reference": "T5-A2 source question",
+                    "relation": "The Lean result carries an independently rederived PL1 consistency conjunct; PL3 connectivity does not assume a prior answer.",
+                    "source_locator": {
+                      "kind": "previous_parts",
+                      "reference": "previous_parts[0].question"
+                    }
+                  },
+                  {
+                    "kind": "previous_part",
+                    "reference": "T5-A3 source question",
+                    "relation": "The R pseudoatom formula and internal bond order used in the PL3 formula ledger are rederived inline.",
+                    "source_locator": {
+                      "kind": "previous_parts",
+                      "reference": "previous_parts[1].question"
+                    }
+                  }
+                ],
+                "evidence": "The exact graph, two acyl esters, terminal glycerol phosphate diester, ethyl phosphate ester, one R centre plus S mirror, neutral hydrolysis representative, and physiological monoanion all agree with the source-first reconstruction.",
+                "id": "structure_pl3",
+                "kind": "classification",
+                "lean_carriers": {
+                  "inputs": [
+                    "IChO2026Problems.IChO2026T5A6.PreviousPartA3Spec",
+                    "IChO2026Problems.IChO2026T5A6.ethanolMolecule",
+                    "IChO2026Problems.IChO2026T5A6.structurePL3Neutral",
+                    "IChO2026Problems.IChO2026T5A6.structurePL3"
+                  ],
+                  "raw_result": [
+                    "IChO2026Problems.IChO2026T5A6.StructurePL3RawResult",
+                    "IChO2026Problems.IChO2026T5A6.structurePL3_raw_result"
+                  ],
+                  "relations": [
+                    "IChO2026Problems.IChO2026T5A6.PL3StructureSpec",
+                    "IChO2026Problems.IChO2026T5A6.pl3HydrolysisReaction",
+                    "IChO2026Problems.IChO2026T5A6.IsSingleODeprotonationAt",
+                    "IChO2026Problems.IChO2026T5A6.enantiomer_pair_selects_terminal_phosphate"
+                  ],
+                  "reported_result": [
+                    "IChO2026Problems.IChO2026T5A6.StructurePL3ReportedResult",
+                    "IChO2026Problems.IChO2026T5A6.structurePL3_reported_result"
+                  ]
+                },
+                "lean_statement_comparison": {
+                  "evidence": "The named neutral and physiological graphs explicitly carry all non-R atoms and bonds, the phosphate charge branch, one bound tetrahedral centre, its mirror, and the balanced four-water hydrolysis ledger.",
+                  "status": "matched"
+                },
+                "process_scope": {
+                  "description": "whole-molecule reconstruction from one complete printed PL3 hydrolysis balance and its physiological charge branch",
+                  "kind": "overall"
+                },
+                "quantity_definition": "One complete physiological-pH PL3 molecular graph using R pseudoatoms at both fatty-acid residues, with every other atom, bond order, formal charge, radical count, and requested stereocentre explicit.",
+                "raw_result": {
+                  "derivation": "Hydrolysis products reconstruct two fatty-acyl esters on glycerol and one phosphate diester joining the remaining glycerol oxygen to ethanol, consuming four waters in the neutral ledger. If phosphate occupied glycerol C2, the two identical terminal acyl arms would make C2 non-stereogenic; terminal phosphate placement gives the stated enantiomer pair. Deprotonating the sole non-ester phosphate OH yields the physiological -1 form.",
+                  "exact_unrounded": true,
+                  "value_or_expression": "RC(=O)O\u2013CH2\u2013C*(H)(O\u2013C(=O)R)\u2013CH2\u2013O\u2013P(=O)(O\u207b)\u2013O\u2013CH2CH3, with C*=(R), mirror C*=(S), and net charge -1 at physiological pH"
+                },
+                "reporting": {
+                  "application": "Return the exact symbolic molecular graph and stereochemical/charge labels; no numerical rounding is applied.",
+                  "global_policy": {
+                    "default_final_display": "three_significant_figures",
+                    "explicit_precision": "use_only_precision_requested_in_problem",
+                    "final_precision": {
+                      "kind": "per_requested_output",
+                      "source": "requested_outputs"
+                    },
+                    "intermediate_rounding": "forbidden",
+                    "raw_result_required": true,
+                    "tie_rule": "half_away_from_zero"
+                  },
+                  "policy": {
+                    "kind": "exact_symbolic",
+                    "source": "problem_output_type"
+                  }
+                },
+                "semantic_card_comparison": {
+                  "evidence": "The submission identifies the same ethyl 1,2-diacylglycerol phosphate monoanion, explicit configured centre, mirror enantiomer, and physiological charge.",
+                  "status": "matched"
+                },
+                "source_locators": [
+                  {
+                    "kind": "problem_text",
+                    "reference": "current_question"
+                  },
+                  {
+                    "kind": "problem_image",
+                    "reference": "T5_page-4.png#PL3-arrow-properties-and-request"
+                  }
+                ],
+                "source_requirement": "complete structure of PL3, including all requested stereochemistry and template fields",
+                "unit": ""
+              }
+            ],
+            "schema_version": 1
+          },
+          "candidate_sha256": "8655c8dde74061837ec3544bab8215b26b9779c59b4b75d3d01b90f6fa8add5a"
+        }
+      }
+    ]
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The closed theorem proves two nontrivial exact molecular-graph result carriers that faithfully represent the requested PL2 and PL3 drawings; all source-derived chemistry, hydrolysis accounting, charge, and stereochemistry checks pass without hypotheses, sorry, admits, local axioms, or answer-shaped premises.",
+    "evidence": "Candidate SHA-256 ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c and submission SHA-256 5a4728333b825b3706068f30d49cce34639ee66c43c97099f53eb4b3d977d566 match the bound contract. Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The target theorem yields ReportedResult through structurePL2_reported_result and structurePL3_reported_result. Their transparent graphs, site ledgers, atom/charge balances, valence proofs, symmetry automorphisms, and mirror non-superposition proofs independently validate both submitted exact-symbolic structures against pages 1-4. Draft fidelity: frozen Kimi draft 43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010, subpart 5.6; both intended structures and stereochemical choices are preserved with no discrepancy.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t5_a6",
+      "source_record_sha256": "e46c433a1bedb285fcaef3998eef89f61d1c8f010cd71011578d506e5145fed3",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a6.answer.json",
+      "answer_submission_sha256": "5a4728333b825b3706068f30d49cce34639ee66c43c97099f53eb4b3d977d566",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t5_a6.source.json",
+      "source_report_sha256": "d460e35cc440ef2357f65af959ba076780699552f6dfd90ffe807c7eead7fbd3",
+      "candidate": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+      "preflight_sha256": "b82950031d1f24524a306842faf3bbbde453de7892d5e2c43f4117320b1490b2",
+      "candidate_sha256": "ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c",
+      "question_sha256": "4e0b3a9fcab242613478a5330aadcac613c0c087161594cfa893d2ad856a0dae",
+      "shared_context_sha256": "126ebe52c29985845e346ddfb16fbdf923540a95eeb8a59493429c92cf3b4bc0",
+      "previous_parts_sha256": "da1945bc39262ea33345833133c60e88d9be8d13b792b14de30cd238c33ca518",
+      "requested_outputs_sha256": "7d4395dc073fb754d7210d973d8a4aa361611837eab090a7815b176208132788",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T5_page-4.png",
+          "sha256": "bd87230867a821630559f26fb8c6ec968579a3d7cc2c130460fb91b8aa0463f3"
+        },
+        {
+          "path": "icho_2026_source/image/T5_page-3.png",
+          "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+        },
+        {
+          "path": "icho_2026_source/image/T5_page-2.png",
+          "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+        },
+        {
+          "path": "icho_2026_source/image/T5_page-1.png",
+          "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "658ccd62e80110023126aeb82c16434b8e3e4462b3684877eb226593a5ff2109",
+        "node_count": 9,
+        "edge_count": 12,
+        "node_kind_counts": {
+          "derivation_obligation": 2,
+          "previous_part_prerequisite": 2,
+          "requested_output": 2,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "structure_pl2",
+          "structure_pl3"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t5_a2",
+          "icho_2026_t5_a3"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t5_a6",
+        "path": ".archon/provided_answer_drafts/Q5.md",
+        "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t5_a6",
+        "source_record_sha256": "e46c433a1bedb285fcaef3998eef89f61d1c8f010cd71011578d506e5145fed3",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t5_a6.answer.json",
+        "answer_submission_sha256": "5a4728333b825b3706068f30d49cce34639ee66c43c97099f53eb4b3d977d566",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t5_a6.source.json",
+        "source_report_sha256": "d460e35cc440ef2357f65af959ba076780699552f6dfd90ffe807c7eead7fbd3",
+        "candidate": "IChO2026Problems/problem_icho_2026_t5_a6.lean",
+        "preflight_sha256": "b82950031d1f24524a306842faf3bbbde453de7892d5e2c43f4117320b1490b2",
+        "candidate_sha256": "ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c",
+        "question_sha256": "4e0b3a9fcab242613478a5330aadcac613c0c087161594cfa893d2ad856a0dae",
+        "shared_context_sha256": "126ebe52c29985845e346ddfb16fbdf923540a95eeb8a59493429c92cf3b4bc0",
+        "previous_parts_sha256": "da1945bc39262ea33345833133c60e88d9be8d13b792b14de30cd238c33ca518",
+        "requested_outputs_sha256": "7d4395dc073fb754d7210d973d8a4aa361611837eab090a7815b176208132788",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T5_page-4.png",
+            "sha256": "bd87230867a821630559f26fb8c6ec968579a3d7cc2c130460fb91b8aa0463f3"
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-3.png",
+            "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7"
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-2.png",
+            "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96"
+          },
+          {
+            "path": "icho_2026_source/image/T5_page-1.png",
+            "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "658ccd62e80110023126aeb82c16434b8e3e4462b3684877eb226593a5ff2109",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 2,
+            "previous_part_prerequisite": 2,
+            "requested_output": 2,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_pl2",
+            "structure_pl3"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t5_a2",
+            "icho_2026_t5_a3"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t5_a6",
+          "path": ".archon/provided_answer_drafts/Q5.md",
+          "sha256": "43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The audit used only the inline problem evidence, all four digest-bound images, and the two designated untrusted generated artifacts. The sealed Kimi text was used only for fidelity comparison under the explicit exception; its claims were independently checked and were not admitted as source facts. No official answer, rubric, prior proof, or unlisted artifact was consulted."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "End-to-end exact carriers are previousPartA2_derived_inline, previousPartA3_derived_inline, PL2BridgeSourceConstraints with pl2Bridge_unique_counts, the three explicit hydrolysis reactions and their site/atom/charge ledgers, enantiomer_pair_selects_terminal_phosphate, structurePL2_raw_result, structurePL3_raw_result, and raw_result. No rounding or unproved numerical step intervenes."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "Both requested outputs are classifications with exact_symbolic reporting in the bound requested_outputs. StructurePL2ReportedResult and StructurePL3ReportedResult therefore intentionally coincide with their raw propositions."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No numerical tolerance, measured interval, or rounding is used for either exact-symbolic structure classification; all formula, bond-count, coefficient, charge, and graph equalities are exact."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The PL2 witness is checked directly against the printed hydrolysis, 254-bond, CHO/non-hydrogenation, chirality, and comparative-symmetry constraints, so the non-exhaustive draw request needs no open-world universe. For PL3, the finite terminal-versus-central glycerol substitution domain follows from two identical acyl substituents and one phosphate diester occupying the three glycerol oxygens; the source-stated enantiomer pair eliminates the central case by an explicit arm-exchange automorphism."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result declarations are structurePL2_raw_result, structurePL2_reported_result, structurePL3_raw_result, structurePL3_reported_result, raw_result, reported_result, and problem_icho_2026_t5_a6."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "ReportedResult is the conjunction of the two requested exact structure propositions. Each proposition fixes a complete explicit molecular graph and includes connectivity, bond orders, atom kinds, charges, radical freedom, implicit hydrogens, formulas, hydrolysis roles, and the requested stereocentres; the supporting prior-part derivations strengthen rather than weaken the target."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The reviewed theorem is closed and has no user-selectable binders or hypotheses. Previous parts 5.2 and 5.3 are rederived inline from the page-1 inventory, page-3 observations, transparent valence/bond equations, and explicit graph checks; no uncertified prior result is imported."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The conjunction order is structure_pl2 then structure_pl3, matching the bound requested output order. The PL2 carrier is the non-ionised graph with both valid terminal stereocentres and its mirror; the PL3 carrier is the physiological charged graph with one valid stereocentre and its mirror, alongside the neutral hydrolysis representative."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "Every outcome-decisive bridge is transparent: fragment/stub assembly, fatty-residue formula and internal valence, graph well-formedness and connectedness, functional-group site validation, exact atom/charge hydrolysis balance, bond-count equations, deprotonation, bilateral symmetry, positional-case coverage, and mirror non-superposition. No local axiom or opaque chemistry predicate supplies a conclusion."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "complete structure of PL2, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.IChO2026T5A6.structurePL2_reported_result : StructurePL2ReportedResult",
+          "status": "covered",
+          "evidence": "The first submission object has the exact id, classification kind, empty unit, and exact-symbolic raw/display relationship required. Its full connectivity and enantiomer annotation agree with the independently audited graph, bridge graph, symmetry witness, and hydrolysis ledger.",
+          "output_id": "structure_pl2",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of PL3, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.IChO2026T5A6.structurePL3_reported_result : StructurePL3ReportedResult",
+          "status": "covered",
+          "evidence": "The second submission object has the exact id, classification kind, empty unit, and exact-symbolic raw/display relationship required. Its full connectivity, physiological charge, and enantiomer annotation agree with the independently audited charged and neutral graphs, positional selection proof, deprotonation carrier, and hydrolysis ledger.",
+          "output_id": "structure_pl3",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T5_page-4.png",
+          "sha256": "bd87230867a821630559f26fb8c6ec968579a3d7cc2c130460fb91b8aa0463f3",
+          "inspected": true,
+          "evidence": "The page visibly supplies all three hydrolysis arrows and coefficients, the ethanol and glycerol product drawings for PL3, the 254-bond/chiral/more-symmetrical PL2 conditions, the CHO/non-hydrogenation condition on Z, the physiological charge/enantiomer condition on PL3, and the two requested drawings."
+        },
+        {
+          "path": "icho_2026_source/image/T5_page-3.png",
+          "sha256": "9824f187e7baa6e5929ec0c7cda6c740aee46a1404afdcad974c734b083b86b7",
+          "inspected": true,
+          "evidence": "The page visibly supplies the three different equimolar reductive-ozonolysis products and the 255 total-bond datum used for the inline fatty-residue derivation; unrelated parts 5.4 and 5.5 are not used."
+        },
+        {
+          "path": "icho_2026_source/image/T5_page-2.png",
+          "sha256": "7f0f35d726d79f8d1ff9b15ee00574efeb89d8b179ab05469b5c297cb147bb96",
+          "inspected": true,
+          "evidence": "The page is the unmarked student prompt for part 5.2 and confirms that PL1 and monoanion Y must be drawn with R; it contains no supplied answer and is treated only as the declared previous-part prerequisite."
+        },
+        {
+          "path": "icho_2026_source/image/T5_page-1.png",
+          "sha256": "4f1688b010a3470a1dec9e211f1577b2eab98b2cd1b9b990ccba4126875b6347",
+          "inspected": true,
+          "evidence": "The page visibly supplies the connector topology of fragments a-d, multiplicities for PL1, the acyclic/no-peroxide context, and the chirality statements. The complete three-glycerol/two-phosphate/four-acyl assembly is traced by previousPartPL1 and its functional-site ledger."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The outputs are explicit heavy-atom graphs with R as the sole authorized pseudoatom; R has a separately derived expansion and hidden bond ledger. Valence, connectivity, formal charge, radicals, functional groups, and all implicit hydrogens are mechanically checked."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "quantitative_material_stage. The outcome uses the printed single-stage hydrolyses quantitatively. The finite PL1 domain is PL1, water, four fatty acids, two phosphoric acids, and three glycerols; the PL2 domain replaces one glycerol by Z; the PL3 neutral-representative domain contains PL3, water, two fatty acids, phosphoric acid, ethanol, and glycerol. previousPartPL1HydrolysisReaction, pl2HydrolysisReaction, pl3HydrolysisReaction, their HydrolysisSiteLedger carriers, waterCount equalities, and MolecularReaction.AtomBalanced/ChargeBalanced discharge every used atom, charge, and coefficient ledger. No mass, yield, phase, or sole-product conclusion is claimed."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Exact graph-formula folds validate the PL1 prerequisite, PL2, Z, neutral PL3, and physiological PL3 compositions using the derived R expansion. No molar-mass claim is needed for this subquestion."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "All three quantitative hydrolysis reactions have explicit finite term lists, functional-site counts, exact water coefficients, atom-balance proofs, and charge-balance proofs. The PL3 physiological graph is related to its neutral hydrolysis representative by the explicit single-oxygen deprotonation carrier."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "Both outputs have the required empty unit and are exact structural classifications. All auxiliary counts are dimensionless natural-number or integer equalities."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The answer contract requests exact_symbolic structures, so raw and reported carriers are identical; no decimal rounding, significant-figure choice, or tolerance is present."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "Each declared stereocentre has four graph-validated, pairwise-distinct ligand classes and an explicit absolute configuration. Graph isomorphism to the configuration-flipped mirror is excluded for the displayed chiral witnesses; the companion mirrors are proved enantiomers. The symmetric PL3 central alternative has an explicit arm exchange and no stereocentre, so the source enantiomer observation selects the terminal placement."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source asks for concrete drawings, not open-world exhaustive uniqueness. Each submitted witness satisfies every decisive source constraint. The only finite exhaustive claim actually used is the two-case glycerol positional audit for PL3, derived before selection and filtered uniformly by the stated enantiomer property."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The fixed graph definitions are candidate witnesses, not premises. Closed theorems verify them against independently defined source constraints and graph laws; no singleton hypothesis, freely set Bool/Prop field, opaque identity predicate, assumed target, sorry, admit, or local axiom is used. The reflexive artifact-hash conjuncts do not discharge either chemical result."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a6.lean:proof:1",
+        "iter": 1,
+        "route": "needs_redraft",
+        "resulting_status": "needs_redraft",
+        "top_level_status": "blocked",
+        "attempt": 1,
+        "reason": "The candidate compiles, and its concrete graphs preserve the sealed Kimi 5.6 structures, but the decisive source-to-structure proof is circular and answer-shaped: previousPartPL1, which is presented as the independently derived T5-A2 prerequisite, is defined by modifying the already selected structurePL2; chirality is then obtained from inserted R labels rather than a proof that the ligand branches are chemically distinct; and the PL3 terminal-substitution selector is detached from the graph and reduces to True.",
+        "evidence": "Candidate lines 792-797 define previousPartPL1 from structurePL2, reversing the controller DAG dependency. Lines 665-671 and 1059-1065 refute a mirror isomorphism solely by comparing the assigned stereoAt label, while StereoCentre.ValidFor checks only distinct ligand references, not distinct substituent branches, so the same method would certify an arbitrarily tagged achiral centre. Lines 1089-1106 introduce the two glycerol patterns, but enantiomer_pair_selects_terminal_phosphate is unused; PL3StructureSpec merely includes phosphateOnTerminal.hasStereogenicC2, definitionally True, without relating that pattern to structurePL3. MoreSymmetricalThanPL1Witness proves an automorphism plus unequal oxygen-neighbour counts, not that PL2 has greater symmetry than PL1. Thus compilation and the correct atom/charge ledgers do not discharge the required blind derivation.",
+        "redraft_kind": "answer_as_assumption",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:38:12.689162Z"
+      },
+      {
+        "iter": 1,
+        "event": "formalization_redraft_passed",
+        "prior_attempts": 1,
+        "reviewed_at": "2026-09-13T10:36:15.650100Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a6.lean:proof:2",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The closed theorem proves two nontrivial exact molecular-graph result carriers that faithfully represent the requested PL2 and PL3 drawings; all source-derived chemistry, hydrolysis accounting, charge, and stereochemistry checks pass without hypotheses, sorry, admits, local axioms, or answer-shaped premises.",
+        "evidence": "Candidate SHA-256 ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c and submission SHA-256 5a4728333b825b3706068f30d49cce34639ee66c43c97099f53eb4b3d977d566 match the bound contract. Deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The target theorem yields ReportedResult through structurePL2_reported_result and structurePL3_reported_result. Their transparent graphs, site ledgers, atom/charge balances, valence proofs, symmetry automorphisms, and mirror non-superposition proofs independently validate both submitted exact-symbolic structures against pages 1-4. Draft fidelity: frozen Kimi draft 43650f80b4f62bdce6ee5453813fbcd9584b1013fb766a33be6e20b20b5c0010, subpart 5.6; both intended structures and stereochemical choices are preserved with no discrepancy.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T10:47:46.710038Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "8b838565fb4e3069160efcddcaea78717bd96fb5ead4fec8b399456e54679759",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "needs_redraft",
+        "failed_check_ids": [
+          "blind_source_audit.answer_independence",
+          "blind_source_audit.raw_derivation",
+          "chemistry_checks.answer_smuggling",
+          "chemistry_checks.chemical_semantics",
+          "chemistry_checks.structure_stereochemistry",
+          "contract_audit.bridge_completeness",
+          "contract_audit.conclusion_alignment",
+          "contract_audit.hypothesis_derivability",
+          "contract_audit.statement_scope",
+          "requested_outputs[0]",
+          "requested_outputs[1]"
+        ],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a6.lean:proof:1",
+        "route": "needs_redraft",
+        "redraft_kind": "answer_as_assumption",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "1_to_5m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c",
+        "iteration": 1,
+        "attempt": 0,
+        "resulting_status": "retry",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a6.lean:formalization-redraft-passed",
+        "transition": "formalization_redraft_passed",
+        "route": "retry_proof",
+        "redraft_kind": "not_applicable"
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "ab2898917796bfc90acf3879c3939356115153cb5ccbf236cb1e97ba23cf2e2c",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t5_a6.lean:proof:2",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "1_to_5m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T10:47:46.710083Z",
+    "repair_handoff": {},
+    "redraft_resolved_iter": 1
+  }
+}

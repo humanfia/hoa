@@ -1,0 +1,59 @@
+{
+  "target_id": "icho_2026_t1_a1",
+  "status": "completed",
+  "answer_summary": "X = compound 6 (linalool); Y = compound 3 (1,8-cineole, eucalyptol). Reasoning: isomerisation preserves the molecular formula, so X and Y are two different compounds among the four printed C10H18O entries {2 (borneol), 3 (1,8-cineole), 6 (linalool), 10 (umbellulone skeleton)}; only 1,8-cineole has a plane of symmetry (through the ether oxygen and both bridgeheads, exchanging the two -CH2-CH2- bridges and the gem-dimethyls), so Y = 3; acid-catalysed isomerisation to the cyclic ether 3 requires an O-H and a C=C in X, which only linalool among the remaining candidates has, so X = 6. The explicit atom map from the drawn linalool skeleton to the drawn cineole skeleton is kernel-verified (all bonds preserved, exactly two new sigma bonds: the ether O-C bond and the ring-closing C-C bond).",
+  "theorem_names": [
+    "IChO2026T1A1.t1_a1_answer",
+    "IChO2026T1A1.t1_a1_answer_compound_numbers",
+    "IChO2026T1A1.shared_formula_class",
+    "IChO2026T1A1.formulaC10H18O_carriers",
+    "IChO2026T1A1.cineoleMirror_valid",
+    "IChO2026T1A1.cineoleMirror_moves",
+    "IChO2026T1A1.cineoleMirror_fixed",
+    "IChO2026T1A1.borneol_sym_cases",
+    "IChO2026T1A1.linalool_sym_cases",
+    "IChO2026T1A1.umbellulone_sym_cases",
+    "IChO2026T1A1.borneol_no_mirror",
+    "IChO2026T1A1.linalool_no_mirror",
+    "IChO2026T1A1.umbellulone_no_mirror",
+    "IChO2026T1A1.borneol_noCC",
+    "IChO2026T1A1.borneol_hasOH",
+    "IChO2026T1A1.linalool_hasOH",
+    "IChO2026T1A1.linalool_hasCC",
+    "IChO2026T1A1.umbellulone_noOH",
+    "IChO2026T1A1.cineole_etherO",
+    "IChO2026T1A1.borneol_Ccount",
+    "IChO2026T1A1.borneol_Ocount",
+    "IChO2026T1A1.borneol_Hcount",
+    "IChO2026T1A1.cineole_Ccount",
+    "IChO2026T1A1.cineole_Ocount",
+    "IChO2026T1A1.cineole_Hcount",
+    "IChO2026T1A1.linalool_Ccount",
+    "IChO2026T1A1.linalool_Ocount",
+    "IChO2026T1A1.linalool_Hcount",
+    "IChO2026T1A1.umbellulone_Ccount",
+    "IChO2026T1A1.umbellulone_Ocount",
+    "IChO2026T1A1.umbellulone_Hcount_drawn",
+    "IChO2026T1A1.linToCin_inj",
+    "IChO2026T1A1.cyclisation_preserved",
+    "IChO2026T1A1.cyclisation_elements",
+    "IChO2026T1A1.cyclisation_newbond1",
+    "IChO2026T1A1.cyclisation_newbond2"
+  ],
+  "assumptions": [
+    "law_mirror (trusted_general_law): a molecular mirror plane realises a non-identity involutory symmetry of the labelled heavy-atom graph; passed as an explicit hypothesis of t1_a1_answer, not an axiom",
+    "law_tetra (trusted_general_law): a mirror plane cannot fix a tetrahedral sp3 carbon together with all four substituent atoms when those substituents are pairwise non-equivalent in the labelled graph; used to exclude linalool (6) as Y",
+    "law_cage (trusted_general_law): a mirror plane of a molecule containing a rigid non-planar bicyclic cage must move at least one cage atom; applied with the explicit geometric premises hCageB : NonPlanarRigidCage gBorneol [0,1,2,3,4,5,6] and hCageU : NonPlanarRigidCage gUmbellulone [0,1,2,4,5,6,7,8], read off the printed drawings of compounds 2 and 10 (problem-image grounded)",
+    "law_isomer_formula (trusted_general_law): isomerisation preserves the molecular formula",
+    "law_ether_cyclisation (trusted_general_law): acid-catalysed isomerisation to a cyclic ether (a compound with an ether oxygen) requires an alcoholic O-H and a C=C double bond in the starting material",
+    "Problem-data hypotheses of t1_a1_answer: X and Y are distinct (chromatography: four different substances), X isomerises to Y in acidic medium, and Y has a plane of symmetry",
+    "Axiom audit: #print axioms reports only [propext, Quot.sound] for both final theorems; no sorry, no custom axioms, no Classical.choice"
+  ],
+  "source_gaps": [
+    "Compound 10 label/drawing mismatch: the printed label reads C10H18O, but the drawn skeleton (methyl plus isopropyl on bicyclo[3.1.0]hexan-2-one, i.e. the umbellulone connectivity) has hydrogen count 16 (consistent with C10H16O); recorded by the theorem umbellulone_Hcount_drawn : Hcount gUmbellulone 11 = 16. The elimination of compound 10 is structural (ketone: no O-H, no C=C, and no realisable mirror plane of the non-planar cage), so the final answer is unaffected under either reading; if the drawn formula C10H16O were used, compound 10 would additionally fail the formula filter."
+  ],
+  "verification_commands": [
+    "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a1/campaign/workspace && lake env lean IChO2026Problems/problem_icho_2026_t1_a1.lean",
+    "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a1/campaign/workspace && lake build"
+  ]
+}

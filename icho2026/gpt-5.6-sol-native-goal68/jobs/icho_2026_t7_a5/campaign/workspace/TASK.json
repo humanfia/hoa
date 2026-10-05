@@ -1,0 +1,105 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Draw the structure of 5 using simplified scheme for the ligand. Note that 1.00 g of 4 will react stoichiometrically with 94.97 cm3 of N2 at 273.15 K and 1.0 bar.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t7_a5",
+  "image": "T7_page-3.png",
+  "images": [
+    "T7_page-3.png",
+    "T7_page-2.png"
+  ],
+  "index": "icho_2026_t7_a5",
+  "kind": "structure-drawing",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T7",
+  "part_id": "T7-A5",
+  "phase": "solve",
+  "points": 6.0,
+  "previous_parts": [
+    {
+      "dependency_policy": "derive_in_answer_blind_run_or_use_problem_stated_fallback",
+      "part_id": "T7-A4",
+      "question": "Write the equation for this reaction.",
+      "source_id": "icho_2026_t7_a4"
+    }
+  ],
+  "printed_page": 3,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T7_page-3.png",
+      "printed_page": 3,
+      "sha256": "9bc386ab33010a7f8e999035212268ecbeb2ff73ca3a8a108dca96b364e5d47c",
+      "source_page": 65
+    },
+    {
+      "kind": "problem_page",
+      "path": "T7_page-2.png",
+      "printed_page": 3,
+      "sha256": "010bf0d38d5f34a4edd184c97a2a3f0f9375e0e6f1326e7d0fbd336d319b97ba",
+      "source_page": 65
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 65
+    }
+  ],
+  "problem_id": "icho_2026_t7",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT7. Nitrogen Fixation 7% The Haber\u2013Bosch process is the principal industrial method for ammonia production. A simplified diagram of an ammonia synthesis plant is shown below. Fig. 1. M1 - Mixture 1, M2 - Mixture 2, Z \u2212CO2 scrubber, CLR - cooler In the following calculations, assume that all reactions in Fig. 1, except NH3 formation, are quantitative. 7.1 Tick the gases contained in M1 and M2; and tick the correct relationship between \ud835\udc65and \ud835\udc66. An ammonia production complex with a capacity of 660, 000 tons per year was commissioned at the Navoiazot plant in Uzbekistan, which operates with a 97.0% of overall yield. 7.2 Calculate the mass of CH4 (tons) required annually to produce 660, 000 tons of ammonia, if the Navoiazot operates according to the Fig. 1. Consider a model of a real reaction system, which includes recirculation of reagents. An open system operates in a cyclic mode. Each cycle consists of four steps: 1. A stoichiometric N2 : H2 = 1 : 3 mixture with a total amount of n0 mol is fed into the reactor after each cycle. 2. The reaction proceeds with a constant yield of \ud835\udf02= 0.150. 3. Ammonia is separated by liquification. 4. Unreacted gases are returned into the reactor. The cycle is repeated until the required overall yield is reached. Fig. 2. M2. \u2013 Mixture 2, CLR - cooler. 7.3 a) Calculate the amount of nitrogen, present in the system after the 58th cycle (before the addition of 59th portion of mixture), if \ud835\udc5b0 = 4 mol. Provide 4 decimal places. Hint: a formula for the sum of the terms of a geometric progression is needed. b) Calculate the number of cycles needed to increase the overall yield from 15.0% to 97.0%. An aqueous solution of 3 is being used to remove CO2 from the mixture. 7.4 Write the equation for this reaction. Complex 5 is obtained through the fixation of the molecular nitrogen according to the scheme below.\n\n## Current subquestion T7-A5\nDraw the structure of 5 using simplified scheme for the ligand. Note that 1.00 g of 4 will react stoichiometrically with 94.97 cm3 of N2 at 273.15 K and 1.0 bar.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "structure_5",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "semantic_requirements": [
+        "Bind every atom, bond order, substituent, charge, radical and requested stereocentre to the problem figures.",
+        "Represent connectivity and requested stereochemistry explicitly in Lean; a string equality or assumed target is insufficient.",
+        "Derive the requested structure from problem constraints and justified general chemistry rules; do not assume the output."
+      ],
+      "source_requirement": "complete structure of 5, including all requested stereochemistry and template fields",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T7. Nitrogen Fixation 7% The Haber\u2013Bosch process is the principal industrial method for ammonia production. A simplified diagram of an ammonia synthesis plant is shown below. Fig. 1. M1 - Mixture 1, M2 - Mixture 2, Z \u2212CO2 scrubber, CLR - cooler In the following calculations, assume that all reactions in Fig. 1, except NH3 formation, are quantitative. 7.1 Tick the gases contained in M1 and M2; and tick the correct relationship between \ud835\udc65and \ud835\udc66. An ammonia production complex with a capacity of 660, 000 tons per year was commissioned at the Navoiazot plant in Uzbekistan, which operates with a 97.0% of overall yield. 7.2 Calculate the mass of CH4 (tons) required annually to produce 660, 000 tons of ammonia, if the Navoiazot operates according to the Fig. 1. Consider a model of a real reaction system, which includes recirculation of reagents. An open system operates in a cyclic mode. Each cycle consists of four steps: 1. A stoichiometric N2 : H2 = 1 : 3 mixture with a total amount of n0 mol is fed into the reactor after each cycle. 2. The reaction proceeds with a constant yield of \ud835\udf02= 0.150. 3. Ammonia is separated by liquification. 4. Unreacted gases are returned into the reactor. The cycle is repeated until the required overall yield is reached. Fig. 2. M2. \u2013 Mixture 2, CLR - cooler. 7.3 a) Calculate the amount of nitrogen, present in the system after the 58th cycle (before the addition of 59th portion of mixture), if \ud835\udc5b0 = 4 mol. Provide 4 decimal places. Hint: a formula for the sum of the terms of a geometric progression is needed. b) Calculate the number of cycles needed to increase the overall yield from 15.0% to 97.0%. An aqueous solution of 3 is being used to remove CO2 from the mixture. 7.4 Write the equation for this reaction. Complex 5 is obtained through the fixation of the molecular nitrogen according to the scheme below.",
+  "source_index": "T7-A5",
+  "source_page": 65,
+  "source_pdf": "theory_problem.pdf"
+}

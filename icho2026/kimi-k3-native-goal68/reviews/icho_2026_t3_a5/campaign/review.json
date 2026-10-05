@@ -1,0 +1,41 @@
+The verification build passed with zero axioms, matching the candidate's claims. I've independently read the source page (Q3-5) including zoomed crops of the C2 structure, D4 structure, and COF-7 Kagome scheme, read all candidate files and Lean sources, and verified the chemistry. Here is my independent assessment:
+
+**Source verification:** The printed C2 is a stilbene of two 1,3-bis(4-aminophenyl)benzene halves (C₃₈H₃₂N₄, DBE = 25 ✓ = 6 rings×4 + 1 C=C); arms attach meta on each central ring (1,3,5-pattern), NH₂ para on each arm — all matching the answer's fragment decomposition. D4 is 2,3,5,6-tetrafluoroterephthalaldehyde (C₈H₂F₄O₂) ✓. The printed sequence (AcOH → Kagome COF-7; NaClO₂/NaH₂PO₄; then 1) O₃ 2) Me₂S → X) matches.
+
+**Chemistry check:** Pinnick oxidation of the aldimine linkages to amides (-CH=N- → -C(=O)-NH-, N–H on the C2 arm side, carbonyl on the D4 side) is the standard, correctly-scoped general law here; ozonolysis/Me₂S cleaves the stilbene C=C to two CHO groups, cutting every C2 node into identical halves. Each Kagome vertex touches two hexagons with 120° wedges (the meta-arm pairing), so surviving closed loops are hexagon perimeters (6 C2-halves + 6 D4) — the candidate's n = 6 ring is derivable from the printed trihexagonal topology. Every atom balance (C₂₇H₁₄F₄N₂O₃ repeat; global C2 + 2D4 + 6[O] = 2 repeats + 4H₂O) rechecks by hand and in Lean. The derived smallest repeat unit is chemically correct.
+
+**Proof check:** Compiles clean (`lake env lean`, exit 0), all `#print axioms` report no axioms at all (not even standard ones), no sorry/admit/native_decide/custom axioms. However, the formalization is atom-inventory bookkeeping: fragments like `paraPhenylene`/reviewed positional identities are nominal, bond orders and connectivity are only in untrusted prose — the explicit-connectivity representation demanded by the task's semantic requirements is absent; the alternation/minimality theorem is about a list stipulated to alternate (partially definitional, though chemically justified by cross-selective condensation).
+
+```json
+{
+  "target_id": "icho_2026_t3_a5",
+  "semantic_status": "passed",
+  "proof_status": "conditional",
+  "reason": "The derived smallest repeat unit (one C2-half: 5-formyl-1,3-phenylene bearing two 4-(NHC(=O)-)-phenyl arms, alternating with one 2,3,5,6-tetrafluorobenzene-1,4-bis(carbonyl) D4 residue, formula C27H14F4N2O3) is correct and genuinely derived from the printed Q3-5 scheme: C2 stilbene constitution, D4 tetrafluoroterephthalaldehyde, Kagome lattice, and the printed reagent sequence were each re-verified against the source page pixels, and the Pinnick imine-to-amide oxidation plus O3/Me2S stilbene cleavage are correctly scoped standard laws, not answer-key material. Minimality via strict C2-half/D4 alternation is sound, and the n=6 hexagonal-pore ring is derivable from the printed trihexagonal topology (meta-arm 120-degree pairing follows hexagon wedges). All 16 Lean theorems compile with zero axioms (independently reproduced), and every atom balance rechecks. The one gap is proof expressiveness: the formalization is atom-inventory bookkeeping only - fragment positional identity, bond orders, and inter-block connectivity exist only in untrusted prose/commentary, so the formalization does not distinguish the claimed structure from same-formula isomers, falling short of the task requirement to represent connectivity explicitly in Lean. The arithmetic content is fully proved and supports but does not by itself establish the structural output.",
+  "coverage": [
+    {
+      "output_id": "macrocycle_repeat",
+      "status": "conditional",
+      "theorem": "IChO2026T3A5.repeatUnitX_formula (with repeatUnit_is_minimal, backbone_alternates, global_atom_balance, c2HalfInX_formula, d4InX_formula as supporting evidence)",
+      "evidence": "repeatUnitX_formula proves repeatUnitX = <27,14,2,3,4> by decide (verified: compiles, no axioms); the inventory is built from figure-grounded fragments c2HalfInX (C6H3 central ring + CHO from ozonolyzed vinyl + 2 para-phenylene-NH arms = C19H14N2O) and d4InX (C6F4 + 2 amide carbonyls = C8F4O2), both matching the printed structures re-inspected at high zoom. global_atom_balance ties the final repeat back to printed C2 (C38H32N4) + 2 D4 (C8H2F4O2) + 6[O] with exactly 4 H2O and zero unaccounted atoms (hand-verified each element). repeatUnit_is_minimal proves no one-block tile exists and the two-block alternating motif tiles the ring 6 times, but the alternating backbone is stipulated as a list rather than derived from an encoded graph. Connective detail (amide orientation C(=O) on D4 side / N-H on C2 side, 1,3,5-substitution, para arms, retained 4 F) is established only in answer.md prose, not in the Lean objects."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Inspected T3_page-5.png at full and zoomed resolution: question 3.5 text, C2 skeletal structure (stilbene of two 1,3-bis(4-aminophenyl)benzene halves; meta arm placement; para NH2), D4 (2,3,5,6-tetrafluoroterephthalaldehyde, CHO positions 1,4 / F at 2,3,5,6), COF-7 Kagome sketch, and reagent sequence AcOH -> NaClO2/NaH2PO4 -> 1) O3 2) Me2S all match the candidate's transcriptions.",
+    "Independently recomputed C2 formula C38H32N4 (DBE check 25 = 6 rings x 4 + 1 C=C, consistent with printed structure) and D4 C8H2F4O2.",
+    "Hand-verified fragment compositions: p-C6H4 arm, NH2, 1,3,5-trisubstituted C6H3 ring, vinyl CH; c2Half = C19H16N2; c2HalfInX = C19H14N2O; d4InX = C8F4O2; repeat = C27H14F4N2O3; global balance C54H36F8N4O10 = both sides.",
+    "Verified Pinnick oxidation of aldimines to amides (NaClO2/NaH2PO4) and O3/Me2S reductive ozonolysis of stilbene C=C to two aldehydes as standard, correctly-scoped general chemistry; amide orientation (carbonyl on former aldehyde/D4 carbon, N-H on former aniline/C2 nitrogen) is correct.",
+    "Checked the printed trihexagonal (Kagome) topology: each vertex touches two hexagons with 120-degree interior wedges matching the meta-arm pairing of each C2 half, so the closed covalent loops surviving C2-node scission are hexagon perimeters (6 C2-halves + 6 D4), supporting n = 6 in macrocycleX (supplementary to the requested smallest repeat unit).",
+    "No official solutions, rubrics, or answer repositories were consulted; bundle contains only problem pages (theory_problem.pdf, 93 pages, all Q pages)."
+  ],
+  "proof_checks": [
+    "Independently reran 'lake env lean IChO2026Problems/problem_icho_2026_t3_a5.lean': exit 0, no errors/warnings.",
+    "#print axioms output reproduced: repeatUnitX_formula, macrocycleX_formula, global_atom_balance, repeatUnit_is_minimal, backbone_alternates each 'does not depend on any axioms' (not even propext/Classical.choice/Quot.sound).",
+    "grep over IChO2026Problems, IChO2026Chem, IChO2026Run and umbrella files: no sorry, admit, custom axiom, native_decide, or unsafe declarations; all proofs are kernel-checked decide/rfl over natural-number inventories.",
+    "Umbrella IChO2026Problems/All.lean imports only the authorized target file; IChO2026Chem.Core is empty infrastructure.",
+    "Expressiveness gap confirmed: AtomCount carries no connectivity or bond-order data, so fragment labels (1,3,5-ring, para-phenylene, amide orientation) are notationally assumed in Lean objects; the formalization cannot distinguish proposed structure from same-formula isomers, contrary to the task's explicit-connectivity representation requirement - hence conditional, not passed, proof status.",
+    "backbone_alternates/repeatUnit_is_minimal concern a list defined to alternate (partially definitional), though strict C2-half/D4 alternation is itself justified by cross-selective aldehyde-amine condensation (no self-condensation possible) from the printed monomers."
+  ]
+}
+```

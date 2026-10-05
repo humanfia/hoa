@@ -1,0 +1,240 @@
+{
+  "icho_2026_t8_a4": {
+    "adjustment_explanation": "The frozen 21.0 strict score is confirmed. Under the generous policy, structures 10 and 11 receive feature-level partial credit for their correct coordination scaffolds, increasing the score by 3.5 to 24.5. Their ligand/CO₂ redox assignments remain chemically different from the official structures, so the incorrect OS and VE entries are not restored.",
+    "generous": {
+      "assessment": "Structures 9 and 12–15 are correct. Structures 10 and 11 preserve substantial coordination connectivity but contain incorrect redox localization and, for 11, incorrect CO₂ bonding/charge assignment. All total charges are correct.",
+      "components": [
+        {
+          "earned": "3.0",
+          "evidence": "The submission shows tetradentate 8 with two aqua ligands and charge 2+, matching official structure 9.",
+          "label": "Structure 9 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The submitted five-coordinate scaffold—four Fe–N contacts and one aqua ligand, charge +—matches official 10. Partial credit is lost because the submission explicitly places a radical electron and −1 charge on ligand 8, whereas official Q8-5 depicts the Fe(I) formulation with OS +1.",
+          "label": "Structure 10 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "1.5",
+          "evidence": "The submission correctly adds CO₂ with both Fe–C and Fe–O contacts to give CN 6 and charge +. Credit is limited because it specifies neutral O=C=O and a ligand-8 radical anion; official 11 instead shows the reduced bent C,O-bound CO₂-derived motif and assigns Fe OS +3.",
+          "label": "Structure 11 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "The submitted carbon-bound C(=O)OH ligand and charge + match official structure 12.",
+          "label": "Structure 12 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "The submitted carbon-bound C(=O)OH complex with one aqua ligand and charge + matches official structure 13.",
+          "label": "Structure 13 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "The submitted carbon-bound CO plus aqua complex, charge 2+, matches official structure 14; ⁻C≡O⁺ is an acceptable CO Lewis representation.",
+          "label": "Structure 14 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "The submitted tetradentate complex with one aqua ligand and charge 2+ matches official structure 15.",
+          "label": "Structure 15 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "6.0",
+          "evidence": "Official Q8-5 gives 9:(+2,6,18), 10:(+1,5,17), 11:(+3,6,17), 12:(+2,5,16), 13:(+2,6,18), 14:(+2,6,18), 15:(+2,5,16). The submission misses OS and VE for both 10 and 11; its CN values and every other scored entry agree. Four errors at 0.5 each reduce 8.0 to 6.0.",
+          "label": "Scored OS/CN/VE entries (max 8.0)",
+          "maximum": "8.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "Submitted charges for 9–15 are +2,+1,+1,+1,+1,+2,+2, matching the official drawings; therefore no −0.5 charge penalties apply.",
+          "label": "Total-charge deductions (max 0.0)",
+          "maximum": "0.0"
+        }
+      ],
+      "earned": "24.5",
+      "id": "icho_2026_t8_a4",
+      "maximum": "29.0",
+      "official_page_evidence": "Official Q8-5 (PDF p.72) supplies the structures and OS/CN/VE ledger and states: 3 points per correct structure, 0.5 per correct scored OS/CN/VE entry, and −0.5 for each incorrect total charge. Q8-4 (p.71) supplies the reaction sequence.",
+      "unresolved": false
+    },
+    "strict": {
+      "assessment": "The frozen strict reconstruction is correct: five structures earn full credit, structures 10 and 11 fail the official all-or-nothing structure criterion, four scored descriptor entries are wrong, and no charge penalty applies.",
+      "components": [
+        {
+          "earned": "3.0",
+          "evidence": "Submitted structure 9 matches official Q8-5: tetradentate 8, two aqua ligands, charge 2+.",
+          "label": "Structure 9 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "The submission explicitly gives Fe(II)–(8•−); official structure 10 is assigned Fe(I), OS +1, without the submitted ligand radical-anion formulation.",
+          "label": "Structure 10 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "The submission gives Fe(II), 8•−, and neutral O=C=O. Official 11 assigns Fe(III) and depicts a differently reduced/bonded bent C,O-bound CO₂-derived ligand. Thus the complete structure is not correct.",
+          "label": "Structure 11 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Submitted carbon-bound C(=O)OH complex matches official structure 12.",
+          "label": "Structure 12 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Submitted carbon-bound C(=O)OH complex with aqua matches official structure 13.",
+          "label": "Structure 13 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Submitted carbon-bound CO/aqua complex matches official structure 14; its charge-separated CO Lewis form is equivalent.",
+          "label": "Structure 14 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Submitted one-aqua complex matches official structure 15.",
+          "label": "Structure 15 (max 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "6.0",
+          "evidence": "Against the official ledger, the submission is wrong for OS10 (2 vs 1), VE10 (16 vs 17), OS11 (2 vs 3), and VE11 (16 vs 17). Its CN values and all descriptors for 9 and 12–15 agree. Four 0.5-point losses leave 6.0.",
+          "label": "Scored OS/CN/VE entries (max 8.0)",
+          "maximum": "8.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "Every submitted total charge matches official Q8-5, so no explicit negative marking applies.",
+          "label": "Total-charge deductions (max 0.0)",
+          "maximum": "0.0"
+        }
+      ],
+      "earned": "21.0",
+      "id": "icho_2026_t8_a4",
+      "maximum": "29.0",
+      "official_page_evidence": "Official Q8-5 (PDF p.72) shows structures 9–15 and the ledger 9:(+2,6,18), 10:(+1,5,17), 11:(+3,6,17), 12:(+2,5,16), 13:(+2,6,18), 14:(+2,6,18), 15:(+2,5,16). It awards 3 points per correct structure and 0.5 per scored OS/CN/VE entry, with −0.5 for each wrong total charge.",
+      "unresolved": false
+    }
+  },
+  "icho_2026_t3_a3": {
+    "adjustment_explanation": "No generous adjustment is warranted. The official rubric already gives entry-level credit and explicit −1 penalties for misplaced combinations or XXX entries. The Lean source's internally consistent but incorrect geometry assignments do not override the official drawings or solution.",
+    "generous": {
+      "assessment": "15.0 points. Seven combinations are correctly placed, four XXX entries are valid, and three cells are explicitly penalized. Feature-level partial credit cannot increase the score because A3+B2 and A3+B1 have actual topology-placement errors, while the extra Kagome XXX incorrectly claims exhaustion.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Official page 25 requires C3+D4 and A2+B1. The submission has correct A2+B1 (+2) but incorrectly places A3+B2 here (−1); page 25 instead assigns A3+B2 to Kagome.",
+          "label": "Tetragonal 1 (maximum 4.0)",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "Official page 25 specifies XXX and XXX. The submitted XXX earns +1, while A3+B1 is an incorrect combination placement and receives −1.",
+          "label": "Tetragonal 2 (maximum 2.0)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "Official page 25 lists A1+B2 and C1+D2; both submitted entries match.",
+          "label": "Hexagonal 1 (maximum 4.0)",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Official page 25 lists A1+B3 and XXX; both submitted entries match.",
+          "label": "Hexagonal 2 (maximum 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Official page 25 lists C1+D1 and XXX; both submitted entries match.",
+          "label": "Trigonal (maximum 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "Official page 25 requires A3+B2 and XXX. With row order irrelevant, one submitted XXX earns +1, but the other XXX wrongly replaces the required A3+B2 and receives −1.",
+          "label": "Kagome (maximum 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "Official page 25 lists C1+D3 and A4+B2; both submitted entries match, irrespective of row order.",
+          "label": "Tetrahedral (maximum 4.0)",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "15.0",
+      "id": "icho_2026_t3_a3",
+      "maximum": "23.0",
+      "official_page_evidence": "Official page 25 gives the complete red solution table and awards +2 for each correct combination, +1 for each correct XXX, and −1 for each incorrectly placed combination or XXX. Official page 24 supplies the corresponding topology drawings.",
+      "unresolved": false
+    },
+    "strict": {
+      "assessment": "15.0 points under the official rubric: 7 correct combinations × 2 = 14, 4 correct XXX entries × 1 = 4, and 3 incorrect placements × −1 = −3.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Official page 25 requires C3+D4 and A2+B1. A2+B1 earns +2; submitted A3+B2 is misplaced and earns −1 because the official table assigns it to Kagome.",
+          "label": "Tetragonal 1 (maximum 4.0)",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "Official page 25 requires two XXX entries. One submitted XXX earns +1; A3+B1 is an incorrect placement and earns −1.",
+          "label": "Tetragonal 2 (maximum 2.0)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "Submitted A1+B2 and C1+D2 exactly match official page 25.",
+          "label": "Hexagonal 1 (maximum 4.0)",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Submitted A1+B3 and XXX exactly match official page 25.",
+          "label": "Hexagonal 2 (maximum 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Submitted C1+D1 and XXX exactly match official page 25.",
+          "label": "Trigonal (maximum 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "Official page 25 requires A3+B2 and XXX. Because row order is irrelevant, one submitted XXX earns +1 and the extra XXX earns −1 for replacing A3+B2.",
+          "label": "Kagome (maximum 3.0)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "Submitted A4+B2 and C1+D3 exactly match official page 25, with row order immaterial.",
+          "label": "Tetrahedral (maximum 4.0)",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "15.0",
+      "id": "icho_2026_t3_a3",
+      "maximum": "23.0",
+      "official_page_evidence": "The red solution table on official page 25 lists: Tetragonal 1—C3+D4, A2+B1; Tetragonal 2—XXX, XXX; Hexagonal 1—A1+B2, C1+D2; Hexagonal 2—A1+B3, XXX; Trigonal—C1+D1, XXX; Kagome—A3+B2, XXX; Tetrahedral—C1+D3, A4+B2. It specifies +2, +1, and −1 respectively for correct combinations, correct XXX, and incorrect placements.",
+      "unresolved": false
+    }
+  }
+}

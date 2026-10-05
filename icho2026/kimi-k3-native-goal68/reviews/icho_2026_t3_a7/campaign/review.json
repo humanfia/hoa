@@ -1,0 +1,46 @@
+All checks are complete. Here is the structured final review:
+
+```json
+{
+  "target_id": "icho_2026_t3_a7",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "Both requested outputs are formally established from the printed Q3-7 data and the printed COF-8/COF-9 structures. Output 1: qe = (19.90 - 9.225) x 0.2000 / 0.005000 = 427 mg g^-1 exactly, an unconditional theorem on the printed givens. Output 2: the theorem proves, for arbitrary Avogadro constant NA != 0, that (ions per gram)/(pores per gram) = 427*M_pore/(1000*M(UO2^2+)) = 1.0020 and that this reports as 1.00 ions per pore at 3 s.f. The repeat-unit mass M_pore (C36H27N9O3 per two-vertex pore cell) matches the printed honeycomb figures: each hexagonal pore is bounded by 6 vertices (2 pore-worths of framework), and the dashed repeat-unit boundary in the Q3-6/Q3-7 drawings contains exactly 2 triazine (D2) nodes, 1 benzene (E1) node, 6 phenylene spacers, 6 vinylene bridges and 6 amidoxime groups = 2 x C36H27N9O3, so one pore per dashed repeat unit is a direct pixel-level reading of the original figure, not an inferred law. The stoichiometry -C ident N + NH2OH -> -C(=NOH)NH2 (+NOH2 net) matches the drawn COF-9 amidoximes exactly (N: 3->6 with skeleton N unchanged, O: 0->3), and the claimed E1 + D2 - 3 H2O + 3 NH3O atom balance was independently recomputed and verified. Atomic masses are hard-coded in Lean as CODATA 2022 values, contrary to the candidate's claim that no masses are printed: the provided exam PDF includes a periodic table (page G1-5: C 12.01, H 1.008, N 14.01, O 16.00, U 238.03), but this is harmless since the printed table values give the identical ratio 1.0020 -> 1.00 at 3 s.f. (robustness independently verified; the candidate's 'school-book masses give 1.02' sensitivity remark is arithmetically wrong -- integer masses give 1.0011 -> 1.00 -- but the proven result is unaffected). Minor prose embellishment ('each pore a single bidentate chelating pocket') is corroborative only and not load-bearing; the computed ratio is the proved content. Build is clean, no sorry/admit/native_decide/custom axioms, and both final theorems depend only on propext, Classical.choice and Quot.sound.",
+  "coverage": [
+    {
+      "output_id": "equilibrium_absorption_capacity",
+      "status": "passed",
+      "theorem": "icho_2026_t3_a7_equilibrium_absorption_capacity",
+      "evidence": "States qeRaw c0 ce Vsol mCOF9 = 427 with ReportsAtQuantum 427 at quantum 1, where c0=19.90, ce=9.225, Vsol=0.2000, mCOF9=0.005000 are the exact printed Q3-7 givens (verified against T3_page-7.png pixels: 5.000 mg, 19.90 mg dm^-3, 200.0 mL, 9.225 mg dm^-3). qeRaw is the literal standard adsorption-capacity mass balance (C0-Ce)*V/m; norm_num proves 427 exactly with no intermediate rounding, and 427 at quantum 1 is the tie-free 3-s.f. reporting. Independently recomputed with exact fractions: 427 exactly."
+    },
+    {
+      "output_id": "uranyl_ions_per_pore",
+      "status": "passed",
+      "theorem": "icho_2026_t3_a7_uranyl_ions_per_pore",
+      "evidence": "States, for any NA != 0, that ionsPerGram/poresPerGram = 33822243/33753363.75 (exact rational = 427*633.672/(1000*270.02691); independently recomputed, equals 1.002040663...) and ReportsAtQuantum 1.00 at quantum 0.01, i.e. 1.00 ions per pore at 3 s.f. The Avogadro cancellation is proved generally (ions_per_pore_eq, field_simp, quantified over NA). The pore mass uses the per-pore repeat formula C36H27N9O3 read directly from the printed dashed repeat unit of the printed COF-8/COF-9 honeycomb figures (2 D2 + 1 E1 + 6 phenylene + 6 vinylene + 6 amidoxime groups per dashed unit = 2 pore cells; each hexagonal pore = half a dashed unit), confirmed by zoomed pixel inspection of T3_page-6.png and T3_page-7.png; the amidoxime addition (C9H11N9O3 -> per pore vs D2's C9H5N3 core) matches the drawn structures atom-for-atom. Molar masses are CODATA 2022 constants hard-coded in the theorem; the exam's own printed periodic table gives the same reported answer 1.00 (ratio 1.00202), so the external-constant dependence is fully supported by problem-printed data."
+    }
+  ],
+  "unsupported_assumptions": [
+    "Candidate prose claims no atomic-mass table is printed in the exam materials; in fact the provided PDF page G1-5 is a full periodic table (C 12.01, H 1.008, N 14.01, O 16.00, U 238.03). The Lean development hard-codes CODATA 2022 values (12.011/14.007/15.999/238.02891) instead of the printed table values; harmless to the result (identical 1.00 at 3 s.f., verified: 427*633.666/27003.0 = 1.0020) but the source-grounding statement is inaccurate.",
+    "Candidate sensitivity remark that integer school-book masses give 1.02 is arithmetically incorrect (integer masses give M(UO2)=270.00, M_pore=645.00, ratio 1.0011 -> 1.00 at 3 s.f.); the claimed 1.020 comes from silently omitting the factor 1000. The formally proved CODATA result is unaffected.",
+    "Prose assertion that each pore acts as 'a single bidentate chelating pocket' for one uranyl ion is an unproven mechanistic interpretation; it is corroborative only and no output depends on it."
+  ],
+  "source_checks": [
+    "TASK.json read first; requested outputs: qe in mg g^-1 (3 s.f.) and uranyl ions per pore (3 s.f.); evaluation answer-blind.",
+    "Inspected T3_page-7.png directly (including full-page and 3x zoomed figure crops): confirmed printed givens 5.000 mg COF-9, 19.90 mg dm^-3 UO2^2+, 200.0 mL, final 9.225 mg dm^-3, the NH2OH arrow COF-8 -> COF-9, and the amidoxime drawings (-C(=NOH)NH2: NH2, N-OH labels) on each of the three substituents of each red 1,3,5-trisubstituted benzene node.",
+    "Inspected T3_page-6.png directly: confirmed D2 = 2,4,6-tris(4-formylphenyl)-1,3,5-triazine (triazine C3N3 core + 3 p-phenylene), E1 = benzene-1,3,5-triacetonitrile (C6H3 + 3 CH2CN), and the COF-8 honeycomb figure with dashed repeat-unit boundaries; the dashed unit contains 2 triazine nodes, 1 benzene node, 6 phenylene spacers, 6 vinylene bridges (plus 6 nitrile/amidoxime groups) = 2 x C36H27N9O3, matching the candidate's per-pore cell (one pore per two-vertex cell = per dashed repeat unit).",
+    "Verified atom balance E1 + D2 - 3 H2O + 3 NH3O = C36H27N9O3 independently; verified the nitrile->amidoxime transformation (+N, +O, +2H per group) against the drawn COF-9 labels.",
+    "Opened the original theory_problem.pdf: confirmed G1 general instructions and a full printed periodic table on page G1-5 (C 12.01, H 1.008, N 14.01, O 16.00, U 238.03), i.e. atomic masses are provided problem material; re-evaluated ions-per-pore with printed table values: 1.00202 -> 1.00 at 3 s.f., confirming the result without any external constants.",
+    "No official-solution, rubric, answer-repository, Humanize or Archon resources consulted; no supplied input or candidate file modified."
+  ],
+  "proof_checks": [
+    "Fresh build performed: lake build IChO2026Problems completed successfully (8564 jobs, exit 0); only style-linter warnings, no errors.",
+    "#print axioms output in the build log: both icho_2026_t3_a7_equilibrium_absorption_capacity and icho_2026_t3_a7_uranyl_ions_per_pore depend only on [propext, Classical.choice, Quot.sound].",
+    "Grep of all workspace Lean sources (IChO2026Chem, IChO2026Problems, IChO2026Run, root .lean files) finds no sorry, admit, native_decide, unsafe, implemented_by, decide, or custom axiom declarations.",
+    "Final theorem 1 is not tautological: it computes the literal mass balance on the four printed givens via norm_num and couples it to the project-wide ReportsAtQuantum relation (IChO2026Chem/Reporting.lean inspected; the reporting definition itself is sound win/win interval semantics with correct tie-away-from-zero convention and is used only at the final boundary).",
+    "Final theorem 2 carries real content: the Avogadro cancellation is proved for arbitrary NA != 0 (field_simp), the CODATA evaluation is an exact-rational norm_num proof (33822243/33753363.75, independently recomputed and confirmed equal), and the 1.00-at-0.01-quantum reporting proof is strict, tie-free. No precomputed-answer injection: the only numeric inputs are the printed givens and atomic-mass constants, which are disclosed and supported by the exam's printed periodic table.",
+    "Helper definitions (ionsPerGram, poresPerGram, poreMass, mUO2, poreC/H/N/O = 36/27/9/3) inspected one by one; the pore atom counts match the pixel-verified dashed repeat unit; poresPerGram = NA/Mpore correctly counts pores per gram for the per-pore repeat mass.",
+    "Cross-checked all raw numerics with exact rational arithmetic (Python fractions): qe = 427 exactly; ratio = 15032108/15001495 = 1.0020407 (CODATA) in [0.995, 1.005) hence 1.00 at 3 s.f. with no tie; printed-table masses give 1.00202 -> 1.00."
+  ]
+}
+```

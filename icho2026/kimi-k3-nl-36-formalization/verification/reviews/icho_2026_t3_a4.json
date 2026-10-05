@@ -1,0 +1,1217 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "All four concrete repeat-unit drawings are source-compatible, preserve the sealed Kimi \u00a73.4 answers without substitution, and are carried by explicit atom/bond graphs with exact boundary cuts. The candidate makes no uniqueness claim and introduces no requested-result hypothesis.",
+    "updated_at": "2026-09-13T08:52:41Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "d7b6beb046fb576f3ea265096c30d3b957e2396188c6f8ce42852651dc088e8a",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The page-4 precursor identities, hydroxyl positions, IR observations, six-H-only change, and arrow directions are transcribed into named carriers; page 3 supplies the 3+2 Hexagonal-1 topology, and the COF-1 panel supplies three linker-centre boundaries."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "The concrete graphs follow by source-stated imine condensation plus transparent atom/valence edits: ortho oxidative O-C closure satisfies the COF-4 C=N/IR/H-loss constraints, and proton/pi-bond relocation satisfies the COF-6 isomerisation/no-imine constraints. The definitions reduce to finite checks; sorry bodies are permitted in this Review."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "LocalSite, atomAt, bondOrder, ownership, BoundaryCut, and RepeatUnitDrawing encode every atom, bond order, formal charge, radical count, absent stereocentre, cross-boundary continuation, and both C-C crossings of each of three dashed lines."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "Every requested output is an exact symbolic structure/classification; there are no measurements, tolerances, or rounded quantities."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "cof3FormationArrow and cof5FormationArrow are reversible as depicted; cof3ToCof4Arrow points from COF-3 through [O] to COF-4; cof5ToCof6Arrow is directed and marked irreversible consistently with the text."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The result theorems are premise-free and their concrete named witnesses must satisfy nontrivial atom, bond, valence, composition, observation, topology, and boundary predicates. No singleton domain, free Bool/Prop input, or opaque identity assumption can vary the requested output; global uniqueness is not requested by \u201cDraw\u201d."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The two page-4 precursor pairs have the depicted substitution patterns and 3-connected-core/2-connected-linker roles.",
+          "carrier": "triformylbenzene; diaminoDihydroxybenzene; triformylphloroglucinol; paraPhenylenediamine; countSubstituent",
+          "status": "covered",
+          "evidence": "Transparent Fin 6 substitution maps and molecular formulas reproduce the two source panels."
+        },
+        {
+          "claim": "A 3-connected planar core plus 2-connected linear linker uses the printed Hexagonal-1 topology.",
+          "carrier": "topologyFromConnectivities; relevantPreviousPartTopology",
+          "status": "covered",
+          "evidence": "The mapping is rederived from the page-3 topology key; no earlier answer is imported."
+        },
+        {
+          "claim": "COF-3 and COF-5 contain three owned imine linkages with the source-depicted hydroxy placement and exact atom inventories.",
+          "carrier": "ThreeImineLinkedArms; OrthoHydroxyGroupsOnLinker; CoreHydroxyGroups; ImineCondensationProduct; cof3CondensationLedger; cof5CondensationLedger",
+          "status": "covered",
+          "evidence": "The predicates bind each arm and the C/H/N/O ledgers explicitly to the depicted precursor formulas and condensation relation."
+        },
+        {
+          "claim": "COF-4 is compatible with directed oxidation of COF-3, loss of six H only, absence of an ordinary imine motif, and retention of a different C=N.",
+          "carrier": "OxidativeBenzoxazoleClosure; ThreeBisBenzoxazoleLinkers; HydrogenOnlyLoss; cof4HydrogenLedger; HasImineMotif; HasCarbonNitrogenDoubleBond",
+          "status": "covered",
+          "evidence": "The five-membered O-C=N closures, retained heavy sites, exact H delta, and IR-discriminating motifs are transparent structural checks."
+        },
+        {
+          "claim": "COF-6 is the atom-retaining no-C=N isomer reached irreversibly from COF-5 by the depicted proton and bond-order shift.",
+          "carrier": "BetaKetoEnamineTautomerization; ThreeBetaKetoEnamineArms; cof6FormulaPreserved",
+          "status": "covered",
+          "evidence": "The carrier checks O-H to N-H relocation, C-O to C=O, C=N to C-N, core-arm C-C to C=C, formula retention, and C=N absence."
+        },
+        {
+          "claim": "Every output has the COF-1-style three dashed boundaries through shared red phenylene centres.",
+          "carrier": "boundaryCut; ExactDashedBoundary; ownership",
+          "status": "covered",
+          "evidence": "Each Fin 3 arm has one centre cut with both opposite C-C crossings, while atom ownership records one core plus three half-linkers."
+        },
+        {
+          "claim": "Every concrete drawing is a chemically complete neutral closed-shell graph with the stated exact formula and no source-requested stereocentre.",
+          "carrier": "CommonRepeatAudit; FormulaMatches; InteriorValenceValid; BondsJoinPresentAtoms; NeutralAndRadicalFree; NoAssignedStereocentres",
+          "status": "covered",
+          "evidence": "These finite predicates jointly check formula ownership, neutral valence, bond endpoints, charge, radicals, and stereochemistry."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t3_a4.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t3_a4",
+        "source_record_sha256": "7c7dec7da0f4c85c0dd70268d6b91f6c539d5dd02376341bfec1642915b793b9",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a4.answer.json",
+        "answer_submission_sha256": "0bdaa30b527754840cc2f202b09ba35ea430e3f5913aa837558915a377fd3c9d",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t3_a4.source.json",
+        "source_report_sha256": "5be95c82ebc22385b0a9f2a05ca2faf742b31ba44475e9420956e8379ae52b09",
+        "candidate": "IChO2026Problems/problem_icho_2026_t3_a4.lean",
+        "preflight_sha256": "80ec97d5088e095119cdec57ce2e4b40feb236b6ff14dd3ece59bebb09acb043",
+        "candidate_sha256": "d7b6beb046fb576f3ea265096c30d3b957e2396188c6f8ce42852651dc088e8a",
+        "question_sha256": "8078d33010932fe7d44edb9203318f40a10501e1bfa0a0902b3f014936fdf92c",
+        "shared_context_sha256": "8baa1dfe64b6dd0359bc530c41420fa1a6cfa878f6fac5c0b6bfb1713e4ef92d",
+        "previous_parts_sha256": "dcaac5404f7ea441e13ed998eae60ac829ec2fd9791044e02e480ca88ffd583a",
+        "requested_outputs_sha256": "02cfef6bb7c7617f7af40cef7b956d3e710e3a1aa04cc7918c76fe5cc857f26c",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T3_page-4.png",
+            "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+          },
+          {
+            "path": "icho_2026_source/image/T3_page-3.png",
+            "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "24406799f461278e8775df5c55fc736503812624f797eb3f3b78957e66350ff6",
+          "node_count": 12,
+          "edge_count": 20,
+          "node_kind_counts": {
+            "derivation_obligation": 4,
+            "previous_part_prerequisite": 1,
+            "requested_output": 4,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "cof_3",
+            "cof_4",
+            "cof_5",
+            "cof_6"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t3_a3"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t3_a4",
+          "path": ".archon/provided_answer_drafts/Q3.md",
+          "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t3_a4.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t3_a4",
+          "source_record_sha256": "7c7dec7da0f4c85c0dd70268d6b91f6c539d5dd02376341bfec1642915b793b9",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a4.answer.json",
+          "answer_submission_sha256": "0bdaa30b527754840cc2f202b09ba35ea430e3f5913aa837558915a377fd3c9d",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t3_a4.source.json",
+          "source_report_sha256": "5be95c82ebc22385b0a9f2a05ca2faf742b31ba44475e9420956e8379ae52b09",
+          "candidate": "IChO2026Problems/problem_icho_2026_t3_a4.lean",
+          "preflight_sha256": "80ec97d5088e095119cdec57ce2e4b40feb236b6ff14dd3ece59bebb09acb043",
+          "candidate_sha256": "d7b6beb046fb576f3ea265096c30d3b957e2396188c6f8ce42852651dc088e8a",
+          "question_sha256": "8078d33010932fe7d44edb9203318f40a10501e1bfa0a0902b3f014936fdf92c",
+          "shared_context_sha256": "8baa1dfe64b6dd0359bc530c41420fa1a6cfa878f6fac5c0b6bfb1713e4ef92d",
+          "previous_parts_sha256": "dcaac5404f7ea441e13ed998eae60ac829ec2fd9791044e02e480ca88ffd583a",
+          "requested_outputs_sha256": "02cfef6bb7c7617f7af40cef7b956d3e710e3a1aa04cc7918c76fe5cc857f26c",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T3_page-4.png",
+              "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+            },
+            {
+              "path": "icho_2026_source/image/T3_page-3.png",
+              "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "24406799f461278e8775df5c55fc736503812624f797eb3f3b78957e66350ff6",
+            "node_count": 12,
+            "edge_count": 20,
+            "node_kind_counts": {
+              "derivation_obligation": 4,
+              "previous_part_prerequisite": 1,
+              "requested_output": 4,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "cof_3",
+              "cof_4",
+              "cof_5",
+              "cof_6"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t3_a3"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t3_a4",
+            "path": ".archon/provided_answer_drafts/Q3.md",
+            "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, arrow directions, visual topology, atom ledgers, and boundary convention were frozen from the inline problem and both digest-verified images before opening the submission or Lean file. The authorized sealed Kimi draft was used only afterward as the required fidelity target, never as a source axiom."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "End-to-end exact carriers are cof3CondensationLedger, cof5CondensationLedger, cof4HydrogenLedger, cof6FormulaPreserved, the four explicit bond predicates, FormulaMatches, and ExactDashedBoundary."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "Each bundle output has exact_symbolic reporting from problem_output_type; reported_result is definitionally the raw structural result and applies no rounding."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance or measured interval is used. The empty units and exact symbolic structures match all four output rows, so the measurement policy introduces no numerical gate."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The verb \u201cDraw\u201d requests four concrete witnesses, not exhaustive chemical-universe enumeration. No finite candidate domain is used to prove uniqueness; each named output is instead checked directly against source-bound graph, observation, formula, and topology constraints."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=d7b6beb046fb576f3ea265096c30d3b957e2396188c6f8ce42852651dc088e8a; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=4. Nontrivial result declarations are IChO2026Problems.T3A4.cof3_result, cof4_result, cof5_result, cof6_result, aggregated by reported_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The statements provide one exact evidence-supported drawing for each requested COF and do not strengthen \u201cDraw\u201d into uniqueness or exhaustiveness. No dynamic stock-flow interpretation applies."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "All four output theorems are premise-free. Source observations appear as transparent descriptors/functions, and every decisive implication is checked through explicit graph/composition predicates rather than an assumed candidate field."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The submission supplies four concrete classifications in bundle order, and the Lean conclusion exposes the four matching repeat units with their dashed boundaries; there is no blocked or unresolved sentinel."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "The named bridge inventory covers precursor transcription, topology, condensation, COF-4 oxidation constraints, COF-6 isomerisation constraints, boundary placement, valence, formula, charge, radicals, and stereochemistry."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "repeat unit and all dashed boundary edges of COF 3",
+            "lean_carrier": "IChO2026Problems.T3A4.cof3_result",
+            "status": "covered",
+            "evidence": "The independently derived graph, formula check, and boundary placement agree with the submission and map to cof3RepeatUnit through Cof3Specification.",
+            "output_id": "cof_3",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "repeat unit and all dashed boundary edges of COF 4",
+            "lean_carrier": "IChO2026Problems.T3A4.cof4_result",
+            "status": "covered",
+            "evidence": "The independently derived oxidatively closed graph, source-observation checks, and boundary placement agree with the submission and map through Cof4Specification.",
+            "output_id": "cof_4",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "repeat unit and all dashed boundary edges of COF 5",
+            "lean_carrier": "IChO2026Problems.T3A4.cof5_result",
+            "status": "covered",
+            "evidence": "The independently derived enol-imine graph, formula check, and boundary placement agree with the submission and map through Cof5Specification.",
+            "output_id": "cof_5",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "repeat unit and all dashed boundary edges of COF 6",
+            "lean_carrier": "IChO2026Problems.T3A4.cof6_result",
+            "status": "covered",
+            "evidence": "The independently derived keto-enamine graph, isomerisation checks, and boundary placement agree with the submission and map through Cof6Specification.",
+            "output_id": "cof_6",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T3_page-4.png",
+            "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19",
+            "inspected": true,
+            "evidence": "Source-first recount: upper tail is one black 3-aldehyde benzene core plus one red para-diamino ring bearing two ortho OH groups; the reversible arrow points to COF-3, then [O] points right to COF-4. Lower tail is one black 3-aldehyde/3-OH core plus red para-diamine; the reversible arrow points to COF-5, then the directed arrow points to COF-6. In either 3+2 net, one repeat owns one black node and 3/2 red linkers, hence three couplings. Formula recombination gives the two imine repeats; the stated six-H-only COF-4 change and isomeric COF-5/6 relation give their inventories. The COF-1 example shows three dashed lines, each through a shared red phenylene centre and across two opposite ring bonds."
+          },
+          {
+            "path": "icho_2026_source/image/T3_page-3.png",
+            "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71",
+            "inspected": true,
+            "evidence": "The relevant topology key depicts Hexagonal-1 as a planar 3-connected node joined by linear 2-connected linkers; the printed A2+B3 entry is only a visual example of that degree pattern. This page is used to rederive topology, not to import a T3-A3 answer. No page-3 monomer atom ledger is used for COFs 3-6 because their actual precursor structures are separately printed on page 4."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "All four outputs preserve the depicted black/red scaffolds and functional-group positions. Imine, benzoxazole, enol-imine, and beta-keto-enamine bonds are explicit and meet the source IR and elemental observations."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only is selected for the four source arrows because the requested conclusion is a structure drawing and neither candidate nor certificate claims yield, completion, sole product, or a full process balance. Arrow certificates: triformylbenzene + diamino-dihydroxybenzene -> COF-3 is reversible (carriers cof3FormationArrow/ImineCondensationProduct); COF-3 + shown [O] -> COF-4 is directed (cof3ToCof4Arrow/OxidativeBenzoxazoleClosure); triformylphloroglucinol + para-phenylenediamine -> COF-5 is reversible (cof5FormationArrow/ImineCondensationProduct); COF-5 -> COF-6 is directed and textually irreversible (cof5ToCof6Arrow/BetaKetoEnamineTautomerization). Core and linker scaffolds are traced at each head; omitted oxidant identity, phases, and byproducts remain unknown. Formula and H-delta ledgers are compatibility checks only."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "FormulaMatches independently recounts owned atoms. The two imine ledgers use one core plus 3/2 linker minus three waters; the COF-4 ledger changes only six H, and the COF-6 formula is identical to COF-5. No molar-mass claim is made."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "C/H/N/O conservation is explicit for both condensations, SameHeavyAtomSites plus HydrogenOnlyLoss checks the exact source-stated COF-3/4 composition relation, and the COF-5/6 isomerisation preserves the full formula while relocating H and pi bonds."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "All four requested values are classification/structure outputs with the bundle's empty unit; no dimensional quantity appears."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "Exact symbolic reporting applies. There is no intermediate rounding, displayed precision, measured interval, or numerical tolerance."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "Every present H/C/N/O atom, single/double bond, substituent position, formal charge, radical count, and cross-boundary bond is represented. The source depicts no requested stereocentre, and the carrier explicitly assigns none at every site."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "\u201cDraw\u201d requires a concrete source-supported witness for each named COF; it does not request global uniqueness or exhaustive enumeration. Each witness satisfies every decisive source constraint."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The concrete repeatUnit definitions occur only as conclusions/witnesses. Premise-free result theorems subject them to nontrivial independent specifications; there is no candidate-shaped hypothesis, singleton elimination domain, reflexive equality result, or freely set observation flag."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "icho_2026_t3_a3",
+                "relation": "Only the printed topology context is relevant; no T3-A3 answer is imported, and the 3-connected-plus-2-connected mapping is rederived from the bound page-3 image.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "page-4 upper precursor scheme",
+                "relation": "A trigonal trialdehyde and a para-linear diamino-dihydroxybenzene form three imine connections per owned repeat under the problem-stated condensation model.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T3_page-4.png#cof3_precursors"
+                }
+              }
+            ],
+            "evidence": "The source-first atom, bond, formula, topology, and boundary reconstruction matches both the semantic card and the named Lean carriers.",
+            "id": "cof_3",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T3A4.triformylbenzene",
+                "IChO2026Problems.T3A4.diaminoDihydroxybenzene",
+                "IChO2026Problems.T3A4.cof3FormationArrow",
+                "IChO2026Problems.T3A4.sourceImineStretch"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T3A4.cof3RepeatUnit",
+                "IChO2026Problems.T3A4.cof3Formula"
+              ],
+              "relations": [
+                "IChO2026Problems.T3A4.Cof3Specification",
+                "IChO2026Problems.T3A4.cof3CondensationLedger",
+                "IChO2026Problems.T3A4.relevantPreviousPartTopology"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T3A4.cof3_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The Lean graph has the independently reconstructed imine edge, ortho linker hydroxyls, neutral closed-shell atoms, exact owned formula, Hexagonal-1 connectivity, and three centre-crossing dashed cuts.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Exact repeat-unit structural identification; no dynamic recycle, fresh-feed, yield, time, cycle, numerator, or denominator quantity is present.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "A concrete repeat-unit drawing for COF-3: one owned trigonal core, three half-owned linear linkers, their complete atom/bond connectivity, and the three dashed boundary lines.",
+            "raw_result": {
+              "derivation": "The upper page-4 tail gives C9H6O3 and a linear C6H8N2O2 linker. One core plus three halves of the linker and three imine condensations gives C18H12N3O3. The page-3 key maps degrees 3 and 2 to Hexagonal-1, and the COF-1 example places one cut through each shared red ring.",
+              "exact_unrounded": true,
+              "value_or_expression": "Hexagonal-1 graph with complete edge T-CH=N-C6H2(OH)2-N=CH-T; one T core plus 3/2 shared para linkers; repeat formula C18H12N3O3; three dashed lines through linker-ring centres, each crossing the two opposite boundary C-C bonds."
+            },
+            "reporting": {
+              "application": "Report the exact symbolic atom graph and all dashed boundary cuts; no numerical rounding is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The card requests exactly the COF-3 repeat graph and all dashed edges; the independently reconstructed object supplies both with exact symbolic reporting.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context#cof3_observations"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-4.png#cof3_scheme"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-4.png#cof1_boundary_example"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-3.png#hexagonal1_topology"
+              }
+            ],
+            "source_requirement": "repeat unit and all dashed boundary edges of COF 3",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "icho_2026_t3_a3",
+                "relation": "Only the printed topology context is relevant; no T3-A3 answer is imported, and the 3-connected-plus-2-connected mapping is rederived from the bound page-3 image.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "requested_output",
+                "reference": "cof_3",
+                "relation": "The source arrow takes COF-3 as the retained-heavy-atom precursor of COF-4.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#cof3_to_cof4"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "page-4 oxidation observations",
+                "relation": "The directed [O] arrow, ortho hydroxyl placement, ordinary-imine disappearance, retained different C=N type, and exact six-hydrogen-only composition change constrain the benzoxazole closure witness.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T3_page-4.png#cof3_to_cof4"
+                }
+              }
+            ],
+            "evidence": "The source-first oxidative ring-closure graph, hydrogen delta, IR distinction, topology, and boundaries match the semantic card, submission, and Lean carriers.",
+            "id": "cof_4",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T3A4.cof3RepeatUnit",
+                "IChO2026Problems.T3A4.cof3ToCof4Arrow",
+                "IChO2026Problems.T3A4.sourceImineStretch"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T3A4.cof4RepeatUnit",
+                "IChO2026Problems.T3A4.cof4Formula"
+              ],
+              "relations": [
+                "IChO2026Problems.T3A4.Cof4Specification",
+                "IChO2026Problems.T3A4.OxidativeBenzoxazoleClosure",
+                "IChO2026Problems.T3A4.cof4HydrogenLedger"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T3A4.cof4_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The Lean graph explicitly closes O onto each adjacent aldehyde-derived imine carbon, keeps endocyclic C=N but removes the ordinary C(H)=N motif, preserves every heavy-atom site, removes six owned H atoms, and retains the three boundary cuts.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Exact repeat-unit structural identification; no dynamic recycle, fresh-feed, yield, time, cycle, numerator, or denominator quantity is present.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "A concrete repeat-unit drawing for COF-4, including every fused benzoxazole atom and bond, the retained network connectivity, and all three dashed boundary lines.",
+            "raw_result": {
+              "derivation": "Starting from the independently reconstructed ortho-hydroxy imine, close each phenolic O onto the adjacent imine carbon. Each of three owned closures removes the imine-carbon H and phenolic H, matching the source's six-H-only loss; the resulting O-C=N five-membered ring has a non-imine C=N and formula C18H6N3O3.",
+              "exact_unrounded": true,
+              "value_or_expression": "Hexagonal-1 graph with three owned fused 2-substituted benzoxazole closures of cycle X=N-C(red)-C(red)-O-X; ordinary imine C(H)=N absent, endocyclic C=N retained; repeat formula C18H6N3O3; three dashed linker-centre boundary lines."
+            },
+            "reporting": {
+              "application": "Report the exact symbolic atom graph and all dashed boundary cuts; no numerical rounding is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The card requests the exact COF-4 repeat graph and dashed edges; the source constraints select the stated compatible concrete witness without asserting global uniqueness.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context#cof4_observations"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-4.png#cof3_to_cof4"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-4.png#cof1_boundary_example"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-3.png#hexagonal1_topology"
+              }
+            ],
+            "source_requirement": "repeat unit and all dashed boundary edges of COF 4",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "icho_2026_t3_a3",
+                "relation": "Only the printed topology context is relevant; no T3-A3 answer is imported, and the 3-connected-plus-2-connected mapping is rederived from the bound page-3 image.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "page-4 lower precursor scheme",
+                "relation": "A trigonal triformylphloroglucinol and para-phenylenediamine form three imine connections per owned repeat under the problem-stated condensation model.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T3_page-4.png#cof5_precursors"
+                }
+              }
+            ],
+            "evidence": "The source-first enol-imine graph, formula, topology, and boundary reconstruction matches the semantic card, submission, and Lean carriers.",
+            "id": "cof_5",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T3A4.triformylphloroglucinol",
+                "IChO2026Problems.T3A4.paraPhenylenediamine",
+                "IChO2026Problems.T3A4.cof5FormationArrow"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T3A4.cof5RepeatUnit",
+                "IChO2026Problems.T3A4.cof5Formula"
+              ],
+              "relations": [
+                "IChO2026Problems.T3A4.Cof5Specification",
+                "IChO2026Problems.T3A4.cof5CondensationLedger",
+                "IChO2026Problems.T3A4.relevantPreviousPartTopology"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T3A4.cof5_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The Lean graph retains the three core OH groups and aromatic core, gives every arm the C(H)=N linkage to a para phenylene, validates neutral valence and C18H12N3O3 ownership, and gives three exact dashed cuts.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Exact repeat-unit structural identification; no dynamic recycle, fresh-feed, yield, time, cycle, numerator, or denominator quantity is present.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "A concrete repeat-unit drawing for COF-5: the enol-imine network graph, atom ownership, and three dashed boundary lines.",
+            "raw_result": {
+              "derivation": "The lower page-4 tail gives C9H6O6 triformylphloroglucinol and a linear C6H8N2 linker. One core plus three halves of the linker and three imine condensations gives C18H12N3O3; degrees 3 and 2 give Hexagonal-1 and the COF-1 boundary convention supplies three centre cuts.",
+              "exact_unrounded": true,
+              "value_or_expression": "Hexagonal-1 enol-imine graph with complete edge P-CH=N-p-C6H4-N=CH-P, where P is the aromatic hydroxy-bearing core; repeat formula C18H12N3O3; three dashed linker-ring-centre boundary lines."
+            },
+            "reporting": {
+              "application": "Report the exact symbolic atom graph and all dashed boundary cuts; no numerical rounding is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The exact graph and all requested boundaries are present and use the output kind and empty unit specified by the card.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context#cof5_to_cof6"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-4.png#cof5_scheme"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-4.png#cof1_boundary_example"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-3.png#hexagonal1_topology"
+              }
+            ],
+            "source_requirement": "repeat unit and all dashed boundary edges of COF 5",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "previous_part",
+                "reference": "icho_2026_t3_a3",
+                "relation": "Only the printed topology context is relevant; no T3-A3 answer is imported, and the 3-connected-plus-2-connected mapping is rederived from the bound page-3 image.",
+                "source_locator": {
+                  "kind": "previous_parts",
+                  "reference": "previous_parts[0].question"
+                }
+              },
+              {
+                "kind": "requested_output",
+                "reference": "cof_5",
+                "relation": "The source says COF-5 irreversibly isomerises into COF-6, so the reconstructed COF-5 atom inventory and scaffold are retained while H positions and bond orders change.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context#cof5_to_cof6"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "page-4 COF-5 to COF-6 arrow and IR observation",
+                "relation": "The directed irreversible isomerisation and absence of imine stretches are matched by the transparent proton and pi-bond shift to the beta-keto-enamine graph.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T3_page-4.png#cof5_to_cof6"
+                }
+              }
+            ],
+            "evidence": "The source-first beta-keto-enamine graph, atom retention, imine absence, topology, and boundaries match the semantic card, submission, and Lean carriers.",
+            "id": "cof_6",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T3A4.cof5RepeatUnit",
+                "IChO2026Problems.T3A4.cof5ToCof6Arrow",
+                "IChO2026Problems.T3A4.sourceImineStretch"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T3A4.cof6RepeatUnit",
+                "IChO2026Problems.T3A4.cof6Formula"
+              ],
+              "relations": [
+                "IChO2026Problems.T3A4.Cof6Specification",
+                "IChO2026Problems.T3A4.BetaKetoEnamineTautomerization",
+                "IChO2026Problems.T3A4.cof6FormulaPreserved"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T3A4.cof6_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The Lean graph moves each core OH proton to N, changes core C-O to C=O and arm C=N to C-N while making core-to-arm C=C, proves no C=N remains, preserves the formula, and keeps all three dashed cuts.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Exact repeat-unit structural identification; no dynamic recycle, fresh-feed, yield, time, cycle, numerator, or denominator quantity is present.",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "A concrete repeat-unit drawing for COF-6: the beta-keto-enamine network graph after the stated irreversible isomerisation, with all dashed boundary lines.",
+            "raw_result": {
+              "derivation": "Move each of the three owned phenolic protons to the adjacent imine N and shift the pi bonds: alternating core sites become C=O, the core-arm bonds become C=C(H), and N is singly bonded. This preserves C18H12N3O3, eliminates C=N as required by the IR statement, and leaves topology and boundary placement unchanged.",
+              "exact_unrounded": true,
+              "value_or_expression": "Hexagonal-1 beta-keto-enamine graph with cyclohexane-1,3,5-trione core and complete edge Ki=C(H)-NH-p-C6H4-NH-C(H)=Kj; no C=N; repeat formula C18H12N3O3; three dashed linker-centre boundary lines."
+            },
+            "reporting": {
+              "application": "Report the exact symbolic atom graph and all dashed boundary cuts; no numerical rounding is applied.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The exact COF-6 graph and all requested boundaries are represented without adding uniqueness or a quantitative yield claim.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context#cof5_to_cof6"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-4.png#cof5_to_cof6"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-4.png#cof1_boundary_example"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T3_page-3.png#hexagonal1_topology"
+              }
+            ],
+            "source_requirement": "repeat unit and all dashed boundary edges of COF 6",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "d7b6beb046fb576f3ea265096c30d3b957e2396188c6f8ce42852651dc088e8a"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a4.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "All four concrete repeat-unit drawings are source-compatible, preserve the sealed Kimi \u00a73.4 answers without substitution, and are carried by explicit atom/bond graphs with exact boundary cuts. The candidate makes no uniqueness claim and introduces no requested-result hypothesis.",
+        "reviewed_at": "2026-09-13T08:52:41Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "d7b6beb046fb576f3ea265096c30d3b957e2396188c6f8ce42852651dc088e8a",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a4.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 4,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The hash-bound candidate and four-entry submission pass schema, source, chemistry, exact-symbolic reporting, and Lean-result binding audits; the four transparent atom-level repeat-unit graphs faithfully preserve the authorized Kimi 3.4 answers and are independently justified by the printed precursors, topology key, arrows, spectroscopy, elemental hydrogen-loss observation, and ordinary valence/condensation reasoning.",
+    "evidence": "The deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0 for candidate f71134f58859bc3cb33b131999d65094b95efe03176eafa67970352f2891bda1. The reviewed declarations cof3_result, cof4_result, cof5_result, cof6_result, raw_result, and reported_result establish nontrivial graph, bond-order, atom, formula, valence, boundary, transformation, and observation specifications without theorem hypotheses or local axioms.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "f71134f58859bc3cb33b131999d65094b95efe03176eafa67970352f2891bda1",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t3_a4.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t3_a4",
+      "source_record_sha256": "7c7dec7da0f4c85c0dd70268d6b91f6c539d5dd02376341bfec1642915b793b9",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a4.answer.json",
+      "answer_submission_sha256": "0bdaa30b527754840cc2f202b09ba35ea430e3f5913aa837558915a377fd3c9d",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t3_a4.source.json",
+      "source_report_sha256": "5be95c82ebc22385b0a9f2a05ca2faf742b31ba44475e9420956e8379ae52b09",
+      "candidate": "IChO2026Problems/problem_icho_2026_t3_a4.lean",
+      "preflight_sha256": "f6d274d5d77b0dda0904c676198e22e009813e1ffb7f8ad60b1fbbff41562770",
+      "candidate_sha256": "f71134f58859bc3cb33b131999d65094b95efe03176eafa67970352f2891bda1",
+      "question_sha256": "8078d33010932fe7d44edb9203318f40a10501e1bfa0a0902b3f014936fdf92c",
+      "shared_context_sha256": "8baa1dfe64b6dd0359bc530c41420fa1a6cfa878f6fac5c0b6bfb1713e4ef92d",
+      "previous_parts_sha256": "dcaac5404f7ea441e13ed998eae60ac829ec2fd9791044e02e480ca88ffd583a",
+      "requested_outputs_sha256": "02cfef6bb7c7617f7af40cef7b956d3e710e3a1aa04cc7918c76fe5cc857f26c",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T3_page-4.png",
+          "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+        },
+        {
+          "path": "icho_2026_source/image/T3_page-3.png",
+          "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "24406799f461278e8775df5c55fc736503812624f797eb3f3b78957e66350ff6",
+        "node_count": 12,
+        "edge_count": 20,
+        "node_kind_counts": {
+          "derivation_obligation": 4,
+          "previous_part_prerequisite": 1,
+          "requested_output": 4,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "cof_3",
+          "cof_4",
+          "cof_5",
+          "cof_6"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t3_a3"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t3_a4",
+        "path": ".archon/provided_answer_drafts/Q3.md",
+        "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t3_a4.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t3_a4",
+        "source_record_sha256": "7c7dec7da0f4c85c0dd70268d6b91f6c539d5dd02376341bfec1642915b793b9",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t3_a4.answer.json",
+        "answer_submission_sha256": "0bdaa30b527754840cc2f202b09ba35ea430e3f5913aa837558915a377fd3c9d",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t3_a4.source.json",
+        "source_report_sha256": "5be95c82ebc22385b0a9f2a05ca2faf742b31ba44475e9420956e8379ae52b09",
+        "candidate": "IChO2026Problems/problem_icho_2026_t3_a4.lean",
+        "preflight_sha256": "f6d274d5d77b0dda0904c676198e22e009813e1ffb7f8ad60b1fbbff41562770",
+        "candidate_sha256": "f71134f58859bc3cb33b131999d65094b95efe03176eafa67970352f2891bda1",
+        "question_sha256": "8078d33010932fe7d44edb9203318f40a10501e1bfa0a0902b3f014936fdf92c",
+        "shared_context_sha256": "8baa1dfe64b6dd0359bc530c41420fa1a6cfa878f6fac5c0b6bfb1713e4ef92d",
+        "previous_parts_sha256": "dcaac5404f7ea441e13ed998eae60ac829ec2fd9791044e02e480ca88ffd583a",
+        "requested_outputs_sha256": "02cfef6bb7c7617f7af40cef7b956d3e710e3a1aa04cc7918c76fe5cc857f26c",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T3_page-4.png",
+            "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19"
+          },
+          {
+            "path": "icho_2026_source/image/T3_page-3.png",
+            "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "24406799f461278e8775df5c55fc736503812624f797eb3f3b78957e66350ff6",
+          "node_count": 12,
+          "edge_count": 20,
+          "node_kind_counts": {
+            "derivation_obligation": 4,
+            "previous_part_prerequisite": 1,
+            "requested_output": 4,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "cof_3",
+            "cof_4",
+            "cof_5",
+            "cof_6"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t3_a3"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t3_a4",
+          "path": ".archon/provided_answer_drafts/Q3.md",
+          "sha256": "d9e9e22e7ed1eff6b25dc2e237b977ef317ba54075166d989af354f9a01f4680",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The audit used only the inline bound problem evidence, both hash-verified problem images, and standard transparent chemistry. The sealed Kimi draft was used solely under the explicit exception to check target fidelity, never as an axiom; the candidate and submission were treated as untrusted outputs and independently traced."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "Page 4 fixes the two trigonal aldehyde cores and two linear diamines; page 3 fixes the 3-connected/2-connected Hexagonal-1 topology. Reactive-site condensation, ortho-hydroxy oxidative ring closure, and the enol-imine to beta-keto-enamine bond/proton shift are exposed by triformylbenzene, diaminoDihydroxybenzene, triformylphloroglucinol, paraPhenylenediamine, bondOrder, cof3CondensationLedger, cof5CondensationLedger, cof4HydrogenLedger, and cof6FormulaPreserved."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "All four bound requested outputs declare exact_symbolic classification reporting. ReportedResult is definitionally RawResult, so no rounding or display transformation alters a structure."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No tolerance applies to these exact symbolic, unitless structure outputs; every graph, formula count, and boundary endpoint is checked by equality."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "This is a concrete draw/give-structure task, not an exhaustive classification. The candidate witnesses use exactly the four page-4 named products, printed precursor structures and arrows, while the page-3 topology diagram supplies the locally rederived 3-plus-2 connectivity mapping; no answer-shaped elimination domain is used."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=f71134f58859bc3cb33b131999d65094b95efe03176eafa67970352f2891bda1; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial carriers are cof3_result, cof4_result, cof5_result, cof6_result, raw_result, and reported_result, backed by the transparent cof3RepeatUnit through cof6RepeatUnit graph declarations."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The contract covers all four requested COFs and represents present atoms, element, formal charge, radical count, single/double bonds, molecular graph, ownership, three explicit linker-centre boundary cuts, formula, hydrogen-bond annotation, and absence of assigned tetrahedral stereocentres."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The result theorems have no chemistry hypotheses. The previous-part topology prerequisite is rederived as relevantPreviousPartTopology from the visually supplied connectivity convention, and all remaining obligations reduce to transparent definitions, arithmetic, finite graph checks, or ordinary imine/tautomer valence reasoning."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "Each submission output has a one-to-one carrier with the same requested ID, classification kind, empty unit, exact-symbolic structure, and boundary convention. The combined reported_result is neither weakened nor replaced by a workflow sentinel."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "TransformationDescriptor binds each printed arrow's kind, direction, and displayed oxidant label; sourceImineStretch binds the stated IR observations; product predicates connect these facts to explicit atom graphs, formula ledgers, valence checks, and boundary data. No yield, sole-product, phase, or omitted-byproduct claim is introduced."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "repeat unit and all dashed boundary edges of COF 3",
+          "lean_carrier": "IChO2026Problems.T3A4.cof3_result",
+          "status": "covered",
+          "evidence": "Independent precursor, atom/bond, valence, formula, IR, topology, ownership, and three-cut tracing agrees with this submission entry and its exact-symbolic policy.",
+          "output_id": "cof_3",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "repeat unit and all dashed boundary edges of COF 4",
+          "lean_carrier": "IChO2026Problems.T3A4.cof4_result",
+          "status": "covered",
+          "evidence": "Independent oxidative-closure, retained-heavy-atom, hydrogen-delta, endocyclic C=N, absence-of-ordinary-imine, formula, valence, and three-cut tracing agrees with this submission entry.",
+          "output_id": "cof_4",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "repeat unit and all dashed boundary edges of COF 5",
+          "lean_carrier": "IChO2026Problems.T3A4.cof5_result",
+          "status": "covered",
+          "evidence": "Independent hydroxy-core imine-condensation, atom/bond, formula, valence, topology, ownership, and three-cut tracing agrees with this submission entry and exact-symbolic policy.",
+          "output_id": "cof_5",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "repeat unit and all dashed boundary edges of COF 6",
+          "lean_carrier": "IChO2026Problems.T3A4.cof6_result",
+          "status": "covered",
+          "evidence": "Independent keto-enamine proton/bond-shift, carbonyl and exocyclic-bond, no-C=N, formula-preservation, valence, and three-cut tracing agrees with this submission entry.",
+          "output_id": "cof_6",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T3_page-4.png",
+          "sha256": "4f3df55e436f779a83a2561f744c8e5dcbbbf17fc707d97e230d2c0dfe164a19",
+          "inspected": true,
+          "evidence": "The page visibly supplies the two aldehyde/diamine precursor pairs, reversible formation arrows, directed [O] arrow, irreversible-isomerization text, IR and six-hydrogen observations, and the COF-1 exemplar with three dashed lines through shared linker-ring centres."
+        },
+        {
+          "path": "icho_2026_source/image/T3_page-3.png",
+          "sha256": "da855bddec848e5e6615fefd29529eb40a68a3927e21f4db1faaa8f871579b71",
+          "inspected": true,
+          "evidence": "The page visibly supplies the labeled monomer structures and the topology key; its Hexagonal-1 graphic and printed A2+B3 example support the 3-connected planar core plus 2-connected linear linker topology used here."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The four graphs implement the source-derived ortho-hydroxy imine, oxidatively cyclized benzoxazole, hydroxy-core enol-imine, and beta-keto-enamine connectivities. Explicit neutral valences, heavy-atom retention where stated, IR-motif predicates, and formula counts are chemically consistent."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "Claim-scoped classification was applied. The formula-bearing reversible imine formations are quantitative_material_stage over the finite domains {printed triformylbenzene core, printed diaminodihydroxybenzene linker, water, COF-3 repeat} and {printed triformylphloroglucinol core, printed para-phenylenediamine linker, water, COF-5 repeat}, with complete used C/H/N/O ledgers cof3CondensationLedger and cof5CondensationLedger and neutral-charge checks. The page-4 [O] COF-3-to-COF-4 arrow and the COF-5-to-COF-6 arrow are used as qualitative_named_transform_only compatibility constraints through cof3ToCof4Arrow/OxidativeBenzoxazoleClosure and cof5ToCof6Arrow/BetaKetoEnamineTautomerization; the directly stated product-composition delta and isomer formula equality are checked, while omitted oxidant identity, coefficients, phases, yields, and byproducts remain unknown and unclaimed."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "There is no molar-mass output. FormulaMatches recomputes owned atom counts for every element in each concrete graph; the two condensation ledgers, the source-stated hydrogen-only comparison, and isomer formula equality agree with all four independently audited submission formulas."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "The closed condensation domains balance C, H, N, and O exactly with the source-indicated 3-connected/2-connected sharing. The oxidation result uses only the directly stated between-product elemental comparison, and the isomerization preserves composition; NeutralAndRadicalFree and InteriorValenceValid check charge/radical and ordinary valence constraints without inventing external streams."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "Every requested classification and submission entry correctly has the exact empty unit; no dimensional quantity is asserted."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "The requested outputs are exact symbolic structures with no numerical rounding or measured tolerance."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "Every present atom and single/double bond is explicit, including both ends of each linker and the neighbouring-core interface; the fused heterocycles and keto-enamine bond shifts have valid neutral valence. No stereocentre is shown or requested, and NoAssignedStereocentres records this rather than inventing configurations."
+        },
+        "identification_uniqueness": {
+          "status": "not_applicable",
+          "evidence": "The source asks for concrete drawings of four already named products, not a unique or exhaustive open-world classification; each required witness is nevertheless checked against every decisive printed constraint."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The outputs are transparent constructive graph definitions verified by nontrivial finite atom, bond, valence, formula, transformation, observation, and boundary predicates. No output appears as a premise, no singleton candidate list proves identity, and reported_result follows the four substantive result theorems rather than reflexivity or an assumed target."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a4.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The hash-bound candidate and four-entry submission pass schema, source, chemistry, exact-symbolic reporting, and Lean-result binding audits; the four transparent atom-level repeat-unit graphs faithfully preserve the authorized Kimi 3.4 answers and are independently justified by the printed precursors, topology key, arrows, spectroscopy, elemental hydrogen-loss observation, and ordinary valence/condensation reasoning.",
+        "evidence": "The deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0 for candidate f71134f58859bc3cb33b131999d65094b95efe03176eafa67970352f2891bda1. The reviewed declarations cof3_result, cof4_result, cof5_result, cof6_result, raw_result, and reported_result establish nontrivial graph, bond-order, atom, formula, valence, boundary, transformation, and observation specifications without theorem hypotheses or local axioms.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:26:52.929038Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "f71134f58859bc3cb33b131999d65094b95efe03176eafa67970352f2891bda1",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t3_a4.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "1_to_5m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:26:52.929083Z",
+    "repair_handoff": {}
+  }
+}

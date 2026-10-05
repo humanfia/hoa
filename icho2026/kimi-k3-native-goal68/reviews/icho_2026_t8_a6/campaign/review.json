@@ -1,0 +1,36 @@
+```json
+{
+  "target_id": "icho_2026_t8_a6",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The submission computes the quantum yield for CO formation exactly as the problem defines it. Direct inspection of the source pages (T8_page-1/2.png) confirms every given: phi = (reacted electrons / incident photons) * 100%, TOF = product molecules per active catalyst molecule per hour = 8 h^-1, LED lambda = 390 nm, P = 50 mW, 10 mg C3N4 with omega_cat = 3.8%, M_cat = 557.21 g mol^-1. The candidate correctly recognizes that 8.5's surface-area result is NOT needed (the question asks for total CO formation rate, and TOF already normalizes per catalyst molecule). The 2-electron stoichiometry per CO is legitimately grounded in part 8.1 of the same problem (CO2 + 2H+ + 2e- -> CO + H2O; C +4 -> +2), a derived prerequisite, not an imported answer. Photon counting via E = hc/lambda with SI-exact h, c, N_A is standard trusted physics. Independent exact rational recomputation reproduces the closed form 18940872892793693114789369/10186495312500000000000000 = 1.8594101613683625...%, rounding to 1.86% at 3 s.f. The Lean file defines quantumYieldPercent structurally from these givens (no precomputed answer table; the closed form is proved by unfold + norm_num from the definitions) and proves both the exact raw value and the reported 1.86% under the project-wide ReportsAtQuantum contract (quantum 0.01%, half-away-from-zero). Build succeeds; #print axioms shows only [propext, Classical.choice, Quot.sound]; no sorry/admit/native_decide/custom axioms anywhere in the relevant sources. One caveat kept as a disclosed assumption rather than a defect: the problem's printed phi formula counts 'reacted electrons' but never explicitly states 2 electrons per CO; the candidate derives this inline from 8.1's charge/mass balance, which is the intended and chemically forced reading.",
+  "coverage": [
+    {
+      "output_id": "co_quantum_yield",
+      "status": "passed",
+      "theorem": "IChO2026.T8.A6.co_quantum_yield_reported (with co_quantum_yield_raw for the exact value)",
+      "evidence": "quantumYieldPercent is defined term-by-term from printed givens (electronsPerCO=2, tof=8, obsTime=3600, m=10 mg, omega=3.8%, M=557.21, P=50 mW, lambda=390 nm, SI-exact h/c/N_A). quantumYieldPercent_eq proves (unfold + norm_num) the exact rational 18940872892793693114789369/10186495312500000000000000 = 1.85941016...%; bounds theorem pins it in (1.8594,1.8595); co_quantum_yield_reported proves ReportsAtQuantum ... 1.86 (1/100), i.e. raw lies in [1.855,1.865), matching the 3-significant-figure default. Independent Python fractions cross-check reproduces the identical fraction and decimal. #print axioms: [propext, Classical.choice, Quot.sound] only."
+    }
+  ],
+  "unsupported_assumptions": [
+    "Observation period of 3600 s (one hour) is introduced to make electron and photon counts concrete; it cancels exactly between numerator and denominator, so it is not a real modeling assumption on the result.",
+    "electronPerCO = 2 is not printed in 8.6 itself; it is derived inline from part 8.1 (CO2 + 2H+ + 2e- -> CO + H2O). This follows from charge/mass balance and is the intended reading of the problem's 'reacted electrons' formula, disclosed explicitly in answer.md and result.json.",
+    "All printed experimental values (390 nm, 50 mW, 8 h^-1, 10 mg, 3.8%, 557.21 g/mol) treated as exact per the task's stipulated-constants measurement policy; SI constants h, c, N_A used as exact (2019 SI definitions)."
+  ],
+  "source_checks": [
+    "Viewed T8_page-2.png: confirms 8.5 box (omega_cat = 3.8%, SSA 17.8 m^2/g, M_cat = 557.21 g mol^-1), TOF definition ('product molecules formed per active catalyst molecule per hour'), experiment line (lambda = 390 nm, 50 mW, TOF 8 h^-1, 10 mg C3N4, omega_cat = 3.8%) and the printed formula phi = (number of reacted electrons / number of incident photons) * 100% immediately above 8.6.",
+    "Viewed T8_page-1.png: confirms part 8.1 asks for the half-equation CO2 -> CO in acidic medium, supporting the inline-derived 2-electron stoichiometry (C +4 -> +2).",
+    "Viewed T8_page-4.png (answer-blind context): 8.8 product-selectivity diagram confirms CO is indeed formed under illumination but is irrelevant to the 8.6 numeric input; no hidden data needed for 8.6.",
+    "Confirmed that the 8.5 surface-area result (N_cat per nm^2) is not required for 8.6; candidate's dependency analysis is correct.",
+    "Independent exact rational recomputation (Python fractions): phi = 18940872892793693114789369/10186495312500000000000000 = 1.8594101613683625...%, rounds to 1.86% at 3 s.f. (half-away-from-zero tie rule inapplicable; not a tie).",
+    "Numerical givens, units (nm, mW, mg, %, g/mol) and the problem's own phi formula all match the source pixels; no inferred law was taken from labels alone."
+  ],
+  "proof_checks": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a6.lean after lake build: exit 0, no errors; #print axioms for both co_quantum_yield_raw and co_quantum_yield_reported report [propext, Classical.choice, Quot.sound] only.",
+    "Grep over IChO2026Problems/, IChO2026Chem/, IChO2026Run/ finds no sorry, admit, native_decide, or custom axiom declarations.",
+    "The closed-form fraction is not assumed: quantumYieldPercent_eq unfolds all definitions and closes with norm_num, so the answer-shaped constant is proved equal to the structurally defined expression.",
+    "ReportsAtQuantum (IChO2026Chem/Reporting.lean) is a genuine rounding predicate (quantum positivity, multiple-of-quantum representative, half-quantum interval with half-away-from-zero tie handling), not a tautology; the reported proof discharges all three components with norm_num.",
+    "Positivity and tight bounds theorems (quantumYieldPercent_pos, quantumYieldPercent_bounds) corroborate the value; no vacuous premises or false hypotheses appear in the final theorems, which are unconditional facts about the defined expression."
+  ]
+}
+```

@@ -1,0 +1,1256 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "All five exact symbolic structures are source-compatible, independently derivable by transparent Lewis-structure edits along the depicted left-to-right mechanism, faithful to the sealed Kimi 8.2 draft, and carried by explicit nonvacuous Lean molecular graphs without uniqueness, yield, or sole-product overclaim.",
+    "updated_at": "2026-09-13T08:47:24Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "268a7a9d7a0acefbbd746df765067a21bae5a37ab56da51b8a47253e86ad91ab",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The candidate transcribes the depicted triethanolamine topology, the -e/-H+/-e/+H2O,-H+ arrow sequence, the short-lived ionic/radical cue, and the silver-mirror cue. It returns exactly structures 3-7 and preserves every answer in sealed Kimi subpart 8.2 (draft SHA-256 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d) with no substitution."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Starting from the image graph, ordinary Lewis bookkeeping derives the N radical cation, alpha-aminoalkyl radical, iminium, then the mapped secondary-amine and aldehyde fragments. Structure3Specification through Structure7Specification check the edits, formulas, charges, radicals, and local functional groups; no requested result is a hypothesis."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "MolecularStructure records named heavy atoms, every heavy-atom bond order, attached hydrogens, lone pairs, radical electrons, formal charges, and tetrahedral/alkene stereochemistry. Concrete site types and bond tables expose complete graphs for all five outputs, while fragment maps and formula/charge carriers connect the stages."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The five requested outputs are exact symbolic structures; the source supplies no measured quantity, tolerance, or numerical uncertainty used by them."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "All four arrowheads point left-to-right: 2 loses e- to 3; 3 loses H+ to 4; 4 loses e- to 5; and 5 takes up H2O and releases H+ to 6+7. step23, step34, step45, and stepHydrolysis use those exact source/target orientations."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The theorem has no free structure witness, chemistry predicate, exclusion flag, or candidate-selecting hypothesis. Altering any decisive charge, radical site, N=C bond, retained fragment, aldehyde bond, or hydrogen count breaks a concrete specification or source-arrow balance. The source asks to draw concrete witnesses, so no open-world uniqueness countermodel is required."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "Structure 2 is the depicted neutral tertiary amine with one degree-3 nitrogen and three N-CH2-CH2-OH arms.",
+          "carrier": "IChO2026Problems.T8A2.TEOASite; teoaBond; teoaNeutralAtom; structure2",
+          "status": "covered",
+          "evidence": "Direct visual topology recount from T8_page-1.png: three identical C-C-OH arms attach separately to the central N; the transparent site and bond tables reproduce every node and attachment."
+        },
+        {
+          "claim": "The first -1e- step is compatible with the complete N-centred radical-cation structure 3.",
+          "carrier": "IChO2026Problems.T8A2.OneElectronOxidationAt; HasLocalizedRadical; Structure3Specification",
+          "status": "covered",
+          "evidence": "The explicit problem arrow fixes one-electron loss and the text requires an ionic/radical intermediate; standard Lewis bookkeeping at the amine lone pair preserves the full scaffold and yields the encoded +1 N radical site."
+        },
+        {
+          "claim": "The -H+ step converts 3 into the neutral alpha-aminoalkyl radical structure 4.",
+          "carrier": "IChO2026Problems.T8A2.AlphaDeprotonation; HasLocalizedRadical; Structure4Specification",
+          "status": "covered",
+          "evidence": "The source arrow fixes proton loss. Removing H+ at any symmetry-equivalent N-adjacent CH2 while retaining the bond electron is the transparent valence edit encoded at alpha1; formula, charge, and radical totals all check."
+        },
+        {
+          "claim": "The second -1e- step converts 4 into the N=C iminium structure 5.",
+          "carrier": "IChO2026Problems.T8A2.RadicalOxidationToIminium; HasIminiumAt; Structure5Specification",
+          "status": "covered",
+          "evidence": "The left-to-right arrow fixes a further electron loss; the explicit single-to-double N-C edit consumes the alpha radical, creates N formal charge +1, and leaves every other atom and bond unchanged."
+        },
+        {
+          "claim": "The aqueous 5 to 6+7 arrow is compatible with retention of two arms as the secondary amine and conversion of the selected arm into the aldehyde.",
+          "carrier": "IChO2026Problems.T8A2.IminiumHydrolysisCompatible; amineFragmentMap; aldehydeFragmentMap; Structure6Specification; Structure7Specification",
+          "status": "covered",
+          "evidence": "The source arrow names H2O uptake, H+ release, and two products. The concrete disjoint fragment maps retain all source atoms, introduce only the water-supplied carbonyl oxygen, and the primitive atom/charge ledger balances without asserting yield or absence of other pathways."
+        },
+        {
+          "claim": "The derived structure 7 is compatible with the source-stated positive [Ag(NH3)2]OH silver-mirror observation.",
+          "carrier": "IChO2026Problems.T8A2.HasAldehydeAt; TollensCompatible; Structure7Specification",
+          "status": "covered",
+          "evidence": "The graph contains an explicit -CH=O site; the standard aldehyde/Tollens relation is used only forward as a compatibility check for the stated observation, not as an inverse classification or uniqueness premise."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a2.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t8_a2",
+        "source_record_sha256": "4e7ccee044376f86009341d72d98f906e283d7e76eb13aa4ac4822f3c7bb4223",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a2.answer.json",
+        "answer_submission_sha256": "168be85ce405c0d1d4e15daeb3a95d42dea11affd4a0290e3dd32fd35d568b97",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a2.source.json",
+        "source_report_sha256": "2ce943cfd4f779e52ed6f1889e9c5ddb8226f896411358e3f884f7df721ee84c",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a2.lean",
+        "preflight_sha256": "3768413d7dffb4caa25c3c7602050c69ca9570d58b2be7fc4f2c01e14fbae77a",
+        "candidate_sha256": "268a7a9d7a0acefbbd746df765067a21bae5a37ab56da51b8a47253e86ad91ab",
+        "question_sha256": "e11aebf55172a31cf0953e928eafcf0f907749e6c360c4938ed9973f1a96e6ec",
+        "shared_context_sha256": "cd08fca3c668205d5a952798d53cbc8d2e0b2a0dbed5d0daa7b61bcd0b2b391b",
+        "previous_parts_sha256": "c10181085ab45d67cb112ac8833660d461997058ff74020447a12c40b02bfaa3",
+        "requested_outputs_sha256": "6ee96aaddb7a26fe17880461609f95b164fb2b66e7fe233da3dbc286b30b2b41",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-1.png",
+            "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "75a8d6c4ea8ef8b84cf0fafb34c061325e978f04ef19d39a907c02586314727b",
+          "node_count": 14,
+          "edge_count": 25,
+          "node_kind_counts": {
+            "derivation_obligation": 5,
+            "previous_part_prerequisite": 1,
+            "requested_output": 5,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_3",
+            "structure_4",
+            "structure_5",
+            "structure_6",
+            "structure_7"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t8_a1"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a2",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t8_a2.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t8_a2",
+          "source_record_sha256": "4e7ccee044376f86009341d72d98f906e283d7e76eb13aa4ac4822f3c7bb4223",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a2.answer.json",
+          "answer_submission_sha256": "168be85ce405c0d1d4e15daeb3a95d42dea11affd4a0290e3dd32fd35d568b97",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t8_a2.source.json",
+          "source_report_sha256": "2ce943cfd4f779e52ed6f1889e9c5ddb8226f896411358e3f884f7df721ee84c",
+          "candidate": "IChO2026Problems/problem_icho_2026_t8_a2.lean",
+          "preflight_sha256": "3768413d7dffb4caa25c3c7602050c69ca9570d58b2be7fc4f2c01e14fbae77a",
+          "candidate_sha256": "268a7a9d7a0acefbbd746df765067a21bae5a37ab56da51b8a47253e86ad91ab",
+          "question_sha256": "e11aebf55172a31cf0953e928eafcf0f907749e6c360c4938ed9973f1a96e6ec",
+          "shared_context_sha256": "cd08fca3c668205d5a952798d53cbc8d2e0b2a0dbed5d0daa7b61bcd0b2b391b",
+          "previous_parts_sha256": "c10181085ab45d67cb112ac8833660d461997058ff74020447a12c40b02bfaa3",
+          "requested_outputs_sha256": "6ee96aaddb7a26fe17880461609f95b164fb2b66e7fe233da3dbc286b30b2b41",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T8_page-1.png",
+              "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "75a8d6c4ea8ef8b84cf0fafb34c061325e978f04ef19d39a907c02586314727b",
+            "node_count": 14,
+            "edge_count": 25,
+            "node_kind_counts": {
+              "derivation_obligation": 5,
+              "previous_part_prerequisite": 1,
+              "requested_output": 5,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "structure_3",
+              "structure_4",
+              "structure_5",
+              "structure_6",
+              "structure_7"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t8_a1"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t8_a2",
+            "path": ".archon/provided_answer_drafts/Q8.md",
+            "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, image topology, arrow directions, atom/charge edits, and absence of a dynamic stock-flow question were fixed from the bound problem text and image before the untrusted submission and Lean candidate were opened. The sealed Kimi draft was then checked only for required fidelity and was not treated as a scientific premise."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "End-to-end exact carriers are structure2 -> structure3 -> structure4 -> structure5 -> structure6/structure7, checked by OneElectronOxidationAt, AlphaDeprotonation, RadicalOxidationToIminium, IminiumHydrolysisCompatible, and SourceMechanismSpecification."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "Each bundle row requires exact_symbolic reporting from problem_output_type. Raw and display forms describe the same complete graph; no numeric formatting step applies."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or used. All formulas, bond orders, charges, radical counts, and structure identities are exact."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No finite chemical candidate universe is used to prove uniqueness or exhaustive elimination. The five finite atom-site types label direct returned molecular witnesses only, which is appropriate for the source verb 'Draw'."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=268a7a9d7a0acefbbd746df765067a21bae5a37ab56da51b8a47253e86ad91ab; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=9. Nontrivial result declarations are structure3_answer, structure4_answer, structure5_answer, structure6_answer, structure7_answer, and reported_result, backed by the corresponding MolecularStructure and StructureXSpecification declarations."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The conclusion supplies one concrete complete witness for each requested structure 3-7. It does not assert global uniqueness, exhaustive chemistry, quantitative yield, reaction completion, or absence of omitted pathways."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "All answer theorems are closed propositions over transparent definitions and have no premises. The previous-part reduction equation is derived inline as a separate balanced carrier and is not smuggled in as a hypothesis or used to choose any structure."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The answer submission contains exactly five outputs in bundle order with ids structure_3 through structure_7, kind classification, and empty unit. Each exact symbolic value matches its independently reconstructed graph and the corresponding Lean answer theorem."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Every outcome-decisive source-to-Lean bridge is named above: starting topology, the two electron-loss edits, alpha deprotonation, iminium fragmentation, fragment atom maps, and the one-way Tollens compatibility cue. No local opaque axiom or unconstrained predicate supplies an answer."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "complete structure of 3, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T8A2.structure3_answer with structure3 and Structure3Specification",
+            "status": "covered",
+            "evidence": "The card's exact symbolic structure agrees with the independent first-oxidation Lewis graph; all atoms, hydrogens, bonds, charge, radical, and no-stereo status are explicit.",
+            "output_id": "structure_3",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of 4, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T8A2.structure4_answer with structure4 and Structure4Specification",
+            "status": "covered",
+            "evidence": "The card agrees with the independent alpha-deprotonation graph, including radical location, neutral charge, complete retained scaffold, and no-stereo status.",
+            "output_id": "structure_4",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of 5, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T8A2.structure5_answer with structure5 and Structure5Specification",
+            "status": "covered",
+            "evidence": "The card agrees with the independent iminium graph, including the selected N=C bond, charge, hydrogens, full substituent connectivity, and no-stereo status.",
+            "output_id": "structure_5",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of 6, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T8A2.structure6_answer with structure6 and Structure6Specification",
+            "status": "covered",
+            "evidence": "The card agrees with the independently mapped nitrogen-containing hydrolysis fragment, including both complete arms, N-H bond, neutral charge, and no-stereo status.",
+            "output_id": "structure_6",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of 7, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T8A2.structure7_answer with structure7 and Structure7Specification",
+            "status": "covered",
+            "evidence": "The card agrees with the independently mapped two-carbon aldehyde graph and its one-way compatibility with the printed silver-mirror cue; no stereo or reporting field is missing.",
+            "output_id": "structure_7",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T8_page-1.png",
+            "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843",
+            "inspected": true,
+            "evidence": "T8.2 panel inspected before generated artifacts. Structure 2 has one central N of degree 3 and three distinct N-C-C-OH arms (per arm: two carbon nodes, one terminal oxygen, N-alpha/alpha-beta/beta-O single bonds; no repeat boundary or cross-panel connector). Arrow certificate: all arrowheads point right; tail 2 with -1e- has head 3 and retains the whole C6NO3 scaffold; tail 3 with -H+ has head 4; tail 4 with -1e- has head 5; tail 5 with +H2O above and -H+ below has heads 6+7. Two unchanged arms and N map to 6; the selected C-C-OH arm maps to 7 and water supplies its new carbonyl O. The primitive ledger is C6H15NO3 -> C6H15NO3+ + e-, then loss of H+, then loss of e-, then C6H14NO3+ + H2O -> C4H11NO2 + C2H4O2 + H+; charge and each C/H/N/O count agree. The printed text separately says 7 gives a silver mirror."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The five graphs have the correct amine radical-cation, alpha-aminoalkyl radical, iminium, secondary-amine, and aldehyde Lewis semantics, with electron/proton changes oriented as printed and no unsupported mechanism-wide uniqueness claim."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only. Relevant named stages are 2, 3, 4, 5, 6, and 7 with the explicitly annotated e-, H+, and H2O participants on T8_page-1.png. Compatibility carriers are step23, step34, step45, stepHydrolysis, SourceMechanismSpecification, IminiumHydrolysisCompatible, amineFragmentMap, and aldehydeFragmentMap. Their balance checks validate only the depicted local edits and primitive stoichiometry; they do not claim yield, completeness, sole products, or empty omitted streams."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "A direct atom recount from each transparent graph matches every molecularFormula assertion. The hydrolysis-side formula relation also matches the mapped source fragments plus the water-supplied oxygen; no molar mass is requested or used."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "BalancedReaction checks C/H/N/O and total formal charge for each displayed step and the summed oxidation. Manual recount confirms electron loss changes charge without atoms, proton loss removes H and +1 charge, and the aqueous split conserves all mapped atoms and charge."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "All requested outputs are unitless exact structural classifications and the submission units are the required empty strings."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "No numerical result, rounding, significant figures, interval, or tolerance occurs; exact_symbolic is applied directly."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "Each MolecularStructure exposes all heavy atoms, attached hydrogens, bond orders, lone pairs, radical electrons, and formal charges. No species has a required tetrahedral or E/Z stereocentre: carbon sites with tetrahedral geometry have duplicate H/substituents, the radical centre is not tetrahedral, and the iminium N has two identical hydroxyethyl substituents; NoSpecifiedStereochemistry is therefore appropriate."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The source verb is 'Draw', so it requires concrete evidence-supported identifications for 3-7, not an exhaustive finite universe or global uniqueness theorem. The candidate returns the five intended witnesses and makes no stronger uniqueness claim."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "Candidate-specific site enums serve only as labels for the returned graph, not as a singleton premise or exhaustive domain. Closed theorems prove nontrivial generic edit, valence, fragment-map, formula, charge, radical, and functional-group predicates; there are no hypotheses, opaque chemistry axioms, free Bool/Prop flags, or reflexive string equalities."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "depicted 2 to 3 one-electron oxidation",
+                "relation": "The arrow points from structure 2 to intermediate 3 and is annotated -1e-; the full three-arm tertiary-amine scaffold persists.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-1.png#mechanism_2_to_3"
+                }
+              }
+            ],
+            "evidence": "A source-first Lewis recount gives ten heavy atoms (one degree-3 N plus three C-C-O arms), unchanged hydrogens, one radical electron, and charge +1; this matches the card and Lean graph.",
+            "id": "structure_3",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T8A2.structure2",
+                "IChO2026Problems.T8A2.step23"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T8A2.structure3"
+              ],
+              "relations": [
+                "IChO2026Problems.T8A2.OneElectronOxidationAt",
+                "IChO2026Problems.T8A2.HasLocalizedRadical",
+                "IChO2026Problems.T8A2.Structure3Specification"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T8A2.structure3_answer",
+                "IChO2026Problems.T8A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The transparent atom-site graph and its specification theorem carry exactly this independently derived structure.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "product of the depicted 2 to 3 elementary oxidation step",
+              "kind": "per_step"
+            },
+            "quantity_definition": "The complete Lewis structure immediately after the first left-to-right one-electron loss from depicted triethanolamine.",
+            "raw_result": {
+              "derivation": "The figure gives a neutral N atom bonded to three CH2-CH2-OH arms. Removing one electron from its amine lone pair preserves all nuclei and bonds, leaves one radical electron at N, and raises total formal charge from 0 to +1; none of the sites is stereogenic.",
+              "exact_unrounded": true,
+              "value_or_expression": "N(CH2CH2OH)3 with the three N-C-C-O single-bond arms retained, one N-centred radical electron, total charge +1, and no specified stereochemistry"
+            },
+            "reporting": {
+              "application": "Return the exact symbolic molecular structure; numerical rounding and tolerances do not apply.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission card has the exact requested id, classification kind, empty unit, complete symbolic structure, and no numerical reporting transformation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-1.png#structure_2_and_mechanism_2_to_3"
+              }
+            ],
+            "source_requirement": "complete structure of 3, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_3",
+                "relation": "Intermediate 3 is the immediate precursor whose alpha deprotonation is drawn.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-1.png#mechanism_3_to_4"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "depicted 3 to 4 proton loss",
+                "relation": "The arrow points from 3 to 4 and is annotated -H+; Lewis bookkeeping localizes the retained radical on an alpha carbon.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-1.png#mechanism_3_to_4"
+                }
+              }
+            ],
+            "evidence": "The source-first edit removes exactly one alpha hydrogen and one positive charge without changing the C6NO3 heavy-atom graph; the card and explicit Lean site graph agree.",
+            "id": "structure_4",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T8A2.structure3",
+                "IChO2026Problems.T8A2.step34"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T8A2.structure4"
+              ],
+              "relations": [
+                "IChO2026Problems.T8A2.AlphaDeprotonation",
+                "IChO2026Problems.T8A2.HasLocalizedRadical",
+                "IChO2026Problems.T8A2.Structure4Specification"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T8A2.structure4_answer",
+                "IChO2026Problems.T8A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The transparent atom-site graph and its specification theorem carry exactly this independently derived structure.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "product of the depicted 3 to 4 deprotonation step",
+              "kind": "per_step"
+            },
+            "quantity_definition": "The complete Lewis structure after the depicted deprotonation of radical-cation intermediate 3.",
+            "raw_result": {
+              "derivation": "The -H+ arrow removes an alpha C-H proton from any one of the three symmetry-equivalent N-CH2 sites. The N radical-cation site becomes the neutral amine lone pair while the C-H bonding electron remains at that alpha carbon, giving a neutral alpha-aminoalkyl radical with the remaining skeleton unchanged.",
+              "exact_unrounded": true,
+              "value_or_expression": "(HOCH2CH2)2N-C(radical)H-CH2OH, neutral, with the radical on the N-adjacent carbon and no specified stereochemistry"
+            },
+            "reporting": {
+              "application": "Return the exact symbolic molecular structure; numerical rounding and tolerances do not apply.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission card has the exact requested id, classification kind, empty unit, complete symbolic structure, and no numerical reporting transformation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-1.png#mechanism_3_to_4"
+              }
+            ],
+            "source_requirement": "complete structure of 4, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_4",
+                "relation": "Intermediate 4 is the immediate precursor for the second oxidation.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-1.png#mechanism_4_to_5"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "depicted 4 to 5 one-electron oxidation",
+                "relation": "The arrow points from 4 to 5 and is annotated -1e-; ordinary Lewis valence closes the adjacent N=C iminium bond.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-1.png#mechanism_4_to_5"
+                }
+              }
+            ],
+            "evidence": "The independently derived iminium edit changes only the selected N-C bond order and the N/alpha electronic bookkeeping; the card and Lean graph match it exactly.",
+            "id": "structure_5",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T8A2.structure4",
+                "IChO2026Problems.T8A2.step45"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T8A2.structure5"
+              ],
+              "relations": [
+                "IChO2026Problems.T8A2.RadicalOxidationToIminium",
+                "IChO2026Problems.T8A2.HasIminiumAt",
+                "IChO2026Problems.T8A2.Structure5Specification"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T8A2.structure5_answer",
+                "IChO2026Problems.T8A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The transparent atom-site graph and its specification theorem carry exactly this independently derived structure.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "product of the depicted 4 to 5 elementary oxidation step",
+              "kind": "per_step"
+            },
+            "quantity_definition": "The complete Lewis structure after the depicted second one-electron loss from alpha-aminoalkyl radical 4.",
+            "raw_result": {
+              "derivation": "Loss of the alpha-carbon radical electron raises charge by one, and the adjacent amine lone pair forms an N=C double bond. All other N-CH2-CH2-OH connectivity and hydrogens remain unchanged, producing the closed-shell iminium ion.",
+              "exact_unrounded": true,
+              "value_or_expression": "(HOCH2CH2)2N+=CH-CH2OH with an N=C double bond, total charge +1, no radical electrons, and no specified E/Z stereochemistry"
+            },
+            "reporting": {
+              "application": "Return the exact symbolic molecular structure; numerical rounding and tolerances do not apply.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission card has the exact requested id, classification kind, empty unit, complete symbolic structure, and no numerical reporting transformation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-1.png#mechanism_4_to_5"
+              }
+            ],
+            "source_requirement": "complete structure of 5, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_5",
+                "relation": "The iminium structure supplies the two retained hydroxyethyl arms and nitrogen of product 6.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-1.png#mechanism_5_to_6_and_7"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "depicted aqueous iminium fragmentation",
+                "relation": "The arrow points from 5 plus H2O to products 6 and 7 plus H+; two unoxidized arms map intact to the nitrogen-containing product.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-1.png#mechanism_5_to_6_and_7"
+                }
+              }
+            ],
+            "evidence": "The source-first fragment map retains N and exactly two complete hydroxyethyl arms, adds the valence-required N-H, and agrees with the card and explicit Lean graph.",
+            "id": "structure_6",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T8A2.structure5",
+                "IChO2026Problems.T8A2.stepHydrolysis",
+                "IChO2026Problems.T8A2.amineFragmentMap"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T8A2.structure6"
+              ],
+              "relations": [
+                "IChO2026Problems.T8A2.HasSecondaryAmineAt",
+                "IChO2026Problems.T8A2.IminiumHydrolysisCompatible",
+                "IChO2026Problems.T8A2.Structure6Specification"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T8A2.structure6_answer",
+                "IChO2026Problems.T8A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The transparent atom-site graph and its specification theorem carry exactly this independently derived structure.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "nitrogen-containing product of the depicted 5 plus water to 6 plus 7 plus proton step",
+              "kind": "per_step"
+            },
+            "quantity_definition": "The nitrogen-containing product at the head of the depicted aqueous fragmentation of iminium 5.",
+            "raw_result": {
+              "derivation": "Cleavage of the iminium N=C arm leaves N bonded to the two unchanged CH2-CH2-OH arms; proton transfer supplies the one N-H bond required for a neutral secondary amine. The retained mapped fragment is therefore HN(CH2CH2OH)2 and contains no stereogenic site.",
+              "exact_unrounded": true,
+              "value_or_expression": "HN(CH2CH2OH)2, neutral secondary amine with two N-C-C-OH single-bond arms and no specified stereochemistry"
+            },
+            "reporting": {
+              "application": "Return the exact symbolic molecular structure; numerical rounding and tolerances do not apply.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission card has the exact requested id, classification kind, empty unit, complete symbolic structure, and no numerical reporting transformation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-1.png#mechanism_5_to_6_and_7"
+              }
+            ],
+            "source_requirement": "complete structure of 6, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_5",
+                "relation": "The selected iminium arm is the mapped two-carbon precursor of product 7.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-1.png#mechanism_5_to_6_and_7"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "depicted aqueous iminium fragmentation",
+                "relation": "The arrow points from 5 plus H2O to 6 and 7 plus H+; the oxidized arm maps to the oxygenated product.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T8_page-1.png#mechanism_5_to_6_and_7"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "positive silver-mirror observation for 7",
+                "relation": "The problem states that product 7 gives the [Ag(NH3)2]OH silver-mirror test; the derived aldehyde is used only as a compatible witness, not as a global inverse classification.",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                }
+              }
+            ],
+            "evidence": "The mapped two-carbon arm, new carbonyl oxygen, aldehydic hydrogen, and retained terminal OH reproduce the source-arrow atom ledger and the one-way Tollens cue; card and Lean graph match.",
+            "id": "structure_7",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T8A2.structure5",
+                "IChO2026Problems.T8A2.stepHydrolysis",
+                "IChO2026Problems.T8A2.aldehydeFragmentMap"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T8A2.structure7"
+              ],
+              "relations": [
+                "IChO2026Problems.T8A2.HasAldehydeAt",
+                "IChO2026Problems.T8A2.IminiumHydrolysisCompatible",
+                "IChO2026Problems.T8A2.TollensCompatible",
+                "IChO2026Problems.T8A2.Structure7Specification"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T8A2.structure7_answer",
+                "IChO2026Problems.T8A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The transparent atom-site graph and its specification theorem carry exactly this independently derived structure.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "oxygenated product of the depicted 5 plus water to 6 plus 7 plus proton step",
+              "kind": "per_step"
+            },
+            "quantity_definition": "The two-carbon oxygenated product at the head of the depicted aqueous fragmentation of iminium 5, compatible with the printed silver-mirror observation.",
+            "raw_result": {
+              "derivation": "The cleaved N=CH-CH2OH arm retains its C-C-OH chain; water supplies the new carbonyl oxygen at the former iminium carbon. That carbon already bears H, so the product is HOCH2-CH=O. Its aldehyde group is compatible with the stated positive silver-mirror test, and no stereocentre is present.",
+              "exact_unrounded": true,
+              "value_or_expression": "HOCH2-CH=O with one C-C single bond, one aldehydic C=O double bond, a terminal O-H bond, neutral charge, and no specified stereochemistry"
+            },
+            "reporting": {
+              "application": "Return the exact symbolic molecular structure; numerical rounding and tolerances do not apply.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission card has the exact requested id, classification kind, empty unit, complete symbolic structure, and no numerical reporting transformation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-1.png#mechanism_5_to_6_and_7_and_tollens"
+              }
+            ],
+            "source_requirement": "complete structure of 7, including all requested stereochemistry and template fields",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "268a7a9d7a0acefbbd746df765067a21bae5a37ab56da51b8a47253e86ad91ab"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a2.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "All five exact symbolic structures are source-compatible, independently derivable by transparent Lewis-structure edits along the depicted left-to-right mechanism, faithful to the sealed Kimi 8.2 draft, and carried by explicit nonvacuous Lean molecular graphs without uniqueness, yield, or sole-product overclaim.",
+        "reviewed_at": "2026-09-13T08:47:24Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "268a7a9d7a0acefbbd746df765067a21bae5a37ab56da51b8a47253e86ad91ab",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a2.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 9,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The candidate preserves the frozen Kimi 8.2 structures without substitution and independently validates all five as explicit molecular graphs against the depicted electron-loss, alpha-deprotonation, second-electron-loss, hydrolysis, and Tollens-compatibility constraints.",
+    "evidence": "All three bound hashes match. The supplied deterministic preflight passed with compiles=true, returncode=0, sorry_count=0. The aggregate reported_result theorem is proved from five graph-level answer theorems; raw_result additionally proves the inline acidic CO2-reduction balance and all depicted mechanism-step balances. The answer submission has schema_version 1, the correct record id, exactly five outputs in required order, and matching classification kinds and empty units.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "c8f216ecfa7bc3379538eaab384a3d303d500b340d2e7d2400b09a3aeffd754b",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t8_a2.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t8_a2",
+      "source_record_sha256": "4e7ccee044376f86009341d72d98f906e283d7e76eb13aa4ac4822f3c7bb4223",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a2.answer.json",
+      "answer_submission_sha256": "168be85ce405c0d1d4e15daeb3a95d42dea11affd4a0290e3dd32fd35d568b97",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t8_a2.source.json",
+      "source_report_sha256": "2ce943cfd4f779e52ed6f1889e9c5ddb8226f896411358e3f884f7df721ee84c",
+      "candidate": "IChO2026Problems/problem_icho_2026_t8_a2.lean",
+      "preflight_sha256": "a78c0123f77f67e10aa02437c89ca1332e8d0903574ceebf6ababc2192f1629b",
+      "candidate_sha256": "c8f216ecfa7bc3379538eaab384a3d303d500b340d2e7d2400b09a3aeffd754b",
+      "question_sha256": "e11aebf55172a31cf0953e928eafcf0f907749e6c360c4938ed9973f1a96e6ec",
+      "shared_context_sha256": "cd08fca3c668205d5a952798d53cbc8d2e0b2a0dbed5d0daa7b61bcd0b2b391b",
+      "previous_parts_sha256": "c10181085ab45d67cb112ac8833660d461997058ff74020447a12c40b02bfaa3",
+      "requested_outputs_sha256": "6ee96aaddb7a26fe17880461609f95b164fb2b66e7fe233da3dbc286b30b2b41",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T8_page-1.png",
+          "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "75a8d6c4ea8ef8b84cf0fafb34c061325e978f04ef19d39a907c02586314727b",
+        "node_count": 14,
+        "edge_count": 25,
+        "node_kind_counts": {
+          "derivation_obligation": 5,
+          "previous_part_prerequisite": 1,
+          "requested_output": 5,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "structure_3",
+          "structure_4",
+          "structure_5",
+          "structure_6",
+          "structure_7"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t8_a1"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t8_a2",
+        "path": ".archon/provided_answer_drafts/Q8.md",
+        "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a2.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t8_a2",
+        "source_record_sha256": "4e7ccee044376f86009341d72d98f906e283d7e76eb13aa4ac4822f3c7bb4223",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a2.answer.json",
+        "answer_submission_sha256": "168be85ce405c0d1d4e15daeb3a95d42dea11affd4a0290e3dd32fd35d568b97",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a2.source.json",
+        "source_report_sha256": "2ce943cfd4f779e52ed6f1889e9c5ddb8226f896411358e3f884f7df721ee84c",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a2.lean",
+        "preflight_sha256": "a78c0123f77f67e10aa02437c89ca1332e8d0903574ceebf6ababc2192f1629b",
+        "candidate_sha256": "c8f216ecfa7bc3379538eaab384a3d303d500b340d2e7d2400b09a3aeffd754b",
+        "question_sha256": "e11aebf55172a31cf0953e928eafcf0f907749e6c360c4938ed9973f1a96e6ec",
+        "shared_context_sha256": "cd08fca3c668205d5a952798d53cbc8d2e0b2a0dbed5d0daa7b61bcd0b2b391b",
+        "previous_parts_sha256": "c10181085ab45d67cb112ac8833660d461997058ff74020447a12c40b02bfaa3",
+        "requested_outputs_sha256": "6ee96aaddb7a26fe17880461609f95b164fb2b66e7fe233da3dbc286b30b2b41",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-1.png",
+            "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "75a8d6c4ea8ef8b84cf0fafb34c061325e978f04ef19d39a907c02586314727b",
+          "node_count": 14,
+          "edge_count": 25,
+          "node_kind_counts": {
+            "derivation_obligation": 5,
+            "previous_part_prerequisite": 1,
+            "requested_output": 5,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_3",
+            "structure_4",
+            "structure_5",
+            "structure_6",
+            "structure_7"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t8_a1"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a2",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "Passed under the explicit provided-answer formalization exception: the sealed Kimi draft was used only as the required fidelity target, while every chemistry claim was rederived from the bound problem image and ordinary Lewis/charge bookkeeping. The candidate and submission remained untrusted, and no official solution, grading artifact, unlisted project file, or external answer was consulted."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "The named raw_result carrier combines acidicReduction_from_problem, sourceMechanism_balanced, and structure3_answer through structure7_answer. Transparent edit predicates track nuclear framework, hydrogen loss, charge, radical relocation/removal, the N-C bond-order change, hydrolysis fragment maps, formulae, and formal charge without rounding."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "Each requested output is a classification with problem-output reporting policy exact_symbolic and empty unit. Submission raw/display forms are semantically identical to their explicit graph carriers; no precision convention or numeric formatting is involved."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No tolerance is used or needed: all five outputs are exact symbolic molecular structures, and every audited equality is discrete graph, formula, charge, radical, or stereochemistry data."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The image fixes the connected triethanolamine starting graph and the ordered labeled transformations. The five concrete witnesses are checked uniformly by transparent valence/edit/mapping predicates. Because the source asks to draw structures and does not ask for all or globally unique possibilities, no open-world exhaustive candidate universe is required; no answer-shaped singleton is a premise."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=c8f216ecfa7bc3379538eaab384a3d303d500b340d2e7d2400b09a3aeffd754b; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0, duration_bucket=under_1m. Nontrivial carriers are IChO2026Problems.T8A2.structure3_answer, structure4_answer, structure5_answer, structure6_answer, structure7_answer, raw_result, and reported_result, backed by the corresponding MolecularStructure definitions."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "ReportedResult contains exactly Structure3Specification through Structure7Specification in source order. RawResult additionally includes the independently derived previous-part half-reaction and all four mechanism arrows, with no extra requested conclusion or missing branch."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The reviewed theorem has no assumed answer hypothesis. Its concrete source graph, edit relations, Lewis equations, fragment maps, and balances reduce transparently and are discharged by kernel-checked proofs; every apparent choice is checked rather than supplied as a binder."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "Each of the five conclusions exposes full connectivity, site hydrogens, lone pairs, radical electrons, formal charge, bond order, and absence of applicable stereochemistry. These match the five submission entries and the preserved Kimi 8.2 subpart exactly."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The source arrows are represented one-way by OneElectronOxidationAt, AlphaDeprotonation, RadicalOxidationToIminium, and IminiumHydrolysisCompatible; water/proton/electron ledgers are explicit. The positive silver-mirror cue is used only through the transparent aldehyde witness TollensCompatible, not as an unsupported inverse classifier."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "complete structure of 3, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T8A2.structure3_answer : Structure3Specification (graph: structure3)",
+          "status": "covered",
+          "evidence": "The submission id/kind/unit and full atom, bond, charge, radical, and stereochemistry content agree with the independently audited first-arrow graph carrier and frozen draft.",
+          "output_id": "structure_3",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of 4, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T8A2.structure4_answer : Structure4Specification (graph: structure4)",
+          "status": "covered",
+          "evidence": "The submission id/kind/unit and full structural content agree with the audited alpha-deprotonation graph carrier; symmetry of the three starting arms is handled explicitly.",
+          "output_id": "structure_4",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of 5, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T8A2.structure5_answer : Structure5Specification (graph: structure5)",
+          "status": "covered",
+          "evidence": "The submission id/kind/unit and full structural content agree with the audited second-oxidation graph carrier, including the changed N-C bond order and Lewis bookkeeping.",
+          "output_id": "structure_5",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of 6, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T8A2.structure6_answer : Structure6Specification (graph: structure6)",
+          "status": "covered",
+          "evidence": "The submission id/kind/unit and full structural content agree with the audited hydrolysis fragment carrier, atom map, secondary-amine site test, and formula/charge ledger.",
+          "output_id": "structure_6",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of 7, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T8A2.structure7_answer : Structure7Specification (graph: structure7)",
+          "status": "covered",
+          "evidence": "The submission id/kind/unit and full structural content agree with the audited oxidized-arm fragment carrier, explicit aldehyde topology, hydrolysis ledger, and one-way silver-mirror compatibility check.",
+          "output_id": "structure_7",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T8_page-1.png",
+          "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843",
+          "inspected": true,
+          "evidence": "The page visibly gives species 2 as one N bonded to three HO-CH2-CH2 arms; the labeled sequence is loss of one electron, loss of H+, loss of one electron, then addition of H2O with loss of H+ to 6 + 7. Labels 3-5 are bracketed short-lived species, and the text states that 7 gives a silver mirror."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Independent Lewis analysis gives a tertiary-amine radical cation after the first oxidation, an alpha-aminoalkyl radical after alpha deprotonation, an iminium after the second oxidation, and water-assisted cleavage into a secondary amine plus an aldehyde-bearing two-carbon fragment. This is exactly what the concrete graph edits prove."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "classification=qualitative_named_transform_only. The source-arrow is the four-arrow mechanism on T8_page-1 from depicted 2 through labeled 3, 4, 5 to named heads 6 and 7. The finite MechanismSpecies carrier names 2-7, H2O, H+, and e-; step23, step34, step45, stepHydrolysis, SourceMechanismSpecification, and IminiumHydrolysisCompatible provide direction, roles, primitive balance, and transparent compatibility. No yield, completion, sole-product, absent-stream, phase, or quantitative material-flow claim is made."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Direct site counting gives the unchanged six-carbon/one-nitrogen/three-oxygen framework for 2-5, one fewer H after deprotonation, and complementary four-carbon amine plus two-carbon aldehyde fragments after hydrolysis. The concrete molecularFormula equalities and water/proton ledger agree; no molar-mass claim occurs."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "Every depicted step is atom- and charge-consistent: the first and third electron losses raise molecular charge by one; alpha deprotonation removes one H and one positive charge; hydrolysis adds H2O and releases H+ while partitioning every original heavy atom once. BalancedReaction proves each primitive ledger and the summed oxidation, while the prior CO2 half-reaction is derived inline."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "The requested outputs are exact symbolic structures with empty units; no dimensional quantity is asserted."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "There is no numeric result, rounding, significant-figure rule, measurement interval, or tolerance in this target."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "All heavy atoms and bond orders are enumerated, hydrogens are attached to named heavy-atom sites, and lone pairs, formal charges, and radical electrons are explicit. No requested or chemically defined stereocentre remains: the radical center is not tetrahedral, and the iminium N has two identical hydroxyethyl substituents, so its double bond has no E/Z descriptor."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source verb is draw, with no unique/all/every quantifier. Each concrete witness satisfies every depicted constraint and the product-fragment/Tollens cue; policy therefore does not require an open-world uniqueness theorem."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "No answer is assumed in a theorem hypothesis, opaque predicate, arbitrary Bool/Prop field, or singleton elimination domain. Named candidate graphs are legitimate output carriers and are independently checked by generic transparent structural edits, Lewis equations, atom maps, and balances."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a2.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The candidate preserves the frozen Kimi 8.2 structures without substitution and independently validates all five as explicit molecular graphs against the depicted electron-loss, alpha-deprotonation, second-electron-loss, hydrolysis, and Tollens-compatibility constraints.",
+        "evidence": "All three bound hashes match. The supplied deterministic preflight passed with compiles=true, returncode=0, sorry_count=0. The aggregate reported_result theorem is proved from five graph-level answer theorems; raw_result additionally proves the inline acidic CO2-reduction balance and all depicted mechanism-step balances. The answer submission has schema_version 1, the correct record id, exactly five outputs in required order, and matching classification kinds and empty units.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:07:03.308869Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "c8f216ecfa7bc3379538eaab384a3d303d500b340d2e7d2400b09a3aeffd754b",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a2.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:07:03.308898Z",
+    "repair_handoff": {}
+  }
+}

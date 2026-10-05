@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t2_a7",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "bottom-right graph: negative damped oscillations approaching 0 from below",
+      "id": "gibbs_rate_graph",
+      "kind": "classification",
+      "raw_value": "bottomRight is the unique one of the six displayed graphs satisfying dG/dt <= 0 at physical times, recurring negative oscillatory lobes, and dG/dt -> 0",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

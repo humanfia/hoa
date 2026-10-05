@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t8_a1",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "CO₂ + 2 H⁺ + 2 e⁻ → CO + H₂O",
+      "id": "half_equation",
+      "kind": "formula",
+      "raw_value": "CO2 + 2 H+ + 2 e- -> CO + H2O",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

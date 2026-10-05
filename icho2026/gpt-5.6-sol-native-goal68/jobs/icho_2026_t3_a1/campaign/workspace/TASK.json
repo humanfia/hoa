@@ -1,0 +1,96 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Determine the empirical formula of COF-1 and calculate the mass percentage (%, to two decimal places) of carbon in COF-1.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t3_a1",
+  "image": "T3_page-1.png",
+  "images": [
+    "T3_page-1.png"
+  ],
+  "index": "icho_2026_t3_a1",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T3",
+  "part_id": "T3-A1",
+  "phase": "solve",
+  "points": 2.0,
+  "previous_parts": [],
+  "printed_page": 1,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T3_page-1.png",
+      "printed_page": 1,
+      "sha256": "b45e76d54ec6b862b5c07437ef7ff3274f18695cacf71e924a900209318a7cb8",
+      "source_page": 25
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 25
+    }
+  ],
+  "problem_id": "icho_2026_t3",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT3. Into Reticular Chemistry 7% Covalent organic frameworks (COFs) are a class of polymers that form two- or three-dimensional structures through reactions between organic precursors, resulting in covalent bonds to afford porous, crystalline materials. Two examples of honeycomb type 2D-COFs formed by boronate ester and boroxine rings (repeat units indicated using dashed lines) are shown in the figure below. The black and red bold lines represent different building blocks in all COF topology figures.\n\n## Current subquestion T3-A1\nDetermine the empirical formula of COF-1 and calculate the mass percentage (%, to two decimal places) of carbon in COF-1.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "cof1_empirical_formula",
+      "kind": "formula",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "empirical formula of COF-1",
+      "unit": ""
+    },
+    {
+      "id": "cof1_carbon_mass_percent",
+      "kind": "numeric",
+      "reporting_policy": {
+        "digits": 2,
+        "kind": "decimal_places",
+        "source": "explicit_problem_instruction"
+      },
+      "source_requirement": "carbon mass percentage in COF-1",
+      "unit": "%"
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T3. Into Reticular Chemistry 7% Covalent organic frameworks (COFs) are a class of polymers that form two- or three-dimensional structures through reactions between organic precursors, resulting in covalent bonds to afford porous, crystalline materials. Two examples of honeycomb type 2D-COFs formed by boronate ester and boroxine rings (repeat units indicated using dashed lines) are shown in the figure below. The black and red bold lines represent different building blocks in all COF topology figures.",
+  "source_index": "T3-A1",
+  "source_page": 25,
+  "source_pdf": "theory_problem.pdf"
+}

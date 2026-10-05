@@ -1,0 +1,35 @@
+{
+  "id": "icho_2026_t3_a4",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "COF-3: hexagonal imine-linked C6H3[-CH=N-C3H(OH)-]3 repeat unit; six dashed aromatic C-C boundary bonds, two on each red half-linker.",
+      "id": "cof_3",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.Icho2026T3A4.cof3RepeatUnit: hexagonalOne graph C6H3[-CH=N-C3H(OH)-]3, formula C18H12N3O3, with exactly 6 aromatic C-C boundary cuts",
+      "unit": ""
+    },
+    {
+      "display_value": "COF-4: the three ortho-hydroxy imines of COF-3 are oxidatively closed to benzoxazole C=N rings; six dashed aromatic C-C boundary bonds, two on each red half-linker.",
+      "id": "cof_4",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.Icho2026T3A4.cof4RepeatUnit: hexagonalOne graph C6H3[-C(=N-C3H)-O-]3 with 3 benzoxazole closures, formula C18H6N3O3, with exactly 6 aromatic C-C boundary cuts",
+      "unit": ""
+    },
+    {
+      "display_value": "COF-5: hexagonal enol-imine C6(OH)3[-CH=N-C3H2-]3 repeat unit; six dashed aromatic C-C boundary bonds, two on each red half-linker.",
+      "id": "cof_5",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.Icho2026T3A4.cof5RepeatUnit: hexagonalOne enol-imine graph C6(OH)3[-CH=N-C3H2-]3, formula C18H12N3O3, with exactly 6 aromatic C-C boundary cuts",
+      "unit": ""
+    },
+    {
+      "display_value": "COF-6: hexagonal beta-ketoenamine cyclo-C6(=O)3[=CH-NH-C3H2-]3 repeat unit; six dashed aromatic C-C boundary bonds, two on each red half-linker.",
+      "id": "cof_6",
+      "kind": "classification",
+      "raw_value": "IChO2026Problems.Icho2026T3A4.cof6RepeatUnit: hexagonalOne beta-ketoenamine graph cyclo-C6(=O)3[=CH-NH-C3H2-]3, formula C18H12N3O3, with exactly 6 aromatic C-C boundary cuts",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

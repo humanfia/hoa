@@ -1,0 +1,3 @@
+'IChO2026Problems.T3A3.fits_iff_mem_allSolutions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A3.topology_table_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T3A3.topology_table_entries' does not depend on any axioms

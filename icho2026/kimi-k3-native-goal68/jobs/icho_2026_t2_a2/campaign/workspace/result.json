@@ -1,0 +1,40 @@
+{
+  "target_id": "icho_2026_t2_a2",
+  "status": "completed",
+  "answer_summary": {
+    "hbro2_process_a": {
+      "raw": "6.0e-6 mol dm^-3",
+      "reported": "6.00e-6 M"
+    },
+    "hbro2_process_b": {
+      "raw": "5.04e-11 mol dm^-3",
+      "reported": "5.04e-11 M"
+    },
+    "derivation": {
+      "A": "SSA on BrO2 radical (r2 = 2 r1) + SSA on HBrO2 (-r1 + r2 - 2 r3 = 0) give r1 = 2 r3, hence [HBrO2]A = k1[BrO3-][H+]/(2 k3) = (1.0e4)(0.06)(0.8)/(2*4.0e7) = 6.00e-6 M; k2 and Ce concentrations cancel.",
+      "B": "Only steps 4/5 involve HBrO2: r5 = r4 with held-constant Br- cancelling, [HBrO2]B = k5[BrO3-][H+]/k4 = (2.1)(0.06)(0.8)/(2.0e9) = 5.04e-11 M."
+    },
+    "consistency_check": "Matches orders of magnitude of the problem's printed fallback values 1e-5 M and 1e-10 M used for later parts."
+  },
+  "theorem_names": [
+    "IChO2026.T2.A2.hbro2_process_A",
+    "IChO2026.T2.A2.hbro2_process_B",
+    "IChO2026.T2.A2.hbro2A_value",
+    "IChO2026.T2.A2.hbro2B_value",
+    "IChO2026.T2.A2.valid_submission_A",
+    "IChO2026.T2.A2.valid_submission_B",
+    "IChO2026.T2.A2.icho_2026_t2_a2_answer"
+  ],
+  "assumptions": [
+    "Steady-state approximation applied to all intermediates, including the BrO2 radical in Process A (r2 = 2 r1), making k2 and Ce3+/Ce4+ concentrations cancel; standard mass-action rate laws as defined by the printed mechanism.",
+    "Problem-stipulated constant reactant concentrations: [BrO3-] = 0.06 M, [H+] = 0.8 M maintained during both processes; [Br-] held constant during Process B so it cancels from the HBrO2 balance.",
+    "Step 6 does not produce or consume HBrO2, so k6 and [MA] do not enter [HBrO2]B.",
+    "All k values used exactly as printed; final display at three significant figures with no intermediate rounding."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Chem  # Build completed successfully (8561 jobs)",
+    "lake env lean IChO2026Problems/problem_icho_2026_t2_a2.lean  # exit 0, no errors/warnings/sorry",
+    "embedded #print axioms: all final theorems depend only on [propext, Classical.choice, Quot.sound]"
+  ]
+}

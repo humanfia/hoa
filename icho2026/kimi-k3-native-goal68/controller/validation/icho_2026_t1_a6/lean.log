@@ -1,0 +1,8 @@
+'IChO2026T1A6.cryolite_sodium_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A6.cryolite_aluminium_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A6.aluminium_fluoride_trihydrate_water_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A6.cyclononacarbon_oxygen_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A6.stone_x12_first_plateau_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A6.stone_x22_first_plateau_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A6.stone_x21_second_plateau_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T1A6.tg_system_inconsistent' depends on axioms: [propext, Classical.choice, Quot.sound]

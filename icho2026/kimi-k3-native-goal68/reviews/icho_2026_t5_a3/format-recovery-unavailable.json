@@ -1,0 +1,10 @@
+{
+  "target": "icho_2026_t5_a3",
+  "error_class": "missing_structured_verdict",
+  "reason": "The original final response contains prose source/proof checks and residual concerns, but no JSON assessment. Deterministic format extraction cannot create the missing structured fields.",
+  "original_review": "campaign/review.json",
+  "status_preserved": "review_error",
+  "accepted": false,
+  "model_rerun": false,
+  "feedback_to_solver": false
+}

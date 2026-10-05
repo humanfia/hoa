@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t9_a3",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "35",
+      "id": "macrocycle_ring_size",
+      "kind": "integer",
+      "raw_value": "7 * 5 = 35",
+      "unit": ""
+    },
+    {
+      "display_value": "21",
+      "id": "macrocycle_stereocentres",
+      "kind": "integer",
+      "raw_value": "7 * 3 = 21",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

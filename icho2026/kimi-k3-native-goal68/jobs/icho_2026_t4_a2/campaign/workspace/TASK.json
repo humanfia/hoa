@@ -1,0 +1,105 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Write the nuclear reaction equations for (a), (b), and (c).",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t4_a2",
+  "image": "T4_page-1.png",
+  "images": [
+    "T4_page-1.png"
+  ],
+  "index": "icho_2026_t4_a2",
+  "kind": "chemical-equation",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T4",
+  "part_id": "T4-A2",
+  "phase": "solve",
+  "points": 3.0,
+  "previous_parts": [],
+  "printed_page": 1,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T4_page-1.png",
+      "printed_page": 1,
+      "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf",
+      "source_page": 37
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 37
+    }
+  ],
+  "problem_id": "icho_2026_t4",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT4. The nuclear past of Uzbekistan 6% Natural uranium consists primarily of two isotopes, 235U and 238U . 235U is responsible for sustaining nuclear fission reactions. 4.1 Calculate the atomic abundance of 235U in natural uranium, assuming it consists only of isotopes 235U (235.04 a.u.) and 238U (238.05 a.u.). The main reaction occurring in nuclear power plants is the reaction where 235U absorbs a neutron and undergoes fission, releasing energy and producing three additional neutrons, thus sustaining a chain reaction. 235 92 U +1 0 n \u2192\u2026 + 31 0n Neutrons that induce the chain reaction are produced by several ways: a) Reaction of 11B with \ud835\udefc-particles inside the reactor core b) Interaction of \ud835\udeferays with 2D nuclei present in the reactor coolant water c) Reaction of 9Be with \ud835\udefc-particles produced in an externally installed neutron source.\n\n## Current subquestion T4-A2\nWrite the nuclear reaction equations for (a), (b), and (c).\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "nuclear_a",
+      "kind": "formula",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "balanced nuclear reaction (a)",
+      "unit": ""
+    },
+    {
+      "id": "nuclear_b",
+      "kind": "formula",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "balanced nuclear reaction (b)",
+      "unit": ""
+    },
+    {
+      "id": "nuclear_c",
+      "kind": "formula",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "balanced nuclear reaction (c)",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T4. The nuclear past of Uzbekistan 6% Natural uranium consists primarily of two isotopes, 235U and 238U . 235U is responsible for sustaining nuclear fission reactions. 4.1 Calculate the atomic abundance of 235U in natural uranium, assuming it consists only of isotopes 235U (235.04 a.u.) and 238U (238.05 a.u.). The main reaction occurring in nuclear power plants is the reaction where 235U absorbs a neutron and undergoes fission, releasing energy and producing three additional neutrons, thus sustaining a chain reaction. 235 92 U +1 0 n \u2192\u2026 + 31 0n Neutrons that induce the chain reaction are produced by several ways: a) Reaction of 11B with \ud835\udefc-particles inside the reactor core b) Interaction of \ud835\udeferays with 2D nuclei present in the reactor coolant water c) Reaction of 9Be with \ud835\udefc-particles produced in an externally installed neutron source.",
+  "source_index": "T4-A2",
+  "source_page": 37,
+  "source_pdf": "theory_problem.pdf"
+}

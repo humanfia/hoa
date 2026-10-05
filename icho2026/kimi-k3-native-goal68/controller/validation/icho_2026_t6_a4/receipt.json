@@ -1,0 +1,95 @@
+{
+  "target": "icho_2026_t6_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789364814.4275835,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "3c334be34f0c86a9cfdcd930459d9ade7e267ea11bfeed9cd340e4e7acfcdcea",
+    "IChO2026Problems/problem_icho_2026_t6_a4.lean": "d2be729fc535b1859679bcb90c10586bcbe7711456f884b97fd785ac06680266",
+    "answer.md": "c220f7105fb2337f26c952aa12f92a647f2560e5c8f0072cd9e35ccd4418e321",
+    "verification.md": "dd29a31cc8773990efad99d51164931c716178a8fc0f4bc5cd2b35fd55c0c8dc",
+    "result.json": "9b943a224552b8af09d56550b3571896b8f9f044a52f430da91b272f73d7113e"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t6_a4",
+    "status": "completed",
+    "answer_summary": {
+      "ion_591_given_example": "[E + H]+  ((590 + 1)/1 = 591; planted example from answer sheet A6-2, verifies the proton-attachment convention and integer masses)",
+      "ion_783": "[3E + C48 + 3H]3+  ((3*590 + 576 + 3)/3 = 2349/3 = 783) \u2014 triply protonated aggregate of three macrocycles E (C40H34N2O3) with one intact cyclo[48]carbon; uniquely determined (ion783_unique)",
+      "ion_879": "[2E + C48 + 2H]2+  ((2*590 + 576 + 2)/2 = 1758/2 = 879) \u2014 doubly protonated 2:1 aggregate of E with C48; uniquely determined (ion879_unique)",
+      "ion_1174": "[3E + C48 + 2H]2+  ((3*590 + 576 + 2)/2 = 2348/2 = 1174) \u2014 doubly protonated 3:1 aggregate of E with C48; unique at charge state 2 (ion1174_unique_at_charge_two). Residual integer-m/z ambiguity with [C48 + E + 8H]+ (576+590+8 = 1174) is explicitly reported; the singly charged 8-proton 1:1 aggregate is chemically unreasonable (only two basic N atoms) and inconsistent with the multiply protonated aggregate pattern forced by 783 and 879."
+    },
+    "theorem_names": [
+      "IChO2026T6A4.massE_value",
+      "IChO2026T6A4.massE_value_compute",
+      "IChO2026T6A4.massC48_value",
+      "IChO2026T6A4.massC48_value_compute",
+      "IChO2026T6A4.ion591_example_matches",
+      "IChO2026T6A4.ion591_example_proton_charged",
+      "IChO2026T6A4.ion783_is_protonated_aggregate",
+      "IChO2026T6A4.ion783_total_mass",
+      "IChO2026T6A4.ion783_mz",
+      "IChO2026T6A4.ion783_proton_charged",
+      "IChO2026T6A4.ion783_unique",
+      "IChO2026T6A4.ion879_is_protonated_aggregate",
+      "IChO2026T6A4.ion879_total_mass",
+      "IChO2026T6A4.ion879_mz",
+      "IChO2026T6A4.ion879_proton_charged",
+      "IChO2026T6A4.ion879_unique",
+      "IChO2026T6A4.ion1174_is_protonated_aggregate",
+      "IChO2026T6A4.ion1174_total_mass",
+      "IChO2026T6A4.ion1174_mz",
+      "IChO2026T6A4.ion1174_proton_charged",
+      "IChO2026T6A4.ion1174_unique_at_charge_two",
+      "IChO2026T6A4.catenane_octaprotonated_mz"
+    ],
+    "assumptions": [
+      "Integer atomic masses as instructed by 6.4: H = 1, C = 12, N = 14, O = 16 (trusted general law level: standard integer isotope masses).",
+      "Problem-printed molecular formulae: macrocycle E = C40H34N2O3 (printed under structure E on Q6-2; M = 590) and cyclo[48]carbon = C48 (M = 576) \u2014 actual problem inputs, not derived.",
+      "Positive-mode electrospray ionization by proton attachment only, as anchored by the planted example [E + H]+ at m/z 591 on answer sheet A6-2 (the alternative [E - H]- would give 589, not 591, so the example itself discriminates).",
+      "No fragmentation (problem statement): each ion is an integer combination of intact E and C48 molecules plus protons.",
+      "Uniqueness domains used in the Lean theorems are not arbitrary bounds: per-field finite bounds are proved from the mass equation by omega; the qualitative restrictions (charge state z <= 3, at most z protons, at most one C48 ring) reflect the electrospray aggregation window of the sample (one catenated cyclocarbon per catenane) and are stated explicitly in each theorem."
+    ],
+    "source_gaps": [
+      "m/z 1174 is not uniquely determined by integer m/z arithmetic alone: the formal alternative [C48 + E + 8H]+ (z = 1, mass 1174) satisfies the same integer data and the same proton-attachment convention. The problem never states the charge state, and no isotope-resolution information exists at integer accuracy. The planted/chemically reasonable answer [3E + C48 + 2H]2+ is adopted and its uniqueness at z = 2 is proved; the ambiguity is recorded here and in answer.md (and witnessed constructively by IChO2026T6A4.catenane_octaprotonated_mz) instead of being assumed away.",
+      "No textbook-scale ambiguity exists for 783 and 879: both are proved unique within the chemically motivated candidate space."
+    ],
+    "verification_commands": [
+      {
+        "command": "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t6_a4/campaign/workspace && lake env lean IChO2026Problems/problem_icho_2026_t6_a4.lean",
+        "result": "exit code 0; no errors, no warnings; output is the #print axioms report below"
+      },
+      {
+        "command": "#print axioms (inside the file, evaluated during the same compile)",
+        "result": "massE_value: no axioms; massC48_value: no axioms; ion591_example_matches / ion*_total_mass / ion*_mz / catenane_octaprotonated_mz: [propext]; ion783_unique / ion879_unique / ion1174_unique_at_charge_two: [propext, Classical.choice, Quot.sound] \u2014 standard logical axioms only, no sorryAx, no native_decide trust axiom, no custom axioms"
+      },
+      {
+        "command": "grep -nE \"sorry|admit|axiom |unsafe|native_decide\" IChO2026Problems/problem_icho_2026_t6_a4.lean",
+        "result": "no matches: no sorry/admit/axiom/unsafe/native_decide anywhere in the final file; the two mass-foundation theorems are closed by kernel-checked decide (and re-proved by rfl in massE_value_compute / massC48_value_compute), which is why massE_value and massC48_value report 'does not depend on any axioms'"
+      }
+    ],
+    "deliverables": {
+      "answer": "answer.md",
+      "lean": "IChO2026Problems/problem_icho_2026_t6_a4.lean",
+      "umbrella": "IChO2026Problems/All.lean",
+      "verification": "verification.md"
+    }
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

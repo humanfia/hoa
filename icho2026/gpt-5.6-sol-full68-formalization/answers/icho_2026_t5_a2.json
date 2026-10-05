@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t5_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "One homochiral enantiomer: R-C(=O)-O-CH2-CH(O-C(=O)-R)-CH2-O-P(=O)(OH)-O-CH2-CH(OH)-CH2-O-P(=O)(OH)-O-CH2-CH(O-C(=O)-R)-CH2-O-C(=O)-R, with outer glycerol C2 configurations (R,R)",
+      "id": "structure_pl1",
+      "kind": "classification",
+      "raw_value": "Explicit 39-site, 38-covalent-bond graph IChO2026Problems.ProblemIcho2026T5A2.pl1Enantiomer: three glycerols, two phosphodiester P(=O)(OH) groups, four identical O-C(=O)-R residues, one central OH, no O-O bond or radicals, and outer glycerol C2 stereocentres (R,R)",
+      "unit": ""
+    },
+    {
+      "display_value": "Monoanion Y: the same (R,R) skeleton with one phosphate O^-; cyclic H-bond chain P_left-O^- ... H-O_bridge ... H-O-P_right and anionic-phosphate resonance",
+      "id": "structure_y",
+      "kind": "classification",
+      "raw_value": "Explicit 38-site, 37-covalent-bond monoanion graph IChO2026Problems.ProblemIcho2026T5A2.monoanionY (net charge -1), with central O-H donating to the deprotonated phosphate, the remaining P-O-H donating to the central O, and charge delocalization between the anionic and phosphoryl oxygens",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

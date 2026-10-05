@@ -1,0 +1,10 @@
+{
+  "status": "reviewed",
+  "target": "icho_2026_t7_a2",
+  "accepted": false,
+  "semantic_status": "conditional",
+  "proof_status": "passed",
+  "input_hashes_fresh": true,
+  "kernel_check": "passed",
+  "finished": 1789393945.1000936
+}

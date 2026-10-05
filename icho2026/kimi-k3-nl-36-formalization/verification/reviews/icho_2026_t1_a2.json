@@ -1,0 +1,1088 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 2,
+    "last_review_iter": 1,
+    "reason": "The source-first audit derives the submitted identity and both explicit structures, and the Lean candidate binds them to nontrivial table, isotope-ledger, graph, symmetry, derivative, and directed-transform carriers without using the result as a premise. The result also preserves Kimi subpart 1.2 from frozen draft SHA-256 426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961 with no discrepancy.",
+    "updated_at": "2026-09-13T09:36:56Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "8e5b8dc793c62e0919a84dd6b80d4cc9ec14e726159fbc7325295ba13d553f58",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The source asks for concrete identify/draw witnesses, not global uniqueness. Entry 7 is represented by the depicted fused 5/7 core with two methyl and one ethyl substituents; A and B are explicit C10H8 fused 5/7 and fused 6/6 graphs satisfying the stated symmetry and A-to-B direction. No prior-part answer is used."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "The source table and chlorination observation feed a transparent binomial isotope and atom-ledger calculation; table_nominal_mass_184_unique filters every numbered table entry uniformly. CarbonFrameworkEmbedding, graph formulae, ring carriers, mirror-plane carriers, and the source-located isomerization witness then derive the structure witnesses."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "All atoms including H, every bond label, formal charge, radical count, and tetrahedral-stereo field are explicit. WellFormed checks connectivity, unique non-loop bonds, ordinary localized valence, neutrality, and closed shell; fused-ring, substituent, aromatic/Kekule, symmetry, and reaction-direction properties are nontrivial graph-level carriers."
+        },
+        "uncertainty_propagation": {
+          "status": "passed",
+          "evidence": "The outputs are exact symbolic classifications. The integer m/z locations and stated 3:1 pattern are used as the problem's nominal contest isotope data; no fitted tolerance or rounding is introduced, and the table mass separation makes the selected entry stable under isotope-mass uncertainties far below one nominal mass unit."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "ChlorinationObservation places Z at the precursor side and the substituted product plus HCl at the product side. NamedThermalTransformCertificate and QualitativeNamedThermalTransform take azulene/A as reactant and naphthalene/B as product, matching the source's heated A-to-B direction."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The ten-entry source domain is defined before filtering and every entry is subjected to the same nominal-mass condition; the selected graph is independently checked against the image. A and B are direct, fully specified witnesses, for which the identify/draw verb requires no open-world uniqueness. No free Bool, opaque response flag, singleton premise, or source-compatible output-changing model remains."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The complete numbered source-table domain, its formula labels, and the depicted connectivity of entry 7 are faithfully transcribed.",
+          "carrier": "TableCompound; tableFormula; tableCandidateDomain; chamazulene; IsOneFourDimethylSevenEthylAzulene",
+          "status": "covered",
+          "evidence": "T1_page-2.png shows entries 1-10 and their formulae. Its entry 7 has a fused 5/7 ten-carbon core, two one-carbon methyl branches, and one two-carbon ethyl branch; the explicit graph and valence ledger give C14H16 and the displayed Kekule connectivity."
+        },
+        {
+          "claim": "The 218/220, 3:1 chlorine-isotope pair supports one substitution and parent nominal mass 184, with the outcome-decisive atoms conserved.",
+          "carrier": "chlorineEnvelopeCoefficient; substitutionChlorinationProduct; ChlorinationObservation.atomLedger; ChlorinationObservation.lightPeak; ChlorinationObservation.heavyPeak; ChlorinationObservation.intensityRatio; chlorine_pair_forces_one_substitution; chlorine_pair_forces_parent_nominal_mass; table_nominal_mass_184_unique",
+          "status": "covered",
+          "evidence": "The source sentence supplies the peak locations and ratio; ordinary binomial isotope combinatorics gives all-light:one-heavy = 3:k at contest precision. The C/H/O/Cl ledger is Z + k Cl2 = product + k HCl. Offline Cl-35 and Cl-37 records 5512b5cef1486fbba46b48681bff5bd38a6c8b8e4726027bd83455e7eb1e7020 and ce6cd511c8d354c00a1c822f36cf83d72524f472f1c87a0ed511ecc3dde299e7 match the bound dataset and confirm the approximately two-unit separation."
+        },
+        {
+          "claim": "A is supplied as the complete azulene graph embedded as the carbon framework of Z and having two perpendicular molecular mirror planes.",
+          "carrier": "azulene; MolecularGraph.WellFormed; HasFusedRings; HasAromaticCycle; CarbonFrameworkEmbedding; HasMutuallyPerpendicularMirrorPlanes; StructureAResult; structure_a_result",
+          "status": "covered",
+          "evidence": "The all-atom C10H8 graph has five- and seven-membered cycles sharing one edge, eight explicit hydrogens, an admissible closed-shell Kekule localization, a source-matching embedding into entry 7, and two coordinate-reflection graph automorphisms with perpendicular normals."
+        },
+        {
+          "claim": "B is supplied as the complete naphthalene graph, is aromatic with three mutually perpendicular mirror planes, and is the head of the source-directed thermal isomerization from A.",
+          "carrier": "naphthalene; IsomerizationWitness; NamedThermalTransformCertificate; QualitativeNamedThermalTransform; HasMutuallyPerpendicularMirrorPlanes; StructureBResult; structure_b_result",
+          "status": "covered",
+          "evidence": "The all-atom C10H8 graph has two six-membered cycles sharing one edge, eight explicit hydrogens, a closed-shell aromatic localization, and three distinct coordinate-reflection automorphisms. The atom bijection and changed adjacency bind the qualitative heat direction without claiming yield, protocol, or sole product."
+        }
+      ],
+      "source_contract": {
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a2.answer.json",
+        "answer_submission_sha256": "53507f6934d3d5a9bd507bd7fc16b474fe88609686a701b4f0616a9047abee7b",
+        "authority": "problem-only",
+        "candidate": "IChO2026Problems/problem_icho_2026_t1_a2.lean",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "candidate_sha256": "8e5b8dc793c62e0919a84dd6b80d4cc9ec14e726159fbc7325295ba13d553f58",
+        "certified_prior_result_context_receipt_sha256": null,
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "chemistry_constant_dataset": {
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5",
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1"
+        },
+        "contract_kind": "native_problem_input_only",
+        "evaluation_mode": "answer_blind",
+        "images": [
+          {
+            "path": "icho_2026_source/image/T1_page-3.png",
+            "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+          }
+        ],
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "preflight_sha256": "ff64a336557ef757a43b5dd2c8760ed5b6ad6903bee82fa41f21b8ad400f46b6",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "provided_answer_draft": {
+          "allow_corrections": false,
+          "draft_is_source_axiom": false,
+          "fresh_answer_blind_run": false,
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "path": ".archon/provided_answer_drafts/Q1.md",
+          "record_id": "icho_2026_t1_a2",
+          "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961"
+        },
+        "question_sha256": "62d3824e5918a788ae401213a485b2b96746a38bfa1af1b7631acb1805c19850",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "requested_outputs_sha256": "84f7e7eff56353843fbacc3e8463bf63b90d6d9dac532163c3c0ce033843eb5d",
+        "schema_version": 1,
+        "semantic_dag": {
+          "authority": "controller",
+          "edge_count": 12,
+          "node_count": 9,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "previous_part_source_ids": [],
+          "requested_output_ids": [
+            "identity_z",
+            "structure_a",
+            "structure_b"
+          ],
+          "schema_version": 1,
+          "sha256": "561a68068a2264837b75cf23557766d56a9aabe3cb11b939b1d31f45c7063f42"
+        },
+        "shared_context_sha256": "ede26f34435d11a632bf65b3224a52e3febdb74169c22a1e0b071badc3c43446",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t1_a2",
+        "source_record_sha256": "f69de216400893548898ba9ee73293d86790c979310063bb38497ead90afeb1e",
+        "source_report": "reports/icho_2026/problem_icho_2026_t1_a2.source.json",
+        "source_report_sha256": "85e23dc1c3b0aaeb652c128f72da4ccf08ac1e2ef96f01fc6a8f62d1ced29001",
+        "target": "IChO2026Problems/problem_icho_2026_t1_a2.lean"
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a2.answer.json",
+          "answer_submission_sha256": "53507f6934d3d5a9bd507bd7fc16b474fe88609686a701b4f0616a9047abee7b",
+          "authority": "problem-only",
+          "candidate": "IChO2026Problems/problem_icho_2026_t1_a2.lean",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "candidate_sha256": "8e5b8dc793c62e0919a84dd6b80d4cc9ec14e726159fbc7325295ba13d553f58",
+          "certified_prior_result_context_receipt_sha256": null,
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "chemistry_constant_dataset": {
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5",
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1"
+          },
+          "contract_kind": "native_problem_input_only",
+          "evaluation_mode": "answer_blind",
+          "images": [
+            {
+              "path": "icho_2026_source/image/T1_page-3.png",
+              "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+            },
+            {
+              "path": "icho_2026_source/image/T1_page-2.png",
+              "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+            }
+          ],
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "preflight_sha256": "ff64a336557ef757a43b5dd2c8760ed5b6ad6903bee82fa41f21b8ad400f46b6",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "provided_answer_draft": {
+            "allow_corrections": false,
+            "draft_is_source_axiom": false,
+            "fresh_answer_blind_run": false,
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "path": ".archon/provided_answer_drafts/Q1.md",
+            "record_id": "icho_2026_t1_a2",
+            "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961"
+          },
+          "question_sha256": "62d3824e5918a788ae401213a485b2b96746a38bfa1af1b7631acb1805c19850",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "requested_outputs_sha256": "84f7e7eff56353843fbacc3e8463bf63b90d6d9dac532163c3c0ce033843eb5d",
+          "schema_version": 1,
+          "semantic_dag": {
+            "authority": "controller",
+            "edge_count": 12,
+            "node_count": 9,
+            "node_kind_counts": {
+              "derivation_obligation": 3,
+              "requested_output": 3,
+              "source_fact_set": 3
+            },
+            "previous_part_source_ids": [],
+            "requested_output_ids": [
+              "identity_z",
+              "structure_a",
+              "structure_b"
+            ],
+            "schema_version": 1,
+            "sha256": "561a68068a2264837b75cf23557766d56a9aabe3cb11b939b1d31f45c7063f42"
+          },
+          "shared_context_sha256": "ede26f34435d11a632bf65b3224a52e3febdb74169c22a1e0b071badc3c43446",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t1_a2",
+          "source_record_sha256": "f69de216400893548898ba9ee73293d86790c979310063bb38497ead90afeb1e",
+          "source_report": "reports/icho_2026/problem_icho_2026_t1_a2.source.json",
+          "source_report_sha256": "85e23dc1c3b0aaeb652c128f72da4ccf08ac1e2ef96f01fc6a8f62d1ced29001",
+          "target": "IChO2026Problems/problem_icho_2026_t1_a2.lean"
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, no-recycle scope, image topology, formula ledger, isotope derivation, and A-to-B orientation were frozen from the two bound images and inline problem evidence before opening the untrusted submission or candidate. The sealed Kimi draft was used only afterward for the expressly required fidelity comparison, never as a source premise."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The exact chain is k=1 from the chlorine envelope, parent nominal mass 184 from one H/Cl substitution, uniform table selection, image-confirmed substituted fused 5/7 graph for Z, its unsubstituted C10H8 core for A, and a formula-preserving fused 6/6 aromatic isomer for B. Named Lean carriers expose every step."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "Each requested output has bundle policy exact_symbolic from problem_output_type. RawResult and ReportedResult are identical conjunctions, so the global significant-figure default is correctly inoperative."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance or post-hoc interval is used. The nominal integer isotope pattern is consumed symbolically; pinned Cl isotope uncertainties are orders of magnitude below the integer m/z spacing and cannot change any exact classification."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "Only identity_z uses a finite elimination domain: TableCompound is exactly the ten numbered entries visible on page 2, and tableCandidateDomain is Finset.univ. It is non-singleton and fixed before the uniform mass filter. A and B are concrete source-compatible structure witnesses, for which the verb does not request global enumeration."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=8e5b8dc793c62e0919a84dd6b80d4cc9ec14e726159fbc7325295ba13d553f58; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=9. Nontrivial result declarations are IdentityZResult/identity_z_result, StructureAResult/structure_a_result, StructureBResult/structure_b_result, RawResult/raw_result, and ReportedResult/reported_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The candidate returns one exact witness for each identify/draw output. Its only uniqueness theorem is restricted to the complete source table; it neither claims open-world chemical uniqueness nor adds yield, mechanism, phase, or sole-product conclusions."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The main result is closed. Its source-facing records contain exact page-two/page-three locator constructors and transparent graph, formula, isotope, atom-ledger, symmetry, and isomerization data; no requested identity or structure is assumed as an input hypothesis."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "ReportedResult exposes IdentityZResult, StructureAResult, and StructureBResult in bundle order. Each matches the answer submission's exact id, classification kind, empty unit, and exact-symbolic display contract."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All output-decisive source-to-Lean bridges are named above: table/image transcription, chlorine isotope and atom/mass ledger, Z-to-A carbon-framework and symmetry checks, and the source-directed qualitative A-to-B graph transformation. The unused blue-colour descriptor is corroborative and cannot alter the uniform mass selection, so omitting an empirical colour-response theorem is non-material."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "identity of Z",
+            "lean_carrier": "IChO2026Problems.IChO2026T1A2.IdentityZResult; IChO2026Problems.IChO2026T1A2.identity_z_result",
+            "status": "covered",
+            "evidence": "The raw derivation and display agree with the independent isotope/table/image audit; the Lean carrier proves the non-singleton-domain filter and binds the selected entry to its explicit complete graph.",
+            "output_id": "identity_z",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of A, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.IChO2026T1A2.StructureAResult; IChO2026Problems.IChO2026T1A2.structure_a_result",
+            "status": "covered",
+            "evidence": "The submission graph matches the source-first fused-core reconstruction; the Lean carrier explicitly fixes every atom, H attachment, bond, charge, radical, non-stereogenic field, aromatic localization, derivative embedding, and required symmetry.",
+            "output_id": "structure_a",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of B, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.IChO2026T1A2.StructureBResult; IChO2026Problems.IChO2026T1A2.structure_b_result",
+            "status": "covered",
+            "evidence": "The submission graph matches the source-first aromatic fused-ring reconstruction; the Lean carrier explicitly fixes every atom, H attachment, bond, charge, radical, non-stereogenic field, aromatic localization, required symmetry, and source-oriented transform.",
+            "output_id": "structure_b",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T1_page-3.png",
+            "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17",
+            "inspected": true,
+            "evidence": "The page states Z gives the blue colour, is a derivative of A, A has two perpendicular symmetry planes, heating directs A to aromatic B with three mutually perpendicular planes, and chlorinated Z has the 218/220 pair at 3:1. No reaction drawing reverses the prose direction and no recycle/feed horizon exists."
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb",
+            "inspected": true,
+            "evidence": "The complete numbered formula panel is 1 C11H14O3, 2 C10H18O, 3 C10H18O, 4 C6H12O, 5 C10H12O2, 6 C10H18O, 7 C14H16, 8 C15H24, 9 C10H16O, 10 C10H18O; repeated drawings of 3 add no new numbered candidate. Panel label 7 (C14H16) uses ordinary line-angle vertices/endpoints for C and double strokes for five localized double bonds; it has no wedges, brackets, caps, or repeat connectors. Its one connected ten-C core is a fused 5/7 pair sharing two degree-3 core atoms and one edge; the other core atoms have core-degree 2. Two one-C methyl fragments each have heavy-atom degree 1 and one core-boundary bond; the ethyl alpha/beta carbons have heavy-atom degrees 2/1 and one core-alpha boundary bond. Valence gives C10H5 + 2(CH3) + C2H5 = C14H16."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "One chlorine gives the characteristic approximately 3:1 M/M+2 pair; the per-molecule substitution ledger shifts nominal mass by 34, and only source entry 7 reaches the observed lower peak. Its graph is the substituted azulene framework; the proposed A and B structures satisfy the derivative, aromaticity, symmetry, and isomerization observations."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "quantitative_material_stage for the output-decisive chlorination step: precursor tableFormula entry, k Cl2, substitutionChlorinationProduct, and k HCl over elements C/H/O/Cl, carried by ChlorinationObservation.atomLedger/lightPeak/heavyPeak/intensityRatio; no bulk yield or phase claim. qualitative_named_transform_only for the page-three heat statement: tail azulene/A, heat condition, head naphthalene/B, direction and all-atom rearrangement carried by NamedThermalTransformCertificate, IsomerizationWitness, and QualitativeNamedThermalTransform; coefficients, phase, yield, mechanism, and omitted streams remain unclaimed."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "The ten table nominal masses are 194, 154, 154, 100, 164, 154, 184, 204, 152, and 154, so only entry 7 is 184. Its one-Cl-35 substitution is C14H15Cl at nominal 218 and the Cl-37 isotopologue is 220. Explicit graph counts are C14H16 for Z and C10H8 for both A and B."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "ChlorinationObservation.atomLedger conserves every admitted C, H, O, and Cl atom in Z + k Cl2 = substituted product + k HCl. IsomerizationWitness supplies a bijection preserving every atom/electronic specification between A and B while requiring changed adjacency; no untracked outcome-decisive stream is present."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "The observed peak positions are nominal m/z values and the intensity equation is dimensionless. All three requested classification outputs correctly use the empty unit; no mass, molar, temporal, or stock-flow unit is reported as an answer."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "All requested results are exact symbolic classifications. Integer nominal-mass arithmetic is performed without intermediate rounding, and RawResult and ReportedResult expose the same three propositions."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "The visual entry-7 substituent ledger and Kekule bonds match chamazulene. Azulene is an explicit fused 5/7 all-atom graph and naphthalene an explicit fused 6/6 all-atom graph. Every atom has fixed neutral charge, zero radicals, and notStereogenic status; all bonds and hydrogens are enumerated, and no requested stereocentre is omitted."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The source asks to identify/draw, so concrete evidence-supported witnesses suffice. The candidate additionally proves identity_z unique only inside the independently source-derived ten-entry table domain; it does not assert global uniqueness for Z, A, or B."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The result names explicit witness graphs, which is appropriate for identify/draw, but no candidate appears in a source premise. The only elimination domain contains all ten table entries, observations are applied uniformly, and graph identities are backed by formula, valence, topology, substituent, symmetry, and transform checks rather than reflexivity or a freely set predicate."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [
+              {
+                "name": "lower_nominal_mz",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                },
+                "unit": "m/z",
+                "value": "218"
+              },
+              {
+                "name": "upper_nominal_mz",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                },
+                "unit": "m/z",
+                "value": "220"
+              },
+              {
+                "name": "observed_light_to_heavy_intensity_ratio",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                },
+                "unit": "dimensionless",
+                "value": "3:1"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "source_quantity",
+                "reference": "numbered_compound_formulae",
+                "relation": "the complete table supplies the finite contest candidate formulae",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T1_page-2.png#compound-table"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "chlorinated_Z_mass_spectrum",
+                "relation": "the lower and upper peaks and their intensity ratio constrain chlorine count and precursor nominal mass",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "evidence": "The source-first isotope, nominal-mass, table-formula, and image-topology derivation agrees with the submission and the Lean output contract.",
+            "id": "identity_z",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.IChO2026T1A2.tableFormula",
+                "IChO2026Problems.IChO2026T1A2.tableCandidateDomain",
+                "IChO2026Problems.IChO2026T1A2.ChlorinationObservation",
+                "IChO2026Problems.IChO2026T1A2.chamazulene"
+              ],
+              "raw_result": [
+                "IChO2026Problems.IChO2026T1A2.IdentityZResult",
+                "IChO2026Problems.IChO2026T1A2.RawResult"
+              ],
+              "relations": [
+                "IChO2026Problems.IChO2026T1A2.chlorine_pair_forces_one_substitution",
+                "IChO2026Problems.IChO2026T1A2.chlorine_pair_forces_parent_nominal_mass",
+                "IChO2026Problems.IChO2026T1A2.table_nominal_mass_184_unique",
+                "IChO2026Problems.IChO2026T1A2.IsOneFourDimethylSevenEthylAzulene"
+              ],
+              "reported_result": [
+                "IChO2026Problems.IChO2026T1A2.identity_z_result",
+                "IChO2026Problems.IChO2026T1A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "IdentityZResult includes the uniform table filter, existence of the source-compatible observation for entry 7, the formula equality, and the full depicted graph audit.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "one molecular chlorination ledger; no cumulative feed, inventory, yield, or time denominator is requested",
+              "kind": "per_step"
+            },
+            "quantity_definition": "the numbered table compound and chemical identity assigned to Z",
+            "raw_result": {
+              "derivation": "For k chlorine atoms, the all-Cl-35 to exactly-one-Cl-37 envelope ratio is 3:k, so 3:1 gives k=1. Replacing one H by Cl makes the parent nominal mass 218-(35-1)=184. Across the table, only C14H16 has nominal mass 184; its depicted fused 5/7 graph with two methyl and one ethyl groups is compound 7, chamazulene.",
+              "exact_unrounded": true,
+              "value_or_expression": "Z = compound 7 = chamazulene (1,4-dimethyl-7-ethylazulene), C14H16"
+            },
+            "reporting": {
+              "application": "Return the exact compound identity and formula; no numerical rounding changes the classification.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The answer submission supplies exactly one classification with the required empty unit and preserves the source-first identity and derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-2.png#compound7"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-3.png#subquestion1.2"
+              }
+            ],
+            "source_requirement": "identity of Z",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "identity_z",
+                "relation": "A supplies the carbon framework visibly retained in the identified derivative Z",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "A_symmetry",
+                "relation": "A has two perpendicular planes of symmetry",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "evidence": "The source-first removal of the three substituent branches from entry 7 exposes the complete fused 5/7 core; its all-atom graph and symmetry match the submission and Lean contract.",
+            "id": "structure_a",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.IChO2026T1A2.azulene",
+                "IChO2026Problems.IChO2026T1A2.chamazulene"
+              ],
+              "raw_result": [
+                "IChO2026Problems.IChO2026T1A2.StructureAResult",
+                "IChO2026Problems.IChO2026T1A2.RawResult"
+              ],
+              "relations": [
+                "IChO2026Problems.IChO2026T1A2.MolecularGraph.WellFormed",
+                "IChO2026Problems.IChO2026T1A2.HasFusedRings",
+                "IChO2026Problems.IChO2026T1A2.HasAromaticCycle",
+                "IChO2026Problems.IChO2026T1A2.CarbonFrameworkEmbedding",
+                "IChO2026Problems.IChO2026T1A2.HasMutuallyPerpendicularMirrorPlanes"
+              ],
+              "reported_result": [
+                "IChO2026Problems.IChO2026T1A2.structure_a_result",
+                "IChO2026Problems.IChO2026T1A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "StructureAResult exposes the exact all-atom graph, C10H8 formula, fused 5/7 topology, aromatic localization, planarity, two perpendicular mirror actions, and framework embedding in Z.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "structural classification witness; no stock-flow, cycle, feed, inventory, or denominator applies",
+              "kind": "not_applicable"
+            },
+            "quantity_definition": "the complete atom-and-bond structure assigned to substance A",
+            "raw_result": {
+              "derivation": "Entry 7 visibly contains a ten-carbon framework made from a five-membered and seven-membered ring sharing one edge. The unsubstituted neutral closed-shell C10H8 framework has an aromatic ten-member perimeter and two perpendicular mirror planes, giving azulene with eight hydrogens on the non-fusion carbons.",
+              "exact_unrounded": true,
+              "value_or_expression": "A = azulene, C10H8, the planar fused five- and seven-membered carbocycle"
+            },
+            "reporting": {
+              "application": "Return the exact all-atom connectivity and electronic/stereochemical fields; no numerical rounding applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission's textual all-atom cycle specification agrees atom-for-atom and bond-for-bond with the source-first structure and uses the required empty unit.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-2.png#compound7-core"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-3.png#A-description"
+              }
+            ],
+            "source_requirement": "complete structure of A, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [
+              {
+                "kind": "requested_output",
+                "reference": "structure_a",
+                "relation": "the source directs heating from A to the isomeric product B",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "source_quantity",
+                "reference": "B_aromatic_symmetry",
+                "relation": "B is aromatic and has three mutually perpendicular planes of symmetry",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "evidence": "The source-first directed isomerization and symmetry audit gives the complete fused 6/6 all-atom aromatic graph and agrees with the submission and Lean contract.",
+            "id": "structure_b",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.IChO2026T1A2.azulene",
+                "IChO2026Problems.IChO2026T1A2.naphthalene"
+              ],
+              "raw_result": [
+                "IChO2026Problems.IChO2026T1A2.StructureBResult",
+                "IChO2026Problems.IChO2026T1A2.RawResult"
+              ],
+              "relations": [
+                "IChO2026Problems.IChO2026T1A2.MolecularGraph.WellFormed",
+                "IChO2026Problems.IChO2026T1A2.HasFusedRings",
+                "IChO2026Problems.IChO2026T1A2.HasAromaticCycle",
+                "IChO2026Problems.IChO2026T1A2.HasMutuallyPerpendicularMirrorPlanes",
+                "IChO2026Problems.IChO2026T1A2.NamedThermalTransformCertificate",
+                "IChO2026Problems.IChO2026T1A2.QualitativeNamedThermalTransform"
+              ],
+              "reported_result": [
+                "IChO2026Problems.IChO2026T1A2.structure_b_result",
+                "IChO2026Problems.IChO2026T1A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "StructureBResult exposes the exact all-atom graph, C10H8 formula, fused 6/6 topology, aromatic localization, planarity, three perpendicular mirror actions, and source-oriented A-to-B transform.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "one qualitative named heating step used only for structural compatibility; no yield, feed, inventory, or time denominator is claimed",
+              "kind": "per_step"
+            },
+            "quantity_definition": "the complete atom-and-bond structure assigned to aromatic substance B",
+            "raw_result": {
+              "derivation": "The stated heating preserves the C10H8 atom inventory while changing connectivity. A fused pair of six-membered aromatic rings sharing one edge has the required three mutually perpendicular mirror planes and gives the directed structural witness naphthalene.",
+              "exact_unrounded": true,
+              "value_or_expression": "B = naphthalene, C10H8, two fused six-membered aromatic rings"
+            },
+            "reporting": {
+              "application": "Return the exact all-atom connectivity and electronic/stereochemical fields; no numerical rounding applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission's textual all-atom cycle specification agrees atom-for-atom and bond-for-bond with the source-first structure and uses the required empty unit.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T1_page-3.png#thermal-A-to-B"
+              }
+            ],
+            "source_requirement": "complete structure of B, including all requested stereochemistry and template fields",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "8e5b8dc793c62e0919a84dd6b80d4cc9ec14e726159fbc7325295ba13d553f58"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a2.lean:formalization:1",
+        "iter": 1,
+        "decision": "failed",
+        "resulting_status": "retry",
+        "attempt": 1,
+        "reason": "Draft fidelity is exact for sealed Kimi subpart 1.2 (SHA-256 426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961): it preserves compound 7/chamazulene, azulene, and naphthalene with no answer discrepancy. The formalization nevertheless fails because the single-Kekule bond-labelled azulene graph has only the identity bond-order automorphism and the naphthalene graph has only identity plus one reflection; `HasMutuallyPerpendicularMirrorPlanes` requires respectively two and three distinct actions. Thus the A and B result propositions are false and compile only through `sorry`.",
+        "reviewed_at": "2026-09-13T09:00:24Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a2.lean:formalization:2",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 2,
+        "reason": "The source-first audit derives the submitted identity and both explicit structures, and the Lean candidate binds them to nontrivial table, isotope-ledger, graph, symmetry, derivative, and directed-transform carriers without using the result as a premise. The result also preserves Kimi subpart 1.2 from frozen draft SHA-256 426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961 with no discrepancy.",
+        "reviewed_at": "2026-09-13T09:36:56Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "e73c12e389ec2593915a70269127dfd80b3d0441de4ed968b90dbef88d93dca9",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "retry",
+        "failed_check_ids": [
+          "blind_source_audit.lean_result_binding",
+          "bridge_obligations[2]",
+          "bridge_obligations[3]",
+          "checks.abstraction_sufficiency",
+          "checks.countermodel_resistance",
+          "checks.derivability",
+          "checks.source_faithfulness",
+          "chemistry_checks.chemical_semantics",
+          "chemistry_checks.structure_stereochemistry",
+          "contract_audit.bridge_completeness",
+          "contract_audit.conclusion_alignment",
+          "contract_audit.hypothesis_derivability",
+          "requested_outputs[1]",
+          "requested_outputs[2]"
+        ],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a2.lean:formalization:1",
+        "decision": "failed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 9,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "8e5b8dc793c62e0919a84dd6b80d4cc9ec14e726159fbc7325295ba13d553f58",
+        "iteration": 1,
+        "attempt": 2,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a2.lean:formalization:2",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 9,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The bound submission matches all three exact-symbolic requested outputs, and the hash-bound Lean candidate proves them through a full-table isotope/mass audit and explicit all-atom molecular graphs with nontrivial topology, valence, substituent, symmetry, and directed-transform carriers.",
+    "evidence": "SHA-256 bindings match. Deterministic preflight passed with compiles=true, returncode=0, sorry_count=0. The proof derives one chlorine substitution, precursor nominal mass 184, and the unique table entry, then checks the depicted substituted azulene graph and the explicit azulene and naphthalene result contracts.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "5a503fbd4c06e2824505ef250a7b49b5435e082c0f59e17b628c1299157292a5",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t1_a2.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t1_a2",
+      "source_record_sha256": "f69de216400893548898ba9ee73293d86790c979310063bb38497ead90afeb1e",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a2.answer.json",
+      "answer_submission_sha256": "53507f6934d3d5a9bd507bd7fc16b474fe88609686a701b4f0616a9047abee7b",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t1_a2.source.json",
+      "source_report_sha256": "85e23dc1c3b0aaeb652c128f72da4ccf08ac1e2ef96f01fc6a8f62d1ced29001",
+      "candidate": "IChO2026Problems/problem_icho_2026_t1_a2.lean",
+      "preflight_sha256": "4e26ef7db08ed70eddc8a4968d11db6906e1b38e2c0014bec6fdfe8fa849cf72",
+      "candidate_sha256": "5a503fbd4c06e2824505ef250a7b49b5435e082c0f59e17b628c1299157292a5",
+      "question_sha256": "62d3824e5918a788ae401213a485b2b96746a38bfa1af1b7631acb1805c19850",
+      "shared_context_sha256": "ede26f34435d11a632bf65b3224a52e3febdb74169c22a1e0b071badc3c43446",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "84f7e7eff56353843fbacc3e8463bf63b90d6d9dac532163c3c0ce033843eb5d",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T1_page-3.png",
+          "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+        },
+        {
+          "path": "icho_2026_source/image/T1_page-2.png",
+          "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "561a68068a2264837b75cf23557766d56a9aabe3cb11b939b1d31f45c7063f42",
+        "node_count": 9,
+        "edge_count": 12,
+        "node_kind_counts": {
+          "derivation_obligation": 3,
+          "requested_output": 3,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "identity_z",
+          "structure_a",
+          "structure_b"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t1_a2",
+        "path": ".archon/provided_answer_drafts/Q1.md",
+        "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t1_a2.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t1_a2",
+        "source_record_sha256": "f69de216400893548898ba9ee73293d86790c979310063bb38497ead90afeb1e",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t1_a2.answer.json",
+        "answer_submission_sha256": "53507f6934d3d5a9bd507bd7fc16b474fe88609686a701b4f0616a9047abee7b",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t1_a2.source.json",
+        "source_report_sha256": "85e23dc1c3b0aaeb652c128f72da4ccf08ac1e2ef96f01fc6a8f62d1ced29001",
+        "candidate": "IChO2026Problems/problem_icho_2026_t1_a2.lean",
+        "preflight_sha256": "4e26ef7db08ed70eddc8a4968d11db6906e1b38e2c0014bec6fdfe8fa849cf72",
+        "candidate_sha256": "5a503fbd4c06e2824505ef250a7b49b5435e082c0f59e17b628c1299157292a5",
+        "question_sha256": "62d3824e5918a788ae401213a485b2b96746a38bfa1af1b7631acb1805c19850",
+        "shared_context_sha256": "ede26f34435d11a632bf65b3224a52e3febdb74169c22a1e0b071badc3c43446",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "84f7e7eff56353843fbacc3e8463bf63b90d6d9dac532163c3c0ce033843eb5d",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T1_page-3.png",
+            "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17"
+          },
+          {
+            "path": "icho_2026_source/image/T1_page-2.png",
+            "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "561a68068a2264837b75cf23557766d56a9aabe3cb11b939b1d31f45c7063f42",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "identity_z",
+            "structure_a",
+            "structure_b"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t1_a2",
+          "path": ".archon/provided_answer_drafts/Q1.md",
+          "sha256": "426572156a5717bdcb93713292d854157a7a81eab7ffeba670fdce5343eff961",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "Chemistry and graph checks were independently rederived from the inline problem evidence and two bound images. The sealed Kimi draft was used only for the authorized fidelity comparison, never as a premise; the candidate and submission remained untrusted, and no other project artifact was opened."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "chlorineEnvelopeCoefficient gives the all-light:one-heavy ratio 3:k, forcing k=1. ChlorinationObservation.atomLedger gives a +34 nominal-mass shift, hence precursor mass 184 from the lower peak; table_nominal_mass_184_unique checks all ten source formulas. Explicit graph certificates establish formulae, fused cycles, substituents, localizations, and mirror actions."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "All three requested outputs specify exact_symbolic reporting. RawResult and ReportedResult preserve the same carriers in source order without rounding or display transformation."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No tolerance selects or reports these classifications. The source supplies nominal integer m/z peak labels and the contest-level 3:1 isotope-envelope signature; no post-hoc numerical window is introduced, and the final outputs are exact symbolic structures."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "tableCandidateDomain is Finset.univ over exactly the ten distinct numbered panels visible on page 2, with every printed formula transcribed. Identity filtering is exhaustive over that source-bounded domain; A and B are direct explicit witnesses, and open-world exhaustiveness was not requested."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=5a503fbd4c06e2824505ef250a7b49b5435e082c0f59e17b628c1299157292a5; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0, duration_bucket=under_1m. Carriers: IdentityZResult/identity_z_result, StructureAResult/structure_a_result, StructureBResult/structure_b_result, RawResult/raw_result, ReportedResult/reported_result."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "ReportedResult contains exactly the three requested conclusions in source order and replaces neither a structure by a mere string nor an answer by a workflow sentinel."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The table and formulae come from page 2; peak data and heating direction are source-located on page 3. Remaining obligations reduce to transparent arithmetic, atom-ledger, graph, valence, topology, or spatial-symmetry checks with no local axiom or opaque truth flag."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The identity carrier selects and structurally audits the depicted table entry; A and B expose complete neutral closed-shell C10H8 graphs with the requested fused-ring connectivities and perpendicular mirror-plane counts."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "Used carriers cover the isotope envelope, substitution balance, full-table filter, parent-framework embedding, substituent audits, Kekule localizations, connectivity, planar symmetry actions, and source-directed isomerization compatibility."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "identity of Z",
+          "lean_carrier": "identity_z_result : IdentityZResult",
+          "status": "covered",
+          "evidence": "The submission classification matches the independent full-table isotope/mass derivation and the explicit compound-7 graph proved in Lean.",
+          "output_id": "identity_z",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of A, including all requested stereochemistry and template fields",
+          "lean_carrier": "structure_a_result : StructureAResult",
+          "status": "covered",
+          "evidence": "The submission matches the explicit all-atom azulene graph; Lean proves closed-shell valence, formula, fused 5/7 topology, aromatic perimeter, planarity, two perpendicular mirror actions, and embedding into Z.",
+          "output_id": "structure_a",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of B, including all requested stereochemistry and template fields",
+          "lean_carrier": "structure_b_result : StructureBResult",
+          "status": "covered",
+          "evidence": "The submission matches the explicit all-atom naphthalene graph; Lean proves closed-shell valence, formula, fused 6/6 topology, aromatic perimeter, planarity, three perpendicular mirror actions, and heating-direction compatibility.",
+          "output_id": "structure_b",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T1_page-3.png",
+          "sha256": "fbdc901fd87b13a184497f3cb922f1cceb63ec8d01f0ff7fc6985d4131e70a17",
+          "inspected": true,
+          "evidence": "Readable page 3 states the derivative, symmetry, heating, aromatic-product, and 3:1 m/z 218/220 facts and asks for Z and the structures of A and B."
+        },
+        {
+          "path": "icho_2026_source/image/T1_page-2.png",
+          "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb",
+          "inspected": true,
+          "evidence": "Readable page 2 shows all ten distinct structure panels and formulae; compound 7 is the C14H16 fused 5/7 graph with two methyl groups and one ethyl group transcribed by chamazulene."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The one-chlorine isotope signature, substitution shift, full-table mass comparison, substituted azulene connectivity, azulene parent, and naphthalene rearrangement witness agree with the source and ordinary closed-shell chemistry."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "Chlorination is quantitative_material_stage only for its decisive finite formula ledger: precursor, k Cl2, substitutionChlorinationProduct precursor k, and k HCl, bound by ChlorinationObservation to pageThreeChlorinationSentence; atomLedger, hydrogen/free-chlorine bounds, peaks, and intensityRatio are used. Heating is qualitative_named_transform_only: pageThreeThermalSentence binds azulene, heating direction, and naphthalene through NamedThermalTransformCertificate, IsomerizationWitness, azuleneNaphthaleneIsomerization, and QualitativeNamedThermalTransform, with no yield, completeness, sole-product, phase, or omitted-stream claim."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Graph formula checks give C14H16 for compound 7 and C10H8 for both isomers. Replacing H by one 35Cl shifts 184 to 218, and the 37Cl isotopologue is two nominal units higher."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "ChlorinationObservation.atomLedger proves elementwise conservation for precursor + k Cl2 and product + k HCl. The qualitative thermal carrier preserves every atom specification bijectively and witnesses changed connectivity."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "Requested outputs are unitless classifications. Nominal integer mass-to-charge peak labels are used only for isotope and precursor-mass identification; no incompatible units are combined."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "Arithmetic uses exact natural-number isotope coefficients and nominal masses; all requested reports are exact symbolic classifications, so no intermediate or final rounding occurs."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "Every atom, hydrogen, bond label, formal charge, radical count, and tetrahedral-stereochemistry field is explicit. Closed-shell localization, connectivity, fused cycles, substituent positions, planarity, and independent mirror actions are checked constructively."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "Identity is exhaustive over the complete ten-entry source table. The structure prompts request concrete witnesses rather than an open-world catalogue, and the explicit A and B graphs satisfy all stated constraints."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "No candidate-shaped singleton or assumed conclusion is used: identity filters the full table, and each named molecule has an explicit graph with nontrivial certificates. The source-locator thermal carrier is compatibility-only, not a freely set truth flag."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a2.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The bound submission matches all three exact-symbolic requested outputs, and the hash-bound Lean candidate proves them through a full-table isotope/mass audit and explicit all-atom molecular graphs with nontrivial topology, valence, substituent, symmetry, and directed-transform carriers.",
+        "evidence": "SHA-256 bindings match. Deterministic preflight passed with compiles=true, returncode=0, sorry_count=0. The proof derives one chlorine substitution, precursor nominal mass 184, and the unique table entry, then checks the depicted substituted azulene graph and the explicit azulene and naphthalene result contracts.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T10:35:13.248848Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "5a503fbd4c06e2824505ef250a7b49b5435e082c0f59e17b628c1299157292a5",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t1_a2.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T10:35:13.248878Z",
+    "repair_handoff": {}
+  }
+}

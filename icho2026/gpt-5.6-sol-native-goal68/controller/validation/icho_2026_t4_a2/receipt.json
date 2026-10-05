@@ -1,0 +1,53 @@
+{
+  "target": "icho_2026_t4_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789300056.4996939,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t4_a2.lean": "f4be7b21a12dcacecdb9cb1023308d91f8e7a60e5f87374d1b3568c9926e0709",
+    "answer.md": "db9402cd66b09e4f4c3007452edba5a35b20fbae31f01f8d7b213b277914bace",
+    "verification.md": "fdab6ddf6019592e1521e094e69da0f3a48c4286ba563531dbb239803fef11db",
+    "result.json": "6824df7ef4a9786721482aa36e4be517199801fdc288e4fa2f3e03727b181572"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a2",
+    "status": "completed",
+    "answer_summary": "The balanced neutron-producing equations are 11-B + alpha -> 14-N + neutron, gamma + 2-H -> 1-H + neutron, and 9-Be + alpha -> 12-C + neutron. Conservation of mass number and atomic number uniquely fixes each residual isotope in the specified one-neutron channel.",
+    "theorem_names": [
+      "IChO2026Problems.ProblemIChO2026T4A2.reactionA_balanced",
+      "IChO2026Problems.ProblemIChO2026T4A2.reactionB_balanced",
+      "IChO2026Problems.ProblemIChO2026T4A2.reactionC_balanced",
+      "IChO2026Problems.ProblemIChO2026T4A2.nuclear_a",
+      "IChO2026Problems.ProblemIChO2026T4A2.nuclear_b",
+      "IChO2026Problems.ProblemIChO2026T4A2.nuclear_c"
+    ],
+    "assumptions": [
+      "Mass number and atomic number are conserved in a balanced nuclear equation.",
+      "The standard bookkeeping labels are alpha=(4,2), gamma=(0,0), and neutron=(1,0); the isotope symbols carry their standard atomic numbers.",
+      "Each prompt item is represented by its requested net one-residual-nucleus plus one-emitted-neutron channel; the prompt supplies that these channels occur as neutron sources."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T4_page-1.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t4_a2.lean",
+      "perl -ne 'BEGIN{$bad=0} if (/\\b(?:sorry|admit|unsafe)\\b/) { print \"$.:$_\"; $bad=1 } END { exit $bad }' IChO2026Problems/problem_icho_2026_t4_a2.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

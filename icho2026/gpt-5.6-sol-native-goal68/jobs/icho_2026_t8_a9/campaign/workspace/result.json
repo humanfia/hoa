@@ -1,0 +1,27 @@
+{
+  "target_id": "icho_2026_t8_a9",
+  "status": "completed",
+  "answer_summary": "Using eta_q = 100 k_q[Red]tau_0/(1 + k_q[Red]tau_0), the exact raw percentages are 78300/1783 = 43.9147504...% for S1 and 126000/1261 = 99.9206979...% for T1; at three significant figures the requested entries are 43.9% and 99.9%.",
+  "theorem_names": [
+    "IChO2026Problems.T8A9.quenchingFraction_eq_dimensionless",
+    "IChO2026Problems.T8A9.s1_dimensionless_strength",
+    "IChO2026Problems.T8A9.t1_dimensionless_strength",
+    "IChO2026Problems.T8A9.s1_quenchingPercentage_exact",
+    "IChO2026Problems.T8A9.t1_quenchingPercentage_exact",
+    "IChO2026Problems.T8A9.s1_quenching_report",
+    "IChO2026Problems.T8A9.t1_quenching_report",
+    "IChO2026Problems.T8A9.final_quenching_outputs"
+  ],
+  "assumptions": [
+    "Trusted general kinetic law: at fixed reductant concentration, mass action gives the pseudo-first-order quenching rate k_q[Red].",
+    "Trusted general kinetic law: for competing first-order exit channels, the branching fraction through quenching is the quenching rate divided by the total exit rate; the supplied unquenched lifetime gives the competing intrinsic rate 1/tau_0.",
+    "The stipulated printed constants are represented exactly, and only the final values are rounded according to TASK.json."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T8_page-5.png icho_2026_source/image/T8_page-4.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a9.lean",
+    "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|axiom|unsafe)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t8_a9.lean; then echo 'Forbidden proof shortcut found.'; exit 1; else echo 'No forbidden proof shortcuts found.'; fi",
+    "python -m json.tool result.json >/dev/null && echo 'result.json is valid JSON.'"
+  ]
+}

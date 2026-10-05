@@ -1,0 +1,53 @@
+{
+  "target_id": "icho_2026_t6_a2",
+  "status": "completed",
+  "answer_summary": "Structures for the AFM synthesis of cyclo[14]carbon (question 6.2). From printed arrow stoichiometry on Q6-1 (C14Cl10; A -2Cl·, B -5Cl· from A, C -2Cl· from B, D -3Cl· from A, -1Cl· to C14): B = C14Cl3, intact anthracene skeleton, chlorine remaining on {lt, lbl, rl}, two unpaired electrons retained on the meso carbons cu· and cl· (the 9,10-dehydroanthracene diradical). C = C14Cl1, single chlorine on lt, central ring opened by the retro-Bergman mechanism drawn in scheme (1): exactly bonds jb-cl and cl-jrB broken (the 1,4-diradical junction pair carrying the alkyne arm), the two unpaired electrons now on junctions jb· and jrB·. D = C14Cl5 (from A, -3Cl·), intact skeleton, chlorine on {lt, ltu, lb, lbl, rl}, three unpaired electrons (meso cu·, cl· plus rt·). Verified: 10-2-5-2-1 = 0, A->D 8->5.",
+  "theorem_names": [
+    "clCount_SM",
+    "clCount_A",
+    "clCount_B",
+    "clCount_C",
+    "clCount_D",
+    "radTotal_A",
+    "radTotal_B",
+    "radTotal_C",
+    "radTotal_D",
+    "skeletonIntact_A",
+    "skeletonIntact_B",
+    "skeletonIntact_D",
+    "opened_C_broken",
+    "opened_C_intact_elsewhere",
+    "opened_C_count",
+    "matchesGivenA",
+    "step_SM_A",
+    "step_A_B",
+    "step_B_C",
+    "step_A_D",
+    "chain_total",
+    "carbon_conserved"
+  ],
+  "assumptions": [
+    "Anthracene skeleton: 14 carbons, 16 sigma bonds, three linearly fused six-membered rings (jt jb jrT jrB = junctions; cu, cl = meso carbons)",
+    "Peripheral (degree-2) carbons {cu, cl, lt, ltu, lb, lbl, rt, rr, rb, rl} carry exactly one substituent (Cl or H); junctions never carry Cl (as drawn on the sheet)",
+    "Each AFM Cl· abstraction removes exactly one chlorine and leaves one unpaired electron on the abstraction site (the note in 6.2)",
+    "Retro-Bergman step is the ring opening shown in scheme (1): two central-ring sigma bonds adjacent to the 1,4-diradical junction pair are broken, converting the opened path to an alkyne arm",
+    "Positional choices among symmetry-inequivalent peripheral chlorines where the AFM images are not decisive: B keeps Cl on {lt, lbl, rl}; D's third radical is on rt (minimal-changes reading of the printed A drawing)"
+  ],
+  "source_gaps": [
+    "The grey-scale AFM frames do not uniquely identify which of the (symmetry-equivalent under the page's own drawing) peripheral chlorines survive in B or which arc is dechlorinated in D; only formulas, radical counts, intact-vs-opened state, and the identity of the opened bond pair are forced by the problem data alone. All forced data are fixed and proved."
+  ],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t6_a2.lean",
+      "result": "exit 0, no errors and no warnings"
+    },
+    {
+      "command": "lake build IChO2026Problems",
+      "result": "Build completed successfully (8564 jobs)"
+    },
+    {
+      "command": "lake env lean Axcheck_tmp.lean  (import problem module; #print axioms for all final theorems; scratch file deleted after use)",
+      "result": "every theorem depends only on [propext, Classical.choice, Quot.sound]; no custom axioms"
+    }
+  ]
+}

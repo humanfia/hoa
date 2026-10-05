@@ -1,0 +1,104 @@
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:313:17: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:338:17: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:408:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:408:6: warning: '(exfalso; linarith)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:426:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:426:6: warning: '(exfalso; linarith)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:444:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:444:6: warning: '(exfalso; linarith)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:462:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:462:6: warning: '(exfalso; linarith)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:475:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:478:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:480:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:499:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:499:6: warning: '(exfalso; linarith)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:517:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:517:6: warning: '(exfalso; linarith)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:535:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:535:6: warning: '(exfalso; linarith)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:553:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:553:6: warning: '(exfalso; linarith)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:566:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:569:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t1_a4/campaign/workspace/IChO2026Problems/problem_icho_2026_t1_a4.lean:571:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```

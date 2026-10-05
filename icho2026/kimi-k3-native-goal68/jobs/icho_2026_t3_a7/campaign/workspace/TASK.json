@@ -1,0 +1,105 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Calculate the equilibrium absorption capacity at a given temperature (\ud835\udc5e\ud835\udc52) in mg g\u22121 of COF-9. Indicate the number of UO2+ 2 ions absorbed per pore. Assume that all uranium exists as UO2+ 2 ions.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t3_a7",
+  "image": "T3_page-7.png",
+  "images": [
+    "T3_page-7.png",
+    "T3_page-6.png"
+  ],
+  "index": "icho_2026_t3_a7",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T3",
+  "part_id": "T3-A7",
+  "phase": "solve",
+  "points": 5.0,
+  "previous_parts": [],
+  "printed_page": 7,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T3_page-7.png",
+      "printed_page": 7,
+      "sha256": "285c433a7a9b27363f60e9e15f733e8b834a79faf46ad8a0ef743d453d91562e",
+      "source_page": 31
+    },
+    {
+      "kind": "problem_page",
+      "path": "T3_page-6.png",
+      "printed_page": 7,
+      "sha256": "59aaf302f84f2f5ef23177b8de3fa18d670cbda2cda8404c9cef07a6c49b2bb6",
+      "source_page": 31
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 31
+    }
+  ],
+  "problem_id": "icho_2026_t3",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT3. Into Reticular Chemistry 7% Covalent organic frameworks (COFs) are a class of polymers that form two- or three-dimensional structures through reactions between organic precursors, resulting in covalent bonds to afford porous, crystalline materials. Two examples of honeycomb type 2D-COFs formed by boronate ester and boroxine rings (repeat units indicated using dashed lines) are shown in the figure below. The black and red bold lines represent different building blocks in all COF topology figures. 3.1 Determine the empirical formula of COF-1 and calculate the mass percentage (%, to two decimal places) of carbon in COF-1. 3.2 Calculate the internal diameter, d, in \u00c5, of the honeycomb for COF-2, with the following assumptions: \u2022 C\u2013C/C=C (arenes) = 1.39 \u00c5 \u2022 C\u2013B = 1.56 \u00c5 \u2022 B\u2013O = 1.38 \u00c5 \u2022 Note, the diameter of a circle, \ud835\udc51, inscribed inside a hexagon, is given by \ud835\udc51= \u221a3\ud835\udc4e, where \ud835\udc4eis the side length of the hexagon. \u2022 Neglect the width of the linkers. The structures shown below can form 2D and 3D COFs. For this question consider only formation of COFs with boronate esters, imines, and C=C bonds through condensation reactions. A\u2013D represent compound classes with different functional groups. Tetragonal means Tetragonal, Hexagonal means Hexagonal, Trigonal means Trigonal, Kagome means Kagome, Tetrahedral means Tetrahedral. 3.3 Fill all the table cells with either new examples of monomer combinations that give the topologies shown above or with \u201cXXX\u201d if you are certain that no additional combinations satisfy that topology. Both the combinations and the \u201cXXX\u201d entries will be graded. Incorrect answers (both combinations and \u201cXXX\u201d entries) will be penalised. Blank table cells will not be graded. Tetragonal 1 Tetragonal 2 Hexagonal 1 Hexagonal 2 Trigonal Kagome Tetrahedral A2 + B3 E1 + D2 C2 + D4 Whilst imine-based COFs are easily synthesised, they are also vulnerable to hydrolysis under acidic and basic conditions. The addition of hydroxy groups to the aldehyde or amine monomers can overcome this. IR spectrum of COF-3 contained stretches corresponding to the imine functional group, but COF-4 did not. COF-4 contains a different type of C=N bonds, and elemental analysis revealed a loss of six additional hydrogen atoms per repeat unit relative to COF-3 as the only change. COF-5 irreversibly isomerises to COF-6, which did not contain imine stretches in its IR spectrum. 3.4 Draw the repeat units for COFs 3\u20136. Indicate the edges of each repeat unit with a dashed line as shown for COF-1 below. Macrocycle X was synthesised by post-synthetic modification of COF-7 (C2 + D4) followed by degradation. 3.5 Draw the smallest repeat unit of macrocycle X. \u03c0-\u03c0 interactions result in different stacking modes of COF layers, some of which are shown below. Depending on stacking geometry, the interaction energy can be different as shown below. \ud835\udc38/ kJ mol\u22121 Interaction geometry benzene (X = CH) \u2013 benzene (b-b) \u22127.9 \u221212.6 benzene-triazine (X = N) (b-t) \u221249.8 \u221255.6 triazine\u2013triazine (t-t) \u22126.7 \u221216.7 COF-8, synthesised from (E1 + D2), is notable for its remarkable stability. The AA' slightly shifted mode of a COF-8 bilayer has a \u03c0-\u03c0 stacking interaction energy of \u201367.1 kJ mol\u22121 between two layers of one repeat unit. 3.6 Calculate the \u03c0-\u03c0 stacking energy between two layers of one repeat unit of COF-8, for the AA, AB and AB' arrangements. Assume \u03c0-\u03c0 stacking happens only between aromatic units. COF-9, obtained from COF-8, adsorbs UO2+ 2 ions and loses its fluorescence. In an experiment, a suspension of 5.000 mg COF-9 in 19.90 mg dm\u22123 UO2+ 2 solution (200.0 mL) was filtered after equilibrium was reached. The final concentration of UO2+ 2 was 9.225 mg dm\u22123.\n\n## Current subquestion T3-A7\nCalculate the equilibrium absorption capacity at a given temperature (\ud835\udc5e\ud835\udc52) in mg g\u22121 of COF-9. Indicate the number of UO2+ 2 ions absorbed per pore. Assume that all uranium exists as UO2+ 2 ions.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "equilibrium_absorption_capacity",
+      "kind": "numeric",
+      "reporting_policy": {
+        "digits": 3,
+        "kind": "significant_figures",
+        "source": "uniform_blind_evaluation_default"
+      },
+      "source_requirement": "equilibrium absorption capacity qe",
+      "unit": "mg g^-1"
+    },
+    {
+      "id": "uranyl_ions_per_pore",
+      "kind": "numeric",
+      "reporting_policy": {
+        "digits": 3,
+        "kind": "significant_figures",
+        "source": "uniform_blind_evaluation_default"
+      },
+      "source_requirement": "number of uranyl ions absorbed per pore",
+      "unit": "ions pore^-1"
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T3. Into Reticular Chemistry 7% Covalent organic frameworks (COFs) are a class of polymers that form two- or three-dimensional structures through reactions between organic precursors, resulting in covalent bonds to afford porous, crystalline materials. Two examples of honeycomb type 2D-COFs formed by boronate ester and boroxine rings (repeat units indicated using dashed lines) are shown in the figure below. The black and red bold lines represent different building blocks in all COF topology figures. 3.1 Determine the empirical formula of COF-1 and calculate the mass percentage (%, to two decimal places) of carbon in COF-1. 3.2 Calculate the internal diameter, d, in \u00c5, of the honeycomb for COF-2, with the following assumptions: \u2022 C\u2013C/C=C (arenes) = 1.39 \u00c5 \u2022 C\u2013B = 1.56 \u00c5 \u2022 B\u2013O = 1.38 \u00c5 \u2022 Note, the diameter of a circle, \ud835\udc51, inscribed inside a hexagon, is given by \ud835\udc51= \u221a3\ud835\udc4e, where \ud835\udc4eis the side length of the hexagon. \u2022 Neglect the width of the linkers. The structures shown below can form 2D and 3D COFs. For this question consider only formation of COFs with boronate esters, imines, and C=C bonds through condensation reactions. A\u2013D represent compound classes with different functional groups. Tetragonal means Tetragonal, Hexagonal means Hexagonal, Trigonal means Trigonal, Kagome means Kagome, Tetrahedral means Tetrahedral. 3.3 Fill all the table cells with either new examples of monomer combinations that give the topologies shown above or with \u201cXXX\u201d if you are certain that no additional combinations satisfy that topology. Both the combinations and the \u201cXXX\u201d entries will be graded. Incorrect answers (both combinations and \u201cXXX\u201d entries) will be penalised. Blank table cells will not be graded. Tetragonal 1 Tetragonal 2 Hexagonal 1 Hexagonal 2 Trigonal Kagome Tetrahedral A2 + B3 E1 + D2 C2 + D4 Whilst imine-based COFs are easily synthesised, they are also vulnerable to hydrolysis under acidic and basic conditions. The addition of hydroxy groups to the aldehyde or amine monomers can overcome this. IR spectrum of COF-3 contained stretches corresponding to the imine functional group, but COF-4 did not. COF-4 contains a different type of C=N bonds, and elemental analysis revealed a loss of six additional hydrogen atoms per repeat unit relative to COF-3 as the only change. COF-5 irreversibly isomerises to COF-6, which did not contain imine stretches in its IR spectrum. 3.4 Draw the repeat units for COFs 3\u20136. Indicate the edges of each repeat unit with a dashed line as shown for COF-1 below. Macrocycle X was synthesised by post-synthetic modification of COF-7 (C2 + D4) followed by degradation. 3.5 Draw the smallest repeat unit of macrocycle X. \u03c0-\u03c0 interactions result in different stacking modes of COF layers, some of which are shown below. Depending on stacking geometry, the interaction energy can be different as shown below. \ud835\udc38/ kJ mol\u22121 Interaction geometry benzene (X = CH) \u2013 benzene (b-b) \u22127.9 \u221212.6 benzene-triazine (X = N) (b-t) \u221249.8 \u221255.6 triazine\u2013triazine (t-t) \u22126.7 \u221216.7 COF-8, synthesised from (E1 + D2), is notable for its remarkable stability. The AA' slightly shifted mode of a COF-8 bilayer has a \u03c0-\u03c0 stacking interaction energy of \u201367.1 kJ mol\u22121 between two layers of one repeat unit. 3.6 Calculate the \u03c0-\u03c0 stacking energy between two layers of one repeat unit of COF-8, for the AA, AB and AB' arrangements. Assume \u03c0-\u03c0 stacking happens only between aromatic units. COF-9, obtained from COF-8, adsorbs UO2+ 2 ions and loses its fluorescence. In an experiment, a suspension of 5.000 mg COF-9 in 19.90 mg dm\u22123 UO2+ 2 solution (200.0 mL) was filtered after equilibrium was reached. The final concentration of UO2+ 2 was 9.225 mg dm\u22123.",
+  "source_index": "T3-A7",
+  "source_page": 31,
+  "source_pdf": "theory_problem.pdf"
+}

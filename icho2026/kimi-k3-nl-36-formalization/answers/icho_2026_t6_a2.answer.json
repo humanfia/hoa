@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t6_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "B = C₁₄Cl₃•; Cl at C6, C7, C9; radical at C8; C5–C10 fusion retained; perimeter bond orders (3,1,3,1,2,1,2,1,2,1,3,1,3,1)",
+      "id": "structure_b",
+      "kind": "classification",
+      "raw_value": "C14Cl3 radical; Cl={C6,C7,C9}; unpairedElectron={C8}; perimeterBondOrders=[3,1,3,1,2,1,2,1,2,1,3,1,3,1]; fusionBondOrders={C3-C12:0,C5-C10:1}; formalCharge=0; stereocentres=none",
+      "unit": ""
+    },
+    {
+      "display_value": "C = monocyclic C₁₄Cl•; Cl at C7; radical at C8; perimeter bond orders (3,1,3,1,3,1,2,1,3,1,3,1,3,1)",
+      "id": "structure_c",
+      "kind": "classification",
+      "raw_value": "C14Cl radical; Cl={C7}; unpairedElectron={C8}; perimeterBondOrders=[3,1,3,1,3,1,2,1,3,1,3,1,3,1]; fusionBondOrders={C3-C12:0,C5-C10:0}; formalCharge=0; stereocentres=none",
+      "unit": ""
+    },
+    {
+      "display_value": "D = monocyclic C₁₄Cl₅•; Cl at C1, C4, C7, C8, C14; radical at C11; perimeter bond orders (2,2,2,1,3,1,2,1,3,1,2,2,2,1)",
+      "id": "structure_d",
+      "kind": "classification",
+      "raw_value": "C14Cl5 radical; Cl={C1,C4,C7,C8,C14}; unpairedElectron={C11}; perimeterBondOrders=[2,2,2,1,3,1,2,1,3,1,2,2,2,1]; fusionBondOrders={C3-C12:0,C5-C10:0}; formalCharge=0; stereocentres=none",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

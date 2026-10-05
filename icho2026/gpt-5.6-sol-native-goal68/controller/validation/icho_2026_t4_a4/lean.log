@@ -1,0 +1,3 @@
+'IChO2026Problems.T4A4.DerivedChannel.commonFission_massNumberBalanced' depends on axioms: [propext]
+'IChO2026Problems.T4A4.DerivedChannel.commonFission_atomicNumberBalanced' depends on axioms: [propext]
+'IChO2026Problems.T4A4.answer_fission_energy' depends on axioms: [propext, Classical.choice, Quot.sound]

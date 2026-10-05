@@ -1,0 +1,52 @@
+{
+  "target": "icho_2026_t7_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301821.7303998,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t7_a1.lean": "568e0ccba145155516bb79e0376a99b160853e455c031c5b71fe95dbfcb6c66c",
+    "answer.md": "e33fec30669c505b8bae3157999db81839b8095a1cc9d2c7396fe5e901f7e170",
+    "verification.md": "a40752d38a3a3160dacceb251c2e9d826018503ea265410cce3fa4e831808647",
+    "result.json": "76f0fbd922cf3af9b97716a0e401e15475e3fcee2388d5c73aa3dd52e335c44c"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t7_a1",
+    "status": "completed",
+    "answer_summary": "M1 contains exactly CO, H2, and N2; M2 contains exactly H2, N2, and NH3; and x > y.",
+    "theorem_names": [
+      "IChO2026Problems.Icho2026T7A1.gases_m1",
+      "IChO2026Problems.Icho2026T7A1.gases_m2",
+      "IChO2026Problems.Icho2026T7A1.xy_relation"
+    ],
+    "assumptions": [
+      "The diagram's comma-separated stream labels are interpreted as the exact positive-support sets of the corresponding streams.",
+      "The problem's word 'quantitative' is represented by complete conversion in each displayed non-ammonia reaction, carrying nonreacting gas species through unchanged.",
+      "The quantities x and y are nonnegative real molar amounts; a quantitative 1:1 steam-reforming step has extent min(x,y).",
+      "For M2, the diagram's explicit N2/H2 recycle and NH3 cooler outlet ground the presence of unreacted N2 and H2 together with formed NH3 before cooling."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t7_a1.lean",
+      "if grep -nE '\\b(sorry|admit|axiom|unsafe)\\b' IChO2026Problems/problem_icho_2026_t7_a1.lean; then echo 'Forbidden proof shortcut token found'; exit 1; else echo 'No sorry/admit/axiom/unsafe tokens found.'; fi",
+      "python -m json.tool result.json >/dev/null && echo 'result.json: valid JSON'",
+      "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T7_page-1.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

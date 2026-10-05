@@ -1,0 +1,79 @@
+{
+  "target": "icho_2026_t4_a9",
+  "goal_status": "goal_complete",
+  "checked_at": 1789360278.8651443,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "c1da948f5cde50141c47070a68f2df017f2847b7cc25cd449198865015f18f73",
+    "IChO2026Problems/problem_icho_2026_t4_a9.lean": "04f493c15de08c831d3883270e273a26f77dfdd49b7d90f8ad82d106adc39db0",
+    "answer.md": "79a51aec4fb55e23f1d61f8346cfce0fab38734b7540a8a9b31366ed1ace397b",
+    "verification.md": "7fa16e66fd29857475f6d423f98b96cc4c889d334d8d84eb4c8191c2e9740e77",
+    "result.json": "40d37144d4c04e0fdf072fd8090e69be4e1b09ff8591f03242a84f56fa720f5b"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t4_a9",
+    "status": "completed",
+    "answer_summary": {
+      "total_fissions": {
+        "raw": "3.876468179...e24 fissions",
+        "reported": "3.88e24 fissions",
+        "reporting": "3 significant figures, quantum 1e22 fissions"
+      },
+      "enriched_uranium_mass": {
+        "raw": "5.094137346... kg",
+        "reported": "5.09 kg",
+        "reporting": "3 significant figures, quantum 0.01 kg"
+      },
+      "method": "\u0394E(4.4) = (8.45 \u2212 7.59)\u00b7235 = 202.1 MeV per fission (derived answer-blind; the printed 200 MeV fallback was not needed); E = 30000 t \u00d7 4.184 GJ/t = 1.2552e14 J; TN = E/\u0394E with 1 eV = 1.602176634e-19 J; m(\u00b2\u00b3\u2075U fissioned) = TN\u00b70.23504/N_A kg = 1.513 kg; m(enriched) = m_fissioned/(0.33\u00b70.90) = 5.09 kg."
+    },
+    "theorem_names": [
+      "IChO2026T4A9.deltaE_MeV_value",
+      "IChO2026T4A9.explosionEnergy_value",
+      "IChO2026T4A9.totalFissions_bounds",
+      "IChO2026T4A9.enrichedUraniumMass_bounds",
+      "IChO2026T4A9.totalFissions_reported",
+      "IChO2026T4A9.enrichedUraniumMass_reported"
+    ],
+    "assumptions": [
+      "1 eV = 1.602176634e-19 J exactly (2019 SI definition) \u2014 not printed in the problem; trusted general law",
+      "Avogadro constant N_A = 6.02214076e23 mol^-1 exactly (2019 SI definition) \u2014 not printed in the problem; trusted general law",
+      "Standard SI prefixes (1 kt = 1000 t, 1 GJ = 1e9 J, 1 MeV = 1e6 eV) and molar-mass convention (M in g/mol equals isotope mass in a.u.)",
+      "Physical model stated implicitly by the problem: each fission releases \u0394E; the fissioned \u00b2\u00b3\u2075U mass is 33% of the total \u00b2\u00b3\u2075U mass, which is 90% by mass of the enriched uranium",
+      "Part 4.4 derived inline from printed binding energies: free-neutron binding neglected, so \u0394E = 235\u00b7(8.45\u22127.59) MeV (the absorbed neutron's binding cancels between sides)"
+    ],
+    "source_gaps": [
+      "The problem statement does not print the MeV\u2194J conversion factor or Avogadro's constant; the exact SI values were used under the trusted_general_law policy and are disclosed here. All other numeric inputs are printed in the problem (pages Q4-1, Q4-2, Q4-3)."
+    ],
+    "verification_commands": [
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t4_a9.lean",
+        "result": "exit 0, no errors, no warnings, no sorry/admit/axiom in file"
+      },
+      {
+        "command": "lake build",
+        "result": "Build completed successfully (8581 jobs)"
+      },
+      {
+        "command": "lake env lean /tmp/check_axioms.lean   # probe with identical theorem bodies, #print axioms on all six final theorems",
+        "result": "all six theorems depend only on [propext, Classical.choice, Quot.sound]; no custom axioms"
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

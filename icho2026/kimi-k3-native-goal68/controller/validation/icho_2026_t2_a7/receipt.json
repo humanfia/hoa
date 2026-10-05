@@ -1,0 +1,84 @@
+{
+  "target": "icho_2026_t2_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789363883.402523,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "axioms_check_icho_2026_t2_a7.lean": "d8f5810b4de3ccbec3ba03e7a33b904394040645dc7ca95328ed3c1ebf618145",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "13bf6529db91335122011a460b9b76e9a1195052393c8ed28536bc4321b73770",
+    "IChO2026Problems/problem_icho_2026_t2_a7.lean": "da7bc751d96bc1d9b079fc3f44d075c5d63536d2a0be276481b441b3dac93622",
+    "answer.md": "aa993d63f6196e850d74a1b3965964126cc102494bd41c1cc2c56134b6a15171",
+    "verification.md": "dd88c8622a66076764be077082b53a5860c0019ef7d17826060636c54fbec69b",
+    "result.json": "cf16dbf30238b6378733a708c13a91226a254096fab68e7986386a63d96bbb63"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t2_a7",
+    "status": "completed",
+    "answer_summary": "Tick the bottom-right box on answer sheet A2-6 (3x2 grid, row 3 column 2): dG/dt starts far below zero, is strictly negative for all t > 0, oscillates while rising with decaying amplitude, and tends to 0 from below.  Reason: the second law for a closed system at constant T,p forces dG/dt <= 0 (excluding the about-axis oscillating options), a closed vessel forces equilibration so dG/dt -> 0 (excluding the constant/fixed-slope negative trends), and the oscillatory premise forces a genuine, decaying ripple (excluding the monotone relaxation).",
+    "theorem_names": [
+      "IChO2026T2A7.optionSixShape_fRepr",
+      "IChO2026T2A7.answer_is_bottom_right",
+      "IChO2026T2A7.P1_fRepr",
+      "IChO2026T2A7.P2_fRepr",
+      "IChO2026T2A7.P3_fRepr",
+      "IChO2026T2A7.P4_fRepr",
+      "IChO2026T2A7.P5_fRepr",
+      "IChO2026T2A7.P6_fRepr",
+      "IChO2026T2A7.positive_violates_P1",
+      "IChO2026T2A7.sine_fails_P1",
+      "IChO2026T2A7.growing_sine_fails_P1",
+      "IChO2026T2A7.constant_rate_fails_P3",
+      "IChO2026T2A7.negative_slope_fails_P3",
+      "IChO2026T2A7.monotone_fails_P5",
+      "IChO2026T2A7.optionThree_shape_fails_P5"
+    ],
+    "assumptions": [
+      "The six answer candidates exist only as line drawings on blank answer sheet A2-6 (PDF page index 23); they are formalized as qualitative shape predicates P1..P6 on curves R -> R.",
+      "The second law of thermodynamics for a closed system at constant T,p (dG/dt <= 0 for the spontaneous direction, equality at equilibrium) is used as an allowed trusted_general_law.",
+      "The representative curve fRepr t = -(2 + cos (8t)) / (2*(t+1)) is a formal witness of the bottom-right qualitative shape; the classification content is the predicate conjunction and the exclusion theorems, not the numeric scale of the sketch."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      {
+        "command": "lake env lean IChO2026Problems/problem_icho_2026_t2_a7.lean",
+        "result": "exit code 0, no errors or warnings"
+      },
+      {
+        "command": "lake build IChO2026Problems",
+        "result": "Build completed successfully (8564 jobs)"
+      },
+      {
+        "command": "lake env lean axioms_check_icho_2026_t2_a7.lean",
+        "result": "all 15 theorems/lemmas depend only on [propext, Classical.choice, Quot.sound]; exit code 0"
+      },
+      {
+        "command": "grep -n \"sorry\\|admit\\|^axiom\\| axiom \\|unsafe\" IChO2026Problems/problem_icho_2026_t2_a7.lean",
+        "result": "single match is a documentation sentence stating the file has no sorry; no admit/axiom/unsafe present"
+      }
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "axioms_check_icho_2026_t2_a7.lean": {
+      "axiom": 1
+    },
+    "IChO2026Problems/problem_icho_2026_t2_a7.lean": {
+      "sorry": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

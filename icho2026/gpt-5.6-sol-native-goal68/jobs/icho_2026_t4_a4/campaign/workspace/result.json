@@ -1,0 +1,29 @@
+{
+  "target_id": "icho_2026_t4_a4",
+  "status": "completed",
+  "answer_summary": "For U-235 + n -> Rb-93 + Cs-140 + 3n, the fragments contain 233 bound nucleons. Exact binding-energy accounting gives 233*8.45 - 235*7.59 = 185.20 MeV, reported as 185 MeV to three significant figures.",
+  "theorem_names": [
+    "IChO2026Problems.T4A4.DerivedChannel.fragments_same_group",
+    "IChO2026Problems.T4A4.DerivedChannel.commonFission_massNumberBalanced",
+    "IChO2026Problems.T4A4.DerivedChannel.commonFission_atomicNumberBalanced",
+    "IChO2026Problems.T4A4.DerivedChannel.boundFragmentNucleons",
+    "IChO2026Problems.T4A4.initialTotalBindingEnergy",
+    "IChO2026Problems.T4A4.finalTotalBindingEnergy",
+    "IChO2026Problems.T4A4.fissionEnergy_exact",
+    "IChO2026Problems.T4A4.fissionEnergy_exactFraction",
+    "IChO2026Problems.T4A4.fissionEnergy_reported",
+    "IChO2026Problems.T4A4.answer_fission_energy"
+  ],
+  "assumptions": [
+    "The graph maxima are read as mass numbers 93 and 140; the preceding part's same-group condition and standard periodic-table data identify Rb-93 (Z=37) and Cs-140 (Z=55).",
+    "Standard positive nuclear binding-energy accounting is used: released energy equals total product binding energy minus total reactant binding energy.",
+    "The printed binding energies are treated as exact stipulated values, and all free-neutron binding energies are zero exactly as instructed by the problem."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T4_page-1.png icho_2026_source/image/T4_page-2.png",
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a4.lean",
+    "grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t4_a4.lean"
+  ]
+}

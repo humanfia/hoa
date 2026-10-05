@@ -1,0 +1,4 @@
+'IChO2026Problems.T4A3.source_mass_number_balance' depends on axioms: [propext]
+'IChO2026Problems.T4A3.emitted_neutron_count_forced' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T4A3.partner_atomic_number_forced' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T4A3.requested_fission_equation' depends on axioms: [propext]

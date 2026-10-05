@@ -1,0 +1,61 @@
+{
+  "target": "icho_2026_t6_a1",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301673.4757175,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t6_a1.lean": "fcaca39ccf7aee172328d71d5408c138532cabd4c69d6878c51abcd9da652874",
+    "answer.md": "0ab558fa89db012d2312c30b292b891d038e5c0cd83accf5b514d4780e50589e",
+    "verification.md": "4c928326cabc1ad0380ee29b98ae4da0c2d719b992bdb3021207d57ebe0a5052",
+    "result.json": "03d680da070570517ed5e6a6fb58cdf308c6d155b8cb95343aa35bcfbe62f253"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t6_a1",
+    "status": "completed",
+    "answer_summary": "A/AA counts in columns C18, C16, triplet C13, singlet C13 are respectively A = [2, 0, 0, 1] and AA = [0, 2, 0, 1].",
+    "theorem_names": [
+      "IChO2026Problems.IChO2026T6A1.c18_aromatic",
+      "IChO2026Problems.IChO2026T6A1.c18_antiaromatic",
+      "IChO2026Problems.IChO2026T6A1.c16_aromatic",
+      "IChO2026Problems.IChO2026T6A1.c16_antiaromatic",
+      "IChO2026Problems.IChO2026T6A1.triplet_c13_aromatic",
+      "IChO2026Problems.IChO2026T6A1.triplet_c13_antiaromatic",
+      "IChO2026Problems.IChO2026T6A1.singlet_c13_aromatic",
+      "IChO2026Problems.IChO2026T6A1.singlet_c13_antiaromatic",
+      "IChO2026Problems.IChO2026T6A1.completed_table"
+    ],
+    "assumptions": [
+      "An sp cyclocarbon has two distinct cyclic pi manifolds, in-plane and out-of-plane.",
+      "Neutral even C_n supplies n pi electrons to each manifold.",
+      "Triplet C13 places one unpaired carbene electron in each manifold, giving populations 13 and 13.",
+      "For the elementary Huckel table, singlet C13 is interpreted as the conventional closed-shell singlet carbene with a paired/empty frontier-orbital distribution, giving populations 14 and 12.",
+      "A positive cyclic system with 4k+2 pi electrons is aromatic; one with positive 4k pi electrons is anti-aromatic; 4k+1 is neither under Huckel's rule."
+    ],
+    "source_gaps": [
+      "The problem page gives only S = 0 for singlet C13 and does not print its orbital occupation. Spin zero alone does not logically exclude an open-shell singlet. The reported 1/1 entry follows the conventional closed-shell singlet-carbene interpretation intended by the elementary Huckel exercise; an open-shell 13/13 singlet would instead give 0/0. This boundary is explicitly documented rather than hidden."
+    ],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T6_page-1.png icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t6_a1.lean",
+      "grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t6_a1.lean",
+      "python3 -m json.tool result.json > /dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

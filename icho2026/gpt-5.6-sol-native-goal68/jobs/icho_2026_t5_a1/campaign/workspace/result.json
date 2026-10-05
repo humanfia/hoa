@@ -1,0 +1,24 @@
+{
+  "target_id": "icho_2026_t5_a1",
+  "status": "completed",
+  "answer_summary": "Option (b): n is odd. The depicted inventories contain n + 17 open attachment ends, and a complete assembly pairs them into bonds, so n + 17 is even and n is odd. Connected acyclicity further gives n = 1.",
+  "theorem_names": [
+    "IChO2026Problems.IChO2026T5A1.Derived.completeAssembly_forces_odd",
+    "IChO2026Problems.IChO2026T5A1.Derived.parityStatement_correct_iff",
+    "IChO2026Problems.IChO2026T5A1.Derived.connectedAcyclicAssembly_forces_n_eq_one",
+    "IChO2026Problems.IChO2026T5A1.Derived.fragment_parity_statement"
+  ],
+  "assumptions": [
+    "Problem-page input: fragments a, b, c, and d have respectively 1, 2, 3, and 1 open attachment ends per copy, with multiplicities n, 2, 3, and 4.",
+    "Problem-page input: the supplied fragments form the non-ionised PL1 molecule; consequently every depicted open attachment end is used.",
+    "Trusted general bonding rule: every joining bond pairs exactly two open attachment ends.",
+    "Only for the stronger n = 1 theorem: PL1 is one connected acyclic molecule, so joining V initially separate connected fragments uses V - 1 bonds."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T5_page-1.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t5_a1.lean",
+    "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t5_a1.lean; then exit 1; else echo 'No forbidden proof shortcuts found.'; fi",
+    "python3 -m json.tool result.json >/dev/null && echo 'result.json: valid JSON'"
+  ]
+}

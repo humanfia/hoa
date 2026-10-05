@@ -1,0 +1,47 @@
+{
+  "at": 1789385732.0149837,
+  "previous_status": {
+    "status": "review_error",
+    "target": "icho_2026_t1_a3",
+    "error": "Expected exactly one review JSON payload",
+    "at": 1789385653.020636
+  },
+  "original_review_sha256": "37e290fc816c15a497266915aeeaff6555537a769c95479622a2fdc18c3f1f84",
+  "recovered_payload": {
+    "target_id": "icho_2026_t1_a3",
+    "semantic_status": "passed",
+    "proof_status": "passed",
+    "reason": "n = 10 follows uniquely from the problem-stipulated two-isotope carbon model: I[M]+/I[M+1]+ = p/(n\u00b7q) with p=0.989 and q=0.011 gives n = 989/99 \u2248 9.99 from the printed ratio 9:1, and n = 10 is the unique integer fitting that ratio at half the unit quantum (n = 11 fails). W is uniquely compound 5 (C10H12O2, 4-allyl-2-methoxyphenol): the only extraction-table candidate that is both phenolic (Fe3+ colour change; phenolic set verified as {1, 5} directly from the drawn structures on Q1-2) and 10-carbon. The final Lean theorem t1_a3_main genuinely proves the ratio law from definitions, the unique rational solve, the integer fit arithmetic, and the table filtration; it compiles cleanly depending only on standard logical axioms, with no sorry/admit/native_decide/custom axioms and no result-shaped assumptions. Only cosmetic flaw: prose mislabels compound 5 as 'eugenol methyl ether' (the common name is eugenol), but the requested outputs (n integer, W = compound number 5 with formula/structure) are correct and match the blank answer-sheet format (A1-2).",
+    "coverage": [
+      {
+        "output_id": "carbon_atom_count",
+        "status": "passed",
+        "theorem": "Problems.Icho2026T1A3.t1_a3_main (components: isotope_ratio, carbon_count_ratio, candidate_arithmetic, identification_of_W)",
+        "evidence": "lake env lean on IChO2026Problems/problem_icho_2026_t1_a3.lean exits 0; #print axioms t1_a3_main = [propext, Classical.choice, Quot.sound]. isotope_ratio proves p^n/(n\u00b7p^(n-1)\u00b7q) = p/(n\u00b7q) over Q from the defined pM/pM1 Bernoulli model (recurrence grounded by binomialRecurrence/prob_pair_mul). carbon_count_ratio proves the unique rational solution n = 989/99 from ratio 9 with printed abundances 989/1000 and 11/1000. candidate_arithmetic proves |989/110 - 9| = 1/110 <= 1/2 (n=10 fits the displayed ratio at half the unit quantum) and n=11 fails (error 100/121 > 1/2). Independent exact-fraction recomputation confirms only n=10 fits (n=9, 12 also fail). answer.md shows the calculation as required."
+      },
+      {
+        "output_id": "compound_identity",
+        "status": "passed",
+        "theorem": "Problems.Icho2026T1A3.t1_a3_main (components: table, phenolicCandidates, phenolic_candidates_correct, identification_of_W)",
+        "evidence": "The 10-compound table in the Lean file was checked entry-by-entry against source image T1_page-2.png (all printed formulae match; structures inspected: only compounds 1 and 5 carry a phenolic -OH on an aromatic ring; 2/4/6 aliphatic OH, 3 ether, 9/10 ketones, 7/8 hydrocarbons). The Fe3+ colour -> phenol link is an ordinary qualitative-analysis fact (allowed trusted general law), disclosed and correctly scoped. identification_of_W reduces the filtration by rfl/decide over the source-verified table to the singleton [5] with all survivors having 10 carbons, proving W = compound 5 (C10H12O2) with no result-shaped assumption. Matches blank answer sheet A1-2 (W as compound number 1-10)."
+      }
+    ],
+    "unsupported_assumptions": [],
+    "source_checks": [
+      "Read theory_problem.pdf directly with PyMuPDF: Q1-3 text (PDF page 8) verbatim matches TASK.json \u2014 ratio [M]+:[M+1]+ = 9:1, carbon exclusively 12C/13C, 12C abundance 98.9%, all other elements monoisotopic \u2014 and blank answer sheet A1-2 (PDF page 11, rendered and inspected) requesting n = ___ and W via checkboxes 1-10.",
+      "Inspected T1_page-2.png: extraction table transcribed correctly (plant rows and all ten compound formulae match; drawn structures inspected from pixels, phenolic -OH present only in compounds 1 and 5; compound 5 drawing matches the candidate's connectivity: aromatic ring bearing -OH, -OCH3 and allyl).",
+      "Numerical givens used exactly (98.9% -> 989/1000; complement 0.011 licensed by the explicit 'consists exclusively of 12C and 13C' clause; ratio 9 taken exactly then validated at half the unit quantum per the task measurement_policy).",
+      "Inspected T1_page-3.png confirming the 1.3 question text matches the candidate's transcription; no other diagram input is relevant to this subquestion. No prior-part dependencies are needed for T1-A3 beyond the shared extraction table."
+    ],
+    "proof_checks": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t1_a3.lean -> exit 0; #print axioms Problems.Icho2026T1A3.t1_a3_main reports exactly [propext, Classical.choice, Quot.sound].",
+      "Grep audit found no sorry/admit/native_decide/unsafe/custom axiom/implemented_by in IChO2026Problems/problem_icho_2026_t1_a3.lean, IChO2026Chem/*.lean, IChO2026Run/*.lean.",
+      "lake env lean IChO2026Run/Dependencies.lean -> exit 0 (Mathlib/Physlib/CRNT import graph intact); full lake build fails only on IChO2026Problems.All, a controller-generated umbrella module absent from the workspace (infrastructure-owned, unrelated to this target).",
+      "Proof-body audit: isotope_ratio derived via field_simp from definitions (not asserted); binomialRecurrence proved by induction; carbon_count_ratio proves uniqueness of the rational solve; candidate_arithmetic is pure norm_num on printed constants; table/phenolic/filter conclusions are rfl/decide over a source-verified table transcription - no tautological definitions, unsupported constructors, false/vacuous premises or result-shaped hypotheses.",
+      "Independent recomputation with exact fractions: p/(n\u00b7q) at n = 9, 10, 11, 12 is 9.990, 8.991, 8.174, 7.492; only n = 10 lies within half the unit quantum of the printed ratio 9, confirming the proved integer-fit claims and uniqueness over the table's carbon counts {6, 10, 11, 14, 15}."
+    ]
+  },
+  "model_rerun": false,
+  "verdict_changed": false,
+  "feedback_to_solver": false
+}

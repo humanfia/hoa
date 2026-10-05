@@ -1,0 +1,55 @@
+{
+  "target_id": "icho_2026_t1_a4",
+  "status": "completed",
+  "answer_summary": "Q = aluminium (Al, Z = 13, Ar = 26.98); C·xH2O = AlF3·3H2O (x = 3); D = Na3AlF6 (cryolite). All three printed percentages reproduce inside their displayed half-quantum windows: w(H2O) = 54.048/138.028 = 39.1577…% (printed 39.16%), w(Na) = 68.97/209.94 = 32.8523…% (printed 32.85%), w(Q) = 26.98/209.94 = 12.8513…% (printed 12.85%). Uniqueness proved: the v = 2 family forces 17.9725 < Ar < 17.997, contradicted by the periodic table (O 16.00, F 19.00); the v = 3 family forces 26.945 < Ar < 26.9943, matching exactly one printed element, aluminium 26.98; at the tightened aluminium mass the hydration and sodium data force x = 3 and n = 3.",
+  "theorem_names": [
+    "answer_aluminium",
+    "printed_value_2698_is_element_13",
+    "industrial_use_consistent",
+    "MH_pos",
+    "MD_pos",
+    "cleared_hydration",
+    "cleared_sodium",
+    "cleared_metal",
+    "hyd_hi_rearr",
+    "x_bound",
+    "n_bound",
+    "cleared_hydration_strong",
+    "envelope_v2_c1_10",
+    "envelope_v2_c11_20",
+    "envelope_v2_c21_30",
+    "envelope_v2_c31_37",
+    "envelope_v2",
+    "envelope_v3_c1_10",
+    "envelope_v3_c11_20",
+    "envelope_v3_c21_30",
+    "envelope_v3_c31_37",
+    "envelope_v3",
+    "table_no_match_v2",
+    "table_match_v3",
+    "stoichiometry_at_aluminium",
+    "main_answer",
+    "theAnswer_correct"
+  ],
+  "namespace": "IChO2026Problems.T1A4",
+  "assumptions": [
+    "M-A4-1: C = QF_v with v in {2,3} (common metal-fluoride stoichiometries), hydrate QF_v·xH2O, x ≥ 1",
+    "M-A4-2: D = C adduct n NaF = Na_n Q F_{v+n}, n ≥ 1 (as cryolite Na3AlF6 = AlF3 ⬝ 3 NaF)",
+    "M-A4-3: 0 < Ar(Q) ≤ 294 (heaviest element oganesson)",
+    "M-A4-4: after identification the true Ar(Q) lies within half a displayed quantum (±0.005) of the matched printed periodic-table value (printed masses are measurements at half-quantum precision)"
+  ],
+  "source_gaps": [
+    "The problem text does not print the valence restriction v ∈ {2,3}; it is chemically standard. Widening to v ≤ 5 admits one spurious numerically self-similar candidate (v,x,n) = (5,5,5) near scandium's printed Ar 44.96, but ScF5 does not exist (Sc is exclusively +3), so the chemical answer is unchanged; the restriction is declared as assumption M-A4-1 rather than derived.",
+    "The exact structural class D = Na_n Q F_{v+n} (fluoride adduct of C with NaF) is a standard chemical reading of 'C reacts with excess NaF to yield D' containing both Na and Q; it is declared as M-A4-2.",
+    "Interpreting the printed periodic-table masses as half-quantum measurements (M-A4-4) follows the task measurement policy but is not spelled out in the problem text itself."
+  ],
+  "verification_commands": [
+    "cd <workspace> && lake env lean IChO2026Problems/problem_icho_2026_t1_a4.lean  # exit 0, no errors (log /tmp/leantest/full10.log)",
+    "cd <workspace> && lake build  # Build completed successfully (8581 jobs), exit 0",
+    "cd <workspace> && lake env lean /tmp/leantest/axioms.lean  # #print axioms on main_answer, answer_aluminium, theAnswer_correct, stoichiometry_at_aluminium, x_bound, n_bound, envelope_v2, envelope_v3, table_no_match_v2, table_match_v3: each depends only on [propext, Classical.choice, Quot.sound]",
+    "grep -n \"sorry\\|admit\\|axiom\\|native_decide\\|unsafe\" IChO2026Problems/problem_icho_2026_t1_a4.lean  # only the doc-comment disclaimer; no shortcuts present"
+  ],
+  "axioms_used": ["propext", "Classical.choice", "Quot.sound"],
+  "custom_axioms": false,
+  "sorries": 0
+}

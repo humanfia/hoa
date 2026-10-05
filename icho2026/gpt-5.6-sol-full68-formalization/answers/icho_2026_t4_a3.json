@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t4_a3",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "^235_92 U + ^1_0 n → ^93_37 Rb + ^140_55 Cs + 3 ^1_0 n",
+      "id": "fission_equation",
+      "kind": "formula",
+      "raw_value": "^235_92 U + ^1_0 n -> ^93_37 Rb + ^140_55 Cs + 3 ^1_0 n",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t8_a7",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "increases",
+      "id": "co_rate_trend",
+      "kind": "classification",
+      "raw_value": "62*(1/10)/(100-1/10) < 8*(38/10)/(100-38/10)",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

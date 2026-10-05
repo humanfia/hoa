@@ -1,0 +1,72 @@
+{
+  "target": "icho_2026_t9_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789365835.538629,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a3.lean": "3c0229ea47256dfdba63ed6743f7a938648a2cab6912c4b790736ec2fbdca6b0",
+    "answer.md": "bec8b937bdbf6c215d4a8b089f6829d4c22ad41e49f67c9880aeaba56bc47ec8",
+    "verification.md": "b5da26a9a0831806ea65d8cc3b9f67602a41dc6fb20fd25bec1c6163d760e56c",
+    "result.json": "4208194330300388f3e1fc16b38ed12a06fce63616ab1e9c69f3dc65de731131"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a3",
+    "status": "completed",
+    "answer_summary": "X is the product of NaIO4 cleavage of the seven C2-C3 vicinal diols of beta-cyclodextrin (7 alpha-D-glucopyranoside units), followed by NaBH4 reduction to -CH2OH arms and Ac2O/Py acetylation. The macrocyclic backbone (per unit: C1 - glycosidic O - C4 - C5 - ring O5) stays intact, so ring size rs = 7 * 5 = 35. Stereocentres: per unit C1, C4 and C5 remain stereogenic (the two ring-continuation ligands are diastereomorphic, CIP rule 5, because chiral X has no mirror/inversion symmetry) while former C2/C3 (now -CH2OAc arms) and C6 are CH2 and not stereogenic; sc = 7 * 3 = 21.",
+    "requested_outputs": {
+      "macrocycle_ring_size": 35,
+      "macrocycle_stereocentres": 21
+    },
+    "theorem_names": [
+      "IChO2026T9A3.icho_2026_t9_a3_ring_size",
+      "IChO2026T9A3.icho_2026_t9_a3_stereocentres",
+      "IChO2026T9A3.icho_2026_t9_a3_answer",
+      "IChO2026T9A3.x_ring_is_cycle",
+      "IChO2026T9A3.x_bond_exact",
+      "IChO2026T9A3.x_backbone_mem_ring",
+      "IChO2026T9A3.x_ring_elems_backbone",
+      "IChO2026T9A3.ringList_isWalk",
+      "IChO2026T9A3.ringList_closes",
+      "IChO2026T9A3.ringList_nodup",
+      "IChO2026T9A3.ringEdges_disjoint_armEdges",
+      "IChO2026T9A3.c1_stereogenic",
+      "IChO2026T9A3.c4_stereogenic",
+      "IChO2026T9A3.c5_stereogenic",
+      "IChO2026T9A3.arm2_not_stereogenic",
+      "IChO2026T9A3.arm3_not_stereogenic",
+      "IChO2026T9A3.arm6_not_stereogenic",
+      "IChO2026T9A3.scX_per_unit",
+      "IChO2026T9A3.fourDistinct_forall_ne_of_hasDuplicate"
+    ],
+    "assumptions": [
+      "The bracketed intermediate in the X arrow of the Q9-2 scheme is beta-CD with free 2,3-diols (7 units), consistent with page Q9-1 ('n = 7', '(OH)14', 7 x CH2OH).",
+      "Trusted general chemistry (allowed by candidate domain policy as trusted_general_law): NaIO4 cleaves vicinal diols (Malaprade) splitting C2-C3 into a dialdehyde; NaBH4 reduces aldehydes to primary alcohols; Ac2O/Py acetylates the free OH groups; glycosidic and ring ethers are inert to these reagents.",
+      "X is chiral (C7-symmetric, homochiral beta-D-glucose-derived units) with no mirror plane or inversion centre, so the two ring-continuation ligands at C1/C4/C5 are diastereomorphic and distinguished under CIP sequence rule 5 (the same reason the anomeric carbon of a native cyclodextrin is stereogenic).",
+      "Lean proof uses only standard logical axioms (propext, Classical.choice, Quot.sound); no sorry/admit and no custom axioms."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "export PATH=\"$HOME/.elan/bin:$PATH\"",
+      "lake env lean IChO2026Problems/problem_icho_2026_t9_a3.lean  # exit 0, no warnings/errors",
+      "grep -c -E '\\bsorry\\b|\\badmit\\b' IChO2026Problems/problem_icho_2026_t9_a3.lean  # 0",
+      "#print axioms output recorded in verification.md: only propext, Classical.choice, Quot.sound"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

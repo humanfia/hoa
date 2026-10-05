@@ -1,0 +1,2048 @@
+{
+  "status": "graded",
+  "raw": "415.0",
+  "maximum": 437,
+  "raw_percent": "94.96567505720823798627002288",
+  "weighted": "57.87473794549266247379454927",
+  "weighted_maximum": 60,
+  "weighted_percent": "96.45789657582110412299091545",
+  "full_credit_parts": 62,
+  "parts": [
+    {
+      "assessment": "Full credit under the checkbox rubric. The numbered selections are correct, although the name and modeled structure assigned to X are chemically wrong.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "The answer explicitly selects compound 6 for X, matching the official checkbox. Its additional identification as α-terpineol is incorrect; compound 6 is linalool.",
+          "label": "Identify X (2.0 max)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "The answer selects compound 3 and correctly identifies it as 1,8-cineole/eucalyptol.",
+          "label": "Identify Y (1.0 max)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "3.0",
+      "id": "icho_2026_t1_a1",
+      "maximum": "3.0",
+      "official_page_evidence": "Official Q1-3 marks X = 6 and Y = 3 and states that linalool (6) isomerises to cineole (3).",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The identities and explicit molecular connectivities agree with the official drawings.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Z is compound 7, chamazulene, as officially selected.",
+          "label": "Identify Z (1.0 max)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "A is explicitly represented as azulene with fused five- and seven-membered rings, matching the official graph.",
+          "label": "Structure of A (1.0 max)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "B is explicitly represented as naphthalene with two fused six-membered rings, matching the official graph.",
+          "label": "Structure of B (2.0 max)",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t1_a2",
+      "maximum": "4.0",
+      "official_page_evidence": "Official Q1-4 identifies Z as compound 7/chamazulene and draws azulene for A and naphthalene for B.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The isotope calculation and identification of W are correct.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Shows I(M)/I(M+1) = p^n/[nqp^(n−1)] = p/(nq) = 9, equivalent to official Equation 1.",
+          "label": "Isotope-ratio equation (1.0 max)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Obtains n = 0.989/[9(0.011)] = 9.9898… and correctly concludes the integer count is 10.",
+          "label": "Carbon count n (1.0 max)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Correctly identifies W as compound 5, eugenol, using the phenol test and carbon count.",
+          "label": "Identify W (1.0 max)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "3.0",
+      "id": "icho_2026_t1_a3",
+      "maximum": "3.0",
+      "official_page_evidence": "Official Q1-5 awards one point each for Equation 1, n = 10, and W = compound 5/eugenol.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. All three identities and a valid supporting composition calculation are supplied.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "The Na3AlF6 molar-mass and Na/Al percentage calculations reproduce 32.85% Na and 12.85% Al, fulfilling the calculation component represented by official Equation 2.",
+          "label": "Composition calculation / Equation 2 (1.0 max)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Q is correctly identified as aluminium.",
+          "label": "Metal Q (1.0 max)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "C·xH2O is correctly given as AlF3·3H2O, with x = 3 supported by the water-percentage calculation.",
+          "label": "Hydrated C (1.0 max)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "D is correctly given as Na3AlF6.",
+          "label": "Compound D (1.0 max)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t1_a4",
+      "maximum": "4.0",
+      "official_page_evidence": "Official Q1-6 gives Q = Al, C·xH2O = AlF3·3H2O, and D = Na3AlF6, with one point for Equation 2 and each identity.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. Every submitted molecular graph has the same connectivity as the corresponding official drawing, and the supporting numerical work is sufficient.",
+      "components": [
+        {
+          "earned": "0.5",
+          "evidence": "The stated C12O9 formula gives C:O = 12:9 = 4:3, and the oxygen percentage is checked.",
+          "label": "C:O ratio in G (0.5 max)",
+          "maximum": "0.5"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "G is correctly specified as mellitic trianhydride with three cyclic anhydride bridges joining adjacent carbonyl-carbon pairs.",
+          "label": "Structure of G (2.0 max)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "F is correctly specified as mellitic acid: a benzene ring bearing six –C(=O)OH groups.",
+          "label": "Structure of F (2.0 max)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "0.5",
+          "evidence": "A valid hydrogen mass-fraction calculation for C12H18 reproduces 11.18%, serving the role of official Equation 3.",
+          "label": "Hydrogen-fraction equation (0.5 max)",
+          "maximum": "0.5"
+        },
+        {
+          "earned": "0.5",
+          "evidence": "E is given as C12H18, corresponding to empirical formula C6H9.",
+          "label": "Empirical formula of E (0.5 max)",
+          "maximum": "0.5"
+        },
+        {
+          "earned": "1.5",
+          "evidence": "E is correctly specified as hexamethylbenzene, with one methyl group bonded to every benzene carbon.",
+          "label": "Structure of E (1.5 max)",
+          "maximum": "1.5"
+        }
+      ],
+      "earned": "7.0",
+      "id": "icho_2026_t1_a5",
+      "maximum": "7.0",
+      "official_page_evidence": "Official Q1-7 shows hexamethylbenzene E, mellitic acid F, and mellitic trianhydride G and assigns 7.0 points across the listed structures and calculations.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. Both requested formulae and equivalent thermogravimetric calculations are correct.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Uses 390.08/[390.08 + 18.016x] = 5.75/10.00 and obtains x ≈ 16, equivalent to official Equation 4.",
+          "label": "Hydration calculation / Equation 4 (1.0 max)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "The calculated Al2O3 residue is approximately 1.50 g, providing the confirmation required by official Equation 5.",
+          "label": "Residue calculation / Equation 5 (1.0 max)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "The stone is correctly given as Al2[C6(COO)6]·16H2O.",
+          "label": "Formula of the stone (1.0 max)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "H is correctly given as Al2O3.",
+          "label": "Formula of H (1.0 max)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t1_a6",
+      "maximum": "4.0",
+      "official_page_evidence": "Official Q1-8 gives Al2(C6(COO)6)·16H2O for the stone and Al2O3 for H, awarding one point for each formula and supporting equation.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The net-ionic and potassium forms both match the official overall BZ equation.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "Submitted 3 CH2(COOH)2 + 4 BrO3- -> 9 CO2 + 4 Br- + 6 H2O, equivalently with KBrO3/KBr. Official awards 2 points for the fully correct equation.",
+          "label": "Fully correct balanced equation (max 2.0)",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t2_a1",
+      "maximum": "2.0",
+      "official_page_evidence": "Official Q2 solution: 3CH2(COOH)2 + 4BrO3- -> 9CO2 + 4Br- + 6H2O or the KBrO3/KBr form, 2.0 points.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. Both stationary concentrations and the supporting steady-state relations match the official values.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "Process A radical balance 2v1 - v2 = 0 matches official equation 2.1.",
+          "label": "Equation 2.1 (max 2.0)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "Process A HBrO2 balance -v1 + v2 - 2v3 = 0 matches official equation 2.2.",
+          "label": "Equation 2.2 (max 2.0)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "Process B HBrO2 balance -v4 + v5 = 0 matches official equation 2.5.",
+          "label": "Equation 2.5 (max 2.0)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Elimination gives v1 = 2v3, official equation 2.3.",
+          "label": "Equation 2.3 (max 1.0)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "[HBrO2]A = k1[BrO3-][H+]/(2k3), official equation 2.4.",
+          "label": "Equation 2.4 (max 1.0)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "[HBrO2]B = k5[BrO3-][H+]/k4, official equation 2.6.",
+          "label": "Equation 2.6 (max 1.0)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Reported [HBrO2]A = 6.00e-6 M matches 6.0e-6 M.",
+          "label": "Calculated [HBrO2]A (max 1.0)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Reported [HBrO2]B = 5.04e-11 M matches the official value.",
+          "label": "Calculated [HBrO2]B (max 1.0)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "11.0",
+      "id": "icho_2026_t2_a2",
+      "maximum": "11.0",
+      "official_page_evidence": "Official Q2: [HBrO2]A = 6.0e-6 M, [HBrO2]B = 5.04e-11 M, with equations 2.1-2.6; correct calculation without derivation also gets full marks.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The switching equality, cancelled formula, and numerical result match the official solution.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Equates v1 = v4, official equation 3.1.",
+          "label": "Equation 3.1 (max 1.0)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "[Br-]critical = (k1/k4)[BrO3-], official equation 3.2.",
+          "label": "Equation 3.2 (max 2.0)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Submitted 3.00e-7 M matches official 3.0e-7 M.",
+          "label": "Calculated [Br-]critical (max 1.0)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t2_a3",
+      "maximum": "4.0",
+      "official_page_evidence": "Official Q2: [Br-]critical = 3.0e-7 M from (k1/k4)[BrO3-].",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The selected upper-right/clockwise portrait is the official option.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "Ticks the upper-right box and states clockwise traversal, matching the official cyclic clockwise portrait.",
+          "label": "Correct phase-portrait direction (max 2.0)",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t2_a4",
+      "maximum": "2.0",
+      "official_page_evidence": "Official Q2: clockwise phase portrait only, 2.0 points.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The calculation gives 48.084 s, reported as 48.1 s, consistent with the official 48 s and the full-marks-for-correct-calculation clause.",
+      "components": [
+        {
+          "earned": "9.0",
+          "evidence": "Uses Process-B first-order decay from [Br-]max to [Br-]critical and reports 48.1 s; official prints 48 s from the same k* = 0.16128 s^-1 expression.",
+          "label": "Correct calculation (max 9.0)",
+          "maximum": "9.0"
+        }
+      ],
+      "earned": "9.0",
+      "id": "icho_2026_t2_a5",
+      "maximum": "9.0",
+      "official_page_evidence": "Official Q2: tau = 48 s; correct calculation without formula derivation receives full marks.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. All four boxes match the official table.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Action 1 = c.",
+          "label": "Action 1: c (max 1.0)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Action 2 = d.",
+          "label": "Action 2: d (max 1.0)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Action 3 = b.",
+          "label": "Action 3: b (max 1.0)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Action 4 = e.",
+          "label": "Action 4: e (max 1.0)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t2_a6",
+      "maximum": "4.0",
+      "official_page_evidence": "Official Q2 marks actions 1-4 as c, d, b, e, 1.0 point each.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The bottom-right damped nonpositive dG/dt graph is the official last option.",
+      "components": [
+        {
+          "earned": "3.0",
+          "evidence": "Selects the bottom-right curve: dG/dt stays <= 0, oscillates, and damps toward zero.",
+          "label": "Correct Gibbs-rate graph (max 3.0)",
+          "maximum": "3.0"
+        }
+      ],
+      "earned": "3.0",
+      "id": "icho_2026_t2_a7",
+      "maximum": "3.0",
+      "official_page_evidence": "Official Q2: last graph, dG/dt < 0 always and damped to equilibrium, 3.0 points.",
+      "unresolved": false
+    },
+    {
+      "assessment": "No credit. The submission treats COF-1 as a phenylene–boroxine network, whereas the pictured COF-1 is the boronate-ester structure corresponding to C9H4BO2. The Lean proof only verifies calculations after hard-coding the incorrect building blocks.",
+      "components": [
+        {
+          "earned": "0.0",
+          "evidence": "Submitted C3H2BO does not match the official empirical formula C9H4BO2.",
+          "label": "Empirical formula — 1.0 max.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "The reported 55.55% is calculated consistently for the wrong formula; COF-1 contains 69.77% carbon.",
+          "label": "Carbon mass percentage — 1.0 max.",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "0.0",
+      "id": "icho_2026_t3_a1",
+      "maximum": "2.0",
+      "official_page_evidence": "Official PDF page 22 (Q3-1) gives C9H4BO2 and 69.77% C, awarding 1.0 point for each.",
+      "unresolved": false
+    },
+    {
+      "assessment": "No credit. The submission overcounts the honeycomb side as eight arene C–C increments and obtains a=17.00 Å and d=29.4 Å. Its Lean bond walk hard-codes the same incorrect 8:2:2 inventory.",
+      "components": [
+        {
+          "earned": "0.0",
+          "evidence": "The required path is 2(B–O)+2(C–C)+2(C–B), giving a=8.66 Å and d=15.0 Å. Neither the correct side length nor the correct bond-count expression appears. Merely reusing the supplied d=√3a relation does not satisfy the correct-formula tier.",
+          "label": "Diameter rubric tier — 3.0 max.",
+          "maximum": "3.0"
+        }
+      ],
+      "earned": "0.0",
+      "id": "icho_2026_t3_a2",
+      "maximum": "3.0",
+      "official_page_evidence": "Official PDF page 23 (Q3-2) awards 3.0 for d=15.0 Å, 2.0 if only a=8.66 Å is given, or 1.0 for only the correct calculation formula.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Thirteen of fourteen submitted cells match the official table. A3+B1 is incorrectly placed in Tetragonal 2, where both additional entries must be XXX. It therefore earns −1.0 rather than the +1.0 for a correct XXX. The Lean role classification hard-codes this same erroneous assignment.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "A2+B1 is an official Tetragonal-1 combination.",
+          "label": "Tetragonal 1: A2+B1 — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "C3+D4 is an official Tetragonal-1 combination.",
+          "label": "Tetragonal 1: C3+D4 — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "-1.0",
+          "evidence": "A3+B1 is not accepted for Tetragonal 2; the official entry is XXX. The explicit incorrect-entry penalty applies.",
+          "label": "Tetragonal 2: A3+B1 — 1.0 max; negative marking applies.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "The submitted second Tetragonal-2 XXX matches the official table.",
+          "label": "Tetragonal 2: XXX — 1.0 max.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "A1+B2 is an official Hexagonal-1 combination.",
+          "label": "Hexagonal 1: A1+B2 — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "C1+D2 is an official Hexagonal-1 combination.",
+          "label": "Hexagonal 1: C1+D2 — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "A1+B3 is the official additional Hexagonal-2 combination.",
+          "label": "Hexagonal 2: A1+B3 — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "The remaining Hexagonal-2 entry is correctly marked XXX.",
+          "label": "Hexagonal 2: XXX — 1.0 max.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "C1+D1 is the official Trigonal combination.",
+          "label": "Trigonal: C1+D1 — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "The remaining Trigonal entry is correctly marked XXX.",
+          "label": "Trigonal: XXX — 1.0 max.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "A3+B2 is the official additional Kagome combination.",
+          "label": "Kagome: A3+B2 — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "The remaining Kagome entry is correctly marked XXX.",
+          "label": "Kagome: XXX — 1.0 max.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "A4+B2 is an official Tetrahedral combination.",
+          "label": "Tetrahedral: A4+B2 — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "C1+D3 is an official Tetrahedral combination.",
+          "label": "Tetrahedral: C1+D3 — 2.0 max.",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "21.0",
+      "id": "icho_2026_t3_a3",
+      "maximum": "23.0",
+      "official_page_evidence": "Official PDF page 25 (Q3-4) supplies the completed table and awards +2.0 per correct combination, +1.0 per correct XXX, and −1.0 per incorrect entry. It also accepts E1+D4 in Hexagonal 1.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The prose and explicit Lean molecular graphs reproduce the four official connectivities and the intended repeat-unit boundaries.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "COF-3 correctly contains three central-Ar–C(H)=N–hydroxyphenylene imines, with the hydroxy groups ortho to the imine nitrogens and the peripheral phenylene boundary correctly defined.",
+          "label": "COF-3 repeat unit — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "COF-4 correctly cyclizes every ortho-hydroxy imine into a benzoxazole: O bonds to the former imine carbon, three heterocyclic C=N bonds remain, and six hydrogens are lost overall.",
+          "label": "COF-4 repeat unit — 4.0 max.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "COF-5 correctly shows the trihydroxy enol–imine node joined through three C(H)=N–p-phenylene arms, with the correct boundary.",
+          "label": "COF-5 repeat unit — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "COF-6 correctly shows the beta-ketoenamine tautomer: three C=O groups, three node–C=C(H) bonds, three C–NH linkages, and no imine C=N bonds.",
+          "label": "COF-6 repeat unit — 4.0 max.",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "12.0",
+      "id": "icho_2026_t3_a4",
+      "maximum": "12.0",
+      "official_page_evidence": "Official PDF pages 26–27 (Q3-5/Q3-6) depict the four repeat units. Page 27 awards 2.0 each for COF-3 and COF-5 and 4.0 each for COF-4 and COF-6, with reduced credit only for an incorrectly defined repeat unit.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The unambiguous textual and Lean graph is the official aldehyde-terminated, tetrafluorinated amide repeat: one ozonolytically cleaved C2 half and one D4-derived tetrafluoroterephthaloyl unit.",
+      "components": [
+        {
+          "earned": "6.0",
+          "evidence": "The graph has a 3,5-bis(4-amidophenyl)benzaldehyde residue joined through Ar–NH–C(=O)–C6F4–C(=O)–NH–Ar connectivity. Six copies close the depicted macrocycle.",
+          "label": "Correct smallest repeat-unit graph — 6.0 max.",
+          "maximum": "6.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "No imine remains; both connections are secondary amides.",
+          "label": "Imine-product penalty — deduct 2.0 if triggered.",
+          "maximum": "0.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "The ozonolysis-derived aldehyde is explicitly included.",
+          "label": "Missing-aldehyde penalty — deduct 2.0 if triggered.",
+          "maximum": "0.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "All four fluorines at the 2,3,5,6 positions of each D4-derived ring are included.",
+          "label": "Missing-fluorines penalty — deduct 2.0 if triggered.",
+          "maximum": "0.0"
+        }
+      ],
+      "earned": "6.0",
+      "id": "icho_2026_t3_a5",
+      "maximum": "6.0",
+      "official_page_evidence": "Official PDF page 28 (Q3-7) directly depicts the fluorinated amide repeat bearing an aldehyde and specifies −2.0 penalties for an imine product, a missing aldehyde, or missing fluorines.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. All aromatic-overlap counts and total energies agree with the official solution.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "AA has four centered benzene–benzene contacts and one centered triazine–triazine contact: 4(−7.9)+(−6.7)=−38.3 kJ mol−1.",
+          "label": "AA total energy — 4.0 max.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "AB has one centered benzene–triazine contact, giving −49.8 kJ mol−1.",
+          "label": "AB total energy — 4.0 max.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "AB′ has one slipped benzene–triazine contact, giving −55.6 kJ mol−1.",
+          "label": "AB′ total energy — 4.0 max.",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "12.0",
+      "id": "icho_2026_t3_a6",
+      "maximum": "12.0",
+      "official_page_evidence": "Official PDF pages 29–30 (Q3-8/Q3-9) give the interaction energies and totals −38.3, −49.8, and −55.6 kJ mol−1, awarding 4.0 for each correct requested total.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The mass balance and pore stoichiometry both match the official result.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "(19.90−9.225) mg dm−3 × 0.2000 dm3 / 0.005000 g = 427 mg g−1.",
+          "label": "Equilibrium absorption capacity q_e — 2.0 max.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Using C36H27N9O3 per pore (633.666 g mol−1) and 270.03 g mol−1 for UO2²⁺ gives 1.002 nominally, correctly reported as one ion per pore, i.e. pore:uranyl = 1:1.",
+          "label": "Pore-to-uranyl molar ratio — 3.0 max.",
+          "maximum": "3.0"
+        }
+      ],
+      "earned": "5.0",
+      "id": "icho_2026_t3_a7",
+      "maximum": "5.0",
+      "official_page_evidence": "Official PDF page 31 (Q3-10) gives q_e=427.0 mg g−1, the pore formula C36H27N9O3 with molar mass 633.67 g mol−1, and COF-9 pore:UO2²⁺=1:1.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Correct weighted-average equation and abundance; the Lean source encodes the same calculation.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Uses 238.03 = 235.04x + 238.05(1−x).",
+          "label": "Weighted-average equation (1.0 maximum)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Obtains 0.664451827…%, consistent with the official 0.66%.",
+          "label": "Uranium-235 abundance (1.0 maximum)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t4_a1",
+      "maximum": "2.0",
+      "official_page_evidence": "Official page Q4-1 gives the same equation and 0.66%, awarding 1 point for each.",
+      "unresolved": false
+    },
+    {
+      "assessment": "All three submitted nuclear equations exactly match the official balanced equations and the Lean definitions.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "¹¹₅B + ⁴₂He → ¹⁴₇N + ¹₀n is complete and balanced.",
+          "label": "Reaction (a) (1.0 maximum)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "γ + ²₁H → ¹₁H + ¹₀n is complete and balanced.",
+          "label": "Reaction (b) (1.0 maximum)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "⁹₄Be + ⁴₂He → ¹²₆C + ¹₀n is complete and balanced.",
+          "label": "Reaction (c) (1.0 maximum)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "3.0",
+      "id": "icho_2026_t4_a2",
+      "maximum": "3.0",
+      "official_page_evidence": "Official page Q4-2 prints these equations and awards 1 point per complete equation.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Correct peak masses, elements, and complete fission equation; the Lean representation agrees.",
+      "components": [
+        {
+          "earned": "0.6",
+          "evidence": "Light-product mass number is 93.",
+          "label": "Mass number 93 (0.6 maximum)",
+          "maximum": "0.6"
+        },
+        {
+          "earned": "0.6",
+          "evidence": "Heavy-product mass number is 140.",
+          "label": "Mass number 140 (0.6 maximum)",
+          "maximum": "0.6"
+        },
+        {
+          "earned": "0.6",
+          "evidence": "Correctly identifies Rb as the A=93 product.",
+          "label": "Rubidium product (0.6 maximum)",
+          "maximum": "0.6"
+        },
+        {
+          "earned": "0.6",
+          "evidence": "Correctly identifies Cs as the A=140 product; Rb and Cs share group 1.",
+          "label": "Caesium product (0.6 maximum)",
+          "maximum": "0.6"
+        },
+        {
+          "earned": "0.6",
+          "evidence": "Writes ²³⁵₉₂U + ¹₀n → ⁹³₃₇Rb + ¹⁴⁰₅₅Cs + 3¹₀n.",
+          "label": "Complete fission equation (0.6 maximum)",
+          "maximum": "0.6"
+        }
+      ],
+      "earned": "3.0",
+      "id": "icho_2026_t4_a3",
+      "maximum": "3.0",
+      "official_page_evidence": "The official graph has peaks near A=93 and 140; Q4-3 gives the identical Rb-93/Cs-140 equation and five 0.6-point components.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Correct binding-energy calculation and result; submitted prose and Lean work both use 233 bound product nucleons.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Uses 233(8.45)−235(7.59), omitting free-neutron binding as instructed.",
+          "label": "Relevant calculation (1.0 maximum)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Obtains 185.20 MeV, reported as 185 MeV.",
+          "label": "Released energy (1.0 maximum)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t4_a4",
+      "maximum": "2.0",
+      "official_page_evidence": "Official Q4-3 gives 8.45×233−7.59×235=185.20 MeV and awards full credit for the correct calculation and answer.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Correct formula, unit conversion, calculation, and reported collision count; the Lean expression is consistent.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Uses n_c=ln(E_initial/E_final)/0.948 with both energies in eV.",
+          "label": "Collision-count formula (1.0 maximum)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Obtains 19.969943… and reports 20.0 collisions.",
+          "label": "Collision count (1.0 maximum)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t4_a5",
+      "maximum": "2.0",
+      "official_page_evidence": "Official Q4-4 gives 19.97≈20, allowing 1 point for only the correct formula and 2 points for the correct answer.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Correct balanced gaseous combustion reaction, Hess-law calculation, and enthalpy; Lean and prose agree.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Uses products minus reactants for CH₄+2O₂→CO₂+2H₂O(g), with ΔfH°(O₂)=0.",
+          "label": "Relevant enthalpy calculation (1.0 maximum)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Obtains −802.3 kJ mol^-1; the displayed −802 is valid three-significant-figure rounding.",
+          "label": "Combustion enthalpy (1.0 maximum)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t4_a6",
+      "maximum": "2.0",
+      "official_page_evidence": "Official Q4-4 evaluates the same Hess-law expression to −802.3 kJ mol^-1.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Both rubric quantities are correct, and the Lean work encodes the same constant-heat-capacity calculation.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Calculates ΔC_p=[37+2(34)]−[35+2(29)]=12 J mol^-1 K^-1.",
+          "label": "Heat-capacity change (1.0 maximum)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Calculates −802.3+12(1702)/1000=−781.876 kJ mol^-1, reported as −782.",
+          "label": "Enthalpy at 2000 K (1.0 maximum)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t4_a7",
+      "maximum": "2.0",
+      "official_page_evidence": "Official Q4-5 awards 1 point for ΔC_p=12 and 1 point for ΔrH₂₀₀₀=−781.876 kJ mol^-1.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Correct ideal-gas and energy calculation. The small difference from the official display is solely intermediate rounding; the Lean raw value agrees with the submitted result.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Uses n=PV/RT and multiplies by |ΔrH₂₀₀₀| with the correct kJ-to-J conversion.",
+          "label": "Relevant calculation (1.0 maximum)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Retaining unrounded values gives 7.034786×10^12 J day^-1, correctly reported as 7.03×10^12.",
+          "label": "Daily energy release (1.0 maximum)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t4_a8",
+      "maximum": "2.0",
+      "official_page_evidence": "Official Q4-5 obtains 9.00×10^6 mol day^-1 and 7.04×10^12 J day^-1 after intermediate rounding; the rubric awards 2 points for the correct result.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Both requested outputs are correct. The answer and Lean work consistently apply the explosion energy, energy per fission, 33% fission fraction, and 90% enrichment.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "Obtains 4.230206…×10^24 and reports 4.23×10^24 fissions.",
+          "label": "Total fissions (2.0 maximum)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "Converts the fission count to initial U-235 inventory and divides by 0.33 and 0.90, obtaining 5.558991… kg and reporting 5.56 kg.",
+          "label": "Enriched-uranium mass (2.0 maximum)",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t4_a9",
+      "maximum": "4.0",
+      "official_page_evidence": "Official Q4-6 gives TN=4.23×10^24 fissions and m=5.56 kg, worth 2 points each.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: option (b) and its parity justification are correct.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "The submission counts n + 17 open attachment ends. Complete assembly pairs these ends, so n + 17 is even and n is odd.",
+          "label": "Parity choice and justification (max 1.0) — option (b)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "1.0",
+      "id": "icho_2026_t5_a1",
+      "maximum": "1.0",
+      "official_page_evidence": "Official page 39 selects option (b), using the 17 fixed broken-bond ends to establish odd n.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: both PL1 and monoanion Y meet the highest rubric tiers.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "The submitted graph has two diacylglycerol arms, four RCO residues, two phosphate diesters, and a central glycerol bearing OH, with no O–O bond. Assigning the two peripheral centers as R,R specifies one chiral enantiomer; S,S is its mirror.",
+          "label": "PL1 structure with correct stereochemistry (max 4.0)",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "Y has one phosphate O− and one phosphate OH. It explicitly shows the central alcohol donating to the anionic phosphate and accepting a hydrogen bond from the protonated phosphate, reproducing the stabilizing cyclic headgroup without an ester hydrogen bond.",
+          "label": "Correct stabilized tautomer of monoanion Y (max 2.0)",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "6.0",
+      "id": "icho_2026_t5_a2",
+      "maximum": "6.0",
+      "official_page_evidence": "Official pages 40–41 award 4.0 for either correctly stereodefined PL1 enantiomer and 2.0 for a correct alcohol–phosphate hydrogen-bonded tautomer of Y.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: the alternative bond bookkeeping is valid and yields the official fatty-acid formula.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "The submission derives the equivalent equation 4c + 4h + 4d + 8t + 47 = 255 and verifies the result as 241 sigma bonds plus 14 pi bonds.",
+          "label": "Correct PL1 bond-count equation or equivalent method (max 2.0)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Combining the ozonolysis and bond-count relations gives d = 2 and t = 0, hence exactly two C=C bonds.",
+          "label": "Correct number of C=C bonds (max 1.0)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "The reported C18H32O2 is identical to the official C17H31COOH formula.",
+          "label": "Correct fatty-acid formula (max 1.0)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t5_a3",
+      "maximum": "4.0",
+      "official_page_evidence": "Official page 42 assigns 2.0 for the bond equation, 1.0 for two C=C bonds, and 1.0 for C17H31COOH/C18H32O2.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: X and the supporting calculation agree with the official result.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "The submission identifies X as iodine monobromide, IBr.",
+          "label": "Correct formula of X (max 1.0)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Its iodine-mass-fraction equation gives the partner atomic mass as 79.8875, consistent with Br at 79.90, and its forward calculation reproduces 36.57% iodine.",
+          "label": "Correct supporting calculation (max 1.0)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t5_a4",
+      "maximum": "2.0",
+      "official_page_evidence": "Official page 43 obtains 79.9 g mol−1 for the partner atom and identifies IBr, awarding 1.0 each for the formula and calculation.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit under the all-or-nothing rubric: option (d) is selected.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "The submission selects inverse hexagonal and correctly relates protonation to reduced effective headgroup area and increased negative curvature.",
+          "label": "Correct lipid phase — option (d), inverse hexagonal (max 2.0)",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t5_a5",
+      "maximum": "2.0",
+      "official_page_evidence": "Official page 44 awards 2.0 only for option (d), inverse hexagonal.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: both submitted molecular graphs match the official structures, including the required PL2 stereochemistry.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "PL2 consists of two phosphatidyl phosphate arms joined through an O–CH2–CH2–CH2–O residue, yielding propane-1,3-diol on hydrolysis. Both peripheral glycerol centers have the same tetrahedral configuration, giving the required chiral C2-symmetric enantiomer; reversing both gives its mirror.",
+          "label": "Correct PL2 structure with stereochemistry (max 2.0)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "PL3 is a diacylglycerol phosphate monoethyl ester with phosphate on a terminal glycerol oxygen. The physiological form has one phosphate O−, and the submission explicitly supplies one glycerol configuration and its mirror.",
+          "label": "Correct PL3 structure (max 1.0)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "3.0",
+      "id": "icho_2026_t5_a6",
+      "maximum": "3.0",
+      "official_page_evidence": "Official pages 46–47 show PL2 with a central propane-1,3-diol linker and equal-handed peripheral centers, and PL3 as the monoethyl phosphatidate structure; their maxima are 2.0 and 1.0.",
+      "unresolved": false
+    },
+    {
+      "assessment": "All eight table entries are correct.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "C18 gives A=2, AA=0, exactly matching the official table.",
+          "label": "C18: 2.0/2.0 maximum points awarded.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "C16 gives A=0, AA=2, exactly matching the official table.",
+          "label": "C16: 2.0/2.0 maximum points awarded.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Triplet C13 gives A=0, AA=0, exactly matching the official table.",
+          "label": "Triplet C13: 3.0/3.0 maximum points awarded.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "Singlet C13 gives A=1, AA=1, exactly matching the official table.",
+          "label": "Singlet C13: 3.0/3.0 maximum points awarded.",
+          "maximum": "3.0"
+        }
+      ],
+      "earned": "10.0",
+      "id": "icho_2026_t6_a1",
+      "maximum": "10.0",
+      "official_page_evidence": "Q6-1 shows A=[2,0,0,1] and AA=[0,2,0,1], with maxima 2,2,3,3.",
+      "unresolved": false
+    },
+    {
+      "assessment": "The explicit B–D molecular graphs are equivalent to the official drawings, including substituent placement, bond orders, and radicals.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "B has the official C14Cl3 connectivity, two alkyne bonds, cumulenic section, and one correctly placed radical.",
+          "label": "B: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "C has the official C14Cl connectivity and one correctly placed radical; its bond-order vector is an equivalent orientation of the drawing.",
+          "label": "C: 3.0/3.0 maximum points awarded.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "D has the official C14Cl5 connectivity, two-alkyne pattern, and one correctly placed radical.",
+          "label": "D: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "11.0",
+      "id": "icho_2026_t6_a2",
+      "maximum": "11.0",
+      "official_page_evidence": "Q6-2 directly depicts B, C, and D; the rubric assigns 4, 3, and 4 points and requires penalties for missing or incorrect radicals.",
+      "unresolved": false
+    },
+    {
+      "assessment": "The conversion and unique halogen choice are correct.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "2.5 eV per electron is correctly converted to 241.2125 kJ mol^-1, reasonably matching the official 241.2.",
+          "label": "Unit conversion: 1.0/1.0 maximum points awarded.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Iodine alone is selected because only the 228 kJ mol^-1 C–I bond is below the available energy.",
+          "label": "Halogen selection: 1.0/1.0 maximum points awarded.",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t6_a3",
+      "maximum": "2.0",
+      "official_page_evidence": "Q6-3 gives 241.2 kJ mol^-1 and X=I, one point for each result.",
+      "unresolved": false
+    },
+    {
+      "assessment": "All three requested ion identities are exactly correct.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "m/z 783 is [C48E3+3H]3+, with (576+3×590+3)/3=783.",
+          "label": "m/z 783: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "m/z 879 is [C48E2+2H]2+, with (576+2×590+2)/2=879.",
+          "label": "m/z 879: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "m/z 1174 is [C48E3+2H]2+, with (576+3×590+2)/2=1174.",
+          "label": "m/z 1174: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "12.0",
+      "id": "icho_2026_t6_a4",
+      "maximum": "12.0",
+      "official_page_evidence": "Q6-4 lists precisely these three catenane ions and awards 4 points for each.",
+      "unresolved": false
+    },
+    {
+      "assessment": "All seven structures F–L match the official reaction sequence and drawings.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "F has the correct first masked-ring diol, aryl bromide, and terminal OTBS ether.",
+          "label": "F: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "G correctly converts both alcohols of F to OTES ethers.",
+          "label": "G: 3.0/3.0 maximum points awarded.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "H correctly exposes the terminal phenol while retaining both OTES groups.",
+          "label": "H: 3.0/3.0 maximum points awarded.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "I is the correct para-hydroxycyclohexadienone oxidation product.",
+          "label": "I: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "J correctly contains the second masked-ring diol and both terminal aryl bromides.",
+          "label": "J: 3.0/3.0 maximum points awarded.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "K correctly protects the two new alcohols, producing four OTES groups total.",
+          "label": "K: 3.0/3.0 maximum points awarded.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "L correctly forms the cyclic five-unit precursor and loses both terminal bromines.",
+          "label": "L: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "24.0",
+      "id": "icho_2026_t6_a5",
+      "maximum": "24.0",
+      "official_page_evidence": "Q6-6 directly shows the submitted F–L constitutions; Q6-7 assigns maxima 4,3,3,4,3,3,4.",
+      "unresolved": false
+    },
+    {
+      "assessment": "All five officially scored structures M, N, O, Q, and R are correct; no porphyrin penalty applies.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "M is 3,5-di-tert-butyltoluene, with tert-butyl groups at both positions ortho to the methyl-bearing substituent pattern shown officially.",
+          "label": "M: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "N is the corresponding 3,5-di-tert-butylbenzaldehyde.",
+          "label": "N: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "O is the zinc 5,15-bis(Ar) porphyrin with the other two opposite meso positions bearing hydrogen.",
+          "label": "O: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "Q correctly has bromine at both formerly hydrogen-bearing meso positions and retains Zn.",
+          "label": "Q: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "R correctly replaces both bromines by terminal ethynyl groups and retains Zn.",
+          "label": "R: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "20.0",
+      "id": "icho_2026_t6_a6",
+      "maximum": "20.0",
+      "official_page_evidence": "Q6-9 shows M, N, O, Q, and R; Q6-10 assigns 4 points to each and only penalizes incorrect porphyrin double bonds or missing Zn.",
+      "unresolved": false
+    },
+    {
+      "assessment": "The minimum oxidation and resulting global π-electron count are both correct.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "The submission correctly counts 84 neutral π electrons, removes 2, and obtains 82=4(20)+2.",
+          "label": "n(e)=2 and n(t)=82: 4.0/4.0 maximum points awarded.",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t6_a7",
+      "maximum": "4.0",
+      "official_page_evidence": "Q6-11 gives n(e)=2 and n(t)=82 and awards 4 points for the fully correct pair.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. Both gas sets and the inequality match the official ticks exactly; no incorrect-tick penalties apply.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "Submitted M1={CO,H2,N2}, exactly the three official M1 ticks, with no extraneous gases.",
+          "label": "M1 composition and negative marking (maximum 1.0 points)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Submitted M2={H2,N2,NH3}, exactly the three official M2 ticks, with no extraneous gases.",
+          "label": "M2 composition and negative marking (maximum 1.0 points)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Both the answer and Lean work state x>y, matching the selected official relationship.",
+          "label": "Relationship between x and y (maximum 1.0 points)",
+          "maximum": "1.0"
+        }
+      ],
+      "earned": "3.0",
+      "id": "icho_2026_t7_a1",
+      "maximum": "3.0",
+      "official_page_evidence": "Official PDF page 60 ticks CO, H2, and N2 for M1; H2, N2, and NH3 for M2; and x>y.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The normalized-basis calculation is equivalent to the official production-scale material balance and gives the accepted annual methane mass.",
+      "components": [
+        {
+          "earned": "0.5",
+          "evidence": "The calculation converts yield-adjusted ammonia mass through M(NH3), explicitly incorporating the theoretical ammonia amount.",
+          "label": "Amount of NH3 (maximum 0.5 points)",
+          "maximum": "0.5"
+        },
+        {
+          "earned": "0.5",
+          "evidence": "The basis identifies 4 mol N2 as corresponding to 8 mol theoretical NH3, equivalent to the official initial-N2 calculation.",
+          "label": "Initial amount of N2 (maximum 0.5 points)",
+          "maximum": "0.5"
+        },
+        {
+          "earned": "0.5",
+          "evidence": "It explicitly requires 12 mol H2 for the 4 mol N2 basis, preserving the official 3:1 ratio.",
+          "label": "Initial amount of H2 (maximum 0.5 points)",
+          "maximum": "0.5"
+        },
+        {
+          "earned": "0.5",
+          "evidence": "The calculation explicitly uses the diagram's 1 mol O2 per 4 mol N2 basis.",
+          "label": "Initial amount of O2 (maximum 0.5 points)",
+          "maximum": "0.5"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "The reforming, partial-oxidation, and shift balances give 3y+4+(y+2)=12, equivalent to the official methane-balance equation.",
+          "label": "Equation/material balance for CH4 (maximum 3.0 points)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Solving gives y=3/2 and total methane x=7/2, hence n(CH4)/n(NH3,theoretical)=7/16, matching the official stoichiometry.",
+          "label": "Amount of CH4 from the equation (maximum 1.0 points)",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The boxed result 2.80×10^5 tons per year agrees with the official 280000 tons.",
+          "label": "Annual methane mass (maximum 2.0 points)",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "8.0",
+      "id": "icho_2026_t7_a2",
+      "maximum": "8.0",
+      "official_page_evidence": "Official PDF page 61 gives the four initial amounts, methane balance, and m(CH4)=280000 tons.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The recurrence, geometric series, inventory, cumulative-yield relation, and least qualifying cycle all reproduce the official solution.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "The submission gives f(k+1)=0.85(fk+1) with f0=0, equivalent to the official recurrence for one fresh mole of N2 per cycle.",
+          "label": "Nitrogen recurrence (maximum 2.0 points)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The recurrence implies and uses f1=0.85 mol, the official initial term.",
+          "label": "Initial term f1 (maximum 2.0 points)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The work explicitly writes fk=q+q²+⋯+q^k.",
+          "label": "Geometric-sum representation (maximum 2.0 points)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "It derives fk=(17/3)(1−(17/20)^k), algebraically identical to the official closed form.",
+          "label": "Closed form (maximum 2.0 points)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "f58=5.6662099726… mol is correctly reported to four decimal places as 5.6662 mol.",
+          "label": "Nitrogen after cycle 58 (maximum 2.0 points)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "The submission derives Yk=(k−fk)/k=1−fk/k, the official cumulative overall-yield equation.",
+          "label": "Overall-yield equation (maximum 3.0 points)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "It verifies Y188<0.970 and Y189≥0.970 and establishes that 189 is the first qualifying cycle.",
+          "label": "Required cycle count (maximum 2.0 points)",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "15.0",
+      "id": "icho_2026_t7_a3",
+      "maximum": "15.0",
+      "official_page_evidence": "Official PDF page 63 gives the same recurrence and closed form, f58=5.6662 mol, the cumulative-yield equation, and 189 cycles.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The submitted aqueous MDEA reaction has the official species, stoichiometry, and charges.",
+      "components": [
+        {
+          "earned": "3.0",
+          "evidence": "CH3N(CH2CH2OH)2+CO2+H2O⇌[CH3NH(CH2CH2OH)2]++HCO3− is exactly the official balanced equation; the equilibrium arrow is acceptable.",
+          "label": "Balanced CO2-scrubbing equation (maximum 3.0 points)",
+          "maximum": "3.0"
+        }
+      ],
+      "earned": "3.0",
+      "id": "icho_2026_t7_a4",
+      "maximum": "3.0",
+      "official_page_evidence": "Official PDF page 64 gives protonated N-methyldiethanolamine and bicarbonate with all coefficients equal to one.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The uptake calculation is correct, and the textual molecular graph is unambiguous and connectivity-equivalent to the official coordination drawing.",
+      "components": [
+        {
+          "earned": "3.0",
+          "evidence": "The submission obtains n(N2)=4.1819×10^−3 mol, n(4)=1.6727×10^−3 mol, and a ratio of approximately 2.5, hence 5 N2 per 2 precursor units.",
+          "label": "N2-to-precursor uptake ratio (maximum 3.0 points)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "It specifies two Mo centers, one tridentate P,N,P ligand per Mo, two terminal end-on N2 ligands per Mo, and one end-on/end-on bridging N2: [{Mo(PNP)(N2)2}2(μ-N2)]. These are precisely the official connections; stereochemistry is not marked.",
+          "label": "Structure of complex 5 (maximum 3.0 points)",
+          "maximum": "3.0"
+        }
+      ],
+      "earned": "6.0",
+      "id": "icho_2026_t7_a5",
+      "maximum": "6.0",
+      "official_page_evidence": "Official PDF page 64 shows the 2.5:1 uptake calculation and the dimolybdenum structure containing four terminal N2 ligands, one Mo–N≡N–Mo bridge, and one tridentate PNP ligand at each Mo.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. The submitted decreasing order contains all three rubric-scored adjacent comparisons.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "The answer explicitly gives B>C and correctly relates B's advantage to its higher pKa.",
+          "label": "B>C (maximum 2.0 points)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The answer explicitly gives C>D. Its pKa-based explanation is consistent with the displayed candidate table, notwithstanding the inconsistency in the official explanatory prose.",
+          "label": "C>D (maximum 2.0 points)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The answer explicitly gives D>A and identifies A's much weaker reductant as belonging to the zero-yield regime.",
+          "label": "D>A (maximum 2.0 points)",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "6.0",
+      "id": "icho_2026_t7_a6",
+      "maximum": "6.0",
+      "official_page_evidence": "Official PDF page 66 states B>C>D>A=0 and assigns 2 points to each adjacent comparison.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit. All binary nitrides, the primitive composition of 10, and the identities and charges of S and T match the official solution.",
+      "components": [
+        {
+          "earned": "3.0",
+          "evidence": "The submitted 7=LaN matches both the 9.16% nitrogen datum and the official identification.",
+          "label": "Formula of 7 (maximum 3.0 points)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "The submitted 8=Ca3N2 matches both the 18.90% nitrogen datum and the official identification.",
+          "label": "Formula of 8 (maximum 3.0 points)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "The submitted 9=Si3N4 matches both the 39.94% nitrogen datum and the official full-credit identification.",
+          "label": "Formula of 9 (maximum 3.0 points)",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The derived primitive empirical formula La5Ca9Si13N25O5 is equivalent to the official overall composition.",
+          "label": "Empirical formula of 10 (maximum 2.0 points)",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The answer explicitly gives S=O2− and tetrahedral T=[SiO3N]5− and writes 10 as La5Ca9O2[SiO3N][Si12N24], matching the official decomposition.",
+          "label": "Explicit identities of S and T (maximum 2.0 points)",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "13.0",
+      "id": "icho_2026_t7_a7",
+      "maximum": "13.0",
+      "official_page_evidence": "Official PDF page 67 identifies 7=LaN, 8=Ca3N2, 9=Si3N4, and 10=La5Ca9(O)2(NSiO3)[Si12N24], with S=O2− and T=SiO3N5−.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Fully correct balanced reduction half-equation.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "CO2 + 2H+ + 2e− → CO + H2O exactly matches the official equation, including direction and electron count.",
+          "label": "Fully correct acidic half-equation (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t8_a1",
+      "maximum": "2.0",
+      "official_page_evidence": "Official PDF page 68 gives the identical equation and awards 2.0 points only for a fully correct reaction.",
+      "unresolved": false
+    },
+    {
+      "assessment": "All five submitted molecular graphs match the official structures, including connectivity, radical placement, and charge.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "The N-centered triethanolamine radical cation [(HOCH2CH2)3N]•+ matches official structure 3.",
+          "label": "Structure 3 (max 4.0) — 4.0 earned.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "The neutral α-amino carbon radical (HOCH2CH2)2N–ĊH–CH2OH matches official structure 4.",
+          "label": "Structure 4 (max 4.0) — 4.0 earned.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "The submitted N+=CH iminium form is official accepted resonance structure 5.1.",
+          "label": "Structure 5 (max 4.0) — 4.0 earned.",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "HN(CH2CH2OH)2 matches official diethanolamine structure 6.",
+          "label": "Structure 6 (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "HOCH2–CHO matches official glycolaldehyde structure 7 and contains the Tollens-positive aldehyde group.",
+          "label": "Structure 7 (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "16.0",
+      "id": "icho_2026_t8_a2",
+      "maximum": "16.0",
+      "official_page_evidence": "Official PDF page 69 awards 4.0 points each for structures 3, 4, and either resonance form of 5, plus 2.0 points each for 6 and 7.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Correct geometry choice.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "The submitted bottom-right seventh option is the planar N4 complex with two opposite axial chlorides marked by the official solution.",
+          "label": "Correct geometry tick (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t8_a3",
+      "maximum": "2.0",
+      "official_page_evidence": "Official PDF page 70 marks only the bottom-right structure, with four coplanar nitrogen donors and trans chlorides.",
+      "unresolved": false
+    },
+    {
+      "assessment": "All OS, CN, VE, and total-charge values are correct. Structures 10–12 and 15 match, but structures 9, 13, and 14 explicitly place their two coligands cis instead of trans.",
+      "components": [
+        {
+          "earned": "0.0",
+          "evidence": "Submitted cis-[Fe(L)(OH2)2]2+ has cis aqua ligands; the official structure has opposite, trans aqua ligands.",
+          "label": "Structure 9 (max 3.0) — 0.0 earned.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "[Fe(L)(OH2)]+ correctly has the N4 ligand and one coordinated aqua ligand.",
+          "label": "Structure 10 (max 3.0) — 3.0 earned.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "The κ2-C,O-bound activated CO2 fragment matches the official Fe–C/Fe–O connectivity.",
+          "label": "Structure 11 (max 3.0) — 3.0 earned.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "The C-bound Fe–C(=O)–OH hydroxycarbonyl matches official structure 12.",
+          "label": "Structure 12 (max 3.0) — 3.0 earned.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "The submission explicitly makes aqua and hydroxycarbonyl cis; the official drawing places COOH and aqua opposite and trans.",
+          "label": "Structure 13 (max 3.0) — 0.0 earned.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "The submission explicitly makes aqua and CO cis; the official Fe–CO and Fe–OH2 bonds are trans.",
+          "label": "Structure 14 (max 3.0) — 0.0 earned.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "[Fe(L)(OH2)]2+ correctly represents official structure 15.",
+          "label": "Structure 15 (max 3.0) — 3.0 earned.",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "1.5",
+          "evidence": "Submitted OS +2, CN 6, and VE 18 are all correct.",
+          "label": "Gradable OS/CN/VE fields for 9 (max 1.5) — 1.5 earned.",
+          "maximum": "1.5"
+        },
+        {
+          "earned": "1.5",
+          "evidence": "Submitted OS +1, CN 5, and VE 17 are all correct.",
+          "label": "Gradable OS/CN/VE fields for 10 (max 1.5) — 1.5 earned.",
+          "maximum": "1.5"
+        },
+        {
+          "earned": "0.5",
+          "evidence": "Submitted VE 17 is correct; OS +3 and CN 6 were prefilled.",
+          "label": "Gradable OS/CN/VE field for 11 (max 0.5) — 0.5 earned.",
+          "maximum": "0.5"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Submitted OS +2 and VE 16 are correct; CN 5 was prefilled.",
+          "label": "Gradable OS/CN/VE fields for 12 (max 1.0) — 1.0 earned.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Submitted CN 6 and VE 18 are correct; OS +2 was prefilled.",
+          "label": "Gradable OS/CN/VE fields for 13 (max 1.0) — 1.0 earned.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.5",
+          "evidence": "Submitted OS +2, CN 6, and VE 18 are all correct.",
+          "label": "Gradable OS/CN/VE fields for 14 (max 1.5) — 1.5 earned.",
+          "maximum": "1.5"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "Submitted OS +2 and CN 5 are correct; VE 16 was prefilled.",
+          "label": "Gradable OS/CN/VE fields for 15 (max 1.0) — 1.0 earned.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "Every submitted Z value matches the official value, so no −0.5 deduction applies.",
+          "label": "Total-charge deductions (−0.5 per wrong structure; best 0.0) — 0.0 deducted.",
+          "maximum": "0.0"
+        }
+      ],
+      "earned": "20.0",
+      "id": "icho_2026_t8_a4",
+      "maximum": "29.0",
+      "official_page_evidence": "Official PDF pages 72–73 show 9 with trans aqua ligands, 13 with trans COOH/aqua, and 14 with trans CO/aqua. They also give the submitted OS/CN/VE/Z values for all seven complexes.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Fully correct surface density.",
+      "components": [
+        {
+          "earned": "5.0",
+          "evidence": "Using mcat/(mcat+mC3N4)=0.038 gives 2.398… molecules nm−2, reasonably reported as 2.40.",
+          "label": "Correct Ncat value (max 5.0) — 5.0 earned.",
+          "maximum": "5.0"
+        }
+      ],
+      "earned": "5.0",
+      "id": "icho_2026_t8_a5",
+      "maximum": "5.0",
+      "official_page_evidence": "Official PDF page 74 obtains approximately 2.4 catalyst molecules nm−2 for the full-credit interpretation.",
+      "unresolved": false
+    },
+    {
+      "assessment": "The photon-side work and quantum-yield equation are correct, but the catalyst mass basis is wrong. The stated sample contains 10 mg of C3N4 support, not 10 mg of total loaded material.",
+      "components": [
+        {
+          "earned": "0.0",
+          "evidence": "The submission uses mcat=0.038×0.010=3.80×10−4 g and hence rCO≈9.13×10^14 s−1. Officially, mcat/(mcat+0.010)=0.038 gives mcat≈3.95×10−4 g and rCO=9.48×10^14 s−1.",
+          "label": "CO production rate rCO (max 2.0) — 0.0 earned.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "Eγ=5.09345×10−19 J is equivalent to the official rounded 5.1×10−19 J.",
+          "label": "Photon energy (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The submitted photon count corresponds to 9.82×10^16 photons s−1, matching the official photon flux.",
+          "label": "Incident photon flux (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The formula φ=2rCO/rphoton×100% correctly includes the two electrons required per CO.",
+          "label": "Quantum-yield equation (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "The submitted 1.86% follows from the wrong catalyst mass and does not agree with the official 1.94%.",
+          "label": "Final quantum yield (max 2.0) — 0.0 earned.",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "6.0",
+      "id": "icho_2026_t8_a6",
+      "maximum": "10.0",
+      "official_page_evidence": "Official PDF page 74 uses mcat/(mcat+0.010 g)=0.038, obtaining rCO=9.48×10^14 s−1, rphoton=9.8×10^16 s−1, and φ=1.94%.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Correct tick; the flaw in the submitted proportional-rate expression does not change the required classification.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "The answer selects a) increases, which is the officially marked option.",
+          "label": "Correct rate-trend tick (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t8_a7",
+      "maximum": "2.0",
+      "official_page_evidence": "Official PDF page 75 marks option a, increases.",
+      "unresolved": false
+    },
+    {
+      "assessment": "All four mappings are correct and no additional incorrect ticks were submitted.",
+      "components": [
+        {
+          "earned": "1.0",
+          "evidence": "a=N matches the official table.",
+          "label": "Mapping a (max 1.0) — 1.0 earned.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "b=B matches the official table.",
+          "label": "Mapping b (max 1.0) — 1.0 earned.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "c=G matches the official table.",
+          "label": "Mapping c (max 1.0) — 1.0 earned.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "1.0",
+          "evidence": "d=R matches the official table.",
+          "label": "Mapping d (max 1.0) — 1.0 earned.",
+          "maximum": "1.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "No extra incorrect ticks appear, so the −1.0-per-error rule causes no deduction.",
+          "label": "Incorrect-tick deductions (best 0.0) — 0.0 deducted.",
+          "maximum": "0.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t8_a8",
+      "maximum": "4.0",
+      "official_page_evidence": "Official PDF page 77 maps a→N, b→B, c→G, and d→R, awarding +1.0 per correct tick and −1.0 per incorrect tick with a zero floor.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Fully correct. The generic competing-first-order-channel derivation is equivalent to the four official state-specific equations, and both numerical values are correct.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "The relation k0=1/τ0 for the summed intrinsic S1 loss rate is equivalent to the official S1 decay/lifetime equation.",
+          "label": "Equation corresponding to official 8.10.1 (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The same relation applied to T1 is equivalent to the official T1 decay/lifetime equation.",
+          "label": "Equation corresponding to official 8.10.2 (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The submission derives ηq=kS[Red]τ0/(1+kS[Red]τ0) and applies it to S1.",
+          "label": "Equation corresponding to official 8.10.3 (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "The same branching expression is explicitly applied with kT and τ0(T1).",
+          "label": "Equation corresponding to official 8.10.4 (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "43.9147…%, reported as 43.9%, agrees with the official rounded 44%.",
+          "label": "S1 quenching percentage (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "2.0",
+          "evidence": "99.9207…%, reported as 99.9%, matches the official result.",
+          "label": "T1 quenching percentage (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "12.0",
+      "id": "icho_2026_t8_a9",
+      "maximum": "12.0",
+      "official_page_evidence": "Official PDF page 79 awards 2.0 points for each of four decay/quenching equations and 2.0 points for each value, with ηq(S1)=44% and ηq(T1)=99.9%.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Fully correct lifetime trend.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "The answer selects b) decreases and correctly gives τ=τ0/(1+kqτ0[Red]) for both S1 and T1.",
+          "label": "Correct lifetime-trend tick (max 2.0) — 2.0 earned.",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t8_a10",
+      "maximum": "2.0",
+      "official_page_evidence": "Official PDF page 79 marks option b and shows that increasing [Red] increases the decay-rate denominator and shortens the lifetime.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: the mass balance and numerical result match the official solution.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "Submitted 7(180.16)−7(18.016)=1135.008 g mol⁻¹, equivalent to the official 1135.01 g mol⁻¹.",
+          "label": "β-CD molar mass (2.0 maximum) consequently correct.",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t9_a1",
+      "maximum": "2.0",
+      "official_page_evidence": "Q9-1 gives 1135.01 g mol⁻¹ and awards 2 points.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: the selected chair and K structure match the official drawing.",
+      "components": [
+        {
+          "earned": "6.0",
+          "evidence": "The right-hand inverted chair is selected; every repeat has the C3–O–C6 bridge and retained C2–OH with the required stereochemistry.",
+          "label": "Correct K structure and favorable conformation (6.0 maximum).",
+          "maximum": "6.0"
+        },
+        {
+          "earned": "0.0",
+          "evidence": "No wrong conformation, substituent, or stereocentre was found.",
+          "label": "Rubric deductions not triggered.",
+          "maximum": "0.0"
+        }
+      ],
+      "earned": "6.0",
+      "id": "icho_2026_t9_a2",
+      "maximum": "6.0",
+      "official_page_evidence": "Q9-2 favors the second/right-hand conformation and shows the same anhydro bridge and remaining OH.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: both requested counts are correct.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "Five ring atoms per repeat across seven repeats gives rs=35.",
+          "label": "Macrocycle ring size (4.0 maximum).",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "Three stereocentres per repeat across seven repeats gives sc=21.",
+          "label": "Stereocentre count (4.0 maximum).",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "8.0",
+      "id": "icho_2026_t9_a3",
+      "maximum": "8.0",
+      "official_page_evidence": "Q9-3 explicitly gives rs=35 and sc=21, worth 4 points each.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: the textual molecular graph is equivalent to official Y.",
+      "components": [
+        {
+          "earned": "3.0",
+          "evidence": "Six repeats each contain CH₂OTBS at C6 and a C2–O–C3 epoxide on the retained α-(1→4) scaffold. The stated epoxide configuration is accepted.",
+          "label": "Structure and stereochemistry of Y (3.0 maximum).",
+          "maximum": "3.0"
+        }
+      ],
+      "earned": "3.0",
+      "id": "icho_2026_t9_a4",
+      "maximum": "3.0",
+      "official_page_evidence": "Q9-4 shows the sixfold C6-OTBS 2,3-epoxide and also accepts the opposite epoxide configuration.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: all L template entries are correct.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "Units 1 and 4 are CH₂OH; the other five primary sites are CH₂OBn; the fourteen secondary sites are (OBn)₁₄.",
+          "label": "Structure of L (2.0 maximum).",
+          "maximum": "2.0"
+        }
+      ],
+      "earned": "2.0",
+      "id": "icho_2026_t9_a5",
+      "maximum": "2.0",
+      "official_page_evidence": "Q9-6 displays exactly this unit-by-unit substitution pattern.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: the submitted isomer count is correct.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "The three unordered linkage combinations correspond to 1–1, 1–4, and 4–4.",
+          "label": "β-CD dimer isomer count (4.0 maximum).",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t9_a6",
+      "maximum": "4.0",
+      "official_page_evidence": "Q9-7 states three isomers, with 4–1 equivalent to 1–4.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: both sodium-adduct values and formula accounting are correct.",
+      "components": [
+        {
+          "earned": "3.0",
+          "evidence": "C₇₈H₈₄O₁₆ gives [M₁+Na]⁺ at m/z 1299.",
+          "label": "First sodium-adduct peak (3.0 maximum).",
+          "maximum": "3.0"
+        },
+        {
+          "earned": "3.0",
+          "evidence": "C₁₀₅H₁₁₂O₂₁ gives [M₂+Na]⁺ at m/z 1731.",
+          "label": "Second sodium-adduct peak (3.0 maximum).",
+          "maximum": "3.0"
+        }
+      ],
+      "earned": "6.0",
+      "id": "icho_2026_t9_a7",
+      "maximum": "6.0",
+      "official_page_evidence": "Q9-8 gives the same component formulas and peaks 1299 and 1731.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Partial credit: O–R are correct, but S contains two substituent errors because the final DIBAL-H step was omitted in both prose and Lean work.",
+      "components": [
+        {
+          "earned": "2.0",
+          "evidence": "O correctly has vinyl at unit 1 and CH₂OBn at units 2–6.",
+          "label": "Structure O (2.0 maximum).",
+          "maximum": "2.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "P correctly has unit-1 vinyl and unit-2 CH₂N₃.",
+          "label": "Structure P (4.0 maximum).",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "Q correctly contains the unit-2-N/unit-5-O methallyl bridge.",
+          "label": "Structure Q (4.0 maximum).",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "R correctly has N-Boc on the bridge and CH₂N₃ at unit 6.",
+          "label": "Structure R (4.0 maximum).",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "4.0",
+          "evidence": "The S baseline correctly retains the vinyl group, N-benzyl bridge, unit-5 bridge oxygen, and common secondary substitution.",
+          "label": "Structure S before deductions (4.0 maximum).",
+          "maximum": "4.0"
+        },
+        {
+          "earned": "-2.0",
+          "evidence": "Submitted S leaves unit 3 as CH₂OBn instead of CH₂OH and unit 6 as CH₂N₃ instead of CH₂NH₂. These are two independent −1 substitutions under the rubric.",
+          "label": "Incorrect-substituent deductions for S.",
+          "maximum": "0.0"
+        }
+      ],
+      "earned": "16.0",
+      "id": "icho_2026_t9_a8",
+      "maximum": "18.0",
+      "official_page_evidence": "Q9-9/Q9-10 show final S with unit 3 HOCH₂ and unit 6 CH₂NH₂ after DIBAL-H (2 equiv.); the rubric deducts 1 point per wrong or missing substituent.",
+      "unresolved": false
+    },
+    {
+      "assessment": "Full credit: the cyclic-arrangement count is correct.",
+      "components": [
+        {
+          "earned": "4.0",
+          "evidence": "The submission obtains 6!/6=5!=120, identifying rotations but not reflections.",
+          "label": "Functional-group arrangement count (4.0 maximum).",
+          "maximum": "4.0"
+        }
+      ],
+      "earned": "4.0",
+      "id": "icho_2026_t9_a9",
+      "maximum": "4.0",
+      "official_page_evidence": "Q9-11 explicitly gives 6!/6=120 for 4 points.",
+      "unresolved": false
+    }
+  ],
+  "questions": [
+    {
+      "question": 1,
+      "earned": "25.0",
+      "maximum": 25,
+      "weight": 7,
+      "weighted": "7.0"
+    },
+    {
+      "question": 2,
+      "earned": "35.0",
+      "maximum": 35,
+      "weight": 6,
+      "weighted": "6.0"
+    },
+    {
+      "question": 3,
+      "earned": "56.0",
+      "maximum": 63,
+      "weight": 7,
+      "weighted": "6.222222222222222222222222222"
+    },
+    {
+      "question": 4,
+      "earned": "22.0",
+      "maximum": 22,
+      "weight": 6,
+      "weighted": "6.0"
+    },
+    {
+      "question": 5,
+      "earned": "18.0",
+      "maximum": 18,
+      "weight": 6,
+      "weighted": "6.0"
+    },
+    {
+      "question": 6,
+      "earned": "83.0",
+      "maximum": 83,
+      "weight": 7,
+      "weighted": "7.0"
+    },
+    {
+      "question": 7,
+      "earned": "54.0",
+      "maximum": 54,
+      "weight": 7,
+      "weighted": "7.0"
+    },
+    {
+      "question": 8,
+      "earned": "71.0",
+      "maximum": 84,
+      "weight": 7,
+      "weighted": "5.916666666666666666666666667"
+    },
+    {
+      "question": 9,
+      "earned": "51.0",
+      "maximum": 53,
+      "weight": 7,
+      "weighted": "6.735849056603773584905660377"
+    }
+  ],
+  "finished": 1789355256.7270026
+}

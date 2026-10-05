@@ -1,0 +1,782 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "Passed: the sole requested classification is encoded as a complete six-residue molecular graph with explicit connectivity, substituents, formula, electronic state, and stereochemical face/configuration data. Its selection is derived from the two source arrows, the image formula and product stereochemistry, a non-singleton C2/C3 audit, ordinary protection/SN2 rules, and the independently verified source-scoped key-intermediate citation. It makes no yield, sole-product, or open-world uniqueness claim and faithfully preserves sealed Kimi subpart 9.4.",
+    "updated_at": "2026-09-13T09:33:09Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "d482ae9dbb0ed7974edd4557507437d168da69b72fd44a336757da338ede35f5",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The candidate transcribes the \u03b1-CD repeat count, \u03b1-(1\u21924) cyclic scaffold, all five reagent stages around Y, the printed Y formula, the downstream \u03b1-cycloaltrin faces, and the TBS legend from T9_page-2. CompleteYSpecification matches the source-first structure and the sidecar; no source-facing claim of yield or exhaustive chemical uniqueness is added."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "ProtectionFits audits all C2/C3/C6 hydroxyl locants before selecting the primary C6 class. ClosureCandidateFits audits both distinct C2/C3 leaving/attacking assignments uniformly, using graph rewrite, exact formula, hydrolysis compatibility, SN2 inversion, and the verified 2,3-anhydro-\u03b1-cyclomannin literature claim. The selected graph is then proved source-compatible and complete, rather than assumed as a hypothesis."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "yGraph enumerates every heavy atom and bond of six carbohydrate residues and six O-SiMe2-tBu groups; attached hydrogen multiplicities expand to distinct one-bond hydrogen atoms. AtomSpec records charge/radical state, WellFormedClosed enforces neutral valence and connectivity, and yStereo records ordered ligands, external/hydrogen faces, and retained/inverted configuration at every ring stereocentre."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The output is an exact symbolic structure/classification. The displayed equivalents, temperature, repeat count, and molecular formula are exact problem stipulations; no measured interval, tolerance, or rounding affects the output."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The lower-page arrows are followed left-to-right: \u03b1-CD plus TBSCl/pyridine, NaH, and TsCl leads to Y; Y plus tetrabutylammonium fluoride and then hot water leads to \u03b1-cycloaltrin. sourceReactionConditions and DownstreamHydrolysisCompatible preserve that direction and do not reverse-infer an upstream yield."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The model does not use a singleton output domain. Both chemically distinct C2/C3 closure orientations survive the initial finite domain; the source-scoped manno-intermediate claim selects C2 leaving/O3 attacking, while formula, graph rewrite, and downstream faces are checked uniformly. No free Bool/Prop or exclusion flag can switch the reported structure."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The source substrate is a cyclic six-residue \u03b1-D-glucopyranoside assembly with \u03b1-(1\u21924) cross-boundary links and the depicted starting faces.",
+          "carrier": "IChO2026Problems.T9A4.alphaCDGraph; IChO2026Problems.T9A4.alphaCD_graph_audit; IChO2026Problems.T9A4.startingHydroxylFace",
+          "status": "covered",
+          "evidence": "T9_page-1 states \u03b1-CD has six \u03b1-D-glucopyranoside units; the lower panel of T9_page-2 shows the bracket multiplier 6 and repeat topology. alphaCDBonds includes each pyranose edge, C5-C6 branch, three OH bonds, and outgoing C1-O-C4 link with modular residue closure."
+        },
+        {
+          "claim": "The depicted staged arrows have the recorded tail reagents, rightward products, and only qualitative named-transform semantics.",
+          "carrier": "IChO2026Problems.T9A4.sourceReactionConditions; IChO2026Problems.T9A4.SourceConditionsHold; IChO2026Problems.T9A4.sourceTransformationUse; IChO2026Problems.T9A4.SourceReactionCompatible",
+          "status": "covered",
+          "evidence": "The source-first arrow certificate identifies \u03b1-CD as the first tail and Y as its head, then Y as the second tail and \u03b1-cycloaltrin as its head. The carrier asserts compatibility only and explicitly omits yield, completion, sole-product, phase, and unprinted-stream claims."
+        },
+        {
+          "claim": "Limited bulky TBS protection selects the six primary C6 hydroxyls and installs complete O-Si(CH3)2-C(CH3)3 substituents.",
+          "carrier": "IChO2026Problems.T9A4.hydroxylClass; IChO2026Problems.T9A4.ProtectionFits; IChO2026Problems.T9A4.derivedProtectionCandidate_component; IChO2026Problems.T9A4.HasTBSAtC6",
+          "status": "covered",
+          "evidence": "The problem highlights primary/secondary OH reactivity, supplies 6 equivalents for six residues, and draws TBSCl as tBu-SiMe2-Cl. The ordinary steric selectivity of bulky silylation is applied to the complete source-derived C2/C3/C6 hydroxyl domain, not to a candidate-named singleton."
+        },
+        {
+          "claim": "The key 2,3-anhydro series is the manno series for this \u03b1-CD-to-\u03b1-cycloaltrin synthesis.",
+          "carrier": "IChO2026Problems.T9A4.cycloaltrinSynthesisPaper; IChO2026Problems.T9A4.cycloaltrinKeyIntermediateClaim; IChO2026Problems.T9A4.CandidateMatchesKeyIntermediate",
+          "status": "covered",
+          "evidence": "Independent DOI metadata and abstract verification: Nogami et al., \u201cSynthesis, Structure, and Conformational Features of \u03b1-Cycloaltrin: A Cyclooligosaccharide with Alternating 4C1/1C4 Pyranoid Chairs,\u201d DOI 10.1002/anie.199718991, https://doi.org/10.1002/anie.199718991, abstract final sentence. Exact scoped claim: \u03b1-cycloaltrin is prepared from \u03b1-CD by a four-step protocol whose key intermediate is 2,3-anhydro-\u03b1-cyclomannin. The image supplies the same start, end, and staged sequence."
+        },
+        {
+          "claim": "Intramolecular SN2 closure and subsequent epoxide opening have the recorded inversion/retention faces.",
+          "carrier": "IChO2026Problems.T9A4.epoxideBondFace; IChO2026Problems.T9A4.openedProductFace; IChO2026Problems.T9A4.DownstreamHydrolysisCompatible; IChO2026Problems.T9A4.derivedClosureCandidate_components",
+          "status": "covered",
+          "evidence": "Ordinary backside-displacement stereochemistry inverts the leaving carbon and retains the attacking oxygen's original bond direction. From the source gluco faces, O3 attack at C2 gives the two upper-face epoxide bonds; water attack at C3 then produces the \u03b1-cycloaltrin faces drawn at the second arrowhead."
+        },
+        {
+          "claim": "The whole-product composition follows from the connected image topology and explicit TBS/dehydration component ledger.",
+          "carrier": "IChO2026Problems.T9A4.tbsNetFormulaIncrement; IChO2026Problems.T9A4.sourceDerivedYFormula; IChO2026Problems.T9A4.source_formula_ledger; IChO2026Problems.T9A4.yGraph_formula_and_valence",
+          "status": "covered",
+          "evidence": "Six cyclic anhydroglucose residues give C36H60O30. Replacing six O-H hydrogens with six C6H15Si fragments is a net +6(C6H14Si), and six 2,3-closures remove 6H2O. Recombination equals the formula printed beneath Y, and the independently enumerated graph formula agrees."
+        },
+        {
+          "claim": "The controller-listed previous-part prerequisite is derived inline and is not used as an imported answer.",
+          "carrier": "IChO2026Problems.T9A4.LiesOnMacrocycleXPath; IChO2026Problems.T9A4.carbonOutcomeAfterCleavage; IChO2026Problems.T9A4.PreviousPartResult; IChO2026Problems.T9A4.previous_part_derived",
+          "status": "covered",
+          "evidence": "From the page-2 X arrow, the large-ring path retains C1, glycosidic O, C4, C5, and O5 per seven-residue repeat; periodate cleavage/reduction makes C2/C3 methylenes while C1/C4/C5 remain stereogenic. This prior result is recomputed from source carriers and is not needed to choose among Y structures."
+        },
+        {
+          "claim": "The sole requested output exposes a nontrivial complete graph-and-stereochemistry result carrier.",
+          "carrier": "IChO2026Problems.T9A4.CompleteYSpecification; IChO2026Problems.T9A4.StructureYResult; IChO2026Problems.T9A4.structure_y; IChO2026Problems.T9A4.raw_result; IChO2026Problems.T9A4.reported_result",
+          "status": "covered",
+          "evidence": "The conclusion binds graph equality, linkage, selected protection and closure sites, every residue's connectivity and faces, configuration changes, lack of free OH, neutral closed shell, formula, and well-formed connected valence. It is not a string equality or reflexive theorem."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t9_a4.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t9_a4",
+        "source_record_sha256": "df1eb2a8d4229c3868f3dc62d26d9c10e11bb4115a8848241c9692f0d381f73d",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a4.answer.json",
+        "answer_submission_sha256": "ff72de0585252d113161eeabc8c95349164ab55cd53e22e8ed2166d10101549f",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t9_a4.source.json",
+        "source_report_sha256": "d17e8d2ff7c8a2e210bda9e1aecc9c01fb7e88d1b89c72edb1d27918f0378e4f",
+        "candidate": "IChO2026Problems/problem_icho_2026_t9_a4.lean",
+        "preflight_sha256": "60b8b1e06fe84438fc9e3775f40b4f389af799390338a89058bff5461b841051",
+        "candidate_sha256": "d482ae9dbb0ed7974edd4557507437d168da69b72fd44a336757da338ede35f5",
+        "question_sha256": "12a90196fceec55e6b672392bc9f06d86ab69a9f0811539f2119036738c59832",
+        "shared_context_sha256": "544556b7455fb7dd001f784902993958a8a7df9340a2e79f41dd091cf1dd2f63",
+        "previous_parts_sha256": "8a6eb8627ee3266c73941e72e0e4bcb8a40d6dc8cea74d81cff48e3d33651182",
+        "requested_outputs_sha256": "93d760f90189c7df55e51bcb7e5370ffd0ef3f56cf344cced5d94adf35f7cc68",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T9_page-2.png",
+            "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f"
+          },
+          {
+            "path": "icho_2026_source/image/T9_page-1.png",
+            "sha256": "c7f5114e9bb5d3e821a3df76d40c4ab86006fdb550992aa8013bc50b68a90608"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "fe3ce48c16456e92fda77d4396d93e24da8456452a8706714cb5befab7dfc7bb",
+          "node_count": 6,
+          "edge_count": 5,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "previous_part_prerequisite": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_y"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t9_a3"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t9_a4",
+          "path": ".archon/provided_answer_drafts/Q9.md",
+          "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t9_a4.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t9_a4",
+          "source_record_sha256": "df1eb2a8d4229c3868f3dc62d26d9c10e11bb4115a8848241c9692f0d381f73d",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a4.answer.json",
+          "answer_submission_sha256": "ff72de0585252d113161eeabc8c95349164ab55cd53e22e8ed2166d10101549f",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t9_a4.source.json",
+          "source_report_sha256": "d17e8d2ff7c8a2e210bda9e1aecc9c01fb7e88d1b89c72edb1d27918f0378e4f",
+          "candidate": "IChO2026Problems/problem_icho_2026_t9_a4.lean",
+          "preflight_sha256": "60b8b1e06fe84438fc9e3775f40b4f389af799390338a89058bff5461b841051",
+          "candidate_sha256": "d482ae9dbb0ed7974edd4557507437d168da69b72fd44a336757da338ede35f5",
+          "question_sha256": "12a90196fceec55e6b672392bc9f06d86ab69a9f0811539f2119036738c59832",
+          "shared_context_sha256": "544556b7455fb7dd001f784902993958a8a7df9340a2e79f41dd091cf1dd2f63",
+          "previous_parts_sha256": "8a6eb8627ee3266c73941e72e0e4bcb8a40d6dc8cea74d81cff48e3d33651182",
+          "requested_outputs_sha256": "93d760f90189c7df55e51bcb7e5370ffd0ef3f56cf344cced5d94adf35f7cc68",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T9_page-2.png",
+              "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f"
+            },
+            {
+              "path": "icho_2026_source/image/T9_page-1.png",
+              "sha256": "c7f5114e9bb5d3e821a3df76d40c4ab86006fdb550992aa8013bc50b68a90608"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "fe3ce48c16456e92fda77d4396d93e24da8456452a8706714cb5befab7dfc7bb",
+            "node_count": 6,
+            "edge_count": 5,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "previous_part_prerequisite": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "structure_y"
+            ],
+            "previous_part_source_ids": [
+              "icho_2026_t9_a3"
+            ]
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t9_a4",
+            "path": ".archon/provided_answer_drafts/Q9.md",
+            "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, arrow directions, connected topology, stereochemical alternatives, and formula ledger were frozen from the two digest-verified problem images and inline problem evidence before opening the generated sidecar or Lean candidate. The sealed Kimi text was used afterward only for fidelity comparison and never as a chemistry premise."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The end-to-end symbolic path is alphaCDGraph and alphaCDFormula \u2192 protectionCandidateDomain/ProtectionFits \u2192 closureCandidateDomain/ClosureCandidateFits \u2192 GraphRewriteAt and sourceDerivedYFormula \u2192 derivedY/RawResult. No numerical rounding occurs."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy requires exact_symbolic output; ReportedResult is definitionally StructureYResult and introduces no display rounding."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is present or used. All counts, equivalents, temperature labels, faces, and formula components relevant to the classification are exact source or symbolic values."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The OH-site domain is exactly C2/C3/C6 from the \u03b1-D-glucose repeat; the closure domain is the full ordered C2/C3 leaving/attacking product before applying inequality and common constraints. These non-singleton domains are used only for a bounded mechanistic audit, not open-world chemical uniqueness."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "Candidate SHA-256 d482ae9dbb0ed7974edd4557507437d168da69b72fd44a336757da338ede35f5 matches the bound file. Deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=17, duration_bucket=under_1m. Nontrivial result carriers are derivedY, CompleteYSpecification, StructureYResult, structure_y, RawResult/raw_result, and ReportedResult/reported_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The theorem supplies one concrete complete structure witness, which is exactly what \u201cDraw the structure\u201d requests. Internal uniqueness is restricted to the two source-derived C2/C3 mechanistic orientations; no global uniqueness, exhaustive universe, yield, or sole-product statement is exposed."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The main result is closed and contains no user-selectable hypotheses. Source conditions are exact transcriptions, graph and formula relations are transparent, standard substitution stereochemistry is applied structurally, and the one source-scoped literature claim was independently verified for the same start, end, and intermediate."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The sole sidecar output has the exact id, kind, and empty unit required by the bundle; its raw and display content matches the independently derived structure. structure_y concludes the graph-and-stereochemistry proposition rather than a diagnostic sentinel."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "Every outcome-decisive bridge\u2014source topology, arrow assignment, primary protection, 2,3-anhydro series, SN2 faces, formula accounting, graph well-formedness, and final result binding\u2014has a named nontrivial carrier and source/general-law/literature authority."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "complete structure of Y, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T9A4.structure_y : IChO2026Problems.T9A4.StructureYResult",
+            "status": "covered",
+            "evidence": "The bound sidecar supplies the requested concrete classification rather than a sentinel, and its complete connectivity, stereochemical assignments, electronic state, and formula agree with the source-first audit and the nontrivial Lean carrier.",
+            "output_id": "structure_y",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T9_page-2.png",
+            "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f",
+            "inspected": true,
+            "evidence": "Source-first topology pass: the lower panel has a rightward arrow from bracketed \u03b1-CD \u00d76 with 1) TBSCl (6 equiv), pyridine, 2) NaH (12 equiv), 3) TsCl (6 equiv), to Y, beneath which C72H132O24Si6 is printed; a second rightward arrow from Y uses 1) t-Bu4NF, 2) H2O, 100 \u00b0C, to drawn \u03b1-cycloaltrin. Each repeat has a six-member C1-C2-C3-C4-C5-O5 ring, C5-C6 branch, three starting OH sites, one outgoing C1-O-C4 cross-boundary link, and one incoming link. TBSCl expands as (CH3)3C-Si(CH3)2-Cl: its substrate-attached fragment contributes C6H15Si while the O-H boundary loses H, net C6H14Si. Six additions and six H2O losses recombine to the printed formula. The product head shows primary OH up, C2-OH up, C3-OH down, and unchanged \u03b1-glycosidic scaffold."
+          },
+          {
+            "path": "icho_2026_source/image/T9_page-1.png",
+            "sha256": "c7f5114e9bb5d3e821a3df76d40c4ab86006fdb550992aa8013bc50b68a90608",
+            "inspected": true,
+            "evidence": "The page states that \u03b1-CD consists of six \u03b1-D-glucopyranoside units joined by \u03b1-1,4-glycosidic bonds and depicts the bracketed glucopyranoside repeat plus cyclic cross-boundary topology. It supplies the six-unit substrate identity used in the lower-page recount; the \u03b2-CD-specific seven-unit drawings are not used for structure_y."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The connected graph, TBS attachment boundaries, epoxide rewrite, and \u03b1-D face changes are chemically coherent and neutral-valent. The only substrate-specific bridge beyond the figure and ordinary protection/SN2 chemistry was verified at DOI 10.1002/anie.199718991, abstract final sentence, under the exact \u03b1-CD \u2192 \u03b1-cycloaltrin applicability scope."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only. Source-arrow carrier sourceReactionConditions binds tail \u03b1-CD plus TBSCl/pyridine, NaH, TsCl to head Y; the adjacent arrow binds tail Y plus tetrabutylammonium fluoride and hot water to head \u03b1-cycloaltrin. SourceReactionCompatible, GraphRewriteAt, and DownstreamHydrolysisCompatible check scaffold, formula, valence, and stereochemical compatibility. Omitted byproducts, phases, and yields remain unknown; no complete stage balance or sole-product claim is made."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "Independent atom recount gives \u03b1-CD C36H60O30; six net O-H\u2192O-TBS edits add C36H84Si6, then six epoxide closures remove H12O6, yielding the formula printed at Y. yGraph separately counts 72 C, 132 H, 24 O, and 6 Si."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "The only used composition conservation is the product component ledger: all substrate atoms are mapped except the six leaving secondary oxygens and twelve OH hydrogens; six substrate O6 atoms are retained, and six complete SiMe2-tBu fragments are added. This is a primitive product-formula audit, not a claim that omitted reagent/byproduct streams are balanced or empty."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "The requested output is a structure classification with an empty unit. No dimensional quantity is reported."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "Exact-symbolic structure and integer atom counts require no significant-figure, rounding, or tolerance operation."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "For every one of six residues, Has23Epoxide binds C2-O-C3 connectivity, HasTBSAtC6 expands the full silyl ether, and HasAlphaOneFourLink closes the macrocycle. yStereo fixes C1-O down, C2-O up/inverted, C3-O up/retained, C4-O down, and C5-C6 up/retained with opposite hydrogen faces and ordered ring ligands."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "\u201cDraw\u201d requires a concrete supported witness, not global uniqueness. The candidate nevertheless tests the complete local C2/C3 orientation pair uniformly; the verified manno intermediate selects one. It does not claim exhaustive coverage of the open chemical universe."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The requested graph is absent from theorem premises. Candidate domains are non-singleton and source-derived; filters are transparent structural, formula, stereochemical, or cited-claim checks; derivedY is chosen only after existsUniqueClosureCandidate. StructureYResult is substantive and not a string equality, opaque predicate, free flag, or reflexive target."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [],
+            "evidence": "Source-first visual topology, component accounting, ordinary protection/SN2 stereochemistry, the downstream product drawing, and the independently verified key-intermediate citation determine the concrete witness; the semantic card and Lean carriers agree.",
+            "id": "structure_y",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T9A4.alphaCDGraph",
+                "IChO2026Problems.T9A4.sourceReactionConditions",
+                "IChO2026Problems.T9A4.printedYFormula",
+                "IChO2026Problems.T9A4.cycloaltrinKeyIntermediateClaim"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T9A4.RawResult",
+                "IChO2026Problems.T9A4.raw_result"
+              ],
+              "relations": [
+                "IChO2026Problems.T9A4.ProtectionFits",
+                "IChO2026Problems.T9A4.GraphRewriteAt",
+                "IChO2026Problems.T9A4.ClosureCandidateFits",
+                "IChO2026Problems.T9A4.CompleteYSpecification"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T9A4.ReportedResult",
+                "IChO2026Problems.T9A4.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The Lean output binds the same sixfold atom/bond graph, TBS and epoxide connectivity, face/configuration data, electronic state, and exact whole-product formula as the source-first derivation.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "overall complete molecular structure of Y across all six residues after the first depicted staged arrow",
+              "kind": "overall"
+            },
+            "quantity_definition": "Complete structure of Y: the six-residue \u03b1-(1\u21924) cyclic graph, every C2/C3/C6 substituent, bond order, electronic state, requested stereochemical face/configuration, and whole-product composition.",
+            "raw_result": {
+              "derivation": "The six-residue \u03b1-CD graph has composition C36H60O30. Six primary OH-to-OTBS substitutions add 6(C6H14Si), and six 2,3-anhydro closures remove 6H2O. The verified manno intermediate plus SN2 inversion selects O3 attack at C2, giving upper-face C2-O and C3-O bonds while the \u03b1-D C1, C4, and C5 directions remain unchanged.",
+              "exact_unrounded": true,
+              "value_or_expression": "Six \u03b1-(1\u21924)-linked residues; each contains an upper-face C2-O-C3 epoxide with C2 inverted and C3 retained, an up C6-O-Si(CH3)2-C(CH3)3 group, down C1-O and C4-O glycosidic bonds, and up C5-C6; the connected molecule is neutral closed-shell with formula C72H132O24Si6."
+            },
+            "reporting": {
+              "application": "Report the complete derived structure and formula exactly; no rounding or tolerance transformation applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The output remains a classification with exact-symbolic reporting, no unit, and the required complete structure/stereochemistry scope.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-2.png#lower-alpha-cycloaltrin-synthesis"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T9_page-1.png#alpha-cd-six-unit-context"
+              }
+            ],
+            "source_requirement": "complete structure of Y, including all requested stereochemistry and template fields",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "d482ae9dbb0ed7974edd4557507437d168da69b72fd44a336757da338ede35f5"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a4.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "Passed: the sole requested classification is encoded as a complete six-residue molecular graph with explicit connectivity, substituents, formula, electronic state, and stereochemical face/configuration data. Its selection is derived from the two source arrows, the image formula and product stereochemistry, a non-singleton C2/C3 audit, ordinary protection/SN2 rules, and the independently verified source-scoped key-intermediate citation. It makes no yield, sole-product, or open-world uniqueness claim and faithfully preserves sealed Kimi subpart 9.4.",
+        "reviewed_at": "2026-09-13T09:33:09Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "d482ae9dbb0ed7974edd4557507437d168da69b72fd44a336757da338ede35f5",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a4.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 17,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The hash-bound candidate and submission match their controller digests; the sole submitted classification matches the independently audited six-residue graph, exact formula, and stereochemistry, and the closed Lean theorem has a passed deterministic preflight with no sorry. The source arrows and verified source-scoped literature claim support the qualitative intermediate identification without treating the Kimi draft as an axiom.",
+    "evidence": "The bound images show alpha-CD with six alpha-(1->4) residues, the TBSCl/NaH/TsCl arrow to Y with a printed molecular formula, and the TBAF/water arrow to alpha-cycloaltrin. The candidate exposes alphaCD_graph_audit, source_formula_ledger, derivedClosureCandidate_components, yGraph_formula_and_valence, derivedY_sourceReactionCompatible, derivedY_complete, and structure_y. DOI 10.1002/anie.199718991 was independently verified: its abstract final sentence identifies 2,3-anhydro-alpha-cyclomannin as the key intermediate in the alpha-CD to alpha-cycloaltrin protocol. The controller preflight passed (compiles=true, returncode=0, sorry_count=0).",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "75e41eb0ec7588638c83245d95a97be344158b1cfbacdcb4a423993ef5500c35",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t9_a4.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t9_a4",
+      "source_record_sha256": "df1eb2a8d4229c3868f3dc62d26d9c10e11bb4115a8848241c9692f0d381f73d",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a4.answer.json",
+      "answer_submission_sha256": "ff72de0585252d113161eeabc8c95349164ab55cd53e22e8ed2166d10101549f",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t9_a4.source.json",
+      "source_report_sha256": "d17e8d2ff7c8a2e210bda9e1aecc9c01fb7e88d1b89c72edb1d27918f0378e4f",
+      "candidate": "IChO2026Problems/problem_icho_2026_t9_a4.lean",
+      "preflight_sha256": "8bd41eaa884e8066cca1583aecc3b67be9a4987e88f6603f78294ff0acbb294d",
+      "candidate_sha256": "75e41eb0ec7588638c83245d95a97be344158b1cfbacdcb4a423993ef5500c35",
+      "question_sha256": "12a90196fceec55e6b672392bc9f06d86ab69a9f0811539f2119036738c59832",
+      "shared_context_sha256": "544556b7455fb7dd001f784902993958a8a7df9340a2e79f41dd091cf1dd2f63",
+      "previous_parts_sha256": "8a6eb8627ee3266c73941e72e0e4bcb8a40d6dc8cea74d81cff48e3d33651182",
+      "requested_outputs_sha256": "93d760f90189c7df55e51bcb7e5370ffd0ef3f56cf344cced5d94adf35f7cc68",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T9_page-2.png",
+          "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f"
+        },
+        {
+          "path": "icho_2026_source/image/T9_page-1.png",
+          "sha256": "c7f5114e9bb5d3e821a3df76d40c4ab86006fdb550992aa8013bc50b68a90608"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "fe3ce48c16456e92fda77d4396d93e24da8456452a8706714cb5befab7dfc7bb",
+        "node_count": 6,
+        "edge_count": 5,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "previous_part_prerequisite": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "structure_y"
+        ],
+        "previous_part_source_ids": [
+          "icho_2026_t9_a3"
+        ]
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t9_a4",
+        "path": ".archon/provided_answer_drafts/Q9.md",
+        "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t9_a4.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t9_a4",
+        "source_record_sha256": "df1eb2a8d4229c3868f3dc62d26d9c10e11bb4115a8848241c9692f0d381f73d",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t9_a4.answer.json",
+        "answer_submission_sha256": "ff72de0585252d113161eeabc8c95349164ab55cd53e22e8ed2166d10101549f",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t9_a4.source.json",
+        "source_report_sha256": "d17e8d2ff7c8a2e210bda9e1aecc9c01fb7e88d1b89c72edb1d27918f0378e4f",
+        "candidate": "IChO2026Problems/problem_icho_2026_t9_a4.lean",
+        "preflight_sha256": "8bd41eaa884e8066cca1583aecc3b67be9a4987e88f6603f78294ff0acbb294d",
+        "candidate_sha256": "75e41eb0ec7588638c83245d95a97be344158b1cfbacdcb4a423993ef5500c35",
+        "question_sha256": "12a90196fceec55e6b672392bc9f06d86ab69a9f0811539f2119036738c59832",
+        "shared_context_sha256": "544556b7455fb7dd001f784902993958a8a7df9340a2e79f41dd091cf1dd2f63",
+        "previous_parts_sha256": "8a6eb8627ee3266c73941e72e0e4bcb8a40d6dc8cea74d81cff48e3d33651182",
+        "requested_outputs_sha256": "93d760f90189c7df55e51bcb7e5370ffd0ef3f56cf344cced5d94adf35f7cc68",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T9_page-2.png",
+            "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f"
+          },
+          {
+            "path": "icho_2026_source/image/T9_page-1.png",
+            "sha256": "c7f5114e9bb5d3e821a3df76d40c4ab86006fdb550992aa8013bc50b68a90608"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "fe3ce48c16456e92fda77d4396d93e24da8456452a8706714cb5befab7dfc7bb",
+          "node_count": 6,
+          "edge_count": 5,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "previous_part_prerequisite": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_y"
+          ],
+          "previous_part_source_ids": [
+            "icho_2026_t9_a3"
+          ]
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t9_a4",
+          "path": ".archon/provided_answer_drafts/Q9.md",
+          "sha256": "6e9c9eaab587a91373d9d175fbb3327624f0c466f729ea8e7bde6c6eafaa55c8",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The result was rederived from the two digest-verified problem images and the permitted source-scoped literature check; the generated submission and sealed Kimi draft were used only for comparison and fidelity, never as premises."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "alphaCD_graph_audit fixes the six-unit substrate graph; source_formula_ledger performs the exact symbolic composition edit; derivedClosureCandidate_components derives the mechanistic locants from a non-singleton finite domain; yGraph_formula_and_valence and derivedY_complete certify the full product graph and stereochemistry."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The controller-bound output is an exact_symbolic classification; RawResult and ReportedResult are definitionally the same StructureYResult, with no numerical formatting step."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No measured quantity, tolerance, or rounding is used for this exact symbolic structure classification."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The starting alpha-D-glucopyranoside graph supplies exactly the C2, C3, and C6 hydroxyl sites; the secondary closure domain uniformly enumerates both ordered unequal C2/C3 possibilities. The problem arrows, downstream depicted stereochemistry, and verified same-substrate DOI claim select the supported witness."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=75e41eb0ec7588638c83245d95a97be344158b1cfbacdcb4a423993ef5500c35; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result declarations are IChO2026Problems.T9A4.derivedClosureCandidate_components, yGraph_formula_and_valence, derivedY_complete, structure_y, raw_result, and reported_result."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "StructureYResult conjoins source-arrow compatibility with CompleteYSpecification, whose graph, linkage, atom electronics, implicit-hydrogen parents, formula, valence, connectivity, all six template units, and five stereocentres per unit cover the requested complete structure."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The reviewed theorem is closed. SourceConditionsHold is proved from the transcribed arrow, the listed T9-A3 prerequisite is derived inline by previous_part_derived, and the literature bridge is scoped to the same alpha-CD/alpha-cycloaltrin protocol and exact abstract locator."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "structure_y proves the sole requested exact-symbolic structure classification and does not replace it with a name string, sentinel, yield claim, or weaker existential-only statement."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "GraphRewriteAt transparently binds preserved and newly formed bonds; the source formula and final-product face pattern are checked; the source-scoped DOI claim supplies the named manno epoxide bridge; and the output asserts no omitted protocol, byproduct, completion, or sole-product fact."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "complete structure of Y, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T9A4.structure_y via StructureYResult, SourceReactionCompatible, and CompleteYSpecification",
+          "status": "covered",
+          "evidence": "The single submission entry has the exact id, classification kind, empty unit, and exact-symbolic semantics; its connectivity, electronics, formula, repeated-unit count, substituents, and stereochemical assertions agree with the independently audited carrier.",
+          "output_id": "structure_y",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T9_page-2.png",
+          "sha256": "a65b4bf067ff9b1aa03ad40758319abec68f959fce4bf64380bd0e8227bee48f",
+          "inspected": true,
+          "evidence": "The page shows the bracketed six-residue alpha-CD substrate, all three pre-Y reagent lines, Y's printed whole-product formula, the fluoride/water downstream arrow, the stereochemical alpha-cycloaltrin drawing, and the TBSCl structural legend."
+        },
+        {
+          "path": "icho_2026_source/image/T9_page-1.png",
+          "sha256": "c7f5114e9bb5d3e821a3df76d40c4ab86006fdb550992aa8013bc50b68a90608",
+          "inspected": true,
+          "evidence": "The page defines alpha-CD as six alpha-D-glucopyranoside units joined by alpha-1,4-glycosidic bonds and supplies the repeated CD template conventions used to audit the assembly."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The graph represents six neutral closed-shell alpha-(1->4) carbohydrate residues, one complete TBS ether and one C2-O-C3 epoxide per residue; the source-scoped manno-intermediate claim and SN2 face audit support the retained/inverted configurations."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only: the source alpha-CD --(TBSCl, pyridine; NaH; TsCl)--> Y --(tetrabutylammonium fluoride; water, 100 C)--> alpha-cycloaltrin arrows are bound by sourceReactionConditions, SourceConditionsHold, GraphRewriteAt, DownstreamHydrolysisCompatible, and SourceReactionCompatible. The candidate claims compatibility and primitive composition only, not yield, completion, sole-product status, phases, or unknown material streams."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "alphaCD_graph_audit checks the substrate composition; source_formula_ledger checks six TBS substitutions and six epoxide-forming water-unit removals against the printed formula; yGraph_formula_and_valence independently computes the same whole-product formula from the molecular graph."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "For this qualitative transformation, GraphRewriteAt accounts for every preserved source heavy atom and bond, the departed secondary oxygen, loss of the two relevant O-H hydrogens, and every added TBS atom/bond. No quantitative material-flow or byproduct ledger is claimed or needed."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "The requested output is a classification with the exact empty unit in both the source contract and submission."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The result is exact symbolic; the printed integer subscripts and sixfold repetition are checked exactly, with no rounding, tolerance, or significant-figure transformation."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "HasAlphaOneFourLink, Has23Epoxide, HasTBSAtC6, yStereo, StereoCentre.ValidFor, NoFreeHydroxyl, AllNeutralClosedShell, and WellFormedClosed jointly bind topology, substituents, face assignments, configuration changes, valence, charge, radicals, and connectivity for every residue."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source asks for a concrete drawing, not global chemical-universe uniqueness. The candidate nevertheless audits the complete two-site intramolecular closure domain uniformly and proves uniqueness within that source-derived mechanistic domain."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "No answer is a hypothesis and no singleton domain is used. Protection candidates range over all three hydroxyl locants, closure candidates over all ordered C2/C3 pairs, the product graph is constructed only after the uniform fit audit, and the final theorem proves nontrivial graph/stereochemical properties rather than reflexive string equality."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a4.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The hash-bound candidate and submission match their controller digests; the sole submitted classification matches the independently audited six-residue graph, exact formula, and stereochemistry, and the closed Lean theorem has a passed deterministic preflight with no sorry. The source arrows and verified source-scoped literature claim support the qualitative intermediate identification without treating the Kimi draft as an axiom.",
+        "evidence": "The bound images show alpha-CD with six alpha-(1->4) residues, the TBSCl/NaH/TsCl arrow to Y with a printed molecular formula, and the TBAF/water arrow to alpha-cycloaltrin. The candidate exposes alphaCD_graph_audit, source_formula_ledger, derivedClosureCandidate_components, yGraph_formula_and_valence, derivedY_sourceReactionCompatible, derivedY_complete, and structure_y. DOI 10.1002/anie.199718991 was independently verified: its abstract final sentence identifies 2,3-anhydro-alpha-cyclomannin as the key intermediate in the alpha-CD to alpha-cycloaltrin protocol. The controller preflight passed (compiles=true, returncode=0, sorry_count=0).",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T10:15:37.289587Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "75e41eb0ec7588638c83245d95a97be344158b1cfbacdcb4a423993ef5500c35",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t9_a4.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "1_to_5m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T10:15:37.289624Z",
+    "repair_handoff": {}
+  }
+}

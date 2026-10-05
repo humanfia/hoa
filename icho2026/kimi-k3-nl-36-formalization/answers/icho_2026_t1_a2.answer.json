@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t1_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "Compound 7, chamazulene (1,4-dimethyl-7-ethylazulene), C14H16",
+      "id": "identity_z",
+      "kind": "classification",
+      "raw_value": "for n chlorine atoms I(all-Cl-35):I(exactly one Cl-37)=3:n, so the observed 3:1 pair gives n=1; 218-(35-1)=184=14*12+16, and the unique mass-184 entry among table compounds 1-10 is compound 7, whose depicted graph is 1,4-dimethyl-7-ethylazulene (chamazulene)",
+      "unit": ""
+    },
+    {
+      "display_value": "A = azulene, C10H8: a planar fused five- and seven-membered carbocycle",
+      "id": "structure_a",
+      "kind": "classification",
+      "raw_value": "C10H8 all-atom graph with aromatic carbon cycles (0,1,2,3,4) and (3,5,6,7,8,9,4), shared edge 3-4, and one H on each of C0,C1,C2,C5,C6,C7,C8,C9; all atoms neutral, closed-shell, and non-stereogenic; aromatic bonds admit a closed-shell alternating Kekule localization and two distinct perpendicular mirror actions",
+      "unit": ""
+    },
+    {
+      "display_value": "B = naphthalene, C10H8: two fused benzene rings (three mutually perpendicular mirror planes)",
+      "id": "structure_b",
+      "kind": "classification",
+      "raw_value": "C10H8 all-atom graph with aromatic carbon cycles (0,1,2,3,4,5) and (4,6,7,8,9,5), shared edge 4-5, and one H on each of C0,C1,C2,C3,C6,C7,C8,C9; all atoms neutral, closed-shell, and non-stereogenic; aromatic bonds admit a closed-shell alternating Kekule localization and three distinct mutually perpendicular mirror actions",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

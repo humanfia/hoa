@@ -1,0 +1,34 @@
+```json
+{
+  "target_id": "icho_2026_t2_a1",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "The submitted overall BZ equation, 3 CH2(COOH)2 + 4 BrO3- -> 9 CO2 + 4 Br- + 6 H2O, follows uniquely from the problem-stated redox bookkeeping. I independently re-derived it: C in C3H4O4 has mean oxidation state +4/3 and is +4 in CO2, releasing 8 e- per MA; Br goes from +5 (BrO3-) to -1 (Br-), consuming 6 e- each; lcm(8,6)=24 forces the 3:4 stoichiometry, and H+/H2O balance in the stated acidic H2SO4 medium gives 6 H2O as sole remaining product. Atom counts (C 9=9, H 12=12, O 24=24, Br 4=4) and charge (-4=-4) check out, so any valid net equation is an integer multiple of this one and the irreducible equation given is the expected irreducible answer. Ce(IV) is stipulated as a catalyst (confirmed by the mechanism on page Q2-2, where Ce4+ is regenerated in step (2) and consumed in step (7)) and K+/SO4^2- from the stated salts/medium are spectators; excluding them is problem-grounded, not an extra model condition. The Lean file encodes exactly this equation as element-count/charge vectors over {C,H,O,Br} and proves balance by kernel evaluation (rfl/decide/cases), verified end-to-end: `lake env lean --root=. IChO2026Problems/problem_icho_2026_t2_a1.lean` exits 0 and #print axioms reports no axiom dependencies at all for every theorem. Minor weaknesses, none disqualifying: `overallBZ_atom_balance` restates the arithmetic as literal integer identities rather than about overallBZ (subsumed by the fully computed `overallBZ_isBalanced`), and `cerium_is_catalyst_balance` (0=0) is a documentation-style tautology — acceptable because Ce's absence from overallBZ is directly stipulated by the problem. No unsupported scientific assumptions, no precomputed answer tables, no result-shaped premises.",
+  "coverage": [
+    {
+      "output_id": "balanced_bz_equation",
+      "status": "passed",
+      "theorem": "IChO2026.overallBZ_isBalanced",
+      "evidence": "overallBZ := lhs [(3,MA),(4,BrO3)], rhs [(9,CO2),(4,BrIon),(6,H2O)] with MA counted as C3H4O4 (matches CH2(COOH)2 in the source), BrO3 charge -1, Br- charge -1, CO2/H2O neutral. IsBalanced requires per-element equality of elementTotal for all four BZElement constructors, chargeTotal equality, and nonzero coefficients; proof closes by `cases e <;> rfl` and rfl, so the kernel computed C 9=9, H 12=12, O 24=24, Br 4=4, charge -4=-4 — identical to the reviewer's independent balance check. Supporting theorems overallBZ_atom_balance, overallBZ_charge_balance, oxidation/reduction_half_reaction_balance, and electron_lcm (lcm(8,6)=24, multiplicities 3 and 4) document the half-reaction derivation of the 3:4 ratio. #print axioms reports zero axioms for every theorem; no sorry/admit/axiom/native_decide/unsafe/set_option anywhere in the file. Equation matches answer.md exactly and the blank answer sheet A2-1 provides a single free field for 2.1, consistent with one equation output."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Task contract: TASK.json requests a single exact_symbolic formula output `balanced_bz_equation` (overall balanced BZ reaction with atoms and charge conserved) for IChO 2026 T2, part 2.1, 2.0 pt; no preceding parts.",
+    "Original problem page: inspected T2_page-1.png pixels directly — shared context names reactants KBrO3, CH2(COOH)2 (malonic acid, MA), Ce(SO4)2, H2SO4 and question 2.1 states: 'Write the overall balanced reaction equation of the Belousov-Zhabotinsky reaction (BZ reaction). Note: in this reaction, MA is oxidised to CO2, BrO3- is reduced to Br-, and Ce(IV) is a catalyst. (2.0 pt)'. sha256 of T2_page-1.png matches the 0b9e4e1e... digest recorded in TASK.json, and theory_problem.pdf matches af51373f...",
+    "Blank answer sheet: rendered page 19 of theory_problem.pdf (A2-1) — 2.1 (2.0 pt) has a single blank response field, confirming one equation is the expected output form.",
+    "Corroborating within-problem context: page Q2-2 mechanism shows Ce4+ regenerated in Process A step (2) and consumed in Process C step (7), consistent with the stipulated Ce(IV) catalyst role and with cerium's absence from the net equation; no alternative net stoichiometry is suggested anywhere in the source.",
+    "Givens verified: molecular identity CH2(COOH)2 = C3H4O4 correctly transcribed; ionic charges BrO3- and Br- match the source typography; acidic medium (H2SO4) justifies balancing with H+/H2O; no numerical data, units, or significant-figure requirements apply to this part.",
+    "Independent science check (reference-level, no official solutions consulted): mean C oxidation state in C3H4O4 is +4/3; 3 C atoms release 8 e- on oxidation to CO2; Br(V)->Br(-I) consumes 6 e-; lcm 24 gives irreducible 3:4 coefficients; the resulting equation balances atoms and charge and is unique up to integer scaling."
+  ],
+  "proof_checks": [
+    "Rebuilt independently: `lake env lean --root=. IChO2026Problems/problem_icho_2026_t2_a1.lean` exited 0 with no errors or warnings.",
+    "Axiom audit via #print axioms in-file: overallBZ_isBalanced, overallBZ_atom_balance, overallBZ_charge_balance, oxidation_half_reaction_balance, reduction_half_reaction_balance, electron_lcm each reported 'does not depend on any axioms' (not even propext/Classical.choice/Quot.sound).",
+    "Shortcut audit: grep for sorry|admit|native_decide|^axiom|unsafe|set_option found only the word 'axioms' inside a documentation comment (line 44); no proof shortcuts, custom axioms, or option overrides.",
+    "Statement adequacy: IsBalanced is not vacuous or tautological — it quantifies over all four element constructors, requires charge conservation, and requires all listed coefficients nonzero, so the theorem genuinely asserts full atom-and-charge balance of the submitted equation.",
+    "Proof structure: per-element obligations discharged by computation (cases e <;> rfl) and list-membership obligations by fin_cases <;> decide; helper lemmas are arithmetic identities closed by rfl/Nat.lcm computation — no precomputed answer tables or result-shaped premises.",
+    "Caveats noted but non-blocking: overallBZ_atom_balance restates raw integer identities rather than referencing overallBZ, and cerium_is_catalyst_balance is the tautology 0=0 documenting Ce's absence; both are subsumed by the fully computed main theorem and Ce's omission is stipulated by the problem note itself.",
+    "No files (inputs or candidate) were modified during review; verification used only read-only inspection and compilation."
+  ]
+}
+```

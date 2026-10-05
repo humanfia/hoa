@@ -1,0 +1,58 @@
+{
+  "target": "icho_2026_t5_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789301582.6564395,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t5_a4.lean": "f127f2070ad28d751a0ffcfff3908a87db5e0fd3adff527925dba3da9ed093f6",
+    "answer.md": "cc9814d6ef3e72661a4a401c55094933bc19da1ec223daa85c10992d870c0a15",
+    "verification.md": "f5df190339af971312b08ae57481cc14af35f71f7100c7cc3f334c8ad7618a40",
+    "result.json": "dae2c9384dbb0f4c40c205f180e096bfcdcda4221c6a0cb7944d1c201f1b450a"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t5_a4",
+    "status": "completed",
+    "answer_summary": "X is iodine monobromide, IBr. X adds twice to C18H32O2, and the resulting exact iodine mass percentage is 36.568708...%, which is reported as 36.57%.",
+    "theorem_names": [
+      "IChO2026Problems.ProblemIChO2026T5A4.fattyAcid_doubleBondCount",
+      "IChO2026Problems.ProblemIChO2026T5A4.pl1_totalBondOrder",
+      "IChO2026Problems.ProblemIChO2026T5A4.fattyAcid_carbonCount",
+      "IChO2026Problems.ProblemIChO2026T5A4.fattyAcid_formula_from_all_source_constraints",
+      "IChO2026Problems.ProblemIChO2026T5A4.fattyAcidMolarMass_exact",
+      "IChO2026Problems.ProblemIChO2026T5A4.iodineUptake_matches_source",
+      "IChO2026Problems.ProblemIChO2026T5A4.iodineBromide_matches_source",
+      "IChO2026Problems.ProblemIChO2026T5A4.iodineReagent_unique",
+      "IChO2026Problems.ProblemIChO2026T5A4.compound_x_formula"
+    ],
+    "assumptions": [
+      "Reductive ozonolysis cuts an acyclic chain at each distinct C=C bond, so d double bonds give d + 1 fragments.",
+      "An acyclic monocarboxylic fatty acid has formula C_n H_(2n - 2d) O2 when it contains d C=C bonds.",
+      "Ordinary valences C = 4, H = 1, O = 2, and P = 5 give the sigma-plus-pi bond count of the neutral formula.",
+      "Reacting similarly to iodine means one iodine-containing diatomic halogen or interhalogen adds across each C=C bond; the candidates are IF, ICl, IBr, and I2.",
+      "Atomic masses are those printed in the supplied problem PDF and are treated as exact as printed."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t5_a4.lean",
+      "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe|axiom)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t5_a4.lean; then exit 1; else echo 'No forbidden proof shortcuts found.'; fi",
+      "sha256sum icho_2026_source/image/T5_page-1.png icho_2026_source/image/T5_page-2.png icho_2026_source/image/T5_page-3.png icho_2026_source/raw/theory_problem.pdf"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

@@ -1,0 +1,46 @@
+{
+  "target_id": "icho_2026_t8_a5",
+  "status": "completed",
+  "answer_summary": "N_cat = (0.038 × 6.022e23) / (557.21 g/mol × 17.8 m²/g × 10^18 nm²/m²) = 2.3072… catalytic molecules per nm², reported to 3 significant figures as 2.31 molecules nm⁻².",
+  "theorem_names": [
+    "IChO2026T8.catalystSurfaceDensity",
+    "IChO2026T8.massFractionPct",
+    "IChO2026T8.molarMassCat",
+    "IChO2026T8.specificSurfaceArea",
+    "IChO2026T8.avogadroPrinted",
+    "IChO2026T8.catalystSurfaceDensityRaw",
+    "IChO2026T8.catalystSurfaceDensityRaw_pos",
+    "IChO2026T8.reportQuantum",
+    "IChO2026T8.catalystReported",
+    "IChO2026T8.reportQuantum_pos",
+    "IChO2026T8.catalystReported_isMultiple",
+    "IChO2026T8.catalyst_raw_in_report_interval",
+    "IChO2026T8.catalystSurfaceDensity_reports",
+    "IChO2026T8.catalystSurfaceDensityLow",
+    "IChO2026T8.catalystSurfaceDensityHigh",
+    "IChO2026T8.catalystSurfaceDensity_low_bounds",
+    "IChO2026T8.catalystSurfaceDensity_high_bounds",
+    "IChO2026T8.catalystSurfaceDensityRaw_tight",
+    "IChO2026T8.catalystSurfaceDensityLow_tight",
+    "IChO2026T8.catalystSurfaceDensityHigh_tight",
+    "IChO2026T8.envelope_consistent_with_report"
+  ],
+  "assumptions": [
+    "ω_cat = 3.8 % printed in question 8.5 is the mass fraction of catalyst in the composite 'C3N4 loaded with 1'; on a 1 g basis of support it contributes 0.038 g of catalyst (the intensive density is basis-independent).",
+    "The specific surface area 17.8 m² g⁻¹ is per gram of the support C3N4 (cf. question 8.7 'per gram of C3N4 loaded with 1').",
+    "The Avogadro constant N_A = 6.022×10²³ mol⁻¹ printed on the official constants sheet (page G1-3 of the problem PDF) is used exactly as printed; using the 2022 SI exact value changes the result by 2 parts in 10^5 and not the reported 3 s.f. value.",
+    "1 nm² = 10⁻¹⁸ m² (definition of the SI prefix).",
+    "The 3 significant-figure display with tie-away-from-zero rounding and no intermediate rounding follows the project reporting contract (IChO2026Chem.Reporting; task reporting_policy)."
+  ],
+  "source_gaps": [
+    "The blank answer sheet A8-5 contains only 'N_cat = ____' and adds no constraints; the question does not state a rounding rule, so the project default of 3 significant figures is applied (recorded in TASK.json reporting_policy).",
+    "Monotonicity of rho in (ω, N_A) and against (M, SSA) is used to justify that the extremal corners bound the measurement envelope; it is elementary on the positive orthant and is documented in the Lean module, but only the corner certificates are formalized as theorems — the envelope theorem itself uses the proved corner certificates only."
+  ],
+  "verification_commands": [
+    "lake build IChO2026Chem",
+    "lake env lean IChO2026Problems/problem_icho_2026_t8_a5.lean   # exit 0, no errors/warnings",
+    "cat IChO2026Problems/problem_icho_2026_t8_a5.lean + #print axioms lines > /tmp/axcheck2.lean && lake env lean /tmp/axcheck2.lean   # all final theorems depend only on [propext, Classical.choice, Quot.sound]",
+    "grep -n \"sorry\\|admit\\|axiom \" IChO2026Problems/problem_icho_2026_t8_a5.lean   # no hits",
+    "python3 -c 'print(0.038*6.022e23/(557.21*17.8*1e18))'   # 2.3072010653397776, agrees with the certified interval"
+  ]
+}

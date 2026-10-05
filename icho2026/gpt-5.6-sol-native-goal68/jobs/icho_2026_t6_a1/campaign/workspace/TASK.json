@@ -1,0 +1,155 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Based on H\u00fcckel\u2019s rule, fill in the table with the number of distinct aromatic (A) and anti-aromatic (AA) \ud835\udf0b-systems present in each of C18, C16, 3C13, and 1C13. Fill in all blanks.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t6_a1",
+  "image": "T6_page-1.png",
+  "images": [
+    "T6_page-1.png"
+  ],
+  "index": "icho_2026_t6_a1",
+  "kind": "table-completion",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T6",
+  "part_id": "T6-A1",
+  "phase": "solve",
+  "points": 10.0,
+  "previous_parts": [],
+  "printed_page": 1,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T6_page-1.png",
+      "printed_page": 1,
+      "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba",
+      "source_page": 52
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 52
+    }
+  ],
+  "problem_id": "icho_2026_t6",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT6. Carbon Nanorings 7% In 2019, C18, the first example of a new class of carbon allotropes called cyclo[n]carbons (C\ud835\udc5b) was detected. Cyclocarbons are monocyclic, all-carbon compounds with high strain energy and low stability. They can be generated and analysed by bond-resolved Atomic Force Microscopy (AFM). Cyclocarbons have interesting aromatic properties based on their \u03c0 systems. C13 has triplet (3C13, spin S = 1), and singlet (1C13, spin S = 0) forms.\n\n## Current subquestion T6-A1\nBased on H\u00fcckel\u2019s rule, fill in the table with the number of distinct aromatic (A) and anti-aromatic (AA) \ud835\udf0b-systems present in each of C18, C16, 3C13, and 1C13. Fill in all blanks.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "c18_aromatic",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "number of distinct aromatic pi systems in c18 by Huckel's rule",
+      "unit": ""
+    },
+    {
+      "id": "c18_antiaromatic",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "number of distinct antiaromatic pi systems in c18 by Huckel's rule",
+      "unit": ""
+    },
+    {
+      "id": "c16_aromatic",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "number of distinct aromatic pi systems in c16 by Huckel's rule",
+      "unit": ""
+    },
+    {
+      "id": "c16_antiaromatic",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "number of distinct antiaromatic pi systems in c16 by Huckel's rule",
+      "unit": ""
+    },
+    {
+      "id": "triplet_c13_aromatic",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "number of distinct aromatic pi systems in triplet_c13 by Huckel's rule",
+      "unit": ""
+    },
+    {
+      "id": "triplet_c13_antiaromatic",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "number of distinct antiaromatic pi systems in triplet_c13 by Huckel's rule",
+      "unit": ""
+    },
+    {
+      "id": "singlet_c13_aromatic",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "number of distinct aromatic pi systems in singlet_c13 by Huckel's rule",
+      "unit": ""
+    },
+    {
+      "id": "singlet_c13_antiaromatic",
+      "kind": "integer",
+      "reporting_policy": {
+        "kind": "exact_integer",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "number of distinct antiaromatic pi systems in singlet_c13 by Huckel's rule",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T6. Carbon Nanorings 7% In 2019, C18, the first example of a new class of carbon allotropes called cyclo[n]carbons (C\ud835\udc5b) was detected. Cyclocarbons are monocyclic, all-carbon compounds with high strain energy and low stability. They can be generated and analysed by bond-resolved Atomic Force Microscopy (AFM). Cyclocarbons have interesting aromatic properties based on their \u03c0 systems. C13 has triplet (3C13, spin S = 1), and singlet (1C13, spin S = 0) forms.",
+  "source_index": "T6-A1",
+  "source_page": 52,
+  "source_pdf": "theory_problem.pdf"
+}

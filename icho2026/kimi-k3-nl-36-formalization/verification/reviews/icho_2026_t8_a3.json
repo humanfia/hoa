@@ -1,0 +1,933 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 5,
+    "last_review_iter": 1,
+    "reason": "The two pinned figures, the verified scoped qpy-planarity literature bridge, and a uniform audit of all seven unmarked choices derive the requested exact geometry classification without using the submitted value as a premise. The Lean result also preserves sealed Kimi subpart 8.3 (draft sha256 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d) without discrepancy.",
+    "updated_at": "2026-09-13T16:00:37Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "T8_page-1 supplies ligand 8's four linked pyridyl-N donor sites and the ligand-8 + FeCl2 -> 1 synthesis cue; page 78 supplies seven empty candidate boxes. The Lean transcribes those facts, scopes the arrow as qualitative_named_transform_only, and does not treat the unmarked panel or sealed draft as an answer."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "The source-derived Fe/N4/Cl2 compatibility filter retains all three six-coordinate drawings; the independently supported planar-qpy filter retains the square-planar, square-pyramidal, and trans-axial six-coordinate drawings. Their computed intersection is the bottom-right choice, whose six displayed bonds have octahedral site topology."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "Named types distinguish four N sites, three qpy path links, two chloride sites, all seven diagram positions, site topology, chloride disposition, coordination number, and geometry. The decisive predicates are transparent uniform filters, not opaque Props, free flags, or a candidate-shaped singleton."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The requested output is an exact symbolic structural classification; no measured quantity, tolerance, significant figures, or rounding enters."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The page-1 arrowhead points right: ligand 8 and FeCl2 are the two tail precursors and structure 1 is the head product. synthesisOfProductOne encodes this direction and the N4 scaffold plus Fe/Cl2 component trace; no reverse or adjacent arrow is used."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "Within the complete source-supplied seven-choice domain, every choice is checked by the same component and planar-donor constraints and exactly one survives. Alternatives lacking the displayed Cl2 coordination or placing the four qpy donors outside one plane violate an outcome-decisive constraint; no source-grounded alternative satisfying both remains."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "Ligand 8 contains four distinct pyridyl-N donors joined as one three-link qpy chelate path.",
+          "carrier": "IChO2026Problems.T8A3.ligand8DonorSpine; ligand8NitrogenDonors; ligand8ChelateLinks",
+          "status": "covered",
+          "evidence": "Direct visual recount of T8_page-1: four N donor nodes, three consecutive scaffold links, path degrees 1,2,2,1; the arcs abbreviate the carbon scaffold and are not N-N bonds. No repeat boundary or cross-page bond occurs."
+        },
+        {
+          "claim": "The rightward synthesis cue supplies one Fe center, the ligand N4 motif, and the FeCl2 chloride pair for qualitative comparison with the complete product drawings.",
+          "carrier": "IChO2026Problems.T8A3.sourceDirectedCoordinationComponents; sourceDirectedCoordinationCue; synthesisOfProductOne",
+          "status": "covered",
+          "evidence": "The tail explicitly shows ligand 8 + FeCl2 and the head is 1; the panel depicts Fe-N and Fe-Cl coordination edges. The carrier is explicitly limited to qualitative_named_transform_only and makes no yield, exclusive-product, phase, or complete material-flow assertion."
+        },
+        {
+          "claim": "The qpy donor spine used by ligand 8 is a planar nitrogen-based tetradentate motif.",
+          "carrier": "IChO2026Problems.T8A3.qpyPlanarTetradentatePattern; ligand8_matches_qpy_donor_spine",
+          "status": "covered",
+          "evidence": "Verified public source: Carbon Dioxide Reduction Mediated by Iron Catalysts: Mechanism and Intermediates That Guide Selectivity, DOI 10.1021/acsomega.0c02786, https://pmc.ncbi.nlm.nih.gov/articles/PMC7469117/, section 'Non-heme Iron Mononuclear Complexes', paragraph beginning 'Three of these catalysts'. It states that 2,2':6',2'':6'',2'''-quaterpyridine provides a nitrogen-based planar tetradentate motif. Applied only to the identical substituted qpy N4 spine visible in ligand 8; no answer or coligand geometry is imported."
+        },
+        {
+          "claim": "The seven diagrams and their coordination-site topologies are completely and uniformly transcribed from the restored panel.",
+          "carrier": "IChO2026Problems.T8A3.suppliedGeometryChoices; choicePattern; PanelSitePattern.geometry; PanelSitePattern.hasCoplanarN4",
+          "status": "covered",
+          "evidence": "Page 78 contains four top-row and three bottom-row unmarked diagrams. The carriers enumerate every one, count Fe-N/Fe-Cl bonds, distinguish 4-, 5-, and 6-coordinate patterns, and read coplanarity and geometry from the displayed bond topology before selection."
+        },
+        {
+          "claim": "The raw and reported geometry_1 results are the computed intersection and exact geometry read from the surviving topology.",
+          "carrier": "IChO2026Problems.T8A3.geometry_one_raw_result; geometry_one_reported_result",
+          "status": "covered",
+          "evidence": "component_filter_leaves_three_n4cl2_choices and planar_filter_leaves_three_choices are independent non-singleton audits; complete_source_filter_selects_bottom_right computes their intersection, and bottom_right_is_trans_axial_six_coordinate_octahedral reads its coordination class."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a3.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "a6d5893404d188608893cf85a9056b62487cb2a23300404513ded6194ea4bd2a",
+        "source_record_id": "icho_2026_t8_a3",
+        "source_record_sha256": "a6d5893404d188608893cf85a9056b62487cb2a23300404513ded6194ea4bd2a",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a3.answer.json",
+        "answer_submission_sha256": "8b988f126c96a9356672d67f618b49e16535f85871f467dde554097563af79c4",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a3.source.json",
+        "source_report_sha256": "ab3820f5e6a6d795cfc659e36cdaf388853590b420d48b404c207969c159929e",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a3.lean",
+        "preflight_sha256": "2afda45637cfba59a5821f7abe9ff17b6286168fbfe2f5269bf9c166e7f27850",
+        "candidate_sha256": "0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28",
+        "question_sha256": "3b7a8a155e41ffa0bdc95733516d8582247433f37f6e42dc6eda5ad71443f8fc",
+        "shared_context_sha256": "19b80364ede815df063e18b4ccfc32b79e19ec24a8dcbdf8454868ae1071a44e",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "9065b2b8538a0b660e8a75bad3bfd26417a49e8a73848cb44a2d925c2c1f7953",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-1.png",
+            "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+          },
+          {
+            "path": ".archon/student_problem_pages/icho_2026_t8_a3-page-78.png",
+            "sha256": "20a42269bd306a97ed96f6485eeec8e83d26f451446907d1d9d6806c20d310bb"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "51f8bb3aba79e6cfa787087e641664d9a877973382b2ef04104af13435c5d915",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "geometry_1"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a3",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t8_a3.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "a6d5893404d188608893cf85a9056b62487cb2a23300404513ded6194ea4bd2a",
+          "source_record_id": "icho_2026_t8_a3",
+          "source_record_sha256": "a6d5893404d188608893cf85a9056b62487cb2a23300404513ded6194ea4bd2a",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a3.answer.json",
+          "answer_submission_sha256": "8b988f126c96a9356672d67f618b49e16535f85871f467dde554097563af79c4",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t8_a3.source.json",
+          "source_report_sha256": "ab3820f5e6a6d795cfc659e36cdaf388853590b420d48b404c207969c159929e",
+          "candidate": "IChO2026Problems/problem_icho_2026_t8_a3.lean",
+          "preflight_sha256": "2afda45637cfba59a5821f7abe9ff17b6286168fbfe2f5269bf9c166e7f27850",
+          "candidate_sha256": "0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28",
+          "question_sha256": "3b7a8a155e41ffa0bdc95733516d8582247433f37f6e42dc6eda5ad71443f8fc",
+          "shared_context_sha256": "19b80364ede815df063e18b4ccfc32b79e19ec24a8dcbdf8454868ae1071a44e",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "9065b2b8538a0b660e8a75bad3bfd26417a49e8a73848cb44a2d925c2c1f7953",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T8_page-1.png",
+              "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+            },
+            {
+              "path": ".archon/student_problem_pages/icho_2026_t8_a3-page-78.png",
+              "sha256": "20a42269bd306a97ed96f6485eeec8e83d26f451446907d1d9d6806c20d310bb"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "51f8bb3aba79e6cfa787087e641664d9a877973382b2ef04104af13435c5d915",
+            "node_count": 5,
+            "edge_count": 4,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "geometry_1"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t8_a3",
+            "path": ".archon/provided_answer_drafts/Q8.md",
+            "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, no-stock-flow determination, ligand/reagent topology, arrow direction, all seven option topologies, and symbolic result were frozen from the two pinned problem images before opening the answer JSON or Lean candidate. The sealed draft was used only for the later fidelity check."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "GeometryOneRawResult and geometry_one_raw_result expose the source inventories, both non-singleton uniform filters, their singleton intersection, chloride disposition, coordination number, and topology-to-geometry classification end to end."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy requires exact_symbolic reporting. The submission and GeometryOneReportedResult apply it directly, without precision conversion."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance, interval, measured value, or rounding is used for this exact classification; none is invented by the submission or Lean statement."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "suppliedGeometryChoices is Finset.univ over seven constructors in exact reading order, and choicePattern transcribes every one of the seven unmarked page-78 diagrams before either filter is applied. The domain is the supplied panel, not an answer-shaped chemical universe."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial carriers: IChO2026Problems.T8A3.geometry_one_raw_result and IChO2026Problems.T8A3.geometry_one_reported_result."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The statement answers the static geometry classification only, within the seven supplied choices. It expressly avoids yield, phase, complete material balance, global chemical-universe uniqueness, and unrelated Q8 subparts."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "There are no theorem hypotheses. Decisive data are traced to the two problem images or the verified scoped qpy-planarity literature statement, and the remaining selection/classification is transparent finite computation."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The answer JSON has exactly one output in bundle order with id geometry_1, kind classification, empty unit, and exact-symbolic raw/display forms; the reported Lean carrier proves that same requested classification."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are inventoried: ligand donor topology, directed Fe/N4/Cl2 qualitative component cue, qpy planarity/applicability, complete panel transcription, uniform filtering, and topology-to-reported-result projection."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "geometry of structure 1 from the supplied choices",
+            "lean_carrier": "IChO2026Problems.T8A3.geometry_one_reported_result",
+            "status": "covered",
+            "evidence": "The sole sidecar output has the exact required id/kind/unit/order and agrees with the independently derived symbolic class; the named theorem nontrivially binds it to the source-filtered panel choice.",
+            "output_id": "geometry_1",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T8_page-1.png",
+            "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843",
+            "inspected": true,
+            "evidence": "Digest matched. Ligand 8 has four distinct pyridyl N donor nodes connected through three consecutive carbon-scaffold links (P4 degrees 1,2,2,1); the carboxyphenyl substituent is not a donor. FeCl2 is the second precursor. The arrowhead points right from ligand 8 + FeCl2 to 1. No repeat unit, cap, bracket crossing, or cross-boundary bond is present."
+          },
+          {
+            "path": ".archon/student_problem_pages/icho_2026_t8_a3-page-78.png",
+            "sha256": "20a42269bd306a97ed96f6485eeec8e83d26f451446907d1d9d6806c20d310bb",
+            "inspected": true,
+            "evidence": "Digest matched; all boxes are empty. Reading order: top row shows N4 square-planar (CN4), N4 tetrahedral (CN4), N4Cl square-pyramidal (CN5), and N4Cl trigonal-bipyramidal (CN5); bottom row shows three N4Cl2 octahedral site arrangements with respectively two N, one N/one Cl, and two Cl in axial sites. Only bottom-right has coplanar equatorial N4 and trans axial Cl2. No repeat boundary or cross-panel bond exists."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The model distinguishes ligand-backbone links from direct N-N bonds, counts four pyridyl donors and two chloride donor positions, and classifies geometry from six Fe-ligand coordination edges. The verified qpy rule is applied only to the visible qpy donor spine."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "qualitative_named_transform_only. The relevant source arrow is ligand 8 + FeCl2 -> 1, encoded by synthesisOfProductOne with tail roles ligand8/ironDichloride, rightward head product1, and named Fe/N4/Cl2 compatibility carriers. It supports no yield, completeness, sole-product, phase, omitted-stream, or quantitative ledger claim."
+          },
+          "formula_mass_consistency": {
+            "status": "not_applicable",
+            "evidence": "No molecular formula, molar mass, mass fraction, loading, or numerical composition is requested or used; only visibly named coordination-component multiplicities are audited."
+          },
+          "conservation_laws": {
+            "status": "not_applicable",
+            "evidence": "The output does not depend on an atom, charge, mass, phase, or quantitative stage balance. The synthesis cue is deliberately limited to qualitative structural compatibility."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "The requested classification and submission both use the required empty unit; no dimensional quantity is introduced."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "The output is exact symbolic, not numerical, so significant figures, intermediate rounding, and tie handling do not apply."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "The carrier records the qpy N4 path and planar donor motif, all seven site arrangements, the surviving diagram's four equatorial N donors, two opposed axial chlorides, coordination number six, and octahedral topology."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The verb asks for one concrete ticked classification, not global open-world uniqueness. Within the source-supplied finite panel, the two independently defined uniform filters have a singleton intersection, which is sufficient and does not overclaim beyond the choices."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The panel is explicitly recorded as unmarked. Neither filter names a chosen position or geometry: the component filter and planar filter each retain three alternatives, and only their computed intersection selects one. The submitted value is nowhere a premise."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "id": "geometry_1",
+            "kind": "classification",
+            "source_requirement": "geometry of structure 1 from the supplied choices",
+            "quantity_definition": "Coordination-geometry class of catalyst 1 selected from the seven supplied complete coordination drawings using the ligand-8 N4 donor topology and FeCl2 component cue.",
+            "process_scope": {
+              "kind": "not_applicable",
+              "description": "Static structural classification; no recycle, fresh-feed, stock-flow, time horizon, or dynamic denominator is involved."
+            },
+            "basis": {
+              "status": "not_applicable",
+              "numerator": "not_applicable",
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable"
+            },
+            "constants": [],
+            "dependencies": [],
+            "branch_conditions": [],
+            "unit": "",
+            "raw_result": {
+              "value_or_expression": "octahedral",
+              "exact_unrounded": true,
+              "derivation": "The N4Cl2 compatibility audit leaves the three six-coordinate drawings; the planar-qpy audit leaves three drawings of coordination numbers 4, 5, and 6; their sole common drawing is bottom-right, with four equatorial N donors and two opposed axial chlorides, hence six-coordinate octahedral topology."
+            },
+            "reporting": {
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              },
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "application": "Return the exact symbolic class; no numerical rounding or tolerance is applied."
+            },
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T8A3.ligand8DonorSpine",
+                "IChO2026Problems.T8A3.feCl2Chlorides",
+                "IChO2026Problems.T8A3.suppliedGeometryChoices",
+                "IChO2026Problems.T8A3.qpyPlanarTetradentatePattern"
+              ],
+              "relations": [
+                "IChO2026Problems.T8A3.MatchesNamedSynthesisComponents",
+                "IChO2026Problems.T8A3.RespectsLigand8PlanarTetradentateTopology",
+                "IChO2026Problems.T8A3.complete_source_filter_selects_bottom_right",
+                "IChO2026Problems.T8A3.bottom_right_is_trans_axial_six_coordinate_octahedral"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T8A3.GeometryOneRawResult",
+                "IChO2026Problems.T8A3.geometry_one_raw_result"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T8A3.GeometryOneReportedResult",
+                "IChO2026Problems.T8A3.geometry_one_reported_result"
+              ]
+            },
+            "semantic_card_comparison": {
+              "status": "matched",
+              "evidence": "The card requests one exact classification with empty unit and no previous-part dependency; the source-first result has that scope and output kind."
+            },
+            "lean_statement_comparison": {
+              "status": "matched",
+              "evidence": "The Lean raw carrier exposes both source filters, the singleton intersection, trans axial disposition, coordination number six, and the geometry; the reported carrier projects the requested exact class."
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-1.png#ligand8_synthesis"
+              },
+              {
+                "kind": "problem_image",
+                "reference": ".archon/student_problem_pages/icho_2026_t8_a3-page-78.png#geometry_choices"
+              }
+            ],
+            "evidence": "Source-first visual topology and component audits select the bottom-right trans-axial N4Cl2 diagram, and its six-site coordination polyhedron supplies the exact requested class."
+          }
+        ]
+      },
+      "candidate_sha256": "0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:formalization:1",
+        "iter": 1,
+        "decision": "failed",
+        "resulting_status": "retry",
+        "attempt": 1,
+        "reason": "geometry_1 is preserved as the sealed Kimi 8.3 classification, but it is not derived from the problem-only evidence: FitsPrintedAssembly converts the two chlorides present in precursor FeCl2 into two coordinated product ligands and requires a coplanar N4 arrangement without an outcome-decisive source-bound bridge. Those inserted filters select the bottom-right branch. Draft fidelity: frozen draft sha256 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d, relevant subpart 8.3, answer preserved without substitution; the discrepancy is unsupported derivation, so the target is unaccepted.",
+        "reviewed_at": "2026-09-13T12:38:49Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:formalization:2",
+        "iter": 1,
+        "decision": "failed",
+        "resulting_status": "retry",
+        "attempt": 2,
+        "reason": "geometry_1 is not delivered. The bound sidecar and GeometryOneReportedResult replace the requested exact classification with an underdetermination diagnostic. The visual recount supports the conditional N4Cl2-to-six-coordinate/octahedral implication, but BothPrecursorChloridesAreCoordinated is only a local predicate with no proof from admitted authority, and no carrier selects the N4-equatorial/trans-chloride panel drawing. The proposed inner/outer-sphere allocations prove arithmetic compatibility only, not chemically valid countermodels. The sealed Kimi 8.3 answer remains octahedral with trans axial ligands, but that answer is neither asserted nor derived by this candidate.",
+        "reviewed_at": "2026-09-13T13:32:16Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:formalization:3",
+        "iter": 1,
+        "decision": "failed",
+        "resulting_status": "retry",
+        "attempt": 3,
+        "reason": "The concrete sidecar and Lean conclusion preserve the sealed 8.3 draft, and the seven-choice panel is fully modeled, but the outcome-decisive product filter is not derivable. It turns the two chloride atoms present in the FeCl2 precursor into two coordinated trans-axial chloride donors in product 1. The problem arrow does not state that retention, and the verified literature only establishes planar tetradentate qpy and a distinct unsubstituted bis-aqua Fe(qpy) complex. Without an applicable product-specific bridge, the four-, five-, and six-coordinate supplied alternatives are not uniformly eliminated, so geometry_1 is blocked.",
+        "reviewed_at": "2026-09-13T14:40:40Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:formalization:4",
+        "iter": 1,
+        "decision": "failed",
+        "resulting_status": "retry",
+        "attempt": 4,
+        "reason": "geometry_1 is not formalized: the bound submission and geometry_one_reported_result publish a determination-status diagnostic rather than the required panel classification. The alleged square-planar and square-pyramidal alternatives arise only because NotExcludedByAvailableCoordinationEvidence omits the outcome-decisive FeCl2-to-product chloride coordination/component bridge; they are not established source-compatible products. This also substitutes for, rather than preserves, sealed Kimi-K3 draft 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d, subpart 8.3, whose answer is octahedral.",
+        "reviewed_at": "2026-09-13T15:24:00Z"
+      },
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:formalization:5",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 5,
+        "reason": "The two pinned figures, the verified scoped qpy-planarity literature bridge, and a uniform audit of all seven unmarked choices derive the requested exact geometry classification without using the submitted value as a premise. The Lean result also preserves sealed Kimi subpart 8.3 (draft sha256 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d) without discrepancy.",
+        "reviewed_at": "2026-09-13T16:00:37Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "f91566e5ae574c2abf7359342b7b8885afb774096d50f5e02344e93517483762",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "retry",
+        "failed_check_ids": [
+          "blind_source_audit.lean_result_binding",
+          "blind_source_audit.raw_derivation",
+          "bridge_obligations[1]",
+          "bridge_obligations[2]",
+          "checks.abstraction_sufficiency",
+          "checks.countermodel_resistance",
+          "checks.derivability",
+          "checks.source_faithfulness",
+          "chemistry_checks.answer_smuggling",
+          "chemistry_checks.chemical_semantics",
+          "chemistry_checks.conservation_laws",
+          "chemistry_checks.identification_uniqueness",
+          "chemistry_checks.staged_species_domain",
+          "chemistry_checks.structure_stereochemistry",
+          "contract_audit.bridge_completeness",
+          "contract_audit.conclusion_alignment",
+          "contract_audit.hypothesis_derivability",
+          "requested_outputs[0]"
+        ],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:formalization:1",
+        "decision": "failed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 7,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "dd5f42c54542997759c980303d3af57dd3da1dd437365265538d95241c1c71bd",
+        "iteration": 1,
+        "attempt": 2,
+        "resulting_status": "retry",
+        "failed_check_ids": [
+          "blind_source_audit.lean_result_binding",
+          "blind_source_audit.raw_derivation",
+          "bridge_obligations[2]",
+          "bridge_obligations[4]",
+          "checks.abstraction_sufficiency",
+          "checks.countermodel_resistance",
+          "checks.derivability",
+          "checks.source_faithfulness",
+          "chemistry_checks.answer_smuggling",
+          "chemistry_checks.chemical_semantics",
+          "chemistry_checks.identification_uniqueness",
+          "chemistry_checks.staged_species_domain",
+          "chemistry_checks.structure_stereochemistry",
+          "contract_audit.bridge_completeness",
+          "contract_audit.conclusion_alignment",
+          "contract_audit.hypothesis_derivability",
+          "contract_audit.statement_scope",
+          "requested_outputs[0]"
+        ],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:formalization:2",
+        "decision": "failed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "d3cee760c3d78162e0baa9e84b08eaf312a81bc2eaae688bf77d20ffa8025ab2",
+        "iteration": 1,
+        "attempt": 3,
+        "resulting_status": "retry",
+        "failed_check_ids": [
+          "blind_source_audit.raw_derivation",
+          "bridge_obligations[3]",
+          "bridge_obligations[4]",
+          "checks.abstraction_sufficiency",
+          "checks.countermodel_resistance",
+          "checks.derivability",
+          "checks.source_faithfulness",
+          "chemistry_checks.answer_smuggling",
+          "chemistry_checks.chemical_semantics",
+          "chemistry_checks.conservation_laws",
+          "chemistry_checks.identification_uniqueness",
+          "chemistry_checks.staged_species_domain",
+          "chemistry_checks.structure_stereochemistry",
+          "contract_audit.bridge_completeness",
+          "contract_audit.hypothesis_derivability",
+          "contract_audit.statement_scope",
+          "requested_outputs[0]"
+        ],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:formalization:3",
+        "decision": "failed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "027c3d7dc6c970288f1658bf374d6e2fa6e65bb173f09eb7b4ddbe5ed7752530",
+        "iteration": 1,
+        "attempt": 4,
+        "resulting_status": "retry",
+        "failed_check_ids": [
+          "blind_source_audit.candidate_domain_provenance",
+          "blind_source_audit.lean_result_binding",
+          "blind_source_audit.raw_derivation",
+          "bridge_obligations[2]",
+          "bridge_obligations[4]",
+          "checks.abstraction_sufficiency",
+          "checks.countermodel_resistance",
+          "checks.derivability",
+          "checks.source_faithfulness",
+          "chemistry_checks.answer_smuggling",
+          "chemistry_checks.chemical_semantics",
+          "chemistry_checks.conservation_laws",
+          "chemistry_checks.identification_uniqueness",
+          "chemistry_checks.staged_species_domain",
+          "chemistry_checks.structure_stereochemistry",
+          "contract_audit.bridge_completeness",
+          "contract_audit.conclusion_alignment",
+          "contract_audit.hypothesis_derivability",
+          "contract_audit.statement_scope",
+          "requested_outputs[0]"
+        ],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:formalization:4",
+        "decision": "failed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      },
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28",
+        "iteration": 1,
+        "attempt": 5,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:formalization:5",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The candidate faithfully derives the requested geometry from the complete seven-choice panel, the ligand-8 donor topology, the FeCl2 component cue, and a verified scoped qpy planarity bridge; the exact-symbolic submission and nontrivial Lean carrier agree.",
+    "evidence": "Artifact hashes match the controller bindings. Both pinned images are readable and the A8-2 panel is unmarked. The deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The finite source-first model transcribes all seven diagrams, filters them independently by the depicted N4Cl2 components and planar tetradentate N4 topology, proves a singleton intersection, and reads the six-coordinate geometry from that selected topology. Draft fidelity: frozen draft sha256 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d; relevant Kimi subpart 8.3; the octahedral, four-equatorial-donor/two-trans-axial, six-coordinate answer is preserved with no discrepancy.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t8_a3.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "a6d5893404d188608893cf85a9056b62487cb2a23300404513ded6194ea4bd2a",
+      "source_record_id": "icho_2026_t8_a3",
+      "source_record_sha256": "a6d5893404d188608893cf85a9056b62487cb2a23300404513ded6194ea4bd2a",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a3.answer.json",
+      "answer_submission_sha256": "8b988f126c96a9356672d67f618b49e16535f85871f467dde554097563af79c4",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t8_a3.source.json",
+      "source_report_sha256": "ab3820f5e6a6d795cfc659e36cdaf388853590b420d48b404c207969c159929e",
+      "candidate": "IChO2026Problems/problem_icho_2026_t8_a3.lean",
+      "preflight_sha256": "4fcc3a7bdcfc65f45a8be617929bd4abf4b70d7d23661dc5d01403b9bb9dcfdd",
+      "candidate_sha256": "0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28",
+      "question_sha256": "3b7a8a155e41ffa0bdc95733516d8582247433f37f6e42dc6eda5ad71443f8fc",
+      "shared_context_sha256": "19b80364ede815df063e18b4ccfc32b79e19ec24a8dcbdf8454868ae1071a44e",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "9065b2b8538a0b660e8a75bad3bfd26417a49e8a73848cb44a2d925c2c1f7953",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T8_page-1.png",
+          "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+        },
+        {
+          "path": ".archon/student_problem_pages/icho_2026_t8_a3-page-78.png",
+          "sha256": "20a42269bd306a97ed96f6485eeec8e83d26f451446907d1d9d6806c20d310bb"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "51f8bb3aba79e6cfa787087e641664d9a877973382b2ef04104af13435c5d915",
+        "node_count": 5,
+        "edge_count": 4,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "geometry_1"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t8_a3",
+        "path": ".archon/provided_answer_drafts/Q8.md",
+        "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a3.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "a6d5893404d188608893cf85a9056b62487cb2a23300404513ded6194ea4bd2a",
+        "source_record_id": "icho_2026_t8_a3",
+        "source_record_sha256": "a6d5893404d188608893cf85a9056b62487cb2a23300404513ded6194ea4bd2a",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a3.answer.json",
+        "answer_submission_sha256": "8b988f126c96a9356672d67f618b49e16535f85871f467dde554097563af79c4",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a3.source.json",
+        "source_report_sha256": "ab3820f5e6a6d795cfc659e36cdaf388853590b420d48b404c207969c159929e",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a3.lean",
+        "preflight_sha256": "4fcc3a7bdcfc65f45a8be617929bd4abf4b70d7d23661dc5d01403b9bb9dcfdd",
+        "candidate_sha256": "0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28",
+        "question_sha256": "3b7a8a155e41ffa0bdc95733516d8582247433f37f6e42dc6eda5ad71443f8fc",
+        "shared_context_sha256": "19b80364ede815df063e18b4ccfc32b79e19ec24a8dcbdf8454868ae1071a44e",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "9065b2b8538a0b660e8a75bad3bfd26417a49e8a73848cb44a2d925c2c1f7953",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-1.png",
+            "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+          },
+          {
+            "path": ".archon/student_problem_pages/icho_2026_t8_a3-page-78.png",
+            "sha256": "20a42269bd306a97ed96f6485eeec8e83d26f451446907d1d9d6806c20d310bb"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "51f8bb3aba79e6cfa787087e641664d9a877973382b2ef04104af13435c5d915",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "geometry_1"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a3",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The two pinned student-visible images and the candidate-cited generic qpy literature claim were audited as the derivation basis; the submission and sealed draft were treated only as untrusted/frozen outputs to compare afterward, not as premises."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "IChO2026Problems.T8A3.geometry_one_raw_derivation carries the complete symbolic chain: four-site/three-link ligand spine, two chloride components, seven supplied choices, both independent filters, singleton intersection, trans-axial disposition, coordination number six, and the resulting geometry."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The bound requested output is a unitless classification with exact_symbolic reporting; the submission has one matching classification entry, and its display capitalization is a faithful presentation of the same symbolic token."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No numerical measurement, rounding, approximation, or tolerance is present or needed for this exact-symbolic classification."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The finite domain is exactly the seven unmarked diagrams visible in the restored A8-2 panel. choicePattern transcribes every diagram before selection; the N4Cl2 component and coplanar-N4 filters are applied uniformly, not to an answer-shaped singleton."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0, duration_bucket=under_1m. Nontrivial result declarations are IChO2026Problems.T8A3.geometry_one_raw_derivation, geometry_one_reported_derivation, geometry_one_raw_result, and geometry_one_reported_result."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "The reviewed theorem exposes exactly the requested unitless geometry classification together with its singleton panel selection; it does not claim reaction yield, completeness, phase, omitted streams, or unrelated subparts."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The theorem has no free hypothesis or caller-selectable premise. Its decisive data are transparent finite source transcriptions and the scoped qpy-planarity carrier, all audited against the two images and the cited generic literature."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The theorem's reported-result carrier selects one supplied diagram and classifies its full six-site coordination topology, directly answering geometry_1 rather than proving a sentinel or weaker coordination-count statement."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "Image bridges are explicit through synthesisDrawing and geometryChoicePanel. The only non-image chemistry bridge was independently checked at Carbon Dioxide Reduction Mediated by Iron Catalysts: Mechanism and Intermediates That Guide Selectivity, DOI 10.1021/acsomega.0c02786, stable URL https://pmc.ncbi.nlm.nih.gov/articles/PMC7469117/, paragraph immediately after Figure 9 beginning 'Three of these catalysts', sentence naming qpy (HTML lines 1951-1954): 2,2':6',2'':6'',2'''-quaterpyridine provides a nitrogen-based planar tetradentate motif. It is used only for the identical four-N qpy donor spine visible in ligand 8, with no transfer of product identity or coligand disposition."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "geometry of structure 1 from the supplied choices",
+          "lean_carrier": "IChO2026Problems.T8A3.geometry_one_reported_result",
+          "status": "covered",
+          "evidence": "The sole submission output has the exact required id, order, kind, and empty unit; its raw token and display form agree with the independently derived exact-symbolic enum result, and the named theorem proves that result through the exhaustive panel filter.",
+          "output_id": "geometry_1",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T8_page-1.png",
+          "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843",
+          "inspected": true,
+          "evidence": "Readable and hash-matched. The lower synthesis drawing shows ligand 8 as one connected four-pyridyl-N chelate path, FeCl2 as the other named reactant, and a directed arrow to structure 1; question 8.3 requests a geometry choice."
+        },
+        {
+          "path": ".archon/student_problem_pages/icho_2026_t8_a3-page-78.png",
+          "sha256": "20a42269bd306a97ed96f6485eeec8e83d26f451446907d1d9d6806c20d310bb",
+          "inspected": true,
+          "evidence": "Readable and hash-matched. A8-2 contains seven complete, unmarked Fe coordination drawings: two N4/zero-Cl, two N4/one-Cl, and three N4/two-Cl alternatives. Of the N4Cl2 drawings, only the bottom-right drawing has all four N donors in the equatorial plane and the two chlorides opposed axially."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "Ligand 8 supplies the four connected qpy nitrogen donors; FeCl2 supplies the depicted two chloride components. The verified planar-tetradentate qpy motif makes the N4 donor set equatorial, leaving two opposed axial sites for chloride and giving coordination number six. This matches exactly one supplied topology."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "qualitative_named_transform_only: the source arrow at synthesisDrawing names the finite roles ligand8 + ironDichloride -> product1 and is represented by synthesisOfProductOne. sourceDirectedCoordinationComponents and MatchesNamedSynthesisComponents provide the transparent structural-compatibility carriers across geometryChoicePanel. No yield, exclusive product, phase, coefficient, byproduct, or complete material ledger is inferred; omitted streams remain unknown."
+        },
+        "formula_mass_consistency": {
+          "status": "not_applicable",
+          "evidence": "No molecular formula, molar mass, or mass calculation is requested, claimed, or used."
+        },
+        "conservation_laws": {
+          "status": "not_applicable",
+          "evidence": "The synthesis is used only as a qualitative named structural-compatibility arrow; no quantitative material stage or complete atom/charge/mass ledger is claimed or outcome-decisive."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "geometry_1 is an exact symbolic classification with an explicitly empty unit."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "There is no numerical raw value, displayed precision, significant-figure operation, or tolerance."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "The candidate distinguishes all seven site topologies, including the three octahedral stereochemical arrangements, and proves that the compatible drawing has four coplanar N donors, two trans-axial chlorides, and six coordination sites."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source asks for the correct member of a finite seven-choice panel. source_constraints_iff_bottom_right and complete_source_filter_selects_bottom_right establish singleton selection after every supplied choice receives the same two constraints."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The panel domain is the full seven-member source domain; component and planarity filters are separately defined and each retains three controls before intersection. The literature bridge supplies only qpy donor planarity and neither names a panel location nor a final geometry. The requested enum occurs in the conclusion, not in a premise."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The candidate faithfully derives the requested geometry from the complete seven-choice panel, the ligand-8 donor topology, the FeCl2 component cue, and a verified scoped qpy planarity bridge; the exact-symbolic submission and nontrivial Lean carrier agree.",
+        "evidence": "Artifact hashes match the controller bindings. Both pinned images are readable and the A8-2 panel is unmarked. The deterministic preflight passed (compiles=true, returncode=0, sorry_count=0). The finite source-first model transcribes all seven diagrams, filters them independently by the depicted N4Cl2 components and planar tetradentate N4 topology, proves a singleton intersection, and reads the six-coordinate geometry from that selected topology. Draft fidelity: frozen draft sha256 0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d; relevant Kimi subpart 8.3; the octahedral, four-equatorial-donor/two-trans-axial, six-coordinate answer is preserved with no discrepancy.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T16:14:30.111003Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "0e4b86d07a0991b0f0e729430a31daf7e6d29d734bfc819e0d8bb274200bcc28",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a3.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T16:14:30.111063Z",
+    "repair_handoff": {}
+  }
+}

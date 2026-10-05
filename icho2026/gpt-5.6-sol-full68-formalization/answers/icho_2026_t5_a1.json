@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t5_a1",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "n is an odd number",
+      "id": "fragment_parity_statement",
+      "kind": "classification",
+      "raw_value": "n + 17 = 2E, hence n ≡ 1 (mod 2)",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

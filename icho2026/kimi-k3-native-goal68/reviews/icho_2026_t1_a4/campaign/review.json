@@ -1,0 +1,49 @@
+```json
+{
+  "target_id": "icho_2026_t1_a4",
+  "semantic_status": "conditional",
+  "proof_status": "conditional",
+  "reason": "The submitted answer Q = Al, C·xH2O = AlF3·3H2O, D = Na3AlF6 is chemically correct and verified independently against the source PDF: all three printed percentages (39.16% H2O, 32.85% Na, 12.85% Q) are reproduced inside their half-quantum windows using the printed periodic-table masses (verified pixel-level against page G1-5: Al=13/26.98, F=19.00, Na=22.99, H=1.008, O=16.00, Mg 24.30 / Si 28.09 bracketing the v=3 envelope, O 16.00 / F 19.00 bracketing the v=2 envelope, Ca 40.08 only 3 sig figs — all matching the Lean ArTable transcription). Cryolite Na3AlF6 matches the given industrial-production hint. The Lean development compiles cleanly (direct lean exit 0, full lake build 8581 jobs successful) and the main uniqueness theorem main_answer plus all helpers depend only on [propext, Classical.choice, Quot.sound] by independent #print axioms audit; no sorry/admit/native_decide/unsafe/custom axioms exist. Search bounds x<=37 and n<=13 are genuinely derived (x_bound, n_bound), not assumed. However the uniqueness result is explicitly conditioned on declared modelling hypotheses not stated in the problem text: v in {2,3} (M-A4-1), D as a NaF adduct NanQF_{v+n} (M-A4-2), 0 < Ar(Q) <= 294 (M-A4-3), and half-quantum table matching (M-A4-4). These are the standard chemical reading and the candidate discharged the v<=5 widening concern by noting the only extra numeric candidate (5,5,5) would require nonexistent ScF5 — my own independent exact-rational scan over v in {1..5}, x<=199, n<=39 confirmed just two printed-table matches, (3,3,3)/Al and (5,5,5)/~44.94-44.98 (outside even Sc's half-quantum window 44.955-44.965). The answer is right and the reasoning honest, but the formally proved statement is additionally conditioned beyond the problem text, so conditional rather than passed.",
+  "coverage": [
+    {
+      "output_id": "metal_q_identity",
+      "status": "conditional",
+      "theorem": "IChO2026Problems.T1A4.main_answer (z = <12>, t = 2698/100 at atomic number 13) with printed_value_2698_is_element_13 and table_match_v3 / table_no_match_v2",
+      "evidence": "envelope_v3 forces 26.945 < Ar(Q) < 26.9943; table_match_v3 proves the unique printed table mass in (26.94, 26.9993) is 26.98 at Fin index 12 (Z=13, Al, verified against G1-5 pixels); envelope_v2 forces 17.9725-17.997 and table_no_match_v2 proves no printed mass lies in (17.9675, 18.002) (O 16.00, F 19.00), eliminating v=2. Conditioned on M-A4-1..4. Verified: lean exit 0, axioms [propext, Classical.choice, Quot.sound]."
+    },
+    {
+      "output_id": "hydrated_c_formula",
+      "status": "conditional",
+      "theorem": "IChO2026Problems.T1A4.stoichiometry_at_aluminium (x = 3 with v = 3) and main_answer; answer_aluminium verifies HydrationDatum Ar_Al 3 3; C_hydrate string bound by theAnswer_correct",
+      "evidence": "At the re-tightened aluminium mass 26.975 < ArQ < 26.985 the cleared hydration inequalities alone force x=3 by interval_cases over the derived range 1<=x<=37: AlF3·3H2O. Offline independent check: 3·18.016/138.028 = 39.1577% in window (39.155,39.165)%. Answer sheet A1-3 confirmed to request exactly this field. Conditioned on M-A4-1 (C = QF_v, v in {2,3}) and M-A4-4."
+    },
+    {
+      "output_id": "compound_d_formula",
+      "status": "conditional",
+      "theorem": "IChO2026Problems.T1A4.stoichiometry_at_aluminium (n = 3) and main_answer; SodiumDatum/MetalDatum Ar_Al 3 3 via answer_aluminium; D_formula string bound by theAnswer_correct; industrial_use_consistent matches the problem's closing hint",
+      "evidence": "At v=3 and the aluminium mass window the sodium datum forces n=3 over the derived range 1<=n<=13: D = Na3AlF6 (cryolite); 3·22.99/209.94 = 32.8524% and 26.98/209.94 = 12.8513%, both strictly inside windows. Industrial-production clue matches cryolite/Hall-Héroult. Conditioned on M-A4-2 (D = NaF adduct NanQF_{v+n}), which is a declared standard chemical reading of 'C reacts with excess NaF' but not derivable from the problem text."
+    }
+  ],
+  "unsupported_assumptions": [
+    "M-A4-1: C = QF_v with v restricted to {2,3}. Disclosed by the candidate; my independent exact-rational scan over the wider family v in {1..5} confirms only one additional numeric candidate (5,5,5) requiring Ar in (44.9439,44.9800), marginally outside scandium's printed half-quantum (44.955,44.965) and chemically impossible (ScF5 does not exist, Sc is +3), so the chemical conclusion is robust, but the formally quantified theorem covers only v in {2,3}.",
+    "M-A4-2: D = C + n NaF adduct NanQF_{v+n}. The problem says only that C reacts with excess NaF to give D containing Na and Q; the adduct structure type is a standard but extra modelling condition.",
+    "M-A4-3: 0 < Ar(Q) <= 294. Benign (periodic table of the same paper) but an added hypothesis.",
+    "M-A4-4: true Ar(Q) matches a printed table mass within half a displayed quantum (±0.005). Follows the task measurement policy but is not stated in the problem text and drives the re-tightening used to pin x=n=3."
+  ],
+  "source_checks": [
+    "Read TASK.json requested_outputs (metal_q_identity, hydrated_c_formula, compound_d_formula) and compared against source PDF theory_problem.pdf (93 pages) and rendered page images T1_page-2.png / T1_page-3.png: Part 2 text matches — dissolve stone in dilute HNO3, pH ~4, NaF gives precipitate C·xH2O with 39.16% water; anhydrous C + excess NaF gives D with 32.85% Na and 12.85% metal Q, 'used in the industrial production of Q'; 1.4 asks Identify metal Q, C·xH2O and D (4.0 pt). Flow diagram (Stone -> HNO3 -> pH~4 -> NaF -> C·xH2O(ppt); C -> NaF -> D) inspected directly and consistent.",
+    "Blank answer sheet A1-3 (PDF page 12) inspected: requests exactly 'Q :', 'C·xH2O :', 'D :' — matches the three requested outputs.",
+    "Periodic table page G1-5 (PDF page 5) zoomed to 300 dpi and transcribed cells checked against Lean ArTable: Al Z=13 26.98, Mg 24.30, Si 28.09, O 16.00, F 19.00, H 1.008, Na 22.99, Ca 40.08 (3 sig figs), Sc 44.96, Br 79.90, Sr 87.62, Sn 118.7 (4 sig figs), In 114.8, Ni 58.69, Co 58.93, Rb 85.47, Sb 121.8, I 126.9 — all match the candidate transcription; entries relevant to every numeric step verified, none result-shaped in error.",
+    "Independent exact rational arithmetic (fractions, outside Lean): w(H2O)=54.048/138.028=39.15727...% in (39.155,39.165)%; w(Na)=68.97/209.94=32.85068...% in (32.845,32.855)%; w(Q)=26.98/209.94=12.85068...% in (12.845,12.855)% — answer verifies. Full feasibility scan v in {1..5}, 1<=x<=199, 1<=n<=39 with all three half-quantum windows yields candidate Ar windows; intersecting with every printed table mass ±0.005 leaves exactly (3,3,3)/Al and (5,5,5)/~44.94-44.98 (the latter outside Sc's printed half-quantum and chemically impossible as ScF5), corroborating the candidate's uniqueness claims and its source_gaps disclosure."
+  ],
+  "proof_checks": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t1_a4.lean re-run by reviewer: exit 0, only deprecation/unused-tactic linter warnings.",
+    "lake build re-run by reviewer: 'Build completed successfully (8581 jobs)', exit 0.",
+    "Independent #print axioms probe on main_answer, answer_aluminium, theAnswer_correct, stoichiometry_at_aluminium, x_bound, n_bound, envelope_v2, envelope_v3, table_no_match_v2, table_match_v3: every one depends only on [propext, Classical.choice, Quot.sound] — standard logical axioms only, no custom axioms, no sorryAx.",
+    "grep for sorry|admit|axiom|native_decide|unsafe in the solution file: only a doc-comment disclaimer; no proof shortcuts present.",
+    "Statement inspection: main_answer is a genuine uniqueness statement over a Candidate structure encoding the three measured data windows, not a tautology; x_bound and n_bound derive the search bounds from the hydration/sodium windows plus 0<ArQ<=294 (lines 317-362), so no unjustified search bounds; the envelope chunk theorems perform real interval_cases/linarith sweeps rather than asserting a precomputed table; ArTable is a verified transcription of the authorised question paper, not an answer table (the answer 26.98 is located by table_match_v3, never assumed).",
+    "Cleverness check: table_match_v3's window (26.94, 26.9993) follows by linarith from the proved envelope and the ±0.005 match hypothesis; the match hypothesis is discharged against the actual table inside table_match_v3, so no answer-shape assumption is hidden in the premises; theAnswer_correct's string equalities are rfl over definitions and are sanctioned by main_answer + answer_aluminium.",
+    "Conditioning noted: Candidate.valence restricts v to {2,3} (structure field), so the machine-checked uniqueness is conditional on M-A4-1..4, all of which are declared openly in the file header, answer.md and result.json rather than smuggled."
+  ]
+}
+```

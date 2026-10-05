@@ -1,0 +1,49 @@
+{
+  "target_id": "icho_2026_t4_a9",
+  "status": "completed",
+  "answer_summary": {
+    "total_fissions": {
+      "raw": "3.876468179...e24 fissions",
+      "reported": "3.88e24 fissions",
+      "reporting": "3 significant figures, quantum 1e22 fissions"
+    },
+    "enriched_uranium_mass": {
+      "raw": "5.094137346... kg",
+      "reported": "5.09 kg",
+      "reporting": "3 significant figures, quantum 0.01 kg"
+    },
+    "method": "ΔE(4.4) = (8.45 − 7.59)·235 = 202.1 MeV per fission (derived answer-blind; the printed 200 MeV fallback was not needed); E = 30000 t × 4.184 GJ/t = 1.2552e14 J; TN = E/ΔE with 1 eV = 1.602176634e-19 J; m(²³⁵U fissioned) = TN·0.23504/N_A kg = 1.513 kg; m(enriched) = m_fissioned/(0.33·0.90) = 5.09 kg."
+  },
+  "theorem_names": [
+    "IChO2026T4A9.deltaE_MeV_value",
+    "IChO2026T4A9.explosionEnergy_value",
+    "IChO2026T4A9.totalFissions_bounds",
+    "IChO2026T4A9.enrichedUraniumMass_bounds",
+    "IChO2026T4A9.totalFissions_reported",
+    "IChO2026T4A9.enrichedUraniumMass_reported"
+  ],
+  "assumptions": [
+    "1 eV = 1.602176634e-19 J exactly (2019 SI definition) — not printed in the problem; trusted general law",
+    "Avogadro constant N_A = 6.02214076e23 mol^-1 exactly (2019 SI definition) — not printed in the problem; trusted general law",
+    "Standard SI prefixes (1 kt = 1000 t, 1 GJ = 1e9 J, 1 MeV = 1e6 eV) and molar-mass convention (M in g/mol equals isotope mass in a.u.)",
+    "Physical model stated implicitly by the problem: each fission releases ΔE; the fissioned ²³⁵U mass is 33% of the total ²³⁵U mass, which is 90% by mass of the enriched uranium",
+    "Part 4.4 derived inline from printed binding energies: free-neutron binding neglected, so ΔE = 235·(8.45−7.59) MeV (the absorbed neutron's binding cancels between sides)"
+  ],
+  "source_gaps": [
+    "The problem statement does not print the MeV↔J conversion factor or Avogadro's constant; the exact SI values were used under the trusted_general_law policy and are disclosed here. All other numeric inputs are printed in the problem (pages Q4-1, Q4-2, Q4-3)."
+  ],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t4_a9.lean",
+      "result": "exit 0, no errors, no warnings, no sorry/admit/axiom in file"
+    },
+    {
+      "command": "lake build",
+      "result": "Build completed successfully (8581 jobs)"
+    },
+    {
+      "command": "lake env lean /tmp/check_axioms.lean   # probe with identical theorem bodies, #print axioms on all six final theorems",
+      "result": "all six theorems depend only on [propext, Classical.choice, Quot.sound]; no custom axioms"
+    }
+  ]
+}

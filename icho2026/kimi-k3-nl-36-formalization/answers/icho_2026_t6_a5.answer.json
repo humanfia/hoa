@@ -1,0 +1,56 @@
+{
+  "id": "icho_2026_t6_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "p-Br-Ph-D_H-p-Ph-p-Ph-OTBS (C30H33BrO3Si)",
+      "id": "structure_f",
+      "kind": "classification",
+      "raw_value": "p-Br-Ph-D_H-p-Ph-p-Ph-OTBS; D_H = 1,4-diarylcyclohexa-2,5-diene-1,4-diol, with the drawn biphenyl carbon bonded at the former quinol carbonyl carbon and OH at both saturated para carbons; formula C30H33BrO3Si",
+      "unit": ""
+    },
+    {
+      "display_value": "p-Br-Ph-D_TES-p-Ph-p-Ph-OTBS (C42H61BrO3Si3)",
+      "id": "structure_g",
+      "kind": "classification",
+      "raw_value": "p-Br-Ph-D_TES-p-Ph-p-Ph-OTBS; D_TES = D_H with both saturated-carbon OH groups converted to O-SiEt3; formula C42H61BrO3Si3",
+      "unit": ""
+    },
+    {
+      "display_value": "p-Br-Ph-D_TES-p-Ph-p-Ph-OH (C36H47BrO3Si2)",
+      "id": "structure_h",
+      "kind": "classification",
+      "raw_value": "p-Br-Ph-D_TES-p-Ph-p-Ph-OH; terminal TBS ether hydrolyzed and both TES ethers retained; formula C36H47BrO3Si2",
+      "unit": ""
+    },
+    {
+      "display_value": "p-Br-Ph-D_TES-p-Ph-Q (C36H47BrO4Si2)",
+      "id": "structure_i",
+      "kind": "classification",
+      "raw_value": "p-Br-Ph-D_TES-p-Ph-Q; Q = terminal para-quinol with the preceding phenylene on its OH-bearing saturated para carbon and the former phenolic carbon as C=O; formula C36H47BrO4Si2",
+      "unit": ""
+    },
+    {
+      "display_value": "p-Br-Ph-D_TES-p-Ph-D_H-p-Ph-Br (C42H52Br2O4Si2)",
+      "id": "structure_j",
+      "kind": "classification",
+      "raw_value": "p-Br-Ph-D_TES-p-Ph-D_H-p-Ph-Br; second para-quinol converted by p-bromophenyllithium addition to D_H; formula C42H52Br2O4Si2",
+      "unit": ""
+    },
+    {
+      "display_value": "p-Br-Ph-D_TES-p-Ph-D_TES-p-Ph-Br (C54H80Br2O4Si4)",
+      "id": "structure_k",
+      "kind": "classification",
+      "raw_value": "p-Br-Ph-D_TES-p-Ph-D_TES-p-Ph-Br; both masked rings carry two O-SiEt3 ethers; formula C54H80Br2O4Si4",
+      "unit": ""
+    },
+    {
+      "display_value": "cyclo[p-Ph-D_TES-p-Ph-D_TES-p-Ph] (C54H80O4Si4)",
+      "id": "structure_l",
+      "kind": "classification",
+      "raw_value": "cyclo[p-Ph-D_TES-p-Ph-D_TES-p-Ph]; the two terminal aryl carbons formerly bearing Br are joined by one C-C single bond and no Br remains; formula C54H80O4Si4",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

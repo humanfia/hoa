@@ -1,0 +1,54 @@
+{
+  "target": "icho_2026_t6_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789359528.0111434,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t6_a3.lean": "c9d84b5075fae1348751d74bffd1c07e4d52231049a7a132ded3beb745396aad",
+    "answer.md": "90dadb5f9d8bcbfac66b5654d08f31cfb27280f28c2c757246adc29812ededa1",
+    "verification.md": "4ea96190ec28efc10e73afdae8481a378af39ce2db0c4b2f8a1655da0fad06f5",
+    "result.json": "648dab4b0bec6e3372810835018bbb0d1247d14cdf3420d968aee1e1e0854f40"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t6_a3",
+    "status": "completed",
+    "answer_summary": "X = I (iodine only). A 2.5 V electron carries e*V = 2.5 eV = 241.1811 kJ/mol (using printed constants e = 1.602e-19 C, N_A = 6.022e23 mol^-1). This energy reaches only BDE(C-I) = 228 kJ/mol among the table values (467, 346, 290, 228), so iodine is the unique possible halogen in the reagent for the 2.5 V retro-Bergman synthesis of C18.",
+    "theorem_names": [
+      "IChO2026T6A3.electronEnergyKJ_value",
+      "IChO2026T6A3.electronEnergyKJ_bounds",
+      "IChO2026T6A3.possible_I",
+      "IChO2026T6A3.not_possible_F",
+      "IChO2026T6A3.not_possible_Cl",
+      "IChO2026T6A3.not_possible_Br",
+      "IChO2026T6A3.possible_halogens",
+      "IChO2026T6A3.possible_set"
+    ],
+    "assumptions": [
+      "Problem inputs (printed data): BDE table {C-F: 467, C-Cl: 346, C-Br: 290, C-I: 228} kJ/mol; applied voltage 2.5 V; constants e = 1.602e-19 C and N_A = 6.022e23 mol^-1 from the official constant sheet G1-3.",
+      "Trusted general physical law: a voltage-driven dissociative cleavage of a C-X bond by one accelerated electron requires the electron kinetic energy (per mole) to be at least the C-X bond dissociation energy. Hence Possible X iff BDE(C-X) <= e*V*N_A.",
+      "Standard Lean logical axioms only (propext, Classical.choice, Quot.sound); no custom axioms."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t6_a3.lean  # exit 0; prints axioms [propext, Classical.choice, Quot.sound] for both final theorems",
+      "python3 -c \"print(2.5*1.602e-19*6.022e23/1000)\"  # 241.1811 kJ/mol, matching electronEnergyKJ_value"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

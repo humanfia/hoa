@@ -1,0 +1,41 @@
+{
+  "target_id": "icho_2026_t3_a7",
+  "status": "completed",
+  "answer_summary": {
+    "equilibrium_absorption_capacity": {
+      "raw": "427 mg g^-1 (exact: (19.90 - 9.225) * 0.2000 / 0.005000)",
+      "reported_3sf": "427 mg g^-1"
+    },
+    "uranyl_ions_per_pore": {
+      "raw": "427 * 633.672 / (1000 * 270.02691) = 33822243/33753363.75 ≈ 1.0020",
+      "reported_3sf": "1.00 UO2^2+ ions per pore",
+      "note": "conclusion is essentially one uranyl ion per pore; with integer school-book atomic masses the value is 1.020 -> 1.02 at 3 s.f."
+    }
+  },
+  "theorem_names": [
+    "IChO2026T3A7.qe_raw_value",
+    "IChO2026T3A7.qe_reports_at_427",
+    "IChO2026T3A7.equilibrium_absorption_capacity",
+    "IChO2026T3A7.poreMass_codata",
+    "IChO2026T3A7.mUO2_codata",
+    "IChO2026T3A7.ions_per_pore_eq",
+    "IChO2026T3A7.ions_per_pore_raw",
+    "IChO2026T3A7.ions_per_pore_codata",
+    "IChO2026T3A7.uranyl_ions_per_pore_reports",
+    "IChO2026T3A7.uranyl_ions_per_pore_pos",
+    "icho_2026_t3_a7_equilibrium_absorption_capacity",
+    "icho_2026_t3_a7_uranyl_ions_per_pore"
+  ],
+  "assumptions": [
+    "Tabulated relative atomic masses are not printed in the problem materials; CODATA 2022 standard values used (C 12.011, H 1.008, N 14.007, O 15.999, U 238.02891) as trusted general-law constants. Result robust: 1.00 (CODATA) vs 1.02 (integer school-book masses) at 3 s.f.",
+    "A 'pore' is one hexagonal opening of the honeycomb (hcb) layer; one pore corresponds to one two-vertex cell of framework with COF-9 repeat formula C36H27N9O3 (= E1 + D2 - 3 H2O + 3 NH3O), derived from the printed Q3-6/Q3-7 structures. One pore per two vertices follows from Euler's formula for any 3-connected periodic net (proved/justified in answer.md).",
+    "Avogadro constant cancels exactly; the Lean proof quantifies over arbitrary NA ≠ 0."
+  ],
+  "source_gaps": [
+    "No atomic-mass table or Avogadro constant is printed anywhere in the supplied Q3 materials; Output 2 numerically depends on these standard external constants. The problem itself only asks to 'indicate' the number per pore, which is 1.00 (essentially one) under either standard mass table."
+  ],
+  "verification_commands": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t3_a7.lean   # exit 0; #print axioms lists [propext, Classical.choice, Quot.sound] for both final theorems",
+    "lake build IChO2026Problems                                    # full library build including the target"
+  ]
+}

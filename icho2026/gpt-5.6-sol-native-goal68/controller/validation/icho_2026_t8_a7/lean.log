@@ -1,0 +1,5 @@
+'IChO2026Problems.T8A7.displayed_rate_indices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T8A7.co_rate_trend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T8A7.endpoint_rate_increase_under_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T8A7.physical_rate_increase_under_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T8A7.co_rate_trend_under_display_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]

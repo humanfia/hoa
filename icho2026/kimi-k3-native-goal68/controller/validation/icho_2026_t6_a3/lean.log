@@ -1,0 +1,2 @@
+'IChO2026T6A3.possible_halogens' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T6A3.possible_set' depends on axioms: [propext, Classical.choice, Quot.sound]

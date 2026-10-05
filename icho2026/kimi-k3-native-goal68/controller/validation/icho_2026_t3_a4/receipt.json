@@ -1,0 +1,66 @@
+{
+  "target": "icho_2026_t3_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789361149.837215,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "d957540daa6aa3e961617d686e97e1d8c51b89ee289c73cf99d37ba1a35fae32",
+    "IChO2026Problems/problem_icho_2026_t3_a4.lean": "4dc8504835b9cb9999c71fa84fb6a266ace8f27e9adfd876661700f225198279",
+    "answer.md": "b045a4f8d61aa7e5fbe47a56dc4c2877251fb95ec7960a03340e9c740b65aa84",
+    "verification.md": "e0d52f8b77b2054e017964d731f84522ded378c0f3d65381342382ded5482857",
+    "result.json": "2cf2558f0e3b9222378c23a69ed46b29762ed15652cec67a2e8758a85d352960"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t3_a4",
+    "status": "completed",
+    "answer_summary": "Repeat units (dashed edges bisect the shared p-phenylene ring at the para C-H pair as in COF-1). COF-3: honeycomb imine COF of benzene-1,3,5-tricarbaldehyde + 2,5-dihydroxybenzene-1,4-diamine; three Ar-CH=N-Ar' links, both ortho/meta phenolic OH persist (ortho OH closes O-H...N h-bond); empirical C21H15N3O4 (ledger C18H12N3O3). COF-4: each ortho OH+imine pair oxidatively cyclised to a benzoxazole (the 'different type of C=N'); per empirical repeat unit exactly 6 H fewer than COF-3, empirical C21H9N3O4; no isolated imine IR. COF-5: honeycomb imine COF of 2,4,6-trihydroxybenzene-1,3,5-tricarbaldehyde + p-phenylenediamine; empirical C18H12N3O3. COF-6: its irreversible keto-enamine tautomer - cyclohexane-1,3,5-trione core with three -NH-CH= arms, three ketones, no C=N (no imine stretch), same composition C18H12N3O3.",
+    "theorem_names": [
+      "IChO2026.T3.t3_a4_main",
+      "IChO2026.T3.cof3Content_eq",
+      "IChO2026.T3.cof3_empirical",
+      "IChO2026.T3.cof4Content_eq",
+      "IChO2026.T3.cof5Content_eq",
+      "IChO2026.T3.cof3_cof4_hydrogen_balance",
+      "IChO2026.T3.imine_condensation_balance",
+      "IChO2026.T3.patterns_consistent",
+      "IChO2026.T3.monomer_hydrogen_content",
+      "IChO2026.T3.cof3_has_imine",
+      "IChO2026.T3.cof4_different_CN",
+      "IChO2026.T3.cof4_benzoxazole_hydrogen_balance",
+      "IChO2026.T3.cof6_no_imine",
+      "IChO2026.T3.cof5_cof6_isomerisation",
+      "IChO2026.T3.cof6_is_keto_enamine"
+    ],
+    "assumptions": [
+      "Problem inputs read from theory_problem.pdf printed Q3-4 (PDF index 27) and T3_page-3/4.png: the two monomers schemes, [O] conversion COF-3 -> COF-4, irreversible isomerisation COF-5 -> COF-6, and the four IR/elemental-analysis constraints.",
+      "Dashed-edge convention taken from the printed COF-1/COF-8 example figures: repeat unit halves the peripheral (red) building block, dashed line through the para C-H pair.",
+      "Standard organic chemistry (trusted general law): imine condensation -CHO + H2N- -> -CH=N- + H2O; oxidative benzoxazole annulation of 2-hydroxyimines; keto-enamine (enol->keto) tautomerisation of phloroglucinol-derived imines.",
+      "COF-4 benzoxazole assignment is a derived deduction (unique structure meeting all four stated constraints), recorded in cof4Inventory/cof4_benzoxazole_hydrogen_balance."
+    ],
+    "source_gaps": [
+      "The requested outputs are drawings; the formalisation represents connectivity, bond orders and dashed-edge halving by typed structure inventories and rational half-linker ledgers rather than literal pixels.",
+      "The problem states but does not structurally specify the 'different type of C=N' in COF-4; it is fixed by deduction from the -6H elemental analysis, loss of the imine IR band and the [O] reagent."
+    ],
+    "verification_commands": [
+      "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t3_a4/campaign/workspace && lake env lean IChO2026Problems/problem_icho_2026_t3_a4.lean   # exit 0, no errors; #print axioms for all final theorems: only [propext, Classical.choice, Quot.sound], several axiom-free, no sorryAx",
+      "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t3_a4/campaign/workspace && lake build IChO2026Problems   # Build completed successfully (8564 jobs); only pre-existing style linter notes in unmodified shared infrastructure"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

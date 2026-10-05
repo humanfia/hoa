@@ -1,0 +1,32 @@
+{
+  "target_id": "icho_2026_t6_a5",
+  "status": "completed",
+  "answer_summary": "F is the unsilylated first 1,4-diol; G is its bis-OTES ether; H is the terminal phenol after OTBS cleavage; I is the corresponding para-hydroxycyclohexadienone; J is the second 1,4-diol after para-bromophenyllithium addition; K is its bis-OTES ether; L is the five-unit macrocycle formed by intramolecular coupling of the two terminal aryl bromides.",
+  "theorem_names": [
+    "IChO2026Problems.T6A5.structure_f",
+    "IChO2026Problems.T6A5.structure_g",
+    "IChO2026Problems.T6A5.structure_h",
+    "IChO2026Problems.T6A5.structure_i",
+    "IChO2026Problems.T6A5.structure_j",
+    "IChO2026Problems.T6A5.structure_k",
+    "IChO2026Problems.T6A5.structure_l",
+    "IChO2026Problems.T6A5.structure_l_gives_five_cpp"
+  ],
+  "assumptions": [
+    "Standard organolithium addition to a cyclohexadienone carbonyl followed by work-up gives the corresponding alcohol and installs the aryl group.",
+    "TESCl/imidazole protects the two free masked-ring alcohols as OTES ethers.",
+    "In the stated sequence LiOH selectively exposes the terminal phenol from its OTBS ether while retaining the two masked-ring OTES groups.",
+    "Aqueous PhI(OAc)2 performs two-electron oxidative dearomatization of the para-substituted phenol to the para-hydroxycyclohexadienone.",
+    "Ni(COD)2/2,2'-bipyridine replaces the two terminal aryl C-Br bonds by the intramolecular aryl-aryl C-C bond.",
+    "The absence of stereochemical marks in the source and blank answer sheets means configurations are unspecified rather than assigned."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T6_page-3.png icho_2026_source/image/T6_page-2.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t6_a5.lean",
+    "lake build IChO2026Run",
+    "! grep -RInE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t6_a5.lean",
+    "! grep -nE '[[:blank:]]+$' answer.md IChO2026Problems/problem_icho_2026_t6_a5.lean IChO2026Problems/All.lean result.json verification.md",
+    "python3 -m json.tool result.json"
+  ]
+}

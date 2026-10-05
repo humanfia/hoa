@@ -1,0 +1,28 @@
+{
+  "target": "icho_2026_t9_a1",
+  "candidate_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "result.json": "706fec4caee446e2a2c4515ee203503714203658f6853c345a88e93cf57084c3",
+    ".gitignore": "8a31ab62303e26f93ba0b4c3937ead4ab85022e475094b542d69385985d39b63",
+    "lakefile.toml": "6bf5c92d5b48593a3dd1e636bf71b0894a074c737c3c3e663539b4d335a7fd2b",
+    "isolation_manifest.json": "dac4bbdd4230167e04362de19490d24add9e6d9ac96ce80d9eb55879a771bdc4",
+    "lake-manifest.json": "cf800f81ecf5e27a8ff144bad0f8055c2c05bb7493eb94d0ed1f5ae4bae94143",
+    "answer.md": "d1ad73480bac9a7b3092b643ec742682c46455a1f66de47d3f6cf73194be526c",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "TASK.json": "fe6c6868ad3120046b740d94e8f4f31671408d8b3f46614ad0c25e09ac170cc5",
+    "lean-toolchain": "efac0b94923b2d8b6840cd35be9177ad0fc5ab2332f4f4311c98712cee92fdee",
+    "verification.md": "0b0d34f943f1c41cff443bad77231cc6f23733de0098635b5c1610263e41a9e3",
+    "archon-protected.yaml": "c447b97d89415ce4e88e712ea466d5bc1909e88983de159a329d879478e88e55",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "16bc2bc607d04f2b5d20816a19b498c2b486493ad4c5ae31eba1934864f2d4a7",
+    "IChO2026Problems/problem_icho_2026_t9_a1.lean": "2a517997a7c948162095ee6b7d92af3d34a65353598aadffaae12b347a214cfc"
+  },
+  "created": 1789396463.3338509,
+  "model": "nvidia/moonshotai/kimi-k3",
+  "reasoning_effort": "xhigh",
+  "feedback_to_solver": false
+}

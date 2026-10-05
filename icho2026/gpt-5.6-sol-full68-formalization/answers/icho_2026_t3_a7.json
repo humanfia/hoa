@@ -1,0 +1,21 @@
+{
+  "id": "icho_2026_t3_a7",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "427",
+      "id": "equilibrium_absorption_capacity",
+      "kind": "numeric",
+      "raw_value": "((19.90 - 9.225) * (200.0 / 1000)) / (5.000 / 1000)",
+      "unit": "mg g^-1"
+    },
+    {
+      "display_value": "1.00",
+      "id": "uranyl_ions_per_pore",
+      "kind": "numeric",
+      "raw_value": "((((19.90 - 9.225) * (200.0 / 1000)) / 1000) / 270.028) / ((5.000 / 1000) / 633.672)",
+      "unit": "ions pore^-1"
+    }
+  ],
+  "schema_version": 1
+}

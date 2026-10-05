@@ -1,0 +1,103 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Identify X and Y.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t1_a1",
+  "image": "T1_page-2.png",
+  "images": [
+    "T1_page-2.png",
+    "T1_page-1.png"
+  ],
+  "index": "icho_2026_t1_a1",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T1",
+  "part_id": "T1-A1",
+  "phase": "solve",
+  "points": 3.0,
+  "previous_parts": [],
+  "printed_page": 2,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T1_page-2.png",
+      "printed_page": 2,
+      "sha256": "06f9276f8440fd17bd18f6778d1cc5950d47ffebaa60395b7078b96fcbf4f0cb",
+      "source_page": 7
+    },
+    {
+      "kind": "problem_page",
+      "path": "T1_page-1.png",
+      "printed_page": 2,
+      "sha256": "c03ceb7b203d63570c24c999ca3894c33b346a86ea54879d30c3c2650e992f52",
+      "source_page": 7
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 7
+    }
+  ],
+  "problem_id": "icho_2026_t1",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT1. A journey through time: The secrets of Avicenna 7% A chemist found herself in the 11 th Century, where she met the renowned physician Avicenna. In Avicenna's laboratory, she discovered a blue elixir and a yellow mysterious stone. She brought them back to 2026. Determined to uncover their composition, she began her research. Part 1. The blue elixir At first, the chemist compiled a table listing the names of the only four plants which she saw in Avicenna\u2019s lab that could have been used to prepare the elixir, and the compounds that can be extracted from these plants. Plants Compounds that can be extracted Zingiber 1 (C11H14O3) 2 (C10H18O) 3 (C10H18O) Hypericum 4 (C6H12O) 5 (C10H12O2) 6 (C10H18O) Chamomilla 7 (C14H16) 8 (C15H24) 3 (C10H18O) Artemisia 9 (C10H16O) 10 (C10H18O) 3 (C10H18O) Using chromatography, she determined that the elixir consists of four different substances (X, Y, Z and W). The chemist then discovered that X can isomerise into Y in an acidic medium and that Y has a plane of symmetry.\n\n## Current subquestion T1-A1\nIdentify X and Y.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "identity_x",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "identity of X",
+      "unit": ""
+    },
+    {
+      "id": "identity_y",
+      "kind": "classification",
+      "reporting_policy": {
+        "kind": "exact_symbolic",
+        "source": "problem_output_type"
+      },
+      "source_requirement": "identity of Y",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T1. A journey through time: The secrets of Avicenna 7% A chemist found herself in the 11 th Century, where she met the renowned physician Avicenna. In Avicenna's laboratory, she discovered a blue elixir and a yellow mysterious stone. She brought them back to 2026. Determined to uncover their composition, she began her research. Part 1. The blue elixir At first, the chemist compiled a table listing the names of the only four plants which she saw in Avicenna\u2019s lab that could have been used to prepare the elixir, and the compounds that can be extracted from these plants. Plants Compounds that can be extracted Zingiber 1 (C11H14O3) 2 (C10H18O) 3 (C10H18O) Hypericum 4 (C6H12O) 5 (C10H12O2) 6 (C10H18O) Chamomilla 7 (C14H16) 8 (C15H24) 3 (C10H18O) Artemisia 9 (C10H16O) 10 (C10H18O) 3 (C10H18O) Using chromatography, she determined that the elixir consists of four different substances (X, Y, Z and W). The chemist then discovered that X can isomerise into Y in an acidic medium and that Y has a plane of symmetry.",
+  "source_index": "T1-A1",
+  "source_page": 7,
+  "source_pdf": "theory_problem.pdf"
+}

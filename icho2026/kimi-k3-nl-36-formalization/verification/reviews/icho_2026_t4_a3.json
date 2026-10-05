@@ -1,0 +1,808 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The submission and Lean theorem preserve Kimi subpart 4.3 and encode the source-derived modal U-235 fission witness with the graph masses, one absorbed neutron, three emitted neutrons, the Rb/Cs same-group identification, and both conservation ledgers; no requested-result premise or stronger uniqueness claim is present.",
+    "updated_at": "2026-09-13T08:45:21Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "12d1a80584ad856a6521ee5c82ee62a6babbefbaac8fb6e5f11d6e8d897793bd",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "T4_page-1 supplies U-235 plus one absorbed neutron, three emitted neutrons, and graph maxima at A=93 and A=140; T4_page-2 supplies the same-group requirement. The candidate represents exactly those facts and reports one exact symbolic equation, without claiming all channels or global uniqueness."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "The result theorem is closed: transparent definitions reduce the parent, neutron counts, modal masses, atomic numbers, group membership, and both ledgers to concrete finite computations. Sorry bodies are permitted in semantic review and no requested answer occurs as a hypothesis."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "BinaryFissionEquation retains every outcome-decisive field: parent nuclide, absorbed and emitted neutron multiplicities, both fragment nuclides, mass-number conservation, charge conservation, graph-modal masses, and same-group membership. Exact-symbolic raw and reported carriers are both exposed."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The requested output is an exact symbolic nuclide equation. No source uncertainty, numerical tolerance, or rounded scalar enters it; the graph coordinates used are discrete integer mass-number readouts."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The source reaction runs from U-235 plus an absorbed neutron to two fragments plus three neutrons. rubidiumCaesiumFission has that direction, and UsesModalFragmentMasses explicitly permits only the physically immaterial exchange of fragment order."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The reported proposition is tied to transparent named Rb-93 and Cs-140 nuclides and independently checked modal-mass, charge, neutron-count, and group carriers; no free Bool, opaque predicate, exclusion flag, answer premise, or reflexive equality can reinterpret the witness. The task requests a concrete modal equation, so the theorem appropriately does not assert an unrequested universal classification of every fission channel."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The fission-product yield curve has its light and heavy modal mass-number readouts at 93 and 140.",
+          "carrier": "IChO2026Problems.T4A3.sourceYieldCurvePeaks; UsesModalFragmentMasses; candidate_usesModalFragmentMasses",
+          "status": "covered",
+          "evidence": "Direct source-first inspection of icho_2026_source/image/T4_page-1.png#yield_curve shows the two blue-curve maxima at the integer A coordinates 93 and 140."
+        },
+        {
+          "claim": "One U-235 nucleus absorbs one neutron and the fission event emits three free neutrons.",
+          "carrier": "IChO2026Problems.T4A3.uranium235; rubidiumCaesiumFission; SatisfiesSourceSpecification",
+          "status": "covered",
+          "evidence": "The shared problem text and page-1 displayed reaction state U-235 neutron absorption and a product-side coefficient of three neutrons; the carrier fixes absorbedNeutrons=1 and emittedNeutrons=3."
+        },
+        {
+          "claim": "The selected products are Rb with Z=37 and Cs with Z=55, and both are in periodic-table group 1.",
+          "carrier": "IChO2026Problems.T4A3.rubidium; caesium; periodicGroupOfAtomicNumber; SamePeriodicGroup; candidate_samePeriodicGroup",
+          "status": "covered",
+          "evidence": "Repeated approved offline atomic_weight lookups returned the bound dataset hash and candidate-cited record hashes df9863f473ad885a2dff7e5479fdeea63dcd44f0cfdaf64d499bda1000532428 (Rb, Z=37) and 189e0e7fa5e78bab53f78f06d09442aacdfc9d67cb2d75b9f2349a9c28e49454 (Cs, Z=55). PubChem Periodic Table, https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON, Table.Columns plus the rows whose AtomicNumber fields are 37 and 55, identifies both GroupBlock values as Alkali metal; this is used only for the two named elements."
+        },
+        {
+          "claim": "The written nuclear equation conserves nucleon number and nuclear charge.",
+          "carrier": "IChO2026Problems.T4A3.ConservesMassNumber; ConservesAtomicNumber; candidate_massNumberLedger; candidate_atomicNumberLedger",
+          "status": "covered",
+          "evidence": "The transparent ledgers establish 235+1=93+140+3=236 and 92=37+55, with every free neutron contributing mass number one and charge zero."
+        },
+        {
+          "claim": "Exact-symbolic reporting preserves the raw equation without rounding or unit conversion.",
+          "carrier": "IChO2026Problems.T4A3.RawFissionEquationResult; ReportedFissionEquationResult; rawFissionEquationResult; fissionEquation",
+          "status": "covered",
+          "evidence": "Raw and reported propositions reduce to the same source specification, matching requested_outputs[0].reporting_policy."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t4_a3.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t4_a3",
+        "source_record_sha256": "0b94fd43d03e55284753e3b4a83a58d3cb78cfe4664645a84a18e2627f4e5c28",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t4_a3.answer.json",
+        "answer_submission_sha256": "c289968db3cf13087ca5a6b27c54ce6721ee78c631dd5a0c69cc51458fad6308",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t4_a3.source.json",
+        "source_report_sha256": "decf2902ab9394f609386c1faa4bcec665d3d853ca92de0a89388d57b3639f9a",
+        "candidate": "IChO2026Problems/problem_icho_2026_t4_a3.lean",
+        "preflight_sha256": "779a203bdd65098a64793c03cdcf39574e7ff088323cb748de5f42ff692bf3a2",
+        "candidate_sha256": "12d1a80584ad856a6521ee5c82ee62a6babbefbaac8fb6e5f11d6e8d897793bd",
+        "question_sha256": "f4145ca2426c648acca092148bdded9520ef3781fa6f3f628ef0fb988819d5bf",
+        "shared_context_sha256": "f4e77c29c10038ff4c761f2ac7e07ecfc4134121df4b7a34080d99fd8289adf9",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "b74402ec7ebecdcb09f4c85cf8903d49cd2e8f2f9b2981b54540635216705abc",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T4_page-2.png",
+            "sha256": "60fade5df8174639d11a19bc537d53719ebd964c90940d40844f99c42f932c94"
+          },
+          {
+            "path": "icho_2026_source/image/T4_page-1.png",
+            "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "185ccd818162d4e18a91babee9fa8716a7689fe93f3ef4361e736d288e9147fe",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "fission_equation"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t4_a3",
+          "path": ".archon/provided_answer_drafts/Q4.md",
+          "sha256": "e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t4_a3.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t4_a3",
+          "source_record_sha256": "0b94fd43d03e55284753e3b4a83a58d3cb78cfe4664645a84a18e2627f4e5c28",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t4_a3.answer.json",
+          "answer_submission_sha256": "c289968db3cf13087ca5a6b27c54ce6721ee78c631dd5a0c69cc51458fad6308",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t4_a3.source.json",
+          "source_report_sha256": "decf2902ab9394f609386c1faa4bcec665d3d853ca92de0a89388d57b3639f9a",
+          "candidate": "IChO2026Problems/problem_icho_2026_t4_a3.lean",
+          "preflight_sha256": "779a203bdd65098a64793c03cdcf39574e7ff088323cb748de5f42ff692bf3a2",
+          "candidate_sha256": "12d1a80584ad856a6521ee5c82ee62a6babbefbaac8fb6e5f11d6e8d897793bd",
+          "question_sha256": "f4145ca2426c648acca092148bdded9520ef3781fa6f3f628ef0fb988819d5bf",
+          "shared_context_sha256": "f4e77c29c10038ff4c761f2ac7e07ecfc4134121df4b7a34080d99fd8289adf9",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "b74402ec7ebecdcb09f4c85cf8903d49cd2e8f2f9b2981b54540635216705abc",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T4_page-2.png",
+              "sha256": "60fade5df8174639d11a19bc537d53719ebd964c90940d40844f99c42f932c94"
+            },
+            {
+              "path": "icho_2026_source/image/T4_page-1.png",
+              "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "185ccd818162d4e18a91babee9fa8716a7689fe93f3ef4361e736d288e9147fe",
+            "node_count": 5,
+            "edge_count": 4,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "fission_equation"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t4_a3",
+            "path": ".archon/provided_answer_drafts/Q4.md",
+            "sha256": "e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier, single-event scope, graph coordinates, neutron ledger, and charge/group derivation were frozen from the two bound images and inline problem evidence before opening generated artifacts. The sealed Kimi draft was used only afterward for the expressly required fidelity comparison and never as a scientific premise."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "For one event, the input mass number is 235+1=236; three free output neutrons leave fragment total 233, exactly the graph-modal 93+140. Charge conservation gives 92=37+55, and the corresponding Rb/Cs pair satisfies the stated same-group cue. RawFissionEquationResult carries this exact symbolic derivation."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy requires exact_symbolic output; raw and display forms preserve the same isotope indices, coefficient, species, and arrow without rounding."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or needed. The output is an exact formula using integer mass and charge numbers, and the submission claims no numerical uncertainty."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No finite candidate domain is used to claim uniqueness or exhaustiveness. The requested concrete witness is checked directly against source-modal masses, transparent atomic-number/group data, and conservation; the full Fin 118 carrier is not an answer-shaped singleton."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=12d1a80584ad856a6521ee5c82ee62a6babbefbaac8fb6e5f11d6e8d897793bd; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=6. Nontrivial result declarations are RawFissionEquationResult, rawFissionEquationResult, ReportedFissionEquationResult, and fissionEquation, supported by the named modal-mass, charge, mass, and group carriers."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The theorem asserts that one named equation satisfies the source specification. It neither enumerates all fission products nor claims global uniqueness, yield completeness, or an unstated physical mechanism."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "fissionEquation and rawFissionEquationResult have no hypotheses. Every field of their specification is a transparent definition or a named relation grounded by the problem images, ordinary nuclear conservation, and verified element/group data."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The theorem exposes the requested formula rather than a status sentinel, and the bound answer submission's sole raw/display output is the same independently derived exact equation with the exact id, kind, and empty unit."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are inventoried: graph-modal masses, U-235/one-in/three-out event data, Rb/Cs atomic identities and common group, nucleon and charge conservation, and exact-symbolic raw-to-reported identity."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "most common U235 neutron-induced fission equation with the specified same-group products",
+            "lean_carrier": "IChO2026Problems.T4A3.fissionEquation via ReportedFissionEquationResult",
+            "status": "covered",
+            "evidence": "The only submission output has the required id/kind/unit and its raw and displayed formulas both match the independently reconstructed modal, same-group, balanced equation; the named Lean theorem carries that same concrete result.",
+            "output_id": "fission_equation",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T4_page-2.png",
+            "sha256": "60fade5df8174639d11a19bc537d53719ebd964c90940d40844f99c42f932c94",
+            "inspected": true,
+            "evidence": "Page 2 contains question 4.3, identifies neutron absorption, refers to the graph above, and requires the two formed elements to share a periodic-table group. It contains no structure panel, repeat boundary, connector, or additional fission-product component."
+          },
+          {
+            "path": "icho_2026_source/image/T4_page-1.png",
+            "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf",
+            "inspected": true,
+            "evidence": "The single T4 yield plot has x-axis mass number A from 70 to 170, y-axis P(A), one blue curve, no legend or multiple encoded series, and two maxima at about the integer coordinates 93 and 140. The preceding text and displayed equation show one absorbed neutron and three emitted neutrons. This is a graph, not a molecular-topology/repeat-unit panel, so no building-block or atom-connectivity recount applies."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "The nuclide notation, U/Rb/Cs identities, free-neutron roles, and same-group relation are explicit and consistent. Offline CIAAW records reproduce Z=37 and Z=55 with matching pinned hashes; the PubChem Periodic Table rows classify both named elements as alkali metals."
+          },
+          "staged_species_domain": {
+            "status": "not_applicable",
+            "evidence": "not_staged_transformation: the requested output is one nuclear fission event, with no multi-stage chemical transformation, recycle, residue, phase stream, yield, or cumulative material ledger."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "The source graph supplies fragment mass numbers 93 and 140; the symbols are bound to Rb Z=37 and Cs Z=55, and each Nuclide enforces Z\u2264A. Parent and product isotope indices agree across the submission and Lean carriers."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "candidate_massNumberLedger states both sides equal 236, and candidate_atomicNumberLedger states 92=37+55. Thus nucleon number and nuclear charge are conserved with neutron charge zero."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "The requested formula has the source-specified empty unit; no dimensional scalar or conversion is asserted."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "Exact-symbolic reporting applies, so integer isotope indices and neutron coefficient are preserved without intermediate rounding, significant-figure conversion, or tolerance."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No molecular structure, connectivity, geometry, stereochemistry, or depicted chemical scaffold is requested or used."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "The verb asks for the most common equation represented by the graph modes, not for all channels or a global uniqueness theorem. The formalization provides and checks the concrete source-compatible Rb/Cs witness and treats fragment order as immaterial without asserting exhaustive classification."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The answer is a named output witness, not an assumption: fissionEquation is closed and requires SatisfiesSourceSpecification. Modal masses, atomic numbers, periodic groups, neutron multiplicities, and both ledgers are transparent nontrivial checks; there is no singleton premise, opaque success predicate, free flag, or post-hoc tolerance."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "id": "fission_equation",
+            "kind": "formula",
+            "source_requirement": "most common U235 neutron-induced fission equation with the specified same-group products",
+            "quantity_definition": "Exact nuclide equation for one neutron-induced U-235 fission event at the two graph-modal fragment masses, with the stated neutron multiplicities and same-group products.",
+            "process_scope": {
+              "kind": "per_step",
+              "description": "one neutron-absorption and fission event"
+            },
+            "basis": {
+              "status": "not_applicable",
+              "numerator": "not_applicable",
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable"
+            },
+            "constants": [
+              {
+                "name": "parent_nuclide",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "dimensionless",
+                "value": "uranium-235 with A=235 and Z=92"
+              },
+              {
+                "name": "absorbed_neutron_count",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "dimensionless",
+                "value": "1"
+              },
+              {
+                "name": "emitted_neutron_count",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "shared_context"
+                },
+                "unit": "dimensionless",
+                "value": "3"
+              },
+              {
+                "name": "modal_fragment_mass_numbers",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T4_page-1.png#yield_curve"
+                },
+                "unit": "dimensionless",
+                "value": "93 and 140"
+              }
+            ],
+            "dependencies": [
+              {
+                "kind": "governing_relation",
+                "reference": "nucleon-number conservation",
+                "relation": "parent mass number plus absorbed neutrons equals fragment mass numbers plus emitted neutrons",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              },
+              {
+                "kind": "governing_relation",
+                "reference": "nuclear-charge conservation",
+                "relation": "parent atomic number equals the sum of fragment atomic numbers because free neutrons have zero charge",
+                "source_locator": {
+                  "kind": "problem_text",
+                  "reference": "current_question"
+                }
+              }
+            ],
+            "branch_conditions": [],
+            "unit": "",
+            "raw_result": {
+              "value_or_expression": "\u00b2\u00b3\u2075\u2089\u2082U + \u00b9\u2080n \u2192 \u2079\u00b3\u2083\u2087Rb + \u00b9\u2074\u2070\u2085\u2085Cs + 3\u00b9\u2080n",
+              "exact_unrounded": true,
+              "derivation": "The graph modes give A=93 and A=140; 235+1=93+140+3, while 92=37+55 and Rb/Cs share periodic-table group 1."
+            },
+            "reporting": {
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              },
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "application": "No rounding or tolerance is applied; preserve the exact nuclide symbols, integer indices, coefficient, and reaction direction."
+            },
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T4A3.uranium235",
+                "IChO2026Problems.T4A3.sourceYieldCurvePeaks",
+                "IChO2026Problems.T4A3.rubidium",
+                "IChO2026Problems.T4A3.caesium"
+              ],
+              "relations": [
+                "IChO2026Problems.T4A3.UsesModalFragmentMasses",
+                "IChO2026Problems.T4A3.SamePeriodicGroup",
+                "IChO2026Problems.T4A3.ConservesMassNumber",
+                "IChO2026Problems.T4A3.ConservesAtomicNumber"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T4A3.RawFissionEquationResult",
+                "IChO2026Problems.T4A3.rawFissionEquationResult"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T4A3.ReportedFissionEquationResult",
+                "IChO2026Problems.T4A3.fissionEquation"
+              ]
+            },
+            "semantic_card_comparison": {
+              "status": "matched",
+              "evidence": "The submission has exactly one output in bundle order with id fission_equation, kind formula, empty unit, the independently derived raw equation, and an equivalent exact-symbolic display."
+            },
+            "lean_statement_comparison": {
+              "status": "matched",
+              "evidence": "The named Lean input, relation, raw-result, and reported-result carriers represent every term and constraint in the source-first derivation."
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T4_page-1.png#yield_curve"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T4_page-2.png#question_4.3"
+              }
+            ],
+            "evidence": "Source-first mass-mode, neutron, charge, and periodic-group derivation agrees with both the semantic card and the Lean contract."
+          }
+        ]
+      },
+      "candidate_sha256": "12d1a80584ad856a6521ee5c82ee62a6babbefbaac8fb6e5f11d6e8d897793bd"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t4_a3.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The submission and Lean theorem preserve Kimi subpart 4.3 and encode the source-derived modal U-235 fission witness with the graph masses, one absorbed neutron, three emitted neutrons, the Rb/Cs same-group identification, and both conservation ledgers; no requested-result premise or stronger uniqueness claim is present.",
+        "reviewed_at": "2026-09-13T08:45:21Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "12d1a80584ad856a6521ee5c82ee62a6babbefbaac8fb6e5f11d6e8d897793bd",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t4_a3.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 6,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The exact-symbolic fission-equation submission is independently supported by the bound graph and question, and the hypothesis-free Lean theorem transparently checks the modal fragment masses, neutron multiplicities, common periodic-table group, nucleon-number conservation, and nuclear-charge conservation.",
+    "evidence": "Both bound images were inspected and all four bound file hashes match. The answer submission has schema_version 1 and exactly one ordered formula output with the required id and empty unit. Deterministic preflight passed with compilation true, return code 0, and zero sorry. The reviewed theorem reduces to a concrete BinaryFissionEquation and is proved through candidate_usesModalFragmentMasses, candidate_massNumberLedger, candidate_atomicNumberLedger, candidate_samePeriodicGroup, and rawFissionEquationResult without assumptions or axioms.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "328d4f7cd951c73ad3c0e7895e4fe42812f9c23cd75d636cd0fa770cdfe28df6",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t4_a3.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t4_a3",
+      "source_record_sha256": "0b94fd43d03e55284753e3b4a83a58d3cb78cfe4664645a84a18e2627f4e5c28",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t4_a3.answer.json",
+      "answer_submission_sha256": "c289968db3cf13087ca5a6b27c54ce6721ee78c631dd5a0c69cc51458fad6308",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t4_a3.source.json",
+      "source_report_sha256": "decf2902ab9394f609386c1faa4bcec665d3d853ca92de0a89388d57b3639f9a",
+      "candidate": "IChO2026Problems/problem_icho_2026_t4_a3.lean",
+      "preflight_sha256": "52fdc739e019ca64dd6d9cd056d84b3e7c34f146a0f9e328967e03b59b9310fb",
+      "candidate_sha256": "328d4f7cd951c73ad3c0e7895e4fe42812f9c23cd75d636cd0fa770cdfe28df6",
+      "question_sha256": "f4145ca2426c648acca092148bdded9520ef3781fa6f3f628ef0fb988819d5bf",
+      "shared_context_sha256": "f4e77c29c10038ff4c761f2ac7e07ecfc4134121df4b7a34080d99fd8289adf9",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "b74402ec7ebecdcb09f4c85cf8903d49cd2e8f2f9b2981b54540635216705abc",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T4_page-2.png",
+          "sha256": "60fade5df8174639d11a19bc537d53719ebd964c90940d40844f99c42f932c94"
+        },
+        {
+          "path": "icho_2026_source/image/T4_page-1.png",
+          "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "185ccd818162d4e18a91babee9fa8716a7689fe93f3ef4361e736d288e9147fe",
+        "node_count": 5,
+        "edge_count": 4,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "fission_equation"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t4_a3",
+        "path": ".archon/provided_answer_drafts/Q4.md",
+        "sha256": "e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t4_a3.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t4_a3",
+        "source_record_sha256": "0b94fd43d03e55284753e3b4a83a58d3cb78cfe4664645a84a18e2627f4e5c28",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t4_a3.answer.json",
+        "answer_submission_sha256": "c289968db3cf13087ca5a6b27c54ce6721ee78c631dd5a0c69cc51458fad6308",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t4_a3.source.json",
+        "source_report_sha256": "decf2902ab9394f609386c1faa4bcec665d3d853ca92de0a89388d57b3639f9a",
+        "candidate": "IChO2026Problems/problem_icho_2026_t4_a3.lean",
+        "preflight_sha256": "52fdc739e019ca64dd6d9cd056d84b3e7c34f146a0f9e328967e03b59b9310fb",
+        "candidate_sha256": "328d4f7cd951c73ad3c0e7895e4fe42812f9c23cd75d636cd0fa770cdfe28df6",
+        "question_sha256": "f4145ca2426c648acca092148bdded9520ef3781fa6f3f628ef0fb988819d5bf",
+        "shared_context_sha256": "f4e77c29c10038ff4c761f2ac7e07ecfc4134121df4b7a34080d99fd8289adf9",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "b74402ec7ebecdcb09f4c85cf8903d49cd2e8f2f9b2981b54540635216705abc",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T4_page-2.png",
+            "sha256": "60fade5df8174639d11a19bc537d53719ebd964c90940d40844f99c42f932c94"
+          },
+          {
+            "path": "icho_2026_source/image/T4_page-1.png",
+            "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "185ccd818162d4e18a91babee9fa8716a7689fe93f3ef4361e736d288e9147fe",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "fission_equation"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t4_a3",
+          "path": ".archon/provided_answer_drafts/Q4.md",
+          "sha256": "e6b8f0dff7a374542e52a6a27817772c62e8b110835fe77c12901f72eb46aa63",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "The equation was rederived only from the inline problem evidence and the two bound images; the generated submission and sealed Kimi draft were treated solely as untrusted objects for comparison and were not used as premises."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "The graph-modal readout is bound by sourceYieldCurvePeaks and candidate_usesModalFragmentMasses; the absorbed/emitted-neutron facts and the transparent mass and charge ledgers are assembled without rounding or hypotheses in rawFissionEquationResult."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The controller-bound requested output declares formula kind with exact_symbolic reporting; ReportedFissionEquationResult is definitionally the same source specification as the raw carrier."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No numerical tolerance is used or permitted for this exact-symbolic formula output; all isotope indices, atomic numbers, and multiplicities are checked as natural-number equalities."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The bound graph supplies the two modal mass-number positions, the text supplies the parent and neutron multiplicities, and the same-group instruction invokes ordinary periodic-table data. Lean uses the complete finite element domain Fin 118 and a transparent full group mapping rather than an answer-shaped singleton domain."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=328d4f7cd951c73ad3c0e7895e4fe42812f9c23cd75d636cd0fa770cdfe28df6; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial carriers are sourceYieldCurvePeaks, rubidiumCaesiumFission, candidate_usesModalFragmentMasses, candidate_massNumberLedger, candidate_atomicNumberLedger, candidate_samePeriodicGroup, rawFissionEquationResult, and fissionEquation."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "SatisfiesSourceSpecification includes the specified parent, one absorbed neutron, three emitted neutrons, the two graph-modal fragment masses, distinct product elements in one periodic group, and both required nuclear conservation ledgers."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "fissionEquation and its raw carrier have no binders or external hypotheses; every side condition is discharged by transparent definitions, computation, and explicit ledger theorems."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The named theorem fissionEquation carries the sole requested exact-symbolic formula through ReportedFissionEquationResult, and the submission's sole id/kind/unit and symbolic content agree with that concrete carrier."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The graph-to-mass bridge is exposed by YieldCurvePeakReadout and candidate_usesModalFragmentMasses; element atomic numbers and periodic groups are transparent data; candidate_massNumberLedger and candidate_atomicNumberLedger expose the outcome-decisive conservation bridges."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "most common U235 neutron-induced fission equation with the specified same-group products",
+          "lean_carrier": "IChO2026Problems.T4A3.fissionEquation (via ReportedFissionEquationResult and rawFissionEquationResult)",
+          "status": "covered",
+          "evidence": "The complete one-entry submission schema and exact-symbolic formula were independently checked against the visible modal-yield peaks, neutron count, same-group condition, and both conservation laws; no unit, rounding, branch, or output is missing.",
+          "output_id": "fission_equation",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T4_page-2.png",
+          "sha256": "60fade5df8174639d11a19bc537d53719ebd964c90940d40844f99c42f932c94",
+          "inspected": true,
+          "evidence": "Page 2 visibly states T4.3's request for the most common neutron-absorption fission equation and the condition that the two formed elements occupy the same periodic-table group."
+        },
+        {
+          "path": "icho_2026_source/image/T4_page-1.png",
+          "sha256": "f3b21152e21992aaa319cd436ffe893d0dff6634488f27663eee85b3cf81ddcf",
+          "inspected": true,
+          "evidence": "Page 1 visibly states uranium-235 neutron absorption with three additional neutrons and shows two distinct yield-curve maxima at the light and heavy integer mass-number positions encoded by sourceYieldCurvePeaks."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The concrete carrier represents nuclides with separate mass and atomic numbers, identifies the source parent and two modal fragments, and checks the stated common-group relation using transparent periodic-table data."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "quantitative_material_stage: the single neutron-induced fission stage has the finite domain uranium-235 parent, one absorbed free neutron, the two named modal fragments, and three emitted free neutrons. The actually used outcome-decisive ledgers are ConservesMassNumber/candidate_massNumberLedger and ConservesAtomicNumber/candidate_atomicNumberLedger; no anonymous stream or omitted balance is used."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "Nuclide mass numbers are explicitly typed, match the graph-modal readout, and satisfy the complete nucleon-number ledger including absorbed and emitted free neutrons."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "candidate_massNumberLedger checks both sides at the same total nucleon number, while candidate_atomicNumberLedger checks the parent charge against the sum of fragment atomic numbers; free-neutron charge is correctly zero."
+        },
+        "units_dimensions": {
+          "status": "passed",
+          "evidence": "The requested nuclear equation has the required empty unit; all coefficients and nuclear indices are dimensionless natural numbers and no dimensional numerical quantity is claimed."
+        },
+        "numerical_reporting": {
+          "status": "passed",
+          "evidence": "The output policy is exact_symbolic, so no significant-figure rounding or tolerance applies; the submission and Lean carrier preserve every discrete index and multiplicity exactly."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "This nuclear-isotope equation requests no molecular structure, connectivity, conformation, or stereochemistry."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source asks for the concrete most-common equation indicated by the two visible modal mass peaks and the same-group condition. The submitted witness satisfies every decisive source constraint; the task does not request an exhaustive catalogue of all hypothetical nuclear species, and no source-grounded competing modal witness is present."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The theorem has no answer premise, axiom, opaque predicate, singleton candidate domain, or reflexive equality. The candidate is a transparent record over the full Fin 118 element carrier and is independently checked against modal-mass, group, mass-conservation, and charge-conservation predicates."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t4_a3.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The exact-symbolic fission-equation submission is independently supported by the bound graph and question, and the hypothesis-free Lean theorem transparently checks the modal fragment masses, neutron multiplicities, common periodic-table group, nucleon-number conservation, and nuclear-charge conservation.",
+        "evidence": "Both bound images were inspected and all four bound file hashes match. The answer submission has schema_version 1 and exactly one ordered formula output with the required id and empty unit. Deterministic preflight passed with compilation true, return code 0, and zero sorry. The reviewed theorem reduces to a concrete BinaryFissionEquation and is proved through candidate_usesModalFragmentMasses, candidate_massNumberLedger, candidate_atomicNumberLedger, candidate_samePeriodicGroup, and rawFissionEquationResult without assumptions or axioms.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T08:58:53.325000Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "328d4f7cd951c73ad3c0e7895e4fe42812f9c23cd75d636cd0fa770cdfe28df6",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t4_a3.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T08:58:53.325030Z",
+    "repair_handoff": {}
+  }
+}

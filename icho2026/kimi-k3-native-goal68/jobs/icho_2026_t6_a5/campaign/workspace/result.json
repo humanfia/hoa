@@ -1,0 +1,56 @@
+{
+  "target_id": "icho_2026_t6_a5",
+  "status": "completed",
+  "answer_summary": "F: 1,4-dihydroxycyclohexa-2,5-diene from addition of 4-lithio-4'-(TBSO)biphenyl to the drawn p-quinol carbonyl (biphenyl arm at C1, 4-bromophenyl at C4), C30H33BrO3Si. G: both tertiary OH of F capped as OTES (aryl ether shown as OTES; TBS/TES are formula-identical C6H15Si), C42H61BrO3Si3. H: LiOH cleaves only the aryl silyl ether, liberating the free phenol on the remote biphenyl ring while both tertiary OTES survive, C36H47BrO3Si2 (matches the problem-printed formula). I: PhI(OAc)2/H2O two-electron oxidative dearomatization converts the phenol into a para-quinol (cyclohexa-2,5-dienone; sp3 junction bearing the new OH from H2O), C36H47BrO4Si2. J: addition of drawn 4-lithiobromobenzene to the dienone C=O gives a 1,4-dihydroxy diene ring bearing the new 4-bromophenyl arm, C42H52Br2O4Si2. K: both new OH capped as OTES (four OTES, two aryl bromides), C54H80Br2O4Si4. L: Ni(COD)2/2,2'-bipyridine Yamamoto macrocyclization joins the two aryl bromides by one new biaryl bond, closing the five-ring para-linked belt, C54H80O4Si4 (matches the problem-printed formula). Final drawn step (TBAF then SnCl2) gives the boxed [5]CPP = five para-linked benzenes, C30H20 with five aromatic 6pi systems, used as endpoint consistency check.",
+  "theorem_names": [
+    "IChO2026T6A5.structure_f",
+    "IChO2026T6A5.structure_g",
+    "IChO2026T6A5.structure_h",
+    "IChO2026T6A5.structure_i",
+    "IChO2026T6A5.structure_j",
+    "IChO2026T6A5.structure_k",
+    "IChO2026T6A5.structure_l",
+    "IChO2026T6A5.startingMaterial_formula",
+    "IChO2026T6A5.reagentBiphenylLi_formula",
+    "IChO2026T6A5.reagentBromophenylLi_formula",
+    "IChO2026T6A5.cpp5_formula_and_aromaticity",
+    "IChO2026T6A5.derivation_F",
+    "IChO2026T6A5.derivation_G",
+    "IChO2026T6A5.derivation_H",
+    "IChO2026T6A5.derivation_I",
+    "IChO2026T6A5.derivation_J",
+    "IChO2026T6A5.derivation_K",
+    "IChO2026T6A5.derivation_L",
+    "IChO2026T6A5.derivation_cpp",
+    "IChO2026T6A5.huckel_6pi_aromatic",
+    "IChO2026T6A5.huckel_4pi_is_4n",
+    "IChO2026T6A5.huckel_4pi_not_aromatic",
+    "IChO2026T6A5.answer_icho_2026_t6_a5"
+  ],
+  "assumptions": [
+    "Molecules are encoded as explicit finite molecular graphs (six-carbon ring units, per-atom hydrogen counts, sp3/sp2 status, substituents, Kekule double bonds, inter-ring biaryl links); all requested properties are computed over these graphs by decide.",
+    "Standard general chemistry is used only as trusted general law: aryllithium 1,2-addition to ketones; silyl protection of alcohols with TESCl/imidazole; comparative hydrolytic lability of aryl vs tertiary-alkyl silyl ethers under LiOH (selectivity pinned by the printed formula of H); PhI(OAc)2/H2O oxidative dearomatization of phenols to para-quinols (the problem explicitly states PhI(OAc)2 is a two-electron oxidant and the same transformation produces the drawn starting material); Ni(0)/2,2'-bipyridine Yamamoto aryl-aryl homocoupling of aryl bromides; TBAF desilylation; SnCl2 reductive aromatization (both reagents and the boxed [5]CPP product are given in the problem).",
+    "Aromatic/antiaromatic ring counts follow Huckel's rule (4n+2 aromatic, 4n for a closed p-loop antiaromatic), proved arithmetically in the file.",
+    "Integer atomic masses C=12, H=1, O=16, Si=28, Br=80, Li=7, consistent with the 6.4 instruction to use integer atomic masses.",
+    "In structure G the aryl silyl ether is recorded as OTES; TBS and TES contribute identical formulas (C6H15Si), so this choice is formula-neutral and does not affect the printed anchor formula of H."
+  ],
+  "source_gaps": [
+    "The problem asks only to draw structures and prints no stereochemical template for F-L; the two new quaternary carbinol centres in F, J (and retained in G, K, L) are therefore fixed constitutionally (explicit sp3 centres in the encoding) with no specified absolute or relative configuration.",
+    "Whether the aryl silyl ether in G remains TBS or is exchanged to TES is not distinguishable by any printed data (identical C6H15Si formula); the formalization records it as OTES per the drawn TESCl legend, and notes the equivalence explicitly.",
+    "The exact proton-count bookkeeping of the NaH deprotonation steps (which OH is transiently deprotonated) is not printed; the formalization encodes the neutral isolated products F and J, with the NaH step noted in the natural-language answer and in derivation comments."
+  ],
+  "verification_commands": [
+    {
+      "cmd": "lake env lean --version",
+      "result": "Lean (version 4.31.0, x86_64-unknown-linux-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release) ; exit 0"
+    },
+    {
+      "cmd": "printf 'import Mathlib\\n#check (1 : \u211a)\\n' > /tmp/probe.lean && lake env lean /tmp/probe.lean",
+      "result": "prints '1 : \u211a' ; exit 0"
+    },
+    {
+      "cmd": "lake env lean IChO2026Problems/problem_icho_2026_t6_a5.lean",
+      "result": "exit 0, no errors or warnings; #print axioms reports [propext, Quot.sound] for every final theorem (answer_icho_2026_t6_a5, structure_f/g/h/i/j/k/l, derivation_F/G/H/I/J/K/L, derivation_cpp, cpp5_formula_and_aromaticity). No sorryAx, no Classical.choice, no custom axioms."
+    }
+  ]
+}

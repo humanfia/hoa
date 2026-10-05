@@ -1,0 +1,954 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "Passed: the exact candidate and submission hashes match the frozen contract; the three concrete drawings are source-compatible, valence-valid witnesses for B-D, are carried by explicit nontrivial Lean structures, and preserve Kimi draft subpart 6.2 (SHA-256 84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c) without discrepancy or unauthorized substitution.",
+    "updated_at": "2026-09-13T08:56:28Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "59d23eef1ba153f5154d2dbddaac98b70f86a2f65a69659fde4f62cb75852b0b",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The source verb Draw requires one concrete structure for each box, not uniqueness. The clockwise C14 perimeter, two possible anthracene fusion chords, bright-Cl sites, and arrow sequence precursor\u2192A (-2 Cl\u2022), A\u2192B (-5 Cl\u2022), B\u2192C (-2 Cl\u2022), C\u2192C14 (-1 Cl\u2022), and A\u2192D (-3 Cl\u2022) are transcribed by precursorState, givenAState, panelBObservation, panelCObservation, panelDObservation, and the three structure definitions."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Independent checking gives chlorine counts 10\u21928\u21923\u21921\u21920 on the right branch and 8\u21925 on the D branch. Removed-site sets have sizes 2,5,2,1,3 respectively; the proper fusion chord opens when its depicted para pair is cleared. Every listed carbon has total valence four after its C-Cl bond or localized unpaired electron is counted. Thus each concrete theorem statement is satisfiable from transparent source-state, arrow, topology, and valence carriers rather than an assumed result."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "CarbonSite=Fin 14 fixes every carbon; all 14 perimeter bond orders, both fusion-bond orders, every possible C-Cl attachment, per-atom formal charge, per-atom unpaired-electron count, formula, phase, and per-atom stereochemical descriptor are represented. LewisStructure.Valid and MatchesAFMPanel connect these fields nontrivially to each output."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The outputs are exact symbolic structures read from a bond-resolved figure; no measured scalar, tolerance, or rounding enters."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "Arrowheads point precursor\u2192A\u2192B\u2192C and C\u2193C14, while the alternative branch is A\u2193D. StructureCSpec follows B\u2192C and then the endpoint check; StructureDSpec follows A\u2192D and does not swap D with the closed-shell endpoint."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "The statements provide concrete witnesses and expressly avoid a uniqueness claim. Resonance-shifted but equivalent drawings therefore do not refute them. Fixed panel observations are separately checked from the image, and the chosen bond/radical representatives must also pass explicit topology, formula, neutral-charge, radical-count, and atom-valence constraints; arbitrary relabelings or graphs cannot satisfy those carriers."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "The bound image determines the C14 scaffold, attached-chlorine sites, retained/open fusion bonds, and branch placement for A-D.",
+          "carrier": "IChO2026Problems.T6A2.precursorState; givenAState; panelBObservation; panelCObservation; panelDObservation; cyclo14Endpoint; MatchesAFMPanel",
+          "status": "covered",
+          "evidence": "Source-first inspection of T6_page-1.png traced the same 14-carbon perimeter through every panel, counted the bright terminal Cl features, and distinguished the retained right fusion in B from the monocyclic C and D panels."
+        },
+        {
+          "claim": "Each printed -n Cl\u2022 arrow preserves the C14 framework and neutral charge while converting exactly n attached chlorine atoms to neutral chlorine radicals.",
+          "carrier": "IChO2026Problems.T6A2.StageSpecies; StageSpecies.carbonAtoms; StageSpecies.chlorineAtoms; StageSpecies.formalCharge; removedChlorineSites; DehalogenationLedger; SurfaceDehalogenationStep",
+          "status": "covered",
+          "evidence": "The finite typed domain contains the only atom-bearing categories used by the conclusion. Direct evaluation gives the source coefficients 2,5,2,1,3 and balances carbon, chlorine, formal charge, and adsorbed-framework phase at each used stage."
+        },
+        {
+          "claim": "Clearing the depicted para pair opens the corresponding fusion bond by the retro-Bergman topology shown in reaction (1).",
+          "carrier": "IChO2026Problems.T6A2.IsRetroBergmanTriggerSite; TriggerPairCleared; RetroBergmanTopology",
+          "status": "covered",
+          "evidence": "The source inset maps a six-membered ring with its para pair to the opened diyne motif. The transparent carrier applies that graph edit to C2/C13 for the left chord and C6/C9 for the right chord, agreeing with all adjacent AFM panels."
+        },
+        {
+          "claim": "The submitted bond orders and localized radicals constitute neutral valence-valid Lewis drawings of the observed graphs.",
+          "carrier": "IChO2026Problems.T6A2.carbonValence; LewisStructure.Valid; RadicalExactlyAt; bondPatternB; bondPatternC; bondPatternD; structureB; structureC; structureD",
+          "status": "covered",
+          "evidence": "Ordinary tetravalent-carbon bookkeeping is explicit: each closed carbon totals four, and the sole trivalent radical carbon totals four when its one unpaired electron is included. C-Cl orders are 0/1, fusion orders track topology, all present atoms have formal charge zero, and no atom-centred stereocentre is introduced."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t6_a2.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t6_a2",
+        "source_record_sha256": "26c7092c4e538e7e642d1468fb2da5ef8f06807c51ddce2b784565d84749d378",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a2.answer.json",
+        "answer_submission_sha256": "1266dbcf7207baf25abdb0dfab2f56711ed9f3ae111378bb8bc846f8421c4591",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t6_a2.source.json",
+        "source_report_sha256": "875ce8b36064f03dfc4ba93ab22ef412c123c3d0317c5d8803894f95fd5a6246",
+        "candidate": "IChO2026Problems/problem_icho_2026_t6_a2.lean",
+        "preflight_sha256": "20edbd89003a11466b2ca5133f795343aa9fe519e7c27b125b72b7a4133671ce",
+        "candidate_sha256": "59d23eef1ba153f5154d2dbddaac98b70f86a2f65a69659fde4f62cb75852b0b",
+        "question_sha256": "17d1d6089499cfa41426b70498a93583a74c1584faeecb496add901f722bb7e9",
+        "shared_context_sha256": "0c72a5664baa03755419ce97a73439f7de2771c8d7ff66536ac8c64ee6e9c99f",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "2ee056a96ae036d2ff7fda67d492e160f17f8f2c29de8d0346f3cdef8bd203b8",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T6_page-1.png",
+            "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "a3ad54831906376c88d709143ca06280e2d95d38c06ed735d7a89b355318f90d",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_b",
+            "structure_c",
+            "structure_d"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t6_a2",
+          "path": ".archon/provided_answer_drafts/Q6.md",
+          "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t6_a2.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t6_a2",
+          "source_record_sha256": "26c7092c4e538e7e642d1468fb2da5ef8f06807c51ddce2b784565d84749d378",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a2.answer.json",
+          "answer_submission_sha256": "1266dbcf7207baf25abdb0dfab2f56711ed9f3ae111378bb8bc846f8421c4591",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t6_a2.source.json",
+          "source_report_sha256": "875ce8b36064f03dfc4ba93ab22ef412c123c3d0317c5d8803894f95fd5a6246",
+          "candidate": "IChO2026Problems/problem_icho_2026_t6_a2.lean",
+          "preflight_sha256": "20edbd89003a11466b2ca5133f795343aa9fe519e7c27b125b72b7a4133671ce",
+          "candidate_sha256": "59d23eef1ba153f5154d2dbddaac98b70f86a2f65a69659fde4f62cb75852b0b",
+          "question_sha256": "17d1d6089499cfa41426b70498a93583a74c1584faeecb496add901f722bb7e9",
+          "shared_context_sha256": "0c72a5664baa03755419ce97a73439f7de2771c8d7ff66536ac8c64ee6e9c99f",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "2ee056a96ae036d2ff7fda67d492e160f17f8f2c29de8d0346f3cdef8bd203b8",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T6_page-1.png",
+              "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "a3ad54831906376c88d709143ca06280e2d95d38c06ed735d7a89b355318f90d",
+            "node_count": 9,
+            "edge_count": 12,
+            "node_kind_counts": {
+              "derivation_obligation": 3,
+              "requested_output": 3,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "structure_b",
+              "structure_c",
+              "structure_d"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t6_a2",
+            "path": ".archon/provided_answer_drafts/Q6.md",
+            "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The Draw quantifier, clockwise scaffold convention, every panel topology, arrow direction, chlorine ledger, and valence reconstruction were frozen from the inline problem evidence and bound image before the submission or Lean candidate was opened. The sealed Kimi draft was used only afterward for required fidelity comparison and never as a source axiom."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "The exact unrounded derivation is symbolic: source image states flow through removedChlorineSites, SurfaceDehalogenationStep, RetroBergmanTopology, carbonValence, and LewisStructure.Valid into structureB/structureC/structureD and the three Structure*Spec carriers."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0..2].reporting_policy each requires exact_symbolic output, and the global policy requires an unrounded raw result. RawResult and ReportedResult preserve the full structures identically."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is present or needed: all fields are exact finite-site, natural-number bond-order, integer-charge, or exact classification data."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "No output-decisive universe of alternative chemicals is used. Draw asks for concrete evidence-supported witnesses. The only finite structural domain, Fin 14 with two named fusion chords and one optional Cl at each perimeter site, is directly derived from the depicted C14 precursor scaffold."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=59d23eef1ba153f5154d2dbddaac98b70f86a2f65a69659fde4f62cb75852b0b; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=5. Nontrivial result declarations are structureB/structureC/structureD, StructureBSpec/StructureCSpec/StructureDSpec, structure_b/structure_c/structure_d, raw_result, and reported_result in IChO2026Problems.T6A2."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The candidate asserts one explicit resonance representative for each requested drawing and expressly disclaims global uniqueness, matching the source verb and scope."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The result theorems have no answer-bearing parameters or hypotheses. Image readouts are transparent finite state definitions; arrow, topology, formula, radical, and valence constraints are reducible relations checked on the concrete structures."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The combined reported_result contains StructureBSpec structureB, StructureCSpec structureC, and StructureDSpec structureD in requested order; no sentinel, unknown, or diagnostic replaces a drawing."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All outcome-decisive bridges are named: source image states and panel matching; staged chlorine/carbon/charge/phase ledger; retro-Bergman fusion edit; explicit Lewis connectivity, valence, formula, radicals, charge, and stereochemistry. No external empirical lookup or previous-part conclusion is used."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "complete structure of B, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T6A2.structure_b",
+            "status": "covered",
+            "evidence": "Submission raw/display fields agree with the independently reconstructed panel-B witness, and StructureBSpec checks the complete exact-symbolic drawing.",
+            "output_id": "structure_b",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of C, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T6A2.structure_c",
+            "status": "covered",
+            "evidence": "Submission raw/display fields agree with the independently reconstructed panel-C witness, and StructureCSpec checks the complete exact-symbolic drawing.",
+            "output_id": "structure_c",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          },
+          {
+            "source_requirement": "complete structure of D, including all requested stereochemistry and template fields",
+            "lean_carrier": "IChO2026Problems.T6A2.structure_d",
+            "status": "covered",
+            "evidence": "Submission raw/display fields agree with the independently reconstructed panel-D witness, and StructureDSpec checks the complete exact-symbolic drawing.",
+            "output_id": "structure_d",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T6_page-1.png",
+            "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba",
+            "inspected": true,
+            "evidence": "Inspected before generated artifacts; digest rechecked. Clockwise labels are anchored as C1 upper-left lateral, C2 top-left, C3 upper-left fusion, C4 top-middle, C5 upper-right fusion, C6 top-right, C7 upper-right lateral, C8 lower-right lateral, C9 bottom-right, C10 lower-right fusion, C11 bottom-middle, C12 lower-left fusion, C13 bottom-left, C14 lower-left lateral. Legend/readout: printed/bright peripheral Cl features are terminal bound chlorine; bond-resolved contours trace the carbon scaffold; -nCl\u2022 labels denote productward loss. Distinct components are one 14-carbon perimeter framework and terminal Cl atoms; there are no repeat brackets, caps, assembly connectors, or cross-boundary bonds. Precursor has 14 perimeter nodes, chords C3-C12/C5-C10, four degree-3 fusion carbons, and 10 Cl. A has 8 Cl, left chord open/right retained. B has 3 Cl and right chord retained; C has 1 Cl and no chord; D has 5 Cl and no chord. Arrow certificates: precursor tail\u2192A head loses 2; A tail\u2192B head loses 5; B tail\u2192C head loses 2; C tail\u2193C14 head loses 1; A tail\u2193D head loses 3. The same C14 motif is traced into every head. Atom recount: C remains 14; Cl is 10\u21928\u21923\u21921\u21920 and separately 8\u21925."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "Each panel is modeled as the same C14 carbon framework with source-visible C-Cl attachments and fusion topology. Reaction (1) is used only for its depicted ring-opening graph edit, and the resulting Lewis representatives satisfy neutral carbon valence and radical bookkeeping."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "quantitative_material_stage. The candidate actually consumes conservation conjuncts. StageSpecies gives the finite domain {carbonFramework,boundChlorine,chlorineRadical}; used stages are precursor\u2192A, A\u2192B, B\u2192C, C\u2192cyclo14Endpoint, and A\u2192D. frameworkCarbonCount, attachedChlorineCount, removedChlorineSites, DehalogenationLedger, RetroBergmanTopology, and SurfaceDehalogenationStep are the named ledger carriers. They balance the outcome-decisive carbon, chlorine, formal-charge, and adsorbed-framework phase dimensions; no mass, yield, sole-product, or omitted-stream conclusion is claimed."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "LewisStructure.formula fixes C=14 and H=0 and computes Cl from attached sites; the independent counts are 3,1,5 for B,C,D and match formulaC14Cl3, formulaC14Cl1, formulaC14Cl5. No molar mass is requested or claimed."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "The source arrow coefficients satisfy attached-Cl before = attached-Cl after + lost at every stage; the fixed Fin 14 framework conserves carbon, all species used in the charge ledger are neutral, and before/after framework phases remain surface-adsorbed."
+          },
+          "units_dimensions": {
+            "status": "not_applicable",
+            "evidence": "All three requested classifications have the required empty unit; no dimensional quantity appears."
+          },
+          "numerical_reporting": {
+            "status": "not_applicable",
+            "evidence": "Exact-symbolic structures require neither significant figures nor numerical rounding."
+          },
+          "structure_stereochemistry": {
+            "status": "passed",
+            "evidence": "All 14 perimeter bonds, two fusion bonds, C-Cl attachments, formula, per-atom charges, localized radicals, and stereochemical descriptors are explicit. The source-depicted surface structures introduce no atom-centred stereocentre; noStereochemistry is checked for every AtomRef."
+          },
+          "identification_uniqueness": {
+            "status": "passed",
+            "evidence": "Draw requests a concrete evidence-supported identification for each box, not global uniqueness or all resonance forms. The candidate supplies one valid source-compatible representative and states that resonance-equivalent shifts are allowed."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "No requested result occurs as a hypothesis, no singleton candidate domain eliminates alternatives, and no opaque predicate or reflexive string equality discharges the chemistry. Named structure definitions are permissible witness carriers; each must independently satisfy panel matching, staged arrows, formula, topology, full bond/atom representation, valence, charge, and radical constraints."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "ambiguity": "clear",
+        "method": "source_first_without_lean",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "Use the rightward A-to-B arrow labelled -5 Cl radicals.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T6_page-1.png#arrow_A_B"
+                }
+              }
+            ],
+            "constants": [],
+            "dependencies": [],
+            "evidence": "The source-first image reconstruction, exact arrow count, graph edit, and carbon-valence completion agree with the submission and all named Lean carriers.",
+            "id": "structure_b",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A2.precursorState",
+                "IChO2026Problems.T6A2.givenAState",
+                "IChO2026Problems.T6A2.panelBObservation"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A2.structureB",
+                "IChO2026Problems.T6A2.bondPatternB"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A2.SurfaceDehalogenationStep",
+                "IChO2026Problems.T6A2.MatchesAFMPanel",
+                "IChO2026Problems.T6A2.LewisStructure.Valid",
+                "IChO2026Problems.T6A2.StructureBSpec"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A2.structure_b",
+                "IChO2026Problems.T6A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structureB explicitly instantiates all atom, bond, substituent, fusion, charge, radical, phase, formula, and stereochemical fields required by StructureBSpec.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Structure at the head of the single displayed A-to-B surface step.",
+              "kind": "per_step"
+            },
+            "quantity_definition": "One concrete complete Lewis structure for panel B on the source-anchored clockwise C14 perimeter, including every bond order, chlorine, charge, radical, fusion bond, and requested stereochemical field.",
+            "raw_result": {
+              "derivation": "Number the 14-carbon perimeter clockwise from the upper-left lateral carbon. The precursor-to-A step removes C2/C13 and opens the left fusion; the A-to-B image change removes C1/C4/C8/C11/C14. Three bright Cl sites remain, the right fusion remains, and neutral tetravalence with one localized radical supplies the displayed perimeter orders.",
+              "exact_unrounded": true,
+              "value_or_expression": "C14Cl3 radical; Cl={C6,C7,C9}; radical={C8}; perimeter bond orders=(3,1,3,1,2,1,2,1,2,1,3,1,3,1); fusion orders=(left 0,right 1); formal charge 0; stereocentres none"
+            },
+            "reporting": {
+              "application": "Preserve the complete final structure exactly; no rounding or tolerance applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission has the exact requested id, classification kind, empty unit, and complete exact-symbolic structure.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T6_page-1.png#panel_B"
+              }
+            ],
+            "source_requirement": "complete structure of B, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "Follow the rightward B-to-C arrow labelled -2 Cl radicals and the downward C-to-C14 check labelled -1 Cl radical.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T6_page-1.png#arrows_B_C_endpoint"
+                }
+              }
+            ],
+            "constants": [],
+            "dependencies": [],
+            "evidence": "The source-first image reconstruction, both adjacent arrow counts, graph edit, and carbon-valence completion agree with the submission and all named Lean carriers.",
+            "id": "structure_c",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A2.panelBObservation",
+                "IChO2026Problems.T6A2.panelCObservation",
+                "IChO2026Problems.T6A2.cyclo14Endpoint"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A2.structureC",
+                "IChO2026Problems.T6A2.bondPatternC"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A2.SurfaceDehalogenationStep",
+                "IChO2026Problems.T6A2.MatchesAFMPanel",
+                "IChO2026Problems.T6A2.LewisStructure.Valid",
+                "IChO2026Problems.T6A2.StructureCSpec"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A2.structure_c",
+                "IChO2026Problems.T6A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structureC explicitly instantiates all atom, bond, substituent, fusion, charge, radical, phase, formula, and stereochemical fields required by StructureCSpec.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Structure at the head of B-to-C, cross-checked by the following C-to-C14 step.",
+              "kind": "per_step"
+            },
+            "quantity_definition": "One concrete complete Lewis structure for panel C on the source-anchored clockwise C14 perimeter, including every bond order, chlorine, charge, radical, fusion bond, and requested stereochemical field.",
+            "raw_result": {
+              "derivation": "Relative to B, the panel and -2 Cl-radical arrow remove C6/C9, the right-ring para pair, so reaction (1) opens the remaining fusion chord. C7 is the single bright attached Cl and C8 is the localized radical; neutral tetravalence gives the displayed perimeter orders. The following -1 Cl-radical arrow reaches unsubstituted C14 and independently checks the residual count.",
+              "exact_unrounded": true,
+              "value_or_expression": "monocyclic C14Cl radical; Cl={C7}; radical={C8}; perimeter bond orders=(3,1,3,1,3,1,2,1,3,1,3,1,3,1); fusion orders=(left 0,right 0); formal charge 0; stereocentres none"
+            },
+            "reporting": {
+              "application": "Preserve the complete final structure exactly; no rounding or tolerance applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission has the exact requested id, classification kind, empty unit, and complete exact-symbolic structure.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T6_page-1.png#panel_C"
+              }
+            ],
+            "source_requirement": "complete structure of C, including all requested stereochemistry and template fields",
+            "unit": ""
+          },
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [
+              {
+                "condition": "Use the separate downward A-to-D branch labelled -3 Cl radicals, not the C-to-C14 endpoint branch.",
+                "source_locator": {
+                  "kind": "problem_image",
+                  "reference": "T6_page-1.png#arrow_A_D"
+                }
+              }
+            ],
+            "constants": [],
+            "dependencies": [],
+            "evidence": "The source-first branch reconstruction, exact arrow count, graph edit, and carbon-valence completion agree with the submission and all named Lean carriers.",
+            "id": "structure_d",
+            "kind": "classification",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T6A2.givenAState",
+                "IChO2026Problems.T6A2.panelDObservation"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T6A2.structureD",
+                "IChO2026Problems.T6A2.bondPatternD"
+              ],
+              "relations": [
+                "IChO2026Problems.T6A2.SurfaceDehalogenationStep",
+                "IChO2026Problems.T6A2.MatchesAFMPanel",
+                "IChO2026Problems.T6A2.LewisStructure.Valid",
+                "IChO2026Problems.T6A2.StructureDSpec"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T6A2.structure_d",
+                "IChO2026Problems.T6A2.reported_result"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "structureD explicitly instantiates all atom, bond, substituent, fusion, charge, radical, phase, formula, and stereochemical fields required by StructureDSpec.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "Structure at the head of the separate single displayed A-to-D surface step.",
+              "kind": "per_step"
+            },
+            "quantity_definition": "One concrete complete Lewis structure for panel D on the source-anchored clockwise C14 perimeter, including every bond order, chlorine, charge, radical, fusion bond, and requested stereochemical field.",
+            "raw_result": {
+              "derivation": "Relative to A, the downward -3 Cl-radical branch removes C6/C9/C11. Clearing C6/C9 opens the remaining fusion chord; five bright Cl sites remain. Neutral tetravalence with a localized radical at C11 gives the two cumulene runs, two triple bonds, and one C7-C8 double bond encoded by the perimeter list.",
+              "exact_unrounded": true,
+              "value_or_expression": "monocyclic C14Cl5 radical; Cl={C1,C4,C7,C8,C14}; radical={C11}; perimeter bond orders=(2,2,2,1,3,1,2,1,3,1,2,2,2,1); fusion orders=(left 0,right 0); formal charge 0; stereocentres none"
+            },
+            "reporting": {
+              "application": "Preserve the complete final structure exactly; no rounding or tolerance applies.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The submission has the exact requested id, classification kind, empty unit, and complete exact-symbolic structure.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T6_page-1.png#panel_D"
+              }
+            ],
+            "source_requirement": "complete structure of D, including all requested stereochemistry and template fields",
+            "unit": ""
+          }
+        ],
+        "schema_version": 1
+      },
+      "candidate_sha256": "59d23eef1ba153f5154d2dbddaac98b70f86a2f65a69659fde4f62cb75852b0b"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a2.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "Passed: the exact candidate and submission hashes match the frozen contract; the three concrete drawings are source-compatible, valence-valid witnesses for B-D, are carried by explicit nontrivial Lean structures, and preserve Kimi draft subpart 6.2 (SHA-256 84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c) without discrepancy or unauthorized substitution.",
+        "reviewed_at": "2026-09-13T08:56:28Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "59d23eef1ba153f5154d2dbddaac98b70f86a2f65a69659fde4f62cb75852b0b",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a2.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 5,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The digest-bound candidate gives all three requested exact structural witnesses, preserves the frozen Kimi 6.2 draft without discrepancy, and proves nontrivial panel, transformation, formula, valence, charge, radical, and stereochemistry specifications with no hypotheses, axioms, sorry, or admits.",
+    "evidence": "The bound image was inspected and its precursor, reaction (1), AFM panels, and -2/-5/-2/-1/-3 Cl-radical arrows were independently traced. The submission schema and B-C-D order match the three requested outputs. Candidate SHA-256 2cc4c90e6d1d332558bd8eefb962eb435625d133699a79fa7bf7caac76d96261 matches; deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. Closed declarations structure_b, structure_c, structure_d, raw_result, and reported_result carry the results.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "2cc4c90e6d1d332558bd8eefb962eb435625d133699a79fa7bf7caac76d96261",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t6_a2.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t6_a2",
+      "source_record_sha256": "26c7092c4e538e7e642d1468fb2da5ef8f06807c51ddce2b784565d84749d378",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a2.answer.json",
+      "answer_submission_sha256": "1266dbcf7207baf25abdb0dfab2f56711ed9f3ae111378bb8bc846f8421c4591",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t6_a2.source.json",
+      "source_report_sha256": "875ce8b36064f03dfc4ba93ab22ef412c123c3d0317c5d8803894f95fd5a6246",
+      "candidate": "IChO2026Problems/problem_icho_2026_t6_a2.lean",
+      "preflight_sha256": "e2790b9508a79c7f7ddad7691775fc00402b9f2af2fd1c31c16f77ec3ce45d4e",
+      "candidate_sha256": "2cc4c90e6d1d332558bd8eefb962eb435625d133699a79fa7bf7caac76d96261",
+      "question_sha256": "17d1d6089499cfa41426b70498a93583a74c1584faeecb496add901f722bb7e9",
+      "shared_context_sha256": "0c72a5664baa03755419ce97a73439f7de2771c8d7ff66536ac8c64ee6e9c99f",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "2ee056a96ae036d2ff7fda67d492e160f17f8f2c29de8d0346f3cdef8bd203b8",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T6_page-1.png",
+          "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "a3ad54831906376c88d709143ca06280e2d95d38c06ed735d7a89b355318f90d",
+        "node_count": 9,
+        "edge_count": 12,
+        "node_kind_counts": {
+          "derivation_obligation": 3,
+          "requested_output": 3,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "structure_b",
+          "structure_c",
+          "structure_d"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t6_a2",
+        "path": ".archon/provided_answer_drafts/Q6.md",
+        "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t6_a2.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t6_a2",
+        "source_record_sha256": "26c7092c4e538e7e642d1468fb2da5ef8f06807c51ddce2b784565d84749d378",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t6_a2.answer.json",
+        "answer_submission_sha256": "1266dbcf7207baf25abdb0dfab2f56711ed9f3ae111378bb8bc846f8421c4591",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t6_a2.source.json",
+        "source_report_sha256": "875ce8b36064f03dfc4ba93ab22ef412c123c3d0317c5d8803894f95fd5a6246",
+        "candidate": "IChO2026Problems/problem_icho_2026_t6_a2.lean",
+        "preflight_sha256": "e2790b9508a79c7f7ddad7691775fc00402b9f2af2fd1c31c16f77ec3ce45d4e",
+        "candidate_sha256": "2cc4c90e6d1d332558bd8eefb962eb435625d133699a79fa7bf7caac76d96261",
+        "question_sha256": "17d1d6089499cfa41426b70498a93583a74c1584faeecb496add901f722bb7e9",
+        "shared_context_sha256": "0c72a5664baa03755419ce97a73439f7de2771c8d7ff66536ac8c64ee6e9c99f",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "2ee056a96ae036d2ff7fda67d492e160f17f8f2c29de8d0346f3cdef8bd203b8",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T6_page-1.png",
+            "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "a3ad54831906376c88d709143ca06280e2d95d38c06ed735d7a89b355318f90d",
+          "node_count": 9,
+          "edge_count": 12,
+          "node_kind_counts": {
+            "derivation_obligation": 3,
+            "requested_output": 3,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "structure_b",
+            "structure_c",
+            "structure_d"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t6_a2",
+          "path": ".archon/provided_answer_drafts/Q6.md",
+          "sha256": "84b4dbfc610be009d6e86647fff1470c89de66628eb9ff5f1c1b86d0462f7e6c",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "Only the inline bound problem evidence and digest-verified problem image were used as chemistry premises. The answer submission and Lean file were treated as untrusted outputs; the expressly authorized sealed Kimi draft was used only to check fidelity of subpart 6.2 and never as a source axiom."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "The figure fixes the finite 14-carbon perimeter/fusion topology, precursor chlorines, panel readouts, and exact chlorine-radical losses. Reaction (1) supplies the ring-opening topology and ordinary neutral-carbon valence supplies a Lewis completion. SurfaceDehalogenationStep, StructureBSpec, StructureCSpec, StructureDSpec, and raw_result expose that exact symbolic derivation without rounding."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The requested outputs are drawings/classifications with exact_symbolic reporting. ReportedResult is definitionally the same complete structural specification as RawResult; no numerical formatting rule is introduced."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No measured or numerical output and no tolerance occurs. Every atom, bond order, inventory count, formal charge, radical count, phase, and stereochemical descriptor is checked by exact equality."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "The candidate domain is the finite graph drawn in the bound image: fourteen perimeter carbons, the two depicted fusion bonds, and chlorine positions inherited from the displayed decachloroanthracene. The task asks for concrete drawings, not exhaustive open-world uniqueness, and each witness is checked directly rather than selected from an answer-shaped singleton."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=2cc4c90e6d1d332558bd8eefb962eb435625d133699a79fa7bf7caac76d96261; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result declarations are IChO2026Problems.T6A2.structure_b, structure_c, structure_d, raw_result, and reported_result."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "ReportedResult contains exactly StructureBSpec structureB, StructureCSpec structureC, and StructureDSpec structureD in requested order, with no excluded T6 subpart or extraneous conclusion."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "All result theorems are closed and have no answer hypotheses. The transparent precursor/panel states are checked against the inspected figure; the finite instances of RetroBergmanTopology trace to reaction (1) and the observed panels, while LewisStructure.Valid is the ordinary neutral-carbon valence audit."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "Each conclusion is a complete LewisStructure, not a string, sentinel, or weakened count. It includes the cyclic connectivity, both possible fusion bonds, all C-Cl bonds, every perimeter bond order, molecular formula, per-atom formal charge, localized unpaired electron, phase, and explicit absence of stereochemistry."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "The chemistry chain is complete within the allowed authority: the source image supplies precursor/panel/arrow facts and the depicted retro-Bergman direction; transparent counting carries chlorine inventories; ordinary carbon valence checks each Lewis representative. No local axiom, opaque empirical predicate, external lookup, or uncertified prior result is used."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "complete structure of B, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T6A2.structure_b : StructureBSpec structureB",
+          "status": "covered",
+          "evidence": "The first submission entry has the required id, kind, unit, and exact-symbolic form and matches the independently traced panel-B witness. The carrier checks the A-to-B arrow, AFM topology/substituents, formula, all bond orders, neutrality, the localized radical, total radical count, valence, and stereochemistry.",
+          "output_id": "structure_b",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of C, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T6A2.structure_c : StructureCSpec structureC",
+          "status": "covered",
+          "evidence": "The second submission entry has the required id, kind, unit, and exact-symbolic form and matches the independently traced panel-C witness. The carrier checks both adjacent arrows, monocyclic panel topology/substituents, formula, all bond orders, neutrality, radical data, valence, and stereochemistry.",
+          "output_id": "structure_c",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        },
+        {
+          "source_requirement": "complete structure of D, including all requested stereochemistry and template fields",
+          "lean_carrier": "IChO2026Problems.T6A2.structure_d : StructureDSpec structureD",
+          "status": "covered",
+          "evidence": "The third submission entry has the required id, kind, unit, and exact-symbolic form and matches the independently traced alternative-branch panel-D witness. The carrier checks the A-to-D arrow, monocyclic panel topology/substituents, formula, every bond order, neutrality, radical data, valence, and stereochemistry.",
+          "output_id": "structure_d",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T6_page-1.png",
+          "sha256": "29fff91c704c94f9e4e9fddba3ab61896375763880aff114baef9318cbdbe6ba",
+          "inspected": true,
+          "evidence": "The full page is readable and shows the decachloroanthracene skeleton, the generic retro-Bergman transformation (1), the supplied A example, panels B-D, and arrows labelled -2 Cl radical to A, -5 to B, -2 to C, -1 to C14, and the -3 branch to D. Clockwise tracing against the precursor drawing supports the encoded chlorine-site sets and retained/opened fusion topology for every panel."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The three witnesses are chemically coherent neutral C14 chlorocarbon radicals. Their source-traced substituents and fusion topology agree with the displayed branches, and the explicit bond-order/radical assignments satisfy carbon valence at all fourteen sites."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "quantitative_material_stage. The actual derivation consumes the printed chlorine-radical coefficients and chlorine-atom conservation for precursor\u2192A, A\u2192B, B\u2192C, C\u2192C14, and A\u2192D. The finite StageSpecies domain contains the C14 carbon framework, attached chlorine, and outgoing neutral chlorine radical; removedChlorineSites, removedChlorineCount, DehalogenationLedger, and SurfaceDehalogenationStep are the used atom/charge/phase ledger carriers. No yield, sole-product, or omitted-stream claim beyond the explicitly depicted chlorine loss is used."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "LewisStructure.formula fixes fourteen carbons and zero hydrogens and derives chlorine count from the source-traced C-Cl bonds; all three formula constants are proved exactly. No molar mass is requested or used."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "Every used arrow preserves the typed fourteen-carbon framework and surface phase, balances the before/after attached-chlorine difference with the printed number of neutral chlorine radicals, and preserves net formal charge. These are precisely the outcome-decisive conservation dimensions."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "All requested outputs are exact structural classifications with empty unit; no dimensional quantity is present."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "No numerical result, significant-figure operation, measured interval, or rounding occurs; reporting is exact symbolic identity."
+        },
+        "structure_stereochemistry": {
+          "status": "passed",
+          "evidence": "LewisStructure explicitly represents the cyclic perimeter, two possible fusion bonds, fourteen perimeter bond orders, C-Cl attachment at every site, atomwise charge and unpaired-electron maps, and an atomwise none stereochemistry descriptor. The checked witnesses contain no requested stereocentre."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "The source asks to draw B-D and does not ask for all or a uniqueness proof. Each concrete source-compatible Lewis witness is therefore sufficient; alternative resonance placements are not improperly excluded by an open-world claim."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "There are no theorem hypotheses, axioms, opaque predicates, singleton candidate domains, or reflexive string equalities. Source-side panel observations are transparent finite vectors independently audited against the image, and each requested witness must additionally satisfy nontrivial arrow, topology, composition, formal-charge, radical, and valence checks."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a2.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The digest-bound candidate gives all three requested exact structural witnesses, preserves the frozen Kimi 6.2 draft without discrepancy, and proves nontrivial panel, transformation, formula, valence, charge, radical, and stereochemistry specifications with no hypotheses, axioms, sorry, or admits.",
+        "evidence": "The bound image was inspected and its precursor, reaction (1), AFM panels, and -2/-5/-2/-1/-3 Cl-radical arrows were independently traced. The submission schema and B-C-D order match the three requested outputs. Candidate SHA-256 2cc4c90e6d1d332558bd8eefb962eb435625d133699a79fa7bf7caac76d96261 matches; deterministic preflight passed with compiles=true, returncode=0, and sorry_count=0. Closed declarations structure_b, structure_c, structure_d, raw_result, and reported_result carry the results.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T09:17:42.183957Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "2cc4c90e6d1d332558bd8eefb962eb435625d133699a79fa7bf7caac76d96261",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t6_a2.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T09:17:42.183995Z",
+    "repair_handoff": {}
+  }
+}

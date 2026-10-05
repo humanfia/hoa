@@ -1,0 +1,64 @@
+{
+  "id": "icho_2026_t6_a1",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "2",
+      "id": "c18_aromatic",
+      "kind": "integer",
+      "raw_value": 2,
+      "unit": ""
+    },
+    {
+      "display_value": "0",
+      "id": "c18_antiaromatic",
+      "kind": "integer",
+      "raw_value": 0,
+      "unit": ""
+    },
+    {
+      "display_value": "0",
+      "id": "c16_aromatic",
+      "kind": "integer",
+      "raw_value": 0,
+      "unit": ""
+    },
+    {
+      "display_value": "2",
+      "id": "c16_antiaromatic",
+      "kind": "integer",
+      "raw_value": 2,
+      "unit": ""
+    },
+    {
+      "display_value": "0",
+      "id": "triplet_c13_aromatic",
+      "kind": "integer",
+      "raw_value": 0,
+      "unit": ""
+    },
+    {
+      "display_value": "0",
+      "id": "triplet_c13_antiaromatic",
+      "kind": "integer",
+      "raw_value": 0,
+      "unit": ""
+    },
+    {
+      "display_value": "1",
+      "id": "singlet_c13_aromatic",
+      "kind": "integer",
+      "raw_value": 1,
+      "unit": ""
+    },
+    {
+      "display_value": "1",
+      "id": "singlet_c13_antiaromatic",
+      "kind": "integer",
+      "raw_value": 1,
+      "unit": ""
+    }
+  ],
+
+  "schema_version": 1
+}

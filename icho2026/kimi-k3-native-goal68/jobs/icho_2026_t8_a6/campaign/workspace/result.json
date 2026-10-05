@@ -1,0 +1,25 @@
+{
+  "target_id": "icho_2026_t8_a6",
+  "status": "completed",
+  "answer_summary": "Quantum yield for CO formation phi = (2*TOF*n_cat*NA) / (P*t*lam/(h*c)) * 100%% with TOF=8 h^-1, n_cat = (10 mg * 3.8%%)/557.21 g/mol, P = 50 mW, lambda = 390 nm, t = 3600 s, and exact SI constants; phi = 18940872892793693114789369/10186495312500000000000000 = 1.85941016...%%, reported = 1.86%% (3 s.f.).",
+  "theorem_names": [
+    "IChO2026.T8.A6.co_quantum_yield_raw",
+    "IChO2026.T8.A6.co_quantum_yield_reported",
+    "IChO2026.T8.A6.quantumYieldPercent_eq",
+    "IChO2026.T8.A6.quantumYieldPercent_bounds",
+    "IChO2026.T8.A6.quantumYieldPercent_pos"
+  ],
+  "assumptions": [
+    "Each CO formed consumes 2 reacted electrons (part 8.1 half-equation CO2 + 2H+ + 2e- -> CO + H2O; carbon +4 -> +2), proved/stated inline from the problem statement.",
+    "Photon energy E = h c / lambda and photon count = optical energy / photon energy (standard Planck-relation physics, trusted_general_law).",
+    "h = 6.62607015e-34 J s, c = 2.99792458e8 m/s, N_A = 6.02214076e23 mol^-1 are exact SI-defined constants used as stipulated exact values.",
+    "Printed experimental numbers (390 nm, 50 mW, 8 h^-1, 10 mg, 3.8%%, 557.21 g/mol) are treated as exact as printed per the task measurement policy.",
+    "Reporting: uniform blind-evaluation default of 3 significant figures (quantum 0.01%%, ties half away from zero)."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t8_a6/campaign/workspace && lake env lean IChO2026Problems/problem_icho_2026_t8_a6.lean",
+    "python3 fractions cross-check (recorded in verification.md)"
+  ],
+  "verification_result": "lake env lean exits 0; #print axioms for co_quantum_yield_raw and co_quantum_yield_reported list only [propext, Classical.choice, Quot.sound] - no sorryAx, no custom axioms."
+}

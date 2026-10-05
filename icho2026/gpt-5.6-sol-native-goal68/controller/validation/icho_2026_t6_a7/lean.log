@@ -1,0 +1,8 @@
+'IChO2026Problems.ProblemIcho2026T6A7.minimum_electrons_removed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.ProblemIcho2026T6A7.global_pi_electron_count' depends on axioms: [propext]
+'IChO2026Problems.ProblemIcho2026T6A7.requested_outputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.ProblemIcho2026T6A7.requested_outputs_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

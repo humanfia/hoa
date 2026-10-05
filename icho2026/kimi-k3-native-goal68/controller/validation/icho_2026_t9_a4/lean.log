@@ -1,0 +1,3 @@
+'IChO2026T9A4.icho_2026_t9_a4_structure_of_Y' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T9A4.y_structure_matches_printed_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026T9A4.y_inversion_at_C2_C3' depends on axioms: [propext, Classical.choice, Quot.sound]

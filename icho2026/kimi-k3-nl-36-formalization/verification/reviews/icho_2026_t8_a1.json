@@ -1,0 +1,711 @@
+{
+  "formalization-review-gate.json": {
+    "status": "passed",
+    "reviews": 1,
+    "last_review_iter": 1,
+    "reason": "The submission and concrete Lean reaction match the independently derived exact acidic CO2-to-CO half-equation. Atom, charge, electron-transfer, direction, and canonical normalization are transparent and connected to the requested output; no requested result is assumed. The auxiliary uniqueness result is limited to canonical representations in the fixed five-species balancing domain and does not assert global chemical uniqueness.",
+    "updated_at": "2026-09-13T08:33:28Z",
+    "review_schema_version": 2,
+    "candidate_sha256": "fb3d90164e3e1f295a6f5cff54838db82b34511f73e4d20d8b9affd93b6a4d53",
+    "certificate": {
+      "schema_version": 2,
+      "checks": {
+        "source_faithfulness": {
+          "status": "passed",
+          "evidence": "The source requests one concrete half-equation. submittedHalfEquation consumes the source-named reactant, forms the source-named product, and uses only standard acidic-medium balancing species. The theorem's canonical-representation uniqueness is scoped to this ledger and does not enlarge the source request to all chemical pathways."
+        },
+        "derivability": {
+          "status": "passed",
+          "evidence": "Starting from unit CO2 -> CO, oxygen conservation places one water on the product side, hydrogen conservation places two protons on the reactant side, and charge conservation places two electrons on the reactant side. The candidate proves the resulting concrete reaction satisfies the transparent specification without hypotheses."
+        },
+        "abstraction_sufficiency": {
+          "status": "passed",
+          "evidence": "Species, Formula, formula, charge, atomInventory, chargeInventory, AtomBalanced, ChargeBalanced, NoSpeciesCancellation, RepresentsUnitCO2ToCO, netElectronsConsumed, the concrete CRNT reaction, and its certification expose every outcome-decisive component."
+        },
+        "uncertainty_propagation": {
+          "status": "not_applicable",
+          "evidence": "The requested result is exact symbolic stoichiometry; the source supplies no measurement, tolerance, or rounding-sensitive datum."
+        },
+        "branch_orientation": {
+          "status": "passed",
+          "evidence": "The image arrow and text direct CO2 to CO and call the process reduction. The Lean source/target orientation and positive net-electron-consumption condition place electrons on the reducing side consistently."
+        },
+        "countermodel_resistance": {
+          "status": "passed",
+          "evidence": "With one source CO2, one target CO, the five transparent species, atom and charge conservation, and no cancellation, the coefficients are forced. Scalar multiples and species added unchanged to both sides are representation variants excluded by canonical normalization, not different requested half-equations."
+        }
+      },
+      "bridge_obligations": [
+        {
+          "claim": "CO2 is consumed and CO is formed in the source-stated left-to-right reduction.",
+          "carrier": "IChO2026Problems.T8A1.RepresentsUnitCO2ToCO",
+          "status": "covered",
+          "evidence": "Bound current_question and the verified image arrow supply the roles and direction; the carrier transparently fixes the unit skeleton."
+        },
+        {
+          "claim": "Acidic half-reaction balancing admits protons, water, and electrons with their ordinary formulas and charges.",
+          "carrier": "IChO2026Problems.T8A1.Species; IChO2026Problems.T8A1.formula; IChO2026Problems.T8A1.charge; IChO2026Problems.T8A1.halfEquationDomainProvenance",
+          "status": "covered",
+          "evidence": "The phrase acidic medium and request for a half-equation activate the standard balancing convention; all admitted species data are transparent and were independently checked."
+        },
+        {
+          "claim": "The proposed coefficients conserve H, C, O, and electric charge and consume the electron count required by carbon reduction.",
+          "carrier": "IChO2026Problems.T8A1.AtomBalanced; IChO2026Problems.T8A1.ChargeBalanced; IChO2026Problems.T8A1.CarbonReductionElectronBalanced; IChO2026Problems.T8A1.submittedHalfEquation_meets_specification",
+          "status": "covered",
+          "evidence": "The formula and charge tables feed named inventory functions, and the certification theorem connects every ledger to the concrete output."
+        }
+      ],
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a1.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t8_a1",
+        "source_record_sha256": "57382629daba0a02b6a27fd06a36d415085f6f5ec8b5ab939af871ec3d8b3510",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a1.answer.json",
+        "answer_submission_sha256": "aa5508e2fbb87fe3dd21a116ff3daa8a246a6476bdd501f61caca772310bc539",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a1.source.json",
+        "source_report_sha256": "a2c6e86d6c2f5227789e6b054573e5da4b3a5a57d86b8be63cfcdda5fd304f77",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a1.lean",
+        "preflight_sha256": "abaa2e80b888f3e0ba85444c69aee5eadf90a622e6720f6f30ed761643f77f3f",
+        "candidate_sha256": "fb3d90164e3e1f295a6f5cff54838db82b34511f73e4d20d8b9affd93b6a4d53",
+        "question_sha256": "54fe84bebd36606ece2d173bb8f05115e97bcf122fd3dcff8f163a2107b16937",
+        "shared_context_sha256": "a76ca4186008c42f43fc77ce75f7b528c8da803ac9dbf81c90f32e1da9573a9e",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "c517fdd037bcb3d4a6a88d9ee128739579b26f308881e6bfc2e1a2f2b8fe8c79",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-1.png",
+            "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "7481a16360d9064c5e1874c5c2817a1a192df4a2051eeed2a031532ed5fa1007",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "half_equation"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a1",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_review_certificate": {
+        "source_contract": {
+          "schema_version": 1,
+          "contract_kind": "native_problem_input_only",
+          "authority": "problem-only",
+          "evaluation_mode": "answer_blind",
+          "target": "IChO2026Problems/problem_icho_2026_t8_a1.lean",
+          "source_bundle": "icho_2026_source/questions_only.jsonl",
+          "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+          "source_record_id": "icho_2026_t8_a1",
+          "source_record_sha256": "57382629daba0a02b6a27fd06a36d415085f6f5ec8b5ab939af871ec3d8b3510",
+          "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a1.answer.json",
+          "answer_submission_sha256": "aa5508e2fbb87fe3dd21a116ff3daa8a246a6476bdd501f61caca772310bc539",
+          "chemistry_constant_dataset": {
+            "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+            "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+          },
+          "source_report": "reports/icho_2026/problem_icho_2026_t8_a1.source.json",
+          "source_report_sha256": "a2c6e86d6c2f5227789e6b054573e5da4b3a5a57d86b8be63cfcdda5fd304f77",
+          "candidate": "IChO2026Problems/problem_icho_2026_t8_a1.lean",
+          "preflight_sha256": "abaa2e80b888f3e0ba85444c69aee5eadf90a622e6720f6f30ed761643f77f3f",
+          "candidate_sha256": "fb3d90164e3e1f295a6f5cff54838db82b34511f73e4d20d8b9affd93b6a4d53",
+          "question_sha256": "54fe84bebd36606ece2d173bb8f05115e97bcf122fd3dcff8f163a2107b16937",
+          "shared_context_sha256": "a76ca4186008c42f43fc77ce75f7b528c8da803ac9dbf81c90f32e1da9573a9e",
+          "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "requested_outputs_sha256": "c517fdd037bcb3d4a6a88d9ee128739579b26f308881e6bfc2e1a2f2b8fe8c79",
+          "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+          "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+          "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+          "certified_prior_result_path": null,
+          "certified_prior_result_sha256": null,
+          "certified_prior_result_context_receipt_sha256": null,
+          "images": [
+            {
+              "path": "icho_2026_source/image/T8_page-1.png",
+              "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+            }
+          ],
+          "semantic_dag": {
+            "schema_version": 1,
+            "authority": "controller",
+            "sha256": "7481a16360d9064c5e1874c5c2817a1a192df4a2051eeed2a031532ed5fa1007",
+            "node_count": 5,
+            "edge_count": 4,
+            "node_kind_counts": {
+              "derivation_obligation": 1,
+              "requested_output": 1,
+              "source_fact_set": 3
+            },
+            "requested_output_ids": [
+              "half_equation"
+            ],
+            "previous_part_source_ids": []
+          },
+          "provided_answer_draft": {
+            "record_id": "icho_2026_t8_a1",
+            "path": ".archon/provided_answer_drafts/Q8.md",
+            "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+            "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+            "origin": "Kimi-K3 natural-language full-theory solution",
+            "allow_corrections": false,
+            "fresh_answer_blind_run": false,
+            "draft_is_source_axiom": false
+          }
+        },
+        "blind_source_audit": {
+          "answer_independence": {
+            "status": "passed",
+            "evidence": "The quantifier and balance were frozen from current_question, shared_context, and the verified bound image before opening generated artifacts. The authorized Kimi draft and untrusted submission were used only for later fidelity comparison, not as premises."
+          },
+          "raw_derivation": {
+            "status": "passed",
+            "evidence": "IChO2026Problems.T8A1.submittedHalfEquation is connected through submittedHalfEquation_meets_specification to the atom, charge, direction, no-cancellation, and electron-transfer ledgers; the independent derivation is exact and unrounded."
+          },
+          "reporting_rule_source": {
+            "status": "passed",
+            "evidence": "requested_outputs[0].reporting_policy requires exact_symbolic output; the sidecar raw and display forms are equivalent presentations of the same formula."
+          },
+          "tolerance_provenance": {
+            "status": "passed",
+            "evidence": "No tolerance is introduced or needed for this exact formula output; measurement_policy therefore has no numerical effect."
+          },
+          "candidate_domain_provenance": {
+            "status": "passed",
+            "evidence": "The output-decisive domain is the source-named CO2 and CO plus H+, H2O, and e- from the ordinary acidic half-reaction balancing convention. No search bound, candidate singleton premise, or open-world product enumeration is used."
+          },
+          "lean_result_binding": {
+            "status": "passed",
+            "evidence": "candidate_sha256=fb3d90164e3e1f295a6f5cff54838db82b34511f73e4d20d8b9affd93b6a4d53; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=4. Nontrivial carriers are submittedHalfEquation, submittedHalfEquation_meets_specification, HalfEquationResult, and halfEquation."
+          }
+        },
+        "contract_audit": {
+          "statement_scope": {
+            "status": "passed",
+            "evidence": "The concrete carrier supplies the one equation requested by Write. The theorem's forall is only a canonical ledger-normalization fact over the explicit five-species domain, not exhaustive coverage or global chemical uniqueness."
+          },
+          "hypothesis_derivability": {
+            "status": "passed",
+            "evidence": "The main theorem has no external hypotheses. All source-facing facts are transparent definitions checked against the problem text/image or ordinary half-reaction conservation rules."
+          },
+          "conclusion_alignment": {
+            "status": "passed",
+            "evidence": "The theorem certifies the concrete requested formula, and the bound answer submission has exactly one output with the correct id, kind, empty unit, raw form, display form, and exact-symbolic reporting."
+          },
+          "bridge_completeness": {
+            "status": "passed",
+            "evidence": "All decisive bridges\u2014source direction, acidic balancing species, molecular formulas/charges, conservation, reduction electron orientation, and concrete-output certification\u2014have named connected carriers."
+          }
+        },
+        "requested_outputs": [
+          {
+            "source_requirement": "balanced acidic CO2-to-CO reduction half equation including electron count",
+            "lean_carrier": "IChO2026Problems.T8A1.submittedHalfEquation, certified by IChO2026Problems.T8A1.halfEquation",
+            "status": "covered",
+            "evidence": "The sole sidecar entry and named Lean carrier independently match the source-derived exact symbolic formula; id, kind, unit, order, and count are correct.",
+            "output_id": "half_equation",
+            "submission_status": "matched",
+            "reporting_policy_status": "matched"
+          }
+        ],
+        "blueprint_conflicts": [],
+        "image_audit": [
+          {
+            "path": "icho_2026_source/image/T8_page-1.png",
+            "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843",
+            "inspected": true,
+            "evidence": "Digest verified. In Q8-1 the arrowhead points right: CO2 is the tail precursor, catalyst 1 is above the shaft as an unchanged condition, and CO is the head product. The distinct formula blocks are one-carbon CO2 and one-carbon CO; there are no repeats, caps, assembly edges, or cross-boundary bonds. The carbon/oxygen motif maps to the product, while the extra oxygen is handled by acidic half-reaction balancing."
+          }
+        ],
+        "chemistry_checks": {
+          "chemical_semantics": {
+            "status": "passed",
+            "evidence": "Carbon changes from +4 in neutral CO2 to +2 in neutral CO under the ordinary -2 oxygen assignment, so two electrons are consumed. This agrees independently with the atom and charge ledger."
+          },
+          "staged_species_domain": {
+            "status": "passed",
+            "evidence": "quantitative_material_stage: the single source arrow is CO2 -> CO with catalyst 1 unchanged. The complete outcome-decisive balance domain is {CO2, H+, e-, CO, H2O}; elements {H,C,O} and charge are carried by formula, charge, atomInventory, chargeInventory, AtomBalanced, and ChargeBalanced. No anonymous stream is admitted."
+          },
+          "formula_mass_consistency": {
+            "status": "passed",
+            "evidence": "The transparent Formula table encodes CO2 as C1O2, CO as C1O1, H+ as H1, H2O as H2O1, and e- as atomless. No molar-mass claim is made."
+          },
+          "conservation_laws": {
+            "status": "passed",
+            "evidence": "The independently derived unit balance has equal C, O, and H inventories and zero total charge on both sides. submittedHalfEquation_meets_specification binds those equalities to the output."
+          },
+          "units_dimensions": {
+            "status": "passed",
+            "evidence": "A stoichiometric formula has no physical output unit, matching the empty unit field; charge is consistently counted in elementary-charge units inside the ledger."
+          },
+          "numerical_reporting": {
+            "status": "passed",
+            "evidence": "All coefficients are exact integers and the reporting policy is exact_symbolic, so no rounding, significant-figure choice, interval, or tolerance applies."
+          },
+          "structure_stereochemistry": {
+            "status": "not_applicable",
+            "evidence": "No structural drawing, connectivity choice, stereochemistry, or conformation is requested for subpart 8.1."
+          },
+          "identification_uniqueness": {
+            "status": "not_applicable",
+            "evidence": "Write requests one concrete balanced equation, not an open-world identity search or a global uniqueness/exhaustiveness result. The Lean auxiliary uniqueness lemma only removes scaling and cancellation within its canonical representation."
+          },
+          "answer_smuggling": {
+            "status": "passed",
+            "evidence": "The output is a concrete definition, but its validity is checked by nontrivial transparent atom, charge, direction, and electron-transfer predicates. No answer-shaped hypothesis, singleton candidate premise, opaque flag, or reflexive theorem establishes it."
+          }
+        }
+      },
+      "official_answer_alignment": null,
+      "source_inconsistency": null,
+      "independent_rederivation": {
+        "schema_version": 1,
+        "method": "source_first_without_lean",
+        "ambiguity": "clear",
+        "requested_outputs": [
+          {
+            "basis": {
+              "denominator": "not_applicable",
+              "mass_or_composition_basis": "not_applicable",
+              "numerator": "not_applicable",
+              "status": "not_applicable"
+            },
+            "branch_conditions": [],
+            "constants": [],
+            "dependencies": [],
+            "evidence": "Source-first atom and charge balancing agrees with the semantic card, answer sidecar, and concrete Lean reaction; the requested witness does not require a global chemical uniqueness claim.",
+            "id": "half_equation",
+            "kind": "formula",
+            "lean_carriers": {
+              "inputs": [
+                "IChO2026Problems.T8A1.Species",
+                "IChO2026Problems.T8A1.formula",
+                "IChO2026Problems.T8A1.charge",
+                "IChO2026Problems.T8A1.halfEquationDomainProvenance"
+              ],
+              "raw_result": [
+                "IChO2026Problems.T8A1.submittedReactants",
+                "IChO2026Problems.T8A1.submittedProducts",
+                "IChO2026Problems.T8A1.submittedHalfEquation"
+              ],
+              "relations": [
+                "IChO2026Problems.T8A1.RepresentsUnitCO2ToCO",
+                "IChO2026Problems.T8A1.AtomBalanced",
+                "IChO2026Problems.T8A1.ChargeBalanced",
+                "IChO2026Problems.T8A1.NoSpeciesCancellation",
+                "IChO2026Problems.T8A1.CarbonReductionElectronBalanced",
+                "IChO2026Problems.T8A1.IsAcidicCO2ToCOHalfEquation"
+              ],
+              "reported_result": [
+                "IChO2026Problems.T8A1.HalfEquationResult",
+                "IChO2026Problems.T8A1.halfEquation"
+              ]
+            },
+            "lean_statement_comparison": {
+              "evidence": "The concrete carrier has the independently derived coefficients and direction, and halfEquation certifies every required ledger. Its additional uniqueness conjunct is restricted to canonical representations of the same balanced equation.",
+              "status": "matched"
+            },
+            "process_scope": {
+              "description": "overall stoichiometric half-reaction for one CO2-to-CO reduction event; no dynamic recycle, fresh-feed, inventory, or horizon quantity is requested",
+              "kind": "overall"
+            },
+            "quantity_definition": "Canonical balanced reduction half-reaction consuming one CO2 and producing one CO in acidic medium, including proton, water, and electron balancing.",
+            "raw_result": {
+              "derivation": "Fix one CO2 on the left and one CO on the right; balance the remaining oxygen with one product water, its hydrogen with two reactant protons, then neutralize the resulting reactant charge with two reactant electrons.",
+              "exact_unrounded": true,
+              "value_or_expression": "CO2 + 2 H+ + 2 e- -> CO + H2O"
+            },
+            "reporting": {
+              "application": "Apply exact-symbolic reporting directly to the final balanced expression; no rounding or tolerance is used.",
+              "global_policy": {
+                "default_final_display": "three_significant_figures",
+                "explicit_precision": "use_only_precision_requested_in_problem",
+                "final_precision": {
+                  "kind": "per_requested_output",
+                  "source": "requested_outputs"
+                },
+                "intermediate_rounding": "forbidden",
+                "raw_result_required": true,
+                "tie_rule": "half_away_from_zero"
+              },
+              "policy": {
+                "kind": "exact_symbolic",
+                "source": "problem_output_type"
+              }
+            },
+            "semantic_card_comparison": {
+              "evidence": "The sole formula output, empty unit, exact-symbolic policy, and required electron count all match the source-first derivation.",
+              "status": "matched"
+            },
+            "source_locators": [
+              {
+                "kind": "problem_text",
+                "reference": "current_question"
+              },
+              {
+                "kind": "problem_text",
+                "reference": "shared_context"
+              },
+              {
+                "kind": "problem_image",
+                "reference": "T8_page-1.png#t8-a1-reduction-arrow"
+              }
+            ],
+            "source_requirement": "balanced acidic CO2-to-CO reduction half equation including electron count",
+            "unit": ""
+          }
+        ]
+      },
+      "candidate_sha256": "fb3d90164e3e1f295a6f5cff54838db82b34511f73e4d20d8b9affd93b6a4d53"
+    },
+    "review_events": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a1.lean:formalization:1",
+        "iter": 1,
+        "decision": "passed",
+        "resulting_status": "passed",
+        "attempt": 1,
+        "reason": "The submission and concrete Lean reaction match the independently derived exact acidic CO2-to-CO half-equation. Atom, charge, electron-transfer, direction, and canonical normalization are transparent and connected to the requested output; no requested result is assumed. The auxiliary uniqueness result is limited to canonical representations in the fixed five-species balancing domain and does not assert global chemical uniqueness.",
+        "reviewed_at": "2026-09-13T08:33:28Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "formalization",
+        "candidate_sha256": "fb3d90164e3e1f295a6f5cff54838db82b34511f73e4d20d8b9affd93b6a4d53",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "passed",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a1.lean:formalization:1",
+        "decision": "passed",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 4,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "diagnostic_retry_guard": {},
+    "repair_handoff": {}
+  },
+  "proof-review-gate.json": {
+    "status": "solved",
+    "attempts": 1,
+    "last_review_iter": 1,
+    "reason": "The exact bound candidate and answer submission match their controller hashes; independent atom, charge, and oxidation-state accounting derives the submitted acidic reduction half-equation, and the candidate proves its specification and canonical unit-normalized uniqueness without assumptions or placeholders.",
+    "evidence": "The bound image states the directed CO2-to-CO reduction in acidic medium. The answer JSON is schema version 1 with exactly the required single output in the required order and with the exact id, kind, and empty unit. Candidate declaration IChO2026Problems.T8A1.halfEquation is supported by transparent species/formula/charge ledgers, submittedHalfEquation_meets_specification, and acidicCO2ToCOHalfEquation_unique. Controller deterministic preflight passed with compiles=true, returncode=0, sorry_count=0. Kimi draft subpart 8.1 is preserved with no discrepancy and was independently justified rather than used as a premise.",
+    "redraft_kind": "not_applicable",
+    "proof_review_schema_version": 1,
+    "proof_review_route": "solved",
+    "candidate_sha256": "259ef6c0aa340eca8e9ceef6458447e24838b16fc51ac1d6e924eb456d4141f5",
+    "source_contract": {
+      "schema_version": 1,
+      "contract_kind": "native_problem_input_only",
+      "authority": "problem-only",
+      "evaluation_mode": "answer_blind",
+      "target": "IChO2026Problems/problem_icho_2026_t8_a1.lean",
+      "source_bundle": "icho_2026_source/questions_only.jsonl",
+      "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+      "source_record_id": "icho_2026_t8_a1",
+      "source_record_sha256": "57382629daba0a02b6a27fd06a36d415085f6f5ec8b5ab939af871ec3d8b3510",
+      "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a1.answer.json",
+      "answer_submission_sha256": "aa5508e2fbb87fe3dd21a116ff3daa8a246a6476bdd501f61caca772310bc539",
+      "chemistry_constant_dataset": {
+        "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+        "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+      },
+      "source_report": "reports/icho_2026/problem_icho_2026_t8_a1.source.json",
+      "source_report_sha256": "a2c6e86d6c2f5227789e6b054573e5da4b3a5a57d86b8be63cfcdda5fd304f77",
+      "candidate": "IChO2026Problems/problem_icho_2026_t8_a1.lean",
+      "preflight_sha256": "8617b6f6799d015d857609a85eac818f6f72c65637c7e87606861902dc729ced",
+      "candidate_sha256": "259ef6c0aa340eca8e9ceef6458447e24838b16fc51ac1d6e924eb456d4141f5",
+      "question_sha256": "54fe84bebd36606ece2d173bb8f05115e97bcf122fd3dcff8f163a2107b16937",
+      "shared_context_sha256": "a76ca4186008c42f43fc77ce75f7b528c8da803ac9dbf81c90f32e1da9573a9e",
+      "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "requested_outputs_sha256": "c517fdd037bcb3d4a6a88d9ee128739579b26f308881e6bfc2e1a2f2b8fe8c79",
+      "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+      "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+      "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+      "certified_prior_result_path": null,
+      "certified_prior_result_sha256": null,
+      "certified_prior_result_context_receipt_sha256": null,
+      "images": [
+        {
+          "path": "icho_2026_source/image/T8_page-1.png",
+          "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+        }
+      ],
+      "semantic_dag": {
+        "schema_version": 1,
+        "authority": "controller",
+        "sha256": "7481a16360d9064c5e1874c5c2817a1a192df4a2051eeed2a031532ed5fa1007",
+        "node_count": 5,
+        "edge_count": 4,
+        "node_kind_counts": {
+          "derivation_obligation": 1,
+          "requested_output": 1,
+          "source_fact_set": 3
+        },
+        "requested_output_ids": [
+          "half_equation"
+        ],
+        "previous_part_source_ids": []
+      },
+      "provided_answer_draft": {
+        "record_id": "icho_2026_t8_a1",
+        "path": ".archon/provided_answer_drafts/Q8.md",
+        "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+        "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+        "origin": "Kimi-K3 natural-language full-theory solution",
+        "allow_corrections": false,
+        "fresh_answer_blind_run": false,
+        "draft_is_source_axiom": false
+      }
+    },
+    "blind_review_certificate": {
+      "source_contract": {
+        "schema_version": 1,
+        "contract_kind": "native_problem_input_only",
+        "authority": "problem-only",
+        "evaluation_mode": "answer_blind",
+        "target": "IChO2026Problems/problem_icho_2026_t8_a1.lean",
+        "source_bundle": "icho_2026_source/questions_only.jsonl",
+        "source_bundle_sha256": "3eeaafd57a22e075b4a02f8001c3a2dd8c16e13b2d4f938220daa7804378e07a",
+        "source_record_id": "icho_2026_t8_a1",
+        "source_record_sha256": "57382629daba0a02b6a27fd06a36d415085f6f5ec8b5ab939af871ec3d8b3510",
+        "answer_submission": ".archon/task_results/IChO2026Problems_problem_icho_2026_t8_a1.answer.json",
+        "answer_submission_sha256": "aa5508e2fbb87fe3dd21a116ff3daa8a246a6476bdd501f61caca772310bc539",
+        "chemistry_constant_dataset": {
+          "version": "ciaaw-abridged-2024+ame2020-subset+archon-templates-v1+contest-interpretation-v1+trusted-empirical-rules-v1",
+          "sha256": "11a02c1d207b810d28bc105970081324cb892592539f6d9a9e1d340a475983d5"
+        },
+        "source_report": "reports/icho_2026/problem_icho_2026_t8_a1.source.json",
+        "source_report_sha256": "a2c6e86d6c2f5227789e6b054573e5da4b3a5a57d86b8be63cfcdda5fd304f77",
+        "candidate": "IChO2026Problems/problem_icho_2026_t8_a1.lean",
+        "preflight_sha256": "8617b6f6799d015d857609a85eac818f6f72c65637c7e87606861902dc729ced",
+        "candidate_sha256": "259ef6c0aa340eca8e9ceef6458447e24838b16fc51ac1d6e924eb456d4141f5",
+        "question_sha256": "54fe84bebd36606ece2d173bb8f05115e97bcf122fd3dcff8f163a2107b16937",
+        "shared_context_sha256": "a76ca4186008c42f43fc77ce75f7b528c8da803ac9dbf81c90f32e1da9573a9e",
+        "previous_parts_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "requested_outputs_sha256": "c517fdd037bcb3d4a6a88d9ee128739579b26f308881e6bfc2e1a2f2b8fe8c79",
+        "reporting_policy_sha256": "cb2067a3f84a4f957c7a6b44b6d7ab654f86783a72eec738f3083cdfc4cc654e",
+        "measurement_policy_sha256": "00fa28d7873560d59b92586e4b4ba44dc4e72ce5651e20d8baf0a6edfcf71514",
+        "candidate_domain_policy_sha256": "d25dffeea2f384bdeb927aa7c530a7f12f874a6dfbf392fe1f3bbdcab6f11587",
+        "certified_prior_result_path": null,
+        "certified_prior_result_sha256": null,
+        "certified_prior_result_context_receipt_sha256": null,
+        "images": [
+          {
+            "path": "icho_2026_source/image/T8_page-1.png",
+            "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843"
+          }
+        ],
+        "semantic_dag": {
+          "schema_version": 1,
+          "authority": "controller",
+          "sha256": "7481a16360d9064c5e1874c5c2817a1a192df4a2051eeed2a031532ed5fa1007",
+          "node_count": 5,
+          "edge_count": 4,
+          "node_kind_counts": {
+            "derivation_obligation": 1,
+            "requested_output": 1,
+            "source_fact_set": 3
+          },
+          "requested_output_ids": [
+            "half_equation"
+          ],
+          "previous_part_source_ids": []
+        },
+        "provided_answer_draft": {
+          "record_id": "icho_2026_t8_a1",
+          "path": ".archon/provided_answer_drafts/Q8.md",
+          "sha256": "0b3458c73efd638dfddf39b334e02d2068fca8e9ebbe33b143991d5478cfcb7d",
+          "manifest_sha256": "ee93d851cf1c1434be20847da345776a2f2a5686281c97cde4c02585c2af5e05",
+          "origin": "Kimi-K3 natural-language full-theory solution",
+          "allow_corrections": false,
+          "fresh_answer_blind_run": false,
+          "draft_is_source_axiom": false
+        }
+      },
+      "blind_source_audit": {
+        "answer_independence": {
+          "status": "passed",
+          "evidence": "Only the inline bound problem evidence and the listed image were used as chemistry premises. The bound submission and sealed Kimi draft were audited as untrusted outputs for correctness and fidelity, not assumed; no unlisted project artifact or historical solution was opened."
+        },
+        "raw_derivation": {
+          "status": "passed",
+          "evidence": "For the unit source-to-product carbon transformation, carbon changes from oxidation state +4 to +2, hence consumes two electrons; balancing the second oxygen with product-side water and its hydrogens with reactant-side protons also makes total charge zero. Transparent Lean carriers carbonOxidationStateDrop, atomInventory, chargeInventory, and submittedHalfEquation_meets_specification encode this symbolic derivation."
+        },
+        "reporting_rule_source": {
+          "status": "passed",
+          "evidence": "The controller-bound requested output is a formula under exact_symbolic reporting; the submission supplies an exact formula rather than a rounded numerical surrogate."
+        },
+        "tolerance_provenance": {
+          "status": "passed",
+          "evidence": "No measurement, approximation, or tolerance is present or needed for this exact symbolic formula output."
+        },
+        "candidate_domain_provenance": {
+          "status": "passed",
+          "evidence": "Species.carbonDioxide and Species.carbonMonoxide are the source-named transformation species; proton, water, and electron are precisely the conventional balancing species for an acidic reduction half-equation. No numerical search bound or candidate-named singleton premise is used."
+        },
+        "lean_result_binding": {
+          "status": "passed",
+          "evidence": "candidate_sha256=259ef6c0aa340eca8e9ceef6458447e24838b16fc51ac1d6e924eb456d4141f5; deterministic preflight status=passed, compiles=true, returncode=0, sorry_count=0. Nontrivial result carriers are IChO2026Problems.T8A1.submittedHalfEquation_meets_specification, IChO2026Problems.T8A1.acidicCO2ToCOHalfEquation_unique, and IChO2026Problems.T8A1.halfEquation."
+        }
+      },
+      "contract_audit": {
+        "statement_scope": {
+          "status": "passed",
+          "evidence": "HalfEquationResult requires the concrete candidate to satisfy direction, unit normalization, all H/C/O and charge ledgers, no cancellation, positive electron consumption, oxidation-state electron accounting, and canonical uniqueness; it does not weaken the requested formula."
+        },
+        "hypothesis_derivability": {
+          "status": "passed",
+          "evidence": "The output theorem has no hypotheses. Its domain, formulas, charges, acidic balancing convention, and ordinary oxygen oxidation number are transparent definitions grounded in the prompt and trusted general chemistry."
+        },
+        "conclusion_alignment": {
+          "status": "passed",
+          "evidence": "The named theorem carries the sole requested output half_equation as an exact symbolic, balanced acidic CO2-to-CO reduction half-equation including its electron count; the submission and theorem agree."
+        },
+        "bridge_completeness": {
+          "status": "passed",
+          "evidence": "Every decisive chemistry bridge is explicit: finite species and atom domains, formula and charge maps, atom and charge inventories, carbon oxidation-state change, electron ledger, canonicality, verification, and uniqueness. No local axiom, opaque predicate, or unconstrained flag is used."
+        }
+      },
+      "requested_outputs": [
+        {
+          "source_requirement": "balanced acidic CO2-to-CO reduction half equation including electron count",
+          "lean_carrier": "IChO2026Problems.T8A1.halfEquation",
+          "status": "covered",
+          "evidence": "Submission schema/version and its sole output's order, id, kind=formula, and empty unit match the contract. Independent H/C/O, charge, direction, and two-electron accounting verifies its raw and display forms, and the named theorem proves the exact-symbolic result without copying the submission into a premise.",
+          "output_id": "half_equation",
+          "submission_status": "matched",
+          "reporting_policy_status": "matched"
+        }
+      ],
+      "blueprint_conflicts": [],
+      "image_audit": [
+        {
+          "path": "icho_2026_source/image/T8_page-1.png",
+          "sha256": "3490231dd64238ab3db32a48d86f92c857f9fef386b510c45ba1b80f483cc843",
+          "inspected": true,
+          "evidence": "The readable page shows a directed CO2-to-CO conversion using catalyst 1 and subquestion 8.1 asks for the reduction half-equation in acidic medium; the page is an unmarked problem sheet and supplies no answer."
+        }
+      ],
+      "chemistry_checks": {
+        "chemical_semantics": {
+          "status": "passed",
+          "evidence": "The candidate models reduction of unit carbon dioxide to unit carbon monoxide in acid, with the carbon oxidation-state decrease and electron consumption oriented correctly."
+        },
+        "staged_species_domain": {
+          "status": "passed",
+          "evidence": "quantitative_material_stage: the requested coefficient-bearing half-reaction is one reduction stage. The finite domain is Species={carbonDioxide, proton, electron, carbonMonoxide, water}; submittedReactants/submittedProducts are the stage-side carriers; Formula/formula, atomInventory/AtomBalanced, charge/chargeInventory/ChargeBalanced, and netElectronsConsumed/CarbonReductionElectronBalanced are the complete outcome-decisive atom, charge, and electron ledgers proved by submittedHalfEquation_meets_specification."
+        },
+        "formula_mass_consistency": {
+          "status": "passed",
+          "evidence": "The transparent Formula map assigns the correct H/C/O compositions to all five species; electron has zero atoms, and the verified atom inventories agree on both sides. No molar-mass claim is made."
+        },
+        "conservation_laws": {
+          "status": "passed",
+          "evidence": "submittedHalfEquation_meets_specification proves conservation separately for hydrogen, carbon, oxygen, and total electric charge, and proves the two-electron oxidation-state ledger."
+        },
+        "units_dimensions": {
+          "status": "not_applicable",
+          "evidence": "The required formula has an empty unit and contains only exact stoichiometric coefficients."
+        },
+        "numerical_reporting": {
+          "status": "not_applicable",
+          "evidence": "The requested output is exact_symbolic; there is no measured or rounded numerical result."
+        },
+        "structure_stereochemistry": {
+          "status": "not_applicable",
+          "evidence": "No molecular drawing, connectivity choice, geometry, or stereochemistry is requested in subquestion 8.1."
+        },
+        "identification_uniqueness": {
+          "status": "passed",
+          "evidence": "acidicCO2ToCOHalfEquation_unique proves uniqueness within the source-derived acidic-half-equation species domain after chemically standard unit normalization and no-cancellation; no open-world reaction-mechanism uniqueness is claimed or needed."
+        },
+        "answer_smuggling": {
+          "status": "passed",
+          "evidence": "The concrete submittedHalfEquation is not assumed in any premise. It is checked against an independently stated transparent specification, and acidicCO2ToCOHalfEquation_unique derives equality for every canonical unit-normalized reaction satisfying those ledgers without a coefficient search bound."
+        }
+      }
+    },
+    "official_answer_alignment": null,
+    "source_inconsistency": null,
+    "infrastructure_request": null,
+    "infrastructure_request_error": "",
+    "history": [
+      {
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a1.lean:proof:1",
+        "iter": 1,
+        "route": "solved",
+        "resulting_status": "solved",
+        "top_level_status": "solved",
+        "attempt": 1,
+        "reason": "The exact bound candidate and answer submission match their controller hashes; independent atom, charge, and oxidation-state accounting derives the submitted acidic reduction half-equation, and the candidate proves its specification and canonical unit-normalized uniqueness without assumptions or placeholders.",
+        "evidence": "The bound image states the directed CO2-to-CO reduction in acidic medium. The answer JSON is schema version 1 with exactly the required single output in the required order and with the exact id, kind, and empty unit. Candidate declaration IChO2026Problems.T8A1.halfEquation is supported by transparent species/formula/charge ledgers, submittedHalfEquation_meets_specification, and acidicCO2ToCOHalfEquation_unique. Controller deterministic preflight passed with compiles=true, returncode=0, sorry_count=0. Kimi draft subpart 8.1 is preserved with no discrepancy and was independently justified rather than used as a premise.",
+        "redraft_kind": "not_applicable",
+        "explicit_route": true,
+        "reviewed_at": "2026-09-13T08:52:04.570155Z"
+      }
+    ],
+    "repair_events": [
+      {
+        "schema_version": 1,
+        "review_kind": "proof",
+        "candidate_sha256": "259ef6c0aa340eca8e9ceef6458447e24838b16fc51ac1d6e924eb456d4141f5",
+        "iteration": 1,
+        "attempt": 1,
+        "resulting_status": "solved",
+        "failed_check_ids": [],
+        "event_id": "pipeline:1:IChO2026Problems/problem_icho_2026_t8_a1.lean:proof:1",
+        "route": "solved",
+        "redraft_kind": "not_applicable",
+        "preflight": {
+          "status": "passed",
+          "compiles": true,
+          "returncode": 0,
+          "sorry_count": 0,
+          "duration_bucket": "under_1m"
+        }
+      }
+    ],
+    "updated_at": "2026-09-13T08:52:04.570209Z",
+    "repair_handoff": {}
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "candidate_domain_policy": {
+    "allowed_sources": [
+      "problem_text",
+      "problem_image",
+      "problem_stated_fallback",
+      "trusted_general_law",
+      "derived_theorem"
+    ],
+    "previous_part_results": "derive_inline_from_problem_only_material_or_use_problem_stated_fallback",
+    "underdetermined_result": "must_be_reported",
+    "unjustified_search_bounds": "forbidden"
+  },
+  "category": "IChO 2026 Theory",
+  "current_question": "Calculate the percentage of quenching, \ud835\udf02\ud835\udc5e, (in %) of S1 and T1 states, when [Red] = 0.1 M. Note: here \ud835\udc58\ud835\udc39>>\ud835\udc58\ud835\udc3c\ud835\udc46\ud835\udc36.",
+  "dataset": "IChO 2026 official English problem materials",
+  "dataset_format": "native",
+  "evaluation_mode": "answer_blind",
+  "formalization_ready": true,
+  "id": "icho_2026_t8_a9",
+  "image": "T8_page-5.png",
+  "images": [
+    "T8_page-5.png",
+    "T8_page-4.png"
+  ],
+  "index": "icho_2026_t8_a9",
+  "kind": "theory",
+  "measurement_policy": {
+    "derived_tolerances": "must_be_proved_from_source_measurement_intervals",
+    "measured_display_half_width": "one_half_of_last_displayed_quantum",
+    "stipulated_constants": "exact_as_printed_unless_problem_calls_them_measured"
+  },
+  "official_answer_seen": false,
+  "paper": "T8",
+  "part_id": "T8-A9",
+  "phase": "solve",
+  "points": 12.0,
+  "previous_parts": [],
+  "printed_page": 5,
+  "problem_assets": [
+    {
+      "kind": "problem_page",
+      "path": "T8_page-5.png",
+      "printed_page": 5,
+      "sha256": "2e6c474d4a7e74a268c029c53b69c64eb30e63f58696855bec0e204c0614dad4",
+      "source_page": 76
+    },
+    {
+      "kind": "problem_page",
+      "path": "T8_page-4.png",
+      "printed_page": 5,
+      "sha256": "55fc19db05fe771eb0403d5fcf611d83ff5a22882b1221129ef689bd8704285a",
+      "source_page": 76
+    },
+    {
+      "kind": "problem_pdf",
+      "path": "theory_problem.pdf",
+      "sha256": "af51373f43201cecf81457afa4cd44a2cf68a776068abf216292482dbc8d3d60",
+      "source_page": 76
+    }
+  ],
+  "problem_id": "icho_2026_t8",
+  "protocol": "icho-answer-blind-v1",
+  "question": "## Shared official problem context\nT8. Recycling of Carbon Dioxide 7% Removing CO2 gas from the atmosphere is key to combat climate change. One promising solution is the photocatalytic reduction of CO2 to CO using molecular catalyst 1. 8.1 Write the half equation for the reduction of CO2 to CO in an acidic medium. The conjugate oxidation reaction occurs with sacrificial reductant 2 in aqueous solution with the following mechanism: Species 3, 4, and 5 are short-lived ionic and radical intermediates. 7 yields a silver mirror with the [Ag(NH3)2]OH test. 8.2 Draw the structures of 3-7. Catalyst 1 can be synthesised with the following reaction. 8.3 Tick the correct geometry for the structure of 1. When 1 is loaded on crystalline carbon nitride (C3N4) support material, it can reduce CO2 via the following mechanism. 8.4 Draw the structures of 9-15. Use the cartoon structure for ligand 8 shown above. For 9-15, specify the oxidation state, \ud835\udc42\ud835\udc46, coordination number, \ud835\udc36\ud835\udc41, and number of valence electrons, \ud835\udc49\ud835\udc38, of Fe, along with the total charge of corresponding complex structures, \ud835\udc4d. Note: Some information is provided on the answer sheet. 8.5 Calculate the number of catalytic molecules per nm2, \ud835\udc41\ud835\udc50\ud835\udc4e\ud835\udc61, of C3N4 loaded with 1, when the mass fraction of catalyst, \ud835\udf14\ud835\udc50\ud835\udc4e\ud835\udc61= 3.8%, if the specific surface area of C3N4 is 17.8 m2 g\u22121. M\ud835\udc50\ud835\udc4e\ud835\udc61= 557.21 g mol\u22121. The Turnover Frequency of a catalyst (TOF) is the number of product molecules formed per active catalyst molecule per hour. Under LED illumination (\ud835\udf06= 390 nm) with power of 50 mW, there was a TOF of 8 h\u22121 for 10 mg of C3N4, loaded with 1 with \ud835\udf14\ud835\udc50\ud835\udc4e\ud835\udc61= 3.8% The formula for calculating the quantum yield is given below: \ud835\udf11= \ud835\udc5b\ud835\udc62\ud835\udc5a\ud835\udc4f\ud835\udc52\ud835\udc5f\ud835\udc5c\ud835\udc53\ud835\udc5f\ud835\udc52\ud835\udc4e\ud835\udc50\ud835\udc61\ud835\udc52\ud835\udc51\ud835\udc52\ud835\udc59\ud835\udc52\ud835\udc50\ud835\udc61\ud835\udc5f\ud835\udc5c\ud835\udc5b\ud835\udc60 \ud835\udc5b\ud835\udc62\ud835\udc5a\ud835\udc4f\ud835\udc52\ud835\udc5f\ud835\udc5c\ud835\udc53\ud835\udc56\ud835\udc5b\ud835\udc50\ud835\udc56\ud835\udc51\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc5d\u210e\ud835\udc5c\ud835\udc61\ud835\udc5c\ud835\udc5b\ud835\udc60\u22c5100% 8.6 Calculate the quantum yield, \ud835\udf11(%), for CO formation. The diagram below shows the change in the TOF of CO as \ud835\udf14\ud835\udc50\ud835\udc4e\ud835\udc61is varied. 8.7 How does the overall rate of CO formation per gram of C3N4 loaded with 1 change with increasing \ud835\udf14\ud835\udc50\ud835\udc4e\ud835\udc61? Tick the correct box. a) increases b) decreases c) doesn't change The reduction of CO2 can be accompanied by the reduction of additional protons. The changes in Gibbs energy during these two reactions are shown in the diagram. The system was irradiated using different LEDs. The diagram below shows the mole percentages, \ud835\udf12, of H2 and CO produced during the reduction of CO2 under four different conditions: no irradiation (N) and irradiation with red (R), green (G), and blue (B) light. 8.8 Tick which of the four conditions, mentioned above, corresponds to a, b, c and d in the diagram. Photosensitisers (PS) offer some advantages over C3N4 for the reduction of CO2. Mn(I)-containing complexes combined with PS can achieve ~23% quantum yield. In this system, reductive quenching of the singlet (S1) and triplet (T1) excited states of a PS by reductant (Red) forms PS\u2022\u2212, which donates electrons to CO2 through the Mn(I)-containing complex. PS(S1) + Red \ud835\udc58\ud835\udc46 \u2212\u2212\u2212\u2192PS\u2022\u2212+ Red\u2022+ \ud835\udc58\ud835\udc46= 2.7 \u00d7 109 M\u22121 s\u22121 PS(T1) + Red \ud835\udc58\ud835\udc47 \u2212\u2212\u2212\u2192PS\u2022\u2212+ Red\u2022+ \ud835\udc58\ud835\udc47= 1.5 \u00d7 108 M\u22121 s\u22121 The following Jablonski diagram describes the processes occurring in the PS: \ud835\udf0f0(S1) = 2.9 ns and \ud835\udf0f0(T1) = 84 \ud835\udf07s, where \ud835\udf0f0 is the emission lifetime in the absence of the quencher.\n\n## Current subquestion T8-A9\nCalculate the percentage of quenching, \ud835\udf02\ud835\udc5e, (in %) of S1 and T1 states, when [Red] = 0.1 M. Note: here \ud835\udc58\ud835\udc39>>\ud835\udc58\ud835\udc3c\ud835\udc46\ud835\udc36.\n",
+  "reporting_policy": {
+    "default_final_display": "three_significant_figures",
+    "explicit_precision": "use_only_precision_requested_in_problem",
+    "final_precision": {
+      "kind": "per_requested_output",
+      "source": "requested_outputs"
+    },
+    "intermediate_rounding": "forbidden",
+    "raw_result_required": true,
+    "tie_rule": "half_away_from_zero"
+  },
+  "requested_outputs": [
+    {
+      "id": "s1_quenching",
+      "kind": "numeric",
+      "reporting_policy": {
+        "digits": 3,
+        "kind": "significant_figures",
+        "source": "uniform_blind_evaluation_default"
+      },
+      "source_requirement": "percentage quenching of the S1 state",
+      "unit": "%"
+    },
+    {
+      "id": "t1_quenching",
+      "kind": "numeric",
+      "reporting_policy": {
+        "digits": 3,
+        "kind": "significant_figures",
+        "source": "uniform_blind_evaluation_default"
+      },
+      "source_requirement": "percentage quenching of the T1 state",
+      "unit": "%"
+    }
+  ],
+  "schema_version": 1,
+  "shared_context": "T8. Recycling of Carbon Dioxide 7% Removing CO2 gas from the atmosphere is key to combat climate change. One promising solution is the photocatalytic reduction of CO2 to CO using molecular catalyst 1. 8.1 Write the half equation for the reduction of CO2 to CO in an acidic medium. The conjugate oxidation reaction occurs with sacrificial reductant 2 in aqueous solution with the following mechanism: Species 3, 4, and 5 are short-lived ionic and radical intermediates. 7 yields a silver mirror with the [Ag(NH3)2]OH test. 8.2 Draw the structures of 3-7. Catalyst 1 can be synthesised with the following reaction. 8.3 Tick the correct geometry for the structure of 1. When 1 is loaded on crystalline carbon nitride (C3N4) support material, it can reduce CO2 via the following mechanism. 8.4 Draw the structures of 9-15. Use the cartoon structure for ligand 8 shown above. For 9-15, specify the oxidation state, \ud835\udc42\ud835\udc46, coordination number, \ud835\udc36\ud835\udc41, and number of valence electrons, \ud835\udc49\ud835\udc38, of Fe, along with the total charge of corresponding complex structures, \ud835\udc4d. Note: Some information is provided on the answer sheet. 8.5 Calculate the number of catalytic molecules per nm2, \ud835\udc41\ud835\udc50\ud835\udc4e\ud835\udc61, of C3N4 loaded with 1, when the mass fraction of catalyst, \ud835\udf14\ud835\udc50\ud835\udc4e\ud835\udc61= 3.8%, if the specific surface area of C3N4 is 17.8 m2 g\u22121. M\ud835\udc50\ud835\udc4e\ud835\udc61= 557.21 g mol\u22121. The Turnover Frequency of a catalyst (TOF) is the number of product molecules formed per active catalyst molecule per hour. Under LED illumination (\ud835\udf06= 390 nm) with power of 50 mW, there was a TOF of 8 h\u22121 for 10 mg of C3N4, loaded with 1 with \ud835\udf14\ud835\udc50\ud835\udc4e\ud835\udc61= 3.8% The formula for calculating the quantum yield is given below: \ud835\udf11= \ud835\udc5b\ud835\udc62\ud835\udc5a\ud835\udc4f\ud835\udc52\ud835\udc5f\ud835\udc5c\ud835\udc53\ud835\udc5f\ud835\udc52\ud835\udc4e\ud835\udc50\ud835\udc61\ud835\udc52\ud835\udc51\ud835\udc52\ud835\udc59\ud835\udc52\ud835\udc50\ud835\udc61\ud835\udc5f\ud835\udc5c\ud835\udc5b\ud835\udc60 \ud835\udc5b\ud835\udc62\ud835\udc5a\ud835\udc4f\ud835\udc52\ud835\udc5f\ud835\udc5c\ud835\udc53\ud835\udc56\ud835\udc5b\ud835\udc50\ud835\udc56\ud835\udc51\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc5d\u210e\ud835\udc5c\ud835\udc61\ud835\udc5c\ud835\udc5b\ud835\udc60\u22c5100% 8.6 Calculate the quantum yield, \ud835\udf11(%), for CO formation. The diagram below shows the change in the TOF of CO as \ud835\udf14\ud835\udc50\ud835\udc4e\ud835\udc61is varied. 8.7 How does the overall rate of CO formation per gram of C3N4 loaded with 1 change with increasing \ud835\udf14\ud835\udc50\ud835\udc4e\ud835\udc61? Tick the correct box. a) increases b) decreases c) doesn't change The reduction of CO2 can be accompanied by the reduction of additional protons. The changes in Gibbs energy during these two reactions are shown in the diagram. The system was irradiated using different LEDs. The diagram below shows the mole percentages, \ud835\udf12, of H2 and CO produced during the reduction of CO2 under four different conditions: no irradiation (N) and irradiation with red (R), green (G), and blue (B) light. 8.8 Tick which of the four conditions, mentioned above, corresponds to a, b, c and d in the diagram. Photosensitisers (PS) offer some advantages over C3N4 for the reduction of CO2. Mn(I)-containing complexes combined with PS can achieve ~23% quantum yield. In this system, reductive quenching of the singlet (S1) and triplet (T1) excited states of a PS by reductant (Red) forms PS\u2022\u2212, which donates electrons to CO2 through the Mn(I)-containing complex. PS(S1) + Red \ud835\udc58\ud835\udc46 \u2212\u2212\u2212\u2192PS\u2022\u2212+ Red\u2022+ \ud835\udc58\ud835\udc46= 2.7 \u00d7 109 M\u22121 s\u22121 PS(T1) + Red \ud835\udc58\ud835\udc47 \u2212\u2212\u2212\u2192PS\u2022\u2212+ Red\u2022+ \ud835\udc58\ud835\udc47= 1.5 \u00d7 108 M\u22121 s\u22121 The following Jablonski diagram describes the processes occurring in the PS: \ud835\udf0f0(S1) = 2.9 ns and \ud835\udf0f0(T1) = 84 \ud835\udf07s, where \ud835\udf0f0 is the emission lifetime in the absence of the quencher.",
+  "source_index": "T8-A9",
+  "source_page": 76,
+  "source_pdf": "theory_problem.pdf"
+}

@@ -1,0 +1,62 @@
+{
+  "target": "icho_2026_t6_a5",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302250.4336302,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/All.lean": "d56145b57c1a5684f95cc74505efb2cfbc13444f47862a08fc70a58574298a62",
+    "IChO2026Problems/problem_icho_2026_t6_a5.lean": "e0afc44bd90f72e832d9be1ce8c5eb233d99b1fd79a1839fce9516d89acd1445",
+    "answer.md": "80844940ed73a83ba6a168c406fc2fe3ca7739e0c3ab5990f7eecdf4775412bd",
+    "verification.md": "60b6297e47a92038e712a9037b23c538d7974dabb6f8081006e376e1929c311d",
+    "result.json": "989d566ad64f51fe10dd7dcd02457b2687df97f20a7a8bb4e484fa73581af612"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t6_a5",
+    "status": "completed",
+    "answer_summary": "F is the unsilylated first 1,4-diol; G is its bis-OTES ether; H is the terminal phenol after OTBS cleavage; I is the corresponding para-hydroxycyclohexadienone; J is the second 1,4-diol after para-bromophenyllithium addition; K is its bis-OTES ether; L is the five-unit macrocycle formed by intramolecular coupling of the two terminal aryl bromides.",
+    "theorem_names": [
+      "IChO2026Problems.T6A5.structure_f",
+      "IChO2026Problems.T6A5.structure_g",
+      "IChO2026Problems.T6A5.structure_h",
+      "IChO2026Problems.T6A5.structure_i",
+      "IChO2026Problems.T6A5.structure_j",
+      "IChO2026Problems.T6A5.structure_k",
+      "IChO2026Problems.T6A5.structure_l",
+      "IChO2026Problems.T6A5.structure_l_gives_five_cpp"
+    ],
+    "assumptions": [
+      "Standard organolithium addition to a cyclohexadienone carbonyl followed by work-up gives the corresponding alcohol and installs the aryl group.",
+      "TESCl/imidazole protects the two free masked-ring alcohols as OTES ethers.",
+      "In the stated sequence LiOH selectively exposes the terminal phenol from its OTBS ether while retaining the two masked-ring OTES groups.",
+      "Aqueous PhI(OAc)2 performs two-electron oxidative dearomatization of the para-substituted phenol to the para-hydroxycyclohexadienone.",
+      "Ni(COD)2/2,2'-bipyridine replaces the two terminal aryl C-Br bonds by the intramolecular aryl-aryl C-C bond.",
+      "The absence of stereochemical marks in the source and blank answer sheets means configurations are unspecified rather than assigned."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum icho_2026_source/image/T6_page-3.png icho_2026_source/image/T6_page-2.png icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t6_a5.lean",
+      "lake build IChO2026Run",
+      "! grep -RInE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t6_a5.lean",
+      "! grep -nE '[[:blank:]]+$' answer.md IChO2026Problems/problem_icho_2026_t6_a5.lean IChO2026Problems/All.lean result.json verification.md",
+      "python3 -m json.tool result.json"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

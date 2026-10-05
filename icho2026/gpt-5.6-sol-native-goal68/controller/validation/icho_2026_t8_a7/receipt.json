@@ -1,0 +1,53 @@
+{
+  "target": "icho_2026_t8_a7",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302838.0229194,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t8_a7.lean": "3e2d74b32f134e8615cc27cf61f7cdb641a232787e6ee49ceeb8ea2370a79ac2",
+    "answer.md": "a0af0611ef83ddb8ab880d470a3d4c56564fe7e94c0551dcab690e6907e96d0c",
+    "verification.md": "7883e830945e4d9ab6efe149a42231c3e770fb4c304b8ac05d1b5d15be97f1d6",
+    "result.json": "4f88a022426373fd8ec673a1cd008e2784f4d02b1ce2ebe5bff4b6450f8aa5f4"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a7",
+    "status": "completed",
+    "answer_summary": "Tick a) increases. The overall CO rate per gram is proportional to catalyst loading times TOF; the displayed rate index rises from 0.1*62 = 6.2 to 3.8*8 = 30.4 and the endpoint inequality remains strict under half-last-digit intervals.",
+    "theorem_names": [
+      "IChO2026Problems.T8A7.displayed_rate_indices",
+      "IChO2026Problems.T8A7.co_rate_trend",
+      "IChO2026Problems.T8A7.endpoint_rate_increase_under_rounding",
+      "IChO2026Problems.T8A7.physical_rate_increase_under_rounding",
+      "IChO2026Problems.T8A7.co_rate_trend_under_display_rounding"
+    ],
+    "assumptions": [
+      "The seven loading and TOF labels are transcribed from the problem graph.",
+      "By the problem's TOF definition, total product rate equals catalyst-molecule count times TOF; per gram of support, catalyst-molecule count is loading times a fixed positive conversion factor.",
+      "For the robustness theorem, displayed graph readings use the task-prescribed half-last-displayed-quantum intervals: 0.05 percentage point for endpoint loadings and 0.5 h^-1 for integer TOFs."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T8_page-2.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/image/T8_page-3.png /home/jing/icho-native-goal-gpt68-20260913-01/seed/icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t8_a7.lean",
+      "! grep -nE '\\b(sorry|admit|unsafe|axiom)\\b' IChO2026Problems/problem_icho_2026_t8_a7.lean",
+      "python3 -m json.tool result.json >/dev/null"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t3_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "X = cyclo[V–L]₆, where V = OHC–C₆H₃[–p-C₆H₄–NH–]₂ and L = –C(O)–C₆F₄–C(O)–. The smallest repeat is one V–L pair, C₂₇H₁₄F₄N₂O₃; the six formyl groups point outward.",
+      "id": "macrocycle_repeat",
+      "kind": "classification",
+      "raw_value": "V=OHC-C6H3[-p-C6H4-NH-]2 and L=-C(O)-C6F4-C(O)-. Six alternating V and L components form cyclo[V-L]6; each L connects N_i-C(O)-C6F4-C(O)-N_(i+1). The least positive component period is [V,L], whose exact molecular formula is C27H14F4N2O3.",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

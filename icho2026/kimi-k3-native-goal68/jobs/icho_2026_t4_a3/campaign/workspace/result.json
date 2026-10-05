@@ -1,0 +1,47 @@
+{
+  "target_id": "icho_2026_t4_a3",
+  "status": "completed",
+  "answer_summary": "235_92U + 1_0n -> 72_30Zn + 161_62Sm + 3 1_0n. Charge conservation Z1+Z2=92 with the problem's same-group clause plus the fission-yield graph force the unique group-12 light fragment Zn (Z=30) with heavy partner Sm (Z=62); mass conservation with the problem's stated 3 emitted neutrons forces A1+A2=233, resolved to 72+161 within the plotted high-yield humps.",
+  "theorem_names": [
+    "IChO2026T4A3.fission_mass_balance",
+    "IChO2026T4A3.fission_charge_balance",
+    "IChO2026T4A3.three_neutrons",
+    "IChO2026T4A3.zinc_group",
+    "IChO2026T4A3.group_functional_main_rows",
+    "IChO2026T4A3.unique_sameGroup_split",
+    "IChO2026T4A3.answer_split_balanced",
+    "IChO2026T4A3.fragment_mass_partition",
+    "IChO2026T4A3.heavy_mass_forced",
+    "IChO2026T4A3.light_fragment_in_yield_region",
+    "IChO2026T4A3.heavy_fragment_in_yield_region",
+    "IChO2026T4A3.icho_2026_t4_a3_answer"
+  ],
+  "assumptions": [
+    "Problem template (Q4-1 text): fission of 235U after neutron absorption emits exactly 3 additional neutrons; conservation of mass number A and atomic number Z.",
+    "IUPAC periodic table data (atomic numbers and group numbers) encoded as the iupacGroup function; ordinary scientific reference, not a competition answer.",
+    "Yield-graph reading: the P(A) graph on Q4-1 shows nonzero yield approximately over A in [70,104] and A in [128,166]; bounds recorded conservatively since the graph is a raster image without machine-readable values.",
+    "Same-group pairing: the unique balanced charge split with the light partner in IUPAC group 12 is {30,62}; proved exhaustively. The corresponding nuclides 72Zn and 161Sm are known 235U fission products (ordinary nuclear-data reference)."
+  ],
+  "source_gaps": [
+    "Strictly literal reading in which BOTH fragments carry the same numeric IUPAC group label admits no balanced split consistent with the plotted fission yields (group-2 splits pair with noble gases; {12,80} would require masses far outside the yield range). The answer uses the unique group-12 light-partner split {Zn,Sm}, which is the only equation satisfying all problem-stated constraints.",
+    "Exact pixel-level values of the P(A) yield graph are not machine-readable; yield-region bounds are a conservative image reading."
+  ],
+  "verification_commands": [
+    {
+      "command": "lake env lean IChO2026Problems/problem_icho_2026_t4_a3.lean",
+      "result": "exit 0; output: 'IChO2026T4A3.icho_2026_t4_a3_answer' depends on axioms: [propext, Quot.sound]"
+    },
+    {
+      "command": "lake build IChO2026Problems",
+      "result": "Build completed successfully (8564 jobs); only a style lint in protected umbrella header IChO2026Problems.lean"
+    }
+  ],
+  "axioms_final_theorem": ["propext", "Quot.sound"],
+  "no_sorry_no_admit_no_native_decide": true,
+  "points": 3.0,
+  "files": {
+    "lean": "IChO2026Problems/problem_icho_2026_t4_a3.lean",
+    "answer": "answer.md",
+    "verification": "verification.md"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t4_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "¹¹₅B + ⁴₂α → ¹⁴₇N + ¹₀n",
+      "id": "nuclear_a",
+      "kind": "formula",
+      "raw_value": "11_5 B + 4_2 alpha -> 14_7 N + 1_0 n",
+      "unit": ""
+    },
+    {
+      "display_value": "γ + ²₁H → ¹₁H + ¹₀n",
+      "id": "nuclear_b",
+      "kind": "formula",
+      "raw_value": "gamma + 2_1 H -> 1_1 H + 1_0 n",
+      "unit": ""
+    },
+    {
+      "display_value": "⁹₄Be + ⁴₂α → ¹²₆C + ¹₀n",
+      "id": "nuclear_c",
+      "kind": "formula",
+      "raw_value": "9_4 Be + 4_2 alpha -> 12_6 C + 1_0 n",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

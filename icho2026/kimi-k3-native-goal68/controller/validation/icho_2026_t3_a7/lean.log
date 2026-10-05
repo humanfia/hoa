@@ -1,0 +1,2 @@
+'icho_2026_t3_a7_equilibrium_absorption_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'icho_2026_t3_a7_uranyl_ions_per_pore' depends on axioms: [propext, Classical.choice, Quot.sound]

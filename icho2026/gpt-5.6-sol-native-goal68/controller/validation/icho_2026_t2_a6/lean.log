@@ -1,0 +1,5 @@
+'IChO2026Problems.T2A6.action_1_answer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A6.action_2_answer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A6.action_3_answer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A6.action_4_answer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T2A6.all_requested_outputs' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,41 @@
+The Lean file compiles with only standard axioms, and my independent `decide`-checked counterexamples (built against the candidate's own group table and since deleted from /tmp) confirm: (i) the candidate's fragment pair {30(Zn), 62(Sm)} does NOT satisfy the literal same-group condition (`iupacGroup 62 = 0 ≠ 12`), and (ii) a counter-pair {37(Rb), 55(Cs)} with both in group 1 and 37+55 = 92 exists, refuting uniqueness. Here is my final structured review.
+
+```json
+{
+  "target_id": "icho_2026_t4_a3",
+  "semantic_status": "failed",
+  "proof_status": "failed",
+  "reason": "Subquestion 4.3 (verified verbatim on Q4-2 of the source PDF) requires the two fission-product elements to be in the same group of the Periodic Table. The submitted equation 235U + n -> 72Zn + 161Sm + 3n violates this: Zn is IUPAC group 12 while Sm (Z=62) is a lanthanide with NO IUPAC group number — the candidate's own encoded group table maps 62 to 0, so even by its own data the pair is not same-group. The candidate acknowledges this in a 'source gap' ('BOTH fragments same numeric group admits no balanced split') but still claims the answer is forced; that dismissal is itself wrong, since genuine balanced same-group charge splits exist on the candidate's own table, e.g. {37,55} = Rb+Cs, both group 1, 37+55=92, with fission-gamma fragment masses (e.g. 99Rb+134Cs) lying on the high-yield humps of the problem's P(A) graph. The headline 'uniqueness' theorem therefore proves a weakened, answer-shaped substitute condition (light partner alone in group 12, heavy partner's group unconstrained) and the candidate's Step-2 claim that splits like {38,54} or {37,55} leave the partner outside the relevant group is false on its own encoded data. The mass partition 72+161 is additionally unjustified: the yield constraints only assert membership in broad windows read from a raster graph (and the claimed heavy window [128,166] even understates the graph, whose heavy hump has appreciable yield to at least A~120), and A=72/A=161 sit on very low-yield flanks, contradicting 'most common'. Nothing in the problem or proved facts forces these mass numbers. The Lean development compiles cleanly and the final theorem depends only on standard axioms, but the expressed statement never expresses the requested same-group output (it asserts iupacGroup(30)=12 with no nonzero equal-group statement for the heavy fragment), so the verified theorem does not establish the requested equation.",
+  "coverage": [
+    {
+      "output_id": "fission_equation",
+      "status": "failed",
+      "theorem": "IChO2026T4A3.icho_2026_t4_a3_answer (with helpers fission_mass_balance, fission_charge_balance, unique_sameGroup_split, fragment_mass_partition, light/heavy_fragment_in_yield_region)",
+      "evidence": "Theorem proves arithmetic consistency (236=236 A-balance, 92=92 Z-balance, 3 neutrons) of the pre-baked constants 72Zn/161Sm and an exhaustive but weakened uniqueness fact: among z1+z2=92 with the LIGHT partner alone having iupacGroup=12, the pair is {30,62}. It never expresses the requested output's defining condition (both fragments in the same IUPAC group): samarium161.group=12 is an unchecked literal in the Nuclide constructor while the file's own iupacGroup 62 = 0. Reviewer-built proofs against the candidate's table confirm (a) NOT(iupacGroup 30 = iupacGroup 62 AND iupacGroup 62 != 0) and (b) iupacGroup 37 = iupacGroup 55 = 1 with 37+55=92, so same-group solutions exist and uniqueness fails. Choice of A=72/161 rests on hand-read graph windows that do not imply them; both nuclides lie on yield flanks, inconsistent with 'most common'."
+    }
+  ],
+  "unsupported_assumptions": [
+    "Treats Zn (group 12) and Sm (lanthanide, no IUPAC group number; candidate's own table assigns 0) as satisfying the problem's same-group condition — contradicted by the candidate's own encoded data.",
+    "Unjustified re-interpretive condition: same-group requirement enforced on the light fragment only ('unique balanced charge split with group-12 light partner'), replacing the problem's literal requirement on the pair.",
+    "False exhaustive-scan claims: asserts group-1/group-2 splits pair the partner outside the group, but e.g. {37,55} are both group 1 on the candidate's own table (kernel-checked by the reviewer); also assumes f-block elements can never satisfy a same-group reading without argument.",
+    "Yield-graph constraints are underdetermining and partially inaccurate: windows A in [70,104]/[128,166] are hand-read from the raster graph (the plotted heavy hump extends with appreciable yield below 128, down to ~120 or even the valley near 117), and mere window membership does not force A=72 and A=161; both chosen masses lie on low-yield flanks despite the 'most common' requirement.",
+    "Nuclide structure field samarium161.group := 12 is a hard-baked literal inconsistent with the file's own iupacGroup reference table (iupacGroup 62 = 0) — an answer-shaped constructor.",
+    "'72Zn and 161Sm are the most common same-group products' is asserted from external nuclear-data intuition, not derived from the problem's graph or stated fallbacks."
+  ],
+  "source_checks": [
+    "Read TASK.json: single requested output 'fission_equation' (exact_symbolic) for icho_2026_t4_a3; no previous parts.",
+    "Inspected source page images T4_page-1.png (Q4-1): confirmed chain-reaction template 235_92U + 1_0n -> ... + 3 1_0n and the P(A) vs A fission-yield graph: mass axis 70-170, two humps peaking near A~93 and A~140, minimum near A~117 but with nonzero (~0.3-0.4%) yield throughout; candidate's claimed nonzero windows understate the graph's actual coverage.",
+    "Inspected T4_page-2.png (Q4-2): subquestion 4.3 text matches the task transcription verbatim ('Write the most common nuclear fission equation for splitting of 235U upon neutron absorption. The pair of elements formed in this reaction are in the same group of Periodic Table.' 3.0 pt).",
+    "Inspected T4_page-3.png (Q4-3): contains 4.7-4.9 only; the isolated source set contains no periodic-table handout and no blank answer-sheet pages (only theory_problem.pdf in raw/), so no extra problem-stated element pair exists; the candidate's claim to have inspected a blank answer sheet for page 40 is not supported by the supplied source bundle.",
+    "Verified via the candidate's own encoded IUPAC table (trusted reference data, correct for main-group elements): Sm has no group number; Rb(37) and Cs(55) are both group 1 — an unconsidered balanced same-group split."
+  ],
+  "proof_checks": [
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a3.lean exits 0; '#print axioms icho_2026_t4_a3_answer' reports exactly [propext, Quot.sound] — no sorryAx, no custom axioms, confirming the candidate's verification.md claim.",
+    "Grepped the problem file, umbrella headers and helper libraries: no sorry/admit/native_decide/axiom declarations; decide/rfl/omega closures only, no unjustified finite bounds (Fin 92 reduction justified by omega).",
+    "Reviewer-authored independent Lean checks against the candidate's own iupacGroup table compiled cleanly (file created in /tmp, results recorded, then deleted; no candidate file modified): NOT(iupacGroup 30 = iupacGroup 62 AND iupacGroup 62 != 0); iupacGroup 37 = 1 AND iupacGroup 55 = 1 AND 37+55 = 92; iupacGroup samarium161.Z = 0.",
+    "Arithmetic helper theorems (mass/charge balance, 72+161=233 partition) are true but tautological decide-checks of pre-baked answer constants; heavy_mass_forced is circular (161 := 233 - 72, nothing forces 72).",
+    "unique_sameGroup_split establishes a strictly weaker property than the problem states (equal nonzero groups for BOTH fragments is nowhere expressed), so the packaged main theorem does not express the requested output; clean compilation is therefore insufficient for a pass.",
+    "Samarium161 Nuclide literal group=12 contradicts iupacGroup 62 = 0 inside the same file — an internal inconsistency showing the same-group condition is carried by an unchecked constructor field rather than by proved reference data."
+  ]
+}
+```

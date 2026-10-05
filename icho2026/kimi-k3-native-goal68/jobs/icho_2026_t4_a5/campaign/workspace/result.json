@@ -1,0 +1,42 @@
+{
+  "target_id": "icho_2026_t4_a5",
+  "status": "completed",
+  "answer_summary": "n_c = ln(E0/E_target)/ξ = ln(2·10^6/0.012)/0.948 = ln((5/3)·10^8)/0.948 ≈ 18.93151/0.948 ≈ 19.97 collisions; reported at three significant figures as 20.0 (i.e. about 20 collisions on average). Certified in Lean as 19.96 ≤ ncRaw < 19.98 with ncRaw = log(Einitial/Etarget)/ξWater the unique solution of ξWater·n = log(Einitial/Etarget), and reported value 20.0 at quantum 0.1 satisfying IChO2026Chem.Reporting.ValidNumericSubmission.",
+  "theorem_names": [
+    "IChO2026.T4_A5.logEnergyAfter_eq",
+    "IChO2026.T4_A5.averageCollisions_spec",
+    "IChO2026.T4_A5.averageCollisions_unique",
+    "IChO2026.T4_A5.ncRaw_eq",
+    "IChO2026.T4_A5.ncRaw_spec",
+    "IChO2026.T4_A5.E_ratio",
+    "IChO2026.T4_A5.log_two_lower",
+    "IChO2026.T4_A5.log_two_upper",
+    "IChO2026.T4_A5.log_five_halves_lower",
+    "IChO2026.T4_A5.log_five_halves_upper",
+    "IChO2026.T4_A5.log_five_thirds_lower",
+    "IChO2026.T4_A5.log_five_thirds_upper",
+    "IChO2026.T4_A5.log_ten_eq",
+    "IChO2026.T4_A5.log_ten_lower",
+    "IChO2026.T4_A5.log_ten_upper",
+    "IChO2026.T4_A5.log_total_eq",
+    "IChO2026.T4_A5.log_total_lower",
+    "IChO2026.T4_A5.log_total_upper",
+    "IChO2026.T4_A5.ncRaw_lower",
+    "IChO2026.T4_A5.ncRaw_upper",
+    "IChO2026.T4_A5.ncRaw_bounds",
+    "IChO2026.T4_A5.ncRaw_in_reporting_cell",
+    "IChO2026.T4_A5.submission_valid"
+  ],
+  "assumptions": [
+    "Problem-printed inputs: E_initial = 2 MeV, E_target = 0.012 eV, ξ(water) = 0.948, and the problem-printed per-collision law ξ = ln(E_initial/E_final) with ξ independent of the neutron energy (shared T4 context, printed page Q4-2).",
+    "Standard unit definition 1 MeV = 10^6 eV (trusted general law), used only to convert both printed energies to eV.",
+    "The average collision count is the unique real n solving ξ·n = ln(E0/E_target), obtained by iterating the printed per-collision average decrement (proved as logEnergyAfter_eq).",
+    "Final reporting at the uniform answer-blind default of three significant figures (quantum 0.1 for a value near 20), per the reporting policy in TASK.json."
+  ],
+  "source_gaps": [],
+  "verification_commands": [
+    "lake build IChO2026Problems   # Build completed successfully (8564 jobs)",
+    "lake env lean IChO2026Problems/problem_icho_2026_t4_a5.lean   # exit 0, no errors or warnings",
+    "lake env lean IChO2026Run/AxiomCheck.lean   # all final theorems depend only on [propext, Classical.choice, Quot.sound]"
+  ]
+}

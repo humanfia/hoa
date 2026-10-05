@@ -1,0 +1,12 @@
+'IChO2026Problems.ProblemIChO2026T6A6.leastCrowded_sites_unique' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.ProblemIChO2026T6A6.m_has_four_proton_environments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.ProblemIChO2026T6A6.structure_M' depends on axioms: [propext]
+'IChO2026Problems.ProblemIChO2026T6A6.structure_N' depends on axioms: [propext]
+'IChO2026Problems.ProblemIChO2026T6A6.structure_O' depends on axioms: [propext]
+'IChO2026Problems.ProblemIChO2026T6A6.structure_Q' depends on axioms: [propext]
+'IChO2026Problems.ProblemIChO2026T6A6.structure_R' depends on axioms: [propext]
+'IChO2026Problems.ProblemIChO2026T6A6.structure_P' depends on axioms: [propext]
+'IChO2026Problems.ProblemIChO2026T6A6.structure_P_source_gap' depends on axioms: [propext]
+'IChO2026Problems.ProblemIChO2026T6A6.structure_P6' depends on axioms: [propext]

@@ -1,0 +1,9 @@
+'IChO2026Problems.T7A7.nitride_percentages_match_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.T7A7.stoichiometric_mass_ratios_match_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.T7A7.synthesis_atom_balance' does not depend on any axioms
+'IChO2026Problems.T7A7.formula10_is_primitive' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T7A7.nitride_charge_neutrality' depends on axioms: [propext]
+'IChO2026Problems.T7A7.anion_compositions_forced' depends on axioms: [propext, Quot.sound]
+'IChO2026Problems.T7A7.icho_2026_t7_a7' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,33 @@
+{
+  "target_id": "icho_2026_t3_a3",
+  "status": "completed",
+  "answer_summary": "Completed reticular-design table. Tetragonal1: A3+B2 / XXX; Tetragonal2: C3+D4 / XXX; Hexagonal1: A1+B2 / C1+D2 (no XXX; a fourth realiser E1+D4 exists); Hexagonal2: A1+B3 / XXX; Trigonal: C1+D1 / XXX; Kagome: B1+A2 / XXX; Tetrahedral: A4+B2 / C1+D3. Every pair is unique across the table and realises its column's net under boronate-ester/imine/C=C condensation; all XXX cells are backed by kernel-checked exhaustive enumeration of admissible pairs.",
+  "theorem_names": [
+    "supplied_hexagonal1",
+    "supplied_hexagonal2",
+    "supplied_kagome",
+    "square_net_exhaustive",
+    "hexagonal1_net_exhaustive",
+    "hexagonal2_net_exhaustive",
+    "trigonal_net_exhaustive",
+    "tetrahedral_net_exhaustive",
+    "kagome_net_exhaustive",
+    "filled_entries_realise",
+    "table_fill_correct"
+  ],
+  "assumptions": [
+    "Monomer connectivities counted from the printed Q3-3 structures: A1=3,A2=2,A3=4,A4=4,B1=4,B2=2,B3=3,C1=2,C2=4,C3=4,D1=6,D2=3,D3=4,D4=2,E1=3.",
+    "A4 (Si) and D3 (sp3 C) are tetrahedral 3-D centres; all other monomers planar.",
+    "Allowed linkages restricted to boronate-ester (A x B), imine (C x D), and C=C/Knoevenagel (E x D) condensations per the Q3-3 banner; complementary class pairing only.",
+    "Hexagonal 2 read as the staggered (3,3) honeycomb, forced by its printed (3-connecting + 3-connecting) example E1+D2; Hexagonal 1 is the (3,2) honeycomb (A2+B3)."
+  ],
+  "source_gaps": [
+    "The two hexagonal figures are the same skeleton; the Hexagonal 1 vs Hexagonal 2 distinction is inferred from the printed examples' connectivities (3,2 vs 3,3) rather than stated textually. Declared in answer.md; no marking scheme consulted."
+  ],
+  "verification_commands": [
+    "cd /home/jing/icho-native-goal-kimi68-20260914-01/jobs/icho_2026_t3_a3/campaign/workspace",
+    "lake env lean IChO2026Problems/problem_icho_2026_t3_a3.lean   # exit 0",
+    "grep -n \"sorry\\|native_decide\\|admit\\b\\|axiom \" IChO2026Problems/problem_icho_2026_t3_a3.lean   # only a doc-comment word 'admit'",
+    "#print axioms for all final theorems: only [propext, Classical.choice, Quot.sound]"
+  ]
+}

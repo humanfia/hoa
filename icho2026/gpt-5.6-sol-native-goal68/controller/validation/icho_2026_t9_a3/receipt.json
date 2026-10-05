@@ -1,0 +1,52 @@
+{
+  "target": "icho_2026_t9_a3",
+  "goal_status": "goal_complete",
+  "checked_at": 1789303148.4470112,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a3.lean": "c63424c5018d12d0fecf0a2c459e34eac3e827425ba90f850dad17a5cfa95b0d",
+    "answer.md": "8fcd387cc826b5023caa33d5f8f45a5a1035d7a20a19e30a1ddbcacc8219d546",
+    "verification.md": "b4d5dfd6d9350c4773f8153145ac1f7d691234e8d841f52aab242c7844b29ba7",
+    "result.json": "ca8685b29677bcaf584443258e2928862cdc96ffeeb696227c9eddf09323f2a5"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a3",
+    "status": "completed",
+    "answer_summary": "The seven opened glucopyranoside repeats contribute five atoms each to the surviving covalent loop and three retained stereocentres each, so rs = 35 and sc = 21.",
+    "theorem_names": [
+      "IChO2026Problems.T9A3.macrocycle_X_ring_size",
+      "IChO2026Problems.T9A3.macrocycle_X_stereocentres",
+      "IChO2026Problems.T9A3.macrocycle_X_requested_outputs"
+    ],
+    "assumptions": [
+      "Problem input: the beta-cyclodextrin starting-material diagram contains seven glucopyranoside repeats.",
+      "Standard periodate chemistry: NaIO4 cleaves the C2-C3 vicinal-diol bond in each repeat.",
+      "Standard borohydride chemistry: NaBH4 reduces the resulting carbonyl ends so the former C2 and C3 sites are methylene carbons.",
+      "Acetylation with Ac2O/pyridine changes alcohol functionality but neither reconnects C2-C3 nor adds a stereogenic carbon.",
+      "Ring size counts all atoms in the surviving covalent cyclic path."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "lake env lean IChO2026Problems/problem_icho_2026_t9_a3.lean",
+      "grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe|axiom)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t9_a3.lean",
+      "sha256sum icho_2026_source/raw/theory_problem.pdf icho_2026_source/image/T9_page-1.png icho_2026_source/image/T9_page-2.png"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

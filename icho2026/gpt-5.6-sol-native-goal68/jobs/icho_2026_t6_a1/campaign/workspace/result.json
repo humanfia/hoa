@@ -1,0 +1,32 @@
+{
+  "target_id": "icho_2026_t6_a1",
+  "status": "completed",
+  "answer_summary": "A/AA counts in columns C18, C16, triplet C13, singlet C13 are respectively A = [2, 0, 0, 1] and AA = [0, 2, 0, 1].",
+  "theorem_names": [
+    "IChO2026Problems.IChO2026T6A1.c18_aromatic",
+    "IChO2026Problems.IChO2026T6A1.c18_antiaromatic",
+    "IChO2026Problems.IChO2026T6A1.c16_aromatic",
+    "IChO2026Problems.IChO2026T6A1.c16_antiaromatic",
+    "IChO2026Problems.IChO2026T6A1.triplet_c13_aromatic",
+    "IChO2026Problems.IChO2026T6A1.triplet_c13_antiaromatic",
+    "IChO2026Problems.IChO2026T6A1.singlet_c13_aromatic",
+    "IChO2026Problems.IChO2026T6A1.singlet_c13_antiaromatic",
+    "IChO2026Problems.IChO2026T6A1.completed_table"
+  ],
+  "assumptions": [
+    "An sp cyclocarbon has two distinct cyclic pi manifolds, in-plane and out-of-plane.",
+    "Neutral even C_n supplies n pi electrons to each manifold.",
+    "Triplet C13 places one unpaired carbene electron in each manifold, giving populations 13 and 13.",
+    "For the elementary Huckel table, singlet C13 is interpreted as the conventional closed-shell singlet carbene with a paired/empty frontier-orbital distribution, giving populations 14 and 12.",
+    "A positive cyclic system with 4k+2 pi electrons is aromatic; one with positive 4k pi electrons is anti-aromatic; 4k+1 is neither under Huckel's rule."
+  ],
+  "source_gaps": [
+    "The problem page gives only S = 0 for singlet C13 and does not print its orbital occupation. Spin zero alone does not logically exclude an open-shell singlet. The reported 1/1 entry follows the conventional closed-shell singlet-carbene interpretation intended by the elementary Huckel exercise; an open-shell 13/13 singlet would instead give 0/0. This boundary is explicitly documented rather than hidden."
+  ],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T6_page-1.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t6_a1.lean",
+    "grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t6_a1.lean",
+    "python3 -m json.tool result.json > /dev/null"
+  ]
+}

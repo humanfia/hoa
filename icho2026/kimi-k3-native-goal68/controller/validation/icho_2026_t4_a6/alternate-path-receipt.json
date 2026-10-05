@@ -1,0 +1,11 @@
+{
+  "target": "icho_2026_t4_a6",
+  "actual_path": "IChO2026Problems/Problem_icho_2026_t4_a6.lean",
+  "required_path_matches": false,
+  "lean_exit_code": 0,
+  "source_sha256": "979dca052e145a1ab99ba8791769a97ac4f1bc505e46542bec1473d3ef1e73e8",
+  "source_unchanged": true,
+  "semantic_review": "pending",
+  "accepted": false,
+  "at": 1789359017.9106894
+}

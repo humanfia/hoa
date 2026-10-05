@@ -1,0 +1,5 @@
+'IChO2026Problems.Icho2026T9A4.structure_y' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IChO2026Problems.Icho2026T9A4.graph_formula_is_printed_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IChO2026Problems.Icho2026T9A4.every_atom_has_normal_valence' depends on axioms: [propext, Classical.choice, Quot.sound]

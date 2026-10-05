@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t4_a4",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "185",
+      "id": "fission_energy",
+      "kind": "numeric",
+      "raw_value": "233*(845/100)+3*0-(235*(759/100)+1*0)",
+      "unit": "MeV"
+    }
+  ],
+  "schema_version": 1
+}

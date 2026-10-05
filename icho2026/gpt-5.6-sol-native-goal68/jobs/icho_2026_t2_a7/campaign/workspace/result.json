@@ -1,0 +1,33 @@
+{
+  "target_id": "icho_2026_t2_a7",
+  "status": "completed",
+  "answer_summary": "Under the standard fixed-temperature, fixed-pressure spontaneous-reaction interpretation, tick the bottom-right (third-row, right-column) graph: dG/dt remains nonpositive, oscillates with decaying amplitude, and tends to zero from below.",
+  "theorem_names": [
+    "IChO2026Problems.T2A7.stepGibbsRate_nonpositive",
+    "IChO2026Problems.T2A7.gibbs_tends_to_infimum",
+    "IChO2026Problems.T2A7.stepGibbsRate_tends_to_zero",
+    "IChO2026Problems.T2A7.closed_oscillatory_rate_constraints",
+    "IChO2026Problems.T2A7.gibbsDerivative_nonpositive",
+    "IChO2026Problems.T2A7.continuous_gibbs_rate_constraints",
+    "IChO2026Problems.T2A7.satisfies_constraints_iff_bottomRight",
+    "IChO2026Problems.T2A7.gibbs_rate_graph_answer",
+    "IChO2026Problems.T2A7.closed_oscillatory_system_selects_bottomRight",
+    "IChO2026Problems.T2A7.continuous_system_selects_bottomRight",
+    "IChO2026Problems.T2A7.selectedGraph_eq_bottomRight"
+  ],
+  "assumptions": [
+    "The standard Gibbs-energy criterion applies: the closed system evolves spontaneously at fixed temperature and pressure with no non-expansion work, so Gibbs energy is nonincreasing.",
+    "The finite reacting system has Gibbs energy bounded below and relaxes toward equilibrium.",
+    "The source phrase oscillatory reaction is represented qualitatively by an oscillatory Gibbs-dissipation rate; no numerical period or amplitude is assumed."
+  ],
+  "source_gaps": [
+    "The problem says closed but does not explicitly state fixed temperature and pressure or the absence of non-expansion work; closedness alone is insufficient for an unconditional dG/dt <= 0 claim.",
+    "The problem supplies no concrete differentiable time law. The continuous Lean theorem therefore keeps differentiability, rate oscillation, and relaxation to zero as explicit model premises; a separate discrete theorem derives the analogous sign and limiting facts from monotonicity and a lower bound without inventing a kinetic function."
+  ],
+  "verification_commands": [
+    "sha256sum icho_2026_source/image/T2_page-4.png icho_2026_source/image/T2_page-3.png icho_2026_source/raw/theory_problem.pdf",
+    "lake env lean IChO2026Problems/problem_icho_2026_t2_a7.lean",
+    "if grep -nE '(^|[^[:alnum:]_])(sorry|admit|unsafe)([^[:alnum:]_]|$)' IChO2026Problems/problem_icho_2026_t2_a7.lean; then echo 'forbidden proof shortcut found'; exit 1; else echo 'no sorry/admit/unsafe proof shortcut found'; fi",
+    "python3 -m json.tool result.json"
+  ]
+}

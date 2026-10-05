@@ -1,0 +1,80 @@
+Both drawn reagents match the candidate's transcriptions exactly (4-lithio-4′-OTBS biphenyl; para-Li/para-Br bromobenzene; p-quinol starting material with C=O top, OH and 4-BrPh at the bottom sp³ carbon). I have now verified everything needed: page images, all Lean sources, independent compilation, axiom audit, and hand-checked formulas.
+
+Key review findings:
+
+- **Source fidelity**: The `Molecule` encodings of the drawn starting material (C₁₂H₉BrO₂) and both drawn organolithium reagents (C₁₈H₂₃LiOSi, C₆H₄BrLi) match the pixels of T6_page-3.png exactly (para placements, OTBS on the remote biphenyl ring, quinol sp³ junction). The two printed anchor formulas (H: C₃₆H₄₇BrO₃Si₂; L: C₅₄H₈₀O₄Si₄) are proved, not assumed — they fix the LiOH regioselectivity (aryl ether cleaved, both tertiary OTES survive) and the Yamamoto double dehalogenation with one new W–P biaryl bond.
+- **Structures**: F = ArLi 1,2-addition to the dienone C=O (C₃₀H₃₃BrO₃Si, sp³ C1 after addition); I verified +O at I, +C₆H₁₄Si twice at G/K (net), −C₆H₁₄Si at H, −2Br at L, and the −4(C₆H₁₄Si)−O₄H₄ endpoint stoichiometry to drawn [5]CPP (C₃₀H₂₀). All hand-arithmetic matches the `decide` results. Every requested output carries explicit connectivity (sp³ lists, Kekulé bonds, substituent tables, biaryl link lists), not a string match.
+- **Proof integrity**: Independent compile exit 0; `#print axioms` shows only `[propext, Quot.sound]` for every final theorem; no `sorry`/`admit`/`axiom`/`native_decide` in any source; the derivation theorems are genuine universally-quantified element-count equalities chaining SM → F → G → H → I → J → K → L → [5]CPP.
+- **Disclosed modeling choices**: The formula-neutral OTBS→OTES rendering of the aryl ether in G (identical C₆H₁₅Si) is explicitly disclosed and pinned by H's printed formula; no stereochemistry is requested by the problem, and none is claimed beyond explicit sp³ constitution — no unsupported conditional result.
+
+```json
+{
+  "target_id": "icho_2026_t6_a5",
+  "semantic_status": "passed",
+  "proof_status": "passed",
+  "reason": "All seven requested structures F-L are encoded as explicit molecular graphs (ring units, sp3/sp2 carbons, Kekulé double bonds, substituent inventories, biaryl link lists) transcribed from the pixels of T6_page-3.png: the drawn p-quinol starting material (C12H9BrO2, C=O top, OH + 4-BrPh at the sp3 carbon), the drawn 4-lithio-4'-OTBS-biphenyl and para-Li/para-Br phenyllithium reagents, and the boxed [5]CPP endpoint all match the source images after direct inspection including zoomed crops. Each structure is derived stepwise by standard chemistry (ArLi 1,2-addition to the dienone carbonyl, TES capping, LiOH cleavage of the aryl silyl ether only, PhI(OAc)2 two-electron oxidative dearomatization to the para-quinol, Yamamoto Ni(0)/bpy macrocyclization with loss of both Br, TBAF/SnCl2 aromatization), and the two problem-printed anchor formulas (H = C36H47BrO3Si2, L = C54H80O4Si4) are PROVED from the encodings, pinning the LiOH selectivity and the W-P macrocyclizing bond; the boxed [5]CPP (C30H20, five aromatic 6pi rings) serves as a proved endpoint consistency check. Independent compilation succeeded (exit 0) and #print axioms reports only [propext, Quot.sound] for every final theorem; no sorry/admit/axiom/native_decide anywhere. The single non-pixel-determined detail (aryl silyl ether drawn as OTES in G; TBS and TES share formula C6H15Si) is explicitly disclosed, is formula-neutral at every downstream step including both printed anchors, and does not condition any final claim.",
+  "coverage": [
+    {
+      "output_id": "structure_f",
+      "status": "passed",
+      "theorem": "IChO2026T6A5.structure_f",
+      "evidence": "structF graph encodes addition of the drawn 4-lithio-4'-OTBS-biphenyl to the drawn p-quinol C=O: sp3 R0 bearing OH + biphenyl link R0-A0, sp3 R3 bearing OH + W link; theorem proves formula C30H33BrO3Si, mass 549, 3 aromatic / 0 antiaromatic rings, link and double-bond lists via decide; derivation_F proves count(SM)+count(reagent)+H-Li identity. Starting material and reagent encodings verified against page pixels."
+    },
+    {
+      "output_id": "structure_g",
+      "status": "passed",
+      "theorem": "IChO2026T6A5.structure_g",
+      "evidence": "structG caps both tertiary OH of F as OTES (2 equiv. TESCl/imidazole over the arrow); formula C42H61BrO3Si3, 3 OTES + 1 Br proved. derivation_G proves G = F + 2*C6H14Si; the aryl OTBS->OTES rendering is formula-neutral (identical C6H15OSi subContrib) and disclosed; consistency with printed H formula verified downstream."
+    },
+    {
+      "output_id": "structure_h",
+      "status": "passed",
+      "theorem": "IChO2026T6A5.structure_h",
+      "evidence": "structH keeps both tertiary OTES on ring R and liberates the free phenol on ring B (LiOH cleaves only the aryl silyl ether); proved formula equals the problem-printed C36H47BrO3Si2 exactly (mass 663, 2 OTES + 1 OH + 1 Br). derivation_H proves H = G - C6H14Si; selectivity pinned by the printed formula, not assumed as an unconstrained model condition."
+    },
+    {
+      "output_id": "structure_i",
+      "status": "passed",
+      "theorem": "IChO2026T6A5.structure_i",
+      "evidence": "structI dearomatizes phenol B to a para-quinol (carbonyl at B3, sp3 junction B0 bearing the new OH, diene B1-B2/B4-B5), matching both the printed H2O co-reactant and the problem statement that PhI(OAc)2 is a two-electron oxidant, in analogy to the drawn starting quinol; formula C36H47BrO4Si2 proved, derivation_I proves net +O with no H change; aromatic count drops to 2 as expected for the quinol ring."
+    },
+    {
+      "output_id": "structure_j",
+      "status": "passed",
+      "theorem": "IChO2026T6A5.structure_j",
+      "evidence": "structJ encodes addition of the drawn 4-lithiobromobenzene (Li/Br para, verified on pixels) to the B-ring dienone C=O: sp3 B3 bearing OH + new link B3-P0; formula C42H52Br2O4Si2 (mass 836, 2 OH + 2 OTES + 2 Br) proved; derivation_J proves I + reagent + H - Li."
+    },
+    {
+      "output_id": "structure_k",
+      "status": "passed",
+      "theorem": "IChO2026T6A5.structure_k",
+      "evidence": "structK caps both B-ring OH as OTES (2 equiv. TESCl/imidazole): four OTES, two aryl bromides on W and P; formula C54H80Br2O4Si4 (mass 1064) proved; derivation_K proves K = J + 2*C6H14Si; connectivity (4 biaryl links, two diene + three benzene rings) explicit in the statement."
+    },
+    {
+      "output_id": "structure_l",
+      "status": "passed",
+      "theorem": "IChO2026T6A5.structure_l",
+      "evidence": "structL encodes the Ni(COD)2/2,2'-bipyridine Yamamoto macrocyclization: both bromines expelled, one new biaryl bond W3-P3 closing the five-ring para-linked belt; theorem proves formula equals the problem-printed C54H80O4Si4 exactly, linkCount = 5, membership of the W-P cyclizing bond in the explicit link list, and 0 Br; derivation_L proves L = K - 2Br; derivation_cpp + cpp5_formula_and_aromaticity prove the chain terminates in the drawn boxed [5]CPP (C30H20, 5 aromatic 6pi rings, 5 links, mass 380)."
+    }
+  ],
+  "unsupported_assumptions": [],
+  "source_checks": [
+    "Inspected T6_page-3.png full page plus zoomed crops of the starting quinol (C=O top; bottom sp3 carbon bearing OH and 4-bromophenyl), the F-arrow reagent (4-lithio-4'-OTBS biphenyl, Li and OTBS para to their ring junctions) and the J-arrow reagent (Li and Br para); all match the candidate's encoded graphs and answer.md descriptions.",
+    "Verified printed anchor formulas on the page: H = C36H47BrO3Si2 and L = C54H80O4Si4; both are proved (not assumed) by the respective structure theorems.",
+    "Verified the boxed drawn product [5]CPP as a five-ring para-linked benzene macrocycle on the page image; cpp5 encoding (5 rings, 5 links, C30H20) matches.",
+    "Read T6_page-2.png for context (6.3 bond energies, 6.4 integer-mass instruction, macrocycle E); the integer-mass convention C=12,H=1,O=16,Si=28,Br=80,Li=7 applied in the mass theorems is a problem-authorized approximation from 6.4 and is disclosed.",
+    "Confirmed the arrow labels on page 3: TESCl (2 equiv.)/imidazole at F->G and J->K, LiOH at G->H, PhI(OAc)2/H2O at H->I, NaH sequences, Ni(COD)2 (2 equiv.)/2,2'-bipyridine (2 equiv.) at K->L, n-Bu4NF (4 equiv.) then SnCl2 (excess) at L->[5]CPP; the problem statement that PhI(OAc)2 acts as a two-electron oxidant is printed verbatim.",
+    "Legend structures (TBSCl, TESCl, imidazole, COD, 2,2'-bipyridine) match the subContrib formulas (TBS and TES both C6H15Si); the disclosed G aryl-ether OTBS->OTES rendering is formula-neutral and consistent with both printed anchors.",
+    "No modification of any source or candidate file; official solutions/rubrics not consulted."
+  ],
+  "proof_checks": [
+    "Independent compile: `lake env lean IChO2026Problems/problem_icho_2026_t6_a5.lean` exited 0 with no errors or warnings (repository .lake caches used read-only).",
+    "Axiom audit of all 16 final theorems (answer_icho_2026_t6_a5, structure_f..structure_l, derivation_F..derivation_cpp, cpp5_formula_and_aromaticity): each depends only on [propext, Quot.sound]; no sorryAx, no Classical.choice, no custom axioms.",
+    "Source grep confirms no sorry/admit/axiom/native_decide/unsafe anywhere in the candidate Lean sources; all proofs are kernel-checked decide/rfl/omega over explicit finite molecule data - no unsafe shortcuts.",
+    "Theorem statements are substantive: universally quantified element-count functions, explicit substituent inventories, double-bond and biaryl-link list equalities, and membership of the Yamamoto W3-P3 cyclizing bond; nothing is a string match or an assumed target constant.",
+    "Derivation theorems are genuine non-tautological stoichiometric identities (e.g., structL.count = structK.count - 2Br; cpp5.count = structL.count - 4*C6H14Si - O4H4) chaining drawn inputs to every requested structure, so the encodings are constrained by the printed anchors and the drawn endpoint rather than freely postulated.",
+    "Hand re-computation of all formulas and masses (F 549, G 777, H 663, I 679, J 836, K 1064, L 904, [5]CPP 380) matches both the Lean decide results and the two printed anchor formulas.",
+    "Hueckel lemmas (6 = 4n+2 aromatic; 4 = 4n not aromatic) proved arithmetically with only standard axioms; antiaromatic counts correctly require a closed p-loop, so the sp3-broken diene/quinol rings yield 0 antiaromatic systems throughout."
+  ]
+}
+```

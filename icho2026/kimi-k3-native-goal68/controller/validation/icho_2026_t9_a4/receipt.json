@@ -1,0 +1,70 @@
+{
+  "target": "icho_2026_t9_a4",
+  "goal_status": "goal_complete",
+  "checked_at": 1789377583.2349343,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t9_a4.lean": "f6927ae194d672749b96fbc4264db073b29241c06c14f93b81a737da9ba9bda5",
+    "answer.md": "28525e257ddff3e385af774cbe9b989402b16dd7079dcf8899272a258df907ea",
+    "verification.md": "ecb5009bd1afe1b152c4e4f58d911472880579fbb92e52b2f8406b59adb5f88d",
+    "result.json": "953c8f47adfbb97530f51c87adf35df04fa36c9e1e43a27960af257774d6f405"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t9_a4",
+    "status": "completed",
+    "answer_summary": "Y = hexakis(6-O-tert-butyldimethylsilyl)-2,3-anhydro-alpha-cyclodextrin: per unit, C6 carries CH2-O-Si(CH3)2C(CH3)3 (TBS on the primary OH; six Si total), the 2- and 3-OH are fused into a 2,3-epoxide with inversion at BOTH C2 and C3 (allo configuration, both new C-O bonds on the up face of the chair template), the alpha configuration at C1 is retained, the C6 arm is up at C5, and no free OH remains; all bonds single. The explicit 102-vertex molecular graph is proved equal to the printed formula C72H132O24Si6.",
+    "theorem_names": [
+      "icho_2026_t9_a4_structure_of_Y",
+      "y_structure_matches_printed_formula",
+      "y_formula_decomposes",
+      "y_inversion_at_C2_C3",
+      "y_alpha_link_face",
+      "y_epoxide_bridge",
+      "y_no_free_OH",
+      "y_silicon_count6",
+      "y_tbs_group",
+      "y_glycosidic_bonds",
+      "y_bondOrder_one",
+      "y_vertex_count",
+      "yUnitFullFormula_eq",
+      "y_stereocentre_C2",
+      "y_stereocentre_C3",
+      "y_total_c",
+      "y_total_h",
+      "y_total_o",
+      "y_total_si"
+    ],
+    "assumptions": [
+      "problem-stated hint: primary and secondary hydroxy groups of CDs show different reactivity, and TBSCl is used at exactly 6 equivalents -> silylation of the six primary 6-OH only",
+      "trusted_general_law: NaH deprotonates secondary OH and TsCl converts an OH into a good leaving group; the Sinay-type intramolecular SN2 closure of a 2-alkoxide onto 3-OTs affords the 2,3-anhydro (epoxide) sugar with inversion at both C2 and C3",
+      "trusted_general_law: Fuerst-Plattner trans-diaxial epoxide opening, consistent with the printed alpha-cycloaltrin product that follows Y in the scheme"
+    ],
+    "source_gaps": [
+      "The reaction scheme alone does not logically exclude hypothetical direct mono-inversion products; the printed formula C72H132O24Si6 (Q9-2 and answer sheet A9-2) and the pictured final alpha-cycloaltrin jointly force the per-unit 2,3-anhydro structure proved here."
+    ],
+    "verification_commands": [
+      "timeout 580 lake env lean IChO2026Problems/problem_icho_2026_t9_a4.lean  # exit 0; #print axioms: only [propext, Classical.choice, Quot.sound]"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {
+    "IChO2026Problems/problem_icho_2026_t9_a4.lean": {
+      "axiom": 1
+    }
+  },
+  "output_hashes_still_match": true
+}

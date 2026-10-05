@@ -1,0 +1,55 @@
+{
+  "target": "icho_2026_t8_a2",
+  "goal_status": "goal_complete",
+  "checked_at": 1789302612.4020681,
+  "missing": [],
+  "output_hashes": {
+    "IChO2026Problems.lean": "bd915c6e454a1872a6cac9de713afdde4aed453bf0a559d6dd1e6ab5a9ac6951",
+    "IChO2026Run.lean": "f9f7a4c0362bcdb669fb2fc56cc59ea058ed52e26f3823bfddae651c8ea203cf",
+    "IChO2026Chem.lean": "bc4b340d05bec98dde451967d42892020ffb3e013f45755655a3eab481947838",
+    "IChO2026Chem/Core.lean": "5a64100f1d0697a7f5c5f570e08f86bf621554528c9232ce639411d36d4b97a6",
+    "IChO2026Chem/Reporting.lean": "afc7734d514ff5ebf51214693070c6d2f56023ffe96aa7a40a157126ec193f7c",
+    "IChO2026Run/Basic.lean": "144a432426c61012f575c0fd7253905427ed417e77f62b02aadf8e0f409ced4c",
+    "IChO2026Run/Dependencies.lean": "c142053766bc9bace096919801908dbb3b42b5adcd2e453f7e8d49ae582c5b31",
+    "IChO2026Problems/problem_icho_2026_t8_a2.lean": "eaa278932e3ebb4ad8d7adab60933b5532cef8c88721b58e545bd5d42f08796a",
+    "answer.md": "550c8ed79e49476b279088e573ed471a6fd575ea28775e468dfa9d581e56d51f",
+    "verification.md": "9d6da6de47dd71b69b3ad5574b405049ad3ca02217a4d54f0cba0368964eae13",
+    "result.json": "fb8519bbfafecfe60611febb0c282478a06b7bfc424688f227b65877c4229258"
+  },
+  "semantic_review": "pending",
+  "official_answer_comparison": "not_performed",
+  "accepted": false,
+  "source_hashes_match": true,
+  "model_result": {
+    "target_id": "icho_2026_t8_a2",
+    "status": "completed",
+    "answer_summary": "3 is the N-centred triethanolamine radical cation [(HOCH2CH2)3N]radical+, 4 is the neutral alpha-amino carbon radical (HOCH2CH2)2N-C(radical)H-CH2OH, 5 is the iminium ion [(HOCH2CH2)2N+=CH-CH2OH], 6 is diethanolamine HN(CH2CH2OH)2, and 7 is glycolaldehyde HOCH2-CHO.",
+    "theorem_names": [
+      "IChO2026T8A2.structure_3",
+      "IChO2026T8A2.structure_4",
+      "IChO2026T8A2.structure_5",
+      "IChO2026T8A2.structure_6",
+      "IChO2026T8A2.structure_7",
+      "IChO2026T8A2.intermediate_arrow_accounting",
+      "IChO2026T8A2.hydrolysis_arrow_accounting"
+    ],
+    "assumptions": [
+      "Problem input: species 2 is the triethanolamine molecular graph shown on Q8-1, and the four arrows have the printed electron/proton/water labels.",
+      "Trusted general chemistry: tertiary-amine one-electron oxidation gives an aminium radical cation; alpha deprotonation gives an alpha-amino radical; its oxidation gives an iminium ion; aqueous iminium hydrolysis gives a secondary amine plus an aldehyde.",
+      "Trusted general chemistry: the stated silver-mirror response identifies the aldehyde-containing hydrolysis product as species 7.",
+      "Conventional skeletal-formula hydrogens are represented in Lean as exact hydrogen counts attached to heavy-atom vertices."
+    ],
+    "source_gaps": [],
+    "verification_commands": [
+      "sha256sum TASK.json icho_2026_source/image/T8_page-1.png icho_2026_source/raw/theory_problem.pdf",
+      "lake env lean IChO2026Problems/problem_icho_2026_t8_a2.lean",
+      "grep -nE '\\b(sorry|admit|unsafe)\\b' IChO2026Problems/problem_icho_2026_t8_a2.lean"
+    ]
+  },
+  "target_id_matches": true,
+  "lean_exit_code": 0,
+  "lean_sorry_warning": false,
+  "kernel_check": "passed",
+  "source_flags": {},
+  "output_hashes_still_match": true
+}

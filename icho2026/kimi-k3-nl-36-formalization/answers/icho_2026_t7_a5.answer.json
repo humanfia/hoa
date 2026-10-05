@@ -1,0 +1,14 @@
+{
+  "id": "icho_2026_t7_a5",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "[(PNP)Mo(N₂)₂]₂(μ-η¹:η¹-N₂)",
+      "id": "structure_5",
+      "kind": "classification",
+      "raw_value": "(N2)2(PNP)Mo-N≡N-Mo(PNP)(N2)2; four terminal end-on N2 ligands and one μ-η1:η1 bridging N2 ligand",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}

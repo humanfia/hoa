@@ -1,0 +1,28 @@
+{
+  "id": "icho_2026_t4_a2",
+  "official_answer_seen": false,
+  "outputs": [
+    {
+      "display_value": "^11_5B + ^4_2He -> ^14_7N + ^1_0n",
+      "id": "nuclear_a",
+      "kind": "formula",
+      "raw_value": "^11_5B + ^4_2He -> ^14_7N + ^1_0n",
+      "unit": ""
+    },
+    {
+      "display_value": "gamma + ^2_1D -> ^1_1p + ^1_0n",
+      "id": "nuclear_b",
+      "kind": "formula",
+      "raw_value": "gamma + ^2_1D -> ^1_1p + ^1_0n",
+      "unit": ""
+    },
+    {
+      "display_value": "^9_4Be + ^4_2He -> ^12_6C + ^1_0n",
+      "id": "nuclear_c",
+      "kind": "formula",
+      "raw_value": "^9_4Be + ^4_2He -> ^12_6C + ^1_0n",
+      "unit": ""
+    }
+  ],
+  "schema_version": 1
+}
