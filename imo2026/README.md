@@ -127,7 +127,9 @@ From `imo2026/`:
   cd base
   lake update
   lake exe cache get
-  lake build
+  # base has no MathFlowBench.lean root (the run harness writes one per
+  # workspace), so build the cache-warming module rather than the default target.
+  lake build MathFlowBench.CacheWarm
 )
 ```
 

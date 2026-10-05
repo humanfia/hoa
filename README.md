@@ -1,6 +1,6 @@
 # HOA
 
-Humanfia Olympiad Agents: olympiad and benchmark problems solved by agents, with the answers
+Humanize Olympic Agents: olympiad and benchmark problems solved by agents, with the answers
 machine-checked in Lean 4 wherever the subject allows it.
 
 HOA is part of the RSI effort at NVIDIA Research. Every run here is driven by
