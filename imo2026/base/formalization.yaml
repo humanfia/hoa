@@ -1,0 +1,318 @@
+# formalization.yaml (v0.3): repo-root metadata for this formalization project.
+# Schema: https://github.com/mathlib-initiative/formalization.yaml
+# Fields the schema marks [required] are filled; values that cannot be derived
+# from the repository are left blank with a `TODO` comment.
+
+version: "v0.3"
+
+# project - the formalization itself (not the source).
+project:
+  name: "AxiomProver at IMO 2026"        # [required]
+  authors:                               # [required]
+    - "Axiom Math"
+    - "AxiomProver (autonomous multi-agent theorem prover)"
+  license: "MIT"                         # [required]
+
+# sources - what was formalized.
+sources:                                 # [required]
+  - title: "IMO 2026"                    # [required]
+    authors: ["International Mathematical Olympiad"]   # [required]
+    id: "IMO 2026"                       # [required]
+    type: "competition"
+
+# project status
+status:
+  scope: >-
+    Formal Lean 4 statements and complete solutions for all six problems of the
+    2026 International Mathematical Olympiad. Each problem lives under
+    IMO2026/<Q>/: `problem.lean` states the result with its proof body left as
+    `sorry` (the specification), and `solution.lean` restates and fully proves it.
+  sorry_count: 0            # no `sorry` in any solution; `problem.lean` specs use `sorry` by design
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]   # verified via `#print axioms` on all main results
+  main_results:
+    # --- Q1: board of 2026 numbers under gcd/lcm moves ---
+    - declaration: "statement_a_termination"
+      file: "IMO2026/Q1/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    - declaration: "statement_a_unique_large"
+      file: "IMO2026/Q1/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    - declaration: "statement_b_invariance"
+      file: "IMO2026/Q1/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    - declaration: "terminal_value_eq_Mval"
+      file: "IMO2026/Q1/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    - declaration: "Mval_gt_one"
+      file: "IMO2026/Q1/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    # --- Q2: circumcentre of AKL equidistant from midpoints of AB, AC ---
+    - declaration: "main_theorem"
+      file: "IMO2026/Q2/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    # --- Q3: Liu Bang / Xiang Yu stick-cutting game, V(n) = 2^n/(2^(n+1)-1) ---
+    - declaration: "LiuBangXiangYu.V_eq"
+      file: "IMO2026/Q3/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    - declaration: "LiuBangXiangYu.lower_bound"
+      file: "IMO2026/Q3/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    - declaration: "LiuBangXiangYu.upper_bound"
+      file: "IMO2026/Q3/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    # --- Q4: triangle-cutting game, Mulan wins iff θ = 180/n (n ≥ 2) ---
+    - declaration: "TriangleGame.main_theorem"
+      file: "IMO2026/Q4/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    # --- Q5: functional inequality on R_{>0}, f admissible iff f(x) = x + c ---
+    - declaration: "main_theorem"
+      file: "IMO2026/Q5/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+    # --- Q6: gcd-greedy sequence has periodic differences ---
+    - declaration: "main_theorem"
+      file: "IMO2026/Q6/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+
+# how it was produced.
+automation:                              # [required]
+  methods:
+    - method: "autonomous"               # [required]
+      framework: "AxiomProver"
+
+# fidelity
+fidelity:
+  divergences: >-
+    Q1:
+    * A board:
+      - Official statement: 2026 integers
+      - Lean translation: a term of `Multiset ℕ`
+      - Comment: This is fine, because the operation and the state categories do not require a specific
+        order of the integers involved. They are also modeled as natural numbers here because they are
+        always positive (not stated). As for 2026, `IsInitial` checks that the cardinality is 2026,
+        and `Move` preserves the cardinality (not stated).
+    * A terminal state:
+      - Official statement: not separately defined
+      - Lean translation: the condition that there is at most one entry greater than 1
+      - Comment: This is fine, because as long as there are two entries greater than 1, we can just
+        select them to continue. However, the equivalence between the two conditions is not stated.
+        Moreover, the number of entries > 1 can only decrease by at most 1 each time (not stated), so
+        it is also impossible for the count to reach 0. Therefore, this is also equivalent to having
+        exactly one entry greater than 1.
+    * Statement (a) part 1 -- termination:
+      - Lean translation: all games must terminate.
+      - Comment: The official source does not explicitly say that all games must terminate. However,
+        they are equivalent by the equivalence above.
+
+    Q2:
+    * The ambient plane:
+      - Official statement: the Euclidean plane
+      - Lean translation: `EuclideanSpace ℝ (Fin 2)` with the standard L² norm
+      - Comment: This is fine; it is the standard model of the plane. Nondegeneracy of `ABC` is imposed
+        as `¬ Collinear ℝ {A, B, C}`, and `M`, `N` are `midpoint ℝ A B` and `midpoint ℝ A C`.
+    * Inside a triangle:
+      - Official statement: K lies inside triangle BMC, and L inside triangle BNC
+      - Lean translation: `InsideTriangle X Y Z P` as a strict convex combination `P = α•X + β•Y + γ•Z`
+        with α, β, γ > 0 summing to 1
+      - Comment: This is fine: strict convex combinations describe exactly the open triangle interior. That
+        the configuration is nondegenerate enough for this to be the intended region is not separately stated.
+    * Inside an angle:
+      - Official statement: K lies inside angle ∠LBA, and L inside angle ∠ACK
+      - Lean translation: `InsideAngle X Y Z P` (vertex Y) as `P - Y = s•(X−Y) + t•(Z−Y)` with `s, t > 0`
+      - Comment: This is fine: the positive-coefficient cone describes the open region of a proper (< 180°)
+        angle. That the configuration removes any reflex-angle ambiguity is not separately stated.
+    * The angles:
+      - Official statement: the equalities ∠KBA = ∠ACL, ∠LBK = ∠LNC, ∠LCK = ∠BMK
+      - Lean translation: `∠` is `EuclideanGeometry.angle`, the unsigned angle valued in `[0, π]`
+      - Comment: Unsigned angles are used rather than directed angles. Because K and L are pinned to the
+        interior regions above, the unsigned reading matches the intended configuration; that these
+        constraints remove the orientation/reflex ambiguity is not separately stated.
+    * The circumcentre:
+      - Official statement: O is the circumcentre of triangle AKL
+      - Lean translation: `IsCircumcentre A K L O` = `dist O A = dist O K ∧ dist O A = dist O L`, supplied
+        as a hypothesis rather than constructed
+      - Comment: O is characterised by equidistance and passed in as a hypothesis. Existence and uniqueness
+        of such an O for a nondegenerate triangle is not stated; it is also not needed, since the conclusion
+        holds for any equidistant O.
+    * The conclusion:
+      - Official statement: OM = ON
+      - Lean translation: `dist O M = dist O N`
+      - Comment: Direct transcription.
+
+    Q3:
+    * The stick and the cuts:
+      - Official statement: a stick of length 1, cut at all the marked points
+      - Lean translation: cut points form a `Finset ℝ ⊆ (0,1)`; `pieceLengths` sorts them ascending,
+        prepends 0 and appends 1, and takes consecutive differences
+      - Comment: This is fine. Marks are restricted to the open interval (0,1) (the benchmark uses the
+        closed [0,1]); a mark at 0 or 1 would only add a zero-length piece, so this changes nothing. That
+        the encoding yields `|S|+1` positive pieces summing to 1 is here *stated and checked* as
+        `pieceLengths_length` and `pieceLengths_sum` (unlike some Q1 facts, these are part of the spec).
+    * Admissible markings:
+      - Official statement: Liu marks at most n points, then Xiang marks at most n points; the marked
+        points are distinct
+      - Lean translation: `AdmissibleMark n X` = `↑X ⊆ (0,1) ∧ X.card ≤ n`, with Xiang Yu's B required to
+        satisfy `Disjoint A B`
+      - Comment: `card ≤ n` matches the official "at most n" exactly (no divergence). Distinctness of the
+        marks — official "the marked points are distinct" — is modeled both within a player (a `Finset` has
+        no repeats) and across players (`Disjoint A B`).
+    * The claiming rule and Liu Bang's share:
+      - Official statement: the players take turns claiming *any* unclaimed piece (Liu Bang first), each
+        maximising their own total; L(A,B) is Liu Bang's resulting total under optimal play
+      - Lean translation: `firstPlayerShare` sorts the pieces non-increasingly and sums the entries at even
+        indices (the 1st, 3rd, 5th, … largest)
+      - Comment: The official rule is free choice of any piece; "take the largest remaining" is the *optimal*
+        strategy, a theorem. The Lean bakes that optimum in directly as the even-index subset sum of the
+        sorted list, rather than modelling the move game and proving greedy is optimal — contrast the
+        benchmark, which ships a second version (`Q3V2`) formalising the actual game tree. That this subset
+        sum equals the game value is thus taken as the model, not proven. Ties in piece length are broken by
+        the sort; for distinct cut points such ties occur only on a measure-zero set.
+    * The guaranteed value:
+      - Official statement: the largest length Liu Bang may guarantee, regardless of Xiang Yu's play
+      - Lean translation: `V n = ⨆_A ⨅_B L A B` — supremum over Liu Bang's markings A of the infimum over
+        Xiang Yu's disjoint responses B
+      - Comment: The ⨆/⨅ faithfully encodes Liu Bang committing to A and Xiang Yu responding worst-case (a
+        maximin value).
+    * The answer (a "determine" problem):
+      - Official statement: "determine the largest value c such that Liu Bang may guarantee a total length
+        of at least c" — the closed form is NOT given by the problem; finding it is part of the task
+      - Lean translation: the main theorem `V_eq` asserts `V n = 2^n / (2^(n+1) − 1)` (and `lower_bound` /
+        `upper_bound` take the same closed form as given)
+      - Comment: The closed form is baked into the statement rather than left to be produced — contrast the
+        benchmark, where `q3Answer` is left opaque (`sorry`). Faithful only insofar as that closed form is
+        the correct answer; the statement presupposes the solution.
+
+    Q4:
+    * A triangle:
+      - Official statement: a triangle
+      - Lean translation: `IsTriangle s` — a `Multiset ℝ` of three positive angles (in degrees) summing
+        to 180
+      - Comment: A triangle is reduced to its multiset of interior angles (its similarity class). Angles are
+        measured in degrees (sum 180) rather than radians. Side lengths and position are discarded; this is
+        fine because both the game and the target θ depend only on angles.
+    * A cut:
+      - Official statement: Mulan chooses a point P on the perimeter (not a vertex) and cuts straight from
+        P to the opposite vertex — a cevian — splitting the triangle into two triangles, one of which
+        Shan-Yu then discards
+      - Lean translation: `IsCut s L R` picks `s = {α, β, γ}` and `x ∈ (γ, 180−β)`, giving
+        `L = {β, x, 180−β−x}` and `R = {γ, 180−x, x−γ}`, where x is the angle ∠APB at the cut point P
+      - Comment: This faithfully models the cevian at the angle level: x and 180−x are the two supplementary
+        angles at P, so the apex angle splits as (180−β−x) + (x−γ) = α, and ranging over all orderings of
+        `{α, β, γ}` covers all three choices of which vertex the cevian runs to. The only modeling step is
+        the reduction from the geometric cut to this angle-multiset parametrization (side lengths and
+        position discarded), sound because the game depends only on angles; it is not separately proven. NB
+        the official cut is specifically a cevian, not an arbitrary straight line — an arbitrary line need
+        not produce two triangles.
+    * Forced win:
+      - Official statement: Mulan can force, in finitely many steps, a triangle with an angle θ, whatever
+        Shan-Yu discards
+      - Lean translation: `MulanWins θ` is the least (inductive) predicate closed under `win` (the triangle
+        already has angle θ) and `move` (a cut both of whose children are winning); `MulanCanGuarantee θ`
+        requires this from every triangle
+      - Comment: The least-fixed-point reading encodes "wins in finitely many steps" faithfully; requiring
+        *both* children to be winning encodes that Shan-Yu adversarially keeps whichever child he likes.
+    * The answer (a "determine" problem):
+      - Official statement: "for which real values of θ can Mulan guarantee her victory?" — the set of such
+        θ is NOT given by the problem; finding it is the task
+      - Lean translation: `main_theorem` asserts `MulanCanGuarantee θ ↔ ∃ n : ℕ, 2 ≤ n ∧ θ = 180 / n`,
+        under `0 < θ` and `θ < 180`
+      - Comment: The characterising set {180/n : n ≥ 2} is baked into the statement rather than left to be
+        produced — contrast the benchmark, where `answer` is left opaque (`sorry`). Faithful only if that
+        set is the correct answer; the statement presupposes the solution.
+
+    Q5:
+    * The domain and codomain:
+      - Official statement: f : ℝ_{>0} → ℝ_{>0}
+      - Lean translation: `f : PositiveReal → PositiveReal` with `PositiveReal := {x : ℝ // 0 < x}`
+      - Comment: Positivity of both the argument and the value is carried by the subtype, so no separate
+        positivity hypotheses are needed; the inequalities themselves are stated on the `ℝ`-coercions.
+    * The admissibility condition:
+      - Official statement: sqrt((x² + f(y)²)/2) ≥ (f(x) + y)/2 ≥ sqrt(x · f(y)) for all x, y > 0
+      - Lean translation: `IsAdmissible f` states exactly this two-sided inequality with `Real.sqrt`,
+        quantified over all x y
+      - Comment: Direct transcription. `Real.sqrt` returns a junk value on negatives, but every argument
+        here is positive, so this is harmless.
+    * The answer (a "determine" problem):
+      - Official statement: "determine all functions f" satisfying the inequality — the family of solutions
+        is NOT given by the problem; finding it is the task
+      - Lean translation: `main_theorem` asserts `IsAdmissible f ↔ ∃ c : ℝ, 0 ≤ c ∧ ∀ x, (f x : ℝ) = x + c`
+      - Comment: The solution family f(x) = x + c is baked into the statement rather than left to be
+        produced — contrast the benchmark, where `answer` is left opaque (`sorry`). Faithful only if that
+        family is the correct answer; the statement presupposes the solution. `c ≥ 0` (not `c > 0`) so the
+        identity f(x) = x is included.
+
+    Q6:
+    * The sequence:
+      - Official statement: an infinite sequence of integers all greater than 1, where each a_{n+1} is the
+        smallest integer greater than a_n with gcd(a_{n+1}, a_i) > 1 for every earlier index i
+      - Lean translation: `IsValidSeq a` for `a : ℕ → ℕ` (0-indexed): `∀ n, 1 < a n`; `a n < a (n+1)`;
+        `∀ i ≤ n, 1 < gcd (a (n+1)) (a i)`; and minimality via `∀ b, a n < b → b < a (n+1) →
+        ∃ i ≤ n, gcd b (a i) = 1`
+      - Comment: The sequence is 0-indexed rather than 1-indexed. "Shares a common factor" is `gcd > 1`
+        and "smallest such" is the minimality clause. Every term (not only the first) is > 1, matching the
+        official; the first term is left as any value > 1 rather than fixed, so the predicate captures every
+        valid sequence.
+    * The conclusion:
+      - Official statement: there exist positive integers T and L such that a_{n+T} = a_n + L for every
+        positive integer n
+      - Lean translation: `∃ T L : ℕ, 0 < T ∧ 0 < L ∧ ∀ n, a (n + T) = a n + L`
+      - Comment: Direct transcription. The official statement asks for `a_{n+T} = a_n + L` at *every* n
+        (pure periodicity of the differences from the start), so the Lean `∀ n` matches it verbatim.
+
+# review status
+review:
+  status: "human + agent"              # [required]
+  reviewers: ["Axiom Math"]
+  notes: >-
+    A human has completed the divergence report for Q1, and an agent has then filled in Q2-6.
+    Each `problem.lean`/`solution.lean` pair is checked for compatibility with
+    Axle's `verify_proof` service (standard axioms without sorry,
+    and `solution.lean` matches the specification in `problem.lean`).
+
+# alignment - how source statements map to formal declarations.
+alignment:
+  namespace: ""
+  statements:
+    - source: "IMO 2026 Problem 1"
+      lean: "statement_a_termination, statement_a_unique_large, statement_b_invariance, terminal_value_eq_Mval, Mval_gt_one"
+      module: "IMO2026.Q1.solution"
+      status: "proved"
+    - source: "IMO 2026 Problem 2"
+      lean: "main_theorem"
+      module: "IMO2026.Q2.solution"
+      status: "proved"
+    - source: "IMO 2026 Problem 3"
+      lean: "LiuBangXiangYu.V_eq"
+      module: "IMO2026.Q3.solution"
+      status: "proved"
+      note: "The answer is c = 2^n / (2^(n+1) - 1)."
+    - source: "IMO 2026 Problem 4"
+      lean: "TriangleGame.main_theorem"
+      module: "IMO2026.Q4.solution"
+      status: "proved"
+      note: "The answer is { θ | θ = 180° / n for some integer n ≥ 2 }."
+    - source: "IMO 2026 Problem 5"
+      lean: "main_theorem"
+      module: "IMO2026.Q5.solution"
+      status: "proved"
+      note: "The answer is { f | f(x) = x + c for some c ≥ 0 }."
+    - source: "IMO 2026 Problem 6"
+      lean: "main_theorem"
+      module: "IMO2026.Q6.solution"
+      status: "proved"
+
+# acknowledgements
+acknowledgements: >-
+  Built on Mathlib and the Lean 4 theorem prover (leanprover-community).
