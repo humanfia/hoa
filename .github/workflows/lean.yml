@@ -116,6 +116,15 @@ jobs:
           esac
           echo "dir=$dir" >> "$GITHUB_OUTPUT"
 
+      # ipho2026/Kimi ships no lake-manifest.json; its README resolves one with
+      # `lake update`, so do the same here before lean-action runs.
+      - name: Resolve ipho2026/Kimi dependencies
+        if: matrix.project == 'ipho2026-kimi'
+        working-directory: ipho2026/Kimi
+        run: |
+          curl -sSfL https://elan.lean-lang.org/elan-init.sh | sh -s -- -y --default-toolchain none
+          "$HOME/.elan/bin/lake" update
+
       - name: Install Lean and build pinned Lake project
         uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
         with:
