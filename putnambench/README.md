@@ -5,9 +5,6 @@ problems**, achieving a **100% pass rate** and a **joint #1 result** on the
 [official leaderboard](https://trishullab.github.io/PutnamBench/leaderboard.html).
 Every submitted solution passed Lean 4, Comparator, and AXLE verification.
 
-> [!NOTE]
-> This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
-
 The result was produced with [Humanize](https://humanfia.ai/) using a fully
 agentic, YOLO-style approach.
 
@@ -32,10 +29,18 @@ retained for inspection but are never counted or labeled as proofs. The unresolv
 IDs for a given run are written to `unresolved.txt` in that run's controller
 directory.
 
-This repository contains the exact solver, the pinned statements, the pinned
-toolchain, and the scripts to re-run the whole benchmark end to end. **To check
-the result yourself, start with the AXLE API section directly below — it takes
-Python 3 and a network connection, nothing else.**
+This directory contains the exact solver, the pinned statements, the pinned
+toolchain, and the scripts to re-run the whole benchmark end to end. Every
+command below runs from the `putnambench/` directory of
+[humanfia/hoa-qed](https://github.com/humanfia/hoa-qed):
+
+```bash
+git clone https://github.com/humanfia/hoa-qed.git
+cd hoa-qed/putnambench
+```
+
+**To check the result yourself, start with the AXLE API section directly
+below — it takes Python 3 and a network connection, nothing else.**
 
 ## Start Here: Verify Our Proofs Through The AXLE API
 

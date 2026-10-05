@@ -1,8 +1,5 @@
 # Humanfia at IChO 2026
 
-> [!NOTE]
-> This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
-
 The **GPT full-theory experiment has completed all 68/68 Lean formalization targets across the 9 IChO 2026 theory problems**, under their declared input scopes: **66 original-input results and 2 explicitly conditional results**. See the [complete formalization release](gpt-5.6-sol-full68-formalization/). This is a formalization-completion result, **not a claim of 100% official-answer accuracy**.
 
 **Kimi-K3 has now also completed all 68 numbered theory subquestions**: the earlier [32-target answer-blind run](kimi-k3-answer-blind/) plus the [remaining 36 formalizations](kimi-k3-nl-36-formalization/). Combined coverage is **68/68** under those two releases' disclosed scopes. This is likewise formalization completion, **not a claim of 100% official-answer accuracy**.
@@ -20,7 +17,7 @@ We build with open source, and build for open source. We **release everything** 
 * the grading reports, experiment records, checksums, and provenance used to audit the results.
 
 Notably, humanize enables **open source models like Kimi-K3** to achieve **68/68 Lean formalization coverage at IChO 2026** (32 answer-blind + 36 remaining) as well! As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), We all love _open models X open harness_ 🎉 and the combination achieves full score at every competition:
-* [IMO2026](https://github.com/humanfia/imo2026) / [IOI2026](https://github.com/humanfia/ioi2026) / [IPhO2026](https://github.com/humanfia/ipho2026) / [IChO2026](https://github.com/humanfia/icho2026) / [IBO2024](https://github.com/humanfia/ibo2024)
+* [IMO2026](../imo2026/) / [IOI2026](../ioi2026/) / [IPhO2026](../ipho2026/) / [IChO2026](../icho2026/) / [IBO2024](../ibo2024/)
 
 
 ## Results
@@ -140,8 +137,8 @@ they do not change the compile or proof-review results.
 Clone the repository and verify the released files:
 
 ```bash
-git clone https://github.com/humanfia/icho2026.git
-cd icho2026
+git clone https://github.com/humanfia/hoa-qed.git
+cd hoa-qed/icho2026
 
 for run in gpt-5.6-sol-answer-blind kimi-k3-answer-blind kimi-k3-nl-36-formalization gpt-5.6-sol-native-goal68 kimi-k3-native-goal68; do
   (cd "$run" && sha256sum -c CHECKSUMS.sha256)

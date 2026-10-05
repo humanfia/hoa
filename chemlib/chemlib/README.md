@@ -15,8 +15,8 @@ Install [elan](https://github.com/leanprover/elan), then clone the release
 branch and enter this Lake project:
 
 ```bash
-git clone https://github.com/humanfia/chemlib.git
-cd chemlib/chemlib
+git clone https://github.com/humanfia/hoa-qed.git
+cd hoa-qed/chemlib/chemlib
 lake build
 lake env lean Chemlib.lean
 lake env lean AFPS2017.lean
@@ -25,9 +25,9 @@ lake env lean AFPS2017.lean
 The checked-in toolchain and manifest pin Lean, Mathlib, and Physlib. The first
 build fetches those dependencies; subsequent builds reuse `.lake/`.
 
-To consume Chemlib from another Lake project, use the repository's
-`chemlib` subdirectory as the Git dependency and import `Chemlib`.
-The repository-root README contains the exact `lakefile.toml` declaration.
+To consume Chemlib from another Lake project, use the `chemlib/chemlib`
+subdirectory of `humanfia/hoa-qed` as the Git dependency and import `Chemlib`.
+The [Chemlib README](../README.md) contains the exact `lakefile.toml` declaration.
 To use the AFPS extension, import `AFPS2017`; both barrels may be imported in
 the same downstream project.
 

@@ -1,8 +1,5 @@
 # Humanfia at IOI 2026
 
-> [!NOTE]
-> This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
-
 With the power of Humanize, we, the **Humanfia team, have aced all 6/6 IOI 2026 problems**  using a *fully agentic, YOLO-style approach*. The scores are graded by [codeforces](https://codeforces.com/)
 
 We build with open source, and build for open source. We **release everything** including: 
@@ -11,7 +8,7 @@ We build with open source, and build for open source. We **release everything** 
 * the [orchestration scripts](./orchestration) and harness used for problem solving -- which most other participants do not
 
 Notably, the same Codex harness also runs **open source models like Kimi-K3** on these tasks. The plans and problem-only worker seeds are model-independent; reproducing a run with Kimi only requires changing the Codex API key and model name. As [Jensen shared](https://x.com/JensenHuang/status/2080643682408321103), we all love _open models X open harness_ 🎉 and the combination achieves full score at every competiton: 
-* [IMO2026](https://github.com/humanfia/imo2026) / [IOI2026](https://github.com/humanfia/ioi2026) / [IPhO2026](https://github.com/humanfia/ipho2026) / [ICho2026](https://github.com/humanfia/icho2026) / [IBO2024](https://github.com/humanfia/icho2024)
+* [IMO2026](../imo2026/) / [IOI2026](../ioi2026/) / [IPhO2026](../ipho2026/) / [IChO2026](../icho2026/) / [IBO2024](../ibo2024/)
 
 ## Results
 
@@ -41,8 +38,8 @@ Requirements: Bash, Python 3, `sha256sum`, and a C++20-capable `g++` (or set
 `CXX` to a compatible compiler).
 
 ```sh
-git clone https://github.com/humanfia/ioi2026.git
-cd ioi2026
+git clone https://github.com/humanfia/hoa-qed.git
+cd hoa-qed/ioi2026
 ./verify.sh
 ```
 
@@ -121,8 +118,10 @@ repositories are included.
 
 ## Provenance
 
-The six sources were copied byte-for-byte from this repository's root sources
-at commit `b1c4c8bd775cadab3c00de11e49ff79f7c98a0a9`. Their hashes also match the
+The six sources were copied byte-for-byte from the root sources of the former
+`humanfia/ioi2026` repository at commit
+`b1c4c8bd775cadab3c00de11e49ff79f7c98a0a9`, which is commit
+`1eb24a34cda087650f0964372a3d353522dba83c` in this monorepo's history. Their hashes also match the
 finalized Humanize worker artifacts, including the separately reviewed
 Partition artifact.
 

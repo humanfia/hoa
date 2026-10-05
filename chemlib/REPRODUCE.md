@@ -20,8 +20,8 @@ lakefile.toml, and lake-manifest.json.
 
 Run:
 
-    git clone https://github.com/humanfia/chemlib.git
-    cd chemlib
+    git clone https://github.com/humanfia/hoa-qed.git
+    cd hoa-qed/chemlib
     ./reproduce.sh
 
 The script prints the selected Lean version, fetches the Mathlib binary cache

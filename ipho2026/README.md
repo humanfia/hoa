@@ -1,8 +1,5 @@
 # Humanfia at IPhO 2026
 
-> [!NOTE]
-> This is part of RSI Effort at NVIDIA Research. [Humanize](https://github.com/humanfia/humanize2) is an open agent loop/flow framework that led by [NVIDIA Research](https://www.nvidia.com/en-us/research), [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu). We are skying the limit with the power of agents with community members.
-
 The **Humanfia team aced all three theory problems of the 56th International
 Physics Olympiad**. Both the GPT-5.6 Sol and Kimi K3 Max natural-language
 solution sets earned **30.00/30.00 (100%)—full marks** in source-level grading
@@ -55,7 +52,7 @@ The repository now includes
 which prepares a clean problem-only Git workspace and starts the Humanize RLCR
 builder/reviewer loop.
 
-Install [Humanize](https://github.com/humanfia/humanize2), place one problem
+Install [Humanize](https://github.com/humanfia/humanize), place one problem
 statement and its figures in an input directory, and run:
 
 ```bash
@@ -102,8 +99,8 @@ metadata.
 
 The natural-language experiment does not require Lean. As an additional check,
 the GPT-5.6 Sol formalizations can be built with Lean `v4.32.0`, Mathlib, and
-PhysLean. After cloning this repository, open a shell in the repository root and
-run the existing commands below:
+PhysLean. After cloning [humanfia/hoa-qed](https://github.com/humanfia/hoa-qed),
+open a shell in its `ipho2026/` directory and run the commands below:
 
 ```bash
 lake exe cache get

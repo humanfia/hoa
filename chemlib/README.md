@@ -20,8 +20,8 @@ does not contain generation agents, private holdout cases, or controller logs.
 ## Clone and compile
 
 ```bash
-git clone https://github.com/humanfia/chemlib.git
-cd chemlib
+git clone https://github.com/humanfia/hoa-qed.git
+cd hoa-qed/chemlib
 ./reproduce.sh
 ```
 
@@ -43,7 +43,7 @@ Add this dependency to the downstream project's `lakefile.toml`:
 ```toml
 [[require]]
 name = "chemistrylib_v1"
-git = { url = "https://github.com/humanfia/chemlib.git", subDir = "chemlib" }
+git = { url = "https://github.com/humanfia/hoa-qed.git", subDir = "chemlib/chemlib" }
 rev = "main"
 ```
 
