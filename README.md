@@ -5,7 +5,7 @@
 > is an open agent-loop framework led by [NVIDIA Research](https://www.nvidia.com/en-us/research),
 > [UCLA PolyArch](https://polyarch.cs.ucla.edu), and [MIT HAN Lab](https://hanlab.mit.edu),
 > together with open-source community members. The project page is
-> [humanfia.ai/projects/hoa](https://humanfia.ai/projects/hoa).
+> [humanfia.ai/hoa/](https://humanfia.ai/hoa/).
 
 HOA is a unified, reproducible archive of Humanfia's agent work on major
 international competitions, formal-reasoning benchmarks, and verified

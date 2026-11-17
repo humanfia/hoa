@@ -11,7 +11,7 @@ authors:
   - name: Humanfia
     website: "https://humanfia.ai/"
 repository-code: "https://github.com/humanfia/hoa-qed"
-url: "https://humanfia.ai/projects/hoa"
+url: "https://humanfia.ai/hoa/"
 license: Apache-2.0
 keywords:
   - lean4
